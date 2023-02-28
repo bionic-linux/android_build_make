@@ -103,6 +103,10 @@ ifdef ART_DEBUG_OPT_FLAG
 $(call soong_config_set,art_module,art_debug_opt_flag,$(ART_DEBUG_OPT_FLAG))
 endif
 
+ifdef ART_USE_SIMULATOR
+  $(call soong_config_set,art_module,art_use_simulator,true)
+endif
+
 ifdef TARGET_BOARD_AUTO
   $(call add_soong_config_var_value, ANDROID, target_board_auto, $(TARGET_BOARD_AUTO))
 endif
