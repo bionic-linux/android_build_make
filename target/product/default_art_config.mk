@@ -56,6 +56,11 @@ PRODUCT_UPDATABLE_BOOT_JARS := \
     com.android.ipsec:android.net.ipsec.ike \
     com.android.media:updatable-media \
     com.android.mediaprovider:framework-mediaprovider \
+<<<<<<< HEAD   (ad9fc9 Merge "Use findstring to check MODULE_BUILD_FROM_SOURCE" int)
+=======
+    com.android.mediaprovider:framework-pdf \
+    com.android.ondevicepersonalization:framework-ondevicepersonalization \
+>>>>>>> CHANGE (f85d60 Added new framework-pdf jar inside MediaProvider module)
     com.android.os.statsd:framework-statsd \
     com.android.permission:framework-permission \
     com.android.permission:framework-permission-s \
