@@ -524,6 +524,11 @@ ifneq (,$(filter eng, $(TARGET_BUILD_VARIANT)))
     PRODUCT_PRODUCT_PROPERTIES += persist.debug.perfetto.persistent_sysui_tracing_for_bugreport=1
 endif
 
+# Proguard map IDs for optimized/obfuscated targets are generally useful, so
+# enable them by default. Targets can opt out by overriding these values.
+PRODUCT_PROGUARD_MAP_IDS_ENABLED := true
+PRODUCT_PROGUARD_MAP_IDS_PREFIX := go/retraceme
+
 $(call inherit-product, $(SRC_TARGET_DIR)/product/runtime_libart.mk)
 
 # Ensure all trunk-stable flags are available.

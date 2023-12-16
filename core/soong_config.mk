@@ -166,6 +166,9 @@ $(call add_json_list, ModulesLoadedByPrivilegedModules,  $(PRODUCT_LOADED_BY_PRI
 $(call add_json_list, BootJars,                          $(PRODUCT_BOOT_JARS))
 $(call add_json_list, ApexBootJars,                      $(filter-out $(APEX_BOOT_JARS_EXCLUDED), $(PRODUCT_APEX_BOOT_JARS)))
 
+$(call add_json_bool, ProguardMapIdsEnabled,             $(call invert_bool,$(filter false,$(PRODUCT_PROGUARD_MAP_IDS_ENABLED))))
+$(call add_json_str,  ProguardMapIdsPrefix,              $(PRODUCT_PROGUARD_MAP_IDS_PREFIX))
+
 $(call add_json_map,  BuildFlags)
 $(foreach flag,$(_ALL_RELEASE_FLAGS),\
   $(call add_json_str,$(flag),$(_ALL_RELEASE_FLAGS.$(flag).VALUE)))
