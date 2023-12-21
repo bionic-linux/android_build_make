@@ -111,9 +111,26 @@ endif
 # are controlled by the MODULE_BUILD_FROM_SOURCE environment variable by
 # default.
 INDIVIDUALLY_TOGGLEABLE_PREBUILT_MODULES := \
+  adservices \
+  appsearch \
   btservices \
+<<<<<<< HEAD   (37dfc3 Merge "Bump Java target from 1.7 to 1.8 in makefiles" into a)
+=======
+  devicelock \
+  configinfrastructure \
+  conscrypt \
+  healthfitness \
+  ipsec \
+  media \
+  mediaprovider \
+  ondevicepersonalization \
+>>>>>>> CHANGE (c6e96a Add respective modules to the list of individually toggleabl)
   permission \
   rkpd \
+  scheduling \
+  sdkext \
+  statsd \
+  tethering \
   uwb \
   wifi \
 
