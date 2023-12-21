@@ -111,9 +111,23 @@ endif
 # are controlled by the MODULE_BUILD_FROM_SOURCE environment variable by
 # default.
 INDIVIDUALLY_TOGGLEABLE_PREBUILT_MODULES := \
+  adservices \
+  appsearch \
   btservices \
+  devicelock \
+  configinfrastructure \
+  conscrypt \
+  healthfitness \
+  ipsec \
+  media \
+  mediaprovider \
+  ondevicepersonalization \
   permission \
   rkpd \
+  scheduling \
+  sdkext \
+  statsd \
+  tethering \
   uwb \
   wifi \
 
