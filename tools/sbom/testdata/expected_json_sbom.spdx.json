@@ -31,6 +31,7 @@
             "filesAnalyzed": true,
             "versionInfo": "build_finger_print",
             "supplier": "Organization: Google",
+            "licenseDeclared": "NOASSERTION",
             "packageVerificationCode": {
                 "packageVerificationCodeValue": "123456"
             },
@@ -46,7 +47,8 @@
             "downloadLocation": "NONE",
             "filesAnalyzed": false,
             "versionInfo": "build_finger_print",
-            "supplier": "Organization: Google"
+            "supplier": "Organization: Google",
+            "licenseDeclared": "NOASSERTION"
         },
         {
             "name": "Prebuilt package1",
@@ -54,7 +56,8 @@
             "downloadLocation": "NONE",
             "filesAnalyzed": false,
             "versionInfo": "build_finger_print",
-            "supplier": "Organization: Google"
+            "supplier": "Organization: Google",
+            "licenseDeclared": "NOASSERTION"
         },
         {
             "name": "Source package1",
@@ -63,6 +66,7 @@
             "filesAnalyzed": false,
             "versionInfo": "build_finger_print",
             "supplier": "Organization: Google",
+            "licenseDeclared": "NOASSERTION",
             "externalRefs": [
                 {
                     "referenceCategory": "SECURITY",
@@ -77,7 +81,8 @@
             "downloadLocation": "NOASSERTION",
             "filesAnalyzed": false,
             "versionInfo": "1.1",
-            "supplier": "Organization: upstream"
+            "supplier": "Organization: upstream",
+            "licenseDeclared": "NOASSERTION"
         }
     ],
     "files": [
@@ -89,7 +94,8 @@
                     "algorithm": "SHA1",
                     "checksumValue": "11111"
                 }
-            ]
+            ],
+            "licenseConcluded": "NOASSERTION"
         },
         {
             "fileName": "/bin/file2",
@@ -99,7 +105,8 @@
                     "algorithm": "SHA1",
                     "checksumValue": "22222"
                 }
-            ]
+            ],
+            "licenseConcluded": "NOASSERTION"
         },
         {
             "fileName": "/bin/file3",
@@ -109,7 +116,8 @@
                     "algorithm": "SHA1",
                     "checksumValue": "33333"
                 }
-            ]
+            ],
+            "licenseConcluded": "NOASSERTION"
         },
         {
             "fileName": "file4.a",
@@ -119,7 +127,8 @@
                     "algorithm": "SHA1",
                     "checksumValue": "44444"
                 }
-            ]
+            ],
+            "licenseConcluded": "NOASSERTION"
         }
     ],
     "relationships": [
@@ -148,5 +157,6 @@
             "relatedSpdxElement": "SPDXRef-UPSTREAM-package1",
             "relationshipType": "VARIANT_OF"
         }
-    ]
+    ],
+    "hasExtractedLicensingInfos": []
 }
