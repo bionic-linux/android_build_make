@@ -420,6 +420,7 @@ PRODUCT_HOST_PACKAGES += \
     lpdump \
     mke2fs \
     mkfs.erofs \
+    pbtombstone \
     resize2fs \
     sgdisk \
     sqlite3 \
