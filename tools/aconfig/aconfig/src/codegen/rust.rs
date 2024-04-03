@@ -97,6 +97,14 @@ mod tests {
 
     const PROD_EXPECTED: &str = r#"
 //! codegenerated rust flag lib
+use aconfig_storage_read_api::{StorageFileType, get_mapped_storage_file, get_boolean_flag_value, get_package_offset};
+use std::path::Path;
+use std::io::Write;
+use log::{info, error, LevelFilter};
+
+static STORAGE_MIGRATION_MARKER_FILE: &str =
+    "/metadata/aconfig/storage_test_mission_1";
+static MIGRATION_LOG_TAG: &str = "AconfigTestMission1";
 
 /// flag provider
 pub struct FlagProvider;
@@ -492,6 +500,14 @@ pub fn reset_flags() {
 
     const EXPORTED_EXPECTED: &str = r#"
 //! codegenerated rust flag lib
+use aconfig_storage_read_api::{StorageFileType, get_mapped_storage_file, get_boolean_flag_value, get_package_offset};
+use std::path::Path;
+use std::io::Write;
+use log::{info, error, LevelFilter};
+
+static STORAGE_MIGRATION_MARKER_FILE: &str =
+    "/metadata/aconfig/storage_test_mission_1";
+static MIGRATION_LOG_TAG: &str = "AconfigTestMission1";
 
 /// flag provider
 pub struct FlagProvider;
@@ -558,6 +574,14 @@ pub fn enabled_ro_exported() -> bool {
 
     const FORCE_READ_ONLY_EXPECTED: &str = r#"
 //! codegenerated rust flag lib
+use aconfig_storage_read_api::{StorageFileType, get_mapped_storage_file, get_boolean_flag_value, get_package_offset};
+use std::path::Path;
+use std::io::Write;
+use log::{info, error, LevelFilter};
+
+static STORAGE_MIGRATION_MARKER_FILE: &str =
+    "/metadata/aconfig/storage_test_mission_1";
+static MIGRATION_LOG_TAG: &str = "AconfigTestMission1";
 
 /// flag provider
 pub struct FlagProvider;
@@ -663,16 +687,16 @@ pub fn enabled_rw() -> bool {
 
     #[test]
     fn test_generate_rust_code_for_test() {
-        test_generate_rust_code(CodegenMode::Test);
+        test_generate_rust_code(CodegenMode::Test, false);
     }
 
     #[test]
     fn test_generate_rust_code_for_exported() {
-        test_generate_rust_code(CodegenMode::Exported);
+        test_generate_rust_code(CodegenMode::Exported, false);
     }
 
     #[test]
     fn test_generate_rust_code_for_force_read_only() {
-        test_generate_rust_code(CodegenMode::ForceReadOnly);
+        test_generate_rust_code(CodegenMode::ForceReadOnly, false);
     }
 }
