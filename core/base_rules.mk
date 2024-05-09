@@ -708,6 +708,26 @@ endif
 ## Compatibility suite files.
 ###########################################################
 ifdef LOCAL_COMPATIBILITY_SUITE
+<<<<<<< HEAD   (c0b7cb Merge "Make change and version bump to RT14.240717.001 Snap )
+=======
+
+ifneq (,$(LOCAL_FULL_TEST_CONFIG))
+  test_config := $(LOCAL_FULL_TEST_CONFIG)
+else ifneq (,$(LOCAL_TEST_CONFIG))
+  test_config := $(LOCAL_PATH)/$(LOCAL_TEST_CONFIG)
+else
+  test_config := $(wildcard $(LOCAL_PATH)/AndroidTest.xml)
+endif
+
+ifeq ($(EXCLUDE_MCTS),true)
+  ifneq (,$(test_config))
+    ifneq (,$(filter mcts-%,$(LOCAL_COMPATIBILITY_SUITE)))
+      LOCAL_COMPATIBILITY_SUITE := $(filter-out cts,$(LOCAL_COMPATIBILITY_SUITE))
+    endif
+  endif
+endif
+
+>>>>>>> CHANGE (efb72f Exclude mcts tests from cts based on the env config)
 ifneq (true,$(LOCAL_UNINSTALLABLE_MODULE))
 
 # If we are building a native test or benchmark and its stem variants are not defined,
