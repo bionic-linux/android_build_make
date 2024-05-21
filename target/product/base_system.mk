@@ -278,6 +278,7 @@ PRODUCT_PACKAGES += \
     snapshotctl \
     snapuserd \
     storaged \
+    supervision \
     surfaceflinger \
     svc \
     system-build.prop \
