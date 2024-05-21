@@ -865,47 +865,140 @@ function adb() {
     run_tool_with_logging "ADB" $ADB "${@}"
 }
 
-function run_tool_with_logging() {
-  # Run commands in a subshell for us to handle forced terminations with a trap
-  # handler.
-  (
-  local tool_tag="$1"
-  shift
-  local tool_binary="$1"
-  shift
+# simplified version of ps; output in the form
+# <pid> <procname>
+function qpid() {
+    local prepend=''
+    local append=''
+    if [ "$1" = "--exact" ]; then
+        prepend=' '
+        append='$'
+        shift
+    elif [ "$1" = "--help" -o "$1" = "-h" ]; then
+        echo "usage: qpid [[--exact] <process name|pid>"
+        return 255
+    fi
 
-  # If the logger is not configured, run the original command and return.
-  if [[ -z "${ANDROID_TOOL_LOGGER}" ]]; then
-     "${tool_binary}" "${@}"
-     return $?
-  fi
+    local EXE="$1"
+    if [ "$EXE" ] ; then
+        qpid | \grep "$prepend$EXE$append"
+    else
+        adb shell ps \
+            | tr -d '\r' \
+            | sed -e 1d -e 's/^[^ ]* *\([0-9]*\).* \([^ ]*\)$/\1 \2/'
+    fi
+}
 
-  # Otherwise, run the original command and call the logger when done.
-  local start_time
-  start_time=$(date +%s.%N)
-  local logger=${ANDROID_TOOL_LOGGER}
+# coredump_setup - enable core dumps globally for any process
+#                  that has the core-file-size limit set correctly
+#
+# NOTE: You must call also coredump_enable for a specific process
+#       if its core-file-size limit is not set already.
+# NOTE: Core dumps are written to ramdisk; they will not survive a reboot!
 
-  # Install a trap to call the logger even when the process terminates abnormally.
-  # The logger is run in the background and its output suppressed to avoid
-  # interference with the user flow.
-  trap '
-  exit_code=$?;
-  # Remove the trap to prevent duplicate log.
-  trap - EXIT;
-  "${logger}" \
-    --tool_tag="${tool_tag}" \
-    --start_timestamp="${start_time}" \
-    --end_timestamp="$(date +%s.%N)" \
-    --tool_args="$*" \
-    --exit_code="${exit_code}" \
-    ${ANDROID_TOOL_LOGGER_EXTRA_ARGS} \
-    > /dev/null 2>&1 &
-  exit ${exit_code}
-  ' SIGINT SIGTERM SIGQUIT EXIT
+function coredump_setup()
+{
+    echo "Getting root...";
+    adb root;
+    adb wait-for-device;
 
-  # Run the original command.
-  "${tool_binary}" "${@}"
-  )
+    echo "Remounting root partition read-write...";
+    adb shell mount -w -o remount -t rootfs rootfs;
+    sleep 1;
+    adb wait-for-device;
+    adb shell mkdir -p /cores;
+    adb shell mount -t tmpfs tmpfs /cores;
+    adb shell chmod 0777 /cores;
+
+    echo "Granting SELinux permission to dump in /cores...";
+    adb shell restorecon -R /cores;
+
+    echo "Set core pattern.";
+    adb shell 'echo /cores/core.%p > /proc/sys/kernel/core_pattern';
+
+    echo "Done."
+}
+
+# coredump_enable - enable core dumps for the specified process
+# $1 = PID of process (e.g., $(pid mediaserver))
+#
+# NOTE: coredump_setup must have been called as well for a core
+#       dump to actually be generated.
+
+function coredump_enable()
+{
+    local PID=$1;
+    if [ -z "$PID" ]; then
+        printf "Expecting a PID!\n";
+        return;
+    fi;
+    echo "Setting core limit for $PID to infinite...";
+    adb shell /system/bin/ulimit -P $PID -c unlimited
+}
+
+# core - send SIGV and pull the core for process
+# $1 = PID of process (e.g., $(pid mediaserver))
+#
+# NOTE: coredump_setup must be called once per boot for core dumps to be
+#       enabled globally.
+
+function core()
+{
+    local PID=$1;
+
+    if [ -z "$PID" ]; then
+        printf "Expecting a PID!\n";
+        return;
+    fi;
+
+    local CORENAME=core.$PID;
+    local COREPATH=/cores/$CORENAME;
+    local SIG=SEGV;
+
+    coredump_enable $1;
+
+    local done=0;
+    while [ $(adb shell "[ -d /proc/$PID ] && echo -n yes") ]; do
+        printf "\tSending SIG%s to %d...\n" $SIG $PID;
+        adb shell kill -$SIG $PID;
+        sleep 1;
+    done;
+
+    adb shell "while [ ! -f $COREPATH ] ; do echo waiting for $COREPATH to be generated; sleep 1; done"
+    echo "Done: core is under $COREPATH on device.";
+}
+
+# systemstack - dump the current stack trace of all threads in the system process
+# to the usual ANR traces file
+function systemstack()
+{
+    stacks system_server
+}
+
+# Read the ELF header from /proc/$PID/exe to determine if the process is
+# 64-bit.
+function is64bit()
+{
+    local PID="$1"
+    if [ "$PID" ] ; then
+        if [[ "$(adb shell cat /proc/$PID/exe | xxd -l 1 -s 4 -p)" -eq "02" ]] ; then
+            echo "64"
+        else
+            echo ""
+        fi
+    else
+        echo ""
+    fi
+}
+
+function gettargetarch
+{
+    get_build_var TARGET_ARCH
+}
+
+function getprebuilt
+{
+    get_abs_build_var ANDROID_PREBUILTS
 }
 
 # communicate with a running device or emulator, set up necessary state,
@@ -1203,6 +1296,9 @@ unset systemstack
 unset syswrite
 unset tomlgrep
 unset treegrep
+unset syswrite
+unset refreshmod
+unset run_tool_with_logging
 
 
 validate_current_shell
