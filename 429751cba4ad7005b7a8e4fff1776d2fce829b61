@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b8913094_ee41314b",
+        "filename": "core/release_config.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-05-22T22:48:56Z",
+      "side": 1,
+      "message": "Just do this for droid. It\u0027s actually even too much. We really need to get the metadata build going...",
+      "range": {
+        "startLine": 154,
+        "startChar": 30,
+        "endLine": 154,
+        "endChar": 44
+      },
+      "revId": "429751cba4ad7005b7a8e4fff1776d2fce829b61",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
