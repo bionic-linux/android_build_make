@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ca13a9d1_6706028f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1958315
+      },
+      "writtenOn": "2024-05-22T13:27:41Z",
+      "side": 1,
+      "message": "Hi Nikita, could you continue reviewing this cl? I have adjusted the change as we discussed. Thanks!",
+      "revId": "2087263fde79ad6eb4625c260f7f5a278e3bfe8a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
