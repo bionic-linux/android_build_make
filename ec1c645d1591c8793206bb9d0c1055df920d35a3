@@ -16,6 +16,24 @@
       "message": "This entire file is unused after AP2A, which won\u0027t be getting this change.  The file will be deleted when AP3A is pushed.\n\nAlso, it does not appear to get set in the protobuf implementation in aosp/3011253",
       "revId": "ec1c645d1591c8793206bb9d0c1055df920d35a3",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "696ae8e8_95ef9d20",
+        "filename": "core/release_config.scl",
+        "patchSetId": 2
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2024-05-22T23:03:41Z",
+      "side": 1,
+      "message": "This CL is obsolete. I will update the CLs once the soong change is submitted.",
+      "parentUuid": "7e0d66c9_bb8b5216",
+      "revId": "ec1c645d1591c8793206bb9d0c1055df920d35a3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
