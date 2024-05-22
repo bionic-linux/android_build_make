@@ -1,6 +1,29 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "0b51b0ad_baf87fa0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1432579
+      },
+      "writtenOn": "2024-05-22T16:12:50Z",
+      "side": 1,
+      "message": "Can you add a rationale on why this is an opt-out instead of opt-in?",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 0
+      },
+      "revId": "2087263fde79ad6eb4625c260f7f5a278e3bfe8a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "ca13a9d1_6706028f",
