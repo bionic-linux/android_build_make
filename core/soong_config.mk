@@ -30,6 +30,7 @@ $(call json_start)
 $(call add_json_str,  Make_suffix, -$(TARGET_PRODUCT))
 
 $(call add_json_str,  BuildId,                           $(BUILD_ID))
+$(call add_json_str,  BuildFingerprintFile,              build_fingerprint.txt)
 $(call add_json_str,  BuildNumberFile,                   build_number.txt)
 $(call add_json_str,  BuildHostnameFile,                 build_hostname.txt)
 $(call add_json_str,  BuildThumbprintFile,               build_thumbprint.txt)
@@ -67,12 +68,22 @@ $(call add_json_str,  DeviceProduct,                     $(TARGET_PRODUCT))
 $(call add_json_str,  DeviceArch,                        $(TARGET_ARCH))
 $(call add_json_str,  DeviceArchVariant,                 $(TARGET_ARCH_VARIANT))
 $(call add_json_str,  DeviceCpuVariant,                  $(TARGET_CPU_VARIANT))
+$(call add_json_str,  DeviceCpuVariantRuntime,           $(TARGET_CPU_VARIANT_RUNTIME))
 $(call add_json_list, DeviceAbi,                         $(TARGET_CPU_ABI) $(TARGET_CPU_ABI2))
+$(call add_json_str,  DeviceAbiList,                     $(TARGET_CPU_ABI_LIST))
+$(call add_json_str,  DeviceAbiList32,                   $(TARGET_CPU_ABI_LIST_32_BIT))
+$(call add_json_str,  DeviceAbiList64,                   $(TARGET_CPU_ABI_LIST_64_BIT))
 
 $(call add_json_str,  DeviceSecondaryArch,               $(TARGET_2ND_ARCH))
 $(call add_json_str,  DeviceSecondaryArchVariant,        $(TARGET_2ND_ARCH_VARIANT))
 $(call add_json_str,  DeviceSecondaryCpuVariant,         $(TARGET_2ND_CPU_VARIANT))
+$(call add_json_str,  DeviceSecondaryCpuVariantRuntime,  $(TARGET_2ND_CPU_VARIANT_RUNTIME))
 $(call add_json_list, DeviceSecondaryAbi,                $(TARGET_2ND_CPU_ABI) $(TARGET_2ND_CPU_ABI2))
+
+$(call add_json_str,  Dex2oatTargetCpuVariantRuntime,         $(DEX2OAT_TARGET_CPU_VARIANT_RUNTIME))
+$(call add_json_str,  Dex2oatTargetInstructionSetFeatures,    $(DEX2OAT_TARGET_INSTRUCTION_SET_FEATURES))
+$(call add_json_str,  SecondaryDex2oatCpuVariantRuntime,      $($(TARGET_2ND_ARCH_VAR_PREFIX)DEX2OAT_TARGET_CPU_VARIANT_RUNTIME))
+$(call add_json_str,  SecondaryDex2oatInstructionSetFeatures, $($(TARGET_2ND_ARCH_VAR_PREFIX)DEX2OAT_TARGET_INSTRUCTION_SET_FEATURES))
 
 $(call add_json_bool, Aml_abis,                          $(if $(filter mainline_sdk,$(TARGET_ARCH_SUITE)),true))
 $(call add_json_bool, Ndk_abis,                          $(if $(filter ndk,         $(TARGET_ARCH_SUITE)),true))
@@ -284,7 +295,10 @@ $(call add_json_list, BoardKernelModuleInterfaceVersions, $(BOARD_KERNEL_MODULE_
 $(call add_json_bool, BoardMoveRecoveryResourcesToVendorBoot, $(filter true,$(BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT)))
 $(call add_json_str,  PrebuiltHiddenApiDir, $(BOARD_PREBUILT_HIDDENAPI_DIR))
 
-$(call add_json_str,  ShippingApiLevel, $(PRODUCT_SHIPPING_API_LEVEL))
+$(call add_json_str,  BoardPlatform,          $(TARGET_BOARD_PLATFORM))
+$(call add_json_str,  BoardShippingApiLevel,  $(BOARD_SHIPPING_API_LEVEL))
+$(call add_json_str,  ShippingApiLevel,       $(PRODUCT_SHIPPING_API_LEVEL))
+$(call add_json_str,  ShippingVendorApiLevel, $(PRODUCT_SHIPPING_VENDOR_API_LEVEL))
 
 $(call add_json_list, BuildBrokenPluginValidation,         $(BUILD_BROKEN_PLUGIN_VALIDATION))
 $(call add_json_bool, BuildBrokenClangProperty,            $(filter true,$(BUILD_BROKEN_CLANG_PROPERTY)))
@@ -299,6 +313,7 @@ $(call add_json_bool, BuildBrokenVendorPropertyNamespace,  $(filter true,$(BUILD
 $(call add_json_bool, BuildBrokenIncorrectPartitionImages, $(filter true,$(BUILD_BROKEN_INCORRECT_PARTITION_IMAGES)))
 $(call add_json_list, BuildBrokenInputDirModules,          $(BUILD_BROKEN_INPUT_DIR_MODULES))
 $(call add_json_bool, BuildBrokenDontCheckSystemSdk,       $(filter true,$(BUILD_BROKEN_DONT_CHECK_SYSTEMSDK)))
+$(call add_json_bool, BuildBrokenDupSysprop,               $(filter true,$(BUILD_BROKEN_DUP_SYSPROP)))
 
 $(call add_json_list, BuildWarningBadOptionalUsesLibsAllowlist,    $(BUILD_WARNING_BAD_OPTIONAL_USES_LIBS_ALLOWLIST))
 
@@ -322,6 +337,19 @@ $(call add_json_list, AfdoProfiles,                $(ALL_AFDO_PROFILES))
 
 $(call add_json_str,  ProductManufacturer, $(PRODUCT_MANUFACTURER))
 $(call add_json_str,  ProductBrand,        $(PRODUCT_BRAND))
+$(call add_json_str,  ProductModel,        $(PRODUCT_MODEL))
+
+$(call add_json_str,  ProductModelForAttestation,        $(PRODUCT_MODEL_FOR_ATTESTATION))
+$(call add_json_str,  ProductBrandForAttestation,        $(PRODUCT_BRAND_FOR_ATTESTATION))
+$(call add_json_str,  ProductNameForAttestation,         $(PRODUCT_NAME_FOR_ATTESTATION))
+$(call add_json_str,  ProductDeviceForAttestation,       $(PRODUCT_DEVICE_FOR_ATTESTATION))
+$(call add_json_str,  ProductManufacturerForAttestation, $(PRODUCT_MANUFACTURER_FOR_ATTESTATION))
+
+$(call add_json_str, SystemBrand, $(PRODUCT_SYSTEM_BRAND))
+$(call add_json_str, SystemDevice, $(PRODUCT_SYSTEM_DEVICE))
+$(call add_json_str, SystemManufacturer, $(PRODUCT_SYSTEM_MANUFACTURER))
+$(call add_json_str, SystemModel, $(PRODUCT_SYSTEM_MODEL))
+$(call add_json_str, SystemName, $(PRODUCT_SYSTEM_NAME))
 
 $(call add_json_str, ReleaseVersion,    $(_RELEASE_VERSION))
 $(call add_json_list, ReleaseAconfigValueSets,    $(RELEASE_ACONFIG_VALUE_SETS))
@@ -410,7 +438,61 @@ $(call add_json_list, ProductDefaultWifiChannels, $(PRODUCT_DEFAULT_WIFI_CHANNEL
 
 $(call add_json_bool, BoardUseVbmetaDigestInFingerprint, $(filter true,$(BOARD_USE_VBMETA_DIGTEST_IN_FINGERPRINT)))
 
-$(call add_json_list, OemProperties, $(PRODUCT_OEM_PROPERTIES))
+define collapse-prop-pairs
+$(call collapse-pairs,$(call collapse-pairs,$$($(1)),?=),=)
+endef
+
+$(call add_json_list, SystemProperties,        $(call collapse-prop-pairs,PRODUCT_SYSTEM_PROPERTIES))
+$(call add_json_list, SystemDefaultProperties, $(call collapse-prop-pairs,PRODUCT_SYSTEM_DEFAULT_PROPERTIES))
+$(call add_json_list, SystemExtProperties,     $(call collapse-prop-pairs,PRODUCT_SYSTEM_EXT_PROPERTIES))
+$(call add_json_list, VendorProperties,        $(call collapse-prop-pairs,PRODUCT_VENDOR_PROPERTIES))
+$(call add_json_list, ProductProperties,       $(call collapse-prop-pairs,PRODUCT_PRODUCT_PROPERTIES))
+$(call add_json_list, OdmProperties,           $(call collapse-prop-pairs,PRODUCT_ODM_PROPERTIES))
+$(call add_json_list, OemProperties,           $(call collapse-prop-pairs,PRODUCT_OEM_PROPERTIES))
+$(call add_json_list, PropertyOverrides,       $(call collapse-prop-pairs,PRODUCT_PROPERTY_OVERRIDES))
+
+_config_enable_uffd_gc := \
+  $(firstword $(OVERRIDE_ENABLE_UFFD_GC) $(PRODUCT_ENABLE_UFFD_GC) default)
+$(call add_json_str, EnableUffdGc, $(_config_enable_uffd_gc))
+_config_enable_uffd_gc :=
+
+$(call add_json_str, SystemServerCompilerFilter, $(PRODUCT_SYSTEM_SERVER_COMPILER_FILTER))
+
+$(call add_json_bool, Product16KDeveloperOption, $(filter true,$(PRODUCT_16K_DEVELOPER_OPTION)))
+
+$(call add_json_str, RecoveryDefaultRotation, $(TARGET_RECOVERY_DEFAULT_ROTATION))
+$(call add_json_str, RecoveryOverscanPercent, $(TARGET_RECOVERY_OVERSCAN_PERCENT))
+$(call add_json_str, RecoveryPixelFormat, $(TARGET_RECOVERY_PIXEL_FORMAT))
+
+ifdef AB_OTA_UPDATER
+$(call add_json_bool, AbOtaUpdater, $(filter true,$(AB_OTA_UPDATER)))
+$(call add_json_str, AbOtaPartitions, $(subst $(space),$(comma),$(sort $(AB_OTA_PARTITIONS))))
+endif
+
+ifdef PRODUCT_USE_DYNAMIC_PARTITIONS
+$(call add_json_bool, UseDynamicPartitions, $(filter true,$(PRODUCT_USE_DYNAMIC_PARTITIONS)))
+endif
+
+ifdef PRODUCT_RETROFIT_DYNAMIC_PARTITIONS
+$(call add_json_bool, RetrofitDynamicPartitions, $(filter true,$(PRODUCT_RETROFIT_DYNAMIC_PARTITIONS)))
+endif
+
+$(call add_json_bool, DontUseVabcOta, $(filter true,$(BOARD_DONT_USE_VABC_OTA)))
+
+$(call add_json_bool, FullTreble, $(filter true,$(PRODUCT_FULL_TREBLE)))
+
+$(call add_json_bool, NoBionicPageSizeMacro, $(filter true,$(PRODUCT_NO_BIONIC_PAGE_SIZE_MACRO)))
+
+$(call add_json_bool, PropertySplitEnabled, $(filter true,$(BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED)))
+
+$(call add_json_str, ScreenDensity, $(TARGET_SCREEN_DENSITY))
+
+$(call add_json_bool, UsesVulkan, $(filter true,$(TARGET_USES_VULKAN)))
+
+$(call add_json_bool, ZygoteForce64, $(filter true,$(ZYGOTE_FORCE_64)))
+
+$(call add_json_str, VendorSecurityPatch,       $(VENDOR_SECURITY_PATCH))
+$(call add_json_str, VendorImageFileSystemType, $(BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE))
 
 $(call json_end)
 
