@@ -130,9 +130,11 @@ ifneq (,$(_use_protobuf))
         # Disable the build flag in release-config.
         _args += --guard=false
     endif
-    _flags_file:=$(OUT_DIR)/soong/release-config/release_config-$(TARGET_PRODUCT)-$(TARGET_RELEASE).vars
+    _flags_dir:=$(OUT_DIR)/soong/release-config
+    _flags_file:=$(_flags_dir)/release_config-$(TARGET_PRODUCT)-$(TARGET_RELEASE).vars
     # release-config generates $(_flags_varmk)
     _flags_varmk:=$(_flags_file:.vars=.varmk)
+    $(warning LJ: shell $(OUT_DIR)/release-config $(_args) >$(OUT_DIR)/release-config.out && touch -t 200001010000 $(_flags_varmk))
     $(shell $(OUT_DIR)/release-config $(_args) >$(OUT_DIR)/release-config.out && touch -t 200001010000 $(_flags_varmk))
     $(if $(filter-out 0,$(.SHELLSTATUS)),$(error release-config failed to run))
     ifneq (,$(_final_product_config_pass))
@@ -148,7 +150,18 @@ ifneq (,$(_use_protobuf))
     _used_files :=
     ifeq (,$(_must_protobuf)$(RELEASE_BUILD_FLAGS_IN_PROTOBUF))
         _use_protobuf :=
+    else
+        _base_all_release := all_release_configs-$(TARGET_PRODUCT)
+        $(call dist-for-goals,droid,\
+            $(_flags_dir)/$(_base_all_release).pb:build_flags/all_release_configs.pb \
+            $(_flags_dir)/$(_base_all_release).textproto:build_flags/all_release_configs.textproto \
+            $(_flags_dir)/$(_base_all_release).json:build_flags/all_release_configs.json \
+        )
+        _base_all_release :=
     endif
+    _flags_dir:=
+    _flags_file:=
+    _flags_varmk:=
 endif
 ifeq (,$(_use_protobuf))
     # The .mk files are the canonical source of truth.
