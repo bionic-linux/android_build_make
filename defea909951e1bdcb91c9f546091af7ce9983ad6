@@ -16,6 +16,24 @@
       "message": "hmm... it\u0027s suspicious that _only_ the NDK BoardConfig.mk mentions this (https://source.corp.google.com/search?q\u003dUSE_SAFESTACK\u0026sq\u003drepo:android%2Fplatform%2Fsuperproject%2Fmain%20b:main%20-file:prebuilts%2Fvndk%2F%20-file:prebuilts%2Fruntime%2F) but that\u0027s a question for another day :-)",
       "revId": "defea909951e1bdcb91c9f546091af7ce9983ad6",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "29ca8ff7_b1890925",
+        "filename": "target/board/ndk/BoardConfig.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1120458
+      },
+      "writtenOn": "2024-05-22T21:36:18Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "2da7a232_d8edc66b",
+      "revId": "defea909951e1bdcb91c9f546091af7ce9983ad6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
