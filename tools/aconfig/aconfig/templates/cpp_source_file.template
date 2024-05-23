@@ -7,7 +7,6 @@
 
 #define ALOGI(msg, ...)                                                        \
   __android_log_print(ANDROID_LOG_INFO, "AconfigTestMission1", (msg), __VA_ARGS__)
-
 {{ endif }}
 
 {{ if readwrite- }}
@@ -66,6 +65,61 @@ namespace {cpp_namespace} \{
     class flag_provider : public flag_provider_interface \{
     public:
 
+        {{ if allow_instrumentation- }}
+        flag_provider()
+            {{ if readwrite- }}
+            : cache_({readwrite_count}, -1)
+            , test_mission_1_enabled_(false)
+            {{ -else }}
+            : test_mission_1_enabled_(false)
+            {{ -endif }}
+            , boolean_start_index_()
+            , flag_value_file_(nullptr) \{
+
+            // check if test mission 1 is enabled
+            struct stat buffer;
+            if (stat("/metadata/aconfig_test_missions/mission_1", &buffer) == 0) \{
+                test_mission_1_enabled_ = true;
+            } else \{
+                return;
+            }
+
+            auto package_map_file = aconfig_storage::get_mapped_file(
+                 "{container}",
+                 aconfig_storage::StorageFileType::package_map);
+            if (!package_map_file.ok()) \{
+                ALOGI("error: failed to get package map file: %s", package_map_file.error().c_str());
+                return;
+            }
+
+            auto context = aconfig_storage::get_package_read_context(
+                **package_map_file, "{package}");
+            if (!context.ok()) \{
+                ALOGI("error: failed to get package read context: %s", context.error().c_str());
+                return;
+            }
+
+            // unmap package map file and free memory
+            delete *package_map_file;
+
+            // cache package boolean flag start index
+            boolean_start_index_ = context->boolean_start_index;
+
+            auto flag_value_file = aconfig_storage::get_mapped_file(
+                "{container}",
+                aconfig_storage::StorageFileType::flag_val);
+            if (!flag_value_file.ok()) \{
+                ALOGI("error: failed to get flag value file: %s", flag_value_file.error().c_str());
+                return;
+            }
+
+            // cache flag value file
+            flag_value_file_ = std::unique_ptr<aconfig_storage::MappedStorageFile>(
+                *flag_value_file);
+
+        }
+        {{ -endif }}
+
         {{ -for item in class_elements }}
 
         virtual bool {item.flag_name}() override \{
@@ -79,6 +133,29 @@ namespace {cpp_namespace} \{
             return cache_[{item.readwrite_idx}];
             {{ -else }}
             {{ -if item.is_fixed_read_only }}
+
+            {{ if allow_instrumentation- }}
+            if (test_mission_1_enabled_) \{
+                if (!flag_value_file_) \{
+                    ALOGI("error: failed to get flag {item.flag_name}: flag value file is null");
+                }
+
+                auto value = aconfig_storage::get_boolean_flag_value(
+                    *flag_value_file_,
+                     boolean_start_index_ + {item.flag_offset});
+
+                if (!value.ok()) \{
+                    ALOGI("error: failed to read flag value: %s", value.error().c_str());
+                }
+
+                bool expected_value = {package_macro}_{item.flag_macro};
+                if (*value != expected_value) \{
+                   ALOGI("error: {item.flag_name} value mismatch, new storage value is %s, old storage value is %s",
+                   *value, expected_value);
+                }
+            }
+            {{ -endif }}
+
             return {package_macro}_{item.flag_macro};
             {{ -else }}
             return {item.default_value};
@@ -86,12 +163,22 @@ namespace {cpp_namespace} \{
             {{ -endif }}
         }
         {{ -endfor }}
+
     {{ if readwrite- }}
     private:
         std::vector<int8_t> cache_ = std::vector<int8_t>({readwrite_count}, -1);
     {{ -endif }}
-    };
 
+    {{ if allow_instrumentation- }}
+    private:
+        bool test_mission_1_enabled_;
+
+        uint32_t boolean_start_index_;
+
+        std::unique_ptr<aconfig_storage::MappedStorageFile> flag_value_file_;
+    {{ -endif }}
+
+    };
 
 {{ -endif }}
 
@@ -107,67 +194,16 @@ bool {header}_{item.flag_name}() \{
     {{ -if item.readwrite }}
     return {cpp_namespace}::{item.flag_name}();
     {{ -else }}
-    {{ if allow_instrumentation }}
-    auto result =
-        {{ if item.is_fixed_read_only }}
-	    {package_macro}_{item.flag_macro}
-	{{ else }}
-	    {item.default_value}
-	{{ endif }};
-
-    struct stat buffer;
-    if (stat("/metadata/aconfig_test_missions/mission_1", &buffer) != 0) \{
-        return result;
-    }
-
-    auto package_map_file = aconfig_storage::get_mapped_file(
-        "{item.container}",
-        aconfig_storage::StorageFileType::package_map);
-    if (!package_map_file.ok()) \{
-        ALOGI("error: failed to get package map file: %s", package_map_file.error().c_str());
-        return result;
-    }
-
-    auto package_read_context = aconfig_storage::get_package_read_context(
-        **package_map_file, "{package}");
-    if (!package_read_context.ok()) \{
-        ALOGI("error: failed to get package read context: %s", package_map_file.error().c_str());
-        return result;
-    }
-
-    delete *package_map_file;
-
-    auto flag_val_map = aconfig_storage::get_mapped_file(
-        "{item.container}",
-        aconfig_storage::StorageFileType::flag_val);
-    if (!flag_val_map.ok()) \{
-        ALOGI("error: failed to get flag val map: %s", package_map_file.error().c_str());
-        return result;
-    }
-
-    auto value = aconfig_storage::get_boolean_flag_value(
-        **flag_val_map,
-        package_read_context->boolean_start_index + {item.flag_offset});
-    if (!value.ok()) \{
-        ALOGI("error: failed to get flag val: %s", package_map_file.error().c_str());
-        return result;
-    }
-
-    delete *flag_val_map;
-
-    if (*value != result) \{
-        ALOGI("error: new storage value '%d' does not match current value '%d'", *value, result);
-    } else \{
-        ALOGI("success: new storage value was '%d, legacy storage was '%d'", *value, result);
-    }
-
-    return result;
-    {{ else }}
     {{ -if item.is_fixed_read_only }}
+
+    {{ if allow_instrumentation- }}
+    return {cpp_namespace}::{item.flag_name}();
+    {{ -else }}
     return {package_macro}_{item.flag_macro};
+    {{ -endif }}
+
     {{ -else }}
     return {item.default_value};
-    {{ -endif }}
     {{ -endif }}
     {{ -endif }}
     {{ -endif }}
@@ -185,5 +221,3 @@ void {header}_reset_flags() \{
      {cpp_namespace}::reset_flags();
 }
 {{ -endif }}
-
-
