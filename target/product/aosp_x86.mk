@@ -57,6 +57,11 @@ ifeq (aosp_x86,$(TARGET_PRODUCT))
 # Build modules from source if this has not been pre-configured
 MODULE_BUILD_FROM_SOURCE ?= true
 
+# Check if we can use dev keys
+ifneq ($(wildcard vendor/google/dev-keystore),)
+$(call soong_config_set,widevine,use_devkey,true)
+endif
+
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_release.mk)
 endif
 
