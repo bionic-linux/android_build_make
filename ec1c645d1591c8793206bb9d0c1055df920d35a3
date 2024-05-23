@@ -34,6 +34,24 @@
       "parentUuid": "7e0d66c9_bb8b5216",
       "revId": "ec1c645d1591c8793206bb9d0c1055df920d35a3",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "006400cb_bc869aff",
+        "filename": "core/release_config.scl",
+        "patchSetId": 2
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2024-05-23T06:10:11Z",
+      "side": 1,
+      "message": "I uploaded a new patchset.",
+      "parentUuid": "696ae8e8_95ef9d20",
+      "revId": "ec1c645d1591c8793206bb9d0c1055df920d35a3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
