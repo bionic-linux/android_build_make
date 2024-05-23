@@ -222,6 +222,12 @@ class RunCommandIntegrationTest(ci_test_lib.TestCase):
       os.kill(p.pid, signal.SIGINT)
 
 
+class BuildPlannerTest(unittest.TestCase):
+
+  def test_build_optimization_off_builds_everything(self):
+    pass
+
+
 def wait_until(
     condition_function: Callable[[], bool],
     timeout_secs: float = 3.0,
