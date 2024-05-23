@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cc28bb8f_11dda4ad",
+        "filename": "target/product/gsi_release.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1080076
+      },
+      "writtenOn": "2024-05-23T22:46:25Z",
+      "side": 1,
+      "message": "do you want to completely exclude this overlay for automotive, or only the config xml that makes it the only RRO?",
+      "range": {
+        "startLine": 56,
+        "startChar": 24,
+        "endLine": 56,
+        "endChar": 44
+      },
+      "revId": "3da6e1e6ea781568027ba4223feb7fa78525f358",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
