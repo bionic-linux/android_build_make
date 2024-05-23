@@ -63,6 +63,30 @@
       },
       "revId": "c0647dbe9fec41cd7e40f371fa902bcb1b3cf2c5",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4db653f1_fcc0ee68",
+        "filename": "core/android_soong_config_vars.mk",
+        "patchSetId": 6
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1432579
+      },
+      "writtenOn": "2024-05-23T14:04:26Z",
+      "side": 1,
+      "message": "Yep. I personally struggle to read make files, so the simpler they are, the better :)",
+      "parentUuid": "86a37f90_32214693",
+      "range": {
+        "startLine": 81,
+        "startChar": 40,
+        "endLine": 81,
+        "endChar": 62
+      },
+      "revId": "c0647dbe9fec41cd7e40f371fa902bcb1b3cf2c5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
