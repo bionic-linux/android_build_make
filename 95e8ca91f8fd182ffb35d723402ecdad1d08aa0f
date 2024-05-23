@@ -34,6 +34,24 @@
       "parentUuid": "d37f2617_09032809",
       "revId": "95e8ca91f8fd182ffb35d723402ecdad1d08aa0f",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c5d43414_b7f9f6fa",
+        "filename": "core/android_soong_config_vars.mk",
+        "patchSetId": 7
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1002751
+      },
+      "writtenOn": "2024-05-23T18:07:50Z",
+      "side": 1,
+      "message": "Can you add a TODO here to make sure it gets removed?",
+      "parentUuid": "c6bdeed1_e6a8f1ab",
+      "revId": "95e8ca91f8fd182ffb35d723402ecdad1d08aa0f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
