@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d68a9dd5_02a94a9e",
+        "filename": "ci/build_test_suites.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-05-23T00:32:47Z",
+      "side": 1,
+      "message": "Basically, the gist of how this should work is that the build_context proto (which will be stored on disk as a json) will read like this:\n\n```\n{\n\"enabled_build_features\": \n[\n        \"optimized_build\",\n        \"optimized_\u003ctarget\u003e\"\n],\n}\n```\n\nthen, the build script will have a map of `\u003ctarget\u003e` to two functions.\nOne will generate a list of build targets to build for the optimized version of the target, and another will package those outputs (either into a zip or whatever).\n\nThen if `optimized_build` is enabled and the option for that specific target is also enabled then that target will be built using our rules. This enables rolling out specific targets and keeps things relatively simple while still flexible. This is still very WIP but I wanted to get some early feedback on the overall design. I expect the build/package functions to require some more args in the future (such as the `build_context` object). The functions don\u0027t do anything right now for general-tests, but I wanted to keep that in a different CL.",
+      "revId": "4304ef235d1d0e592a1ba080ac643cbf1deddd8f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
