@@ -39,6 +39,30 @@
       },
       "revId": "c0647dbe9fec41cd7e40f371fa902bcb1b3cf2c5",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "86a37f90_32214693",
+        "filename": "core/android_soong_config_vars.mk",
+        "patchSetId": 6
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1958315
+      },
+      "writtenOn": "2024-05-23T14:00:45Z",
+      "side": 1,
+      "message": "We can simplify the current script to this call with `PRODUCT_AVF_RA_ENABLED` as well. You want to stop setting `avf_remote_attestation_enabled` to false by taking the default value, correct?",
+      "parentUuid": "cdf315d4_f09422ce",
+      "range": {
+        "startLine": 81,
+        "startChar": 40,
+        "endLine": 81,
+        "endChar": 62
+      },
+      "revId": "c0647dbe9fec41cd7e40f371fa902bcb1b3cf2c5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
