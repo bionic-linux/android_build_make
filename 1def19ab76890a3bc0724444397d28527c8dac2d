@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "be2d22d1_f6fab5d5",
+        "filename": "common/math.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 1120458
+      },
+      "writtenOn": "2024-05-23T00:21:40Z",
+      "side": 1,
+      "message": "I\u0027m assuming this was intentionally 2 * 16 * 16 * 16 \u003c 10,000, so I can go with a different approach in the other file if you don\u0027t want 10,000 here.\n\nI didn\u0027t want to do SDK + 1 or similar, because that would add work to the finalization process.",
+      "range": {
+        "startLine": 318,
+        "startChar": 1,
+        "endLine": 319,
+        "endChar": 80
+      },
+      "revId": "1def19ab76890a3bc0724444397d28527c8dac2d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
