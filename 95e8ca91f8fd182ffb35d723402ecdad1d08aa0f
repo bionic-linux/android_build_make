@@ -16,6 +16,24 @@
       "message": "This similar variable is also set, can it be removed?",
       "revId": "95e8ca91f8fd182ffb35d723402ecdad1d08aa0f",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c6bdeed1_e6a8f1ab",
+        "filename": "core/android_soong_config_vars.mk",
+        "patchSetId": 7
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1958315
+      },
+      "writtenOn": "2024-05-23T18:05:41Z",
+      "side": 1,
+      "message": "This variable will soon be removed along with other AVF feature flags as all the AVF features are already enabled on next. Although it still has some presence in the code currently, it can no longer enable the remote attestation feature alone if the new flag `avf_remote_attestation_enabled` is false.",
+      "parentUuid": "d37f2617_09032809",
+      "revId": "95e8ca91f8fd182ffb35d723402ecdad1d08aa0f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
