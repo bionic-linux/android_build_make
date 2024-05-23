@@ -16,6 +16,29 @@
       "message": "+Colin, could you also please review this code change? I\u0027d like to add a build flag that will allow devices that don\u0027t support the AVF remote attestation feature to disable this functionality easily (b/341292601).",
       "revId": "c0647dbe9fec41cd7e40f371fa902bcb1b3cf2c5",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cdf315d4_f09422ce",
+        "filename": "core/android_soong_config_vars.mk",
+        "patchSetId": 6
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1432579
+      },
+      "writtenOn": "2024-05-23T13:18:18Z",
+      "side": 1,
+      "message": "nit: can we rename this to PRODUCT_AVF_OPT_OUT_FROM_REMOTE_ATTESTATION?\n\nThen the logic can be simplfied to:\n\nif not PRODUCT_AVF_OPT_OUT_FROM_REMOTE_ATTESTATION then\n`$(call add_soong_config_var_value,ANDROID,avf_remote_attestation_enabled,$(RELEASE_AVF_ENABLE_REMOTE_ATTESTATION))`",
+      "range": {
+        "startLine": 81,
+        "startChar": 40,
+        "endLine": 81,
+        "endChar": 62
+      },
+      "revId": "c0647dbe9fec41cd7e40f371fa902bcb1b3cf2c5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
