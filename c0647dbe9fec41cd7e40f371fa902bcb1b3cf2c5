@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d3d3998d_08252a3d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1958315
+      },
+      "writtenOn": "2024-05-23T13:09:31Z",
+      "side": 1,
+      "message": "+Colin, could you also please review this code change? I\u0027d like to add a build flag that will allow devices that don\u0027t support the AVF remote attestation feature to disable this functionality easily (b/341292601).",
+      "revId": "c0647dbe9fec41cd7e40f371fa902bcb1b3cf2c5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
