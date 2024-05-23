@@ -14,6 +14,7 @@
 
 """Tests for build_test_suites.py"""
 
+import argparse
 from importlib import resources
 import multiprocessing
 import os
@@ -27,9 +28,11 @@ import tempfile
 import textwrap
 import time
 from typing import Callable
+import unittest
 from unittest import mock
 import build_test_suites
 import ci_test_lib
+import optimized_targets
 from pyfakefs import fake_filesystem_unittest
 
 
@@ -220,6 +223,86 @@ class RunCommandIntegrationTest(ci_test_lib.TestCase):
       # `SIGKILL` doesn't kill any grandchild processes and we don't have
       # `psutil` available to easily query all children.
       os.kill(p.pid, signal.SIGINT)
+
+
+class BuildPlannerTest(unittest.TestCase):
+
+  class TestOptimizedBuildTarget(optimized_targets.OptimizedBuildTarget):
+
+    def __init__(self, output_targets):
+      self.output_targets = output_targets
+
+    def get_build_targets(self):
+      return self.output_targets
+
+    def package_outputs(self):
+      pass
+
+  def test_build_optimization_off_builds_everything(self):
+    build_targets = ['target_1', 'target_2']
+    build_planner = self.create_build_planner(
+        build_context=self._create_build_context(optimized_build_enabled=False),
+        args=self._create_args(extra_build_targets=build_targets),
+        target_optimizations={
+            'target_1':
+            self.TestOptimizedBuildTarget(['optimized_target']),
+        },
+    )
+
+    build_plan = build_planner.create_build_plan()
+
+    self.assertListEqual(build_targets, build_plan.build_targets)
+
+  def test_build_optimization_on_optimizes_target(self):
+    build_targets = ['target_1', 'target_2']
+    build_planner = self.create_build_planner(
+        args=self._create_args(extra_build_targets=build_targets),
+        target_optimizations={
+            'target_1':
+            lambda build_context, args: self.TestOptimizedBuildTarget(['optimized_target']),
+        },
+    )
+
+    build_plan = build_planner.create_build_plan()
+
+    expected_targets = ['optimized_target', 'target_2']
+    self.assertListEqual(expected_targets, build_plan.build_targets)
+
+  def create_build_planner(
+      self,
+      build_context: dict[str, any] = None,
+      args: argparse.Namespace = None,
+      target_optimizations: dict[
+          str, optimized_targets.OptimizedBuildTarget
+      ] = optimized_targets.OPTIMIZED_BUILD_TARGETS,
+  ) -> build_test_suites.BuildPlanner:
+    if not build_context:
+      build_context = self.create_build_context()
+    if not args:
+      args = self.create_args()
+    return build_test_suites.BuildPlanner(
+        build_context, args, target_optimizations
+    )
+
+  def create_build_context(
+      self,
+      optimized_build_enabled: bool = True,
+      enabled_build_features: set[str] = [],
+      test_context: dict[str, any] = {},
+  ) -> dict[str, any]:
+    build_context = {}
+    build_context['enabled_build_features'] = enabled_build_features
+    if optimized_build_enabled:
+      build_context['enabled_build_features'].append('optimized_build')
+    build_context['test_context'] = test_context
+    return build_context
+
+  def create_args(
+      self, extra_build_targets: set[str] = []
+  ) -> argparse.Namespace:
+    parser = argparse.ArgumentParser()
+    parser.add_argument('extra_targets', nargs='*')
+    return parser.parse_args(extra_build_targets)
 
 
 def wait_until(
