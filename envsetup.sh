@@ -496,9 +496,18 @@ function lunch()
         return 1
     fi
 
+    _lunch_meat $product $release $variant
+}
+
+function _lunch_meat()
+{
+    local product=$1
+    local release=$2
+    local variant=$3
+
     TARGET_PRODUCT=$product \
-    TARGET_BUILD_VARIANT=$variant \
     TARGET_RELEASE=$release \
+    TARGET_BUILD_VARIANT=$variant \
     build_build_var_cache
     if [ $? -ne 0 ]
     then
@@ -524,10 +533,10 @@ function lunch()
       echo "Want FASTER LOCAL BUILDS? Use -eng instead of -userdebug (however for" \
         "performance benchmarking continue to use userdebug)"
     fi
-    if [ $used_lunch_menu -eq 1 ]; then
-      echo
-      echo "Hint: next time you can simply run 'lunch $selection'"
-    fi
+#    if [ $used_lunch_menu -eq 1 ]; then
+#      echo
+#     echo "Hint: next time you can simply run 'lunch $selection'"
+#   fi
 
     destroy_build_var_cache
 
@@ -551,6 +560,105 @@ function _lunch()
 
     COMPREPLY=( $(compgen -W "${COMMON_LUNCH_CHOICES_CACHE}" -- ${cur}) )
     return 0
+}
+
+function _lunch_usage()
+{
+    (
+        echo "The lunch command selects the configuration to use for subsequent"
+        echo "Android builds."
+        echo
+        echo "Usage: lunch TARGET_PRODUCT [TARGET_RELEASE] [TARGET_BUILD_VARIANT]"
+        echo
+        echo "  Choose the product, release and variant to use. If not"
+        echo "  supplied, TARGET_RELEASE will be 'trunk_staging' and"
+        echo "  TARGET_BUILD_VARIANT will be 'eng'"
+        echo
+        echo
+        echo "Usage: lunch TARGET_PRODUCT-TARGET_RELEASE-TARGET_BUILD_VARIANT"
+        echo
+        echo "  Chose the product, release and variant to use. This"
+        echo "  legacy format is maintained for compatibility."
+        echo
+        echo
+        echo "Usage: lunch --list-products"
+        echo
+        echo "  List all available TARGET_PRODUCTs in the current source"
+        echo "  tree."
+        echo
+        echo
+# TODO
+#        echo "Usage: lunch --list-releases TARGET_PRODUCT"
+#        echo
+#        echo "  List all available releases for the given TARGET_PRODUCT"
+#        echo
+#        echo
+        echo "Usage: lunch --list-variants"
+        echo
+        echo "  List the available TARGET_BUILD_VARIANT values (The list is"
+        echo "  always user, userdebug, eng)."
+        echo
+        echo
+        echo "Note that the previous interactive menu and list of hard-coded"
+        echo "list of curated targets has been removed."
+        echo
+    ) 1>&2
+}
+
+function lunch2()
+{
+    if [[ $# -eq 1 && $1 = "--help" ]]; then
+        _lunch_usage
+        return 0
+    fi
+    if [[ $# -eq 1 && $1 = "--list-products" ]]; then
+        _get_build_var_cached all_named_products | sed 's/ /\n/g'
+        return 0
+    fi
+    if [[ $# -eq 2 && $1 = "--list-releases" ]]; then
+        echo TODO $2
+        return 1
+    fi
+    if [[ $# -eq 1 && $1 = "--list-variants" ]]; then
+        echo "user"
+        echo "userdebug"
+        echo "eng"
+        return 0
+    fi
+    if [[ $# -eq 0 || $# -gt 3 ]]; then
+        _lunch_usage
+        return 1
+    fi
+
+    local product release variant
+
+    # Handle the legacy format
+    local legacy=$(echo $1 | grep "-")
+    if [[ $# -eq 1 && -n $legacy ]]; then
+        IFS="-" read -r product release variant <<< "$1"
+        if [[ -z "$product" ]] || [[ -z "$release" ]] || [[ -z "$variant" ]]; then
+            echo "Invalid lunch combo: $1" 1>&2
+            echo "Valid combos must be of the form <product>-<release>-<variant> when using" 1>&2
+            echo "the legacy format.  Run 'lunch --help' for usage." 1>&2
+            return 1
+        fi
+    fi
+
+    # Handle the new format.
+    if [[ -z $legacy ]]; then
+        product=$1
+        release=$2
+        if [[ -z $release ]]; then
+            release=trunk_staging
+        fi
+        local variant=$3
+        if [[ -z $variant ]]; then
+            variant=eng
+        fi
+    fi
+
+    # Validate the selection and set all the environment stuff
+    _lunch_meat $product $release $variant
 }
 
 # Configures the build to build unbundled apps.
