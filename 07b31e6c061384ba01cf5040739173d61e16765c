@@ -1,0 +1,74 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f8c8472f_70400719",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1076194
+      },
+      "writtenOn": "2024-05-24T21:01:28Z",
+      "side": 1,
+      "message": "Needs comment explaining why this just returns empty. Like, we don\u0027t need to run MTS in Presubmit, so this function returns an empty list.",
+      "fixSuggestions": [
+        {
+          "fixId": "78fb1457_124db4a4",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ci/optimized_targets.py",
+              "range": {
+                "startLine": 25,
+                "startChar": 0,
+                "endLine": 25,
+                "endChar": 0
+              },
+              "replacement": "  \"\"\"Returns empty list as we don\u0027t need to run MTS in Presubmit.\"\"\"\n"
+            }
+          ]
+        }
+      ],
+      "revId": "07b31e6c061384ba01cf5040739173d61e16765c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0531d56d_ad3bd079",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1076194
+      },
+      "writtenOn": "2024-05-24T21:01:28Z",
+      "side": 1,
+      "message": "\"\"\"Returns empty list as we don\u0027t need to run MTS in Presubmit.\"\"\"",
+      "fixSuggestions": [
+        {
+          "fixId": "ec0105c8_ec03b60b",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ci/optimized_targets.py",
+              "range": {
+                "startLine": 29,
+                "startChar": 0,
+                "endLine": 29,
+                "endChar": 0
+              },
+              "replacement": "  \"\"\"Returns empty list as we don\u0027t need to run MTS in Presubmit.\"\"\"\n"
+            }
+          ]
+        }
+      ],
+      "revId": "07b31e6c061384ba01cf5040739173d61e16765c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
