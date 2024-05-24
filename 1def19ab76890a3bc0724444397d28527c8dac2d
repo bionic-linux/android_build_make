@@ -54,6 +54,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "be3b215c_2ce8323e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1120458
+      },
+      "writtenOn": "2024-05-24T21:58:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "becd00a6_27032a71",
+      "revId": "1def19ab76890a3bc0724444397d28527c8dac2d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "be2d22d1_f6fab5d5",
@@ -115,6 +133,30 @@
       "side": 1,
       "message": "I can do it, or go with another random #. I was keeping the change minimally small.",
       "parentUuid": "116a2141_b05d8d31",
+      "range": {
+        "startLine": 318,
+        "startChar": 1,
+        "endLine": 319,
+        "endChar": 80
+      },
+      "revId": "1def19ab76890a3bc0724444397d28527c8dac2d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "491fd1e3_22b045ca",
+        "filename": "common/math.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 1120458
+      },
+      "writtenOn": "2024-05-24T21:58:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6a1f9012_f68d02b0",
       "range": {
         "startLine": 318,
         "startChar": 1,
