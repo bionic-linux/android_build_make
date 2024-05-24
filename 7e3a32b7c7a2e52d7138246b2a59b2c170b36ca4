@@ -3,6 +3,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b768ad33_ced0e253",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1889140
+      },
+      "writtenOn": "2024-05-24T23:35:13Z",
+      "side": 1,
+      "message": "are we planning to submit this once that all the presubmit errors are fixed?",
+      "revId": "7e3a32b7c7a2e52d7138246b2a59b2c170b36ca4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6224fb0c_2afe5a0a",
         "filename": "tools/check_elf_file.py",
         "patchSetId": 3
