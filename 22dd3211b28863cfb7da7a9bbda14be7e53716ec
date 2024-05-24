@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "812c57e5_09bdc9fa",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1958315
+      },
+      "writtenOn": "2024-05-24T11:17:36Z",
+      "side": 1,
+      "message": "Not related to this CL: I would expect the actual key path to be configured in `INTERNAL_PVMFW_EMBEDDED_AVBKEY`, and then the value would flow to Android.bp. That way, if I want to use a different key, I only need to specify a different key path here, and the Makefile will embed my key and resign the system.",
+      "revId": "22dd3211b28863cfb7da7a9bbda14be7e53716ec",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
