@@ -10,6 +10,7 @@
 # - LOCAL_BUILT_MODULE
 # - LOCAL_IS_HOST_MODULE
 # - LOCAL_MODULE_CLASS
+# - TARGET_MAX_PAGE_SIZE_SUPPORTED
 # - intermediates
 # - my_installed_module_stem
 # - my_prebuilt_src_file
@@ -26,6 +27,7 @@ $(check_elf_files_stamp): PRIVATE_SYSTEM_SHARED_LIBRARIES := $(my_system_shared_
 # In addition to $(my_check_elf_file_shared_lib_files), some file paths are
 # added by `resolve-shared-libs-for-elf-file-check` from `core/main.mk`.
 $(check_elf_files_stamp): PRIVATE_SHARED_LIBRARY_FILES := $(my_check_elf_file_shared_lib_files)
+$(check_elf_files_stamp): PRIVATE_MAX_PAGE_SIZE_SUPPORTED := $(TARGET_MAX_PAGE_SIZE_SUPPORTED)
 $(check_elf_files_stamp): $(my_prebuilt_src_file) $(my_check_elf_file_shared_lib_files) $(CHECK_ELF_FILE) $(LLVM_READOBJ)
 	@echo Check prebuilt ELF binary: $<
 	$(hide) mkdir -p $(dir $@)
@@ -33,6 +35,7 @@ $(check_elf_files_stamp): $(my_prebuilt_src_file) $(my_check_elf_file_shared_lib
 	$(hide) $(CHECK_ELF_FILE) \
 	    --skip-bad-elf-magic \
 	    --skip-unknown-elf-machine \
+	    --max-page-size=$(PRIVATE_MAX_PAGE_SIZE_SUPPORTED) \
 	    $(if $(PRIVATE_SONAME),--soname $(PRIVATE_SONAME)) \
 	    $(foreach l,$(PRIVATE_SHARED_LIBRARY_FILES),--shared-lib $(l)) \
 	    $(foreach l,$(PRIVATE_SYSTEM_SHARED_LIBRARIES),--system-shared-lib $(l)) \
