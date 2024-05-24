@@ -3,6 +3,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "6224fb0c_2afe5a0a",
+        "filename": "tools/check_elf_file.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 1120458
+      },
+      "writtenOn": "2024-05-24T21:30:23Z",
+      "side": 1,
+      "message": "oh - also I\u0027ll add it in a later patchset - these loops (and other existing parsing logic here) should have \u0027else\u0027 case. If they do not break, they\u0027ll eat up the whole file...",
+      "range": {
+        "startLine": 236,
+        "startChar": 0,
+        "endLine": 236,
+        "endChar": 29
+      },
+      "revId": "7e3a32b7c7a2e52d7138246b2a59b2c170b36ca4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "67d41299_811cbbdb",
         "filename": "tools/check_elf_file.py",
         "patchSetId": 3
