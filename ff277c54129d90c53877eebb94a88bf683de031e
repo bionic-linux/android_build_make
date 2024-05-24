@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9cb19227_ad8d5b3c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002751
+      },
+      "writtenOn": "2024-05-24T23:16:01Z",
+      "side": 1,
+      "message": "This was added in ag/278778 to be used directly from the command line.  No objection to removing it, but it may turn out someone is using it.",
+      "revId": "ff277c54129d90c53877eebb94a88bf683de031e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
