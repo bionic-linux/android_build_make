@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "67d41299_811cbbdb",
+        "filename": "tools/check_elf_file.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 332,
+      "author": {
+        "id": 1120458
+      },
+      "writtenOn": "2024-05-24T21:24:08Z",
+      "side": 1,
+      "message": "Hsin-Yi, if this is empty, we should probably consider it an error, because parsing logic could get out of date? Are there tests for this?",
+      "range": {
+        "startLine": 332,
+        "startChar": 0,
+        "endLine": 332,
+        "endChar": 64
+      },
+      "revId": "7e3a32b7c7a2e52d7138246b2a59b2c170b36ca4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
