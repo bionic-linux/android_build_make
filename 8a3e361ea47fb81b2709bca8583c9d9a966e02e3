@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "43293904_513eb38a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1970380
+      },
+      "writtenOn": "2024-05-24T14:10:23Z",
+      "side": 1,
+      "message": "Kelvin, Can you please help to set Presubmit Bit ?",
+      "revId": "8a3e361ea47fb81b2709bca8583c9d9a966e02e3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
