@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d0ff34de_765568f9",
+        "filename": "envsetup.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 602,
+      "author": {
+        "id": 1002751
+      },
+      "writtenOn": "2024-05-24T23:20:59Z",
+      "side": 1,
+      "message": "Duplicate \"list of\" in this sentence",
+      "range": {
+        "startLine": 602,
+        "startChar": 58,
+        "endLine": 602,
+        "endChar": 65
+      },
+      "revId": "d87e9cb85b63ceacd4ae833eb1f209af109becd8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
