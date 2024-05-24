@@ -16,6 +16,24 @@
       "message": "should we think long term and try to fork this product file for automotive? or you think this is the last time we\u0027re gonna have auto specific changes?",
       "revId": "b25c2dfc611139f6e46f5ad71359b20f5c0bc365",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d3becace_b0b0beac",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1600736
+      },
+      "writtenOn": "2024-05-24T12:52:24Z",
+      "side": 1,
+      "message": "I talked to the build team, their recommendation is to make a base product file and that doesn\u0027t have the config file so auto can use that.\n\nalso, I still think a better solution for this problem is removing the config file as auto (and probably other form factors too) is not ready for this migration.",
+      "parentUuid": "e6cf3eaa_cb7a560b",
+      "revId": "b25c2dfc611139f6e46f5ad71359b20f5c0bc365",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
