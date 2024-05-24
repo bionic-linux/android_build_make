@@ -39,6 +39,30 @@
       },
       "revId": "bd43a49fb7e5de828104d0e9187f660cf39a09ba",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "91170631_5387258f",
+        "filename": "core/android_soong_config_vars.mk",
+        "patchSetId": 8
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1958315
+      },
+      "writtenOn": "2024-05-24T09:23:23Z",
+      "side": 1,
+      "message": "Done. Thanks for reviewing this during you vacation :) Updated the comment.",
+      "parentUuid": "b5396276_53460348",
+      "range": {
+        "startLine": 104,
+        "startChar": 0,
+        "endLine": 105,
+        "endChar": 90
+      },
+      "revId": "bd43a49fb7e5de828104d0e9187f660cf39a09ba",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
