@@ -16,6 +16,23 @@
       "message": "Kelvin, Can you please help to set Presubmit Bit ?",
       "revId": "8a3e361ea47fb81b2709bca8583c9d9a966e02e3",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e42ac899_5d9d4361",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1970380
+      },
+      "writtenOn": "2024-05-24T16:53:26Z",
+      "side": 1,
+      "message": "Kelvin, please set Review enforcement bit as well, we got QR+1",
+      "revId": "8a3e361ea47fb81b2709bca8583c9d9a966e02e3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
