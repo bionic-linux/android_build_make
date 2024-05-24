@@ -3,6 +3,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f5568ca5_dc828b59",
+        "filename": "ci/build_test_suites.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1480888
+      },
+      "writtenOn": "2024-05-24T22:04:08Z",
+      "side": 1,
+      "message": "```\nbuild_context \u003d load_build_context()\n\ndef build_test_suites(...):\n  try:\n    do_build(build_context, ...):\n  except ...\n    ...\n\n\ndef do_build(build_context, ...):\n\n  if build_context.enable...:\n    build_everything(...)\n    return\n\n  build_optimized(...)\n```",
+      "range": {
+        "startLine": 59,
+        "startChar": 0,
+        "endLine": 75,
+        "endChar": 24
+      },
+      "revId": "07b31e6c061384ba01cf5040739173d61e16765c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f8c8472f_70400719",
         "filename": "ci/optimized_targets.py",
         "patchSetId": 2
