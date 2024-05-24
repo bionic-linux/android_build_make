@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "def64420_fb015783",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-05-24T22:44:27Z",
+      "side": 1,
+      "message": "Following up on the discussion from last year.  Here\u0027s a prototype of a new lunch command. It doesn\u0027t quite follow the doc, but I think it\u0027s clean.\n\nI think what we should do is try this out for a little while, and if people like it then delete the old lunch command.\n\nFeatures:\n- The curated menu is gone\n- New --list-... parameters as a shortcut for get_build_var all_named_products, etc.\n\nDifferences from the doc:\n- It requires a TARGET_PRODUCT. Doesn\u0027t try to default to aosp_arm.\n- Still supports the old product-release-variant format. The more I think about this I don\u0027t want to go update every script on the planet that uses the old format.\n\nNot done yet:\n- --list-releases\n- tab completion (I never use this because it takes too long to populate the list)",
+      "revId": "a577e8755c671dde475b6313337fbc709bbbf84c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
