@@ -56,6 +56,52 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "65158b6a_954b2f59",
+        "filename": "tools/check_elf_file.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2024-05-27T03:25:59Z",
+      "side": 1,
+      "message": "```suggestion\n    cmd \u003d [llvm_readobj, \u0027--program-headers\u0027, \u0027--dynamic-table\u0027,\n           \u0027--dyn-symbols\u0027, elf_file_path]\n```\n\nPlease keep each line shorter than 80 characters.",
+      "range": {
+        "startLine": 198,
+        "startChar": 0,
+        "endLine": 198,
+        "endChar": 96
+      },
+      "revId": "7e3a32b7c7a2e52d7138246b2a59b2c170b36ca4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b201b03c_4f795308",
+        "filename": "tools/check_elf_file.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2024-05-27T03:25:59Z",
+      "side": 1,
+      "message": "Remove this line.",
+      "range": {
+        "startLine": 231,
+        "startChar": 6,
+        "endLine": 231,
+        "endChar": 31
+      },
+      "revId": "7e3a32b7c7a2e52d7138246b2a59b2c170b36ca4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6224fb0c_2afe5a0a",
         "filename": "tools/check_elf_file.py",
         "patchSetId": 3
@@ -72,6 +118,75 @@
         "startChar": 0,
         "endLine": 236,
         "endChar": 29
+      },
+      "revId": "7e3a32b7c7a2e52d7138246b2a59b2c170b36ca4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "18b2bf91_41360cd0",
+        "filename": "tools/check_elf_file.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2024-05-27T03:25:59Z",
+      "side": 1,
+      "message": "two spaces",
+      "range": {
+        "startLine": 245,
+        "startChar": 12,
+        "endLine": 245,
+        "endChar": 16
+      },
+      "revId": "7e3a32b7c7a2e52d7138246b2a59b2c170b36ca4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9ce983a7_2693ed64",
+        "filename": "tools/check_elf_file.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2024-05-27T03:25:59Z",
+      "side": 1,
+      "message": "```suggestion\n      if line \u003d\u003d cls._PROGRAM_HEADERS_END_PATTERN:\n        break\n```",
+      "range": {
+        "startLine": 256,
+        "startChar": 0,
+        "endLine": 256,
+        "endChar": 56
+      },
+      "revId": "7e3a32b7c7a2e52d7138246b2a59b2c170b36ca4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c0a11368_68fd354b",
+        "filename": "tools/check_elf_file.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2024-05-27T03:25:59Z",
+      "side": 1,
+      "message": "Should this line be stripped?",
+      "range": {
+        "startLine": 256,
+        "startChar": 9,
+        "endLine": 256,
+        "endChar": 13
       },
       "revId": "7e3a32b7c7a2e52d7138246b2a59b2c170b36ca4",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
@@ -102,6 +217,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "38b77a26_15f2eb91",
+        "filename": "tools/check_elf_file.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 332,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2024-05-27T03:25:59Z",
+      "side": 1,
+      "message": "There is no test. It\u0027s ok to change the logic as long as presubmit passes.",
+      "parentUuid": "67d41299_811cbbdb",
+      "range": {
+        "startLine": 332,
+        "startChar": 0,
+        "endLine": 332,
+        "endChar": 64
+      },
+      "revId": "7e3a32b7c7a2e52d7138246b2a59b2c170b36ca4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "900b16d0_34e18ea5",
         "filename": "tools/check_elf_file.py",
         "patchSetId": 3
@@ -118,6 +257,98 @@
         "startChar": 0,
         "endLine": 351,
         "endChar": 12
+      },
+      "revId": "7e3a32b7c7a2e52d7138246b2a59b2c170b36ca4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "703f7f2d_93c011c5",
+        "filename": "tools/check_elf_file.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 486,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2024-05-27T03:25:59Z",
+      "side": 1,
+      "message": "```suggestion\n    error \u003d False\n```",
+      "range": {
+        "startLine": 486,
+        "startChar": 0,
+        "endLine": 486,
+        "endChar": 15
+      },
+      "revId": "7e3a32b7c7a2e52d7138246b2a59b2c170b36ca4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aa126d03_50d5f9a8",
+        "filename": "tools/check_elf_file.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 490,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2024-05-27T03:25:59Z",
+      "side": 1,
+      "message": "```suggestion\n        self._error(f\u0027Load segment has alignment {alignment} \u0027\n                    f\u0027but {max_page_size} required.\u0027)\n```",
+      "range": {
+        "startLine": 490,
+        "startChar": 0,
+        "endLine": 490,
+        "endChar": 92
+      },
+      "revId": "7e3a32b7c7a2e52d7138246b2a59b2c170b36ca4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5e12c004_b04fbf59",
+        "filename": "tools/check_elf_file.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 493,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2024-05-27T03:25:59Z",
+      "side": 1,
+      "message": "These messages are repeated for every misaligned segment.\nHow about `break` here?",
+      "range": {
+        "startLine": 493,
+        "startChar": 8,
+        "endLine": 493,
+        "endChar": 19
+      },
+      "revId": "7e3a32b7c7a2e52d7138246b2a59b2c170b36ca4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7c024d1d_b6b101d6",
+        "filename": "tools/check_elf_file.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 495,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2024-05-27T03:25:59Z",
+      "side": 1,
+      "message": "What are the errors?",
+      "range": {
+        "startLine": 495,
+        "startChar": 47,
+        "endLine": 495,
+        "endChar": 53
       },
       "revId": "7e3a32b7c7a2e52d7138246b2a59b2c170b36ca4",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
