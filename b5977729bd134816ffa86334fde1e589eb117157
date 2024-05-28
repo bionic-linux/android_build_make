@@ -70,6 +70,24 @@
       "parentUuid": "487f84e8_210712c4",
       "revId": "b5977729bd134816ffa86334fde1e589eb117157",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e82ee9ce_c44c394a",
+        "filename": "target/product/generic_system.mk",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2024-05-28T19:36:19Z",
+      "side": 1,
+      "message": "To add on, `AB_OTA_UPDATER` and `AB_OTA_PARTITIONS` are critical for device\u0027s OTA functionality. If anything goes wrong while I rename these variables, OTA would break, resulting user having to flash forward on their device. Given the risk involved and amount of effort required(must involve every product owner on git_main to approve each individual CLs) to do the rename, can we move forward with this low risk change first?",
+      "parentUuid": "4b5235c8_ab46e68d",
+      "revId": "b5977729bd134816ffa86334fde1e589eb117157",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
