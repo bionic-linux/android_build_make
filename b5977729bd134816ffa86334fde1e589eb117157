@@ -16,6 +16,24 @@
       "message": "Can these be changed to PRODUCT_ variables, with all of the inheritance handling. This is the only loose make variable defined by this file.",
       "revId": "b5977729bd134816ffa86334fde1e589eb117157",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9b543784_19cb9e7f",
+        "filename": "target/product/generic_system.mk",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2024-05-28T19:24:13Z",
+      "side": 1,
+      "message": "\u003e Can these be changed to PRODUCT_ variables, with all of the inheritance handling.\n\nAll product targets are using `AB_OTA_UPDATER` variable now. This would be a large scale change. Maybe save that for a future project?",
+      "parentUuid": "3173c8d2_18e6f969",
+      "revId": "b5977729bd134816ffa86334fde1e589eb117157",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
