@@ -34,6 +34,24 @@
       "parentUuid": "27518509_096a55a2",
       "revId": "773c8ba3eb5d168d87cfaba9593c34817a8605d4",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0ca12401_4c168fe7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1318142
+      },
+      "writtenOn": "2024-05-28T22:08:01Z",
+      "side": 1,
+      "message": "I don\u0027t think use_devkey is the right way of doing it and you might want to have something like:\n\napex {\n    name: \u003cyour apex\u003e_without_dev_key,\n    certificate: ...\n} \n\noverride_apex {\n    name: \u003cyour_apex\u003e,\n    base: \u003cyour apex\u003e_without_dev_key,\n    certificate:..\n    key:  ...\n}\n\nso the same apex signed with different keys can be used in their corresponding cases and you don\u0027t have to check if dev keys exist or not. This also helps avoid if/else conditions in product config .mk files.",
+      "parentUuid": "708c293d_91244c8d",
+      "revId": "773c8ba3eb5d168d87cfaba9593c34817a8605d4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
