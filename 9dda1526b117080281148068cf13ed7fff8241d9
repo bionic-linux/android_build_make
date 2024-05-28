@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4559460a_a6d9779b",
+        "filename": "tools/aconfig/aconfig_storage_read_api/srcs/android/aconfig/storage/AconfigStorageReadAPI.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1064003
+      },
+      "writtenOn": "2024-05-28T18:01:58Z",
+      "side": 1,
+      "message": "Is there a prototype/representative follow-up change that shows how the various flag-codegen targets will use this?",
+      "range": {
+        "startLine": 32,
+        "startChar": 13,
+        "endLine": 32,
+        "endChar": 34
+      },
+      "revId": "9dda1526b117080281148068cf13ed7fff8241d9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f526391e_936737e4",
+        "filename": "tools/aconfig/aconfig_storage_read_api/srcs/android/aconfig/storage/AconfigStorageReadAPI.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1064003
+      },
+      "writtenOn": "2024-05-28T18:01:58Z",
+      "side": 1,
+      "message": "I\u0027m wondering at what point we would consider making this a system API? As it stands, every downstream target will need to statically link this support Java wrapper *and* the underlying JNI libraries.  Any reason not to have a fairly generic framework/system/mainline API that implements this?",
+      "range": {
+        "startLine": 86,
+        "startChar": 28,
+        "endLine": 86,
+        "endChar": 61
+      },
+      "revId": "9dda1526b117080281148068cf13ed7fff8241d9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
