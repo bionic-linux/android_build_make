@@ -125,6 +125,24 @@
       "message": "I don\u0027t feel strongly about this, but I would say it\u0027s not worth causing churn for a new format. Especially when the only difference is spaces instead of dashes.",
       "revId": "d87e9cb85b63ceacd4ae833eb1f209af109becd8",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e59f4ee8_8d803648",
+        "filename": "envsetup.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 647,
+      "author": {
+        "id": 1120458
+      },
+      "writtenOn": "2024-05-28T17:25:52Z",
+      "side": 1,
+      "message": "This was my old position on the doc, but I don\u0027t feel strongly either. Noting also - this introduces a default, and I think this is great, though a default could also be introduces without also introducing space-delimiting.\n\n```\nInvalid lunch combo: aosp_cf_x86_64_phone_pgagnostic\nValid combos must be of the form \u003cproduct\u003e-\u003crelease\u003e-\u003cvariant\u003e\n```",
+      "parentUuid": "e874c6e1_17958f02",
+      "revId": "d87e9cb85b63ceacd4ae833eb1f209af109becd8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
