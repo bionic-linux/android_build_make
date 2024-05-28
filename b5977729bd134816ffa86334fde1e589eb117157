@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3173c8d2_18e6f969",
+        "filename": "target/product/generic_system.mk",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-05-28T18:35:17Z",
+      "side": 1,
+      "message": "Can these be changed to PRODUCT_ variables, with all of the inheritance handling. This is the only loose make variable defined by this file.",
+      "revId": "b5977729bd134816ffa86334fde1e589eb117157",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
