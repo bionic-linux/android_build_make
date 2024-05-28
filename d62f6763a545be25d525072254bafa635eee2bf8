@@ -20,6 +20,23 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "e88431fd_ba88f5d5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1246512
+      },
+      "writtenOn": "2024-05-28T15:09:04Z",
+      "side": 1,
+      "message": "Friendly ping, this is the only commit that is lacking review related to b/279404977",
+      "revId": "d62f6763a545be25d525072254bafa635eee2bf8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "0b453e54_f28da4d4",
         "filename": "core/artifact_path_requirements.mk",
         "patchSetId": 6
