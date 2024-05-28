@@ -16,6 +16,24 @@
       "message": "question for owners, is there a common mk file shared between all architectures to include the proposed logic?",
       "revId": "773c8ba3eb5d168d87cfaba9593c34817a8605d4",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "708c293d_91244c8d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1043093
+      },
+      "writtenOn": "2024-05-28T21:52:43Z",
+      "side": 1,
+      "message": "Or is there a common `device.mk` file for aosp targets where we can do the following:\n```\n-include vendor/widevine/libwvdrmengine/apex/device/device.mk\n```",
+      "parentUuid": "27518509_096a55a2",
+      "revId": "773c8ba3eb5d168d87cfaba9593c34817a8605d4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
