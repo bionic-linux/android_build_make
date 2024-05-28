@@ -106,6 +106,24 @@
       "parentUuid": "e82ee9ce_c44c394a",
       "revId": "b5977729bd134816ffa86334fde1e589eb117157",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "594f9a28_e39bb608",
+        "filename": "target/product/generic_system.mk",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-05-28T20:03:43Z",
+      "side": 1,
+      "message": "The reason I\u0027m asking is not about the naming. It\u0027s because of the different semantics of including the product config files compared to boardconfig.  When products do $(call inherit-product ...), the include is after the end of the makefile, in order of the sorted filenames.  So ?\u003d here is inherently fragile, and different from everything else.\n\nSo I think it\u0027s really hard to know that this change is actually correct, and will stay correct.",
+      "parentUuid": "5c70b7d9_88c64fa6",
+      "revId": "b5977729bd134816ffa86334fde1e589eb117157",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
