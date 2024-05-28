@@ -34,6 +34,24 @@
       "parentUuid": "3173c8d2_18e6f969",
       "revId": "b5977729bd134816ffa86334fde1e589eb117157",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "487f84e8_210712c4",
+        "filename": "target/product/generic_system.mk",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-05-28T19:25:10Z",
+      "side": 1,
+      "message": "\"Future project\" means never going to happen?",
+      "parentUuid": "9b543784_19cb9e7f",
+      "revId": "b5977729bd134816ffa86334fde1e589eb117157",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
