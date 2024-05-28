@@ -1,0 +1,200 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "73277968_181481c3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2066167
+      },
+      "writtenOn": "2024-05-28T10:30:46Z",
+      "side": 1,
+      "message": "Thank you!",
+      "revId": "a80dd80bc0badddf8e2814ac864688135132f1c2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1c837732_5629b060",
+        "filename": "tools/ide_query/cc_analyzer_proto/cc_analyzer.proto",
+        "patchSetId": 6
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 2066167
+      },
+      "writtenOn": "2024-05-28T10:30:46Z",
+      "side": 1,
+      "message": "(opt) Searching comp_db_path in code search gives something about compensation, consider renaming it.",
+      "range": {
+        "startLine": 43,
+        "startChar": 9,
+        "endLine": 43,
+        "endChar": 21
+      },
+      "revId": "a80dd80bc0badddf8e2814ac864688135132f1c2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "546186dc_5c0b1c38",
+        "filename": "tools/ide_query/cc_analyzer_proto/cc_analyzer.proto",
+        "patchSetId": 6
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 2066167
+      },
+      "writtenOn": "2024-05-28T10:30:46Z",
+      "side": 1,
+      "message": "Please check: IdeAnalysis does not have build_artifact_root",
+      "range": {
+        "startLine": 64,
+        "startChar": 34,
+        "endLine": 64,
+        "endChar": 65
+      },
+      "revId": "a80dd80bc0badddf8e2814ac864688135132f1c2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d93186d1_7b59775a",
+        "filename": "tools/ide_query/cc_analyzer_proto/cc_analyzer.proto",
+        "patchSetId": 6
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 2066167
+      },
+      "writtenOn": "2024-05-28T10:30:46Z",
+      "side": 1,
+      "message": "(opt) compiler_args",
+      "range": {
+        "startLine": 84,
+        "startChar": 18,
+        "endLine": 84,
+        "endChar": 36
+      },
+      "revId": "a80dd80bc0badddf8e2814ac864688135132f1c2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "87250732_e07d3db9",
+        "filename": "tools/ide_query/ide_query.go",
+        "patchSetId": 6
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 2066167
+      },
+      "writtenOn": "2024-05-28T10:30:46Z",
+      "side": 1,
+      "message": "(nit) you can use direct assignment.",
+      "range": {
+        "startLine": 131,
+        "startChar": 1,
+        "endLine": 132,
+        "endChar": 50
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "c1615717_76de1723",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "tools/ide_query/ide_query.go",
+              "range": {
+                "startLine": 131,
+                "startChar": 0,
+                "endLine": 133,
+                "endChar": 0
+              },
+              "replacement": "\tanalysis.Results \u003d results\n\tanalysis.Units \u003d units\n"
+            }
+          ]
+        }
+      ],
+      "revId": "a80dd80bc0badddf8e2814ac864688135132f1c2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8d0fbcae_ad3884c7",
+        "filename": "tools/ide_query/ide_query.go",
+        "patchSetId": 6
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 2066167
+      },
+      "writtenOn": "2024-05-28T10:30:46Z",
+      "side": 1,
+      "message": "(opt) javaFileToModuleMap",
+      "range": {
+        "startLine": 290,
+        "startChar": 82,
+        "endLine": 290,
+        "endChar": 92
+      },
+      "revId": "a80dd80bc0badddf8e2814ac864688135132f1c2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6819334e_0a66ed48",
+        "filename": "tools/ide_query/ide_query.go",
+        "patchSetId": 6
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 2066167
+      },
+      "writtenOn": "2024-05-28T10:30:46Z",
+      "side": 1,
+      "message": "(opt) if the outDir ends with / then gen files will be silently ignored. To be on the safe side, I would check that outDir does not end with / before adding it.\n\nFeel free to ignore if this somehow ensured on the higher levels.",
+      "range": {
+        "startLine": 361,
+        "startChar": 38,
+        "endLine": 361,
+        "endChar": 48
+      },
+      "revId": "a80dd80bc0badddf8e2814ac864688135132f1c2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fb373bcc_b76f26d3",
+        "filename": "tools/ide_query/ide_query.go",
+        "patchSetId": 6
+      },
+      "lineNbr": 407,
+      "author": {
+        "id": 2066167
+      },
+      "writtenOn": "2024-05-28T10:30:46Z",
+      "side": 1,
+      "message": "Please add names to return parameters and also use these names in getJavaTargets, getJavaInputs. This part is a bit confusing.",
+      "range": {
+        "startLine": 407,
+        "startChar": 51,
+        "endLine": 407,
+        "endChar": 104
+      },
+      "revId": "a80dd80bc0badddf8e2814ac864688135132f1c2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
