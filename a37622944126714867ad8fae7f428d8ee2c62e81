@@ -16,6 +16,23 @@
       "message": "Sorry I missed the lint errors here, I will correct and upload a new patchset.",
       "revId": "a37622944126714867ad8fae7f428d8ee2c62e81",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2a8ac31c_0b29a53a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1246512
+      },
+      "writtenOn": "2024-05-29T14:13:03Z",
+      "side": 1,
+      "message": "LOCAL_SOONG_OVERRIDEN_MANIFEST_PACKAGE_NAME should be LOCAL_SOONG_OVERRIDDEN_MANIFEST_PACKAGE_NAME",
+      "revId": "a37622944126714867ad8fae7f428d8ee2c62e81",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
