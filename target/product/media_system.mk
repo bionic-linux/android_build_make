@@ -52,8 +52,8 @@ PRODUCT_SYSTEM_SERVER_JARS := \
     com.android.location.provider \
     services
 
-PRODUCT_COPY_FILES += \
-    system/core/rootdir/etc/public.libraries.android.txt:system/etc/public.libraries.txt
+# PRODUCT_COPY_FILES += \
+#     system/core/rootdir/etc/public.libraries.android.txt:system/etc/public.libraries.txt
 
 # Enable boot.oat filtering of compiled classes to reduce boot.oat size. b/28026683
 PRODUCT_COPY_FILES += $(call add-to-product-copy-files-if-exists,\

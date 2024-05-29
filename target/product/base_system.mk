@@ -248,6 +248,7 @@ PRODUCT_PACKAGES += \
     printflags \
     privapp-permissions-platform.xml \
     prng_seeder \
+    public.libraries.android.txt \
     recovery-persist \
     resize2fs \
     rss_hwm_reset \
