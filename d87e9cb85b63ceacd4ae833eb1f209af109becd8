@@ -82,6 +82,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "230ba938_821c71a8",
+        "filename": "envsetup.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 575,
+      "author": {
+        "id": 1120458
+      },
+      "writtenOn": "2024-05-29T20:24:12Z",
+      "side": 1,
+      "message": "Commented the same thing on that doc. Local build speed doesn\u0027t really matter if you\u0027re giving up even more parity to how real devices behave.",
+      "parentUuid": "fc0f56b2_940e88f0",
+      "range": {
+        "startLine": 575,
+        "startChar": 16,
+        "endLine": 575,
+        "endChar": 51
+      },
+      "revId": "d87e9cb85b63ceacd4ae833eb1f209af109becd8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "67b3f7a7_d4d635f3",
