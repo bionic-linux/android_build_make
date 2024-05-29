@@ -2936,8 +2936,8 @@ appcompat-files = \
   $(ART_VERIDEX_APPCOMPAT_SCRIPT) \
   $(INTERNAL_PLATFORM_HIDDENAPI_FLAGS) \
   $(HOST_OUT_EXECUTABLES)/veridex \
-  $(TARGET_OUT_COMMON_INTERMEDIATES)/PACKAGING/core_dex_intermediates/classes.dex \
-  $(TARGET_OUT_COMMON_INTERMEDIATES)/PACKAGING/oahl_dex_intermediates/classes.dex
+  $(PRODUCT_OUT)/obj/ETC/system_stub_dex_intermediates/system_stub_dex \
+  $(PRODUCT_OUT)/obj/ETC/public_oahl_stub_dex_intermediates/public_oahl_stub_dex
 else
 appcompat-header =
 run-appcompat =
