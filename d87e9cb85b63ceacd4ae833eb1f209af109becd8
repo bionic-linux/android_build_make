@@ -20,6 +20,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "457bb554_b1a5356a",
+        "filename": "envsetup.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 571,
+      "author": {
+        "id": 1096713
+      },
+      "writtenOn": "2024-05-29T20:07:48Z",
+      "side": 1,
+      "message": "I\u0027m not an expert in how these things are expressed, but would something like:\n\n```\necho \"Usage: lunch TARGET_PRODUCT [TARGET_RELEASE [TARGET_BUILD_VARIANT]]\"\n```\n\nmake sense?\n\nFrom my reading, I can\u0027t do \"lunch oriole eng\", even though naively I might expect that could work, and would end up as \"oriole-trunk_staging-eng\".\n\nOr am I misreading the current usage, and it\u0027s implied that TARGET_RELEASE is required if you chose to use TARGET_BUILD_VARIANT?\n\nAlternatively, with a limited and fixed number of VARIANTs which don\u0027t intersect with RELEASEs, we could make the parsing more robust to allow that.  Although likely not worth the work.",
+      "revId": "d87e9cb85b63ceacd4ae833eb1f209af109becd8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "37a106e0_27d6cd7d",
         "filename": "envsetup.sh",
         "patchSetId": 2
@@ -36,6 +53,53 @@
         "startChar": 16,
         "endLine": 575,
         "endChar": 51
+      },
+      "revId": "d87e9cb85b63ceacd4ae833eb1f209af109becd8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fc0f56b2_940e88f0",
+        "filename": "envsetup.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 575,
+      "author": {
+        "id": 1096713
+      },
+      "writtenOn": "2024-05-29T20:07:48Z",
+      "side": 1,
+      "message": "I almost exclusively use \"userdebug\".  Having said that, I think there\u0027s a semi-official push to prefer \"eng\", see go/eng-vs-userdebug .\n\nI have a number of opinions there (not a fan of encouraging SWEs to ignore performance for the end-user by default, in order to speed up their own personal development cycle), but until that position/policy is reversed, I\u0027m inclined to think \"lunch\" default should probably follow that policy.",
+      "parentUuid": "37a106e0_27d6cd7d",
+      "range": {
+        "startLine": 575,
+        "startChar": 16,
+        "endLine": 575,
+        "endChar": 51
+      },
+      "revId": "d87e9cb85b63ceacd4ae833eb1f209af109becd8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "67b3f7a7_d4d635f3",
+        "filename": "envsetup.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 580,
+      "author": {
+        "id": 1096713
+      },
+      "writtenOn": "2024-05-29T20:07:48Z",
+      "side": 1,
+      "message": "nit: \"Choose\"",
+      "range": {
+        "startLine": 580,
+        "startChar": 16,
+        "endLine": 580,
+        "endChar": 21
       },
       "revId": "d87e9cb85b63ceacd4ae833eb1f209af109becd8",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
@@ -83,6 +147,46 @@
         "endLine": 619,
         "endChar": 20
       },
+      "revId": "d87e9cb85b63ceacd4ae833eb1f209af109becd8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e9bedfda_bb5f1917",
+        "filename": "envsetup.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 619,
+      "author": {
+        "id": 1096713
+      },
+      "writtenOn": "2024-05-29T20:07:48Z",
+      "side": 1,
+      "message": "Do we want `echo TODO $1` or `echo TODO $1 $2` instead?\n\nIf I try `lunch --list-releases oriole`, `TODO oriole` seems the least obvious indication that `--list-releases` hasn\u0027t been implemented yet.",
+      "range": {
+        "startLine": 619,
+        "startChar": 0,
+        "endLine": 619,
+        "endChar": 20
+      },
+      "revId": "d87e9cb85b63ceacd4ae833eb1f209af109becd8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "81602f84_56883d93",
+        "filename": "envsetup.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 628,
+      "author": {
+        "id": 1096713
+      },
+      "writtenOn": "2024-05-29T20:07:48Z",
+      "side": 1,
+      "message": "Would we want to consider adding something like `|| ${1:0:1} \u003d \"-\"` to this check?\n\nThat is, seeing if the first argument (we know there has to be at least by the end of this check) starts with a hyphen.  That would catch things like `-help` or `--list-varients` without trying to parse it as a legacy format.\n\nThe user will get an error either way, but maybe it\u0027s more clear if we\u0027re not telling them about lunch combos?\n\nI don\u0027t have a strong opinion.",
       "revId": "d87e9cb85b63ceacd4ae833eb1f209af109becd8",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
@@ -141,6 +245,23 @@
       "side": 1,
       "message": "This was my old position on the doc, but I don\u0027t feel strongly either. Noting also - this introduces a default, and I think this is great, though a default could also be introduces without also introducing space-delimiting.\n\n```\nInvalid lunch combo: aosp_cf_x86_64_phone_pgagnostic\nValid combos must be of the form \u003cproduct\u003e-\u003crelease\u003e-\u003cvariant\u003e\n```",
       "parentUuid": "e874c6e1_17958f02",
+      "revId": "d87e9cb85b63ceacd4ae833eb1f209af109becd8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1f1ebd55_9923773f",
+        "filename": "envsetup.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 654,
+      "author": {
+        "id": 1096713
+      },
+      "writtenOn": "2024-05-29T20:07:48Z",
+      "side": 1,
+      "message": "I\u0027m not good with bash, so apologies for the naive question.  Why do we use `local` here?  It almost seems like we\u0027re reintroducing this variable within a more limited scope, even though we want it to exist outside this `if` block.  It\u0027s especially confusing since `release` and `product` don\u0027t do the same.",
       "revId": "d87e9cb85b63ceacd4ae833eb1f209af109becd8",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
