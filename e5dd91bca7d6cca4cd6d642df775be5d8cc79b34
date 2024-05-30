@@ -16,6 +16,24 @@
       "message": "What\u0027s wrong with the safe version you were using before?",
       "revId": "e5dd91bca7d6cca4cd6d642df775be5d8cc79b34",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f61c2c6c_e88ab448",
+        "filename": "tools/aconfig/aconfig_storage_read_api/srcs/lib.rs",
+        "patchSetId": 12
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1882770
+      },
+      "writtenOn": "2024-05-30T12:22:22Z",
+      "side": 1,
+      "message": "From the rust doc, that version can be five times slower than this one for small strings due to the check if it is indeed a java string. Because this is a JNI interface, the corresponding java function ensures that it is a java string, so we can safely use the faster router. \n\nAconfig flag read is performance critical given how many of them are being used. Almost all java process will use this so we want it to be as lightweight as possible.",
+      "parentUuid": "de099a25_0861a17b",
+      "revId": "e5dd91bca7d6cca4cd6d642df775be5d8cc79b34",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
