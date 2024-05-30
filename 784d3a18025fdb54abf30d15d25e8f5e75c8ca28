@@ -95,6 +95,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "877c39c3_0506d5ad",
+        "filename": "core/check_elf_file.mk",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1120458
+      },
+      "writtenOn": "2024-05-30T21:08:14Z",
+      "side": 1,
+      "message": "Also - if you mean use filter for only one variable, \u0027strip\u0027 is also used elsewhere in this file.",
+      "parentUuid": "a1ebe299_8f0d406f",
+      "range": {
+        "startLine": 35,
+        "startChar": 26,
+        "endLine": 35,
+        "endChar": 51
+      },
+      "revId": "784d3a18025fdb54abf30d15d25e8f5e75c8ca28",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3c44a81e_e03cdeec",
