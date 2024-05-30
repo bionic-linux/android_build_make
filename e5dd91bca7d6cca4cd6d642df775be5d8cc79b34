@@ -34,6 +34,24 @@
       "parentUuid": "de099a25_0861a17b",
       "revId": "e5dd91bca7d6cca4cd6d642df775be5d8cc79b34",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6904151d_26f14967",
+        "filename": "tools/aconfig/aconfig_storage_read_api/srcs/lib.rs",
+        "patchSetId": 12
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1882770
+      },
+      "writtenOn": "2024-05-30T12:24:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f61c2c6c_e88ab448",
+      "revId": "e5dd91bca7d6cca4cd6d642df775be5d8cc79b34",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }

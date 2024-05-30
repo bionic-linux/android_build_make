@@ -48,6 +48,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a6aee805_732baad7",
+        "filename": "tools/aconfig/aconfig_storage_read_api/srcs/android/aconfig/storage/AconfigStorageReadAPI.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1882770
+      },
+      "writtenOn": "2024-05-30T12:24:39Z",
+      "side": 1,
+      "message": "Will work on the codegen in the next cl.",
+      "parentUuid": "724f4a3b_dade2d25",
+      "range": {
+        "startLine": 32,
+        "startChar": 13,
+        "endLine": 32,
+        "endChar": 34
+      },
+      "revId": "9dda1526b117080281148068cf13ed7fff8241d9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f526391e_936737e4",
@@ -133,6 +157,30 @@
       "side": 1,
       "message": "Without seeing how it will be used in the (static) per-aconfig codegen targets, it\u0027s a bit hard to see how we\u0027ll go about ensuring everything works together, e.g., using jarjar to avoid collisions in the bootclasspath, or systemserverclasspath, etc... The existing codegen gets around this as it relies on system APIs (and the associated shared framework lib) for the underlying `DeviceConfig` infra, https://cs.android.com/android/platform/superproject/main/+/main:build/make/tools/aconfig/aconfig/templates/FeatureFlagsImpl.java.template;drc\u003dbc71cd03b92579f31e5a116dc7690a17164174ad;l\u003d8 (note `@SystemApi`). Why couldn\u0027t the rust impl itself exist under such a layer?",
       "parentUuid": "dbf878cb_f9f21f2a",
+      "range": {
+        "startLine": 86,
+        "startChar": 28,
+        "endLine": 86,
+        "endChar": 61
+      },
+      "revId": "9dda1526b117080281148068cf13ed7fff8241d9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ec6c2c3e_cce2480f",
+        "filename": "tools/aconfig/aconfig_storage_read_api/srcs/android/aconfig/storage/AconfigStorageReadAPI.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1882770
+      },
+      "writtenOn": "2024-05-30T12:24:39Z",
+      "side": 1,
+      "message": "It is being debated at the moment about strategy. For now we are inclined towards have each container owns a copy so that each container are free to adapt the storage file format and api.",
+      "parentUuid": "99a6a9b8_29c6edd2",
       "range": {
         "startLine": 86,
         "startChar": 28,
