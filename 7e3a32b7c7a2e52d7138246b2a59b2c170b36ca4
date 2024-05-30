@@ -664,6 +664,30 @@
       },
       "revId": "7e3a32b7c7a2e52d7138246b2a59b2c170b36ca4",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "91a35502_7c918e33",
+        "filename": "tools/check_elf_file.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 495,
+      "author": {
+        "id": 1120458
+      },
+      "writtenOn": "2024-05-30T17:31:48Z",
+      "side": 1,
+      "message": "Yes, but the rest of the code does not do this, so I won\u0027t do this in the same chaneg.",
+      "parentUuid": "13073041_ff2b7b16",
+      "range": {
+        "startLine": 495,
+        "startChar": 47,
+        "endLine": 495,
+        "endChar": 53
+      },
+      "revId": "7e3a32b7c7a2e52d7138246b2a59b2c170b36ca4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
