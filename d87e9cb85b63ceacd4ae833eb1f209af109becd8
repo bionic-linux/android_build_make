@@ -35,6 +35,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8e736cbc_8a859878",
+        "filename": "envsetup.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 571,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-05-30T01:55:27Z",
+      "side": 1,
+      "message": "I think you\u0027re right about how to express what I meant -- the arguments must be given in order. Done.\n\nI think it\u0027d be weird to allow skipping TARGET_RELEASE.  They don\u0027t intersect but that just seems more conceptually complicated.",
+      "parentUuid": "457bb554_b1a5356a",
+      "revId": "d87e9cb85b63ceacd4ae833eb1f209af109becd8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "37a106e0_27d6cd7d",
@@ -108,6 +126,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "a303dfe2_abbcc510",
+        "filename": "envsetup.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 575,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-05-30T01:55:27Z",
+      "side": 1,
+      "message": "Feel free to jump into the go/eng-vs-userdebug debate.  I do think that getting people a **supported** environment optimized development instead of droidfooding is worth it, because it gives us a place to make developer oriented optimizations (e.g. adb runs as root, incremental java builds when we get that).  But you\u0027re right about the lack of testing of eng.",
+      "parentUuid": "37a106e0_27d6cd7d",
+      "range": {
+        "startLine": 575,
+        "startChar": 16,
+        "endLine": 575,
+        "endChar": 51
+      },
+      "revId": "d87e9cb85b63ceacd4ae833eb1f209af109becd8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "67b3f7a7_d4d635f3",
         "filename": "envsetup.sh",
         "patchSetId": 2
@@ -142,6 +184,30 @@
       "writtenOn": "2024-05-24T23:20:59Z",
       "side": 1,
       "message": "Duplicate \"list of\" in this sentence",
+      "range": {
+        "startLine": 602,
+        "startChar": 58,
+        "endLine": 602,
+        "endChar": 65
+      },
+      "revId": "d87e9cb85b63ceacd4ae833eb1f209af109becd8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "04aad49d_4d3cc28b",
+        "filename": "envsetup.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 602,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-05-30T01:55:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d0ff34de_765568f9",
       "range": {
         "startLine": 602,
         "startChar": 58,
@@ -198,6 +264,54 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "260189d5_cfbfb955",
+        "filename": "envsetup.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 619,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-05-30T01:55:27Z",
+      "side": 1,
+      "message": "+1 I\u0027ll do this.",
+      "parentUuid": "5b10cd9f_6286d624",
+      "range": {
+        "startLine": 619,
+        "startChar": 0,
+        "endLine": 619,
+        "endChar": 20
+      },
+      "revId": "d87e9cb85b63ceacd4ae833eb1f209af109becd8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e543fcfd_d797e635",
+        "filename": "envsetup.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 619,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-05-30T01:55:27Z",
+      "side": 1,
+      "message": "I\u0027ll get this command working before I submit this.\n\nIn the next patchset I just uploaded, I pulled these out of lunch into standalone commands for all the reasons standalone commands are better.  Especially, I want the cider people to start using these commands to list the release configs instead of their own interpretation of what\u0027s going on in the build system.",
+      "parentUuid": "e9bedfda_bb5f1917",
+      "range": {
+        "startLine": 619,
+        "startChar": 0,
+        "endLine": 619,
+        "endChar": 20
+      },
+      "revId": "d87e9cb85b63ceacd4ae833eb1f209af109becd8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "81602f84_56883d93",
@@ -228,6 +342,30 @@
       "writtenOn": "2024-05-24T23:21:20Z",
       "side": 1,
       "message": "if variant contains \u0027-\u0027 at this point, should we consider this an error as well, since there will only be 3 parts. Otherwise, you\u0027ll get a weird invalid variant error?",
+      "range": {
+        "startLine": 638,
+        "startChar": 40,
+        "endLine": 638,
+        "endChar": 47
+      },
+      "revId": "d87e9cb85b63ceacd4ae833eb1f209af109becd8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "85bdd66f_03243f8b",
+        "filename": "envsetup.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 638,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-05-30T01:55:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "750da27b_f7ab3c10",
       "range": {
         "startLine": 638,
         "startChar": 40,
@@ -273,6 +411,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fd8268ec_9ed76878",
+        "filename": "envsetup.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 647,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-05-30T01:55:27Z",
+      "side": 1,
+      "message": "I get periodic questions about why it\u0027s not just three parameters, like every other shell command ever. That\u0027s the motivation for changing it.  But I think leaving the one we all have muscle memory for is fine too.\n\nLike Steven said, the defaults are there too now, which could be done with the old syntax.  I guess adding defaults in the old syntax makes sense too. I\u0027ll do that.",
+      "parentUuid": "e59f4ee8_8d803648",
+      "revId": "d87e9cb85b63ceacd4ae833eb1f209af109becd8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1f1ebd55_9923773f",
@@ -286,6 +442,24 @@
       "writtenOn": "2024-05-29T20:07:48Z",
       "side": 1,
       "message": "I\u0027m not good with bash, so apologies for the naive question.  Why do we use `local` here?  It almost seems like we\u0027re reintroducing this variable within a more limited scope, even though we want it to exist outside this `if` block.  It\u0027s especially confusing since `release` and `product` don\u0027t do the same.",
+      "revId": "d87e9cb85b63ceacd4ae833eb1f209af109becd8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "35225835_a07f5de4",
+        "filename": "envsetup.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 654,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-05-30T01:55:27Z",
+      "side": 1,
+      "message": "Based on my understanding local is function scope, so this line is actually unnecessary, just a typo.  It duplicates the one on line 609.\n\nhttps://www.gnu.org/software/bash/manual/bash.html#Shell-Functions\n\nFixed",
+      "parentUuid": "1f1ebd55_9923773f",
       "revId": "d87e9cb85b63ceacd4ae833eb1f209af109becd8",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
