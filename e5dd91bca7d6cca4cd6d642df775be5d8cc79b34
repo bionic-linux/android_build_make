@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "de099a25_0861a17b",
+        "filename": "tools/aconfig/aconfig_storage_read_api/srcs/lib.rs",
+        "patchSetId": 12
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1380243
+      },
+      "writtenOn": "2024-05-30T12:13:55Z",
+      "side": 1,
+      "message": "What\u0027s wrong with the safe version you were using before?",
+      "revId": "e5dd91bca7d6cca4cd6d642df775be5d8cc79b34",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
