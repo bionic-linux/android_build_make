@@ -1,0 +1,91 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0e9f4409_d30732cc",
+        "filename": "core/check_elf_file.mk",
+        "patchSetId": 4
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2024-05-30T03:01:34Z",
+      "side": 1,
+      "message": "```suggestion\n# - TARGET_MAX_PAGE_SIZE_SUPPORTED\n# - TARGET_NO_BIONIC_PAGE_SIZE_MACRO\n```",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 34
+      },
+      "revId": "784d3a18025fdb54abf30d15d25e8f5e75c8ca28",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "90f8ccab_d4e9b7ce",
+        "filename": "core/check_elf_file.mk",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2024-05-30T03:01:34Z",
+      "side": 1,
+      "message": "```\nPRIVATE_MAX_PAGE_SIZE :\u003d $(if $(filter true,$(TARGET_NO_BIONIC_PAGE_SIZE_MACRO)),$(TARGET_MAX_PAGE_SIZE_SUPPORTED))\n```\n\nFollow the pattern of PRIVATE_SONAME at line 23.",
+      "range": {
+        "startLine": 35,
+        "startChar": 26,
+        "endLine": 35,
+        "endChar": 51
+      },
+      "revId": "784d3a18025fdb54abf30d15d25e8f5e75c8ca28",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3c44a81e_e03cdeec",
+        "filename": "tools/check_elf_file.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 495,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2024-05-30T03:01:34Z",
+      "side": 1,
+      "message": "This line is too long.",
+      "range": {
+        "startLine": 495,
+        "startChar": 8,
+        "endLine": 495,
+        "endChar": 97
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "0e967292_68d3e93e",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "tools/check_elf_file.py",
+              "range": {
+                "startLine": 495,
+                "startChar": 0,
+                "endLine": 497,
+                "endChar": 0
+              },
+              "replacement": "        # TODO: instead of exiting immediately, we may want to collect the\n        # errors from all checks and emit them at once\n"
+            }
+          ]
+        }
+      ],
+      "revId": "784d3a18025fdb54abf30d15d25e8f5e75c8ca28",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}

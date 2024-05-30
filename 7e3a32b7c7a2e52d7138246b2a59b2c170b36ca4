@@ -640,6 +640,30 @@
       },
       "revId": "7e3a32b7c7a2e52d7138246b2a59b2c170b36ca4",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "13073041_ff2b7b16",
+        "filename": "tools/check_elf_file.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 495,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2024-05-30T03:01:34Z",
+      "side": 1,
+      "message": "I thought that you wanted to add more checks.\nTo show all errors, we can let every check function return a boolean to the main function instead of exiting.",
+      "parentUuid": "e7d7ca0e_8243784e",
+      "range": {
+        "startLine": 495,
+        "startChar": 47,
+        "endLine": 495,
+        "endChar": 53
+      },
+      "revId": "7e3a32b7c7a2e52d7138246b2a59b2c170b36ca4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
