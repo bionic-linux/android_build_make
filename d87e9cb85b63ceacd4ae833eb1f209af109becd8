@@ -148,6 +148,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "0a63fd50_c3dec045",
+        "filename": "envsetup.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 575,
+      "author": {
+        "id": 1120458
+      },
+      "writtenOn": "2024-05-30T20:59:22Z",
+      "side": 1,
+      "message": "well - eng isn\u0027t as supported. For me - this is going to mean more typing. Idk why performance is getting chosen over correctness. People should know to opt into this choice, so maybe no default value for this? otherwise - they\u0027ll find out in time... or not. 😞",
+      "parentUuid": "a303dfe2_abbcc510",
+      "range": {
+        "startLine": 575,
+        "startChar": 16,
+        "endLine": 575,
+        "endChar": 51
+      },
+      "revId": "d87e9cb85b63ceacd4ae833eb1f209af109becd8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "67b3f7a7_d4d635f3",
