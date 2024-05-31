@@ -16,6 +16,24 @@
       "message": "This check doesn\u0027t apply to cases like this: https://source.corp.google.com/h/googleplex-android/platform/superproject/main/+/main:vendor/google_clockwork/tests/test_surfaces/Android.mk;drc\u003d808b1f5e649c3389426e28830695ea8d637f0c01;l\u003d9\n\nis that what you need? \n\nI thought what you want might be:\n\nifneq (,$(LOCAL_COMPATIBILITY_SUITE))\n  LOCAL_ENFORCE_USES_LIBRARIES :\u003d false\n          \n      \n    \n    \n      \n         \n        \n            \n  ifneq ($(filter wts,$(LOCAL_COMPATIBILITY_SUITE)),)  \n    LOCAL_ENFORCE_USES_LIBRARIES :\u003d true\n  endif\n          \n      \n    \n    \n      \n         \n        \n            \nendif",
       "revId": "81bddcf0865743270dc0e1623e4aabbbf9ed1bd1",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "79ccafd3_08cbed80",
+        "filename": "core/dex_preopt_odex_install.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 1865245
+      },
+      "writtenOn": "2024-05-31T23:41:37Z",
+      "side": 1,
+      "message": "Thanks for the suggestion. You\u0027re right, this change won\u0027t catch when multiple suites are defined in `LOCAL_COMPATIBILITY_SUITE`. Will update.",
+      "parentUuid": "c416c121_4189bb48",
+      "revId": "81bddcf0865743270dc0e1623e4aabbbf9ed1bd1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
