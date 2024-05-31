@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "345023df_38151483",
+        "filename": "core/check_elf_file.mk",
+        "patchSetId": 5
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1120458
+      },
+      "writtenOn": "2024-05-31T03:10:10Z",
+      "side": 1,
+      "message": "Oh, I see, but it drops `--max-page-size`. I could add it inside the conditional (not below because the argument should not be specified if the page size should not be checked, that\u0027s the current implementation in python argparsing. I don\u0027t want to pass the argument), but I don\u0027t think the exact format makes a big difference, and this file already includes checks with strip on L58/L59 which is why I went with this format. If this is not a must have, I would ask you please approve so we can get this in. We may need to change the logic anyway, so please, ty.",
+      "parentUuid": "e8449afc_a382b087",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 5
+      },
+      "revId": "432bd660dc354893dfd190d1e9a3bd7b1150d884",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e145fc47_eac97390",
         "filename": "core/check_elf_file.mk",
         "patchSetId": 5
@@ -37,6 +61,30 @@
       "writtenOn": "2024-05-31T03:05:05Z",
       "side": 1,
       "message": "```suggestion\n\t    $(if $(PRIVATE_MAX_PAGE_SIZE),--max-page-size\u003d$(PRIVATE_MAX_PAGE_SIZE)) \\\n```",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 47,
+        "endChar": 35
+      },
+      "revId": "432bd660dc354893dfd190d1e9a3bd7b1150d884",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5401354e_d6293e3b",
+        "filename": "core/check_elf_file.mk",
+        "patchSetId": 5
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1120458
+      },
+      "writtenOn": "2024-05-31T03:10:10Z",
+      "side": 1,
+      "message": "see other comment",
+      "parentUuid": "e145fc47_eac97390",
       "range": {
         "startLine": 47,
         "startChar": 0,
