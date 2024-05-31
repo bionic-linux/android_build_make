@@ -201,7 +201,9 @@ ifneq (,$(filter $(LOCAL_MODULE_TAGS),tests))
   LOCAL_ENFORCE_USES_LIBRARIES := false
 endif
 ifneq (,$(LOCAL_COMPATIBILITY_SUITE))
-  LOCAL_ENFORCE_USES_LIBRARIES := false
+  ifneq ($(LOCAL_COMPATIBILITY_SUITE),wts)
+    LOCAL_ENFORCE_USES_LIBRARIES := false
+  endif
 endif
 
 # Disable the check if the app contains no java code.
