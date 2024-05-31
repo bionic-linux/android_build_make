@@ -52,6 +52,24 @@
       "parentUuid": "708c293d_91244c8d",
       "revId": "773c8ba3eb5d168d87cfaba9593c34817a8605d4",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c9324440_e481c882",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1043093
+      },
+      "writtenOn": "2024-05-31T17:33:44Z",
+      "side": 1,
+      "message": "We need use_devkey because external partners may use our repo without the dev keys repo.\n\nWe would see errors like in http://b/341134913#comment8:\n```\nFAILED: out/soong/build.gambit.ninja\n...t --globFile out/soong/globs-gambit.ninja -l out/.module_paths/Android.bp.list --available_env out/soong/soong.environment.available --used_env out/soong/soong.environment.used.gambit.build Android.bp\n[Golang][mtkDexPreOptVariantDefaults] vars:userdebug\nWarning: Module \u0027androidx.wear_wear\u0027 depends on non-existing optional_uses_libs \u0027wear-sdk\u0027\nWarning: Module \u0027androidx.wear.compose_compose-foundation\u0027 depends on non-existing optional_uses_libs \u0027wear-sdk\u0027\nerror: vendor/widevine/libwvdrmengine/apex/Android.bp:65:1: \"com.google.android.widevine\" depends on undefined module \"com_google_android_widevine_nonupdatable-image.key\".\nOr did you mean [\"googlecarui.theme.orange-com-android-car-messenger\" \"googlecarui.theme.pink-com-android-car-carlauncher\"]?\nerror: vendor/widevine/libwvdrmengine/apex/Android.bp:65:1: \"com.google.android.widevine\" depends on undefined module \"com_google_android_widevine_nonupdatable-container\".\nOr did you mean [\"googlecarui.theme.orange-com-android-car-messenger\" \"googlecarui.theme.pink-com-android-car-carlauncher\"]?\nfatal errors encountered\nninja: build stopped: subcommand failed.\n11:17:51 soong bootstrap failed with: exit status 1\n\nRBE Stats: down 0 B, up 0 B, \n```",
+      "parentUuid": "0ca12401_4c168fe7",
+      "revId": "773c8ba3eb5d168d87cfaba9593c34817a8605d4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
