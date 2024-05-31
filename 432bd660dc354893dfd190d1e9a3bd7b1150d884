@@ -137,6 +137,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "459b3550_d5ee227c",
+        "filename": "core/check_elf_file.mk",
+        "patchSetId": 5
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1120458
+      },
+      "writtenOn": "2024-05-31T15:41:42Z",
+      "side": 1,
+      "message": "Thank you, I can, but I still don\u0027t understand, why change this form of if-statement to the filter format you suggested? The imprecision of my original comment is because I didn\u0027t look in detail - instead, I am surprised to see one form of an if-statement to be changed to another. What\u0027s the benefit of doing a change like that?\n\nLuckily also the repo team agreed to add python formatting as a hook as well :)",
+      "parentUuid": "b838dee5_e3a54f3b",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 5
+      },
+      "revId": "432bd660dc354893dfd190d1e9a3bd7b1150d884",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e145fc47_eac97390",
