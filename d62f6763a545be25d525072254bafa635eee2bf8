@@ -52,6 +52,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "137f8b0b_8e932052",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2024-05-31T01:23:11Z",
+      "side": 1,
+      "message": "I think we are heading in the opposite direction of this change. PRODUCT_ENFORCE_RRO_TARGETS was a stop gap solution in the early days of Treble. We should have deprecated it earlier, because it is one big piece of chunk left in Make. A number of Make modules are automatically defined by the build system itself. Leaning more on that will only make the transition to Soong and the transition to filesystem modules much harder.\n\nI really hope we don\u0027t extend this part of Make further. It would be great if Sony can implement generate_enforce_rro.mk (and its friends) in Soong.",
+      "parentUuid": "d9a82d55_acea30c9",
+      "revId": "d62f6763a545be25d525072254bafa635eee2bf8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "0b453e54_f28da4d4",
