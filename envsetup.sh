@@ -1151,6 +1151,7 @@ unset qpid
 unset rcgrep
 unset refreshmod
 unset resgrep
+unset run_tool_with_logging
 unset rsgrep
 unset run_tool_with_logging
 unset sepgrep
