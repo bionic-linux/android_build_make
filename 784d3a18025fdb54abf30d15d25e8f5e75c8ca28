@@ -119,6 +119,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5afef9e3_c59f1116",
+        "filename": "core/check_elf_file.mk",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2024-05-31T03:05:05Z",
+      "side": 1,
+      "message": "Is this logic equivalent to my suggestion on patchset 5?",
+      "parentUuid": "877c39c3_0506d5ad",
+      "range": {
+        "startLine": 35,
+        "startChar": 26,
+        "endLine": 35,
+        "endChar": 51
+      },
+      "revId": "784d3a18025fdb54abf30d15d25e8f5e75c8ca28",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3c44a81e_e03cdeec",

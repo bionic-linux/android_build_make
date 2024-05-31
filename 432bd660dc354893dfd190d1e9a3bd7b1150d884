@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e8449afc_a382b087",
+        "filename": "core/check_elf_file.mk",
+        "patchSetId": 5
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2024-05-31T03:05:05Z",
+      "side": 1,
+      "message": "```suggestion\n$(check_elf_files_stamp): PRIVATE_MAX_PAGE_SIZE :\u003d $(if $(filter true,$(TARGET_NO_BIONIC_PAGE_SIZE_MACRO)),$(TARGET_MAX_PAGE_SIZE_SUPPORTED))\n```",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 5
+      },
+      "revId": "432bd660dc354893dfd190d1e9a3bd7b1150d884",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e145fc47_eac97390",
+        "filename": "core/check_elf_file.mk",
+        "patchSetId": 5
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2024-05-31T03:05:05Z",
+      "side": 1,
+      "message": "```suggestion\n\t    $(if $(PRIVATE_MAX_PAGE_SIZE),--max-page-size\u003d$(PRIVATE_MAX_PAGE_SIZE)) \\\n```",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 47,
+        "endChar": 35
+      },
+      "revId": "432bd660dc354893dfd190d1e9a3bd7b1150d884",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
