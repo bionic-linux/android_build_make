@@ -113,6 +113,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b838dee5_e3a54f3b",
+        "filename": "core/check_elf_file.mk",
+        "patchSetId": 5
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2024-05-31T04:03:02Z",
+      "side": 1,
+      "message": "OK. Please upload a followup CL.",
+      "parentUuid": "6373c383_cad321a3",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 5
+      },
+      "revId": "432bd660dc354893dfd190d1e9a3bd7b1150d884",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e145fc47_eac97390",
