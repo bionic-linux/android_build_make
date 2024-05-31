@@ -174,6 +174,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "90d8539d_49b83369",
+        "filename": "envsetup.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 575,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-05-31T23:48:14Z",
+      "side": 1,
+      "message": "I\u0027ve updated the banner like you suggested in the doc.  It now shows it for clean builds because it\u0027s kind of spammy.  The banner is now externalized from envsetup too, so we don\u0027t have to wait for people to re-source envsetup.sh to update it either.",
+      "parentUuid": "0a63fd50_c3dec045",
+      "range": {
+        "startLine": 575,
+        "startChar": 16,
+        "endLine": 575,
+        "endChar": 51
+      },
+      "revId": "d87e9cb85b63ceacd4ae833eb1f209af109becd8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "67b3f7a7_d4d635f3",
         "filename": "envsetup.sh",
         "patchSetId": 2
@@ -326,6 +350,30 @@
       "side": 1,
       "message": "I\u0027ll get this command working before I submit this.\n\nIn the next patchset I just uploaded, I pulled these out of lunch into standalone commands for all the reasons standalone commands are better.  Especially, I want the cider people to start using these commands to list the release configs instead of their own interpretation of what\u0027s going on in the build system.",
       "parentUuid": "e9bedfda_bb5f1917",
+      "range": {
+        "startLine": 619,
+        "startChar": 0,
+        "endLine": 619,
+        "endChar": 20
+      },
+      "revId": "d87e9cb85b63ceacd4ae833eb1f209af109becd8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a20ee0dd_2d507510",
+        "filename": "envsetup.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 619,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-05-31T23:48:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "260189d5_cfbfb955",
       "range": {
         "startLine": 619,
         "startChar": 0,
