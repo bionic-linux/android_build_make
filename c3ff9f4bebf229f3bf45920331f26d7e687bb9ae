@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5af0d714_18f5b9ba",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1878380
+      },
+      "writtenOn": "2024-06-01T01:27:42Z",
+      "side": 1,
+      "message": "Jag, as an fyi, this will need to cp\u0027d to the relevant release branches",
+      "revId": "c3ff9f4bebf229f3bf45920331f26d7e687bb9ae",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
