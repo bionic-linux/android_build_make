@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0d78fd1e_fb4690db",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1076194
+      },
+      "writtenOn": "2024-06-01T21:12:02Z",
+      "side": 1,
+      "message": "This is looking basically good to me -- the only problems I found were preexisting.",
+      "revId": "5a8073bd4c75373e8f10e6066a8c09d555f0d7cc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2159b872_5f8457dc",
+        "filename": "ci/Android.bp",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1076194
+      },
+      "writtenOn": "2024-06-01T21:12:02Z",
+      "side": 1,
+      "message": "Please fix this WARNING reported by Bpfmt: This file is not formatted.\n\nAnalyzer Description: Formats Android.bp files.\nOwner: soong-team@google.com\n\nThis file is not formatted.\n\nRun `prebuilts/build-tools/linux-x86/bin/bpfmt -w {filename}` to format the file, or apply the suggested fix.",
+      "range": {
+        "startLine": 0,
+        "startChar": 0,
+        "endLine": 0,
+        "endChar": 0
+      },
+      "revId": "5a8073bd4c75373e8f10e6066a8c09d555f0d7cc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "22c7bd2b_6df2176e",
+        "filename": "ci/build_test_suites_test.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 1076194
+      },
+      "writtenOn": "2024-06-01T21:12:02Z",
+      "side": 1,
+      "message": "Consider removing this polling function? I don\u0027t think we need to be sleeping inside tests.",
+      "revId": "5a8073bd4c75373e8f10e6066a8c09d555f0d7cc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c8ae7ff5_70f85dc5",
+        "filename": "ci/build_test_suites_test.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 1076194
+      },
+      "writtenOn": "2024-06-01T21:12:02Z",
+      "side": 1,
+      "message": "Same here.",
+      "range": {
+        "startLine": 375,
+        "startChar": 31,
+        "endLine": 375,
+        "endChar": 32
+      },
+      "revId": "5a8073bd4c75373e8f10e6066a8c09d555f0d7cc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
