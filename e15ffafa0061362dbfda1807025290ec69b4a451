@@ -90,6 +90,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f5e36f52_ee40f5a3",
+        "filename": "tools/envsetup/run_envsetup_tests",
+        "patchSetId": 11
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1535516
+      },
+      "writtenOn": "2024-06-03T22:13:21Z",
+      "side": 1,
+      "message": "The python file can still be executed when ending in `.py`. Also if you make a `python_test_host` with `test_suites: [\"general-tests\",],`, it will be run on presubmit automatically. This is what `run_tool_with_logging_test` does.",
+      "parentUuid": "16a8f23b_015715c5",
+      "revId": "e15ffafa0061362dbfda1807025290ec69b4a451",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "b63c7a58_07820e02",
         "filename": "tools/envsetup/run_envsetup_tests",
         "patchSetId": 11
