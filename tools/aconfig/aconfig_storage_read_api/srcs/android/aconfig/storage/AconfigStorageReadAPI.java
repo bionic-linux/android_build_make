@@ -19,13 +19,13 @@ package android.aconfig.storage;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.channels.FileChannel.MapMode;
 
 import android.aconfig.storage.PackageReadContext;
 import android.aconfig.storage.FlagReadContext;
-import android.aconfig.storage.BooleanFlagValue;
 
 import dalvik.annotation.optimization.FastNative;
 
@@ -69,18 +69,34 @@ public class AconfigStorageReadAPI {
 
     // JNI interface to get package read context
     @FastNative
-    public static native PackageReadContext getPackageReadContext(
-        ByteBuffer mappedFile, String packageName);
+    static native ByteBuffer getPackageReadContextImpl(
+        ByteBuffer mappedFile, String packageName) throws Exception;
+
+    // API to get package read context
+    static public PackageReadContext getPackageReadContext (
+        ByteBuffer mappedFile, String packageName) throws Exception {
+        ByteBuffer buffer = getPackageReadContextImpl(mappedFile, packageName);
+        buffer.order(ByteOrder.LITTLE_ENDIAN);
+        return new PackageReadContext(buffer.getInt(), buffer.getInt(4));
+    }
 
     // JNI interface to get flag read context
     @FastNative
-    public static native FlagReadContext getFlagReadContext(
-        ByteBuffer mappedFile, int packageId, String flagName);
+    static native ByteBuffer getFlagReadContextImpl(
+        ByteBuffer mappedFile, int packageId, String flagName) throws Exception;
+
+    // API to get flag read context
+    public static FlagReadContext getFlagReadContext(
+        ByteBuffer mappedFile, int packageId, String flagName) throws Exception {
+        ByteBuffer buffer = getFlagReadContextImpl(mappedFile, packageId, flagName);
+        buffer.order(ByteOrder.LITTLE_ENDIAN);
+        return new FlagReadContext(buffer.getInt(), buffer.getInt(4));
+    }
 
     // JNI interface to get boolean flag value
     @FastNative
-    public static native BooleanFlagValue getBooleanFlagValue(
-        ByteBuffer mappedFile, int flagIndex);
+    public static native boolean getBooleanFlagValue(
+        ByteBuffer mappedFile, int flagIndex) throws Exception;
 
     static {
         System.loadLibrary("aconfig_storage_read_api_rust_jni");
