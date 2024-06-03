@@ -52,6 +52,42 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4ea06be4_9357259a",
+        "filename": "tools/envsetup/run_envsetup_tests",
+        "patchSetId": 11
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-06-03T22:04:58Z",
+      "side": 1,
+      "message": "oops",
+      "parentUuid": "bdec3477_b327c130",
+      "revId": "e15ffafa0061362dbfda1807025290ec69b4a451",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "16a8f23b_015715c5",
+        "filename": "tools/envsetup/run_envsetup_tests",
+        "patchSetId": 11
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-06-03T22:04:58Z",
+      "side": 1,
+      "message": "I always try to make scripts that are directly executable not have an extension, so we can change the language if we want.  Although usually it ends up going from shell to python not the other way around.",
+      "parentUuid": "74cb95de_a8230a50",
+      "revId": "e15ffafa0061362dbfda1807025290ec69b4a451",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b63c7a58_07820e02",
@@ -65,6 +101,30 @@
       "writtenOn": "2024-05-31T23:58:40Z",
       "side": 1,
       "message": "set s/printed_stdout/print_output/g here as well and print both stderr/stdout below?",
+      "range": {
+        "startLine": 60,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 22
+      },
+      "revId": "e15ffafa0061362dbfda1807025290ec69b4a451",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "353d0280_9d6ceff3",
+        "filename": "tools/envsetup/run_envsetup_tests",
+        "patchSetId": 11
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-06-03T22:04:58Z",
+      "side": 1,
+      "message": "The reason it prints the stdout here is to see the generated environment variables back to the calling shell (line 34 above). So it\u0027s really here just to see that output with me bothering to write a bunch of parsing code for that.\n\nThe stderr could be useful for debugging, but since it won\u0027t be interleaved it\u0027s still werid.  I think this is good enough.",
+      "parentUuid": "b63c7a58_07820e02",
       "range": {
         "startLine": 60,
         "startChar": 0,
@@ -92,6 +152,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0cfb0fa7_33e6952d",
+        "filename": "tools/envsetup/run_envsetup_tests",
+        "patchSetId": 11
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-06-03T22:04:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0b7dc411_1d08c111",
+      "revId": "e15ffafa0061362dbfda1807025290ec69b4a451",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d65c8895_3924bbf3",
@@ -105,6 +183,24 @@
       "writtenOn": "2024-06-03T13:26:05Z",
       "side": 1,
       "message": "Better to split PATH and check if an element ends with `soong/bin`:\n`if any([x.endswith(\"/soong/bin\") for x in os.getenv(\"PATH\").split(\":\")]):`",
+      "revId": "e15ffafa0061362dbfda1807025290ec69b4a451",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "94aec794_f6e0d5d0",
+        "filename": "tools/envsetup/run_envsetup_tests",
+        "patchSetId": 11
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-06-03T22:04:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d65c8895_3924bbf3",
       "revId": "e15ffafa0061362dbfda1807025290ec69b4a451",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
@@ -132,6 +228,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "97de44b7_ee2d0f40",
+        "filename": "tools/envsetup/spam_for_lunch",
+        "patchSetId": 11
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-06-03T22:04:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "391937fb_e13c337e",
+      "range": {
+        "startLine": 18,
+        "startChar": 63,
+        "endLine": 18,
+        "endChar": 71
+      },
+      "revId": "e15ffafa0061362dbfda1807025290ec69b4a451",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a606c52b_0a6166d7",
@@ -145,6 +265,24 @@
       "writtenOn": "2024-06-03T09:20:27Z",
       "side": 1,
       "message": "Should this align with the table in https://source.android.com/docs/setup/build/building (under where it says \u0027The build_variant portion of the string\u0027)",
+      "revId": "e15ffafa0061362dbfda1807025290ec69b4a451",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "63516bf5_a3674922",
+        "filename": "tools/envsetup/spam_for_lunch",
+        "patchSetId": 11
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-06-03T22:04:58Z",
+      "side": 1,
+      "message": "I made some tweaks to the language here, but tbh I don\u0027t think that description really gives a clear indicator for which to use either.",
+      "parentUuid": "a606c52b_0a6166d7",
       "revId": "e15ffafa0061362dbfda1807025290ec69b4a451",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
