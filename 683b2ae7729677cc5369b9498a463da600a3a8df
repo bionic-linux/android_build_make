@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "71711044_6bf58cf3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1064003
+      },
+      "writtenOn": "2024-06-03T19:42:02Z",
+      "side": 1,
+      "message": "@zhidou@google.com mentioned adding some benchmarks, are those already in place?",
+      "revId": "683b2ae7729677cc5369b9498a463da600a3a8df",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "538de9af_066b1d5e",
+        "filename": "tools/aconfig/aconfig_storage_read_api/srcs/android/aconfig/storage/AconfigStorageReadAPI.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1064003
+      },
+      "writtenOn": "2024-06-03T19:42:02Z",
+      "side": 1,
+      "message": "Why not private?",
+      "range": {
+        "startLine": 72,
+        "startChar": 18,
+        "endLine": 72,
+        "endChar": 28
+      },
+      "revId": "683b2ae7729677cc5369b9498a463da600a3a8df",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1176ac67_5a24cb3f",
+        "filename": "tools/aconfig/aconfig_storage_read_api/srcs/android/aconfig/storage/AconfigStorageReadAPI.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1064003
+      },
+      "writtenOn": "2024-06-03T19:42:02Z",
+      "side": 1,
+      "message": "Throwing a generic checked `Exception` type is very rare (and can be dangerous), why is this needed? What are the expectations? Same with the other methods, what kind of Exception type do we expect can be thrown and should be always handled explicitly?",
+      "range": {
+        "startLine": 99,
+        "startChar": 46,
+        "endLine": 99,
+        "endChar": 63
+      },
+      "revId": "683b2ae7729677cc5369b9498a463da600a3a8df",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
