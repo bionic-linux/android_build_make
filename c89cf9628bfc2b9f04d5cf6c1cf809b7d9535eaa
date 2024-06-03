@@ -39,6 +39,30 @@
       },
       "revId": "c89cf9628bfc2b9f04d5cf6c1cf809b7d9535eaa",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a4451d5b_c6c978b0",
+        "filename": "core/envsetup.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-06-03T16:06:35Z",
+      "side": 1,
+      "message": "It\u0027s not really usable for anything device-wise, but this is the config that all of the side targets like the SDK uses, just because there has to be _something_ set.\n\nI\u0027m a little bit concerned that since PRODUCT_DEVICE changes here some scripts expecting the out/target/product/generic_arm  might not work.  But I say go for it.",
+      "parentUuid": "e0eb372c_b59db172",
+      "range": {
+        "startLine": 84,
+        "startChar": 0,
+        "endLine": 85,
+        "endChar": 14
+      },
+      "revId": "c89cf9628bfc2b9f04d5cf6c1cf809b7d9535eaa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
