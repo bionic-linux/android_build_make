@@ -124,6 +124,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d495ede6_a97a3b86",
+        "filename": "tools/envsetup/run_envsetup_tests",
+        "patchSetId": 11
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1535516
+      },
+      "writtenOn": "2024-06-03T23:28:31Z",
+      "side": 1,
+      "message": "I think packaging the dependencies with the test is the right thing to do, but yeah, having to package everything for get_build_var would be a lot. nevermind then.",
+      "parentUuid": "f2f6e160_e77225ce",
+      "revId": "e15ffafa0061362dbfda1807025290ec69b4a451",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b63c7a58_07820e02",
