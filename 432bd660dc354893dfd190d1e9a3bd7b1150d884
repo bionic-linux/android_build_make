@@ -185,6 +185,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b1d6bbc6_3f76259f",
+        "filename": "core/check_elf_file.mk",
+        "patchSetId": 5
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1120458
+      },
+      "writtenOn": "2024-06-03T18:24:13Z",
+      "side": 1,
+      "message": "As I said, the code does this too already. I\u0027d like to leave it as-is, since I\u0027m trying to get this change in and prebuilts fixed.\n\nI\u0027m sorry, I don\u0027t see a functional difference. Since there\u0027s no functional difference, this type of change isn\u0027t worth the benefit. If there is a need to touch it again, we could use that form, or maybe it\u0027ll need another change.",
+      "parentUuid": "61f06ab5_4a2facac",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 5
+      },
+      "revId": "432bd660dc354893dfd190d1e9a3bd7b1150d884",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e145fc47_eac97390",
