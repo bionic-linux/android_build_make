@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "bf0746a3_abb46ee9",
+        "filename": "core/check_elf_file.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1120458
+      },
+      "writtenOn": "2024-06-03T17:48:06Z",
+      "side": 1,
+      "message": "Hsin-Yi, I\u0027m not sure if you saw my comment on the other thread. Why is this better? It seems like an aesthetic change only.",
+      "parentUuid": "d1237e01_37f5903d",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 5
+      },
+      "revId": "6238b3f1fde05e06bb6ade5b4266dc1a809f4c2f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d819e0f5_ddd9efc4",
         "filename": "core/check_elf_file.mk",
         "patchSetId": 1
@@ -37,6 +61,30 @@
       "writtenOn": "2024-06-03T05:48:37Z",
       "side": 1,
       "message": "```suggestion\n\t    $(if $(PRIVATE_MAX_PAGE_SIZE),--max-page-size\u003d$(PRIVATE_MAX_PAGE_SIZE)) \\\n```",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 47,
+        "endChar": 35
+      },
+      "revId": "6238b3f1fde05e06bb6ade5b4266dc1a809f4c2f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5283ad27_e677c927",
+        "filename": "core/check_elf_file.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1120458
+      },
+      "writtenOn": "2024-06-03T17:48:06Z",
+      "side": 1,
+      "message": "(let\u0027s resolve on the other thread)",
+      "parentUuid": "d819e0f5_ddd9efc4",
       "range": {
         "startLine": 47,
         "startChar": 0,
