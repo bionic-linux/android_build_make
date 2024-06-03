@@ -142,6 +142,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "92ed9f18_9a04b5b9",
+        "filename": "tools/envsetup/run_envsetup_tests",
+        "patchSetId": 11
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-06-03T23:33:35Z",
+      "side": 1,
+      "message": "For the record, I agree too that packaging dependencies is the right way to do it.  I just want something systematic to do it for me.  (I\u0027m totally willing to come up with some way to do it too, but I just don\u0027t think it should be a blocker for this CL.).",
+      "parentUuid": "d495ede6_a97a3b86",
+      "revId": "e15ffafa0061362dbfda1807025290ec69b4a451",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b63c7a58_07820e02",
