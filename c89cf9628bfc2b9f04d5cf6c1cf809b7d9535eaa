@@ -16,6 +16,29 @@
       "message": "Also - I am on KVM team, so I don\u0027t think it matters that packages/modules/Virtualization is not on the other mainline branch, but +jiyong to double confirm he\u0027s okay with that.",
       "revId": "c89cf9628bfc2b9f04d5cf6c1cf809b7d9535eaa",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e0eb372c_b59db172",
+        "filename": "core/envsetup.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2024-06-03T06:33:58Z",
+      "side": 1,
+      "message": "I didn\u0027t know that we even have had a default target!",
+      "range": {
+        "startLine": 84,
+        "startChar": 0,
+        "endLine": 85,
+        "endChar": 14
+      },
+      "revId": "c89cf9628bfc2b9f04d5cf6c1cf809b7d9535eaa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
