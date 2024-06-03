@@ -72,6 +72,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "85015799_b7029464",
+        "filename": "core/check_elf_file.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1120458
+      },
+      "writtenOn": "2024-06-03T18:34:06Z",
+      "side": 1,
+      "message": "Like I really appreciate the suggestion, but I have to focus on the goal - there are a million other things needed, let\u0027s move on from this, please.",
+      "parentUuid": "5cce9c6a_32bde968",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 5
+      },
+      "revId": "6238b3f1fde05e06bb6ade5b4266dc1a809f4c2f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d819e0f5_ddd9efc4",
