@@ -48,6 +48,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5cce9c6a_32bde968",
+        "filename": "core/check_elf_file.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1120458
+      },
+      "writtenOn": "2024-06-03T18:24:02Z",
+      "side": 1,
+      "message": "nevermind I see you commented https://android-review.git.corp.google.com/c/platform/build/+/3101471\n\nI\u0027m sorry, I don\u0027t see a functional difference. Since there\u0027s no functional difference, this type of change isn\u0027t worth the benefit. If there is a need to touch it again, we could use that form, or maybe it\u0027ll need another change.",
+      "parentUuid": "bf0746a3_abb46ee9",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 5
+      },
+      "revId": "6238b3f1fde05e06bb6ade5b4266dc1a809f4c2f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d819e0f5_ddd9efc4",
