@@ -94,6 +94,46 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d65c8895_3924bbf3",
+        "filename": "tools/envsetup/run_envsetup_tests",
+        "patchSetId": 11
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 1583551
+      },
+      "writtenOn": "2024-06-03T13:26:05Z",
+      "side": 1,
+      "message": "Better to split PATH and check if an element ends with `soong/bin`:\n`if any([x.endswith(\"/soong/bin\") for x in os.getenv(\"PATH\").split(\":\")]):`",
+      "revId": "e15ffafa0061362dbfda1807025290ec69b4a451",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "391937fb_e13c337e",
+        "filename": "tools/envsetup/spam_for_lunch",
+        "patchSetId": 11
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1583551
+      },
+      "writtenOn": "2024-06-03T13:26:05Z",
+      "side": 1,
+      "message": "These two path elements could (should?) be removed.",
+      "range": {
+        "startLine": 18,
+        "startChar": 63,
+        "endLine": 18,
+        "endChar": 71
+      },
+      "revId": "e15ffafa0061362dbfda1807025290ec69b4a451",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a606c52b_0a6166d7",
         "filename": "tools/envsetup/spam_for_lunch",
         "patchSetId": 11
