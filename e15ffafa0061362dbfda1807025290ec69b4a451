@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ec449a85_5b8040ee",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1826738
+      },
+      "writtenOn": "2024-06-03T09:20:27Z",
+      "side": 1,
+      "message": "Good to see!",
+      "revId": "e15ffafa0061362dbfda1807025290ec69b4a451",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "74cb95de_a8230a50",
@@ -54,6 +71,40 @@
         "endLine": 60,
         "endChar": 22
       },
+      "revId": "e15ffafa0061362dbfda1807025290ec69b4a451",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0b7dc411_1d08c111",
+        "filename": "tools/envsetup/run_envsetup_tests",
+        "patchSetId": 11
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1826738
+      },
+      "writtenOn": "2024-06-03T09:20:27Z",
+      "side": 1,
+      "message": "Rename to test_invalid_lunch_target ?",
+      "revId": "e15ffafa0061362dbfda1807025290ec69b4a451",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a606c52b_0a6166d7",
+        "filename": "tools/envsetup/spam_for_lunch",
+        "patchSetId": 11
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1826738
+      },
+      "writtenOn": "2024-06-03T09:20:27Z",
+      "side": 1,
+      "message": "Should this align with the table in https://source.android.com/docs/setup/build/building (under where it says \u0027The build_variant portion of the string\u0027)",
       "revId": "e15ffafa0061362dbfda1807025290ec69b4a451",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
