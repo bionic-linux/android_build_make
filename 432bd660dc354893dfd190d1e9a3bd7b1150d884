@@ -161,6 +161,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "61f06ab5_4a2facac",
+        "filename": "core/check_elf_file.mk",
+        "patchSetId": 5
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2024-06-03T03:04:25Z",
+      "side": 1,
+      "message": "It\u0027s a well-known form. https://stackoverflow.com/questions/54112232/if-equals-statement-in-makefile-as-a-one-liner\nBesides, there is an example in this file. The form is more consistent with the existing code.",
+      "parentUuid": "459b3550_d5ee227c",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 5
+      },
+      "revId": "432bd660dc354893dfd190d1e9a3bd7b1150d884",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e145fc47_eac97390",
