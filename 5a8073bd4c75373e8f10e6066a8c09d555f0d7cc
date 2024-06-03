@@ -41,6 +41,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f5a453a9_cb5c1ae5",
+        "filename": "ci/Android.bp",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-06-03T23:50:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2159b872_5f8457dc",
+      "range": {
+        "startLine": 0,
+        "startChar": 0,
+        "endLine": 0,
+        "endChar": 0
+      },
+      "revId": "5a8073bd4c75373e8f10e6066a8c09d555f0d7cc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "22c7bd2b_6df2176e",
@@ -54,6 +78,24 @@
       "writtenOn": "2024-06-01T21:12:02Z",
       "side": 1,
       "message": "Consider removing this polling function? I don\u0027t think we need to be sleeping inside tests.",
+      "revId": "5a8073bd4c75373e8f10e6066a8c09d555f0d7cc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "97f33ebd_6f738964",
+        "filename": "ci/build_test_suites_test.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-06-03T23:50:42Z",
+      "side": 1,
+      "message": "These tests were written by @hzalek@google.com, so I think it\u0027s out of scope for this CL to change them significantly.",
+      "parentUuid": "22c7bd2b_6df2176e",
       "revId": "5a8073bd4c75373e8f10e6066a8c09d555f0d7cc",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
