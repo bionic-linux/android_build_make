@@ -108,6 +108,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f2f6e160_e77225ce",
+        "filename": "tools/envsetup/run_envsetup_tests",
+        "patchSetId": 11
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-06-03T23:04:05Z",
+      "side": 1,
+      "message": "I really hate how run_tool_with_logging_test packages up a random subset of the build system to run on ATP.  Also, it\u0027s unclear to me how ATP gets a copy of soong  to use for get_build_var.  And is it just copying envsetup.mk because that\u0027s the sentinel that gettop uses?\n\nI think it works for run_tool_with_logging because that\u0027s not actually calling soong.",
+      "parentUuid": "f5e36f52_ee40f5a3",
+      "revId": "e15ffafa0061362dbfda1807025290ec69b4a451",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "b63c7a58_07820e02",
         "filename": "tools/envsetup/run_envsetup_tests",
         "patchSetId": 11
