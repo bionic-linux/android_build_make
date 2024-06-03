@@ -964,6 +964,8 @@ def GenerateAbOtaPackage(target_file, output_file, source_file=None):
                 minimum_api_level_required,
                 target_info.vendor_api_level))
         vabc_compression_param = "gz"
+        target_file = ModifyTargetFilesDynamicPartitionInfo(target_file, "virtual_ab_compression_factor", 4096)
+
 
   if OPTIONS.partial == []:
     logger.info(
