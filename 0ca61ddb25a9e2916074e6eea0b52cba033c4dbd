@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6de673c9_87d92831",
+        "filename": "core/release_config.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1583551
+      },
+      "writtenOn": "2024-06-04T21:51:39Z",
+      "side": 1,
+      "message": "Doing this unconditionally means that a bad TARGET_RELEASE produces the error in line 282 below, instead of `panic: Missing config {name}.  Trace\u003d[{name}]`",
+      "revId": "0ca61ddb25a9e2916074e6eea0b52cba033c4dbd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
