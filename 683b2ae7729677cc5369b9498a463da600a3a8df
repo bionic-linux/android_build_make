@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d173f668_f006afd2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1882770
+      },
+      "writtenOn": "2024-06-04T14:58:24Z",
+      "side": 1,
+      "message": "not sure how to add benchmarks. I have used this android_test target to test out flag read performance comparisons (not included in this cl). What I did was to loop over all 93 aconfig namespaces in /system partition, for each namespace pick one flag. Then read all 93 using both old and new methods, tic toc the time to ms accuracy.",
+      "parentUuid": "71711044_6bf58cf3",
+      "revId": "683b2ae7729677cc5369b9498a463da600a3a8df",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "538de9af_066b1d5e",
         "filename": "tools/aconfig/aconfig_storage_read_api/srcs/android/aconfig/storage/AconfigStorageReadAPI.java",
         "patchSetId": 2
@@ -31,6 +49,30 @@
       "writtenOn": "2024-06-03T19:42:02Z",
       "side": 1,
       "message": "Why not private?",
+      "range": {
+        "startLine": 72,
+        "startChar": 18,
+        "endLine": 72,
+        "endChar": 28
+      },
+      "revId": "683b2ae7729677cc5369b9498a463da600a3a8df",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ed6888c0_c2874cb7",
+        "filename": "tools/aconfig/aconfig_storage_read_api/srcs/android/aconfig/storage/AconfigStorageReadAPI.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1882770
+      },
+      "writtenOn": "2024-06-04T14:58:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "538de9af_066b1d5e",
       "range": {
         "startLine": 72,
         "startChar": 18,
@@ -54,6 +96,30 @@
       "writtenOn": "2024-06-03T19:42:02Z",
       "side": 1,
       "message": "Throwing a generic checked `Exception` type is very rare (and can be dangerous), why is this needed? What are the expectations? Same with the other methods, what kind of Exception type do we expect can be thrown and should be always handled explicitly?",
+      "range": {
+        "startLine": 99,
+        "startChar": 46,
+        "endLine": 99,
+        "endChar": 63
+      },
+      "revId": "683b2ae7729677cc5369b9498a463da600a3a8df",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aa0e3194_f47e82fb",
+        "filename": "tools/aconfig/aconfig_storage_read_api/srcs/android/aconfig/storage/AconfigStorageReadAPI.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1882770
+      },
+      "writtenOn": "2024-06-04T14:58:24Z",
+      "side": 1,
+      "message": "This is due to JNI rust code throwing exception. For this specific API, the exception is that the flagIndex went over the bound. For the package/flag read context apis, the exception could be the wrong storage file is passed in, the passed in file is not a storage file at all.",
+      "parentUuid": "1176ac67_5a24cb3f",
       "range": {
         "startLine": 99,
         "startChar": 46,
