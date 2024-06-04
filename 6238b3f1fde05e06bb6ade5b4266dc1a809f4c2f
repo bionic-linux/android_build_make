@@ -213,6 +213,30 @@
       },
       "revId": "6238b3f1fde05e06bb6ade5b4266dc1a809f4c2f",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3da408ee_c471792c",
+        "filename": "core/check_elf_file.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1120458
+      },
+      "writtenOn": "2024-06-04T17:32:13Z",
+      "side": 1,
+      "message": "Okay, done. Thanks for all the comments.",
+      "parentUuid": "a30325eb_d87cb9f9",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 47,
+        "endChar": 35
+      },
+      "revId": "6238b3f1fde05e06bb6ade5b4266dc1a809f4c2f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
