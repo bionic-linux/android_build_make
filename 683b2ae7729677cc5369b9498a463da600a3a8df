@@ -54,6 +54,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "27706bae_6f2c780a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1882770
+      },
+      "writtenOn": "2024-06-04T15:28:40Z",
+      "side": 1,
+      "message": "Yep, Zhi will probably do more tuning of the apis and add benchmarks in the next few weeks.",
+      "parentUuid": "4b26dcf2_70139b01",
+      "revId": "683b2ae7729677cc5369b9498a463da600a3a8df",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "538de9af_066b1d5e",
@@ -162,6 +180,30 @@
       "side": 1,
       "message": "We should document the explicit exceptional cases and when they should be caught, and ideally use explicit exception types. See go/java-practices/exceptions#abstract_throwables and go/java-practices/exceptions#documentation. Catching *every* Exception type can easily hide much deeper issues.",
       "parentUuid": "aa0e3194_f47e82fb",
+      "range": {
+        "startLine": 99,
+        "startChar": 46,
+        "endLine": 99,
+        "endChar": 63
+      },
+      "revId": "683b2ae7729677cc5369b9498a463da600a3a8df",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "27702878_24a0354c",
+        "filename": "tools/aconfig/aconfig_storage_read_api/srcs/android/aconfig/storage/AconfigStorageReadAPI.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1882770
+      },
+      "writtenOn": "2024-06-04T15:28:40Z",
+      "side": 1,
+      "message": "Would a narrower exception type like IOException work better? I should be able to throw that instead of generic exception. Wasn\u0027t aware of this before.",
+      "parentUuid": "fc302504_c440177e",
       "range": {
         "startLine": 99,
         "startChar": 46,
