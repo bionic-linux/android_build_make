@@ -212,6 +212,30 @@
       },
       "revId": "683b2ae7729677cc5369b9498a463da600a3a8df",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ef59ac40_68f9937c",
+        "filename": "tools/aconfig/aconfig_storage_read_api/srcs/android/aconfig/storage/AconfigStorageReadAPI.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1882770
+      },
+      "writtenOn": "2024-06-04T17:25:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "27702878_24a0354c",
+      "range": {
+        "startLine": 99,
+        "startChar": 46,
+        "endLine": 99,
+        "endChar": 63
+      },
+      "revId": "683b2ae7729677cc5369b9498a463da600a3a8df",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
