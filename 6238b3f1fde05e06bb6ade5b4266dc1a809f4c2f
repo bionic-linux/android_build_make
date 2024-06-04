@@ -98,6 +98,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "00100f36_61b099fd",
+        "filename": "core/check_elf_file.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1120458
+      },
+      "writtenOn": "2024-06-04T01:28:07Z",
+      "side": 1,
+      "message": "Though - if you have a suggestion for the latest patchset, it\u0027s starting to get intense, I\u0027ll gladly take it.\n\nAlso - I see that your suggestion keeps all the options next to the tool invocation, which is nice.",
+      "parentUuid": "85015799_b7029464",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 5
+      },
+      "revId": "6238b3f1fde05e06bb6ade5b4266dc1a809f4c2f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d819e0f5_ddd9efc4",
         "filename": "core/check_elf_file.mk",
         "patchSetId": 1
