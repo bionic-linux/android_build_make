@@ -147,3 +147,6 @@ $(eval $(call declare-1p-copy-files,hardware/google/camera,))
 # Moved here from hardware/interfaces/tv/Android.mk
 $(eval $(call declare-1p-copy-files,hardware/interfaces/tv,tuner_vts_config_1_0.xml))
 $(eval $(call declare-1p-copy-files,hardware/interfaces/tv,tuner_vts_config_1_1.xml))
+
+# Moved here from packages/services/Car/Android.mk
+(eval $(call declare-1p-copy-files,packages/services/Car))
