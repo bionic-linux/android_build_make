@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "aca51105_32b64808",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-06-04T23:09:04Z",
+      "side": 1,
+      "message": "Skipping the performance run. It\u0027s passed already, this is a simple rebase.",
+      "revId": "590ae9f7856fbc700feb66ec8d3fe61ac8645de7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
