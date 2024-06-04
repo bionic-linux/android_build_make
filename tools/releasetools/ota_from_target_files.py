@@ -948,6 +948,7 @@ def GenerateAbOtaPackage(target_file, output_file, source_file=None):
               "it's supported since day 1.".format(
                   target_info.vendor_api_level))
         OPTIONS.vabc_cow_version = 2
+        target_file = ModifyTargetFilesDynamicPartitionInfo(target_file, "virtual_ab_compression_factor", 4096)
     if OPTIONS.vabc_compression_param is None and vabc_compression_param:
       minimum_api_level_required = VABC_COMPRESSION_PARAM_SUPPORT[
           vabc_compression_param]
@@ -965,7 +966,6 @@ def GenerateAbOtaPackage(target_file, output_file, source_file=None):
                 target_info.vendor_api_level))
         vabc_compression_param = "gz"
         target_file = ModifyTargetFilesDynamicPartitionInfo(target_file, "virtual_ab_compression_factor", 4096)
-
 
   if OPTIONS.partial == []:
     logger.info(
