@@ -38,6 +38,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "4b26dcf2_70139b01",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1064003
+      },
+      "writtenOn": "2024-06-04T15:05:29Z",
+      "side": 1,
+      "message": "It\u0027s not a blocker, just thought I\u0027d mention it as Zhi was talking about adding such benchmarks.",
+      "parentUuid": "d173f668_f006afd2",
+      "revId": "683b2ae7729677cc5369b9498a463da600a3a8df",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "538de9af_066b1d5e",
         "filename": "tools/aconfig/aconfig_storage_read_api/srcs/android/aconfig/storage/AconfigStorageReadAPI.java",
         "patchSetId": 2
@@ -120,6 +138,30 @@
       "side": 1,
       "message": "This is due to JNI rust code throwing exception. For this specific API, the exception is that the flagIndex went over the bound. For the package/flag read context apis, the exception could be the wrong storage file is passed in, the passed in file is not a storage file at all.",
       "parentUuid": "1176ac67_5a24cb3f",
+      "range": {
+        "startLine": 99,
+        "startChar": 46,
+        "endLine": 99,
+        "endChar": 63
+      },
+      "revId": "683b2ae7729677cc5369b9498a463da600a3a8df",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fc302504_c440177e",
+        "filename": "tools/aconfig/aconfig_storage_read_api/srcs/android/aconfig/storage/AconfigStorageReadAPI.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1064003
+      },
+      "writtenOn": "2024-06-04T15:05:29Z",
+      "side": 1,
+      "message": "We should document the explicit exceptional cases and when they should be caught, and ideally use explicit exception types. See go/java-practices/exceptions#abstract_throwables and go/java-practices/exceptions#documentation. Catching *every* Exception type can easily hide much deeper issues.",
+      "parentUuid": "aa0e3194_f47e82fb",
       "range": {
         "startLine": 99,
         "startChar": 46,
