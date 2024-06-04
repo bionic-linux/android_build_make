@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "95e46a89_5b9f989a",
+        "filename": "envsetup.sh",
+        "patchSetId": 14
+      },
+      "lineNbr": 611,
+      "author": {
+        "id": 1583551
+      },
+      "writtenOn": "2024-06-04T19:16:02Z",
+      "side": 1,
+      "message": "I\u0027m not sure that we want all of the tilde, parameter, and variable expansion, etc. that comes with `\u003c\u003c\u003c`.  The (more ugly) alternative would be something like:\n```\nproduct\u003d${1%%-*}\nrelease\u003d${1#*-}; release\u003d${release%-*}\nvariant\u003d${1##*-}\n```",
+      "range": {
+        "startLine": 611,
+        "startChar": 48,
+        "endLine": 611,
+        "endChar": 56
+      },
+      "revId": "d7cba88877a118b291bc6070095fbe8bcdaacded",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
