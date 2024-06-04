@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b3c8811a_95c05d3d",
+        "filename": "core/check_elf_file.mk",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2024-06-04T05:15:14Z",
+      "side": 1,
+      "message": "Please delete this line.",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 36
+      },
+      "revId": "a10abde1f8a320abc8f666dfd95aaa4f99eb7957",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "09775c1a_dc0f1c14",
+        "filename": "core/check_elf_file.mk",
+        "patchSetId": 4
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2024-06-04T05:15:14Z",
+      "side": 1,
+      "message": "Since there are two conditions, I\u0027m ok with this form.\n\nOptional:\n\nIt might be better to move the non-empty value to the first.\n\n```\nifneq ($(strip $(LOCAL_IGNORE_MAX_PAGE_SIZE)),true)\n$(check_elf_files_stamp): PRIVATE_MAX_PAGE_SIZE :\u003d $(TARGET_MAX_PAGE_SIZE_SUPPORTED)\nelse\n$(check_elf_files_stamp): PRIVATE_MAX_PAGE_SIZE :\u003d\nendif\n```\n\nThis one is shorter but harder to understand.\n\n```\n$(check_elf_files_stamp): PRIVATE_MAX_PAGE_SIZE :\u003d $(strip \\\n  $(if $(filter true,$(TARGET_CHECK_PREBUILT_MAX_PAGE_SIZE)),\\\n    $(if $(filter true,$(LOCAL_IGNORE_MAX_PAGE_SIZE)),,\\\n      $(TARGET_MAX_PAGE_SIZE_SUPPORTED))))\n```",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 54
+      },
+      "revId": "a10abde1f8a320abc8f666dfd95aaa4f99eb7957",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "483d7338_53bbebd8",
+        "filename": "tools/check_elf_file.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 498,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2024-06-04T05:15:14Z",
+      "side": 1,
+      "message": "Should it show \u0027 :\u003d false\u0027 ?",
+      "range": {
+        "startLine": 498,
+        "startChar": 37,
+        "endLine": 498,
+        "endChar": 74
+      },
+      "revId": "a10abde1f8a320abc8f666dfd95aaa4f99eb7957",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
