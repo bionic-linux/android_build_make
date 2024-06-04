@@ -22,6 +22,30 @@
       },
       "revId": "d7cba88877a118b291bc6070095fbe8bcdaacded",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "986b4512_4a8e1e10",
+        "filename": "envsetup.sh",
+        "patchSetId": 14
+      },
+      "lineNbr": 611,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-06-04T19:58:04Z",
+      "side": 1,
+      "message": "This is how it\u0027s always been implemented, so I think we should leave it.  I didn\u0027t even know about \u003c\u003c\u003c until this change.  Although I can\u0027t imagine anyone wanting tilde expansion in their lunch.",
+      "parentUuid": "95e46a89_5b9f989a",
+      "range": {
+        "startLine": 611,
+        "startChar": 48,
+        "endLine": 611,
+        "endChar": 56
+      },
+      "revId": "d7cba88877a118b291bc6070095fbe8bcdaacded",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
