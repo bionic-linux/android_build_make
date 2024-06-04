@@ -70,6 +70,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "df411cdf_6576a7a2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1246512
+      },
+      "writtenOn": "2024-06-04T10:37:49Z",
+      "side": 1,
+      "message": "We could have a look at transition to Soong the future, targeting Android W.\nShould we in that case create a separate bug in the bugtracker for this task?",
+      "parentUuid": "137f8b0b_8e932052",
+      "revId": "d62f6763a545be25d525072254bafa635eee2bf8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "0b453e54_f28da4d4",
