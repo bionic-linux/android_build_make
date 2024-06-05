@@ -70,6 +70,24 @@
       "parentUuid": "0ca12401_4c168fe7",
       "revId": "773c8ba3eb5d168d87cfaba9593c34817a8605d4",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "444d848d_02a13198",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1902075
+      },
+      "writtenOn": "2024-06-05T06:25:55Z",
+      "side": 1,
+      "message": "We tried another approach to put the apex definition in `test/wvts` but got build break still. Details in ag/27659246 and b/344995253. We are considering revisit this. Is there a common make file for AOSP products where we can include Widevine’s device mk?",
+      "parentUuid": "c9324440_e481c882",
+      "revId": "773c8ba3eb5d168d87cfaba9593c34817a8605d4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
