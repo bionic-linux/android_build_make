@@ -468,6 +468,12 @@ $(eval $(call declare-1p-target,$(INSTALLED_SYSTEM_EXT_BUILD_PROP_TARGET)))
 
 RAMDISK_BUILD_PROP_REL_PATH := system/etc/ramdisk/build.prop
 INSTALLED_RAMDISK_BUILD_PROP_TARGET := $(TARGET_RAMDISK_OUT)/$(RAMDISK_BUILD_PROP_REL_PATH)
+
+_skip_common_properties := $(if $(RAMDISK_SKIP_COMMON_PROPERTIES),\
+    $(RAMDISK_SKIP_COMMON_PROPERTIES),\
+    false)
+
+
 $(eval $(call build-properties,\
     bootimage,\
     $(INSTALLED_RAMDISK_BUILD_PROP_TARGET),\
@@ -475,9 +481,11 @@ $(eval $(call build-properties,\
     $(empty),\
     $(empty),\
     $(empty),\
-    $(empty)))
+    $(_skip_common_properties)))
 
 $(eval $(call declare-1p-target,$(INSTALLED_RAMDISK_BUILD_PROP_TARGET)))
+
+_skip_common_propertes :=
 
 ALL_INSTALLED_BUILD_PROP_FILES := \
   $(INSTALLED_BUILD_PROP_TARGET) \
