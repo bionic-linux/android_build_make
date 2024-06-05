@@ -95,6 +95,11 @@ ifdef PRODUCT_CGROUP_V2_SYS_APP_ISOLATION_ENABLED
 $(call add_soong_config_var_value,ANDROID,cgroup_v2_sys_app_isolation,$(PRODUCT_CGROUP_V2_SYS_APP_ISOLATION_ENABLED))
 endif
 
+# Remove after b/322868540 is fixed
+ifeq (VanillaIceCream,$(RELEASE_PLATFORM_VERSION_CODENAME))
+$(call soong_config_set,ANDROID,release_platform_version_codename_is_V,true)
+endif
+
 $(call add_soong_config_var_value,ANDROID,release_avf_allow_preinstalled_apps,$(RELEASE_AVF_ALLOW_PREINSTALLED_APPS))
 $(call add_soong_config_var_value,ANDROID,release_avf_enable_device_assignment,$(RELEASE_AVF_ENABLE_DEVICE_ASSIGNMENT))
 $(call add_soong_config_var_value,ANDROID,release_avf_enable_dice_changes,$(RELEASE_AVF_ENABLE_DICE_CHANGES))
