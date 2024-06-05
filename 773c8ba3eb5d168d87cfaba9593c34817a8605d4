@@ -88,6 +88,24 @@
       "parentUuid": "c9324440_e481c882",
       "revId": "773c8ba3eb5d168d87cfaba9593c34817a8605d4",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8b194fb8_4b9e29e0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1043093
+      },
+      "writtenOn": "2024-06-05T10:08:06Z",
+      "side": 1,
+      "message": "Not the owner, but the following looks like viable candidates:\n- build/make/target/board/generic_x86_64/device.mk\n- build/make/target/board/generic_arm64/device.mk\n\nThere are other generic_*/device.mk files, but I think the two above are the ones used when building xts.",
+      "parentUuid": "444d848d_02a13198",
+      "revId": "773c8ba3eb5d168d87cfaba9593c34817a8605d4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
