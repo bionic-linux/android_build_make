@@ -16,6 +16,23 @@
       "message": "PTAL, thanks 😊. Example use in ag/27681075.",
       "revId": "f9bcea71d68cdb0c19cbfe2a597f19481793c937",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7527e1b3_415ef96e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2024-06-05T10:27:39Z",
+      "side": 1,
+      "message": "Hi Tiffany,\n\nCould you explain why we can\u0027t fix the test so that this sysprops for the ramdisk image are ignored?",
+      "revId": "f9bcea71d68cdb0c19cbfe2a597f19481793c937",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
