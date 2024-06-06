@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8e4b4d6e_c392f4b4",
+        "filename": "ci/Android.bp",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1480888
+      },
+      "writtenOn": "2024-06-06T22:19:14Z",
+      "side": 1,
+      "message": "Please fix this WARNING reported by Android Ownership Lint: Ownership attribution is recommended for existing test targets. The following targets in ci/Android.bp are missing an owner: build_test_suites_test, build_test_suites_local_test. Please refer to the ownership guidelines doc go/new-android-o...\n\nAnalyzer Description: Validates test targets attribution.\nOwner: crumpet-eng@google.com\n\nOwnership attribution is recommended for existing test targets. The following targets in ci/Android.bp are missing an owner: build_test_suites_test, build_test_suites_local_test. Please refer to the ownership guidelines doc go/new-android-ownership-model for more information.",
+      "range": {
+        "startLine": 0,
+        "startChar": 0,
+        "endLine": 0,
+        "endChar": 0
+      },
+      "revId": "6ac7fb19ce33e90d236f9b8e0cac173f3c805ddd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "12212339_e7ba72fa",
+        "filename": "ci/build_test_suites.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1480888
+      },
+      "writtenOn": "2024-06-06T22:19:14Z",
+      "side": 1,
+      "message": "nit: You can use `get(target, None)` to avoid a second lookup.",
+      "range": {
+        "startLine": 72,
+        "startChar": 6,
+        "endLine": 72,
+        "endChar": 49
+      },
+      "revId": "6ac7fb19ce33e90d236f9b8e0cac173f3c805ddd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
