@@ -7050,22 +7050,24 @@ $(DEXPREOPT_CONFIG_ZIP): $(INSTALLED_SYSTEMIMAGE_TARGET) \
     $(INSTALLED_PRODUCTIMAGE_TARGET) \
 
 ifeq (,$(TARGET_BUILD_UNBUNDLED))
-$(DEXPREOPT_CONFIG_ZIP): $(DEX_PREOPT_CONFIG_FOR_MAKE) \
-	  $(DEX_PREOPT_SOONG_CONFIG_FOR_MAKE) \
-
+# Copy config files to the central <product_out>/dexpreopt_config/ directory so that they can be zipped.
+ifneq (,$(DEX_PREOPT_CONFIG_FOR_MAKE))
+DEX_PREOPT_CONFIG_FOR_MAKE_COPY := $(PRODUCT_OUT)/dexpreopt_config/dexpreopt.config
+$(DEX_PREOPT_CONFIG_FOR_MAKE_COPY): $(DEX_PREOPT_CONFIG_FOR_MAKE)
+	$(hide) cp $^ $@
+$(DEXPREOPT_CONFIG_ZIP): $(DEX_PREOPT_CONFIG_FOR_MAKE_COPY)
 endif
+
+ifneq (,$(DEX_PREOPT_SOONG_CONFIG_FOR_MAKE))
+DEX_PREOPT_SOONG_CONFIG_FOR_MAKE_COPY := $(PRODUCT_OUT)/dexpreopt_config/dexpreopt_soong.config
+$(DEX_PREOPT_SOONG_CONFIG_FOR_MAKE_COPY): $(DEX_PREOPT_SOONG_CONFIG_FOR_MAKE)
+	$(hide) cp $^ $@
+$(DEXPREOPT_CONFIG_ZIP): $(DEX_PREOPT_SOONG_CONFIG_FOR_MAKE_COPY)
+endif
+endif #!TARGET_BUILD_UNBUNDLED
 
 $(DEXPREOPT_CONFIG_ZIP): $(SOONG_ZIP)
 	$(hide) mkdir -p $(dir $@) $(PRODUCT_OUT)/dexpreopt_config
-
-ifeq (,$(TARGET_BUILD_UNBUNDLED))
-ifneq (,$(DEX_PREOPT_CONFIG_FOR_MAKE))
-	$(hide) cp $(DEX_PREOPT_CONFIG_FOR_MAKE) $(PRODUCT_OUT)/dexpreopt_config
-endif
-ifneq (,$(DEX_PREOPT_SOONG_CONFIG_FOR_MAKE))
-	$(hide) cp $(DEX_PREOPT_SOONG_CONFIG_FOR_MAKE) $(PRODUCT_OUT)/dexpreopt_config
-endif
-endif #!TARGET_BUILD_UNBUNDLED
 	$(hide) $(SOONG_ZIP) -d -o $@ -C $(PRODUCT_OUT)/dexpreopt_config -D $(PRODUCT_OUT)/dexpreopt_config
 
 .PHONY: dexpreopt_config_zip
