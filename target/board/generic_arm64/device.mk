@@ -13,3 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
+# Optionally include widevine device build settings
+-include vendor/widevine/libwvdrmengine/apex/device/device.mk
