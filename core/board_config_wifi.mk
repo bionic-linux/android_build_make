@@ -81,3 +81,7 @@ endif
 ifeq ($(strip $(TARGET_USES_AOSP_FOR_WLAN)),true)
     $(call soong_config_set,wifi,target_uses_aosp_for_wlan,true)
 endif
+
+ifdef DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE
+    $(call soong_config_set,vintf_compatibility,product_matrix_file,$(DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE))
+endif

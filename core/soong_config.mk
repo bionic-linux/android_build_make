@@ -198,6 +198,7 @@ $(call add_json_bool, MultitreeUpdateMeta,               $(filter true,$(TARGET_
 
 $(call add_json_bool, Treble_linker_namespaces,          $(filter true,$(PRODUCT_TREBLE_LINKER_NAMESPACES)))
 $(call add_json_bool, Enforce_vintf_manifest,            $(filter true,$(PRODUCT_ENFORCE_VINTF_MANIFEST)))
+$(call add_json_list, Product_compatibility_matrix,      $(DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE))
 
 $(call add_json_bool, Uml,                               $(filter true,$(TARGET_USER_MODE_LINUX)))
 $(call add_json_str,  VendorPath,                        $(TARGET_COPY_OUT_VENDOR))
