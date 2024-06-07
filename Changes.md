@@ -34,9 +34,8 @@ If you need to extend the build system via a plugin, please reach out to the
 build team via email android-building@googlegroups.com (external) for any
 questions, or see [go/soong](http://go/soong) (internal).
 
-To omit the validation, `BUILD_BROKEN_PLUGIN_VALIDATION` expects a
-space-separated list of plugins to omit from the validation. This must be set
-within a product configuration .mk file, board config .mk file, or buildspec.mk.
+To omit the validation, `BUILD_BROKEN_PLUGIN_VALIDATION` expects a list of
+plugins to omit from the validation.
 
 ## Python 2 to 3 migration
 
