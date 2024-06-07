@@ -24,6 +24,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "03c9718d_fbfeb4c5",
+        "filename": "ci/Android.bp",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-06-07T22:01:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e4b4d6e_c392f4b4",
+      "range": {
+        "startLine": 0,
+        "startChar": 0,
+        "endLine": 0,
+        "endChar": 0
+      },
+      "revId": "6ac7fb19ce33e90d236f9b8e0cac173f3c805ddd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "12212339_e7ba72fa",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-06-06T22:19:14Z",
       "side": 1,
       "message": "nit: You can use `get(target, None)` to avoid a second lookup.",
+      "range": {
+        "startLine": 72,
+        "startChar": 6,
+        "endLine": 72,
+        "endChar": 49
+      },
+      "revId": "6ac7fb19ce33e90d236f9b8e0cac173f3c805ddd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c68c94e0_47445d8d",
+        "filename": "ci/build_test_suites.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-06-07T22:01:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "12212339_e7ba72fa",
       "range": {
         "startLine": 72,
         "startChar": 6,
