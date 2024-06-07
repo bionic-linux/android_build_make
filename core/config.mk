@@ -353,10 +353,6 @@ endif
 _build_broken_bool_vars := \
   BUILD_BROKEN_USES_SOONG_PYTHON2_MODULES \
 
-# Build broken variables that should be treated as lists
-_build_broken_list_vars := \
-  BUILD_BROKEN_PLUGIN_VALIDATION \
-
 _build_broken_var_names := $(_build_broken_bool_vars)
 _build_broken_var_names += $(_build_broken_list_vars)
 $(foreach v,$(_build_broken_var_names),$(eval $(v) :=))
