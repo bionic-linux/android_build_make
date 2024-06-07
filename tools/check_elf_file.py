@@ -184,13 +184,15 @@ class ELFParser(object):
 
 
   @classmethod
-  def _find_prefix(cls, pattern, lines_it):
+  def _assert_jump_to_prefix(cls, pattern, lines_it):
     """Iterate `lines_it` until finding a string that starts with `pattern`."""
     for line in lines_it:
       if line.startswith(pattern):
-        return True
-    return False
+        return
 
+    # It's dangerous if the prefix is not found. This will eat up the entire
+    # iterator, and then we would not know it's failing
+    raise ValueError(f'Could not find {pattern} in tool output. Tooling bug?')
 
   @classmethod
   def _read_llvm_readobj(cls, elf_file_path, header, llvm_readobj):
@@ -208,6 +210,8 @@ class ELFParser(object):
     lines_it = iter(lines)
     alignments = cls._parse_program_headers(lines_it)
     dt_soname, dt_needed = cls._parse_dynamic_table(elf_file_path, lines_it)
+
+    # consumes lines_it
     imported, exported = cls._parse_dynamic_symbols(lines_it)
     return ELF(alignments, dt_soname, dt_needed, imported, exported, header)
 
@@ -225,8 +229,7 @@ class ELFParser(object):
     """Parse the dynamic table section."""
     alignments = []
 
-    if not cls._find_prefix(cls._PROGRAM_HEADERS_START_PATTERN, lines_it):
-      raise ELFError()
+    cls._assert_jump_to_prefix(cls._PROGRAM_HEADERS_START_PATTERN, lines_it)
 
     for line in lines_it:
       # Parse each program header
@@ -275,8 +278,12 @@ class ELFParser(object):
     dt_soname = os.path.basename(elf_file_path)
     dt_needed = []
 
-    dynamic = cls._find_prefix(cls._DYNAMIC_SECTION_START_PATTERN, lines_it)
-    if not dynamic:
+    # may consume lines_it
+    for line in lines_it:
+      if line.startswith(cls._DYNAMIC_SECTION_START_PATTERN):
+        break
+    else:
+      # not dynamic
       return (dt_soname, dt_needed)
 
     for line in lines_it:
@@ -347,8 +354,7 @@ class ELFParser(object):
   def _parse_dynamic_symbols_internal(cls, lines_it):
     """Parse symbols entries and yield each symbols."""
 
-    if not cls._find_prefix(cls._DYNAMIC_SYMBOLS_START_PATTERN, lines_it):
-      return
+    cls._assert_jump_to_prefix(cls._DYNAMIC_SYMBOLS_START_PATTERN, lines_it)
 
     for line in lines_it:
       if line == cls._DYNAMIC_SYMBOLS_END_PATTERN:
