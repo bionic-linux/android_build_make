@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f9f9e3b3_8becf059",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1535516
+      },
+      "writtenOn": "2024-06-07T01:14:11Z",
+      "side": 1,
+      "message": "Two alternatives:\n\n- Pass the files individually to soong_zip with -e and -f:\n\n```\nsoong_zip -o $@ -C $(PRODUCT_OUT)/dexpreopt_config -D $(PRODUCT_OUT)/dexpreopt_config \\\n  $(if $(TARGET_BUILD_UNBUNDLED),,\\\n    $(if $(DEX_PREOPT_CONFIG_FOR_MAKE),\\\n      -e $$(basename $(DEX_PREOPT_CONFIG_FOR_MAKE)) -f $(DEX_PREOPT_CONFIG_FOR_MAKE))\\\n    $(if $(DEX_PREOPT_SOONG_CONFIG_FOR_MAKE),\\\n      -e $$(basename $(DEX_PREOPT_SOONG_CONFIG_FOR_MAKE)) -f $(DEX_PREOPT_SOONG_CONFIG_FOR_MAKE)))\n```\n\n- Keep the current copying code, but add them to outputs of the rule with .KATI_IMPLICIT_OUTPUTS:\n\n```\n$(DEXPREOPT_CONFIG_ZIP): .KATI_IMPLICIT_OUTPUTS :\u003d $(PRODUCT_OUT)/dexpreopt_config/$(notdir $(DEX_PREOPT_CONFIG_FOR_MAKE)) $(PRODUCT_OUT)/dexpreopt_config/$(notdir $(DEX_PREOPT_SOONG_CONFIG_FOR_MAKE))\n```",
+      "revId": "3c3700f64636212f0d0d41bdc247cae4dc267cd0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
