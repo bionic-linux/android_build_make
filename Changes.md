@@ -24,19 +24,6 @@ Manually adding make rules that build to the staging directories without going t
 module system will not be compatible with this change. This includes many usages of
 `LOCAL_POST_INSTALL_CMD`.
 
-## Perform validation of Soong plugins
-
-Each Soong plugin will require manual work to migrate to Bazel. In order to
-minimize the manual work outside of build/soong, we are restricting plugins to
-those that exist today and those in vendor or hardware directories.
-
-If you need to extend the build system via a plugin, please reach out to the
-build team via email android-building@googlegroups.com (external) for any
-questions, or see [go/soong](http://go/soong) (internal).
-
-To omit the validation, `BUILD_BROKEN_PLUGIN_VALIDATION` expects a list of
-plugins to omit from the validation.
-
 ## Python 2 to 3 migration
 
 The path set when running builds now makes the `python` executable point to python 3,
