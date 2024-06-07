@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5f82c924_d4fa7c53",
+        "filename": "tools/check_elf_file.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 1120458
+      },
+      "writtenOn": "2024-06-07T00:24:09Z",
+      "side": 1,
+      "message": "honestly, I think deleting this method a la https://2014.jsconf.eu/speakers/sebastian-markbage-minimal-api-surface-area-learning-patterns-instead-of-frameworks.html would be best, since it\u0027s not complicated at all. Better to have it in place... Will do if you think so to.",
+      "range": {
+        "startLine": 186,
+        "startChar": 13,
+        "endLine": 195,
+        "endChar": 27
+      },
+      "revId": "84f195f1ff27043f230619637de725a2ddbee175",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
