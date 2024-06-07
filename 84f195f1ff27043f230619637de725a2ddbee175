@@ -22,6 +22,30 @@
       },
       "revId": "84f195f1ff27043f230619637de725a2ddbee175",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "063bd2f0_20abb7cb",
+        "filename": "tools/check_elf_file.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 1130827
+      },
+      "writtenOn": "2024-06-07T04:09:56Z",
+      "side": 1,
+      "message": "How about\n\n```\ndef _parse_llvm_readobj(\n  ...\n  for line in lines_it:\n    if line.startswith(_DYNAMIC_SYMBOLS_START_PATTERN):\n      imported, exported \u003d cls._parse_dynamic_symbols(lines_it)\n    elif line.startswith(_PROGRAM_HEADERS_START_PATTERN):\n      alignments \u003d cls._parse_program_headers(lines_it)\n    elif line.startswith(_DYNAMIC_SECTION_START_PATTERN):\n      dt_soname, dt_needed \u003d cls._parse_dynamic_table(elf_file_path, lines_it)\n  ...\n```",
+      "parentUuid": "5f82c924_d4fa7c53",
+      "range": {
+        "startLine": 186,
+        "startChar": 13,
+        "endLine": 195,
+        "endChar": 27
+      },
+      "revId": "84f195f1ff27043f230619637de725a2ddbee175",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
