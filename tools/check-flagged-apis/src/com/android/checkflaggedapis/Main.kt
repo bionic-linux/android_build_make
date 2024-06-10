@@ -210,6 +210,50 @@ The tool will exit with a non-zero exit code if any flagged APIs are found to be
   }
 }
 
+class ListCommand :
+    CliktCommand(
+        help =
+            """
+List all flagged APIs and corresponding flags.
+
+The output format is "<fully-qualified-name-of-flag> <state-of-flag> <API>", one line per API.
+
+The output can be post-processed by e.g. piping it to grep to filter out only enabled APIs, or all APIs guarded by a given flag.
+""") {
+  private val apiSignaturePath by
+      option(ARG_API_SIGNATURE)
+          .help(ARG_API_SIGNATURE_HELP)
+          .path(mustExist = true, canBeDir = false, mustBeReadable = true)
+          .required()
+  private val flagValuesPath by
+      option(ARG_FLAG_VALUES)
+          .help(ARG_FLAG_VALUES_HELP)
+          .path(mustExist = true, canBeDir = false, mustBeReadable = true)
+          .required()
+
+  override fun run() {
+    val flaggedSymbols =
+        apiSignaturePath.toFile().inputStream().use {
+          parseApiSignature(apiSignaturePath.toString(), it)
+        }
+    val flags = flagValuesPath.toFile().inputStream().use { parseFlagValues(it) }
+    val output = mutableListOf<String>()
+    for ((symbol, flag) in flaggedSymbols) {
+      val flagState =
+          when (flags.get(flag)) {
+            true -> "ENABLED"
+            false -> "DISABLED"
+            null -> "UNKNOWN"
+          }
+      output.add("$flag $flagState ${symbol.toPrettyString()}")
+    }
+    if (output.isNotEmpty()) {
+      output.sort()
+      println(output.joinToString("\n"))
+    }
+  }
+}
+
 internal fun parseApiSignature(path: String, input: InputStream): Set<Pair<Symbol, Flag>> {
   val output = mutableSetOf<Pair<Symbol, Flag>>()
   val visitor =
@@ -460,4 +504,4 @@ internal fun findErrors(
   return errors
 }
 
-fun main(args: Array<String>) = MainCommand().subcommands(CheckCommand()).main(args)
+fun main(args: Array<String>) = MainCommand().subcommands(CheckCommand(), ListCommand()).main(args)

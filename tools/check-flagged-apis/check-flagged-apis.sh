@@ -43,6 +43,10 @@ function build() {
         $MODULE_LIB_XML_VERSIONS
 }
 
+function noop() {
+    true
+}
+
 function aninja() {
     local T="$(gettop)"
     (\cd "${T}" && prebuilts/build-tools/linux-x86/bin/ninja -f out/combined-${TARGET_PRODUCT}.ninja "$@")
@@ -52,7 +56,7 @@ function path_to_api_signature_file {
     aninja -t query device_"$1"_all_targets | grep -A1 -e input: | tail -n1
 }
 
-function run() {
+function run_check() {
     local errors=0
 
     echo "# current"
@@ -89,8 +93,47 @@ function run() {
     return $errors
 }
 
-if [[ "$1" != "--skip-build" ]]; then
-    build && run
-else
-    run
+function run_list() {
+    echo "# current"
+    check-flagged-apis list \
+        --api-signature $(path_to_api_signature_file "frameworks-base-api-current.txt") \
+        --flag-values $(gettop)/out/soong/.intermediates/all_aconfig_declarations.pb
+
+    echo
+    echo "# system-current"
+    check-flagged-apis list \
+        --api-signature $(path_to_api_signature_file "frameworks-base-api-system-current.txt") \
+        --flag-values $(gettop)/out/soong/.intermediates/all_aconfig_declarations.pb
+
+    echo
+    echo "# system-server-current"
+    check-flagged-apis list \
+        --api-signature $(path_to_api_signature_file "frameworks-base-api-system-server-current.txt") \
+        --flag-values $(gettop)/out/soong/.intermediates/all_aconfig_declarations.pb
+
+    echo
+    echo "# module-lib"
+    check-flagged-apis list \
+        --api-signature $(path_to_api_signature_file "frameworks-base-api-module-lib-current.txt") \
+        --flag-values $(gettop)/out/soong/.intermediates/all_aconfig_declarations.pb
+}
+
+#if [[ "$1" != "--skip-build" ]]; then
+#    build && run_check
+#else
+#    run_check
+#fi
+
+#run_list
+
+build_cmd=build
+if [[ "$1" == "--skip-build" ]]; then
+    build_cmd=noop
+    shift 1
 fi
+
+case "$1" in
+    check) $build_cmd && run_check ;;
+    list) $build_cmd && run_list ;;
+    *) echo "usage: $(basename $0): [--skip-build] check|list"; exit 1
+esac
