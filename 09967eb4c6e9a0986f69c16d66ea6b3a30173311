@@ -83,6 +83,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "222b6cdb_fe3e4d7d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1884045
+      },
+      "writtenOn": "2024-06-11T18:28:54Z",
+      "side": 1,
+      "message": "That\u0027s okay. Those errors are unrelated to your CL.",
+      "parentUuid": "ff724345_dbb4317c",
+      "revId": "09967eb4c6e9a0986f69c16d66ea6b3a30173311",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0a31ce27_10768401",

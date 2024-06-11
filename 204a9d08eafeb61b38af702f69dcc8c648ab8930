@@ -34,6 +34,24 @@
       "parentUuid": "519774ca_79ec3410",
       "revId": "204a9d08eafeb61b38af702f69dcc8c648ab8930",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "610a5240_f42b3f05",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1884045
+      },
+      "writtenOn": "2024-06-11T18:28:54Z",
+      "side": 1,
+      "message": "I think local testing is fine. Please submit it now. For S and T, we need separate CLs.",
+      "parentUuid": "9cef18cc_b1bee32d",
+      "revId": "204a9d08eafeb61b38af702f69dcc8c648ab8930",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
