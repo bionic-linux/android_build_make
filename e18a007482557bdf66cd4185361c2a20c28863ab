@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1ddb7041_e91320b7",
+        "filename": "tools/check-flagged-apis/src/com/android/checkflaggedapis/Main.kt",
+        "patchSetId": 2
+      },
+      "lineNbr": 497,
+      "author": {
+        "id": 1039338
+      },
+      "writtenOn": "2024-06-11T08:46:10Z",
+      "side": 1,
+      "message": "Some documentation would be good.",
+      "range": {
+        "startLine": 497,
+        "startChar": 13,
+        "endLine": 497,
+        "endChar": 28
+      },
+      "revId": "e18a007482557bdf66cd4185361c2a20c28863ab",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
