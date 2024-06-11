@@ -22,6 +22,30 @@
       },
       "revId": "576e818880d044c277dc4eed89f2f1fff5c4072b",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "96ca6be4_61e37be9",
+        "filename": "tools/check-flagged-apis/src/com/android/checkflaggedapis/Main.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1937565
+      },
+      "writtenOn": "2024-06-11T11:06:08Z",
+      "side": 1,
+      "message": "I think I\u0027ll hold off on OptionGroups for now. If/when we add a third command it\u0027ll be worth switching.",
+      "parentUuid": "d0291e58_9b63b9c4",
+      "range": {
+        "startLine": 145,
+        "startChar": 4,
+        "endLine": 145,
+        "endChar": 21
+      },
+      "revId": "576e818880d044c277dc4eed89f2f1fff5c4072b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
