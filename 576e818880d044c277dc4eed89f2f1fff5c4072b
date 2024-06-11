@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d0291e58_9b63b9c4",
+        "filename": "tools/check-flagged-apis/src/com/android/checkflaggedapis/Main.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1039338
+      },
+      "writtenOn": "2024-06-11T08:49:47Z",
+      "side": 1,
+      "message": "If you\u0027re going to have a group of options that you reuse you can create an `OptionGroup` class that contains them and then use that in a command. FYI you cannot nest `OptionGroup`, i.e. have an `OptionGroup` that itself uses an `OptionGroup`.",
+      "range": {
+        "startLine": 145,
+        "startChar": 4,
+        "endLine": 145,
+        "endChar": 21
+      },
+      "revId": "576e818880d044c277dc4eed89f2f1fff5c4072b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
