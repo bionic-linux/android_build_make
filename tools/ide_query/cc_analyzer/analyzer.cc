@@ -20,9 +20,9 @@
 #include <utility>
 #include <vector>
 
+#include "cc_analyzer.pb.h"
 #include "clang/Tooling/CompilationDatabase.h"
 #include "clang/Tooling/JSONCompilationDatabase.h"
-#include "ide_query.pb.h"
 #include "include_scanner.h"
 #include "llvm/ADT/SmallString.h"
 #include "llvm/ADT/StringRef.h"
@@ -97,7 +97,6 @@ llvm::Expected<std::unique_ptr<clang::tooling::CompilationDatabase>> LoadCompDB(
     genfile_root_abs.push_back('/');
   }
 
-  results.set_build_artifact_root(state.out_dir());
   for (llvm::StringRef active_file : state.active_file_path()) {
     auto& result = *results.add_sources();
     result.set_path(active_file.str());

@@ -28,7 +28,7 @@
 
 #include "analyzer.h"
 #include "google/protobuf/message.h"
-#include "ide_query.pb.h"
+#include "cc_analyzer.pb.h"
 #include "llvm/ADT/StringRef.h"
 #include "llvm/Support/CommandLine.h"
 #include "llvm/Support/TargetSelect.h"
