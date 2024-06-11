@@ -16,6 +16,24 @@
       "message": "Hi Alyssa, any update on this?",
       "revId": "204a9d08eafeb61b38af702f69dcc8c648ab8930",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9cef18cc_b1bee32d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1951966
+      },
+      "writtenOn": "2024-06-11T18:00:05Z",
+      "side": 1,
+      "message": "at first, I planned to submit this after we can confirm that it is working with the train (e.g. partner branch). do you want me to submit it now? From checking briefly, I think we might need this for S,T as well",
+      "parentUuid": "519774ca_79ec3410",
+      "revId": "204a9d08eafeb61b38af702f69dcc8c648ab8930",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }

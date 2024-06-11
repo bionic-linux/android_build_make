@@ -41,6 +41,48 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "afe37e9b_b221e563",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1951966
+      },
+      "writtenOn": "2024-06-11T18:00:05Z",
+      "side": 1,
+      "message": "Yes",
+      "parentUuid": "84372f19_24f4a504",
+      "range": {
+        "startLine": 16,
+        "startChar": 6,
+        "endLine": 16,
+        "endChar": 7
+      },
+      "revId": "09967eb4c6e9a0986f69c16d66ea6b3a30173311",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ff724345_dbb4317c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1951966
+      },
+      "writtenOn": "2024-06-11T18:00:05Z",
+      "side": 1,
+      "message": "We need to create respun train with aosp/3119791, so I am not able to test it with M-2024-08 yet. I tested it with prebuilt from git_aml-frc-daily-release and we got few errors.",
+      "parentUuid": "bb22079f_4b6f1bbd",
+      "revId": "09967eb4c6e9a0986f69c16d66ea6b3a30173311",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0a31ce27_10768401",
@@ -54,6 +96,30 @@
       "writtenOn": "2024-06-04T19:37:41Z",
       "side": 1,
       "message": "You probably don\u0027t need these lines because you don\u0027t have to merge this change into internal U branches. Merging it into AOSP is the priority.",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 52
+      },
+      "revId": "09967eb4c6e9a0986f69c16d66ea6b3a30173311",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f30b4907_d81ec806",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1951966
+      },
+      "writtenOn": "2024-06-11T18:00:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0a31ce27_10768401",
       "range": {
         "startLine": 17,
         "startChar": 0,
@@ -87,6 +153,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d844e3d1_51107761",
+        "filename": "core/dex_preopt_config.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1951966
+      },
+      "writtenOn": "2024-06-11T18:00:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8193b83e_2d4d3581",
+      "range": {
+        "startLine": 112,
+        "startChar": 97,
+        "endLine": 112,
+        "endChar": 98
+      },
+      "revId": "09967eb4c6e9a0986f69c16d66ea6b3a30173311",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1dbd0950_d85ecd23",
@@ -100,6 +190,30 @@
       "writtenOn": "2024-06-04T19:37:41Z",
       "side": 1,
       "message": "Ditto.",
+      "range": {
+        "startLine": 166,
+        "startChar": 89,
+        "endLine": 166,
+        "endChar": 90
+      },
+      "revId": "09967eb4c6e9a0986f69c16d66ea6b3a30173311",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "892a1c2c_b249568b",
+        "filename": "core/soong_config.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 1951966
+      },
+      "writtenOn": "2024-06-11T18:00:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1dbd0950_d85ecd23",
       "range": {
         "startLine": 166,
         "startChar": 89,
