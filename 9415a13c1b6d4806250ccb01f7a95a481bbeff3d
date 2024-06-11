@@ -24,6 +24,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "eddf5191_0a578e6c",
+        "filename": "tools/check-flagged-apis/check-flagged-apis.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1937565
+      },
+      "writtenOn": "2024-06-11T07:02:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b5848fdf_84dec11d",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 0
+      },
+      "revId": "9415a13c1b6d4806250ccb01f7a95a481bbeff3d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f00842ca_1d73bea9",
@@ -47,6 +71,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2bb304e3_dc33d482",
+        "filename": "tools/check-flagged-apis/check-flagged-apis.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1937565
+      },
+      "writtenOn": "2024-06-11T07:02:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f00842ca_1d73bea9",
+      "range": {
+        "startLine": 121,
+        "startChar": 0,
+        "endLine": 127,
+        "endChar": 9
+      },
+      "revId": "9415a13c1b6d4806250ccb01f7a95a481bbeff3d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d77a6030_a6a135e2",
@@ -60,6 +108,30 @@
       "writtenOn": "2024-06-10T14:36:42Z",
       "side": 1,
       "message": "Since the format is part of the contract, can we add some tests for it?",
+      "range": {
+        "startLine": 219,
+        "startChar": 0,
+        "endLine": 219,
+        "endChar": 94
+      },
+      "revId": "9415a13c1b6d4806250ccb01f7a95a481bbeff3d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bb064524_0064df83",
+        "filename": "tools/check-flagged-apis/src/com/android/checkflaggedapis/Main.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 1937565
+      },
+      "writtenOn": "2024-06-11T07:02:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d77a6030_a6a135e2",
       "range": {
         "startLine": 219,
         "startChar": 0,
