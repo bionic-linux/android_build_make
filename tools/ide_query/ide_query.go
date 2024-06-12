@@ -294,6 +294,10 @@ func getCCInputs(ctx context.Context, env Env, filePaths []string) ([]*pb.Analys
 func findJavaModules(paths []string, modules map[string]*javaModule) map[string]string {
 	ret := make(map[string]string)
 	for name, module := range modules {
+		if strings.HasSuffix(name, ".impl") {
+			continue
+		}
+
 		for i, p := range paths {
 			if slices.Contains(module.Srcs, p) {
 				ret[p] = name
