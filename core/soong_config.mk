@@ -356,4 +356,6 @@ $(shell if ! cmp -s $(SOONG_VARIABLES).tmp $(SOONG_VARIABLES); then \
 	  rm $(SOONG_VARIABLES).tmp; \
 	fi)
 
+include $(BUILD_SYSTEM)/soong_extra_config.mk
+
 endif # CONFIGURE_SOONG
