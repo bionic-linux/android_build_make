@@ -71,12 +71,20 @@ int main(int argc, char* argv[]) {
   switch (mode) {
     case OpMode::DEPS: {
       result = std::make_unique<cc_analyzer::DepsResponse>(
+<<<<<<< PATCH SET (fe0060 Update ide_query script to new format)
+          tools::cc_analyzer::cc_analyzer::GetDeps(std::move(state)));
+=======
           tools::ide_query::cc_analyzer::GetDeps(std::move(state)));
+>>>>>>> BASE      (324f09 Update ide_query script to new format)
       break;
     }
     case OpMode::INPUTS: {
       result = std::make_unique<cc_analyzer::IdeAnalysis>(
+<<<<<<< PATCH SET (fe0060 Update ide_query script to new format)
+          tools::cc_analyzer::cc_analyzer::GetBuildInputs(std::move(state)));
+=======
           tools::ide_query::cc_analyzer::GetBuildInputs(std::move(state)));
+>>>>>>> BASE      (324f09 Update ide_query script to new format)
       break;
     }
     default:
