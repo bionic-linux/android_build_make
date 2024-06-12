@@ -15,7 +15,7 @@
  */
 syntax = "proto3";
 
-package ide_query;
+package cc_analyzer;
 
 option go_package = "ide_query/cc_analyzer_proto";
 
