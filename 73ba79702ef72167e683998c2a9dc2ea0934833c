@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "71c4e6e5_f97d0fbc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1863710
+      },
+      "writtenOn": "2024-06-12T19:19:40Z",
+      "side": 1,
+      "message": "Hi Colin, could you please have a look? This is the change as suggested in https://android-review.git.corp.google.com/c/platform/build/soong/+/3099283/comments/882011e0_88a8a2e1. Thank you.",
+      "revId": "73ba79702ef72167e683998c2a9dc2ea0934833c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
