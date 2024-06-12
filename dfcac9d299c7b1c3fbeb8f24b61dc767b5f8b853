@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ab419a40_cacc4599",
+        "filename": "core/base_rules.mk",
+        "patchSetId": 12
+      },
+      "lineNbr": 969,
+      "author": {
+        "id": 1308044
+      },
+      "writtenOn": "2024-06-12T03:01:42Z",
+      "side": 1,
+      "message": "Never thought about this way, cool.",
+      "range": {
+        "startLine": 968,
+        "startChar": 0,
+        "endLine": 969,
+        "endChar": 69
+      },
+      "revId": "dfcac9d299c7b1c3fbeb8f24b61dc767b5f8b853",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7b1610f8_783c5dd2",
+        "filename": "tools/sbom/gen_sbom.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 773,
+      "author": {
+        "id": 1308044
+      },
+      "writtenOn": "2024-06-12T03:01:42Z",
+      "side": 1,
+      "message": "What\u0027s the difference between static_dep_files and whole_static_dep_files?",
+      "range": {
+        "startLine": 773,
+        "startChar": 31,
+        "endLine": 773,
+        "endChar": 53
+      },
+      "revId": "dfcac9d299c7b1c3fbeb8f24b61dc767b5f8b853",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
