@@ -51,6 +51,24 @@
       "parentUuid": "7527e1b3_415ef96e",
       "revId": "f9bcea71d68cdb0c19cbfe2a597f19481793c937",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5c7b97aa_7170ca48",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2024-06-12T06:15:10Z",
+      "side": 1,
+      "message": "Cool. Then we don\u0027t need this CL, right?",
+      "parentUuid": "1d4f4f19_e6ab449a",
+      "revId": "f9bcea71d68cdb0c19cbfe2a597f19481793c937",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
