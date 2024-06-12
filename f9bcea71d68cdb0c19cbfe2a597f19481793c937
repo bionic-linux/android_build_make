@@ -33,6 +33,24 @@
       "message": "Hi Tiffany,\n\nCould you explain why we can\u0027t fix the test so that this sysprops for the ramdisk image are ignored?",
       "revId": "f9bcea71d68cdb0c19cbfe2a597f19481793c937",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1d4f4f19_e6ab449a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1967151
+      },
+      "writtenOn": "2024-06-12T00:57:09Z",
+      "side": 1,
+      "message": "Hi Jiyong! That\u0027s a good point. Originally I believe the test was in place to make sure that any build properties were consistent across partitions, but it looks like the only time `ro.bootprop.\u003cproperty\u003e` inconsistencies failed cts were for ARC-container. I have discussed with the test owners and it looks like we will ignore the ramdisk sysprops instead. Thanks for the perspective!",
+      "parentUuid": "7527e1b3_415ef96e",
+      "revId": "f9bcea71d68cdb0c19cbfe2a597f19481793c937",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
