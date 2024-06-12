@@ -41,6 +41,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "86c40a2f_2878014c",
+        "filename": "tools/ide_query/cc_analyzer_proto/cc_analyzer.proto",
+        "patchSetId": 6
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 3288188
+      },
+      "writtenOn": "2024-06-12T12:59:49Z",
+      "side": 1,
+      "message": "That\u0027s the path to clangs compilation database. I\u0027ll keep it as is since I want to keep the changes to the cc_analyzer as minimal as possible.",
+      "parentUuid": "1c837732_5629b060",
+      "range": {
+        "startLine": 43,
+        "startChar": 9,
+        "endLine": 43,
+        "endChar": 21
+      },
+      "revId": "a80dd80bc0badddf8e2814ac864688135132f1c2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "546186dc_5c0b1c38",
@@ -64,6 +88,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "40699aa4_28febd1e",
+        "filename": "tools/ide_query/cc_analyzer_proto/cc_analyzer.proto",
+        "patchSetId": 6
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 3288188
+      },
+      "writtenOn": "2024-06-12T12:59:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "546186dc_5c0b1c38",
+      "range": {
+        "startLine": 64,
+        "startChar": 34,
+        "endLine": 64,
+        "endChar": 65
+      },
+      "revId": "a80dd80bc0badddf8e2814ac864688135132f1c2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d93186d1_7b59775a",
@@ -77,6 +125,30 @@
       "writtenOn": "2024-05-28T10:30:46Z",
       "side": 1,
       "message": "(opt) compiler_args",
+      "range": {
+        "startLine": 84,
+        "startChar": 18,
+        "endLine": 84,
+        "endChar": 36
+      },
+      "revId": "a80dd80bc0badddf8e2814ac864688135132f1c2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eb360952_532d81b2",
+        "filename": "tools/ide_query/cc_analyzer_proto/cc_analyzer.proto",
+        "patchSetId": 6
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 3288188
+      },
+      "writtenOn": "2024-06-12T12:59:49Z",
+      "side": 1,
+      "message": "I want to keep the changes to the cc_analyzer as minimal as possible.",
+      "parentUuid": "d93186d1_7b59775a",
       "range": {
         "startLine": 84,
         "startChar": 18,
@@ -128,6 +200,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c57ce8f3_fc93af83",
+        "filename": "tools/ide_query/ide_query.go",
+        "patchSetId": 6
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 3288188
+      },
+      "writtenOn": "2024-06-12T12:59:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87250732_e07d3db9",
+      "range": {
+        "startLine": 131,
+        "startChar": 1,
+        "endLine": 132,
+        "endChar": 50
+      },
+      "revId": "a80dd80bc0badddf8e2814ac864688135132f1c2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8d0fbcae_ad3884c7",
@@ -141,6 +237,30 @@
       "writtenOn": "2024-05-28T10:30:46Z",
       "side": 1,
       "message": "(opt) javaFileToModuleMap",
+      "range": {
+        "startLine": 290,
+        "startChar": 82,
+        "endLine": 290,
+        "endChar": 92
+      },
+      "revId": "a80dd80bc0badddf8e2814ac864688135132f1c2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "37dcc41a_30c5846d",
+        "filename": "tools/ide_query/ide_query.go",
+        "patchSetId": 6
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 3288188
+      },
+      "writtenOn": "2024-06-12T12:59:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8d0fbcae_ad3884c7",
       "range": {
         "startLine": 290,
         "startChar": 82,
@@ -174,6 +294,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e796a01a_188db50b",
+        "filename": "tools/ide_query/ide_query.go",
+        "patchSetId": 6
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 3288188
+      },
+      "writtenOn": "2024-06-12T12:59:49Z",
+      "side": 1,
+      "message": "I ensured that we don\u0027t have a trailing / when reading the env variable.",
+      "parentUuid": "6819334e_0a66ed48",
+      "range": {
+        "startLine": 361,
+        "startChar": 38,
+        "endLine": 361,
+        "endChar": 48
+      },
+      "revId": "a80dd80bc0badddf8e2814ac864688135132f1c2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fb373bcc_b76f26d3",
@@ -187,6 +331,30 @@
       "writtenOn": "2024-05-28T10:30:46Z",
       "side": 1,
       "message": "Please add names to return parameters and also use these names in getJavaTargets, getJavaInputs. This part is a bit confusing.",
+      "range": {
+        "startLine": 407,
+        "startChar": 51,
+        "endLine": 407,
+        "endChar": 104
+      },
+      "revId": "a80dd80bc0badddf8e2814ac864688135132f1c2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "87b915ad_76b54f94",
+        "filename": "tools/ide_query/ide_query.go",
+        "patchSetId": 6
+      },
+      "lineNbr": 407,
+      "author": {
+        "id": 3288188
+      },
+      "writtenOn": "2024-06-12T12:59:49Z",
+      "side": 1,
+      "message": "Good point - I refactored it a bit a just return the modules map here.",
+      "parentUuid": "fb373bcc_b76f26d3",
       "range": {
         "startLine": 407,
         "startChar": 51,
