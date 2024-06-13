@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "85f28dd5_de86b76a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1307893
+      },
+      "writtenOn": "2024-06-13T04:22:14Z",
+      "side": 1,
+      "message": "https://googleplex-android-review.git.corp.google.com/c/platform/vendor/xts/+/27810559\n\nCan fix this issue.",
+      "revId": "b70a70d8f79d00f5df9be72cf8bc6e77d23878ea",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
