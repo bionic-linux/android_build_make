@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f076867d_79c951a2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1318142
+      },
+      "writtenOn": "2024-06-13T23:18:56Z",
+      "side": 1,
+      "message": "Do you mind naming it goldfish.mk? in case there will be other cases like this in goldfish that need to move here.",
+      "range": {
+        "startLine": 7,
+        "startChar": 4,
+        "endLine": 7,
+        "endChar": 18
+      },
+      "revId": "f80fdb32405c94314c366a3c13e3dfbf4af9d83f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
