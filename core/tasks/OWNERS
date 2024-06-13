@@ -1,0 +1,2 @@
+# For Goldfish and sdk targets
+per-file goldfish.mk = bohu@google.com
