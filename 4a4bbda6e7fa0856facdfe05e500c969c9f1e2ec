@@ -1,5 +1,29 @@
 {
-  "comments": [],
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1b9d2ee1_d05fb9c7",
+        "filename": "core/Makefile",
+        "patchSetId": 4
+      },
+      "lineNbr": 5148,
+      "author": {
+        "id": 1121838
+      },
+      "writtenOn": "2024-06-13T19:01:25Z",
+      "side": 1,
+      "message": "BOARD_KERNEL_CONFIG_FILE and BOARD_KERNEL_VERSION is there to override the values from INSTALLED_KERNEL_TARGET, not to check against it.\n\nINSTALLED_KERNEL_TARGET may also not be extract-able (that is, L5153 may fail).",
+      "range": {
+        "startLine": 5147,
+        "startChar": 0,
+        "endLine": 5148,
+        "endChar": 31
+      },
+      "revId": "4a4bbda6e7fa0856facdfe05e500c969c9f1e2ec",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ],
   "submitRequirementResults": [
     {
       "submitRequirement": {
