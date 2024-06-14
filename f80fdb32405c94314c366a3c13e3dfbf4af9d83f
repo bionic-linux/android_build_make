@@ -22,6 +22,29 @@
       },
       "revId": "f80fdb32405c94314c366a3c13e3dfbf4af9d83f",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "16241e2b_5c9951ac",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1317851
+      },
+      "writtenOn": "2024-06-14T02:10:25Z",
+      "side": 1,
+      "message": "Suggest to build sdk_g3 target to check.\n\nExample:\nbuild/soong/soong_ui.bash --make-mode TARGET_PRODUCT\u003dsdk_g3caiman_x86_64 TARGET_RELEASE\u003dtrunk TARGET_BUILD_VARIANT\u003duserdebug droid dist",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 70
+      },
+      "revId": "f80fdb32405c94314c366a3c13e3dfbf4af9d83f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
