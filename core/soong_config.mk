@@ -346,6 +346,10 @@ $(call add_json_bool, BoardUseVbmetaDigestInFingerprint, $(filter true,$(BOARD_U
 
 $(call add_json_list, OemProperties, $(PRODUCT_OEM_PROPERTIES))
 
+$(call add_json_bool, Board_uses_vendor_image, $(filter true,$(BOARD_USES_VENDORIMAGE)))
+$(call add_json_bool, Board_uses_scaler_m2m1shot, $(filter true,$(BOARD_USES_SCALER_M2M1SHOT)))
+$(call add_json_bool, Board_uses_align_restriction, $(filter true,$(BOARD_USES_ALIGN_RESTRICTION)))
+
 $(call json_end)
 
 $(file >$(SOONG_VARIABLES).tmp,$(json_contents))
