@@ -100,7 +100,7 @@ mod tests {
 use aconfig_storage_read_api::{StorageFileType, get_mapped_storage_file, get_boolean_flag_value, get_package_offset};
 use std::path::Path;
 use std::io::Write;
-use log::{info, error, LevelFilter};
+use log::{log, LevelFilter, Level};
 
 static STORAGE_MIGRATION_MARKER_FILE: &str =
     "/metadata/aconfig/storage_test_mission_1";
@@ -503,7 +503,7 @@ pub fn reset_flags() {
 use aconfig_storage_read_api::{StorageFileType, get_mapped_storage_file, get_boolean_flag_value, get_package_offset};
 use std::path::Path;
 use std::io::Write;
-use log::{info, error, LevelFilter};
+use log::{log, LevelFilter, Level};
 
 static STORAGE_MIGRATION_MARKER_FILE: &str =
     "/metadata/aconfig/storage_test_mission_1";
@@ -577,7 +577,7 @@ pub fn enabled_ro_exported() -> bool {
 use aconfig_storage_read_api::{StorageFileType, get_mapped_storage_file, get_boolean_flag_value, get_package_offset};
 use std::path::Path;
 use std::io::Write;
-use log::{info, error, LevelFilter};
+use log::{log, LevelFilter, Level};
 
 static STORAGE_MIGRATION_MARKER_FILE: &str =
     "/metadata/aconfig/storage_test_mission_1";
