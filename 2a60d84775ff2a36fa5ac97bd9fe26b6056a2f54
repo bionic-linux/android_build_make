@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b62bc764_b06dc942",
+        "filename": "tools/aconfig/aconfig_device_paths/src/lib.rs",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1081223
+      },
+      "writtenOn": "2024-06-17T21:12:40Z",
+      "side": 1,
+      "message": "I don\u0027t think we can.\n`test_read_partition_paths` explicitly tests the existence of 4 entries with the absolute path name.\nWe can refactor the test to generate the \"proper\" list at runtime, but I don\u0027t think it would be a smart test.",
+      "parentUuid": "9d6fee7c_4c606c35",
+      "revId": "2a60d84775ff2a36fa5ac97bd9fe26b6056a2f54",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "0ad3e1cd_db00deda",
         "filename": "tools/aconfig/aconfig_device_paths/src/lib.rs",
         "patchSetId": 2
@@ -31,6 +49,24 @@
       "writtenOn": "2024-06-17T21:05:28Z",
       "side": 1,
       "message": "Thanks Luca for the CL! Would you mind updating the docstring to clarify that the paths are explicitly only ones that do exist, mentioning that it filters out paths that don\u0027t?",
+      "revId": "2a60d84775ff2a36fa5ac97bd9fe26b6056a2f54",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "912dbe66_3f530d47",
+        "filename": "tools/aconfig/aconfig_device_paths/src/lib.rs",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1081223
+      },
+      "writtenOn": "2024-06-17T21:12:40Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "0ad3e1cd_db00deda",
       "revId": "2a60d84775ff2a36fa5ac97bd9fe26b6056a2f54",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
