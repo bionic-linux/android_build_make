@@ -24,6 +24,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "025e2851_37e92657",
+        "filename": "core/config.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 1259,
+      "author": {
+        "id": 1291338
+      },
+      "writtenOn": "2024-06-17T01:18:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "394c3dfb_746eb1c2",
+      "range": {
+        "startLine": 1255,
+        "startChar": 0,
+        "endLine": 1259,
+        "endChar": 44
+      },
+      "revId": "2046a3bac7975564104ff17b2d60fb278a4447fb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e2024af7_2db32c41",
@@ -37,6 +61,24 @@
       "writtenOn": "2024-06-14T18:49:44Z",
       "side": 1,
       "message": "nit: move this to just before the `$(file)`",
+      "revId": "2046a3bac7975564104ff17b2d60fb278a4447fb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "64d50cc3_08c9be42",
+        "filename": "core/soong_extra_config.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1291338
+      },
+      "writtenOn": "2024-06-17T01:18:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e2024af7_2db32c41",
       "revId": "2046a3bac7975564104ff17b2d60fb278a4447fb",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
