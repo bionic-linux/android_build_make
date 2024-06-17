@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9d6fee7c_4c606c35",
+        "filename": "tools/aconfig/aconfig_device_paths/src/lib.rs",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1981530
+      },
+      "writtenOn": "2024-06-17T21:05:28Z",
+      "side": 1,
+      "message": "Could we do the filtering here?",
+      "revId": "2a60d84775ff2a36fa5ac97bd9fe26b6056a2f54",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0ad3e1cd_db00deda",
+        "filename": "tools/aconfig/aconfig_device_paths/src/lib.rs",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1981530
+      },
+      "writtenOn": "2024-06-17T21:05:28Z",
+      "side": 1,
+      "message": "Thanks Luca for the CL! Would you mind updating the docstring to clarify that the paths are explicitly only ones that do exist, mentioning that it filters out paths that don\u0027t?",
+      "revId": "2a60d84775ff2a36fa5ac97bd9fe26b6056a2f54",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
