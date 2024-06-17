@@ -16,6 +16,24 @@
       "message": "*why* is this needed?",
       "revId": "d00ae0a11eb5434044b69295523ae8055805fa3b",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "692e1873_c7f1b800",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1981530
+      },
+      "writtenOn": "2024-06-17T15:26:57Z",
+      "side": 1,
+      "message": "Added some more info to the CL description.",
+      "parentUuid": "04b4435a_0b5eaf1b",
+      "revId": "d00ae0a11eb5434044b69295523ae8055805fa3b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
