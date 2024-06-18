@@ -18,6 +18,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "79bf04e2_7f6c79a1",
+        "filename": "tools/sbom/sbom_data.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1318142
+      },
+      "writtenOn": "2024-06-18T19:24:18Z",
+      "side": 1,
+      "message": "Tried it, it can not be frozen because Document.describes is changed sometimes after an instance is created.",
+      "parentUuid": "3f49324b_b3e30ec1",
+      "revId": "982ae147b8a21b8afe3b2114c569b0fa9eaedeae",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1719e698_b1229625",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-06-18T17:44:47Z",
       "side": 1,
       "message": "Consider making `declared_license_ids` a set in the first place, or manually loop over the new ids and insert them if they\u0027re not already in the list for determinism.",
+      "revId": "982ae147b8a21b8afe3b2114c569b0fa9eaedeae",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f90072d5_755c0eab",
+        "filename": "tools/sbom/sbom_data.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1318142
+      },
+      "writtenOn": "2024-06-18T19:24:18Z",
+      "side": 1,
+      "message": "Thanks for catching this. Python set is unordered which is not what I expected, changed it to loop and added a test case.",
+      "parentUuid": "1719e698_b1229625",
       "revId": "982ae147b8a21b8afe3b2114c569b0fa9eaedeae",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
