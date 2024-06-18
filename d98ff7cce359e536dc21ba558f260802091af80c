@@ -94,6 +94,30 @@
       },
       "revId": "d98ff7cce359e536dc21ba558f260802091af80c",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e178c13b_98045d51",
+        "filename": "core/soong_config.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1002751
+      },
+      "writtenOn": "2024-06-18T19:04:42Z",
+      "side": 1,
+      "message": "I have no strong opinion, the file name was used because then it can be passed to `PathForOutput` to get a `Path`.  Constructing the `Path` another way using the full path is fine too.",
+      "parentUuid": "d1ed7ff1_b8983864",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 78
+      },
+      "revId": "d98ff7cce359e536dc21ba558f260802091af80c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
