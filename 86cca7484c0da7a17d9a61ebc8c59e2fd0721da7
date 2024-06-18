@@ -33,6 +33,165 @@
       "message": "as discussed offline, this is somewhat of a risky change, right before some rollouts we\u0027re planning to have internally.\n\nlet\u0027s wait for couple weeks until that launch sticks, so that we can land this change without disturbance.",
       "revId": "86cca7484c0da7a17d9a61ebc8c59e2fd0721da7",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c8ff24de_f2dd3b21",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3276774
+      },
+      "writtenOn": "2024-06-18T14:42:20Z",
+      "side": 1,
+      "message": "LG from cc_analyzer perspective. I\u0027ve some concerns about the general shape of the new ide_query proto, especially about the way we\u0027re limiting the working_dir (i believe the rest is just introducing some edges between different results, which i think is required by Java people and no-op for C++ services).\n\nI think it\u0027d be nice to not have that limitation around working_dir, as it might bite us when onboarding more projects with complicated build setups.",
+      "revId": "86cca7484c0da7a17d9a61ebc8c59e2fd0721da7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5165c982_81e006bd",
+        "filename": "tools/ide_query/ide_query_proto/ide_query.proto",
+        "patchSetId": 6
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 3276774
+      },
+      "writtenOn": "2024-06-18T14:42:20Z",
+      "side": 1,
+      "message": "why are we renaming from `build_artifact_root` ?",
+      "fixSuggestions": [
+        {
+          "fixId": "49ed38ce_1cf99294",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "tools/ide_query/ide_query_proto/ide_query.proto",
+              "range": {
+                "startLine": 34,
+                "startChar": 0,
+                "endLine": 35,
+                "endChar": 0
+              },
+              "replacement": "  string build_artifact_root \u003d 1;\n"
+            }
+          ]
+        }
+      ],
+      "revId": "86cca7484c0da7a17d9a61ebc8c59e2fd0721da7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bfc38f62_ed2bb298",
+        "filename": "tools/ide_query/ide_query_proto/ide_query.proto",
+        "patchSetId": 6
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 3276774
+      },
+      "writtenOn": "2024-06-18T14:42:20Z",
+      "side": 1,
+      "message": "it isn\u0027t guaranteed that all the build actions will be run from the same directory. hence this was per-source-file to make sure we can support such actions in the future. any reason for putting this limitation into the design now?",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 25
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "005725f1_04fac3e5",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "tools/ide_query/ide_query_proto/ide_query.proto",
+              "range": {
+                "startLine": 35,
+                "startChar": 0,
+                "endLine": 38,
+                "endChar": 0
+              },
+              "replacement": ""
+            },
+            {
+              "path": "tools/ide_query/ide_query_proto/ide_query.proto",
+              "range": {
+                "startLine": 45,
+                "startChar": 0,
+                "endLine": 46,
+                "endChar": 0
+              },
+              "replacement": "  reserved 2, 3, 4;\n"
+            },
+            {
+              "path": "tools/ide_query/ide_query_proto/ide_query.proto",
+              "range": {
+                "startLine": 97,
+                "startChar": 0,
+                "endLine": 98,
+                "endChar": 0
+              },
+              "replacement": "  // Path to the file relative to repository root.\n"
+            }
+          ]
+        }
+      ],
+      "revId": "86cca7484c0da7a17d9a61ebc8c59e2fd0721da7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bd98f42b_807729ae",
+        "filename": "tools/ide_query/ide_query_proto/ide_query.proto",
+        "patchSetId": 6
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 3276774
+      },
+      "writtenOn": "2024-06-18T14:42:20Z",
+      "side": 1,
+      "message": "it feels like we can either get rid of this or `AnalysisEror`",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 67,
+        "endChar": 3
+      },
+      "revId": "86cca7484c0da7a17d9a61ebc8c59e2fd0721da7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f71619b8_6104c0d1",
+        "filename": "tools/ide_query/ide_query_proto/ide_query.proto",
+        "patchSetId": 6
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 3276774
+      },
+      "writtenOn": "2024-06-18T14:42:20Z",
+      "side": 1,
+      "message": "i guess this makes sense for C++ to be at this level, but wouldn\u0027t it make more sense to push this into `BuildableUnit`s ? IIRC, we went with this kind of separation because there can be `BuildableUnit`s that are not relevant to source in question directly, but can be used to speed up warmups for further files from the same package later on. In such a world we don\u0027t have an `AnalysisResult` associated with that file but we actually have some `BuildableUnit`s that we can use.",
+      "range": {
+        "startLine": 74,
+        "startChar": 0,
+        "endLine": 75,
+        "endChar": 32
+      },
+      "revId": "86cca7484c0da7a17d9a61ebc8c59e2fd0721da7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
