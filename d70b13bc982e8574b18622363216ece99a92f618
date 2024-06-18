@@ -16,6 +16,29 @@
       "message": "Sorry got your +2 lost, updated the description",
       "revId": "d70b13bc982e8574b18622363216ece99a92f618",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cf7035dc_c2cb4305",
+        "filename": "tools/aconfig/aconfig_device_paths/src/lib.rs",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1937565
+      },
+      "writtenOn": "2024-06-18T06:29:24Z",
+      "side": 1,
+      "message": "nit: nonexistent",
+      "range": {
+        "startLine": 34,
+        "startChar": 18,
+        "endLine": 34,
+        "endChar": 28
+      },
+      "revId": "d70b13bc982e8574b18622363216ece99a92f618",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
