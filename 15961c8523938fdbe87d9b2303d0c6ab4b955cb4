@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "77e05ee8_bd5253b4",
+        "filename": "core/soong_extra_config.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2024-06-18T06:58:28Z",
+      "side": 0,
+      "message": "This is dropped. Intentional? Why?",
+      "range": {
+        "startLine": 48,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 98
+      },
+      "revId": "15961c8523938fdbe87d9b2303d0c6ab4b955cb4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
