@@ -22,6 +22,30 @@
       },
       "revId": "d98ff7cce359e536dc21ba558f260802091af80c",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2108694c_9037ad0e",
+        "filename": "core/soong_config.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1291338
+      },
+      "writtenOn": "2024-06-18T08:19:19Z",
+      "side": 1,
+      "message": "I just copied what we\u0027re doing on `BuildNumberFile`. We could refactor this but I think that\u0027s out of scope.",
+      "parentUuid": "e1846b0a_6a3b2841",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 78
+      },
+      "revId": "d98ff7cce359e536dc21ba558f260802091af80c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
