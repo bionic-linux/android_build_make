@@ -77,6 +77,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ee280a15_5266354a",
+        "filename": "tools/ide_query/ide_query.go",
+        "patchSetId": 6
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 2066167
+      },
+      "writtenOn": "2024-06-19T12:53:31Z",
+      "side": 1,
+      "message": "Sorry, I see that runtime is n^3 because of the break after it. Up to you.",
+      "parentUuid": "b36d0b00_2bccde7b",
+      "range": {
+        "startLine": 304,
+        "startChar": 4,
+        "endLine": 304,
+        "endChar": 45
+      },
+      "revId": "86cca7484c0da7a17d9a61ebc8c59e2fd0721da7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "5165c982_81e006bd",
         "filename": "tools/ide_query/ide_query_proto/ide_query.proto",
         "patchSetId": 6
