@@ -54,6 +54,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b36d0b00_2bccde7b",
+        "filename": "tools/ide_query/ide_query.go",
+        "patchSetId": 6
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 2066167
+      },
+      "writtenOn": "2024-06-19T12:51:37Z",
+      "side": 1,
+      "message": "(opt) consider inverting the loop to reduce from n^4 to n^3:\nfor _, p :\u003d range paths {\n  for name, module :\u003d range modules {\n    if slices.Contains(module.Srcs, p) {\n      ...\n    }\n  }\n}",
+      "range": {
+        "startLine": 304,
+        "startChar": 4,
+        "endLine": 304,
+        "endChar": 45
+      },
+      "revId": "86cca7484c0da7a17d9a61ebc8c59e2fd0721da7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "5165c982_81e006bd",
         "filename": "tools/ide_query/ide_query_proto/ide_query.proto",
         "patchSetId": 6
