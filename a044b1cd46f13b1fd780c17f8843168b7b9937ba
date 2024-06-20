@@ -52,6 +52,23 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8a534c5d_f01cc698",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3496714
+      },
+      "writtenOn": "2024-06-20T23:44:58Z",
+      "side": 1,
+      "message": "Xiaomi mi a3 update android version14",
+      "revId": "a044b1cd46f13b1fd780c17f8843168b7b9937ba",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e8faebc3_8ad799e4",
