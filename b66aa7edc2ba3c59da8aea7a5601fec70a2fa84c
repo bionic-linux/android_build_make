@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bbe82cdf_71822730",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2024-06-20T01:06:50Z",
+      "side": 1,
+      "message": "Upstreaming the missing CL (ag/26665015) as the trace_redactor is available in aosp.",
+      "revId": "b66aa7edc2ba3c59da8aea7a5601fec70a2fa84c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
