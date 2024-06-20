@@ -261,6 +261,13 @@ $(foreach namespace,$(sort $(SOONG_CONFIG_NAMESPACES)),\
     $(call add_json_str,$(key),$(subst ",\",$(SOONG_CONFIG_$(namespace)_$(key)))))\
   $(call end_json_map))
 $(call end_json_map)
+$(call add_json_map, VendorVarTypes)
+$(foreach namespace,$(sort $(SOONG_CONFIG_NAMESPACES)),\
+  $(call add_json_map, $(namespace))\
+  $(foreach key,$(sort $(SOONG_CONFIG_$(namespace))),\
+    $(if $(SOONG_CONFIG_TYPE_$(namespace)_$(key)),$(call add_json_str,$(key),$(subst ",\",$(SOONG_CONFIG_TYPE_$(namespace)_$(key))))))\
+  $(call end_json_map))
+$(call end_json_map)
 
 $(call add_json_bool, EnforceProductPartitionInterface,  $(filter true,$(PRODUCT_ENFORCE_PRODUCT_PARTITION_INTERFACE)))
 $(call add_json_str,  DeviceCurrentApiLevelForVendorModules,  $(BOARD_CURRENT_API_LEVEL_FOR_VENDOR_MODULES))
