@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a941b96e_cda2198c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-06-20T23:29:47Z",
+      "side": 1,
+      "message": "Widevine is proprietary and should not be in AOSP.",
+      "revId": "527ba92beadfc04099d3bc739e33c345ebb636c5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
