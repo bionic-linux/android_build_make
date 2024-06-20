@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bd7c7c20_c99699db",
+        "filename": "core/config.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 1878380
+      },
+      "writtenOn": "2024-06-20T21:47:29Z",
+      "side": 1,
+      "message": "Can you add documentation about these positional arguments?",
+      "range": {
+        "startLine": 325,
+        "startChar": 36,
+        "endLine": 325,
+        "endChar": 41
+      },
+      "revId": "7d15c4f3b9ff83c4407a35d3570aa702cb8d1784",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "652ecefd_c3fcf7bb",
+        "filename": "core/soong_config.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 1878380
+      },
+      "writtenOn": "2024-06-20T21:47:29Z",
+      "side": 1,
+      "message": "IIUC, SOONG_CONFIG_TYPE_\u003cnamespace\u003e_\u003ckey\u003e will be empty for string types. Can you add a comment here about this implementation detail?",
+      "range": {
+        "startLine": 268,
+        "startChar": 4,
+        "endLine": 268,
+        "endChar": 135
+      },
+      "revId": "7d15c4f3b9ff83c4407a35d3570aa702cb8d1784",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
