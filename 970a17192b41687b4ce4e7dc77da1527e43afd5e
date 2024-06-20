@@ -16,6 +16,23 @@
       "message": "need to fix some downstream branches",
       "revId": "970a17192b41687b4ce4e7dc77da1527e43afd5e",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "56df50f3_eb3c0b89",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1120458
+      },
+      "writtenOn": "2024-06-20T18:02:32Z",
+      "side": 1,
+      "message": "Hey Justin, the error here was:\n\n\u003e build/make/core/config.mk:832: error: BOARD_SYSTEMSDK_VERSIONS (35) must all be greater than or equal to BOARD_API_LEVEL, BOARD_SHIPPING_API_LEVEL or PRODUCT_SHIPPING_API_LEVEL (10000).\n\nDo you think defining PRODUCT_SHIPPING_API_LEVEL in this case to be equal to BOARD_SYSTEMSDK_VERSIONS is okay, or can I remove this requirement on BOARD_SYSTEMSDK_VERSIONS?",
+      "revId": "970a17192b41687b4ce4e7dc77da1527e43afd5e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
