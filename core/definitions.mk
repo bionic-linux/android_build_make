@@ -4043,3 +4043,13 @@ define use_soong_sdk_libraries
   $(foreach l,$(1),$(if $(filter $(l),$(SOONG_SDK_VARIANT_MODULES)),\
       $(l).sdk,$(l)))
 endef
+
+define target_arch_to_clang_arch
+  $(if $(filter arm,$(1)),arm, \
+    $(if $(filter arm64,$(1)),aarch64, \
+    $(if $(filter x86,$(1)),i386, \
+    $(if $(filter x86_64,$(1)),x86_64, \
+    $(if $(filter riscv64,$(1)),riscv64, \
+    $(error Unrecognized TARGET_ARCH of $(1)) \
+  )))))
+endef
