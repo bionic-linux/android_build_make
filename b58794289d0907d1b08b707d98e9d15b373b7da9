@@ -72,6 +72,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d3afd851_442050d8",
+        "filename": "core/Makefile",
+        "patchSetId": 2
+      },
+      "lineNbr": 3474,
+      "author": {
+        "id": 1535516
+      },
+      "writtenOn": "2024-06-21T18:54:27Z",
+      "side": 1,
+      "message": "Make these variables start with `PRODUCT_` and add them to `_product_single_value_vars`.",
+      "range": {
+        "startLine": 3474,
+        "startChar": 9,
+        "endLine": 3474,
+        "endChar": 45
+      },
+      "revId": "b58794289d0907d1b08b707d98e9d15b373b7da9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d7dc97f2_d9726826",
         "filename": "tools/filelistdiff/file_diff_list.py",
         "patchSetId": 2
