@@ -142,6 +142,24 @@
       "parentUuid": "594f9a28_e39bb608",
       "revId": "b5977729bd134816ffa86334fde1e589eb117157",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8107d50b_bde5bad3",
+        "filename": "target/product/generic_system.mk",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2024-06-21T22:29:20Z",
+      "side": 1,
+      "message": "Synced offline, a better approach to this would be changing the default in board_config.mk.",
+      "parentUuid": "8777735a_af75b155",
+      "revId": "b5977729bd134816ffa86334fde1e589eb117157",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
