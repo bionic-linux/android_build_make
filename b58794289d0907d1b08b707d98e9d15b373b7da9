@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ca9f0070_4b3d0144",
+        "filename": "core/Makefile",
+        "patchSetId": 2
+      },
+      "lineNbr": 3464,
+      "author": {
+        "id": 1291338
+      },
+      "writtenOn": "2024-06-21T08:26:26Z",
+      "side": 1,
+      "message": "don\u0027t we need `mkdir -p`?",
+      "range": {
+        "startLine": 3464,
+        "startChar": 1,
+        "endLine": 3464,
+        "endChar": 10
+      },
+      "revId": "b58794289d0907d1b08b707d98e9d15b373b7da9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2c4f2b08_2e3e18bd",
+        "filename": "tools/filelistdiff/file_diff_list.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1291338
+      },
+      "writtenOn": "2024-06-21T08:26:26Z",
+      "side": 1,
+      "message": "remove",
+      "range": {
+        "startLine": 26,
+        "startChar": 14,
+        "endLine": 26,
+        "endChar": 15
+      },
+      "revId": "b58794289d0907d1b08b707d98e9d15b373b7da9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "45309420_2b5aa635",
+        "filename": "tools/filelistdiff/file_diff_list.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1291338
+      },
+      "writtenOn": "2024-06-21T08:26:26Z",
+      "side": 1,
+      "message": "remove",
+      "range": {
+        "startLine": 31,
+        "startChar": 14,
+        "endLine": 31,
+        "endChar": 15
+      },
+      "revId": "b58794289d0907d1b08b707d98e9d15b373b7da9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2404c47b_6d8cbaee",
+        "filename": "tools/filelistdiff/file_diff_list.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1291338
+      },
+      "writtenOn": "2024-06-21T08:26:26Z",
+      "side": 1,
+      "message": "`sys.exit(f\"Usage: {sys.argv[0]} ...\")`",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 19
+      },
+      "revId": "b58794289d0907d1b08b707d98e9d15b373b7da9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
