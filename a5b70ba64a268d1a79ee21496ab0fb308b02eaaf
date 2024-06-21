@@ -16,6 +16,24 @@
       "message": "installed_files.stamp appears to be unused, do we need it?",
       "revId": "a5b70ba64a268d1a79ee21496ab0fb308b02eaaf",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ffe90a35_a09b7e36",
+        "filename": "core/main.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 1983,
+      "author": {
+        "id": 1318142
+      },
+      "writtenOn": "2024-06-21T19:59:55Z",
+      "side": 1,
+      "message": "Yes, it will be used. I am changing a large CL to small ones, it will be used in another CL in soong that I am going to send out for review.",
+      "parentUuid": "d5794a6c_fddea542",
+      "revId": "a5b70ba64a268d1a79ee21496ab0fb308b02eaaf",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
