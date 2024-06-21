@@ -3,6 +3,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "6fa98953_ce1c49d6",
+        "filename": "core/Makefile",
+        "patchSetId": 2
+      },
+      "lineNbr": 3462,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2024-06-21T11:29:28Z",
+      "side": 1,
+      "message": "Add a description about what this function does and also about three arguments.",
+      "range": {
+        "startLine": 3462,
+        "startChar": 0,
+        "endLine": 3462,
+        "endChar": 41
+      },
+      "revId": "b58794289d0907d1b08b707d98e9d15b373b7da9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ca9f0070_4b3d0144",
         "filename": "core/Makefile",
         "patchSetId": 2
@@ -20,6 +43,46 @@
         "endLine": 3464,
         "endChar": 10
       },
+      "revId": "b58794289d0907d1b08b707d98e9d15b373b7da9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3bf094f9_0797f1de",
+        "filename": "core/Makefile",
+        "patchSetId": 2
+      },
+      "lineNbr": 3467,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2024-06-21T11:29:28Z",
+      "side": 1,
+      "message": "This is not actionable immediately. Please show the difference directly and provide the way to fix this (ex: add something to where).",
+      "range": {
+        "startLine": 3467,
+        "startChar": 76,
+        "endLine": 3467,
+        "endChar": 109
+      },
+      "revId": "b58794289d0907d1b08b707d98e9d15b373b7da9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d7dc97f2_d9726826",
+        "filename": "tools/filelistdiff/file_diff_list.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2024-06-21T11:29:28Z",
+      "side": 1,
+      "message": "`diff` can already do this.\n\n```\ndiff --old-line-format\u003d\u0027Only in Kati %L\u0027 \\\n     --new-line-format\u003d\u0027Only in Make %L\u0027 \\\n     --unchanged-line-format\u003d\u0027\u0027 \\\n     kati.list make.list\n```",
       "revId": "b58794289d0907d1b08b707d98e9d15b373b7da9",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
