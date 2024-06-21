@@ -3481,7 +3481,34 @@ define build-systemimage-target
                exit 1 )
 endef
 
+FILE_LIST_DIFF := $(HOST_OUT_EXECUTABLES)/file_list_diff$(HOST_EXECUTABLE_SUFFIX)
+
+# Compare installed file list in the system image
+# $(1): Output file
+# $(2): KATI defined system file list
+# $(3): Soong defined system image module
+# $(4): Known diff list
+define compare-system-partition-file-list
+$(1): $(2) $(ALL_MODULES.$(3).FILESYSTEM_FILELIST) $(4) $(FILE_LIST_DIFF)
+	rm -f $$@
+	-$(FILE_LIST_DIFF) $(2) $(ALL_MODULES.$(3).FILESYSTEM_FILELIST) $(4) > $$@
+	if [ -s $$@ ]; then \
+	  echo "System image from KATI and SOONG differs from installed file list."; \
+	  cat $$@; \
+	  echo "For modules only in KATI, please add modules into $(3)"; \
+	  echo "For modules only in SOONG, please add modules into build/make/target/product/base_system.mk"; \
+	fi
+endef
+
 $(eval $(call write-partition-file-list,$(systemimage_intermediates)/file_list.txt,$(TARGET_OUT),$(FULL_SYSTEMIMAGE_DEPS)))
+
+ifneq ($(PRODUCT_SOONG_DEFINED_SYSTEM_IMAGE),)
+systemimage_file_diff := $(systemimage_intermediates)/file_diff.txt
+$(eval $(call compare-system-partition-file-list,$(systemimage_file_diff),\
+  $(systemimage_intermediates)/file_list.txt,$(PRODUCT_SOONG_DEFINED_SYSTEM_IMAGE),$(ALL_MODULES.system_image_diff_allowlist.INSTALLED)))
+$(BUILT_SYSTEMIMAGE): $(systemimage_file_diff)
+endif
+
 # Used by soong sandwich to request the staging dir be built
 $(systemimage_intermediates)/staging_dir.stamp: $(filter $(TARGET_OUT)/%,$(FULL_SYSTEMIMAGE_DEPS))
 	touch $@
