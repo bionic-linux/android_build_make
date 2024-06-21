@@ -3557,7 +3557,30 @@ define build-systemimage-target
                exit 1 )
 endef
 
+FILE_LIST_DIFF := $(HOST_OUT_EXECUTABLES)/file_list_diff$(HOST_EXECUTABLE_SUFFIX)
+
+# Compare installed file list in the system image
+# $(1): KATI defined system file list
+# $(2): Soong defined system image module
+# $(3): Known diff list
+define compare-system-partition-file-list
+.PHONY: systemfilediff
+
+systemfilediff: $(1) $(ALL_MODULES.$(2).FILESYSTEM_FILELIST) $(3) $(FILE_LIST_DIFF)
+	$(FILE_LIST_DIFF) $(1) $(ALL_MODULES.$(2).FILESYSTEM_FILELIST) $(3) $(2)
+
+systemimage: systemfilediff
+droidcore-unbundled: systemfilediff
+endef
+
 $(eval $(call write-partition-file-list,$(systemimage_intermediates)/file_list.txt,$(TARGET_OUT),$(FULL_SYSTEMIMAGE_DEPS)))
+
+ifneq ($(PRODUCT_SOONG_DEFINED_SYSTEM_IMAGE),)
+$(eval $(call compare-system-partition-file-list,\
+  $(systemimage_intermediates)/file_list.txt,$(PRODUCT_SOONG_DEFINED_SYSTEM_IMAGE),\
+  $(ALL_MODULES.system_image_diff_allowlist.INSTALLED)))
+endif
+
 # Used by soong sandwich to request the staging dir be built
 $(systemimage_intermediates)/staging_dir.stamp: $(filter $(TARGET_OUT)/%,$(FULL_SYSTEMIMAGE_DEPS))
 	touch $@
