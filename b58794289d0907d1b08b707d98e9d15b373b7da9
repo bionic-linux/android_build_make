@@ -49,6 +49,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "49ea964c_29ab0399",
+        "filename": "core/Makefile",
+        "patchSetId": 2
+      },
+      "lineNbr": 3464,
+      "author": {
+        "id": 1535516
+      },
+      "writtenOn": "2024-06-21T18:55:28Z",
+      "side": 1,
+      "message": "I don\u0027t think so, because ninja will make directories leading to the output file. The `mkdir -p` was common in make code before kati existed.",
+      "parentUuid": "ca9f0070_4b3d0144",
+      "range": {
+        "startLine": 3464,
+        "startChar": 1,
+        "endLine": 3464,
+        "endChar": 10
+      },
+      "revId": "b58794289d0907d1b08b707d98e9d15b373b7da9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3bf094f9_0797f1de",
         "filename": "core/Makefile",
         "patchSetId": 2
