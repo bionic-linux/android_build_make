@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d5794a6c_fddea542",
+        "filename": "core/main.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 1983,
+      "author": {
+        "id": 1535516
+      },
+      "writtenOn": "2024-06-21T19:51:38Z",
+      "side": 1,
+      "message": "installed_files.stamp appears to be unused, do we need it?",
+      "revId": "a5b70ba64a268d1a79ee21496ab0fb308b02eaaf",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
