@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b8036dde_2965ee8f",
+        "filename": "target/product/security/Android.bp",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2024-06-24T06:24:08Z",
+      "side": 1,
+      "message": "I feel like this is error prone. The existence of the symlink target is not guaranteed. I wish that install_symlink accepts the target module. ex:\n\n```\ninstall_symlink {\n   name: \"otacerts.symlink\",\n   installed_location: \"etc/security/otacerts.zip\",\n   target: \"otacerts\", // this gets installed along with this symlink module.\n}\n```\n \nOver to Cole for his thought.",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 60
+      },
+      "revId": "5196fc52c072574180b8271b277cbb7ea299ed21",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a07111d8_1c1130be",
+        "filename": "target/product/security/Android.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2024-06-24T06:24:08Z",
+      "side": 1,
+      "message": "In summary, we really need to move this to bp",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 24
+      },
+      "revId": "5196fc52c072574180b8271b277cbb7ea299ed21",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b86a063b_c37e5843",
+        "filename": "target/product/security/Android.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2024-06-24T06:24:08Z",
+      "side": 1,
+      "message": "I think we need to keep this in system partition. The fact that this module depends on PRODUCT_EXTRA_OTA_KEYS and DEFAULT_SYSTEM_DEV_CERTIFICATE shouldn\u0027t make it inappropriate to have this module in the system partition. For example, apps depend on DEFAULT_SYSTEM_DEV_CERTIFICATE because that\u0027s the default certificate that is used.",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 31
+      },
+      "revId": "5196fc52c072574180b8271b277cbb7ea299ed21",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1b6dc577_e122f2f4",
+        "filename": "target/product/security/Android.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2024-06-24T06:24:08Z",
+      "side": 1,
+      "message": "No target in git_main seems to be setting this. Do we want to keep this? Over to Kelvin.",
+      "range": {
+        "startLine": 35,
+        "startChar": 42,
+        "endLine": 35,
+        "endChar": 64
+      },
+      "revId": "5196fc52c072574180b8271b277cbb7ea299ed21",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1c9a411b_8db61ad0",
+        "filename": "target/product/security/Android.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2024-06-24T06:24:08Z",
+      "side": 1,
+      "message": "This is available in Soong. DefaultAppCertificate",
+      "range": {
+        "startLine": 37,
+        "startChar": 39,
+        "endLine": 37,
+        "endChar": 81
+      },
+      "revId": "5196fc52c072574180b8271b277cbb7ea299ed21",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8450b9ec_2926d8cb",
+        "filename": "target/product/security/Android.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2024-06-24T06:24:08Z",
+      "side": 1,
+      "message": "This part can be implemented in bp using the select statement.",
+      "range": {
+        "startLine": 44,
+        "startChar": 20,
+        "endLine": 44,
+        "endChar": 63
+      },
+      "revId": "5196fc52c072574180b8271b277cbb7ea299ed21",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
