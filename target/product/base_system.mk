@@ -236,7 +236,7 @@ PRODUCT_PACKAGES += \
     NetworkStack \
     odsign \
     org.apache.http.legacy \
-    otacerts \
+    otacerts.symlink \
     PackageInstaller \
     package-shareduid-allowlist.xml \
     passwd_system \

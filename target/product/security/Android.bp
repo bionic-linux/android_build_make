@@ -25,3 +25,9 @@ prebuilt_etc {
     sub_dir: "security/fsverity",
     filename_from_src: true,
 }
+
+install_symlink {
+    name: "otacerts.symlink",
+    installed_location: "etc/security/otacerts.zip",
+    symlink_target: "/system_ext/etc/security/otacerts.zip",
+}

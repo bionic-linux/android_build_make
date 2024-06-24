@@ -28,7 +28,8 @@ LOCAL_LICENSE_CONDITIONS := notice
 LOCAL_NOTICE_FILE := build/soong/licenses/LICENSE
 LOCAL_MODULE_CLASS := ETC
 LOCAL_MODULE_STEM := otacerts.zip
-LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)/security
+LOCAL_SYSTEM_EXT_MODULE := true
+LOCAL_MODULE_RELATIVE_PATH := security
 include $(BUILD_SYSTEM)/base_rules.mk
 
 extra_ota_keys := $(addsuffix .x509.pem,$(PRODUCT_EXTRA_OTA_KEYS))
