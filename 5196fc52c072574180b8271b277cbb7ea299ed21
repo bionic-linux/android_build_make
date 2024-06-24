@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "c1a3f2f4_ace881b3",
+        "filename": "target/product/security/Android.bp",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1535516
+      },
+      "writtenOn": "2024-06-24T18:06:56Z",
+      "side": 1,
+      "message": "Good idea, that sounds good to me if the target module only produces 1 installed file.",
+      "parentUuid": "b8036dde_2965ee8f",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 60
+      },
+      "revId": "5196fc52c072574180b8271b277cbb7ea299ed21",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a07111d8_1c1130be",
         "filename": "target/product/security/Android.mk",
         "patchSetId": 2
