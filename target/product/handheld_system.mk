@@ -89,6 +89,12 @@ PRODUCT_SYSTEM_SERVER_APPS += \
 
 PRODUCT_PACKAGES += framework-audio_effects.xml
 
+# Support Credential Manager for handheld devices, excluding automotive
+ifneq ($(PRODUCT_IS_AUTOMOTIVE),true)
+    PRODUCT_COPY_FILES += \
+        frameworks/native/data/etc/android.software.credentials.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.credentials.xml
+endif
+
 PRODUCT_VENDOR_PROPERTIES += \
     ro.carrier?=unknown \
     ro.config.notification_sound?=OnTheHunt.ogg \
