@@ -16,6 +16,24 @@
       "message": "`soong_config_set(_bool)` takes 3 arguments: the namespace, the variable name, and the value of the variable. It\u0027s not like `add_soong_config_var` which uses the value of the variable as the value of the soong config variable.\n\nSo this should be:\n```suggestion\n$(call soong_config_set_bool,ANDROID,BOARD_USES_RECOVERY_AS_BOOT,$(BOARD_USES_RECOVERY_AS_BOOT))\n```",
       "revId": "650ab9757bcb4270c642fcbe210b501061872027",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e0c4d9c7_1118bde3",
+        "filename": "core/android_soong_config_vars.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1307893
+      },
+      "writtenOn": "2024-06-25T02:57:44Z",
+      "side": 1,
+      "message": "Done, thanks a lot.",
+      "parentUuid": "d98ea89a_7c91ddfa",
+      "revId": "650ab9757bcb4270c642fcbe210b501061872027",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
