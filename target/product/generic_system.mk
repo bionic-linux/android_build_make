@@ -41,6 +41,10 @@ ifeq ($(RELEASE_AVATAR_PICKER_APP),true)
     AvatarPicker
 endif
 
+# Support Credential Manager for handheld devices, excluding automotive
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.software.credentials.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.credentials.xml
+
 # OTA support
 PRODUCT_PACKAGES += \
     recovery-refresh \
