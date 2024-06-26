@@ -296,6 +296,7 @@ ifeq ($(NATIVE_COVERAGE),true)
 endif
 
 ifeq ($(CLANG_COVERAGE),true)
+  my_cflags += $(FUZZ_FEATURIZE_MACRO)
   ifndef LOCAL_IS_HOST_MODULE
     my_ldflags += $(CLANG_COVERAGE_HOST_LDFLAGS)
     ifneq ($(LOCAL_MODULE_CLASS),STATIC_LIBRARIES)
