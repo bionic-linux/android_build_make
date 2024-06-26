@@ -91,6 +91,40 @@
       },
       "revId": "dd45f5484e9fe2f27d2e1f9940e306d87a89ba45",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c5b0613c_8e904e3b",
+        "filename": "tools/filelistdiff/file_list_diff.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1535516
+      },
+      "writtenOn": "2024-06-26T18:21:58Z",
+      "side": 1,
+      "message": "Don\u0027t you need to exit with an error if there were diffs?",
+      "revId": "dd45f5484e9fe2f27d2e1f9940e306d87a89ba45",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f1f51b46_77dd0a2f",
+        "filename": "tools/filelistdiff/file_list_diff.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1535516
+      },
+      "writtenOn": "2024-06-26T18:21:58Z",
+      "side": 1,
+      "message": "Use argparse",
+      "revId": "dd45f5484e9fe2f27d2e1f9940e306d87a89ba45",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
