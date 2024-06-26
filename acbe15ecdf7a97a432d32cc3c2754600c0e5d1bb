@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6cb5a27b_28f29800",
+        "filename": "core/packaging/flags.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1583551
+      },
+      "writtenOn": "2024-06-26T21:44:18Z",
+      "side": 1,
+      "message": "One could argue that this should use the partition aconfig flag files rather than $(required_aconfig_flags_files), but this way it includes all of the flags actually declared and/or consumed on the device, rather than the concatenation of flags declared on each partition.",
+      "revId": "acbe15ecdf7a97a432d32cc3c2754600c0e5d1bb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
