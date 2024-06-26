@@ -80,6 +80,30 @@
       },
       "revId": "e1dd67d518973d0a3250ef5647dfe4635c2173de",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "967ed0ea_59948f57",
+        "filename": "teams/Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1827146
+      },
+      "writtenOn": "2024-06-26T21:20:44Z",
+      "side": 1,
+      "message": "This was done already http://b/347018479\n\nAnd it works fine - we have trunk flags for the trendy team working - see https://gantry.corp.google.com/projects/android_platform_statsd",
+      "parentUuid": "12f006b3_a5aa0281",
+      "range": {
+        "startLine": 0,
+        "startChar": 0,
+        "endLine": 0,
+        "endChar": 0
+      },
+      "revId": "e1dd67d518973d0a3250ef5647dfe4635c2173de",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
