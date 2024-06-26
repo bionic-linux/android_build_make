@@ -53,6 +53,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "deca1c7d_7869ccce",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1120458
+      },
+      "writtenOn": "2024-06-26T17:19:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "73a184bf_fa298c25",
+      "revId": "970a17192b41687b4ce4e7dc77da1527e43afd5e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3f90f743_4dd49312",
@@ -66,6 +84,30 @@
       "writtenOn": "2024-06-21T11:50:31Z",
       "side": 1,
       "message": "Can we ignore this line when `PRODUCT_SHIPPING_API_LEVEL` equals 10000, instead of extending the math.mk?\n`sdk-to-vendor-api-level` cannot interpret the future api level and it will generate invalid version when `PRODUCT_SHIPPING_API_LEVEL` is 10000.\n```suggestion\n    ifneq ($(PRODUCT_SHIPPING_API_LEVEL),10000)\n      VSR_VENDOR_API_LEVEL :\u003d $(call sdk-to-vendor-api-level,$(PRODUCT_SHIPPING_API_LEVEL))\n    endif\n```",
+      "range": {
+        "startLine": 597,
+        "startChar": 4,
+        "endLine": 597,
+        "endChar": 89
+      },
+      "revId": "970a17192b41687b4ce4e7dc77da1527e43afd5e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bd26f3f5_5267bcc1",
+        "filename": "core/product_config.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 597,
+      "author": {
+        "id": 1120458
+      },
+      "writtenOn": "2024-06-26T17:19:15Z",
+      "side": 1,
+      "message": "It\u0027s good to have the generic support. It may be used elsewhere as well.\n\nThe same argument I use in the CL (we want the newer, higher version) applies to VSR_VENDOR_API_LEVEL as well. If we do anything, we should make sure VSR_VENDOR_API_LEVEL also returns 10000 here.\n\nPlease approve! :D",
+      "parentUuid": "3f90f743_4dd49312",
       "range": {
         "startLine": 597,
         "startChar": 4,
