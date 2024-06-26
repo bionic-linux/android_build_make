@@ -158,6 +158,30 @@
       },
       "revId": "970a17192b41687b4ce4e7dc77da1527e43afd5e",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a3cefe84_ca2bf9f7",
+        "filename": "core/product_config.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 597,
+      "author": {
+        "id": 1120458
+      },
+      "writtenOn": "2024-06-26T20:01:06Z",
+      "side": 1,
+      "message": "So, testing it, in this case, it forces VSR_VENDOR_API_LEVEL to be 20998904, but I don\u0027t think we should make it 10000 since 202404 \u003e 10000. Are you okay to keep it at 20998904? or we could set it to a more specific high value (2**32-1 or something), wdyt?",
+      "parentUuid": "c7606690_75622553",
+      "range": {
+        "startLine": 597,
+        "startChar": 4,
+        "endLine": 597,
+        "endChar": 89
+      },
+      "revId": "970a17192b41687b4ce4e7dc77da1527e43afd5e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
