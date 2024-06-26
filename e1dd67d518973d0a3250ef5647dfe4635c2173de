@@ -34,6 +34,52 @@
       "parentUuid": "d09cd786_9b3f458f",
       "revId": "e1dd67d518973d0a3250ef5647dfe4635c2173de",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e5ea962c_e365385a",
+        "filename": "teams/Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1980115
+      },
+      "writtenOn": "2024-06-26T11:19:59Z",
+      "side": 1,
+      "message": "Please fix this WARNING reported by Bpfmt: This file is not formatted.\n\nAnalyzer Description: Formats Android.bp files.\nOwner: soong-team@google.com\n\nThis file is not formatted.\n\nRun `prebuilts/build-tools/linux-x86/bin/bpfmt -w {filename}` to format the file, or apply the suggested fix.",
+      "range": {
+        "startLine": 0,
+        "startChar": 0,
+        "endLine": 0,
+        "endChar": 0
+      },
+      "revId": "e1dd67d518973d0a3250ef5647dfe4635c2173de",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "12f006b3_a5aa0281",
+        "filename": "teams/Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1980115
+      },
+      "writtenOn": "2024-06-26T11:19:59Z",
+      "side": 1,
+      "message": "Please fix this WARNING reported by Team Rule Lint: A trendy team (id: 5403245077430272) has not been onboarded to Gantry. Instructions on how to onboard are here: go/android-flags-howto-onboarding\n\nAnalyzer Description: Validates Trendy TeamID.\nOwner: crumpet-eng@google.com\n\nA trendy team (id: 5403245077430272) has not been onboarded to Gantry. Instructions on how to onboard are here: go/android-flags-howto-onboarding",
+      "range": {
+        "startLine": 0,
+        "startChar": 0,
+        "endLine": 0,
+        "endChar": 0
+      },
+      "revId": "e1dd67d518973d0a3250ef5647dfe4635c2173de",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
