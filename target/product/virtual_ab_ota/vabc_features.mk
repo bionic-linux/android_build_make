@@ -49,6 +49,7 @@ PRODUCT_VENDOR_PROPERTIES += ro.virtual_ab.batch_writes=true
 # PRODUCT_VENDOR_PROPERTIES += ro.virtual_ab.cow_op_merge_size=16
 # PRODUCT_VENDOR_PROPERTIES += ro.virtual_ab.verify_threshold_size=1073741824
 # PRODUCT_VENDOR_PROPERTIES += ro.virtual_ab.verify_block_size=1048576
+# PRODUCT_VENDOR_PROPERTIES += ro.virtual_ab.payload_processing_size=16777216
 
 # Enabling this property, will improve OTA install time
 # but will use an additional CPU core
