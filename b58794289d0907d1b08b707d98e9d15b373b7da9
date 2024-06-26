@@ -24,6 +24,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5fcdae76_5100321c",
+        "filename": "core/Makefile",
+        "patchSetId": 2
+      },
+      "lineNbr": 3462,
+      "author": {
+        "id": 1413436
+      },
+      "writtenOn": "2024-06-26T05:58:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6fa98953_ce1c49d6",
+      "range": {
+        "startLine": 3462,
+        "startChar": 0,
+        "endLine": 3462,
+        "endChar": 41
+      },
+      "revId": "b58794289d0907d1b08b707d98e9d15b373b7da9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ca9f0070_4b3d0144",
@@ -71,6 +95,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ce43af29_78274c94",
+        "filename": "core/Makefile",
+        "patchSetId": 2
+      },
+      "lineNbr": 3464,
+      "author": {
+        "id": 1413436
+      },
+      "writtenOn": "2024-06-26T05:58:40Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "49ea964c_29ab0399",
+      "range": {
+        "startLine": 3464,
+        "startChar": 1,
+        "endLine": 3464,
+        "endChar": 10
+      },
+      "revId": "b58794289d0907d1b08b707d98e9d15b373b7da9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3bf094f9_0797f1de",
@@ -84,6 +132,30 @@
       "writtenOn": "2024-06-21T11:29:28Z",
       "side": 1,
       "message": "This is not actionable immediately. Please show the difference directly and provide the way to fix this (ex: add something to where).",
+      "range": {
+        "startLine": 3467,
+        "startChar": 76,
+        "endLine": 3467,
+        "endChar": 109
+      },
+      "revId": "b58794289d0907d1b08b707d98e9d15b373b7da9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3318bcdd_9a4dd0f7",
+        "filename": "core/Makefile",
+        "patchSetId": 2
+      },
+      "lineNbr": 3467,
+      "author": {
+        "id": 1413436
+      },
+      "writtenOn": "2024-06-26T05:58:40Z",
+      "side": 1,
+      "message": "Updated message information. PTAL.",
+      "parentUuid": "3bf094f9_0797f1de",
       "range": {
         "startLine": 3467,
         "startChar": 76,
@@ -117,6 +189,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5e85f48a_35e922a8",
+        "filename": "core/Makefile",
+        "patchSetId": 2
+      },
+      "lineNbr": 3474,
+      "author": {
+        "id": 1413436
+      },
+      "writtenOn": "2024-06-26T05:58:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d3afd851_442050d8",
+      "range": {
+        "startLine": 3474,
+        "startChar": 9,
+        "endLine": 3474,
+        "endChar": 45
+      },
+      "revId": "b58794289d0907d1b08b707d98e9d15b373b7da9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d7dc97f2_d9726826",
@@ -136,6 +232,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "934c9534_e0d0e114",
+        "filename": "tools/filelistdiff/file_diff_list.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1413436
+      },
+      "writtenOn": "2024-06-26T05:58:40Z",
+      "side": 1,
+      "message": "I tried this, but prefers to keep this python script for two reasons.\n\n* existing file_list.txt from KATI is not sorted.\n* This python script is more easy to filter with allowlist.",
+      "parentUuid": "d7dc97f2_d9726826",
+      "revId": "b58794289d0907d1b08b707d98e9d15b373b7da9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2c4f2b08_2e3e18bd",
         "filename": "tools/filelistdiff/file_diff_list.py",
         "patchSetId": 2
@@ -147,6 +261,30 @@
       "writtenOn": "2024-06-21T08:26:26Z",
       "side": 1,
       "message": "remove",
+      "range": {
+        "startLine": 26,
+        "startChar": 14,
+        "endLine": 26,
+        "endChar": 15
+      },
+      "revId": "b58794289d0907d1b08b707d98e9d15b373b7da9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "80210cf5_d6ca2600",
+        "filename": "tools/filelistdiff/file_diff_list.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1413436
+      },
+      "writtenOn": "2024-06-26T05:58:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2c4f2b08_2e3e18bd",
       "range": {
         "startLine": 26,
         "startChar": 14,
@@ -180,6 +318,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "86f9fd4d_69f6b5d0",
+        "filename": "tools/filelistdiff/file_diff_list.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1413436
+      },
+      "writtenOn": "2024-06-26T05:58:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "45309420_2b5aa635",
+      "range": {
+        "startLine": 31,
+        "startChar": 14,
+        "endLine": 31,
+        "endChar": 15
+      },
+      "revId": "b58794289d0907d1b08b707d98e9d15b373b7da9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2404c47b_6d8cbaee",
@@ -193,6 +355,30 @@
       "writtenOn": "2024-06-21T08:26:26Z",
       "side": 1,
       "message": "`sys.exit(f\"Usage: {sys.argv[0]} ...\")`",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 19
+      },
+      "revId": "b58794289d0907d1b08b707d98e9d15b373b7da9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ea74ca4a_15a7faea",
+        "filename": "tools/filelistdiff/file_diff_list.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1413436
+      },
+      "writtenOn": "2024-06-26T05:58:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2404c47b_6d8cbaee",
       "range": {
         "startLine": 38,
         "startChar": 0,
