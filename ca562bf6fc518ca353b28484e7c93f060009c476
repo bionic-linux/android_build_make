@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "64f7d2fd_ebfd7234",
+        "filename": "core/Makefile",
+        "patchSetId": 5
+      },
+      "lineNbr": 3494,
+      "author": {
+        "id": 1535516
+      },
+      "writtenOn": "2024-06-27T17:24:32Z",
+      "side": 1,
+      "message": "+1 we should fail the build if there are diffs, and use the allowlist if there are pre-existing issues.",
+      "parentUuid": "39868ee7_1700839b",
+      "range": {
+        "startLine": 3494,
+        "startChar": 1,
+        "endLine": 3494,
+        "endChar": 2
+      },
+      "revId": "ca562bf6fc518ca353b28484e7c93f060009c476",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "193347c1_0a16d165",
         "filename": "core/Makefile",
         "patchSetId": 5
@@ -42,6 +66,29 @@
         "startChar": 0,
         "endLine": 3499,
         "endChar": 104
+      },
+      "revId": "ca562bf6fc518ca353b28484e7c93f060009c476",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "947a3ace_4c46fcc4",
+        "filename": "tools/filelistdiff/file_list_diff.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1535516
+      },
+      "writtenOn": "2024-06-27T17:24:32Z",
+      "side": 1,
+      "message": "```suggestion\n        return filepath in allowed_files\n```",
+      "range": {
+        "startLine": 26,
+        "startChar": 8,
+        "endLine": 29,
+        "endChar": 19
       },
       "revId": "ca562bf6fc518ca353b28484e7c93f060009c476",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"

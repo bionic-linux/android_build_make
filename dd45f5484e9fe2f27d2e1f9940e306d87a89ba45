@@ -257,6 +257,24 @@
       "parentUuid": "f1f51b46_77dd0a2f",
       "revId": "dd45f5484e9fe2f27d2e1f9940e306d87a89ba45",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9b31b99f_68609f6b",
+        "filename": "tools/filelistdiff/file_list_diff.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1535516
+      },
+      "writtenOn": "2024-06-27T17:24:32Z",
+      "side": 1,
+      "message": "Argparse is basically just as simple:\n\n```\nparser \u003d argparse.ArgumentParser()\nparser.add_argument(\u0027kati_installed_files_list\u0027)\nparser.add_argument(\u0027soong_installed_files_list\u0027)\nparser.add_argument(\u0027allowlist\u0027)\nargs \u003d parser.parse_args()\nfind_unique_items(args.kati_installed_files_list, args.soong_installed_files_list, args.allowlist)\n```",
+      "parentUuid": "261b6de8_30ffcf04",
+      "revId": "dd45f5484e9fe2f27d2e1f9940e306d87a89ba45",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
