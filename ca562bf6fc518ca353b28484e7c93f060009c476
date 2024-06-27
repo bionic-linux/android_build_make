@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "39868ee7_1700839b",
+        "filename": "core/Makefile",
+        "patchSetId": 5
+      },
+      "lineNbr": 3494,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2024-06-27T13:24:19Z",
+      "side": 1,
+      "message": "The exit code is ignored??? How do you break the build if the diff exists?\n\nHow about executing FILE_LIST_DIFF and let it print the error message?",
+      "range": {
+        "startLine": 3494,
+        "startChar": 1,
+        "endLine": 3494,
+        "endChar": 2
+      },
+      "revId": "ca562bf6fc518ca353b28484e7c93f060009c476",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "193347c1_0a16d165",
+        "filename": "core/Makefile",
+        "patchSetId": 5
+      },
+      "lineNbr": 3499,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2024-06-27T13:24:19Z",
+      "side": 1,
+      "message": "So, this goes to the python script.",
+      "range": {
+        "startLine": 3496,
+        "startChar": 0,
+        "endLine": 3499,
+        "endChar": 104
+      },
+      "revId": "ca562bf6fc518ca353b28484e7c93f060009c476",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
