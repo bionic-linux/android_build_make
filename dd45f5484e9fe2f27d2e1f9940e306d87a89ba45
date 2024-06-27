@@ -24,6 +24,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "61125ae6_a9d0059a",
+        "filename": "core/Makefile",
+        "patchSetId": 4
+      },
+      "lineNbr": 3503,
+      "author": {
+        "id": 1413436
+      },
+      "writtenOn": "2024-06-27T08:44:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee8ef414_ebafc629",
+      "range": {
+        "startLine": 3503,
+        "startChar": 40,
+        "endLine": 3503,
+        "endChar": 82
+      },
+      "revId": "dd45f5484e9fe2f27d2e1f9940e306d87a89ba45",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6e6f0c25_7cc2bbe8",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-06-26T06:43:30Z",
       "side": 1,
       "message": "nit: consider splitting lines for better readability",
+      "range": {
+        "startLine": 3506,
+        "startChar": 49,
+        "endLine": 3506,
+        "endChar": 227
+      },
+      "revId": "dd45f5484e9fe2f27d2e1f9940e306d87a89ba45",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "62e2c03c_6ca67edc",
+        "filename": "core/Makefile",
+        "patchSetId": 4
+      },
+      "lineNbr": 3506,
+      "author": {
+        "id": 1413436
+      },
+      "writtenOn": "2024-06-27T08:44:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6e6f0c25_7cc2bbe8",
       "range": {
         "startLine": 3506,
         "startChar": 49,
@@ -70,6 +118,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8ab0c6c0_cf8ef362",
+        "filename": "tools/filelistdiff/file_list_diff.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1413436
+      },
+      "writtenOn": "2024-06-27T08:44:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8214c696_b1e666cc",
+      "range": {
+        "startLine": 19,
+        "startChar": 44,
+        "endLine": 19,
+        "endChar": 124
+      },
+      "revId": "dd45f5484e9fe2f27d2e1f9940e306d87a89ba45",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "da47570b_3a313398",
@@ -83,6 +155,30 @@
       "writtenOn": "2024-06-26T06:43:30Z",
       "side": 1,
       "message": "The allowlist file above doesn\u0027t look like a collection of regex. Especially, `.` should be `\\.`. I would just match as regular string.",
+      "range": {
+        "startLine": 26,
+        "startChar": 15,
+        "endLine": 26,
+        "endChar": 18
+      },
+      "revId": "dd45f5484e9fe2f27d2e1f9940e306d87a89ba45",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a6b0ae8f_23d78d0d",
+        "filename": "tools/filelistdiff/file_list_diff.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1413436
+      },
+      "writtenOn": "2024-06-27T08:44:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da47570b_3a313398",
       "range": {
         "startLine": 26,
         "startChar": 15,
@@ -110,6 +206,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d158fca7_2f4b093a",
+        "filename": "tools/filelistdiff/file_list_diff.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1413436
+      },
+      "writtenOn": "2024-06-27T08:44:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c5b0613c_8e904e3b",
+      "revId": "dd45f5484e9fe2f27d2e1f9940e306d87a89ba45",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f1f51b46_77dd0a2f",
@@ -123,6 +237,24 @@
       "writtenOn": "2024-06-26T18:21:58Z",
       "side": 1,
       "message": "Use argparse",
+      "revId": "dd45f5484e9fe2f27d2e1f9940e306d87a89ba45",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "261b6de8_30ffcf04",
+        "filename": "tools/filelistdiff/file_list_diff.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1413436
+      },
+      "writtenOn": "2024-06-27T08:44:37Z",
+      "side": 1,
+      "message": "I think we don\u0027t need argparse for now, as argument is quite simple. Let\u0027s keep it for now, and use argparse once we need more complex arguments.",
+      "parentUuid": "f1f51b46_77dd0a2f",
       "revId": "dd45f5484e9fe2f27d2e1f9940e306d87a89ba45",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
