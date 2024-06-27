@@ -1,0 +1,5 @@
+tests: {
+  name: "general"
+  scripts: "build/make/tools/ide_query/release/general.cc"
+  scripts: "build/make/tools/ide_query/release/testdata.proto"
+}
