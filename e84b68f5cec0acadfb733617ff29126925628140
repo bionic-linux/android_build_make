@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3745dba3_b318082c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1951966
+      },
+      "writtenOn": "2024-06-27T09:15:40Z",
+      "side": 1,
+      "message": "hey @jiakaiz@google.com - I will use the one in https://android-review.git.corp.google.com/q/topic:%22empty-framework-pdf%22 instead. Another suggestion from Jihoon seems to work, but it requires too many customization per platform + relying on some new features that are not working.",
+      "revId": "e84b68f5cec0acadfb733617ff29126925628140",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
