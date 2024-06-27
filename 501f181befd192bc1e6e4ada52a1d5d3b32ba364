@@ -1,0 +1,45 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "025c6a35_a22c5424",
+        "filename": "tools/sbom/gen_sbom.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 763,
+      "author": {
+        "id": 1308044
+      },
+      "writtenOn": "2024-06-27T11:31:15Z",
+      "side": 1,
+      "message": "This wording looks a little bit weird to me here.",
+      "range": {
+        "startLine": 763,
+        "startChar": 15,
+        "endLine": 763,
+        "endChar": 45
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "662d14a1_047c469e",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "tools/sbom/gen_sbom.py",
+              "range": {
+                "startLine": 763,
+                "startChar": 0,
+                "endLine": 764,
+                "endChar": 0
+              },
+              "replacement": "  # Find which Soong module an installed file is from and merge metadata from Make and Soong\n"
+            }
+          ]
+        }
+      ],
+      "revId": "501f181befd192bc1e6e4ada52a1d5d3b32ba364",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
