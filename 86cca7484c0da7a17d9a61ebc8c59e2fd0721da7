@@ -52,6 +52,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2a62f4f9_8b4a8058",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3288188
+      },
+      "writtenOn": "2024-06-27T07:14:14Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "c8ff24de_f2dd3b21",
+      "revId": "86cca7484c0da7a17d9a61ebc8c59e2fd0721da7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b36d0b00_2bccde7b",
@@ -123,6 +141,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ee486b85_0e6ac699",
+        "filename": "tools/ide_query/ide_query.go",
+        "patchSetId": 6
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 3288188
+      },
+      "writtenOn": "2024-06-27T07:14:14Z",
+      "side": 1,
+      "message": "Good point, len(paths) is usually very small. ~1-2 so that should be fine. But we can improve this later after the proto changes are submitted.",
+      "parentUuid": "1ed4fabe_bd2b7e75",
+      "range": {
+        "startLine": 304,
+        "startChar": 4,
+        "endLine": 304,
+        "endChar": 45
+      },
+      "revId": "86cca7484c0da7a17d9a61ebc8c59e2fd0721da7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5165c982_81e006bd",
@@ -154,6 +196,24 @@
           ]
         }
       ],
+      "revId": "86cca7484c0da7a17d9a61ebc8c59e2fd0721da7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c70f7146_4dca8ef7",
+        "filename": "tools/ide_query/ide_query_proto/ide_query.proto",
+        "patchSetId": 6
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 3288188
+      },
+      "writtenOn": "2024-06-27T07:14:14Z",
+      "side": 1,
+      "message": "I don\u0027t remember if there was an explicit ask to rename this when we updated the format. I think too make it more consistent with the name `working_dir`.",
+      "parentUuid": "5165c982_81e006bd",
       "revId": "86cca7484c0da7a17d9a61ebc8c59e2fd0721da7",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
@@ -219,6 +279,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "acf4b773_6a54499d",
+        "filename": "tools/ide_query/ide_query_proto/ide_query.proto",
+        "patchSetId": 6
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 3288188
+      },
+      "writtenOn": "2024-06-27T07:14:14Z",
+      "side": 1,
+      "message": "When we iterated on the new format I checked that all consumers use a single directory. If we have a use-case we can move this back or add an overwrite field in the AnalysisResult.",
+      "parentUuid": "bfc38f62_ed2bb298",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 25
+      },
+      "revId": "86cca7484c0da7a17d9a61ebc8c59e2fd0721da7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bd98f42b_807729ae",
@@ -242,6 +326,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "65b0a463_48463e01",
+        "filename": "tools/ide_query/ide_query_proto/ide_query.proto",
+        "patchSetId": 6
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 3288188
+      },
+      "writtenOn": "2024-06-27T07:14:14Z",
+      "side": 1,
+      "message": "The `AnalysisError` represents a hard error in the build system. Initially we modelled this just a simple string but Soong could provide more details so we decided to use are message as well.",
+      "parentUuid": "bd98f42b_807729ae",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 67,
+        "endChar": 3
+      },
+      "revId": "86cca7484c0da7a17d9a61ebc8c59e2fd0721da7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f71619b8_6104c0d1",
@@ -255,6 +363,30 @@
       "writtenOn": "2024-06-18T14:42:20Z",
       "side": 1,
       "message": "i guess this makes sense for C++ to be at this level, but wouldn\u0027t it make more sense to push this into `BuildableUnit`s ? IIRC, we went with this kind of separation because there can be `BuildableUnit`s that are not relevant to source in question directly, but can be used to speed up warmups for further files from the same package later on. In such a world we don\u0027t have an `AnalysisResult` associated with that file but we actually have some `BuildableUnit`s that we can use.",
+      "range": {
+        "startLine": 74,
+        "startChar": 0,
+        "endLine": 75,
+        "endChar": 32
+      },
+      "revId": "86cca7484c0da7a17d9a61ebc8c59e2fd0721da7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b55ac126_e091378c",
+        "filename": "tools/ide_query/ide_query_proto/ide_query.proto",
+        "patchSetId": 6
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 3288188
+      },
+      "writtenOn": "2024-06-27T07:14:14Z",
+      "side": 1,
+      "message": "The invalidations just contain files or directories that change in build graph and hence invalide the result. All sources of generated files should part of `source_file_paths` in the `BuildableUnit`.",
+      "parentUuid": "f71619b8_6104c0d1",
       "range": {
         "startLine": 74,
         "startChar": 0,
