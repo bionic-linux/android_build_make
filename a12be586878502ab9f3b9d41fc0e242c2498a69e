@@ -33,6 +33,24 @@
       "message": "Dan, any concerns related to buildbot load with the timing of submitting this?",
       "revId": "a12be586878502ab9f3b9d41fc0e242c2498a69e",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "984896b1_91549898",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1074628
+      },
+      "writtenOn": "2024-06-27T02:47:52Z",
+      "side": 1,
+      "message": "Not significantly, though doing it outside of the core MTV hours would help, as that tends to be our highest load. If you really wanted to optimize for that, weekends are great, but nobody will be around to help in case there are problems.",
+      "parentUuid": "48b728c2_f9034650",
+      "revId": "a12be586878502ab9f3b9d41fc0e242c2498a69e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
