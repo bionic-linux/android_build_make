@@ -16,6 +16,24 @@
       "message": "Sorry, I mean this has to be listed in `product.mk` in `_product_single_value_vars`.  It doesn\u0027t need a default value, empty is false in Make.",
       "revId": "fd1973f5abdbfc5540f170c5ea1f4f07075c04b4",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e76054a9_ae449c36",
+        "filename": "core/product_config.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 420,
+      "author": {
+        "id": 1889140
+      },
+      "writtenOn": "2024-06-28T20:24:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "61bbb3cd_15a5b596",
+      "revId": "fd1973f5abdbfc5540f170c5ea1f4f07075c04b4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
