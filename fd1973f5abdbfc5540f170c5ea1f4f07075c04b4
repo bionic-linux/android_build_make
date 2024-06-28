@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "61bbb3cd_15a5b596",
+        "filename": "core/product_config.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 420,
+      "author": {
+        "id": 1002751
+      },
+      "writtenOn": "2024-06-28T19:33:11Z",
+      "side": 1,
+      "message": "Sorry, I mean this has to be listed in `product.mk` in `_product_single_value_vars`.  It doesn\u0027t need a default value, empty is false in Make.",
+      "revId": "fd1973f5abdbfc5540f170c5ea1f4f07075c04b4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
