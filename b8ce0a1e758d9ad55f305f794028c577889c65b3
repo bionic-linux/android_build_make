@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1b4f92f8_63c4c5fd",
+        "filename": "tools/ide_query/prober_scripts/cpp/general.cc",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3295590
+      },
+      "writtenOn": "2024-06-28T11:59:46Z",
+      "side": 1,
+      "message": "Pls include the license header and regenerate the proto.",
+      "revId": "b8ce0a1e758d9ad55f305f794028c577889c65b3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
