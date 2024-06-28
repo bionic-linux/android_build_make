@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "2b9a98e0_5feb9e81",
+        "filename": "core/Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 1171,
+      "author": {
+        "id": 1988155
+      },
+      "writtenOn": "2024-06-28T20:02:06Z",
+      "side": 1,
+      "message": "Sorry, I should say it\u0027s now nested under `ifdef BUILDING_RAMDISK_IMAGE`",
+      "parentUuid": "0460acf1_baf558d6",
+      "revId": "1ef79a4dad856fd74a5a722b789c04f8e089a06a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8f61342e_7980ad73",
         "filename": "core/Makefile",
         "patchSetId": 1
