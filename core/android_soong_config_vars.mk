@@ -75,6 +75,10 @@ ifneq (true,$(PRODUCT_AVF_REMOTE_ATTESTATION_DISABLED))
   $(call add_soong_config_var_value,ANDROID,avf_remote_attestation_enabled,$(RELEASE_AVF_ENABLE_REMOTE_ATTESTATION))
 endif
 
+ifdef PRODUCT_AVF_OPEN_DICE_ASYM_KDF_ALGORITHM
+$(call add_soong_config_var_value,ANDROID,avf_open_dice_asym_kdf_algorithm,$(PRODUCT_AVF_OPEN_DICE_ASYM_KDF_ALGORITHM))
+endif
+
 ifdef PRODUCT_AVF_MICRODROID_GUEST_GKI_VERSION
 $(call add_soong_config_var_value,ANDROID,avf_microdroid_guest_gki_version,$(PRODUCT_AVF_MICRODROID_GUEST_GKI_VERSION))
 endif
