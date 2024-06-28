@@ -416,6 +416,10 @@ ifdef PRODUCT_DEFAULT_DEV_CERTIFICATE
   endif
 endif
 
+ifndef PRODUCT_BOOTS_16K
+  PRODUCT_BOOTS_16K := false
+endif
+
 $(foreach pair,$(PRODUCT_APEX_BOOT_JARS), \
   $(eval jar := $(call word-colon,2,$(pair))) \
   $(if $(findstring $(jar), $(PRODUCT_BOOT_JARS)), \
