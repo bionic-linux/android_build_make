@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0c55c39a_1306f370",
+        "filename": "core/Makefile",
+        "patchSetId": 6
+      },
+      "lineNbr": 3567,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2024-06-28T05:44:10Z",
+      "side": 1,
+      "message": "Then this will be executed even if there\u0027s no change. You could create a filestamp file instead.\n\n```\nfile_list_diff_timestamp :\u003d some_file\n\n$(file_list_diff_timestamp): $(1) ...\n    $(FILE_LIST_DIFF) ... \u0026\u0026 touch $@\n```",
+      "range": {
+        "startLine": 3567,
+        "startChar": 0,
+        "endLine": 3567,
+        "endChar": 22
+      },
+      "revId": "6870055a5ca0b6f40ccf8b6467dcb4f4a2250cc5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
