@@ -1,5 +1,40 @@
 {
-  "comments": [],
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0460acf1_baf558d6",
+        "filename": "core/Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 1171,
+      "author": {
+        "id": 1988155
+      },
+      "writtenOn": "2024-06-28T19:52:01Z",
+      "side": 1,
+      "message": "It seems like this might be now nested under `ifneq ($(BOARD_KERNEL_MODULES_16K),)` but this variable is used on line 6779 and it will now be unset if BOARD_KERNEL_MODULES_16K is not set.",
+      "revId": "1ef79a4dad856fd74a5a722b789c04f8e089a06a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8f61342e_7980ad73",
+        "filename": "core/Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 6800,
+      "author": {
+        "id": 1988155
+      },
+      "writtenOn": "2024-06-28T19:52:01Z",
+      "side": 1,
+      "message": "Referenced here.",
+      "revId": "1ef79a4dad856fd74a5a722b789c04f8e089a06a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ],
   "submitRequirementResults": [
     {
       "submitRequirement": {
