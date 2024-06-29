@@ -1,5 +1,23 @@
 {
-  "comments": [],
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "604e5a73_a4816c1e",
+        "filename": "core/Makefile",
+        "patchSetId": 2
+      },
+      "lineNbr": 1078,
+      "author": {
+        "id": 3494541
+      },
+      "writtenOn": "2024-06-29T03:09:33Z",
+      "side": 1,
+      "message": "Instead of reverting the change, why not move the code here?\nDefinition COMPRESSION_COMMAND_DEPS before use is sometimes breaking ramdisk_16k.img build.",
+      "revId": "88d65e514c062c2a50212a79e623744bae39b7b7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ],
   "submitRequirementResults": [
     {
       "submitRequirement": {
