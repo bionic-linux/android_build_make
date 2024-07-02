@@ -63,7 +63,10 @@ class BuildPlanner:
 
   def create_build_plan(self):
 
-    if 'optimized_build' not in self.build_context['enabled_build_features']:
+    if (
+        'enabledBuildFeatures' not in self.build_context
+        or 'optimized_build' not in self.build_context['enabledBuildFeatures']
+    ):
       return BuildPlan(set(self.args.extra_targets), set())
 
     build_targets = set()
@@ -150,11 +153,7 @@ def load_build_context():
       raise Error(f'Failed to load JSON file: {build_context_path}')
 
   logging.info('No BUILD_CONTEXT found, skipping optimizations.')
-  return empty_build_context()
-
-
-def empty_build_context():
-  return {'enabled_build_features': []}
+  return {}
 
 
 def execute_build_plan(build_plan: BuildPlan):
