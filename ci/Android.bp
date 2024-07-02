@@ -42,6 +42,29 @@ python_test_host {
     },
 }
 
+python_test_host {
+    name: "optimized_targets_test",
+    main: "optimized_targets_test.py",
+    pkg_path: "testdata",
+    srcs: [
+        "optimized_targets_test.py",
+    ],
+    libs: [
+    	"build_test_suites",
+    ],
+    test_options: {
+        unit_test: true,
+    },
+    data: [
+        ":py3-cmd",
+    ],
+    version: {
+        py3: {
+            embedded_launcher: true,
+        },
+    },
+}
+
 // This test is only intended to be run locally since it's slow, not hermetic,
 // and requires a lot of system state. It is therefore not marked as `unit_test`
 // and is not part of any test suite. Note that we also don't want to run this
