@@ -14,6 +14,8 @@
 # limitations under the License.
 
 from abc import ABC
+import argparse
+import re
 
 
 class OptimizedBuildTarget(ABC):
@@ -24,7 +26,7 @@ class OptimizedBuildTarget(ABC):
   build.
   """
 
-  def __init__(self, build_context, args):
+  def __init__(self, build_context: dict[str, any], args: argparse.Namespace):
     self.build_context = build_context
     self.args = args
 
@@ -42,18 +44,92 @@ class NullOptimizer(OptimizedBuildTarget):
   packaging step.
   """
 
-  def __init__(self, target):
+  def __init__(self, target: str):
     self.target = target
 
-  def get_build_targets(self):
+  def get_build_targets(self) -> set[str]:
     return {self.target}
 
   def package_outputs(self):
     pass
 
 
-def get_target_optimizer(target, enabled_flag, build_context, optimizer):
-  if enabled_flag in build_context['enabled_build_features']:
+class ExcludeUnusedTargetOptimizer(OptimizedBuildTarget):
+  """Optizer that eliminates the given test suite if its outputs are not downloaded
+
+  by the given ATP tes configuration.
+
+  This optimizer will check test args passed in from the build context and not
+  build the given suite if its outputs are not downloaded by the given test
+  configs.  If the target it used, it will fall back to whatever optimizer is
+  passed in.
+  """
+
+  _DOWNLOAD_OPTS = {
+      'test-config-only-zip',
+      'test-zip-file-filter',
+      'extra-host-shared-lib-zip',
+      'sandbox-tests-zips',
+      'additional-files-filter',
+      'cts-package-name',
+  }
+
+  _TARGET_TO_OUTPUTS = {
+      'catbox': ['android-catbox.zip'],
+      'gcatbox': ['android-gcatbox.zip'],
+  }
+
+  def __init__(
+      self,
+      build_context: dict[str, any],
+      args: argparse.Namespace,
+      target: str,
+      fallback_optimizer: OptimizedBuildTarget,
+      target_to_outputs: dict['str', list['str']] = None,
+  ):
+    super().__init__(build_context, args)
+    self.target = target
+    self.fallback_optimizer = fallback_optimizer
+    if not target_to_outputs:
+      target_to_outputs = self._TARGET_TO_OUTPUTS
+    self.target_to_outputs = target_to_outputs
+
+  def get_build_targets(self) -> set[str]:
+    if self._target_outputs_used():
+      return self.fallback_optimizer.get_build_targets()
+
+    return set()
+
+  def package_outputs(self):
+    if self._target_outputs_used():
+      return self.fallback_optimizer.package_outputs()
+
+    return
+
+  def _target_outputs_used(self) -> bool:
+    file_download_regexes = self._aggregate_file_download_regexes()
+    for artifact in self.target_to_outputs[self.target]:
+      for regex in file_download_regexes:
+        if re.match(regex, artifact):
+          return True
+    return False
+
+  def _aggregate_file_download_regexes(self) -> set[re.Pattern]:
+    all_regexes = set()
+    for test_info in self.build_context['testContext']['testInfos']:
+      for opt in test_info['extraOptions']:
+        if opt['key'] in self._DOWNLOAD_OPTS:
+          all_regexes.update(re.compile(value) for value in opt['values'])
+    return all_regexes
+
+
+def get_target_optimizer(
+    target: str,
+    enabled_flag: str,
+    build_context: dict[str, any],
+    optimizer: OptimizedBuildTarget,
+) -> OptimizedBuildTarget:
+  if enabled_flag in build_context['enabledBuildFeatures']:
     return optimizer
 
   return NullOptimizer(target)
@@ -66,4 +142,21 @@ def get_target_optimizer(target, enabled_flag, build_context, optimizer):
 #        build_context,
 #        TargetOptimizer(build_context, args),
 #    )
-OPTIMIZED_BUILD_TARGETS = dict()
+OPTIMIZED_BUILD_TARGETS = {
+    'catbox': lambda target, build_context, args: get_target_optimizer(
+        target,
+        'catbox-atp-exclusion',
+        build_context,
+        ExcludeUnusedTargetOptimizer(
+            build_context, args, 'catbox', NullOptimizer('catbox')
+        ),
+    ),
+    'gcatbox': lambda target, build_context, args: get_target_optimizer(
+        target,
+        'gcatbox-atp-exclusion',
+        build_context,
+        ExcludeUnusedTargetOptimizer(
+            build_context, args, 'gcatbox', NullOptimizer('gcatbox')
+        ),
+    ),
+}

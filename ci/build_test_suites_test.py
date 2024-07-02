@@ -352,10 +352,10 @@ class BuildPlannerTest(unittest.TestCase):
       test_context: dict[str, any] = {},
   ) -> dict[str, any]:
     build_context = {}
-    build_context['enabled_build_features'] = enabled_build_features
+    build_context['enabledBuildFeatures'] = enabled_build_features
     if optimized_build_enabled:
-      build_context['enabled_build_features'].add('optimized_build')
-    build_context['test_context'] = test_context
+      build_context['enabledBuildFeatures'].add('optimized_build')
+    build_context['testContext'] = test_context
     return build_context
 
   def create_args(
