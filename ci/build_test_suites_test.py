@@ -15,6 +15,7 @@
 """Tests for build_test_suites.py"""
 
 import argparse
+import functools
 from importlib import resources
 import json
 import multiprocessing
@@ -238,14 +239,18 @@ class BuildPlannerTest(unittest.TestCase):
 
   class TestOptimizedBuildTarget(optimized_targets.OptimizedBuildTarget):
 
-    def __init__(self, output_targets):
+    def __init__(self, target, build_context, args, output_targets):
+      super().__init__(target, build_context, args)
       self.output_targets = output_targets
 
-    def get_build_targets(self):
+    def get_build_targets_impl(self):
       return self.output_targets
 
-    def package_outputs(self):
+    def package_outputs_impl(self):
       return f'packaging {" ".join(self.output_targets)}'
+
+    def get_enabled_flag(self):
+      return f'{self.target}_enabled'
 
   def test_build_optimization_off_builds_everything(self):
     build_targets = {'target_1', 'target_2'}
@@ -352,10 +357,10 @@ class BuildPlannerTest(unittest.TestCase):
       test_context: dict[str, any] = {},
   ) -> dict[str, any]:
     build_context = {}
-    build_context['enabled_build_features'] = enabled_build_features
+    build_context['enabledBuildFeatures'] = enabled_build_features
     if optimized_build_enabled:
-      build_context['enabled_build_features'].add('optimized_build')
-    build_context['test_context'] = test_context
+      build_context['enabledBuildFeatures'].add('optimized_build')
+    build_context['testContext'] = test_context
     return build_context
 
   def create_args(
@@ -370,15 +375,9 @@ class BuildPlannerTest(unittest.TestCase):
   ):
     target_optimizations = dict()
     for target in build_targets:
-      target_optimizations[target] = (
-          lambda target, build_context, args: optimized_targets.get_target_optimizer(
-              target,
-              self.get_target_flag(target),
-              build_context,
-              self.TestOptimizedBuildTarget(
-                  {self.get_optimized_target_name(target)}
-              ),
-          )
+      target_optimizations[target] = functools.partial(
+          self.TestOptimizedBuildTarget,
+          output_targets={self.get_optimized_target_name(target)},
       )
 
     return target_optimizations
