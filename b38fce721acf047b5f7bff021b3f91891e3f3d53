@@ -16,6 +16,23 @@
       "message": "Gentle reminder. Could you review this CL for fixing build failure?",
       "revId": "b38fce721acf047b5f7bff021b3f91891e3f3d53",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "41cc0d0d_7d057ce6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019013
+      },
+      "writtenOn": "2024-07-02T02:02:54Z",
+      "side": 1,
+      "message": "Thank you for the review!",
+      "revId": "b38fce721acf047b5f7bff021b3f91891e3f3d53",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
