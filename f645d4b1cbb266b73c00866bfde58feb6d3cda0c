@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2284187b_520e3149",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-07-03T20:54:05Z",
+      "side": 1,
+      "message": "If it\u0027s not used, can you please also remove the other places that set it too.\n\nhttps://source.corp.google.com/search?q\u003dPRODUCT_BOOTS_16K",
+      "revId": "f645d4b1cbb266b73c00866bfde58feb6d3cda0c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
