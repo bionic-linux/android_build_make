@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5084f02b_36828b14",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1064003
+      },
+      "writtenOn": "2024-07-03T19:21:35Z",
+      "side": 1,
+      "message": "Looks like aosp/3159800 should fix the breakage.",
+      "revId": "97a5cca98bf5bfafd4afd7e46f14f60966a8d1ae",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
