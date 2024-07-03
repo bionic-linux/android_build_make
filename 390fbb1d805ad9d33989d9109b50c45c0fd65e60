@@ -1,0 +1,300 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cdcf85d4_a247caa5",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1076194
+      },
+      "writtenOn": "2024-07-03T01:42:57Z",
+      "side": 1,
+      "message": "Typo",
+      "range": {
+        "startLine": 58,
+        "startChar": 5,
+        "endLine": 58,
+        "endChar": 12
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "31b420d3_aa2b1051",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ci/optimized_targets.py",
+              "range": {
+                "startLine": 58,
+                "startChar": 0,
+                "endLine": 59,
+                "endChar": 0
+              },
+              "replacement": "  \"\"\"Optimizer that eliminates the given test suite if its outputs are not downloaded\n"
+            }
+          ]
+        }
+      ],
+      "revId": "390fbb1d805ad9d33989d9109b50c45c0fd65e60",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "50b227cf_a13c8d15",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1076194
+      },
+      "writtenOn": "2024-07-03T01:42:57Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 60,
+        "startChar": 22,
+        "endLine": 60,
+        "endChar": 23
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "5321af58_d160e15e",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ci/optimized_targets.py",
+              "range": {
+                "startLine": 60,
+                "startChar": 0,
+                "endLine": 61,
+                "endChar": 0
+              },
+              "replacement": "  by the given ATP test configuration.\n"
+            }
+          ]
+        }
+      ],
+      "revId": "390fbb1d805ad9d33989d9109b50c45c0fd65e60",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "15ace0a6_cb88ca64",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1076194
+      },
+      "writtenOn": "2024-07-03T01:42:57Z",
+      "side": 1,
+      "message": "Typo",
+      "range": {
+        "startLine": 64,
+        "startChar": 26,
+        "endLine": 64,
+        "endChar": 28
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "4126143b_af9bdb4e",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ci/optimized_targets.py",
+              "range": {
+                "startLine": 64,
+                "startChar": 0,
+                "endLine": 65,
+                "endChar": 0
+              },
+              "replacement": "  configs.  If the target is used, it will fall back to whatever optimizer is\n"
+            }
+          ]
+        }
+      ],
+      "revId": "390fbb1d805ad9d33989d9109b50c45c0fd65e60",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ce08fec2_a0d3b3b1",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1076194
+      },
+      "writtenOn": "2024-07-03T01:42:57Z",
+      "side": 1,
+      "message": "Move to the test infos to a getter function, and use .get() in that getter function",
+      "fixSuggestions": [
+        {
+          "fixId": "ce17150a_189a9312",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ci/optimized_targets.py",
+              "range": {
+                "startLine": 119,
+                "startChar": 0,
+                "endLine": 120,
+                "endChar": 0
+              },
+              "replacement": "    for test_info in self._get_test_infos():\n"
+            },
+            {
+              "path": "ci/optimized_targets.py",
+              "range": {
+                "startLine": 125,
+                "startChar": 0,
+                "endLine": 125,
+                "endChar": 0
+              },
+              "replacement": "  def _get_test_infos(self):\n    return self.build_context.get(\u0027testContext\u0027, {}).get(\u0027testInfos\u0027, [])\n\n"
+            }
+          ]
+        }
+      ],
+      "revId": "390fbb1d805ad9d33989d9109b50c45c0fd65e60",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aa2bc979_d782f90a",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1076194
+      },
+      "writtenOn": "2024-07-03T01:42:57Z",
+      "side": 1,
+      "message": "Use .get() and supply a default.",
+      "fixSuggestions": [
+        {
+          "fixId": "ea7f213c_221177b7",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ci/optimized_targets.py",
+              "range": {
+                "startLine": 120,
+                "startChar": 0,
+                "endLine": 121,
+                "endChar": 0
+              },
+              "replacement": "      for opt in test_info.get(\u0027extraOptions\u0027, []):\n"
+            }
+          ]
+        }
+      ],
+      "revId": "390fbb1d805ad9d33989d9109b50c45c0fd65e60",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d50645bc_17b40cf7",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1076194
+      },
+      "writtenOn": "2024-07-03T01:42:57Z",
+      "side": 1,
+      "message": "Use .get and supply a default for \u0027values\u0027",
+      "fixSuggestions": [
+        {
+          "fixId": "26cb638a_c747304b",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ci/optimized_targets.py",
+              "range": {
+                "startLine": 121,
+                "startChar": 0,
+                "endLine": 123,
+                "endChar": 0
+              },
+              "replacement": "        if opt.get(\u0027key\u0027) in self._DOWNLOAD_OPTS:\n          all_regexes.update(\n              re.compile(value) for value in opt.get(\u0027values\u0027, [])\n          )\n"
+            }
+          ]
+        }
+      ],
+      "revId": "390fbb1d805ad9d33989d9109b50c45c0fd65e60",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e2245584_e8bb886a",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1076194
+      },
+      "writtenOn": "2024-07-03T01:42:57Z",
+      "side": 1,
+      "message": ".get here and everywhere",
+      "fixSuggestions": [
+        {
+          "fixId": "959d5b6f_42bca5ea",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ci/optimized_targets.py",
+              "range": {
+                "startLine": 132,
+                "startChar": 0,
+                "endLine": 133,
+                "endChar": 0
+              },
+              "replacement": "  if enabled_flag in build_context.get(\u0027enabledBuildFeatures\u0027, []):\n"
+            }
+          ]
+        }
+      ],
+      "revId": "390fbb1d805ad9d33989d9109b50c45c0fd65e60",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c1c5666b_1d196b51",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1076194
+      },
+      "writtenOn": "2024-07-03T01:42:57Z",
+      "side": 1,
+      "message": "1. get_target_optimizer should really initialize optimizer for you and pass through any extra kwargs you want.\n2. Create a ExcludedUnusedTargetOptimizerFactory class and move _TARGET_TO_OUTPUTS over there.\n3. In a classmethod function inside ExcludedUnusedTargetOptimizerFactory, loop over _TARGET_TO_OUTPUTS (which contains \u0027catbox\u0027 and \u0027gcatbox\u0027) and create all the factory functions for ExcludedUnusedTargetOptimizer. Then we don\u0027t need the same constant inside ExcludedUnusedTargetOptimizer.",
+      "range": {
+        "startLine": 145,
+        "startChar": 0,
+        "endLine": 163,
+        "endChar": 0
+      },
+      "revId": "390fbb1d805ad9d33989d9109b50c45c0fd65e60",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
