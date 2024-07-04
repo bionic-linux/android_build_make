@@ -51,6 +51,7 @@ $(call add_json_str,  Platform_version_last_stable,      $(PLATFORM_VERSION_LAST
 $(call add_json_str,  Platform_version_known_codenames,  $(PLATFORM_VERSION_KNOWN_CODENAMES))
 
 $(call add_json_bool, Release_aidl_use_unfrozen,         $(RELEASE_AIDL_USE_UNFROZEN))
+$(call add_json_bool, Release_libbinder_client_cache,    $(RELEASE_LIBBINDER_CLIENT_CACHE))
 
 $(call add_json_bool, Allow_missing_dependencies,        $(filter true,$(ALLOW_MISSING_DEPENDENCIES)))
 $(call add_json_bool, Unbundled_build,                   $(TARGET_BUILD_UNBUNDLED))
