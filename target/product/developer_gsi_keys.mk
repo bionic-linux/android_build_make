@@ -25,7 +25,25 @@
 # Currently, the developer GSI images can be downloaded from the following URL:
 #   https://developer.android.com/topic/generic-system-image/releases
 #
-PRODUCT_PACKAGES += \
-    q-developer-gsi.avbpubkey \
-    r-developer-gsi.avbpubkey \
-    s-developer-gsi.avbpubkey \
+ifeq ($(BOARD_MOVE_GSI_AVB_KEYS_TO_VENDOR_BOOT),true) # AVB keys are installed to vendor ramdisk
+  ifeq ($(BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT),true) # no dedicated recovery partition
+    my_gsi_avb_keys_path := $(TARGET_VENDOR_RAMDISK_OUT)/first_stage_ramdisk/avb
+  else # device has a dedicated recovery partition
+    my_gsi_avb_keys_path := $(TARGET_VENDOR_RAMDISK_OUT)/avb
+  endif
+else
+  ifeq ($(BOARD_USES_RECOVERY_AS_BOOT),true) # no dedicated recovery partition
+    my_gsi_avb_keys_path := $(TARGET_RECOVERY_ROOT_OUT)/first_stage_ramdisk/avb
+  else # device has a dedicated recovery partition
+    my_gsi_avb_keys_path := $(TARGET_RAMDISK_OUT)/avb
+  endif
+endif
+
+# q-developer-gsi.avbpubkey
+PRODUCT_COPY_FILES += system/core/rootdir/avb/q-developer-gsi.avbpubkey:$(my_gsi_avb_keys_path)/q-developer-gsi.avbpubkey
+
+# r-developer-gsi.avbpubkey
+PRODUCT_COPY_FILES += system/core/rootdir/avb/r-developer-gsi.avbpubkey:$(my_gsi_avb_keys_path)/r-developer-gsi.avbpubkey
+
+# s-developer-gsi.avbpubkey
+PRODUCT_COPY_FILES += system/core/rootdir/avb/s-developer-gsi.avbpubkey:$(my_gsi_avb_keys_path)/s-developer-gsi.avbpubkey
