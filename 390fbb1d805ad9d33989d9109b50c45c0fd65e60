@@ -439,6 +439,30 @@
       },
       "revId": "390fbb1d805ad9d33989d9109b50c45c0fd65e60",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7b58f3ac_5b49d24c",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-07-08T23:56:35Z",
+      "side": 1,
+      "message": "It took me a little bit to wrap my head around the changes so please take a good look over them but I think my unit tests are pretty good so I\u0027m relatively confident things still work.",
+      "parentUuid": "c1c5666b_1d196b51",
+      "range": {
+        "startLine": 145,
+        "startChar": 0,
+        "endLine": 163,
+        "endChar": 0
+      },
+      "revId": "390fbb1d805ad9d33989d9109b50c45c0fd65e60",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
