@@ -82,26 +82,27 @@ _must_protobuf := true
 # Treat .mk and .textproto as equal for duplicate elimination, but force
 # protobuf if any PRODUCT_RELEASE_CONFIG_MAPS specify .textproto.
 $(foreach map,$(PRODUCT_RELEASE_CONFIG_MAPS), \
-    $(if $(filter $(basename $(map)),$(basename $(config_map_files))),, \
-        $(eval config_map_files += $(map))) \
+    $(if $(filter $(basename $(map)),$(basename $(config_map_files))),,$(eval config_map_files += $(map))) \
     $(if $(filter $(basename $(map)).textproto,$(map)),$(eval _must_protobuf := true)) \
 )
 
 
 # If we are missing the textproto version of any of $(config_map_files), we cannot use protobuf.
 _can_protobuf := true
+_missing_protobuf :=
 $(foreach map,$(config_map_files), \
-    $(if $(wildcard $(basename $(map)).textproto),,$(eval _can_protobuf :=)) \
+    $(if $(wildcard $(basename $(map)).textproto),,$(eval _can_protobuf :=)$(eval _missing_protobuf:=$(missing_protobuf) $(basename $(map)).textproto)) \
 )
 # If we are missing the mk version of any of $(protobuf_map_files), we must use protobuf.
+_missing_mk :=
 $(foreach map,$(protobuf_map_files), \
-    $(if $(wildcard $(basename $(map)).mk),,$(eval _must_protobuf := true)) \
+    $(if $(wildcard $(basename $(map)).mk),,$(eval _must_protobuf := true)$(eval _missing_mk:=$(missing_mk) $(basename $(map)).mk)) \
 )
 
 ifneq (,$(_must_protobuf))
     ifeq (,$(_can_protobuf))
         # We must use protobuf, but we cannot use protobuf.
-        $(error release config is a mixture of .scl and .textproto)
+        $(error release config is a mixture of .scl and .textproto: need $(if $(_missing_mk),either $(_missing_mk) or )$(_missing_protobuf))
     endif
 endif
 
