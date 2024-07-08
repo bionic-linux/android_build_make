@@ -267,7 +267,7 @@ internal fun parseApiVersions(input: InputStream): Set<Symbol> {
         requireNotNull(method.getAttribute("name")) {
           "Bad XML: <method> element without name attribute"
         }
-    val methodSignatureParts = methodSignature.split(Regex("\\(|\\)"))
+    val methodSignatureParts = methodSignature.split(Regex("[()]"))
     if (methodSignatureParts.size != 3) {
       throw Exception("Bad XML: method signature '$methodSignature'")
     }
