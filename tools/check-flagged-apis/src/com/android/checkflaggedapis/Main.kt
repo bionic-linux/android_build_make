@@ -170,7 +170,7 @@ The tool will exit with a non-zero exit code if any flagged APIs are found to be
 }
 
 internal fun parseApiSignature(path: String, input: InputStream): Set<Pair<Symbol, Flag>> {
-  // TODO(334870672): add support for metods
+  // TODO(334870672): add support for methods
   val output = mutableSetOf<Pair<Symbol, Flag>>()
   val visitor =
       object : BaseItemVisitor() {
