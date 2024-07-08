@@ -68,7 +68,7 @@ internal value class Symbol(val name: String) {
     }
   }
 
-  override fun toString(): String = name.toString()
+  override fun toString(): String = name
 }
 
 /**
@@ -81,7 +81,7 @@ internal value class Symbol(val name: String) {
  */
 @JvmInline
 internal value class Flag(val name: String) {
-  override fun toString(): String = name.toString()
+  override fun toString(): String = name
 }
 
 internal sealed class ApiError {
