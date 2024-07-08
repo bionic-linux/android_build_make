@@ -1095,7 +1095,7 @@ def CopyTargetFilesDir(input_dir):
     if common.IsSparseImage(src):
       return common.UnsparseImage(src, dst)
     else:
-      return os.symlink(os.path.realpath(src), dst)
+      return shutil.copy(src, dst)
 
   for subdir in TARGET_FILES_IMAGES_SUBDIR:
     if not os.path.exists(os.path.join(input_dir, subdir)):
