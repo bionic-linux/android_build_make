@@ -221,14 +221,14 @@ internal fun parseApiSignature(path: String, input: InputStream): Set<Pair<Symbo
 }
 
 internal fun parseFlagValues(input: InputStream): Map<Flag, Boolean> {
-  val parsedFlags = Aconfig.parsed_flags.parseFrom(input).getParsedFlagList()
+  val parsedFlags = Aconfig.parsed_flags.parseFrom(input).parsedFlagList
   return parsedFlags.associateBy(
-      { Flag("${it.getPackage()}.${it.getName()}") },
+      { Flag("${it.getPackage()}.${it.name}") },
       { it.getState() == Aconfig.flag_state.ENABLED })
 }
 
 internal fun parseApiVersions(input: InputStream): Set<Symbol> {
-  fun Node.getAttribute(name: String): String? = getAttributes()?.getNamedItem(name)?.getNodeValue()
+  fun Node.getAttribute(name: String): String? = attributes?.getNamedItem(name)?.nodeValue
 
   val output = mutableSetOf<Symbol>()
   val factory = DocumentBuilderFactory.newInstance()
@@ -237,7 +237,7 @@ internal fun parseApiVersions(input: InputStream): Set<Symbol> {
 
   val classes = document.getElementsByTagName("class")
   // ktfmt doesn't understand the `..<` range syntax; explicitly call .rangeUntil instead
-  for (i in 0.rangeUntil(classes.getLength())) {
+  for (i in 0.rangeUntil(classes.length)) {
     val cls = classes.item(i)
     val className =
         requireNotNull(cls.getAttribute("name")) {
@@ -248,20 +248,20 @@ internal fun parseApiVersions(input: InputStream): Set<Symbol> {
 
   val fields = document.getElementsByTagName("field")
   // ktfmt doesn't understand the `..<` range syntax; explicitly call .rangeUntil instead
-  for (i in 0.rangeUntil(fields.getLength())) {
+  for (i in 0.rangeUntil(fields.length)) {
     val field = fields.item(i)
     val fieldName =
         requireNotNull(field.getAttribute("name")) {
           "Bad XML: <field> element without name attribute"
         }
     val className =
-        requireNotNull(field.getParentNode()?.getAttribute("name")) { "Bad XML: top level <field> element" }
+        requireNotNull(field.parentNode?.getAttribute("name")) { "Bad XML: top level <field> element" }
     output.add(Symbol.create("${className.replace("/", ".")}.$fieldName"))
   }
 
   val methods = document.getElementsByTagName("method")
   // ktfmt doesn't understand the `..<` range syntax; explicitly call .rangeUntil instead
-  for (i in 0.rangeUntil(methods.getLength())) {
+  for (i in 0.rangeUntil(methods.length)) {
     val method = methods.item(i)
     val methodSignature =
         requireNotNull(method.getAttribute("name")) {
@@ -273,7 +273,7 @@ internal fun parseApiVersions(input: InputStream): Set<Symbol> {
     }
     var (methodName, methodArgs, methodReturnValue) = methodSignatureParts
     val packageAndClassName =
-        requireNotNull(method.getParentNode()?.getAttribute("name")) {
+        requireNotNull(method.parentNode?.getAttribute("name")) {
           "Bad XML: top level <method> element, or <class> element missing name attribute"
         }
     if (methodName == "<init>") {
