@@ -62,7 +62,7 @@ internal value class Symbol(val name: String) {
   }
 
   init {
-    require(!name.isEmpty()) { "empty string" }
+    require(name.isNotEmpty()) { "empty string" }
     for (ch in FORBIDDEN_CHARS) {
       require(!name.contains(ch)) { "$name: contains $ch" }
     }
@@ -197,7 +197,7 @@ internal fun parseApiSignature(path: String, input: InputStream): Set<Pair<Symbo
               append("(")
               // TODO(334870672): replace this early return with proper parsing of the command line
               // arguments, followed by translation to Lname/of/class; + III format
-              if (!method.parameters().isEmpty()) {
+              if (method.parameters().isNotEmpty()) {
                 return
               }
               append(")")
