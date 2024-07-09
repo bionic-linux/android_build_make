@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "64c9c355_56845a4e",
+        "filename": "core/sysprop_config.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1291338
+      },
+      "writtenOn": "2024-07-09T23:18:55Z",
+      "side": 1,
+      "message": "I don\u0027t think we want to add something depending on specific targets to generic system.img. At least we should consider moving this to product or system_ext.",
+      "range": {
+        "startLine": 53,
+        "startChar": 0,
+        "endLine": 57,
+        "endChar": 5
+      },
+      "revId": "283c0e38a6fc9142a3ea49f2e07f99f3f8af7793",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
