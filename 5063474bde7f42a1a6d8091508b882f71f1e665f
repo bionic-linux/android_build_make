@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a720b0eb_2c9483e5",
+        "filename": "core/sysprop_config.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1120458
+      },
+      "writtenOn": "2024-07-09T16:11:36Z",
+      "side": 1,
+      "message": "nit: prefer extendable values, so it works for future page size - I think based on inseob\u0027s comment, maybe \"ro.product.page_size\u003d16384\"",
+      "range": {
+        "startLine": 54,
+        "startChar": 32,
+        "endLine": 54,
+        "endChar": 56
+      },
+      "revId": "5063474bde7f42a1a6d8091508b882f71f1e665f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
