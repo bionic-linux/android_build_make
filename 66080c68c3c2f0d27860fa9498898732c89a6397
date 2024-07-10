@@ -22,6 +22,30 @@
       },
       "revId": "66080c68c3c2f0d27860fa9498898732c89a6397",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d4a10ee7_93067ca8",
+        "filename": "core/Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 3591,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-07-10T22:14:21Z",
+      "side": 1,
+      "message": "The file list processing has always been a bit weird anyway, because it\u0027s doing a find in the directory (line 3533), not operating on the kati\u0027s notion of what will be installed.\n\nDo you think this can go away if generating INSTALLED_FILES_FILE is also done by soong?",
+      "parentUuid": "aca70260_e4820ca2",
+      "range": {
+        "startLine": 3591,
+        "startChar": 0,
+        "endLine": 3591,
+        "endChar": 162
+      },
+      "revId": "66080c68c3c2f0d27860fa9498898732c89a6397",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
