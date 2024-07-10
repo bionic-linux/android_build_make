@@ -361,6 +361,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "13ba70c4_cc0b2ba4",
+        "filename": "tools/ide_query/ide_query_proto/ide_query.proto",
+        "patchSetId": 6
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 3288188
+      },
+      "writtenOn": "2024-07-10T14:31:18Z",
+      "side": 1,
+      "message": "I agree that this is not optimal, but I\u0027ll do that change upstream first.",
+      "parentUuid": "7e7a2df2_53826332",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 25
+      },
+      "revId": "86cca7484c0da7a17d9a61ebc8c59e2fd0721da7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bd98f42b_807729ae",
