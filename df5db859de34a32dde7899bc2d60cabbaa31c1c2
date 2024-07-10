@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "488f2bfa_44b0811e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1074628
+      },
+      "writtenOn": "2024-07-10T16:43:34Z",
+      "side": 1,
+      "message": "Cherrypicks should have the same Change-Id as the original, and also list a Merged-In:\n\nThat should remove the need for RESTRICT AUTOMERGE as long as you\u0027re walking them backwards up the merge path",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 52
+      },
+      "revId": "df5db859de34a32dde7899bc2d60cabbaa31c1c2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
