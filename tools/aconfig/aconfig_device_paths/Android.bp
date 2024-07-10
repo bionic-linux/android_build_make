@@ -48,4 +48,5 @@ genrule {
 java_library {
     name: "aconfig_device_paths_java",
     srcs: [":libaconfig_java_device_paths_src"],
+    sdk_version: "core_current",
 }
