@@ -87,6 +87,23 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "06c2a029_5aaa5f86",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3276774
+      },
+      "writtenOn": "2024-07-10T13:50:21Z",
+      "side": 1,
+      "message": "thanks!",
+      "revId": "86cca7484c0da7a17d9a61ebc8c59e2fd0721da7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b36d0b00_2bccde7b",
@@ -310,6 +327,30 @@
       "side": 1,
       "message": "When we iterated on the new format I checked that all consumers use a single directory. If we have a use-case we can move this back or add an overwrite field in the AnalysisResult.",
       "parentUuid": "bfc38f62_ed2bb298",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 25
+      },
+      "revId": "86cca7484c0da7a17d9a61ebc8c59e2fd0721da7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7e7a2df2_53826332",
+        "filename": "tools/ide_query/ide_query_proto/ide_query.proto",
+        "patchSetId": 6
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 3276774
+      },
+      "writtenOn": "2024-07-10T13:50:21Z",
+      "side": 1,
+      "message": "it\u0027s unfortunate that we\u0027re taking that away, and creating work for the future. but if you think that\u0027s fine i don\u0027t think it\u0027s worth blocking the CL.",
+      "parentUuid": "acf4b773_6a54499d",
       "range": {
         "startLine": 35,
         "startChar": 0,
