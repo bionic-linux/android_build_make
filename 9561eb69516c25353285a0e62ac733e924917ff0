@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8e5c4abb_b7555365",
+        "filename": "core/tasks/host-unit-tests.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1121894
+      },
+      "writtenOn": "2024-07-10T23:59:02Z",
+      "side": 1,
+      "message": "wouldn\u0027t that link all shared lib to all modules?\n\nas opposed to linking a module to its own shared lib as defined in its Android.bp?\n\nWe shouldn\u0027t overly link it creates \"fake dependencies\"",
+      "revId": "9561eb69516c25353285a0e62ac733e924917ff0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
