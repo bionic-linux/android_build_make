@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "088f2bb7_6c9eb41d",
+        "filename": "core/tasks/meta-lic.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1317851
+      },
+      "writtenOn": "2024-07-10T02:27:32Z",
+      "side": 1,
+      "message": "redbull should be removed because of it\u0027s end of life.",
+      "range": {
+        "startLine": 121,
+        "startChar": 0,
+        "endLine": 136,
+        "endChar": 90
+      },
+      "revId": "f5bf95010eada7cfa3c5b7fa8bc18bc288ff410e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
