@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a3016bf7_3451afdf",
+        "filename": "core/soong_config.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-07-10T22:23:00Z",
+      "side": 1,
+      "message": "You don\u0027t need this.\n\nPlease see https://android-review.git.corp.google.com/c/platform/build/soong/+/3159600/2/android/config.go#1940",
+      "revId": "7c3adc141c486b74c822b26be14850a861fadc70",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
