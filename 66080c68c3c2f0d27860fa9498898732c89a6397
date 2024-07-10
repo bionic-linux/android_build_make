@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aca70260_e4820ca2",
+        "filename": "core/Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 3591,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2024-07-10T09:17:40Z",
+      "side": 1,
+      "message": "I think the current dependency in line#3586 must be the same for building the system image in soong that is already handled by the soong dependency graph. So this must work as intended.\nBut I think it is better to put the PRODUCT_SOONG_DEFINED_SYSTEM_IMAGE output to the dependency instead of keeping the make dependency for the soong system image.",
+      "range": {
+        "startLine": 3591,
+        "startChar": 0,
+        "endLine": 3591,
+        "endChar": 162
+      },
+      "revId": "66080c68c3c2f0d27860fa9498898732c89a6397",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
