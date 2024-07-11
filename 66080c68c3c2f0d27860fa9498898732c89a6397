@@ -166,6 +166,30 @@
       },
       "revId": "66080c68c3c2f0d27860fa9498898732c89a6397",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3d811d50_cc7324f0",
+        "filename": "core/Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 3591,
+      "author": {
+        "id": 1413436
+      },
+      "writtenOn": "2024-07-11T02:04:13Z",
+      "side": 1,
+      "message": "We still need `$(systemimage_intermediates)/file_list.txt` which is required from file list diff 😞 We can remove the file once we fully switch system image as Soong based (or at least being used as major solution, so diff can easily be found without the test).",
+      "parentUuid": "d6a1f711_1740ea95",
+      "range": {
+        "startLine": 3591,
+        "startChar": 0,
+        "endLine": 3591,
+        "endChar": 162
+      },
+      "revId": "66080c68c3c2f0d27860fa9498898732c89a6397",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
