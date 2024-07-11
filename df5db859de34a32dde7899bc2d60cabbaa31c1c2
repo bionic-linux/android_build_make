@@ -22,6 +22,30 @@
       },
       "revId": "df5db859de34a32dde7899bc2d60cabbaa31c1c2",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b5f16be8_2ca4d284",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1927237
+      },
+      "writtenOn": "2024-07-11T03:49:06Z",
+      "side": 1,
+      "message": "Hi Dan, this is not a real CP, the change I added in description is for refer, this cannot be auto merged because the code base of android11 is much different from the upstream branches, thanks",
+      "parentUuid": "488f2bfa_44b0811e",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 52
+      },
+      "revId": "df5db859de34a32dde7899bc2d60cabbaa31c1c2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
