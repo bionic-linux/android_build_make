@@ -70,6 +70,30 @@
       },
       "revId": "66080c68c3c2f0d27860fa9498898732c89a6397",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "146c4e16_c24d9e98",
+        "filename": "core/Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 3591,
+      "author": {
+        "id": 1291338
+      },
+      "writtenOn": "2024-07-11T01:54:43Z",
+      "side": 1,
+      "message": "\u003e But I think it is better to put the PRODUCT_SOONG_DEFINED_SYSTEM_IMAGE output to the dependency instead of keeping the make dependency for the soong system image.\n\n\u003e +1 to have PRODUCT_SOONG_DEFINED_SYSTEM_IMAGE as direct dependency of BUILT_SYSTEMIMAGE if possible (if my understanding on the comment is correct).\n\nYou mean making `PRODUCT_SOONG_DEFINED_SYSTEM_IMAGE` the **only** dependency of `BUILT_SYSTEMIMAGE` right? `copy-one-file` automatically adds such dependency",
+      "parentUuid": "5271c523_ee297ba3",
+      "range": {
+        "startLine": 3591,
+        "startChar": 0,
+        "endLine": 3591,
+        "endChar": 162
+      },
+      "revId": "66080c68c3c2f0d27860fa9498898732c89a6397",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
