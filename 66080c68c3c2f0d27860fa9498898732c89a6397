@@ -190,6 +190,30 @@
       },
       "revId": "66080c68c3c2f0d27860fa9498898732c89a6397",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a1d96507_cc6c76d6",
+        "filename": "core/Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 3591,
+      "author": {
+        "id": 1291338
+      },
+      "writtenOn": "2024-07-11T02:05:59Z",
+      "side": 1,
+      "message": "\u003e We still need $(systemimage_intermediates)/file_list.txt which is required from file list diff 😞 \n\nThis is what I meant. (both INSTALLED_FILES_FILE and $(systemimage_intermediates)/file_list.txt (or soong equivalent))",
+      "parentUuid": "3d811d50_cc7324f0",
+      "range": {
+        "startLine": 3591,
+        "startChar": 0,
+        "endLine": 3591,
+        "endChar": 162
+      },
+      "revId": "66080c68c3c2f0d27860fa9498898732c89a6397",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
