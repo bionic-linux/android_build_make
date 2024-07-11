@@ -142,6 +142,30 @@
       },
       "revId": "66080c68c3c2f0d27860fa9498898732c89a6397",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d6a1f711_1740ea95",
+        "filename": "core/Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 3591,
+      "author": {
+        "id": 1291338
+      },
+      "writtenOn": "2024-07-11T02:01:55Z",
+      "side": 1,
+      "message": "\u003e Do you think this can go away if generating INSTALLED_FILES_FILE is also done by soong?\n\nYes I do. (also `$(systemimage_intermediates)/file_list.txt`)",
+      "parentUuid": "20668b84_0aff6714",
+      "range": {
+        "startLine": 3591,
+        "startChar": 0,
+        "endLine": 3591,
+        "endChar": 162
+      },
+      "revId": "66080c68c3c2f0d27860fa9498898732c89a6397",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
