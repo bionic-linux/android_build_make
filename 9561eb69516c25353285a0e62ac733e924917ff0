@@ -16,6 +16,24 @@
       "message": "wouldn\u0027t that link all shared lib to all modules?\n\nas opposed to linking a module to its own shared lib as defined in its Android.bp?\n\nWe shouldn\u0027t overly link it creates \"fake dependencies\"",
       "revId": "9561eb69516c25353285a0e62ac733e924917ff0",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0826bde1_c24c05f9",
+        "filename": "core/tasks/host-unit-tests.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1890551
+      },
+      "writtenOn": "2024-07-11T00:07:00Z",
+      "side": 1,
+      "message": "line 43 - line 49 is linking action that will only link the required libs per module.\n\nline 25 - line 41 is the copying action that copies all shared libs into `testcases/lib` or `testcases/lib64`.",
+      "parentUuid": "8e5c4abb_b7555365",
+      "revId": "9561eb69516c25353285a0e62ac733e924917ff0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
