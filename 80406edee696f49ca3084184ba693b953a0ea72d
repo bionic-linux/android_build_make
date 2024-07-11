@@ -34,6 +34,24 @@
       "parentUuid": "e43dea97_382e366f",
       "revId": "80406edee696f49ca3084184ba693b953a0ea72d",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5887278e_b8f7f79f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1413436
+      },
+      "writtenOn": "2024-07-11T06:57:46Z",
+      "side": 1,
+      "message": "Can this change be submitted together with the change to add more diff tests under `/root`? It is a bit weird to add allowlists, while those are not being diff-ed.",
+      "parentUuid": "3f8e4048_47965c7d",
+      "revId": "80406edee696f49ca3084184ba693b953a0ea72d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
