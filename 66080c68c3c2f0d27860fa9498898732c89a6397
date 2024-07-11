@@ -118,6 +118,30 @@
       },
       "revId": "66080c68c3c2f0d27860fa9498898732c89a6397",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "31236177_25e5700f",
+        "filename": "core/Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 3591,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2024-07-11T02:01:50Z",
+      "side": 1,
+      "message": "Yes. That will simplify the dependency graph and make it easy to find what triggered a module to be installed. (Still we need to remove the filelist dependency that Joe commented above when we don\u0027t need both make and soong file lists anymore.)",
+      "parentUuid": "146c4e16_c24d9e98",
+      "range": {
+        "startLine": 3591,
+        "startChar": 0,
+        "endLine": 3591,
+        "endChar": 162
+      },
+      "revId": "66080c68c3c2f0d27860fa9498898732c89a6397",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
