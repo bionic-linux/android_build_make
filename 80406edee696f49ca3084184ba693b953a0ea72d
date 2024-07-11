@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e43dea97_382e366f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1413436
+      },
+      "writtenOn": "2024-07-11T06:54:05Z",
+      "side": 1,
+      "message": "Why do we need this change? Do we expect extra logic to diff files under `/root`?",
+      "revId": "80406edee696f49ca3084184ba693b953a0ea72d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
