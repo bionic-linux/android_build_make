@@ -1,0 +1,20 @@
+package android.aconfig.storage;
+
+/**
+ * @hide
+ */
+class CONTAINERAconfigReader {
+    /**
+     * Return true if CONTAINER contains {@code flagName} in its storage.
+     */
+    public static boolean CONTAINER_hasFlag(String packageName, String flagName) {
+        return ExternalReadApi.hasFlag("CONTAINER", packageName, flagName);
+    }
+
+    /**
+     * Return the value of {@code flagName}. If it's not present, returns false.
+     */
+    public static boolean CONTAINER_readFlag(String packageName, String flagName) {
+        return ExternalReadApi.readFlag("CONTAINER", packageName, flagName);
+    }
+}
