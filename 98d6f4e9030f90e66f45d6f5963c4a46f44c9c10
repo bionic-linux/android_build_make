@@ -16,6 +16,24 @@
       "message": "This looks like it sorts after every addition, which can get very expensive.  Can you move the sort out so it happens once per suite?",
       "revId": "98d6f4e9030f90e66f45d6f5963c4a46f44c9c10",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8f8ee524_4ee189de",
+        "filename": "core/main.mk",
+        "patchSetId": 5
+      },
+      "lineNbr": 695,
+      "author": {
+        "id": 1890551
+      },
+      "writtenOn": "2024-07-12T21:00:27Z",
+      "side": 1,
+      "message": "Done. Thanks for catching this.",
+      "parentUuid": "07c2674f_9b9dbf79",
+      "revId": "98d6f4e9030f90e66f45d6f5963c4a46f44c9c10",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
