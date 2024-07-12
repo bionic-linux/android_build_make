@@ -1,0 +1,11 @@
+package: "android.aconfig.storage"
+container: "system"
+
+flag {
+    name: "system_external_api"
+    namespace: "core_experiments_team_internal"
+    bug: "352781277"
+    description: "Enables external container reader APIs for system partition."
+    is_fixed_read_only: true
+}
+
