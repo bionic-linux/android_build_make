@@ -8,7 +8,7 @@ pub struct AconfigStorageSource {}
 
 use aconfig_storage_file::protos::ProtoStorageFiles;
 
-static STORAGE_INFO_FILE_PATH: &str = "/metadata/aconfig/persistent_storage_file_records.pb";
+static STORAGE_INFO_FILE_PATH: &str = "/metadata/aconfig/storage_records.pb";
 
 impl FlagSource for AconfigStorageSource {
     fn list_flags() -> Result<Vec<Flag>> {
