@@ -156,10 +156,14 @@ java_library {
     srcs: [
         "srcs/**/*.java",
     ],
+    static_libs: [
+        "aconfig_storage_file_java",
+    ],
     required: ["libaconfig_storage_read_api_rust_jni"],
     min_sdk_version: "UpsideDownCake",
     apex_available: [
         "//apex_available:anyapex",
         "//apex_available:platform",
     ],
+    sdk_version: "core_current",
 }

@@ -16,6 +16,12 @@
 
 package android.aconfig.storage;
 
+import java.nio.MappedByteBuffer;
+import java.nio.channels.FileChannel;
+import java.io.IOException;
+import java.io.FileInputStream;
+
+
 public class StorageInternalReader {
 
     private static final String MAP_PATH = "/metadata/aconfig/maps/";
