@@ -16,6 +16,24 @@
       "message": "nit: can you add a new line at the end?",
       "revId": "3335c5e2a09b465a8f93186abb0e6396a360dd06",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "04df80b3_17157a7d",
+        "filename": "target/product/sdk.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1504052
+      },
+      "writtenOn": "2024-07-15T17:55:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa179a9_142a5acd",
+      "revId": "3335c5e2a09b465a8f93186abb0e6396a360dd06",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
