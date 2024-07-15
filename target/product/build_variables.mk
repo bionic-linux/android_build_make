@@ -19,3 +19,5 @@
 
 # Use the configured release of sqlite
 $(call soong_config_set, libsqlite3, release_package_libsqlite3, $(RELEASE_PACKAGE_LIBSQLITE3))
+# Control libbinder client caching
+$(call soong_config_set, libbinder, release_libbinder_client_cache, $(RELEASE_LIBBINDER_CLIENT_CACHE))
