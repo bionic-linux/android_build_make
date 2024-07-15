@@ -717,6 +717,7 @@ else
 endif
 
 ifeq ($(EXCLUDE_MCTS),true)
+<<<<<<< HEAD   (fb308d Merge "Link shared libs to per test module folder in host-un)
 ifeq (,$(filter $(LOCAL_MODULE),$(mcts_whitelist)))
   ifneq (,$(test_config))
     ifneq (,$(filter mcts-%,$(LOCAL_COMPATIBILITY_SUITE)))
@@ -724,6 +725,13 @@ ifeq (,$(filter $(LOCAL_MODULE),$(mcts_whitelist)))
     endif
   endif
 endif
+=======
+  ifneq (,$(test_config))
+    ifneq (,$(filter mcts-%,$(LOCAL_COMPATIBILITY_SUITE)))
+      LOCAL_COMPATIBILITY_SUITE := $(filter-out cts,$(LOCAL_COMPATIBILITY_SUITE))
+    endif
+  endif
+>>>>>>> BRANCH (b60ebe RESTRICT AUTOMERGE: Exclude mcts tests from cts based on the)
 endif
 
 ifneq (true,$(LOCAL_UNINSTALLABLE_MODULE))
