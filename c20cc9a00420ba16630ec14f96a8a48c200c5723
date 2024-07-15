@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "19d7543b_65636b6e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1973455
+      },
+      "writtenOn": "2024-07-15T14:33:20Z",
+      "side": 1,
+      "message": "Hi @zhangxh@google.com,\n\nCan you review this CL, or suggest who can CR+1 this CL.\n\nThanks!",
+      "revId": "c20cc9a00420ba16630ec14f96a8a48c200c5723",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
