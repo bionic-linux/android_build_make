@@ -26,4 +26,3 @@ PRODUCT_PACKAGES += \
     local_time.default \
     power.default \
     vibrator.default \
-
