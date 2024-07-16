@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2d3504ff_f3db98e7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002751
+      },
+      "writtenOn": "2024-07-16T21:52:52Z",
+      "side": 1,
+      "message": "Cherry-picks like this are usually created with the cherry-pick button in gerrit or `git cherry-pick -x`, which will keep the same change-id and commit message.  You can then add `Merged-In: \u003cchange ID\u003e`, which is a more accurate way to control where the change gets automerged to.",
+      "revId": "65fd8c217a2c01067420bc09908d129822c8d37a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
