@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a516ed6b_8086ce6f",
+        "filename": "target/product/runtime_libart.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1884045
+      },
+      "writtenOn": "2024-07-16T17:06:42Z",
+      "side": 1,
+      "message": "Nit: Add a trailing period.",
+      "range": {
+        "startLine": 182,
+        "startChar": 45,
+        "endLine": 182,
+        "endChar": 49
+      },
+      "revId": "96a7ef3a9a9feb978f4fa1c64efabe6df31d0fa6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "21a0cbbf_a5081cf0",
+        "filename": "target/product/runtime_libart.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 1884045
+      },
+      "writtenOn": "2024-07-16T17:06:42Z",
+      "side": 1,
+      "message": "Can we use `PRODUCT_SYSTEM_PROPERTIES`?",
+      "range": {
+        "startLine": 183,
+        "startChar": 0,
+        "endLine": 183,
+        "endChar": 25
+      },
+      "revId": "96a7ef3a9a9feb978f4fa1c64efabe6df31d0fa6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
