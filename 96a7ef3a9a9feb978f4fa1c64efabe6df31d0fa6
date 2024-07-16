@@ -24,6 +24,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "007b5c19_d3c54ffd",
+        "filename": "target/product/runtime_libart.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1878380
+      },
+      "writtenOn": "2024-07-16T18:54:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a516ed6b_8086ce6f",
+      "range": {
+        "startLine": 182,
+        "startChar": 45,
+        "endLine": 182,
+        "endChar": 49
+      },
+      "revId": "96a7ef3a9a9feb978f4fa1c64efabe6df31d0fa6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "21a0cbbf_a5081cf0",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-07-16T17:06:42Z",
       "side": 1,
       "message": "Can we use `PRODUCT_SYSTEM_PROPERTIES`?",
+      "range": {
+        "startLine": 183,
+        "startChar": 0,
+        "endLine": 183,
+        "endChar": 25
+      },
+      "revId": "96a7ef3a9a9feb978f4fa1c64efabe6df31d0fa6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0e06b03a_c5ca922a",
+        "filename": "target/product/runtime_libart.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 1878380
+      },
+      "writtenOn": "2024-07-16T18:54:17Z",
+      "side": 1,
+      "message": "I believe we can. I have verified this with cf_x86_64_phone (with a local change to remove this from cf\u0027s PRODUCT_VENDOR_PROPERTIES).\n\nI subsequently ran `adb shell pm art dump`, and verified that the /product apps appear as `reason\u003dprebuilt`",
+      "parentUuid": "21a0cbbf_a5081cf0",
       "range": {
         "startLine": 183,
         "startChar": 0,
