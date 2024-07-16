@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b62e9222_dd3c1ab4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1878380
+      },
+      "writtenOn": "2024-07-16T16:49:12Z",
+      "side": 1,
+      "message": "I tested this with a separate throwaway CL (ag/28329183). I will start a fresh go/abtd and verify before submitting.",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 4
+      },
+      "revId": "80e88d5d9df7796fe422ed46111ce944e6060760",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
