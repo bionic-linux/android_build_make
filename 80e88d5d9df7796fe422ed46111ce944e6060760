@@ -22,6 +22,30 @@
       },
       "revId": "80e88d5d9df7796fe422ed46111ce944e6060760",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "912f2bde_4a347e74",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1878380
+      },
+      "writtenOn": "2024-07-16T21:35:27Z",
+      "side": 1,
+      "message": "I have verified that odex/vdex files are copied from system_other to /data/davik-cache on first boot. No dexopt is required for /product and /system_ext apps.\n\ngo/abtd run link: https://android-build.corp.google.com/builds/abtd/run/L52300030005180270",
+      "parentUuid": "b62e9222_dd3c1ab4",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 4
+      },
+      "revId": "80e88d5d9df7796fe422ed46111ce944e6060760",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
