@@ -664,6 +664,9 @@ $(foreach image, \
     RECOVERY, \
   $(eval $(call product-build-image-config,$(image))))
 
+# Copy preopted files from system_b on first boot
+PRODUCT_VENDOR_PROPERTIES += ro.cp_system_other_odex=1
+
 product-build-image-config :=
 
 $(call readonly-product-vars)
