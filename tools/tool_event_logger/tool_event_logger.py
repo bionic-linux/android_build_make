@@ -205,6 +205,7 @@ def configure_logging():
   date_fmt = '%Y-%m-%d %H:%M:%S'
   _, log_path = tempfile.mkstemp(dir=root_logging_dir, suffix='.log')
 
+  print("logging to file: ", log_path)
   logging.basicConfig(
       filename=log_path, level=logging.DEBUG, format=log_fmt, datefmt=date_fmt
   )
@@ -214,6 +215,7 @@ def main(argv: list[str]):
   args = create_arg_parser().parse_args(argv[1:])
 
   if args.dry_run:
+    print("dry run")
     logging.debug('This is a dry run.')
     return
 
