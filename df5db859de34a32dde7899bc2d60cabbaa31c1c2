@@ -46,6 +46,30 @@
       },
       "revId": "df5db859de34a32dde7899bc2d60cabbaa31c1c2",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9d46242f_79ac81a2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1074628
+      },
+      "writtenOn": "2024-07-17T16:40:38Z",
+      "side": 1,
+      "message": "It\u0027s the same logical change, and they shouldn\u0027t be applied in the same tree.",
+      "parentUuid": "b5f16be8_2ca4d284",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 52
+      },
+      "revId": "df5db859de34a32dde7899bc2d60cabbaa31c1c2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
