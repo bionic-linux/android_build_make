@@ -16,6 +16,24 @@
       "message": "Cherry-picks like this are usually created with the cherry-pick button in gerrit or `git cherry-pick -x`, which will keep the same change-id and commit message.  You can then add `Merged-In: \u003cchange ID\u003e`, which is a more accurate way to control where the change gets automerged to.",
       "revId": "65fd8c217a2c01067420bc09908d129822c8d37a",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "37e710c7_d2a13d16",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1927237
+      },
+      "writtenOn": "2024-07-17T03:44:24Z",
+      "side": 1,
+      "message": "Hi Colin, this file diff a lot across the android platforms and cannot be auto merged due to other existing changes, so this is not a strict CP but the same thing as aosp/3081046 did, thanks",
+      "parentUuid": "2d3504ff_f3db98e7",
+      "revId": "65fd8c217a2c01067420bc09908d129822c8d37a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
