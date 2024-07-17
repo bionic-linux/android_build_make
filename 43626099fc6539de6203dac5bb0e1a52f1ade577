@@ -46,6 +46,30 @@
       },
       "revId": "43626099fc6539de6203dac5bb0e1a52f1ade577",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e3c7b160_47a2bdcd",
+        "filename": "core/android_soong_config_vars.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1307893
+      },
+      "writtenOn": "2024-07-17T02:47:04Z",
+      "side": 1,
+      "message": "https://source.android.com/docs/security/test/asan\n\n`ASan` is a standard abbreviation for AddressSanitizer, and the current select command requires the use of \"and\".\nIf variables are too long, it can make them difficult to read.",
+      "parentUuid": "53bf9344_cb11a970",
+      "range": {
+        "startLine": 38,
+        "startChar": 37,
+        "endLine": 38,
+        "endChar": 49
+      },
+      "revId": "43626099fc6539de6203dac5bb0e1a52f1ade577",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
