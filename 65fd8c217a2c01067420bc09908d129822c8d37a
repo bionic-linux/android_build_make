@@ -3,6 +3,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b7c70ac3_d0040bd1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1074628
+      },
+      "writtenOn": "2024-07-17T16:42:07Z",
+      "side": 1,
+      "message": "Cherrypicks, or otherwise equivalent changes, should have the same Change-Id as the original, and also list a Merged-In:\n\nThat should remove the need for RESTRICT AUTOMERGE as long as you\u0027re walking them backwards up the merge path",
+      "revId": "65fd8c217a2c01067420bc09908d129822c8d37a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2d3504ff_f3db98e7",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 1
