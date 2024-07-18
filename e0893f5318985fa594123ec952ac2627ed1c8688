@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3e79f5fc_c00dade8",
+        "filename": "core/android_soong_config_vars.mk",
+        "patchSetId": 4
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2024-07-18T17:29:22Z",
+      "side": 1,
+      "message": "\"must be\"\n\n(this behavior still seems like a bug to me, but it\u0027s not a regression, so...)",
+      "range": {
+        "startLine": 167,
+        "startChar": 41,
+        "endLine": 167,
+        "endChar": 45
+      },
+      "revId": "e0893f5318985fa594123ec952ac2627ed1c8688",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
