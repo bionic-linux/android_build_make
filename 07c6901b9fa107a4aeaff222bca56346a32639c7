@@ -16,6 +16,24 @@
       "message": "add_json_bool is `$(call add_json_val,$(1),$(if $(strip $(2)),true,false))`, so you shouldn\u0027t need this if statement.",
       "revId": "07c6901b9fa107a4aeaff222bca56346a32639c7",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "46af3778_43cd039a",
+        "filename": "core/soong_config.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2024-07-18T23:02:34Z",
+      "side": 1,
+      "message": "`PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD` has different meaning for `false` and empty in the original Make script. That is also addressed here: https://android-review.git.corp.google.com/c/platform/build/soong/+/3160220/4/android/config.go",
+      "parentUuid": "fbe638ed_00cd7973",
+      "revId": "07c6901b9fa107a4aeaff222bca56346a32639c7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
