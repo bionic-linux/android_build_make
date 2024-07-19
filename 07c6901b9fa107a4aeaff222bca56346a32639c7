@@ -34,6 +34,24 @@
       "parentUuid": "fbe638ed_00cd7973",
       "revId": "07c6901b9fa107a4aeaff222bca56346a32639c7",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "09b6ab76_5849d9ad",
+        "filename": "core/soong_config.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 1413436
+      },
+      "writtenOn": "2024-07-19T00:49:40Z",
+      "side": 1,
+      "message": "As Justin mentioned, this is to not set variable into any value if not defined - to set variable as null as same from KATI.",
+      "parentUuid": "46af3778_43cd039a",
+      "revId": "07c6901b9fa107a4aeaff222bca56346a32639c7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
