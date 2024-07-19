@@ -22,6 +22,30 @@
       },
       "revId": "e0893f5318985fa594123ec952ac2627ed1c8688",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "35d9fa6b_271d6b21",
+        "filename": "core/android_soong_config_vars.mk",
+        "patchSetId": 4
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 1308044
+      },
+      "writtenOn": "2024-07-19T01:35:31Z",
+      "side": 1,
+      "message": "Thank you, it\u0027s due to a soong\u0027s restriction that it will need those srcs to be under the sub dir of the Android.bp file and from current cases they are all under `platform_testing/scripts/perf-setup/`, that\u0027s why I just make a restriction here first.",
+      "parentUuid": "3e79f5fc_c00dade8",
+      "range": {
+        "startLine": 167,
+        "startChar": 41,
+        "endLine": 167,
+        "endChar": 45
+      },
+      "revId": "e0893f5318985fa594123ec952ac2627ed1c8688",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
