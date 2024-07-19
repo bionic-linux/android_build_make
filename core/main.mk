@@ -1082,7 +1082,10 @@ else ifdef FULL_BUILD
     # Many host modules are Linux-only, so skip this check on Mac. If we ever have Mac-only modules,
     # maybe it would make sense to have PRODUCT_HOST_PACKAGES_LINUX/_DARWIN?
     ifneq ($(HOST_OS),darwin)
-      _modules := $(PRODUCT_HOST_PACKAGES)
+      # art-tools is a phony target but is necessary as it pulls in required dependencies.
+      # Exclude it from the existence check to avoid false positive errors.
+      _ignore_list := art-tools
+      _modules := $(filter-out $(_ignore_list),$(PRODUCT_HOST_PACKAGES))
       # Strip :32 and :64 suffixes
       _modules := $(patsubst %:32,%,$(_modules))
       _modules := $(patsubst %:64,%,$(_modules))
