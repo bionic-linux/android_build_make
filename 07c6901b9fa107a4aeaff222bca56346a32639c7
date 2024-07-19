@@ -52,6 +52,24 @@
       "parentUuid": "46af3778_43cd039a",
       "revId": "07c6901b9fa107a4aeaff222bca56346a32639c7",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e90fbae8_ebe5e8b3",
+        "filename": "core/soong_config.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-07-19T01:03:38Z",
+      "side": 1,
+      "message": "Makes sense. Would you mind adding a comment to that effect here? I don\u0027t want people to copy and paste this thinking that it\u0027s just the normal way to set a boolean.",
+      "parentUuid": "09b6ab76_5849d9ad",
+      "revId": "07c6901b9fa107a4aeaff222bca56346a32639c7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
