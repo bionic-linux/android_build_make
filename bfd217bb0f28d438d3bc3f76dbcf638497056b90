@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f84e7727_77d12d83",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1970380
+      },
+      "writtenOn": "2024-07-19T02:59:33Z",
+      "side": 1,
+      "message": "https://android-review.googlesource.com/c/platform/system/libvintf/+/2911287 CL removed SHIPPING_API_LEVEL . so this is redundant which confuses",
+      "revId": "bfd217bb0f28d438d3bc3f76dbcf638497056b90",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
