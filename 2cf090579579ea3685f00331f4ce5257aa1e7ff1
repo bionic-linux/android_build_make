@@ -16,6 +16,24 @@
       "message": "Since this is a new directory, I would like to review all changes here.",
       "revId": "2cf090579579ea3685f00331f4ce5257aa1e7ff1",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b5ec775c_9ce2d6f8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-07-19T20:47:22Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "fe190b98_1ebdce06",
+      "revId": "2cf090579579ea3685f00331f4ce5257aa1e7ff1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
