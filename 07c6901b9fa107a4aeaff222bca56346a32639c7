@@ -88,6 +88,24 @@
       "parentUuid": "e90fbae8_ebe5e8b3",
       "revId": "07c6901b9fa107a4aeaff222bca56346a32639c7",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4734fb9f_960970e6",
+        "filename": "core/soong_config.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-07-19T01:23:13Z",
+      "side": 1,
+      "message": "thanks!",
+      "parentUuid": "c101b790_5b658193",
+      "revId": "07c6901b9fa107a4aeaff222bca56346a32639c7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
