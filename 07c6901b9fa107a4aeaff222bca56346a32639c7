@@ -70,6 +70,24 @@
       "parentUuid": "09b6ab76_5849d9ad",
       "revId": "07c6901b9fa107a4aeaff222bca56346a32639c7",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c101b790_5b658193",
+        "filename": "core/soong_config.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 1413436
+      },
+      "writtenOn": "2024-07-19T01:14:57Z",
+      "side": 1,
+      "message": "I added a comment as suggested. PTAL.",
+      "parentUuid": "e90fbae8_ebe5e8b3",
+      "revId": "07c6901b9fa107a4aeaff222bca56346a32639c7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
