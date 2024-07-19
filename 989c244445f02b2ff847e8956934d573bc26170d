@@ -34,6 +34,24 @@
       ],
       "revId": "989c244445f02b2ff847e8956934d573bc26170d",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a89c5ef3_26c60aa0",
+        "filename": "tools/aconfig/fake_device_config/src/android/provider/Log.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1944425
+      },
+      "writtenOn": "2024-07-19T21:03:09Z",
+      "side": 1,
+      "message": "oh this is to mimic this frameworks/base/core/java/android/util/Log.java class just for build purpose",
+      "parentUuid": "20d9d327_916824b3",
+      "revId": "989c244445f02b2ff847e8956934d573bc26170d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
