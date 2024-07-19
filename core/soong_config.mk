@@ -361,6 +361,8 @@ $(call add_json_bool, BoardUseVbmetaDigestInFingerprint, $(filter true,$(BOARD_U
 
 $(call add_json_list, OemProperties, $(PRODUCT_OEM_PROPERTIES))
 
+$(call add_json_list, SystemPropFiles, $(if $(TARGET_SYSTEM_PROP),$(TARGET_SYSTEM_PROP),$(wildcard $(TARGET_DEVICE_DIR)/system.prop)))
+
 # Do not set ArtTargetIncludeDebugBuild into any value if PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD is not set,
 # to have the same behavior from runtime_libart.mk.
 ifneq ($(PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD),)
