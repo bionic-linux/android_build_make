@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6dfef4ef_9e389f18",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1318142
+      },
+      "writtenOn": "2024-07-19T22:15:41Z",
+      "side": 1,
+      "message": "Regarding the presubmit error, you might need to define these files in \nSoong modules and add the modules to PRODUCT_PACKAGES and \nhttps://source.corp.google.com/h/googleplex-android/platform/superproject/main/+/main:device/google/cuttlefish/system_image/Android.bp;drc\u003dbbc624e402ef9341f2786b8e0f5beba892332fd6;l\u003d292.\n\nAdded jiyong@ who can provide more information.",
+      "revId": "8047550e6fa8f261b31349debe51cfbca301d708",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
