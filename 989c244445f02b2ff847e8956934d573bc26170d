@@ -1,0 +1,39 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "20d9d327_916824b3",
+        "filename": "tools/aconfig/fake_device_config/src/android/provider/Log.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1981530
+      },
+      "writtenOn": "2024-07-19T21:00:26Z",
+      "side": 1,
+      "message": "Is this added by accident?",
+      "fixSuggestions": [
+        {
+          "fixId": "af46e6ef_f27f387c",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "tools/aconfig/fake_device_config/src/android/provider/Log.java",
+              "range": {
+                "startLine": 3,
+                "startChar": 0,
+                "endLine": 4,
+                "endChar": 0
+              },
+              "replacement": "public class Log {\n"
+            }
+          ]
+        }
+      ],
+      "revId": "989c244445f02b2ff847e8956934d573bc26170d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
