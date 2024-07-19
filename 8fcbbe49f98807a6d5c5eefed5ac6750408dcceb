@@ -16,6 +16,155 @@
       "message": "Looks great!",
       "revId": "8fcbbe49f98807a6d5c5eefed5ac6750408dcceb",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "46e68b13_b973637e",
+        "filename": "ci/build_test_suites.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-07-19T21:45:35Z",
+      "side": 1,
+      "message": "Where does this come from?  And is it always going to have the empty list, or is it better to let the caller handle the missing elements?",
+      "range": {
+        "startLine": 157,
+        "startChar": 11,
+        "endLine": 157,
+        "endChar": 31
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "b38f498b_91260132",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ci/build_test_suites.py",
+              "range": {
+                "startLine": 144,
+                "startChar": 0,
+                "endLine": 144,
+                "endChar": 0
+              },
+              "replacement": "  \"\"\"Loads the build context from the BUILD_CONTEXT env var.\n\n  Returns:\n    The build context dict.\n\n  Raises:\n    Error: If the build context file is not found or is not valid JSON.\n  \"\"\"\n"
+            },
+            {
+              "path": "ci/build_test_suites.py",
+              "range": {
+                "startLine": 153,
+                "startChar": 0,
+                "endLine": 157,
+                "endChar": 0
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "revId": "8fcbbe49f98807a6d5c5eefed5ac6750408dcceb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6734bef0_785daecb",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-07-19T21:45:35Z",
+      "side": 1,
+      "message": "Why all the newlines?",
+      "range": {
+        "startLine": 45,
+        "startChar": 56,
+        "endLine": 47,
+        "endChar": 6
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "fddd2c11_55864128",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ci/optimized_targets.py",
+              "range": {
+                "startLine": 45,
+                "startChar": 0,
+                "endLine": 49,
+                "endChar": 0
+              },
+              "replacement": "    if self.get_enabled_flag() in self.build_context.get(\u0027enabledBuildFeatures\u0027, []):\n      return self.package_outputs_impl()    \n"
+            }
+          ]
+        }
+      ],
+      "revId": "8fcbbe49f98807a6d5c5eefed5ac6750408dcceb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7f4af827_aa8a8f5d",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-07-19T21:45:35Z",
+      "side": 1,
+      "message": "Should this be an impl instead? This is going to return None instead of a boolean, which could be surprising.",
+      "revId": "8fcbbe49f98807a6d5c5eefed5ac6750408dcceb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fde6c7e8_03a7c951",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-07-19T21:45:35Z",
+      "side": 1,
+      "message": "I don\u0027t think these should be hard coded here. Then this file needs to be maintained in addition to the build files for it and the test configuration.",
+      "range": {
+        "startLine": 104,
+        "startChar": 0,
+        "endLine": 106,
+        "endChar": 0
+      },
+      "revId": "8fcbbe49f98807a6d5c5eefed5ac6750408dcceb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "70dc1f30_bbc3b72e",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-07-19T21:45:35Z",
+      "side": 1,
+      "message": "This is hard to review. Can you put a comment explaining the inputs, the outputs and the algorithm?",
+      "revId": "8fcbbe49f98807a6d5c5eefed5ac6750408dcceb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
