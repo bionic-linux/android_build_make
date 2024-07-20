@@ -69,6 +69,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "53b60d69_f676f4b8",
+        "filename": "ci/build_test_suites.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-07-20T00:46:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "46e68b13_b973637e",
+      "range": {
+        "startLine": 157,
+        "startChar": 11,
+        "endLine": 157,
+        "endChar": 31
+      },
+      "revId": "8fcbbe49f98807a6d5c5eefed5ac6750408dcceb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6734bef0_785daecb",
@@ -112,6 +136,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "4bedb1b7_b52df0af",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-07-20T00:46:37Z",
+      "side": 1,
+      "message": "they were put in by the python formatter, wouldn\u0027t the line be too long without them?",
+      "parentUuid": "6734bef0_785daecb",
+      "range": {
+        "startLine": 45,
+        "startChar": 56,
+        "endLine": 47,
+        "endChar": 6
+      },
+      "revId": "8fcbbe49f98807a6d5c5eefed5ac6750408dcceb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "7f4af827_aa8a8f5d",
         "filename": "ci/optimized_targets.py",
         "patchSetId": 7
@@ -123,6 +171,24 @@
       "writtenOn": "2024-07-19T21:45:35Z",
       "side": 1,
       "message": "Should this be an impl instead? This is going to return None instead of a boolean, which could be surprising.",
+      "revId": "8fcbbe49f98807a6d5c5eefed5ac6750408dcceb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e4db117a_e3d8daa6",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-07-20T00:46:37Z",
+      "side": 1,
+      "message": "package_outputs isn\u0027t supposed to return a bool, it doesn\u0027t return anything. But now that you mention it let me remove the return from the base class as that shouldn\u0027t be there either.",
+      "parentUuid": "7f4af827_aa8a8f5d",
       "revId": "8fcbbe49f98807a6d5c5eefed5ac6750408dcceb",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
@@ -152,6 +218,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "aa46d660_bbc5cc2b",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-07-20T00:46:37Z",
+      "side": 1,
+      "message": "I don\u0027t think there\u0027s a way to query soong for what artifacts a module outputs is there? Then there\u0027s the fact of having to know which ones get put into dist etc. Adding more soong calls would slow down the build even more as well, I\u0027m not sure what the best way to determine these outputs is.",
+      "parentUuid": "fde6c7e8_03a7c951",
+      "range": {
+        "startLine": 104,
+        "startChar": 0,
+        "endLine": 106,
+        "endChar": 0
+      },
+      "revId": "8fcbbe49f98807a6d5c5eefed5ac6750408dcceb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "70dc1f30_bbc3b72e",
         "filename": "ci/optimized_targets.py",
         "patchSetId": 7
@@ -163,6 +253,24 @@
       "writtenOn": "2024-07-19T21:45:35Z",
       "side": 1,
       "message": "This is hard to review. Can you put a comment explaining the inputs, the outputs and the algorithm?",
+      "revId": "8fcbbe49f98807a6d5c5eefed5ac6750408dcceb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e5f2b089_195f74df",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-07-20T00:46:37Z",
+      "side": 1,
+      "message": "Added some comments.",
+      "parentUuid": "70dc1f30_bbc3b72e",
       "revId": "8fcbbe49f98807a6d5c5eefed5ac6750408dcceb",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
