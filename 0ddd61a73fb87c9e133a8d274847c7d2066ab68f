@@ -16,6 +16,24 @@
       "message": "Could you add the same to [1] as well? (I know, the directory cuttlefish there may look odd. There, we are working on building system image in Soong, and it will be moved to build/*. Currently, there\u0027s a diff test running between the Soong-built system image. and the Make-build one.\n\n[1] https://cs.android.com/android/platform/superproject/main/+/main:device/google/cuttlefish/system_image/Android.bp;drc\u003dbbc624e402ef9341f2786b8e0f5beba892332fd6;l\u003d322",
       "revId": "0ddd61a73fb87c9e133a8d274847c7d2066ab68f",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5a1d0078_ec7eed0d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1953271
+      },
+      "writtenOn": "2024-07-21T22:33:54Z",
+      "side": 1,
+      "message": "Thanks, done in aosp/3184805.",
+      "parentUuid": "db21efe5_d507ba95",
+      "revId": "0ddd61a73fb87c9e133a8d274847c7d2066ab68f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
