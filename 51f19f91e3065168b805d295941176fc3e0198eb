@@ -22,6 +22,30 @@
       },
       "revId": "51f19f91e3065168b805d295941176fc3e0198eb",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "20a4c4b9_0857ec11",
+        "filename": "ci/optimized_targets_test.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-07-22T17:43:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d8868f01_2a94b0e9",
+      "range": {
+        "startLine": 49,
+        "startChar": 21,
+        "endLine": 49,
+        "endChar": 30
+      },
+      "revId": "51f19f91e3065168b805d295941176fc3e0198eb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
