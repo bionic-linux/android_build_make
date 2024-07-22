@@ -51,6 +51,24 @@
       "message": "Just out of curiosity, do we expect `/system/etc/approved-ogki-builds.xml` from all Android devices?",
       "revId": "0ddd61a73fb87c9e133a8d274847c7d2066ab68f",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "80800e7b_5c344d46",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1953271
+      },
+      "writtenOn": "2024-07-22T09:07:51Z",
+      "side": 1,
+      "message": "`/system/etc/kernel/approved-ogki-builds.xml` would be the path. Yes will be expected in all Android devices for now.",
+      "parentUuid": "bb1fd8ef_d60ac844",
+      "revId": "0ddd61a73fb87c9e133a8d274847c7d2066ab68f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
