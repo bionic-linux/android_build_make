@@ -70,6 +70,30 @@
       },
       "revId": "df5db859de34a32dde7899bc2d60cabbaa31c1c2",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d4946112_24e721a0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1927237
+      },
+      "writtenOn": "2024-07-22T07:30:48Z",
+      "side": 1,
+      "message": "Hi Dan, when I modify the change id to the same as the previous change it shows an error.",
+      "parentUuid": "9d46242f_79ac81a2",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 52
+      },
+      "revId": "df5db859de34a32dde7899bc2d60cabbaa31c1c2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
