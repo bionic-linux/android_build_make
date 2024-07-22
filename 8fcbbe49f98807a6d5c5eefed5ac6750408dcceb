@@ -314,6 +314,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "18965113_fe6b1200",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1076194
+      },
+      "writtenOn": "2024-07-22T18:44:58Z",
+      "side": 1,
+      "message": "Joe, WDYT? Luca and I think that hardcoded is the way to go here.",
+      "parentUuid": "9a79ea44_9ed746d8",
+      "range": {
+        "startLine": 104,
+        "startChar": 0,
+        "endLine": 106,
+        "endChar": 0
+      },
+      "revId": "8fcbbe49f98807a6d5c5eefed5ac6750408dcceb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "70dc1f30_bbc3b72e",
         "filename": "ci/optimized_targets.py",
         "patchSetId": 7
