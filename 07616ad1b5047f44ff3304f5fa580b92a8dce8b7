@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9a8b9d4f_bae551eb",
+        "filename": "core/android_soong_config_vars.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1318142
+      },
+      "writtenOn": "2024-07-22T19:19:30Z",
+      "side": 1,
+      "message": "It is already set here: https://source.corp.google.com/h/googleplex-android/platform/superproject/main/+/main:build/make/core/soong_config.mk;drc\u003dc7fea4809434b1834146c918561da5eae105d499;l\u003d322",
+      "revId": "07616ad1b5047f44ff3304f5fa580b92a8dce8b7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
