@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "16dce77c_24c97829",
+        "filename": "core/soong_config.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-07-23T17:18:14Z",
+      "side": 1,
+      "message": "Is there somewhere else you could put this logic? It would be nice to have this file just be just dumping variables and no logic.",
+      "range": {
+        "startLine": 364,
+        "startChar": 88,
+        "endLine": 364,
+        "endChar": 132
+      },
+      "revId": "0ac85f6d6bddd915b08673d12419cce63800b454",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
