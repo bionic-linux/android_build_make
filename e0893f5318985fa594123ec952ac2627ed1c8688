@@ -46,6 +46,30 @@
       },
       "revId": "e0893f5318985fa594123ec952ac2627ed1c8688",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1f49a627_979657d7",
+        "filename": "core/android_soong_config_vars.mk",
+        "patchSetId": 4
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 1308044
+      },
+      "writtenOn": "2024-07-23T01:51:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "35d9fa6b_271d6b21",
+      "range": {
+        "startLine": 167,
+        "startChar": 41,
+        "endLine": 167,
+        "endChar": 45
+      },
+      "revId": "e0893f5318985fa594123ec952ac2627ed1c8688",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
