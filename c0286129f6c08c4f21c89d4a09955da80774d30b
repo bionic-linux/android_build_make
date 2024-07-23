@@ -20,6 +20,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "e349afa7_f592bb5f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 2015736
+      },
+      "writtenOn": "2024-07-23T21:58:49Z",
+      "side": 1,
+      "message": "I updated the commit message with details. Please review again.",
+      "parentUuid": "8671c57b_87e8e7ba",
+      "revId": "c0286129f6c08c4f21c89d4a09955da80774d30b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "a28a6e77_1fd91cdc",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 2
