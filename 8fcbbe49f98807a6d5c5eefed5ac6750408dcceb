@@ -338,6 +338,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "dce584f0_76baed50",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-07-23T23:49:07Z",
+      "side": 1,
+      "message": "I\u0027m not really convinced. Is there a generic way to do it?",
+      "parentUuid": "18965113_fe6b1200",
+      "range": {
+        "startLine": 104,
+        "startChar": 0,
+        "endLine": 106,
+        "endChar": 0
+      },
+      "revId": "8fcbbe49f98807a6d5c5eefed5ac6750408dcceb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "70dc1f30_bbc3b72e",
         "filename": "ci/optimized_targets.py",
         "patchSetId": 7
