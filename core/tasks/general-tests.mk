@@ -39,6 +39,15 @@ vts_kernel_ltp_tests: $(copy_ltp_tests)
 
 general_tests_shared_libs_zip := $(PRODUCT_OUT)/general-tests_host-shared-libs.zip
 
+my_symlinks_for_general_tests := $(foreach f,$(COMPATIBILITY.general-tests.SYMLINKS),\
+	$(strip $(eval _cmf_tuple := $(subst :, ,$(f))) \
+	$(eval _cmf_dep := $(word 1,$(_cmf_tuple))) \
+	$(eval _cmf_src := $(word 2,$(_cmf_tuple))) \
+	$(eval _cmf_dest := $(word 3,$(_cmf_tuple))) \
+	$(call symlink-file,$(_cmf_dep),$(_cmf_src),$(_cmf_dest)) \
+	$(_cmf_dest)))
+
+$(general_tests_zip) : PRIVATE_SYMLINKS := $(my_symlinks_for_general_tests)
 $(general_tests_zip) : $(general_tests_shared_libs_zip)
 $(general_tests_zip) : $(copy_ltp_tests)
 $(general_tests_zip) : PRIVATE_KERNEL_LTP_HOST_OUT := $(kernel_ltp_host_out)
@@ -47,7 +56,7 @@ $(general_tests_zip) : .KATI_IMPLICIT_OUTPUTS := $(general_tests_list_zip) $(gen
 $(general_tests_zip) : PRIVATE_TOOLS := $(general_tests_tools)
 $(general_tests_zip) : PRIVATE_INTERMEDIATES_DIR := $(intermediates_dir)
 $(general_tests_zip) : PRIVATE_general_tests_configs_zip := $(general_tests_configs_zip)
-$(general_tests_zip) : $(COMPATIBILITY.general-tests.FILES) $(COMPATIBILITY.general-tests.SOONG_INSTALLED_COMPATIBILITY_SUPPORT_FILES) $(general_tests_tools) $(SOONG_ZIP)
+$(general_tests_zip) : $(COMPATIBILITY.general-tests.FILES) $(COMPATIBILITY.general-tests.SOONG_INSTALLED_COMPATIBILITY_SUPPORT_FILES) $(general_tests_tools) $(my_symlinks_for_general_tests) $(SOONG_ZIP)
 	rm -rf $(PRIVATE_INTERMEDIATES_DIR)
 	rm -f $@ $(PRIVATE_general_tests_list_zip)
 	mkdir -p $(PRIVATE_INTERMEDIATES_DIR) $(PRIVATE_INTERMEDIATES_DIR)/tools
@@ -57,6 +66,9 @@ $(general_tests_zip) : $(COMPATIBILITY.general-tests.FILES) $(COMPATIBILITY.gene
 	grep $(TARGET_OUT_TESTCASES) $(PRIVATE_INTERMEDIATES_DIR)/list > $(PRIVATE_INTERMEDIATES_DIR)/target.list || true
 	grep -e .*\\.config$$ $(PRIVATE_INTERMEDIATES_DIR)/host.list > $(PRIVATE_INTERMEDIATES_DIR)/host-test-configs.list || true
 	grep -e .*\\.config$$ $(PRIVATE_INTERMEDIATES_DIR)/target.list > $(PRIVATE_INTERMEDIATES_DIR)/target-test-configs.list || true
+	$(hide) for symlink in $(PRIVATE_SYMLINKS); do \
+	  echo $$symlink >> $@-host.list; \
+	done
 	cp -fp $(PRIVATE_TOOLS) $(PRIVATE_INTERMEDIATES_DIR)/tools/
 	$(SOONG_ZIP) -d -o $@ \
 	  -P host -C $(PRIVATE_INTERMEDIATES_DIR) -D $(PRIVATE_INTERMEDIATES_DIR)/tools \
