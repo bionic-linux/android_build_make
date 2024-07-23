@@ -94,6 +94,30 @@
       },
       "revId": "df5db859de34a32dde7899bc2d60cabbaa31c1c2",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b4eba4f1_1025c889",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1927237
+      },
+      "writtenOn": "2024-07-23T08:22:12Z",
+      "side": 1,
+      "message": "This is not a real CP",
+      "parentUuid": "d4946112_24e721a0",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 52
+      },
+      "revId": "df5db859de34a32dde7899bc2d60cabbaa31c1c2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
