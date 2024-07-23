@@ -14,7 +14,11 @@
 # limitations under the License.
 #
 
+include build/make/target/product/selinux_policy_system.mk
+
 # Base modules and settings for the system partition.
+PRODUCT_HOST_PACKAGES += $(SEPOLICY_SYSTEM_MODULES_HOST)
+PRODUCT_PACKAGES += $(SEPOLICY_SYSTEM_MODULES)
 PRODUCT_PACKAGES += \
     abx \
     aconfigd \
@@ -263,7 +267,6 @@ PRODUCT_PACKAGES += \
     sdcard \
     secdiscard \
     SecureElement \
-    selinux_policy_system \
     sensorservice \
     service \
     servicemanager \
