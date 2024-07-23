@@ -14,7 +14,33 @@
 # limitations under the License.
 #
 
+# SEPolicy versions
+
+# PLATFORM_SEPOLICY_VERSION is a number of the form "YYYYMM" with "YYYYMM"
+# mapping to vFRC version.
+PLATFORM_SEPOLICY_VERSION := $(RELEASE_BOARD_API_LEVEL)
+BOARD_SEPOLICY_VERS := $(PLATFORM_SEPOLICY_VERSION)
+
+# A list of SEPolicy versions, besides PLATFORM_SEPOLICY_VERSION, that the framework supports.
+PLATFORM_SEPOLICY_COMPAT_VERSIONS := $(filter-out $(PLATFORM_SEPOLICY_VERSION), \
+    29.0 \
+    30.0 \
+    31.0 \
+    32.0 \
+    33.0 \
+    34.0 \
+    202404 \
+    )
+$(warning build/make/target/product/base_system.mk)
+$(warning RELEASE_BOARD_API_LEVEL:$(RELEASE_BOARD_API_LEVEL))
+$(warning BOARD_API_LEVEL:$(BOARD_API_LEVEL))
+$(warning PLATFORM_SEPOLICY_COMPAT_VERSIONS:$(PLATFORM_SEPOLICY_COMPAT_VERSIONS))
+$(warning PLATFORM_SEPOLICY_VERSION:$(PLATFORM_SEPOLICY_VERSION))
+include build/make/target/product/selinux_policy_system.mk
+
 # Base modules and settings for the system partition.
+PRODUCT_HOST_PACKAGES += $(SEPOLICY_SYSTEM_MODULES_HOST)
+PRODUCT_PACKAGES += $(SEPOLICY_SYSTEM_MODULES)
 PRODUCT_PACKAGES += \
     abx \
     aconfigd \
@@ -263,7 +289,6 @@ PRODUCT_PACKAGES += \
     sdcard \
     secdiscard \
     SecureElement \
-    selinux_policy_system \
     sensorservice \
     service \
     servicemanager \
