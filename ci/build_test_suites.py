@@ -28,6 +28,7 @@ import optimized_targets
 
 REQUIRED_ENV_VARS = frozenset(['TARGET_PRODUCT', 'TARGET_RELEASE', 'TOP'])
 SOONG_UI_EXE_REL_PATH = 'build/soong/soong_ui.bash'
+LOG_PATH = 'logs/build_test_suites.log'
 
 
 class Error(Exception):
@@ -181,4 +182,12 @@ def run_command(args: list[str], stdout=None):
 
 
 def main(argv):
+  dist_dir = pathlib.Path(os.environ.get('DIST_DIR', '/tmp/'))
+  log_file = dist_dir / LOG_PATH
+  print(f'build_test_suites.py will export logs to: {log_file}')
+  logging.basicConfig(
+      level=logging.DEBUG,
+      format='%(asctime)s %(levelname)s %(message)s',
+      filename=log_file,
+  )
   sys.exit(build_test_suites(argv))

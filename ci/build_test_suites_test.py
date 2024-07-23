@@ -117,6 +117,9 @@ class BuildTestSuitesTest(fake_filesystem_unittest.TestCase):
 
     self.mock_subprocess_run.return_value = 0
 
+    log_dir = pathlib.Path('/tmp/logs')
+    log_dir.mkdir(parents=True)
+
 
 class RunCommandIntegrationTest(ci_test_lib.TestCase):
 
