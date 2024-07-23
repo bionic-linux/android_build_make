@@ -866,28 +866,7 @@ BUILD_NUMBER_FROM_FILE := $$(cat $(SOONG_OUT_DIR)/build_number.txt)
 BUILD_HOSTNAME_FROM_FILE := $$(cat $(SOONG_OUT_DIR)/build_hostname.txt)
 BUILD_DATETIME_FROM_FILE := $$(cat $(BUILD_DATETIME_FILE))
 
-# SEPolicy versions
-
-# PLATFORM_SEPOLICY_VERSION is a number of the form "YYYYMM" with "YYYYMM"
-# mapping to vFRC version.
-PLATFORM_SEPOLICY_VERSION := $(BOARD_API_LEVEL)
-BOARD_SEPOLICY_VERS := $(PLATFORM_SEPOLICY_VERSION)
-.KATI_READONLY := PLATFORM_SEPOLICY_VERSION BOARD_SEPOLICY_VERS
-
-# A list of SEPolicy versions, besides PLATFORM_SEPOLICY_VERSION, that the framework supports.
-PLATFORM_SEPOLICY_COMPAT_VERSIONS := $(filter-out $(PLATFORM_SEPOLICY_VERSION), \
-    29.0 \
-    30.0 \
-    31.0 \
-    32.0 \
-    33.0 \
-    34.0 \
-    202404 \
-    )
-
-.KATI_READONLY := \
-    PLATFORM_SEPOLICY_COMPAT_VERSIONS \
-    PLATFORM_SEPOLICY_VERSION \
+include build/make/target/product/sepolicy_versions.mk
 
 ifeq ($(PRODUCT_RETROFIT_DYNAMIC_PARTITIONS),true)
   ifneq ($(PRODUCT_USE_DYNAMIC_PARTITIONS),true)
