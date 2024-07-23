@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f7fa4e61_d106435c",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 1962375
+      },
+      "writtenOn": "2024-07-23T17:40:10Z",
+      "side": 1,
+      "message": "```suggestion\nOPTIMIZED_BUILD_TARGETS \u003d ExcludeUnusedTargetOptimizer.get_optimized_targets()\n```",
+      "range": {
+        "startLine": 174,
+        "startChar": 0,
+        "endLine": 177,
+        "endChar": 1
+      },
+      "revId": "3d3d279cccca074544c981dfd7b78d7474fb3e07",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
