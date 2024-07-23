@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1098a09c_f13122e5",
+        "filename": "core/android_soong_config_vars.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1019013
+      },
+      "writtenOn": "2024-07-23T02:15:41Z",
+      "side": 1,
+      "message": "`release_avf_support_early_vm`?\n\nPlus, we have mix of `release_avf_support_` and `release_avf_enable_`. What\u0027s more correct for early VM? `release_avf_enable_` looks better fit for me.",
+      "range": {
+        "startLine": 108,
+        "startChar": 42,
+        "endLine": 108,
+        "endChar": 74
+      },
+      "revId": "63fdd73ead10a65369513c6a577fe0443438c317",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
