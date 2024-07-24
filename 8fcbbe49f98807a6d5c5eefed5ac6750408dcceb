@@ -362,6 +362,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "769da849_8e310a9d",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-07-24T00:05:38Z",
+      "side": 1,
+      "message": "I think the issue is that there isn\u0027t a generic way to do it. For example: xTS test suites generally output `android-{suite}.zip` but might also have other outputs (`android-cts-verifier.zip`, `android-cts-tests_list.zip`, and it also seems to output other things like apks in dist `CtsApkVerityTestApp.apk`. I\u0027m not 100% sure this is coming directly from cts, but you get my point. general-tests for example doesn\u0027t output in the form `android-general-tests.zip` but just `general-tests.zip`.) There are other modules/suites built in test_suites as well which might have different patterns for outputs, so I don\u0027t think there\u0027s a good generic way to determine outputs for a given build module/suite. The only 2 ways I\u0027d be comfortable are either hardcoding it here for the specific suites we intend to optimize or implementing soong functionality to query module outputs (specifically that get put in `dist`) which would be a significant delay to BWYN.",
+      "parentUuid": "dce584f0_76baed50",
+      "range": {
+        "startLine": 104,
+        "startChar": 0,
+        "endLine": 106,
+        "endChar": 0
+      },
+      "revId": "8fcbbe49f98807a6d5c5eefed5ac6750408dcceb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "70dc1f30_bbc3b72e",
         "filename": "ci/optimized_targets.py",
         "patchSetId": 7
