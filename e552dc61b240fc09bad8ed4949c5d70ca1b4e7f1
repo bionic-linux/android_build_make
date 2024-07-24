@@ -1,0 +1,91 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "42a7f53a_ccf02a34",
+        "filename": "ci/build_test_suites.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 1076194
+      },
+      "writtenOn": "2024-07-24T01:12:38Z",
+      "side": 1,
+      "message": "Don\u0027t default to /tmp/. Default to either sending output to stderr or squelching the logs",
+      "fixSuggestions": [
+        {
+          "fixId": "b4d80934_72d8db59",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ci/build_test_suites.py",
+              "range": {
+                "startLine": 185,
+                "startChar": 0,
+                "endLine": 186,
+                "endChar": 0
+              },
+              "replacement": "  dist_dir \u003d pathlib.Path(os.environ.get(\u0027DIST_DIR\u0027, \u0027\u0027))\n"
+            }
+          ]
+        }
+      ],
+      "revId": "e552dc61b240fc09bad8ed4949c5d70ca1b4e7f1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5e5b84a2_70a47537",
+        "filename": "ci/build_test_suites.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 1076194
+      },
+      "writtenOn": "2024-07-24T01:12:38Z",
+      "side": 1,
+      "message": "This will literally print on every build. Do we want it to?\n\nI feel like we shouldn\u0027t because the log file is not useful with its current contents (it\u0027s basically only for you but not for anyone else)",
+      "revId": "e552dc61b240fc09bad8ed4949c5d70ca1b4e7f1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "21da3da2_79187788",
+        "filename": "ci/build_test_suites_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1076194
+      },
+      "writtenOn": "2024-07-24T01:12:38Z",
+      "side": 1,
+      "message": "I don\u0027t think we should do this in tests. This will stick around forever after the test is run.\n\nLet\u0027s default to either squelching the output or sending to stderr/stdout.",
+      "fixSuggestions": [
+        {
+          "fixId": "3c6d7cce_de0fa7d1",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ci/build_test_suites_test.py",
+              "range": {
+                "startLine": 120,
+                "startChar": 0,
+                "endLine": 123,
+                "endChar": 0
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "revId": "e552dc61b240fc09bad8ed4949c5d70ca1b4e7f1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
