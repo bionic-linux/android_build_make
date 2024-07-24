@@ -1,0 +1,39 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "081258ee_2b97f95f",
+        "filename": "ci/build_test_suites.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1076194
+      },
+      "writtenOn": "2024-07-24T01:37:34Z",
+      "side": 1,
+      "message": "Should use\nfeatures \u003d self.build_context.get(\u0027enabledBuildFeatures\u0027, [])\nif \u0027optimized_build\u0027 not in features:",
+      "fixSuggestions": [
+        {
+          "fixId": "3da9908f_a4863226",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ci/build_test_suites.py",
+              "range": {
+                "startLine": 66,
+                "startChar": 0,
+                "endLine": 70,
+                "endChar": 0
+              },
+              "replacement": "    features \u003d self.build_context.get(\u0027enabledBuildFeatures\u0027, [])\n    if \u0027optimized_build\u0027 not in features:\n"
+            }
+          ]
+        }
+      ],
+      "revId": "f62c40e4262ee829b0c4c813fb15b3c022204f29",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
