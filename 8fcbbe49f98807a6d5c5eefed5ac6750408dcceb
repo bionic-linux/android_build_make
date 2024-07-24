@@ -386,6 +386,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "858b47f9_2d7c3788",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1076194
+      },
+      "writtenOn": "2024-07-24T01:22:39Z",
+      "side": 1,
+      "message": "In the ATP validator we get away without listing literally android-catbox.zip because we use a regex, as shown here:\n  https://source.corp.google.com/piper///depot/google3/wireless/android/test_tools/androidtest_pa/config/validator.py;rcl\u003d655366800;l\u003d508\n  \nIn validator, the regex is \\b(?P\u003cartifact\u003e%s)\\b (where %s is catbox) so that matches both general-tests.zip and android-catbox.zip without literally having to specify the zip filename (because it\u0027s just matching \"\\bcatbox\\b\" and not \"android-catbox\". \n\nActually Luca, I think we should follow the same pattern as the validator because we do need to match android-catbox-tests_list.zip and not just  android-catbox.zip -- some tests do refer to the zips that way. So Luca, let\u0027s follow the pattern from the validator that has been confirmed to be solid as is also generic so it fits Joe\u0027s feedback.\n\nFYI, Luca, for your reference, here are the code references where the zips are built:\n\n  https://source.corp.google.com/h/googleplex-android/platform/superproject/main/+/main:build/make/core/tasks/tools/compatibility.mk;drc\u003d27e0ce0459eead8b762f84bad4d44146f2e16826;l\u003d121\n  https://source.corp.google.com/h/googleplex-android/platform/superproject/main/+/main:build/make/core/tasks/general-tests.mk;drc\u003db86f9ef15998f8598d6c48861180d244a795aa3c;l\u003d23",
+      "parentUuid": "769da849_8e310a9d",
+      "range": {
+        "startLine": 104,
+        "startChar": 0,
+        "endLine": 106,
+        "endChar": 0
+      },
+      "revId": "8fcbbe49f98807a6d5c5eefed5ac6750408dcceb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "70dc1f30_bbc3b72e",
         "filename": "ci/optimized_targets.py",
         "patchSetId": 7
