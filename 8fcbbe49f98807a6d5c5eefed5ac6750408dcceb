@@ -434,6 +434,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "28c6b668_d89c38a8",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1076194
+      },
+      "writtenOn": "2024-07-24T15:14:11Z",
+      "side": 1,
+      "message": "Luca was asking for the mapping from the target \u0027catbox\u0027 to what artifacts are produced by the target in the dist dir. This is because we\u0027re taking regexes from TradeFed and then seeing whether they match the output artifact.\n\nIn an ideal world, here\u0027s what we\u0027d like to see from the build system:\n  - catbox maps to (android-catbox.zip, android-catbox-tests_list.zip)\n  - continuous_native_tests maps to (continuous_native_tests.zip)\n  - general-tests maps to (general-tests.zip, general-tests_list.zip, general-tests_configs.zip, general-tests_host-shared_libs.zip)\n  \nThese are the main cases. The reason we originally opted for hardcoding was so that all of the above cases could be hardcoded.\n  \nIn practice, we should note here that the purpose of the code is to detect if catbox is used. So, for example, if a test happens to reference \u0027android-catbox-tests_configs.zip\u0027, it\u0027s probably a good idea to play it safe build catbox even if our script doesn\u0027t think it\u0027ll be used. With that in mind, we can make a generic solution here that meets the needs and is better than Luca\u0027s original implementation.\n\nLuca, here\u0027s an improved version of what I said earlier : What if we try every file with and without the \u0027android-\u0027 prefix and also with every possible ending? This makes it generic and also is more conservative.\n\nOne gotcha here is that in your generic function that adds suffixes, you\u0027ll need to check whether the target itself ends with \u0027-tests\u0027. In that case, we should strip that prior to adding on any \u0027-tests*\u0027 suffix, since that seems to be the convention.\n\nInitially this script will be a no-op because there\u0027s a few tests that have overly broad regexes even though they don\u0027t actually use the additional artifacts. But it\u0027s nice that our test is smart enough to recognize the risk of the test using the artifacts if the regex matches, so once we clean that up the artifacts will get deleted.\n\nHere\u0027s some examples of tests that need to be cleaned up:\n\nhttps://source.corp.google.com/search?q\u003d%5C*-tests_list%5C.zip%20file:gcl$\u0026sq\u003dpackage:piper%20file:%2F%2Fdepot%2Fgoogle3%20-file:google3%2F(experimental%7Cobsolete)",
+      "parentUuid": "1ead7df7_95b133c9",
+      "range": {
+        "startLine": 104,
+        "startChar": 0,
+        "endLine": 106,
+        "endChar": 0
+      },
+      "revId": "8fcbbe49f98807a6d5c5eefed5ac6750408dcceb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "70dc1f30_bbc3b72e",
         "filename": "ci/optimized_targets.py",
         "patchSetId": 7
