@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "89c6bdf9_54e36ba1",
+        "filename": "tools/sbom/gen_sbom.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-07-25T22:51:50Z",
+      "side": 1,
+      "message": "Would it be possible to have soong/blueprint look through the list of module types and generate this list?",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 57,
+        "endChar": 27
+      },
+      "revId": "a3265ef0a19f32289397b5760b3d48d2494b4424",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
