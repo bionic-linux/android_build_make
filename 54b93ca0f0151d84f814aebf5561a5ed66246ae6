@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "70e2ec2a_05ff5231",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 3508348
+      },
+      "writtenOn": "2024-07-25T17:36:37Z",
+      "side": 1,
+      "message": "I also uploaded the CL to the internal instance to trigger a desktop builder, and verified the artifacts were added to its artifact list.",
+      "range": {
+        "startLine": 14,
+        "startChar": 9,
+        "endLine": 14,
+        "endChar": 15
+      },
+      "revId": "54b93ca0f0151d84f814aebf5561a5ed66246ae6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
