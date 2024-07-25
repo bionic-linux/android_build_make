@@ -16,6 +16,23 @@
       "message": "Upstream from Meta 😊",
       "revId": "d229f55b1ff1d6f92aae656847baeb305862a3bf",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "09b4c53c_925971c7",
+        "filename": "core/config.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 683,
+      "author": {
+        "id": 1002751
+      },
+      "writtenOn": "2024-07-25T17:25:11Z",
+      "side": 1,
+      "message": "I don\u0027t see any other references to `MINIGZIP` in AOSP makefiles.  What are you using gzip for?  In our experience using `soong_zip` to create a zip file is generally faster than using pigz to create a .gz file.",
+      "revId": "d229f55b1ff1d6f92aae656847baeb305862a3bf",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
