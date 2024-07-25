@@ -40,6 +40,30 @@
       ],
       "revId": "501f181befd192bc1e6e4ada52a1d5d3b32ba364",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "40b191ce_fe3572aa",
+        "filename": "tools/sbom/gen_sbom.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 763,
+      "author": {
+        "id": 1318142
+      },
+      "writtenOn": "2024-07-25T01:27:25Z",
+      "side": 1,
+      "message": "Fix applied.",
+      "parentUuid": "025c6a35_a22c5424",
+      "range": {
+        "startLine": 763,
+        "startChar": 15,
+        "endLine": 763,
+        "endChar": 45
+      },
+      "revId": "501f181befd192bc1e6e4ada52a1d5d3b32ba364",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
