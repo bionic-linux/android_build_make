@@ -22,6 +22,30 @@
       },
       "revId": "236a7d19f1ca0991c52ac34c6542e347a495c943",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e3e10375_1fe2b569",
+        "filename": "target/product/selinux_policy_system.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1307893
+      },
+      "writtenOn": "2024-07-26T06:51:38Z",
+      "side": 1,
+      "message": "Sorry, it\u0027s because `PLATFORM_SEPOLICY_COMPAT_VERSIONS` is empty at this point.",
+      "parentUuid": "afee5f59_fa0dc3f3",
+      "range": {
+        "startLine": 8,
+        "startChar": 41,
+        "endLine": 8,
+        "endChar": 74
+      },
+      "revId": "236a7d19f1ca0991c52ac34c6542e347a495c943",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
