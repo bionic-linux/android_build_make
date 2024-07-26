@@ -16,6 +16,24 @@
       "message": "Is it possbile to set `apex_available` or `visibility` to limit it to art, i18n and conscrypt module / git projects?",
       "revId": "0e5e128034d1b3e479e98f0e55b680cc47820d51",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b3f7e206_65c78b77",
+        "filename": "tools/aconfig/aconfig_storage_file/Android.bp",
+        "patchSetId": 2
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 1944425
+      },
+      "writtenOn": "2024-07-26T14:49:48Z",
+      "side": 1,
+      "message": "sure, let me do that thank you!",
+      "parentUuid": "dfd22227_59c2d450",
+      "revId": "0e5e128034d1b3e479e98f0e55b680cc47820d51",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
