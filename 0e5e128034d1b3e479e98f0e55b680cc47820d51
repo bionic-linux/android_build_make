@@ -34,6 +34,24 @@
       "parentUuid": "dfd22227_59c2d450",
       "revId": "0e5e128034d1b3e479e98f0e55b680cc47820d51",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4f7aee21_e4b09c98",
+        "filename": "tools/aconfig/aconfig_storage_file/Android.bp",
+        "patchSetId": 2
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 1944425
+      },
+      "writtenOn": "2024-07-26T15:33:17Z",
+      "side": 1,
+      "message": "let me make the change in the following cl, since this one completed presubmit.",
+      "parentUuid": "b3f7e206_65c78b77",
+      "revId": "0e5e128034d1b3e479e98f0e55b680cc47820d51",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
