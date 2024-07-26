@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "afee5f59_fa0dc3f3",
+        "filename": "target/product/selinux_policy_system.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1307893
+      },
+      "writtenOn": "2024-07-26T06:42:11Z",
+      "side": 1,
+      "message": "It seems we missed copying this code snippet from system/sepolicy/Android.mk:\n```\nsepolicy_compat_files :\u003d $(foreach ver, $(PLATFORM_SEPOLICY_COMPAT_VERSIONS), \\\n                           $(addprefix compat/$(ver)/, $(addsuffix .cil, $(ver))))\n```",
+      "range": {
+        "startLine": 8,
+        "startChar": 41,
+        "endLine": 8,
+        "endChar": 74
+      },
+      "revId": "236a7d19f1ca0991c52ac34c6542e347a495c943",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
