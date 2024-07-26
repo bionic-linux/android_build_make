@@ -1,0 +1,39 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "abd4eee3_99190d0d",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1076194
+      },
+      "writtenOn": "2024-07-26T02:21:21Z",
+      "side": 1,
+      "message": "This is a list of all the potential zips output by the test suite targets. If the test downloads artifacts from any of these zips, we will be conservative and avoid skipping the tests.",
+      "fixSuggestions": [
+        {
+          "fixId": "2dde6407_d89c5e32",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ci/optimized_targets.py",
+              "range": {
+                "startLine": 149,
+                "startChar": 0,
+                "endLine": 152,
+                "endChar": 0
+              },
+              "replacement": "    # This is a list of all the potential zips output by the test suite targets.\n    # If the test downloads artifacts from any of these zips, we will be\n    # conservative and avoid skipping the tests.\n"
+            }
+          ]
+        }
+      ],
+      "revId": "37578e04d021f1c8d3b7d43f2fc83bf5bd92fffe",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
