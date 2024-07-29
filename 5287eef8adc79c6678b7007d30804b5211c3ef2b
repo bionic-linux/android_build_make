@@ -56,6 +56,30 @@
       },
       "revId": "5287eef8adc79c6678b7007d30804b5211c3ef2b",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1e94eda0_6ad4ceb8",
+        "filename": "core/soong_config.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 1535516
+      },
+      "writtenOn": "2024-07-29T18:30:53Z",
+      "side": 1,
+      "message": "This isn\u0027t the only variable in this file that does light processing, I think it\u0027s fine. It would probably be good to dedup this, the one in `build/make/core/art_config.mk`, and the one in `build/make/core/sysprop_config.mk`, but that can be a followup.",
+      "parentUuid": "0afe6b46_8831b7f4",
+      "range": {
+        "startLine": 350,
+        "startChar": 16,
+        "endLine": 350,
+        "endChar": 39
+      },
+      "revId": "5287eef8adc79c6678b7007d30804b5211c3ef2b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
