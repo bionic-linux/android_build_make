@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9e0784fc_06660bbd",
+        "filename": "core/config.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 798,
+      "author": {
+        "id": 1889140
+      },
+      "writtenOn": "2024-07-29T20:02:25Z",
+      "side": 1,
+      "message": "shouldn\u0027t it be `else ifeq ($(call math_gt_or_eq,$(PRODUCT_SHIPPING_API_LEVEL),36),true)` ?",
+      "range": {
+        "startLine": 798,
+        "startChar": 5,
+        "endLine": 798,
+        "endChar": 68
+      },
+      "revId": "488bf2d4166621154fc71b692aba0a057597c1c1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
