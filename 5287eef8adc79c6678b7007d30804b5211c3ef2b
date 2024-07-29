@@ -33,6 +33,29 @@
       "message": "Hi, can I get review?",
       "revId": "5287eef8adc79c6678b7007d30804b5211c3ef2b",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0afe6b46_8831b7f4",
+        "filename": "core/soong_config.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-07-29T17:59:05Z",
+      "side": 1,
+      "message": "This file should just be dumping the variables to soong, not doing logic.\n\nDo we really need OVERRIDE_ENABLE_UFFD_GC?  People can edit product config if they want.  This is the kind of hack that just makes the makefiles more complicated.  I\u0027d rather just get rid of it than perpetuate it.\n\nIf you think we really do need it, then this logic should go somewhere else.",
+      "range": {
+        "startLine": 350,
+        "startChar": 16,
+        "endLine": 350,
+        "endChar": 39
+      },
+      "revId": "5287eef8adc79c6678b7007d30804b5211c3ef2b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
