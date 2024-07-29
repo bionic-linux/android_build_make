@@ -16,6 +16,8 @@ test_suite_name := cts
 test_suite_tradefed := cts-tradefed
 test_suite_dynamic_config := test/suite_harness/tools/cts-tradefed/DynamicConfig.xml
 test_suite_readme := test/suite_harness/tools/cts-tradefed/README
+test_suite_tools := $(HOST_OUT_JAVA_LIBRARIES)/ats_console_deploy.jar \
+  $(HOST_OUT_JAVA_LIBRARIES)/ats_olc_server_local_mode_deploy.jar
 include_test_suite_notice := true
 
 include $(BUILD_SYSTEM)/tasks/tools/compatibility.mk
