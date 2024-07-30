@@ -18,6 +18,7 @@ package android.aconfig.storage;
 
 import android.compat.annotation.UnsupportedAppUsage;
 
+import java.io.Closeable;
 import java.io.FileInputStream;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
@@ -75,6 +76,18 @@ public class StorageInternalReader {
         } catch (Exception e) {
             throw new AconfigStorageException(
                     String.format("Fail to mmap storage file %s", file), e);
+        } finally {
+            quietlyDispose(stream);
+        }
+    }
+
+    private static void quietlyDispose(Closeable closable) {
+        try {
+            if (closable != null) {
+                closable.close();
+            }
+        } catch (IOException e) {
+            // no need to care, at least as of now
         }
     }
 }
