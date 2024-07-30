@@ -80,6 +80,30 @@
       },
       "revId": "5287eef8adc79c6678b7007d30804b5211c3ef2b",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fcdcdfc8_04ecfeea",
+        "filename": "core/soong_config.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 1291338
+      },
+      "writtenOn": "2024-07-30T01:36:25Z",
+      "side": 1,
+      "message": "Let me do as a followup. I left a comment on the bug.",
+      "parentUuid": "1e94eda0_6ad4ceb8",
+      "range": {
+        "startLine": 350,
+        "startChar": 16,
+        "endLine": 350,
+        "endChar": 39
+      },
+      "revId": "5287eef8adc79c6678b7007d30804b5211c3ef2b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
