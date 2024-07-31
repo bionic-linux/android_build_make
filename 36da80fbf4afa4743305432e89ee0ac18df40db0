@@ -34,6 +34,24 @@
       "parentUuid": "baf8edb9_43c27762",
       "revId": "36da80fbf4afa4743305432e89ee0ac18df40db0",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cbeaf1bc_abe1f723",
+        "filename": "core/product_config.mk",
+        "patchSetId": 8
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 1535516
+      },
+      "writtenOn": "2024-07-31T20:15:24Z",
+      "side": 1,
+      "message": "It\u0027s not set in version_util.mk currently though. How were users expected to change PRODUCT_BASE_OS before this change?",
+      "parentUuid": "e8bac245_589bb584",
+      "revId": "36da80fbf4afa4743305432e89ee0ac18df40db0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
