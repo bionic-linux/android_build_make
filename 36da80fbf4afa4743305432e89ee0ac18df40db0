@@ -52,6 +52,24 @@
       "parentUuid": "e8bac245_589bb584",
       "revId": "36da80fbf4afa4743305432e89ee0ac18df40db0",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "083f1bbb_867e92fc",
+        "filename": "core/product_config.mk",
+        "patchSetId": 8
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 1535516
+      },
+      "writtenOn": "2024-07-31T20:27:35Z",
+      "side": 1,
+      "message": "Oh I guess the intention is for the user to set it via an environment variable.\n\nCould you change `version_util.mk` to copy `PLATFORM_BASE_OS` to a new variable like `PLATFORM_BASE_OS_USER_INPUT` and make that readonly, and then here you set `PLATFORM_BASE_OS` to either `PRODUCT_BASE_OS` or `PLATFORM_BASE_OS_USER_INPUT`? That way it prevents changing `PLATFORM_BASE_OS` via product/board config, which is currently still possible.",
+      "parentUuid": "cbeaf1bc_abe1f723",
+      "revId": "36da80fbf4afa4743305432e89ee0ac18df40db0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
