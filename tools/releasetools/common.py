@@ -2435,6 +2435,11 @@ def GetMinSdkVersion(apk_name):
             apk_name, proc.returncode, stdoutdata, stderrdata))
 
   for line in stdoutdata.split("\n"):
+    # See b/353837347 , split APKs do not have sdk version defined,
+    # so we default to 21 as split APKs are only supported since SDK
+    # 21.
+    if (re.search(r"split=[\"'].*[\"']", line)):
+      return 21
     # Due to ag/24161708, looking for lines such as minSdkVersion:'23',minSdkVersion:'M'
     # or sdkVersion:'23', sdkVersion:'M'.
     m = re.match(r'(?:minSdkVersion|sdkVersion):\'([^\']*)\'', line)
