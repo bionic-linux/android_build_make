@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7e051869_20dc6114",
+        "filename": "target/product/base_vendor.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1002751
+      },
+      "writtenOn": "2024-07-31T20:32:53Z",
+      "side": 1,
+      "message": "```suggestion\nPRODUCT_PACKAGES +\u003d filterPowerSupplyEvents.o\n```",
+      "range": {
+        "startLine": 80,
+        "startChar": 20,
+        "endLine": 80,
+        "endChar": 44
+      },
+      "revId": "e5cb3248872d71860df8a3f9473e566a63f7521e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
