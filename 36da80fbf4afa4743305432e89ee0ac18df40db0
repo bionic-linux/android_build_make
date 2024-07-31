@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "baf8edb9_43c27762",
+        "filename": "core/product_config.mk",
+        "patchSetId": 8
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 1535516
+      },
+      "writtenOn": "2024-07-31T19:37:05Z",
+      "side": 1,
+      "message": "Why the ifdef? where else would PLATFORM_BASE_OS have been set?",
+      "revId": "36da80fbf4afa4743305432e89ee0ac18df40db0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
