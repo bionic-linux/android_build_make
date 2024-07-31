@@ -482,6 +482,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "4536022b_bfd2b37d",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-07-31T19:37:33Z",
+      "side": 1,
+      "message": "@joeo@google.com Is this implementation aligned with what you had in mind? I would really like to get this checked in by the end of this week so that we\u0027re ready for rollout once the build bot issue is resolved.",
+      "parentUuid": "c453cbdb_77c68c3b",
+      "range": {
+        "startLine": 104,
+        "startChar": 0,
+        "endLine": 106,
+        "endChar": 0
+      },
+      "revId": "8fcbbe49f98807a6d5c5eefed5ac6750408dcceb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "70dc1f30_bbc3b72e",
         "filename": "ci/optimized_targets.py",
         "patchSetId": 7
