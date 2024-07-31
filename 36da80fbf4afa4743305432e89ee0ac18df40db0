@@ -70,6 +70,24 @@
       "parentUuid": "cbeaf1bc_abe1f723",
       "revId": "36da80fbf4afa4743305432e89ee0ac18df40db0",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fcf9559d_7a3c7721",
+        "filename": "core/product_config.mk",
+        "patchSetId": 8
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 2015736
+      },
+      "writtenOn": "2024-07-31T23:08:15Z",
+      "side": 1,
+      "message": "I am really confused now. Can you pls update CL how you would like it. As I understand, after current patch, PLATFORM_BASE_OS can be set through environment variable or through PRODUCT_BASE_OS from product config. Is this wrong ?",
+      "parentUuid": "083f1bbb_867e92fc",
+      "revId": "36da80fbf4afa4743305432e89ee0ac18df40db0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
