@@ -88,6 +88,24 @@
       "parentUuid": "083f1bbb_867e92fc",
       "revId": "36da80fbf4afa4743305432e89ee0ac18df40db0",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2fdaafa1_db88f509",
+        "filename": "core/product_config.mk",
+        "patchSetId": 8
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 1535516
+      },
+      "writtenOn": "2024-08-01T22:39:44Z",
+      "side": 1,
+      "message": "I\u0027ve updated the cl. Now it can be set via an environment variable or the product variable, and not directly via product config.",
+      "parentUuid": "fcf9559d_7a3c7721",
+      "revId": "36da80fbf4afa4743305432e89ee0ac18df40db0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
