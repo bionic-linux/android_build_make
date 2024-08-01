@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9de6f022_2ca98ef7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2024-08-01T07:45:20Z",
+      "side": 1,
+      "message": "Looks like b/356752725 is closed. Should we abandon this CL?",
+      "revId": "d06e5a83ba7065afd874f9f8589118e5f34cec17",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
