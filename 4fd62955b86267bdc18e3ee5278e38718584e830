@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "03711276_dee91521",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-08-01T01:59:11Z",
+      "side": 1,
+      "message": "It seems like this would be better done in build_test_suites. It would keep the build_context from needing to be plumbed through everywhere in this file.  Just have create_build_plan, then do the check against build_context.\n\nThen you also don\u0027t need the separate package_outputs vs package_outputs_impl functions.",
+      "range": {
+        "startLine": 44,
+        "startChar": 4,
+        "endLine": 44,
+        "endChar": 65
+      },
+      "revId": "4fd62955b86267bdc18e3ee5278e38718584e830",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1714eb17_d032e1e3",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-08-01T01:59:11Z",
+      "side": 1,
+      "message": "Or even more simpler, could this whole class be replaced with a single function that takes a BuildPlan, iterates over its contents, and modifies it as needed.  It\u0027s really hard to follow the control flow here, amidst all of the boilerplate.",
+      "revId": "4fd62955b86267bdc18e3ee5278e38718584e830",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "569b0a44_9b2b0e7d",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-08-01T01:59:11Z",
+      "side": 1,
+      "message": "I don\u0027t understand the architecture you have in mind for this fallback optimizer thing.",
+      "range": {
+        "startLine": 86,
+        "startChar": 2,
+        "endLine": 89,
+        "endChar": 12
+      },
+      "revId": "4fd62955b86267bdc18e3ee5278e38718584e830",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
