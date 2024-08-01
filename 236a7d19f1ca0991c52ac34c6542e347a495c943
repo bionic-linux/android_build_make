@@ -46,6 +46,30 @@
       },
       "revId": "236a7d19f1ca0991c52ac34c6542e347a495c943",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "044b28f0_ea43d23b",
+        "filename": "target/product/selinux_policy_system.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1308036
+      },
+      "writtenOn": "2024-08-01T00:37:02Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "e3e10375_1fe2b569",
+      "range": {
+        "startLine": 8,
+        "startChar": 41,
+        "endLine": 8,
+        "endChar": 74
+      },
+      "revId": "236a7d19f1ca0991c52ac34c6542e347a495c943",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
