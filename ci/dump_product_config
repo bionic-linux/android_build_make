@@ -1,0 +1,390 @@
+#!prebuilts/build-tools/linux-x86/bin/py3-cmd -B
+
+# Copyright 2024, The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"""Script to collect all of the make variables from all product config combos.
+
+This script must be run from the root of the source tree.
+
+See GetArgs() below or run dump_product_config for more information.
+"""
+
+import buildbot
+
+import argparse
+import asyncio
+import csv
+import json
+import multiprocessing
+import os
+import subprocess
+import sys
+import time
+
+# We have some BIG variables
+csv.field_size_limit(sys.maxsize)
+
+
+def GetProducts():
+    """Get the all of the available TARGET_PRODUCT values."""
+    try:
+        result = subprocess.run(["build/soong/bin/list_products"], check=True, text=True,
+                                stdout=subprocess.PIPE)
+    except subprocess.CalledProcessError:
+        sys.exit(1)
+    return [s for s in [s.strip() for s in result.stdout.split("\n")] if s]
+
+
+def GetReleases(product):
+    """For a given product, get the release configs available to it."""
+    if True:
+        # Hard code the list
+        mainline_products = [
+            "module_arm",
+            "module_x86",
+            "module_arm64",
+            "module_riscv64",
+            "module_x86_64",
+            "module_arm64only",
+            "module_x86_64only",
+        ]
+        if product in mainline_products:
+            return ["trunk_staging", "trunk", "mainline"]
+        else:
+            return ["trunk_staging", "trunk", "next"]
+    else:
+        # Get it from the build system
+        try:
+            result = subprocess.run(["build/soong/bin/list_releases", product], check=True,
+                                    text=True, stdout=subprocess.PIPE)
+        except subprocess.CalledProcessError:
+            sys.exit(1)
+        return [s for s in [s.strip() for s in result.stdout.split("\n")] if s]
+
+
+def GenerateAllLunchTargets():
+    """Generate the full list of lunch targets."""
+    # For testing
+    if False:
+        yield ("aosp_cf_x86_64_phone", "trunk_staging", "user")
+        #yield ("aosp_cf_x86_64_phone", "trunk_staging", "userdebug")
+        #yield ("aosp_cf_x86_64_phone", "trunk_staging", "eng")
+        return
+    for product in GetProducts():
+        for release in GetReleases(product):
+            for variant in ["user", "userdebug", "eng"]:
+                yield (product, release, variant)
+
+
+
+def MapToCommand(lunch):
+    """Return the command line for a lunch combo."""
+    return ([__file__, "--lunch", "-".join((lunch[0], lunch[1], lunch[2]))],
+                {"OUT_DIR": f"{buildbot.OutDir()}/lunchable_{asyncio.current_task().worker}"})
+
+def ParallelExec(parallelism, generate_items, map_to_command, results):
+    """Execute a command for each of a sequence of items in parallel.
+
+    Args:
+        parallelism: The number of concurrent commands to run.
+        generate_items: A generator to produce items.
+        map_to_command: A function to map an item to a command and arguments.
+        results: A function called with the results of each command.
+    """
+    async def execute(args):
+        item, cmd, env = args
+        sys.stderr.write(f"running: {' '.join(cmd)}\n")
+        # TODO Add env
+        proc = await asyncio.create_subprocess_exec(
+            *cmd,
+            env=os.environ | env,
+            stdout=asyncio.subprocess.PIPE,
+            stderr=asyncio.subprocess.PIPE)
+        stdout, stderr = await proc.communicate()
+        sys.stderr.write(f"finished: {' '.join(cmd)}\n") # in {duration_s:0.3f}s\n")
+        results(item, proc.returncode, stdout.decode(), stderr.decode())
+    def items():
+        while True:
+            try:
+                item = next(generate_items)
+                cmd, env = map_to_command(item)
+                yield item, cmd, env
+            except StopIteration:
+                return
+    ParallelDo(parallelism, items(), execute)
+
+overall_start = time.monotonic()
+total_duration = 0
+count = 0
+
+def ParallelDo(parallelism, generate_items, func):
+    """Call a function for each of a sequence of items in parallel.
+
+    Args:
+        parallelism: The number of concurrect calls to make.
+        generate_items: A generator to produce items.
+        func: An *async* function to call for each item.
+    """
+
+    async def dispatch(worker):
+        global overall_start
+        global total_duration
+        global count
+        asyncio.current_task().worker = worker
+        while True:
+            try:
+                item = next(generate_items)
+                item_start = time.monotonic()
+                await func(item)
+                now = time.monotonic()
+                item_duration = now - item_start
+                count += 1
+                total_duration += item_duration
+                sys.stderr.write(f"Timing: Items processed: {count}, Wall time: {now-overall_start:0.1f} sec, Throughput: {(now-overall_start)/count:0.3f} sec per item, Average duration: {total_duration/count:0.1f} sec\n")
+            except StopIteration:
+                return
+
+    async def spawn():
+        await asyncio.gather(*[dispatch(worker)
+                               for worker in range(parallelism)])
+    asyncio.run(spawn())
+
+
+class ResultPrinter:
+    """Re-prints an individual lunch combo dump in the json list."""
+
+    def __init__(self, out):
+        self._out = out
+        self._first = True
+
+    def __call__(self, lunch, returncode, stdout, stderr):
+        if self._first:
+            self._first = False
+            self._out.write("\n")
+        else:
+            self._out.write(",\n")
+        self._out.write(stdout.strip())
+        sys.stderr.write(stderr)
+        self._out.flush()
+        sys.stderr.flush()
+
+
+def DumpProductConfigs(out, generator):
+    """Collects all of the product config data and store it in file."""
+    # Write the outer json list by hand so we can stream it
+    out.write("[")
+    try:
+        ParallelExec(multiprocessing.cpu_count(), generator, MapToCommand, ResultPrinter(out))
+    finally:
+        # Close the json regardless of how we exit
+        out.write("\n]\n")
+
+
+class Variable:
+    """A variable name, value and where it was set."""
+    def __init__(self, name, value, location):
+        self.name = name
+        self.value = value
+        self.location = location
+
+    def ToTuple(self):
+        loc = self.location.split(":", 1)
+        return (
+            self.name,
+            self.value,
+            loc[0],
+            loc[1],
+        )
+
+
+def NormalizeInheritGraph(lists):
+    """Flatten the inheritance graph to a simple list for easier querying."""
+    result = set()
+    for item in lists:
+        for i in range(len(item)):
+            result.add((item[i+1] if i < len(item)-1 else "", item[i]))
+    return sorted(list(result))
+
+
+def ParseDump(filename):
+    """Parses the csv and returns a tuple of the data."""
+    def diff(initial, final):
+        return [after for after in final.values() if
+                initial.get(after.name, Variable(after.name, "", "<unset>")).value != after.value]
+    product_initial = {}
+    product_final = {}
+    board_initial = {}
+    board_final = {}
+    inherit_product = [] # The stack of inherit-product calls
+    product_includes = {} # Other files included by each of the properly imported files
+    board_includes = [] # Files included by boardconfig
+    with open(filename) as f:
+        phase = ""
+        for line in csv.reader(f):
+            if line[0] == "phase":
+                phase = line[1]
+            elif line[0] == "val":
+                # TOOD: We should skip these somewhere else.
+                if line[3].startswith("_ALL_RELEASE_FLAGS"):
+                    continue
+                if line[3].startswith("PRODUCTS."):
+                    continue
+                if phase == "PRODUCTS":
+                    if line[2] == "initial":
+                        product_initial[line[3]] = Variable(line[3], line[4], line[5])
+                if phase == "PRODUCT-EXPAND":
+                    if line[2] == "final":
+                        product_final[line[3]] = Variable(line[3], line[4], line[5])
+                if phase == "BOARD":
+                    if line[2] == "initial":
+                        board_initial[line[3]] = Variable(line[3], line[4], line[5])
+                    if line[2] == "final":
+                        board_final[line[3]] = Variable(line[3], line[4], line[5])
+            elif line[0] == "imported":
+                imports = [s.strip() for s in line[1].split()]
+                if imports:
+                    inherit_product.append(imports)
+                    inc = [s.strip() for s in line[2].split()]
+                    for f in inc:
+                        product_includes.setdefault(imports[0], []).append(f)
+            elif line[0] == "board_config_files":
+                board_includes += [s.strip() for s in line[1].split()]
+    return (
+        diff(product_initial, product_final),
+        diff(board_initial, board_final),
+        NormalizeInheritGraph(inherit_product),
+        product_includes,
+        board_includes
+    )
+
+
+class Encoder(json.JSONEncoder):
+    """JSONEncoder for our custom types."""
+    def default(self, o):
+        if isinstance(o, Variable):
+            return {"name": o.name, "value": o.value, "location": o.location}
+        return super().default(o)
+
+
+def DumpOneProductConfig(out, lunch):
+    """Print a single config's lunch info to stdout."""
+
+    product, release, variant = lunch
+    out_dir = buildbot.OutDir()
+
+    result = {
+        "product": product,
+        "release": release,
+        "variant": variant,
+    }
+
+    dumpconfig_file = os.path.join(out_dir, f"{product}-{release}-{variant}.csv")
+    os.makedirs(out_dir, exist_ok=True)
+
+    # Run get_build_var to bootstrap soong_ui for this target
+    cmd = [
+        "build/soong/bin/get_build_var",
+        "TARGET_PRODUCT",
+    ]
+    env = dict(os.environ)
+    env["TARGET_PRODUCT"] = product
+    env["TARGET_RELEASE"] = release
+    env["TARGET_BUILD_VARIANT"] = variant
+    cmd_result = subprocess.run(cmd, text=True, stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT, env=env)
+
+    if cmd_result.returncode != 0:
+        result["error"] = cmd_result.stdout
+
+    else:
+        # Run kati to extract the data
+        cmd = [
+            "prebuilts/build-tools/linux-x86/bin/ckati",
+            "-f",
+            "build/make/core/dumpconfig.mk",
+            f"TARGET_PRODUCT={product}",
+            f"TARGET_RELEASE={release}",
+            f"TARGET_BUILD_VARIANT={variant}",
+            f"DUMPCONFIG_FILE={dumpconfig_file}"
+        ]
+        cmd_result = subprocess.run(cmd, text=True, stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT, env=env)
+        if cmd_result.returncode != 0:
+            result["error"] = str(cmd) + "\n" + cmd_result.stdout
+        else:
+            # Parse and record the output
+            (product_vars, board_vars, product_graph, product_includes, board_includes
+                    ) = ParseDump(dumpconfig_file)
+            result["product_vars"] = product_vars
+            result["board_vars"] = board_vars
+            result["product_graph"] = product_graph
+            result["product_includes"] = product_includes
+            result["board_includes"] = board_includes
+
+    # Print the json results to stdout
+    out.write(Encoder(sort_keys=True, indent=2).encode(result))
+    out.write("\n")
+
+
+def GetArgs(argv):
+    """Parse command line arguments."""
+    parser = argparse.ArgumentParser(
+            prog="dump_product_config",
+            description="Collect all of the make variables from product config.",
+            epilog="NOTE: This script must be run from the root of the source tree.")
+    parser.add_argument("--lunch", nargs="*")
+    parser.add_argument("--dist", action="store_true")
+
+    return parser.parse_args(argv)
+
+
+def main(argv):
+    args = GetArgs(argv[1:])
+
+    if args.dist:
+        out = open(os.path.join(buildbot.DistDir(), "all_product_config.json"), "w")
+    else:
+        out = sys.stdout
+
+    try:
+        if args.lunch:
+            lunches = [lunch.split("-") for lunch in args.lunch]
+            fail = False
+            for i in range(len(lunches)):
+                if len(lunches[i]) != 3:
+                    sys.stderr.write(f"Malformed lunch targets: {args.lunch[i]}\n")
+                    fail = True
+            if fail:
+                sys.exit(1)
+            if len(lunches) == 1:
+                DumpOneProductConfig(out, lunches[0])
+            else:
+                DumpProductConfigs(out, (lunch for lunch in lunches))
+        else:
+            # All configs mode. This will exec single config mode in parallel
+            # for each lunch combo. Write output to $DIST_DIR.
+            DumpProductConfigs(out, GenerateAllLunchTargets())
+
+    finally:
+        if out != sys.stdout:
+            out.close()
+
+
+if __name__ == "__main__":
+    main(sys.argv)
+
+
+# vim: set syntax=python ts=4 sw=4 sts=4:
+
