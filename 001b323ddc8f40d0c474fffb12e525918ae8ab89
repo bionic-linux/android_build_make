@@ -1,0 +1,56 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ac945449_3d13b9bc",
+        "filename": "ci/build_test_suites.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1076194
+      },
+      "writtenOn": "2024-08-02T14:03:43Z",
+      "side": 1,
+      "message": "Not that I\u0027d expect this, but note that these strings could contain all kinds of funny characters in them.\n\nSo if the target was called \"distdir/foo.txt\", then the flag would be called distdir/foo.txt_unused_exclusion\n\nI\u0027m going to assume that we\u0027d update the script and fix this before actually using that.",
+      "revId": "001b323ddc8f40d0c474fffb12e525918ae8ab89",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "594523ca_709a440e",
+        "filename": "ci/build_test_suites.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1076194
+      },
+      "writtenOn": "2024-08-02T14:03:43Z",
+      "side": 1,
+      "message": "opt.get(\u0027key\u0027, \u0027\u0027) can just be opt.get(\u0027key\u0027)",
+      "fixSuggestions": [
+        {
+          "fixId": "48189a4a_21f61316",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ci/build_test_suites.py",
+              "range": {
+                "startLine": 147,
+                "startChar": 0,
+                "endLine": 148,
+                "endChar": 0
+              },
+              "replacement": "        if opt.get(\u0027key\u0027) in self._DOWNLOAD_OPTS:\n"
+            }
+          ]
+        }
+      ],
+      "revId": "001b323ddc8f40d0c474fffb12e525918ae8ab89",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
