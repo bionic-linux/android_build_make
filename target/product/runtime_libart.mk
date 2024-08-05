@@ -181,3 +181,7 @@ PRODUCT_SYSTEM_PROPERTIES += \
 
 # Copy preopted files from system_b on first boot.
 PRODUCT_SYSTEM_PROPERTIES += ro.cp_system_other_odex=1
+
+PRODUCT_PACKAGES += \
+        cppreopts.sh
+
