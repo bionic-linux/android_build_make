@@ -22,6 +22,30 @@
       },
       "revId": "44b3f9eb3906c1e7706d8ee3e5515e3ff21e168d",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f96f0297_e3825a32",
+        "filename": "core/config.mk",
+        "patchSetId": 7
+      },
+      "lineNbr": 887,
+      "author": {
+        "id": 1307893
+      },
+      "writtenOn": "2024-08-05T07:49:46Z",
+      "side": 0,
+      "message": "Onlyt split it to `sepolicy_compat_versions.mk`?\n\nAnd add `include sepolicy_compat_versions.mk`?\n\nThis file is loaded after `target/product_base_system.mk`.\n\nIf you just include all of the `target/product/selinux_policy_system.mk`, it will make `target/product/selinux_policy_system.mk` be loaded twice.",
+      "parentUuid": "acfeea2a_2b16cc3d",
+      "range": {
+        "startLine": 877,
+        "startChar": 0,
+        "endLine": 887,
+        "endChar": 0
+      },
+      "revId": "44b3f9eb3906c1e7706d8ee3e5515e3ff21e168d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
