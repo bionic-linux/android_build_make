@@ -46,6 +46,30 @@
       },
       "revId": "44b3f9eb3906c1e7706d8ee3e5515e3ff21e168d",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "402dcd3b_92919291",
+        "filename": "core/config.mk",
+        "patchSetId": 7
+      },
+      "lineNbr": 887,
+      "author": {
+        "id": 1308036
+      },
+      "writtenOn": "2024-08-05T08:45:05Z",
+      "side": 0,
+      "message": "Thanks. Seperate to sepolicy_versions.mk.",
+      "parentUuid": "f96f0297_e3825a32",
+      "range": {
+        "startLine": 877,
+        "startChar": 0,
+        "endLine": 887,
+        "endChar": 0
+      },
+      "revId": "44b3f9eb3906c1e7706d8ee3e5515e3ff21e168d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
