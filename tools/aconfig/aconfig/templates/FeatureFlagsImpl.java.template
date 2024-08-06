@@ -90,6 +90,13 @@ public final class FeatureFlagsImpl implements FeatureFlags \{
                 } else \{
                     Log.i(TAG, String.format(MISMATCH_LOG, "{flag.method_name}", val, {flag.method_name}));
                 }
+
+                boolean readFromAconfigStorage =
+                    DeviceConfig.getBoolean("core_experiments_team_internal", "com.android.providers.settings.use_new_storage_value", false);
+
+                if (readFromAconfigStorage) \{
+                    {flag.method_name} = val;
+                }
 {{ -endif }}
 {{ -endfor }}
             } catch (Exception e) \{
