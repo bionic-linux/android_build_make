@@ -16,6 +16,24 @@
       "message": "Should this be guarded with a build flag?",
       "revId": "1b569e4dd33d2d146cdc1799ee515f1bd7dc3e46",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f4ae46d6_34aaf2f4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1299063
+      },
+      "writtenOn": "2024-08-06T22:54:30Z",
+      "side": 1,
+      "message": "The flagging policy doesn\u0027t require flags for testing infra or build infra for non-ota. This is build infra for testing infra. There\u0027s not even build automation set up for the before-renamed target so impact of this change should be non-existent.\n\nLMK if you feel otherwise.",
+      "parentUuid": "0461f7dc_d85eb387",
+      "revId": "1b569e4dd33d2d146cdc1799ee515f1bd7dc3e46",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
