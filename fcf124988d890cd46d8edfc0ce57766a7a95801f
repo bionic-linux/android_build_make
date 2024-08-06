@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "956d72ec_75c777c4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1878380
+      },
+      "writtenOn": "2024-08-06T17:20:21Z",
+      "side": 1,
+      "message": "Jiakai, WDYT about this change? It installs cppreopts.sh even on devices without a system_other partition, but I have not been able to a identify a way to conditionally set this property based on `BOARD_USES_SYSTEM_OTHER_ODEX` value.",
+      "revId": "fcf124988d890cd46d8edfc0ce57766a7a95801f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
