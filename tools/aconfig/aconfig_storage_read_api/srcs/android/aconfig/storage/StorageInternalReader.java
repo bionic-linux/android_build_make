@@ -18,6 +18,8 @@ package android.aconfig.storage;
 
 import android.compat.annotation.UnsupportedAppUsage;
 
+import android.os.StrictMode;
+
 import java.io.Closeable;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
@@ -42,8 +44,10 @@ public class StorageInternalReader {
 
     @UnsupportedAppUsage
     public StorageInternalReader(String packageName, String packageMapFile, String flagValueFile) {
+        StrictMode.ThreadPolicy oldPolicy = StrictMode.allowThreadDiskReads();
         mPackageTable = PackageTable.fromBytes(mapStorageFile(packageMapFile));
         mFlagValueList = FlagValueList.fromBytes(mapStorageFile(flagValueFile));
+        StrictMode.setThreadPolicy(oldPolicy);
         mPackageBooleanStartOffset = getPackageBooleanStartOffset(packageName);
     }
 
