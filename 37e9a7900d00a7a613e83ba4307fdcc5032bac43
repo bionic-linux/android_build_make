@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f6b42705_e88d190f",
+        "filename": "target/product/selinux_policy_system.mk",
+        "patchSetId": 19
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1291338
+      },
+      "writtenOn": "2024-08-06T08:45:37Z",
+      "side": 1,
+      "message": "where do we handle this?",
+      "range": {
+        "startLine": 63,
+        "startChar": 0,
+        "endLine": 64,
+        "endChar": 113
+      },
+      "revId": "37e9a7900d00a7a613e83ba4307fdcc5032bac43",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
