@@ -129,6 +129,7 @@ aconfig_lib_cc_shared_link_defaults {
         read_from_new_storage: {
             shared_libs: [
                 "libaconfig_storage_read_api_cc",
+                "libbase",
             ],
         },
     },
