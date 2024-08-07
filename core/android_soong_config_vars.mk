@@ -184,3 +184,5 @@ $(call soong_config_set,bootclasspath,release_package_profiling_module,$(RELEASE
 ifdef BOARD_PERFSETUP_SCRIPT
   $(call soong_config_set,perf,board_perfsetup_script,$(notdir $(BOARD_PERFSETUP_SCRIPT)))
 endif
+
+$(call soong_config_set,target,board_platform,$(TARGET_BOARD_PLATFORM))
