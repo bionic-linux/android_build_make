@@ -16,6 +16,24 @@
       "message": "QQ: I\u0027m guessing that `ifneq (false, $(... variables for desktop))` doesn\u0027t work?\ne.g. being able to use `PACK_DESKTOP_FILESYSTEM_IMAGES\u003dfalse ... m`\n\notherwise, thanks for uploading this!",
       "revId": "9b8f499d1125f615df9482dedc7fa131196cc789",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "712a2896_943b0c65",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3508348
+      },
+      "writtenOn": "2024-08-07T19:45:26Z",
+      "side": 1,
+      "message": "Yeah, it doesn\u0027t work. make has the -e option for that, but I don\u0027t see anything for m.",
+      "parentUuid": "7ca70d6e_958f5076",
+      "revId": "9b8f499d1125f615df9482dedc7fa131196cc789",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
