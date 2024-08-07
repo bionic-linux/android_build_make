@@ -745,33 +745,18 @@ mod tests {
                     } else {
                         Log.i(TAG, String.format(MISMATCH_LOG, "disabledRw", val, disabledRw));
                     }
-
-                    if (DeviceConfig.getBoolean("core_experiments_team_internal", "com.android.providers.settings.use_new_storage_value", false)) {
-                        disabledRw = val;
-                    }
-
                     val = reader.getBooleanFlagValue(2);
                     if (val == disabledRwExported) {
                         Log.i(TAG, String.format(SUCCESS_LOG, "disabledRwExported"));
                     } else {
                         Log.i(TAG, String.format(MISMATCH_LOG, "disabledRwExported", val, disabledRwExported));
                     }
-
-                    if (DeviceConfig.getBoolean("core_experiments_team_internal", "com.android.providers.settings.use_new_storage_value", false)) {
-                        disabledRwExported = val;
-                    }
-
                     val = reader.getBooleanFlagValue(8);
                     if (val == enabledRw) {
                         Log.i(TAG, String.format(SUCCESS_LOG, "enabledRw"));
                     } else {
                         Log.i(TAG, String.format(MISMATCH_LOG, "enabledRw", val, enabledRw));
                     }
-
-                    if (DeviceConfig.getBoolean("core_experiments_team_internal", "com.android.providers.settings.use_new_storage_value", false)) {
-                        enabledRw = val;
-                    }
-
                 } catch (Exception e) {
                     Log.e(TAG, ERROR_LOG, e);
                 }
@@ -804,11 +789,6 @@ mod tests {
                     } else {
                         Log.i(TAG, String.format(MISMATCH_LOG, "disabledRwInOtherNamespace", val, disabledRwInOtherNamespace));
                     }
-
-                    if (DeviceConfig.getBoolean("core_experiments_team_internal", "com.android.providers.settings.use_new_storage_value", false)) {
-                        disabledRwInOtherNamespace = val;
-                    }
-
                 } catch (Exception e) {
                     Log.e(TAG, ERROR_LOG, e);
                 }
