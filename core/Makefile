@@ -7873,6 +7873,11 @@ IMAGES := $(INSTALLED_BOOTIMAGE_TARGET) \
 	$(INSTALLED_USERDATAIMAGE_TARGET)
 
 # -----------------------------------------------------------------
+# Desktop images. SKIP_DESKTOP_IMAGES allows devs to skip building
+# images all together for faster local builds when they don't need
+# them, e.g. `SKIP_DESKTOP_IMAGES=true m`.
+ifeq (,$(strip $(SKIP_DESKTOP_IMAGES)))
+# -----------------------------------------------------------------
 # Desktop pack image hook.
 ifneq (,$(strip $(PACK_DESKTOP_FILESYSTEM_IMAGES)))
 PACK_IMAGE_TARGET := $(PRODUCT_OUT)/android-desktop_image.bin
@@ -7909,6 +7914,8 @@ droidcore-unbundled: $(PACKED_RECOVERY_IMAGE_ARCHIVE_TARGET)
 $(call dist-for-goals,dist_files,$(PACKED_RECOVERY_IMAGE_ARCHIVE_TARGET))
 
 endif # PACK_DESKTOP_RECOVERY_IMAGE
+
+endif # SKIP_DESKTOP_IMAGES
 
 # -----------------------------------------------------------------
 # OS Licensing
