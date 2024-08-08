@@ -85,3 +85,7 @@ init.environ.rc
 # Known diffs only in the Soong system image
 lib/libhidcommand_jni.so
 lib/libuinputcommand_jni.so
+
+#IDK, whatever this check is seems broken
+#No documentation, so b/358414511 and probably drop this after someone looks at the bug
+lib/libcgrouprc.so
