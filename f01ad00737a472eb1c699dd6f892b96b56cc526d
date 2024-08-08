@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "65260a13_9b5deb56",
+        "filename": "ci/build_test_suites.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1076194
+      },
+      "writtenOn": "2024-08-08T02:21:33Z",
+      "side": 1,
+      "message": "Can you use r\u0027\\b(?P\u003cartifact\u003e%s)\\b\u0027 % \u0027|\u0027.join(file_download_options) ?\n\nGiving an example, \u0027cts\u0027 will match \u0027acts\u0027 and we don\u0027t want that to match.\nAdd a test for this too.\n```suggestion\n    regex \u003d r\u0027\\b(%s)\\b\u0027 % \u0027|\u0027.join(file_download_options)\n    return re.search(regex, target)\n```",
+      "range": {
+        "startLine": 114,
+        "startChar": 0,
+        "endLine": 117,
+        "endChar": 16
+      },
+      "revId": "f01ad00737a472eb1c699dd6f892b96b56cc526d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
