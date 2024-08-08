@@ -86,6 +86,24 @@
       "message": "What are the cases where an dev would want vs not want to build it? In other words, how does the local workflow look for these devices?\n\nUsually the workflow is `m` to do a full build and `fastboot flashall` to flash it once.  Then after that you don\u0027t build the full images anymore.  Just `m some_module` or `m sync` and then `adevice`, `adb push`, `adb install`, etc.",
       "revId": "9b8f499d1125f615df9482dedc7fa131196cc789",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0bc64e8e_950e1a62",
+        "filename": "core/Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 7876,
+      "author": {
+        "id": 3508348
+      },
+      "writtenOn": "2024-08-08T16:09:17Z",
+      "side": 1,
+      "message": "FWIW, I was always hoping this would be a temporary solution, but if we can figure out a permanent solution sooner than later, that\u0027s even better. Just to make sure we\u0027re all on the same page, though, this only affects the full, packed desktop image, not the .img files.\n\nWe don\u0027t have fastboot yet, so the long term plan for when and where the packed image needs to be made is up in the air, but for now it\u0027s very helpful for devs to have the builders producing them, and they at least sometimes need to build an image locally.\n\nTo answer the workflow question as best I can, I suspect it\u0027s a result of the image changing anytime anything changes, e.g. a `repo sync` and `m` to refresh the build just to get everything back to ToT before continuing to iterate, but then hitting the slow gzip steps to make the archives.\n\nMaybe there\u0027s a training problem contributing too? I\u0027m not the target audience here, but I know I\u0027m not familiar with all the intended workflows with the android tooling yet.\n\n@mwojtas@google.com can you provide more context?\n\nRight now the biggest issue with unconditional images in `m` is just that gzip is really slow. `pack_image` itself is fast enough that I think it can unconditionally run. Last I tried it, if you run `pack_image` directly to create the image and the archive (using zstd from the host), it takes ~35s, but when you run `m` we\u0027re using gzip because zstd isn\u0027t available, and the gzip call to create the archive takes 3-4 minutes.\n\nI was hoping to look into making zstd available in the build in a few weeks so we could unconditionally make the image and the archive, but just we don\u0027t have the bandwidth right now.\n\nI think devs probably only need the .bin file most of the time anyway, and would be fine with running pack_image again when they do want the archive, so the gzip call just a completely unnecessary step for local builds. If we can set it up to always produce the .bin and only produce the archive in builders, that\u0027d probably solve this too.\n\nAny suggestions for how we should proceed would be appreciated.",
+      "parentUuid": "4bdd7ad0_c986f876",
+      "revId": "9b8f499d1125f615df9482dedc7fa131196cc789",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
