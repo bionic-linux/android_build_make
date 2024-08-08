@@ -1,0 +1,49 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4f88c5f2_05e89d70",
+        "filename": "tools/releasetools/add_img_to_target_files.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 606,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2024-08-08T17:04:24Z",
+      "side": 1,
+      "message": "this should be generated using Makefile rather than overriding it in release tools script.",
+      "fixSuggestions": [
+        {
+          "fixId": "e04eb631_5c605ac8",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "tools/releasetools/add_img_to_target_files.py",
+              "range": {
+                "startLine": 592,
+                "startChar": 0,
+                "endLine": 594,
+                "endChar": 0
+              },
+              "replacement": ""
+            },
+            {
+              "path": "tools/releasetools/add_img_to_target_files.py",
+              "range": {
+                "startLine": 606,
+                "startChar": 0,
+                "endLine": 610,
+                "endChar": 0
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "revId": "59841b46800367ddd43b19d03399588b46488723",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
