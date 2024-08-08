@@ -181,5 +181,10 @@ PRODUCT_SYSTEM_PROPERTIES += \
 
 # Copy preopted files from system_b on first boot.
 PRODUCT_SYSTEM_PROPERTIES += ro.cp_system_other_odex=1
+<<<<<<< PATCH SET (84dae5 [DO NOT SUBMIT] Enable speed compiler for system server)
+
+PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed
+=======
 PRODUCT_PACKAGES += \
   cppreopts.sh
+>>>>>>> BASE      (fa4760 Merge "DO NOT MERGE: manually cherry pick" into main)
