@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "faf20447_02d5724b",
+        "filename": "core/soong_config.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 1415877
+      },
+      "writtenOn": "2024-08-08T22:39:23Z",
+      "side": 1,
+      "message": "Should it be prefixed with PRODUCT_?",
+      "range": {
+        "startLine": 259,
+        "startChar": 62,
+        "endLine": 259,
+        "endChar": 102
+      },
+      "revId": "4ec5f89686660359a6b014ccf345409d015eb6f4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
