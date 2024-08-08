@@ -62,6 +62,24 @@
       "parentUuid": "4f88c5f2_05e89d70",
       "revId": "59841b46800367ddd43b19d03399588b46488723",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a360215d_0fde72ce",
+        "filename": "tools/releasetools/add_img_to_target_files.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 606,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2024-08-08T23:46:37Z",
+      "side": 1,
+      "message": "I think the best approach is to moidfy Makefiles to generate correct values for `erofs_default_compress_hints` and other partition specific compression hint props, rather than overriding it in any release tools script.",
+      "parentUuid": "e1712116_c8f2a040",
+      "revId": "59841b46800367ddd43b19d03399588b46488723",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
