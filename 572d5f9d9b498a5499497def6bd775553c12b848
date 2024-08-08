@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e52bfda1_2ad4c054",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1076194
+      },
+      "writtenOn": "2024-08-08T02:29:42Z",
+      "side": 1,
+      "message": "This could use a comment explaining that it\u0027s currently just a no-op optimizer (is it?)",
+      "revId": "572d5f9d9b498a5499497def6bd775553c12b848",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
