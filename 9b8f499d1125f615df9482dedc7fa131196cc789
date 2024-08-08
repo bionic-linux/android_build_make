@@ -104,6 +104,24 @@
       "parentUuid": "4bdd7ad0_c986f876",
       "revId": "9b8f499d1125f615df9482dedc7fa131196cc789",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "05451d2a_4fedd14e",
+        "filename": "core/Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 7876,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-08-08T16:32:12Z",
+      "side": 1,
+      "message": "Makes sense.\n\nI think what you can do is change the droidcore-unbundled line to\n\n```\ndroidcore-unbundled: $(PACK_IMAGE_TARGET)\n```\n\nThat\u0027ll change it so it won\u0027t build by default, but the $(call dist-for-goals, dist_files) line will still have it built on CI.\n\nYou could add another phony target to make it easy to build them.\n\n```\n.PHONY: packed-image\npacked-image: $(PACKED_IMAGE_ARCHIVE_TARGET)\n```\n\nSame for the recovery one too.",
+      "parentUuid": "0bc64e8e_950e1a62",
+      "revId": "9b8f499d1125f615df9482dedc7fa131196cc789",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
