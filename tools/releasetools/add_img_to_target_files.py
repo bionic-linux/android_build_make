@@ -581,21 +581,32 @@ def CreateImage(input_dir, info_dict, what, output_file, block_list=None):
   image_props = build_image.ImagePropFromGlobalDict(info_dict, what)
   image_props["timestamp"] = FIXED_FILE_TIMESTAMP
 
-  if what == "system":
-    fs_config_prefix = ""
-  else:
-    fs_config_prefix = what + "_"
+  # Override values loaded from info_dict
 
-  fs_config = os.path.join(
-      input_dir, "META/" + fs_config_prefix + "filesystem_config.txt")
-  if not os.path.exists(fs_config):
-    fs_config = None
-
-  # Override values loaded from info_dict.
-  if fs_config:
-    image_props["fs_config"] = fs_config
   if block_list:
     image_props["block_list"] = block_list.name
+
+  # Override values with external files (copied in META). Some are partition-specific.
+  #
+  # - fs_config with META/{partition_prefix}filesystem_config.txt
+  # - erofs_compress_hints with META/{partition_prefix}erofs_compress_hints.txt
+  # - erofs_default_compress_hints with META/erofs_default_compress_hints.txt
+
+  def override_prop_file(prop, filename):
+    config_file = os.path.join(input_dir, "META/" + filename)
+    if os.path.exists(config_file):
+      image_props[prop] = config_file
+
+  if what == "system":
+    partition_prefix = ""
+  else:
+    partition_prefix = what + "_"
+
+  override_prop_file("fs_config", partition_prefix + "filesystem_config.txt")
+  override_prop_file("erofs_compress_hints",
+                     partition_prefix + "erofs_compress_hints.txt")
+  override_prop_file("erofs_default_compress_hints",
+                     "erofs_default_compress_hints.txt")
 
   build_image.BuildImage(
       os.path.join(input_dir, what.upper()), image_props, output_file.name)
