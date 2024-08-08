@@ -256,6 +256,7 @@ $(foreach namespace,$(sort $(SOONG_CONFIG_NAMESPACES)),\
 $(call end_json_map)
 
 $(call add_json_bool, EnforceProductPartitionInterface,  $(filter true,$(PRODUCT_ENFORCE_PRODUCT_PARTITION_INTERFACE)))
+$(call add_json_list, EnforceApexAvailabilityNamespaceList, $(PRODUCT_ENFORCE_APEX_AVAILABILITY_NAMESPACE_LIST))
 $(call add_json_str,  DeviceCurrentApiLevelForVendorModules,  $(BOARD_CURRENT_API_LEVEL_FOR_VENDOR_MODULES))
 
 $(call add_json_bool, EnforceInterPartitionJavaSdkLibrary, $(filter true,$(PRODUCT_ENFORCE_INTER_PARTITION_JAVA_SDK_LIBRARY)))
