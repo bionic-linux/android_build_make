@@ -34,6 +34,24 @@
       "parentUuid": "148341a9_811c7ad8",
       "revId": "cf8ac9eaa02793aa3c4b6009d51554ef5b67d4cb",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f46697f6_07b42d88",
+        "filename": "core/Makefile",
+        "patchSetId": 2
+      },
+      "lineNbr": 7888,
+      "author": {
+        "id": 1644696
+      },
+      "writtenOn": "2024-08-09T18:19:52Z",
+      "side": 1,
+      "message": "There are a few ways today:\n 1. Recovery image via USB (used for releases and as the name implies \"recovery\")\n 2. Bootable USB image + ADB (developer iteration as Michal pointed out)\n 3. Installations via updater | host-\u003eclient OTA (in parity with AOSP)\n \n1 + 2 flows do not exist on vanilla AOSP\n \nThere is a section under for your reference: https://g3doc.corp.google.com/company/teams/chromeos/index.md?cl\u003dhead",
+      "parentUuid": "60a239d8_430a549d",
+      "revId": "cf8ac9eaa02793aa3c4b6009d51554ef5b67d4cb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
