@@ -1,4 +1,8 @@
+ifeq (true,$(EMMA_INSTRUMENT))
+DEX_PREOPT_CONFIG := $(SOONG_OUT_DIR)/dexpreopt.coverage.config
+else
 DEX_PREOPT_CONFIG := $(SOONG_OUT_DIR)/dexpreopt.config
+endif
 
 ENABLE_PREOPT := true
 ENABLE_PREOPT_BOOT_IMAGES := true

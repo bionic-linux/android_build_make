@@ -1,5 +1,10 @@
-SOONG_MAKEVARS_MK := $(SOONG_OUT_DIR)/make_vars-$(TARGET_PRODUCT).mk
-SOONG_ANDROID_MK := $(SOONG_OUT_DIR)/Android-$(TARGET_PRODUCT).mk
+ifeq (true,$(EMMA_INSTRUMENT))
+  SOONG_MAKEVARS_MK := $(SOONG_OUT_DIR)/make_vars-$(TARGET_PRODUCT).coverage.mk
+  SOONG_ANDROID_MK := $(SOONG_OUT_DIR)/Android-$(TARGET_PRODUCT).coverage.mk
+else
+  SOONG_MAKEVARS_MK := $(SOONG_OUT_DIR)/make_vars-$(TARGET_PRODUCT).mk
+  SOONG_ANDROID_MK := $(SOONG_OUT_DIR)/Android-$(TARGET_PRODUCT).mk
+endif
 
 include $(BUILD_SYSTEM)/art_config.mk
 include $(BUILD_SYSTEM)/dex_preopt_config.mk
@@ -26,7 +31,13 @@ ifeq ($(WRITE_SOONG_VARIABLES),true)
 $(shell mkdir -p $(dir $(SOONG_VARIABLES)))
 $(call json_start)
 
+# EMMA_INSTRUMENT is set to true when coverage is enabled. Creates a suffix to
+# indicate that coverage is enabled.
+ifeq (true,$(EMMA_INSTRUMENT))
+$(call add_json_str,  Make_suffix, -$(TARGET_PRODUCT).coverage)
+else
 $(call add_json_str,  Make_suffix, -$(TARGET_PRODUCT))
+endif
 
 $(call add_json_str,  BuildId,                           $(BUILD_ID))
 $(call add_json_str,  BuildFingerprintFile,              build_fingerprint.txt)
