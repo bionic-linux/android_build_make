@@ -1,0 +1,59 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7f76e13a_920011ac",
+        "filename": "ci/build_test_suites.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1962375
+      },
+      "writtenOn": "2024-08-09T21:42:08Z",
+      "side": 1,
+      "message": "nit: Can you set this as a instance variable to prevent `_aggregate_file_download_options()` being invoked every time when this method is invoked?",
+      "fixSuggestions": [
+        {
+          "fixId": "29439e2c_ea74c665",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ci/build_test_suites.py",
+              "range": {
+                "startLine": 74,
+                "startChar": 0,
+                "endLine": 74,
+                "endChar": 0
+              },
+              "replacement": "    self.file_download_options \u003d self._aggregate_file_download_options()\n"
+            },
+            {
+              "path": "ci/build_test_suites.py",
+              "range": {
+                "startLine": 110,
+                "startChar": 0,
+                "endLine": 111,
+                "endChar": 0
+              },
+              "replacement": ""
+            },
+            {
+              "path": "ci/build_test_suites.py",
+              "range": {
+                "startLine": 115,
+                "startChar": 0,
+                "endLine": 116,
+                "endChar": 0
+              },
+              "replacement": "    return any(re.search(regex, opt) for opt in self.file_download_options)\n"
+            }
+          ]
+        }
+      ],
+      "revId": "2a630a5c5215be325706053ae64326897e00a407",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
