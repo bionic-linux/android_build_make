@@ -116,6 +116,24 @@
       "parentUuid": "d497ea05_f979672f",
       "revId": "59841b46800367ddd43b19d03399588b46488723",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "502b64a6_deabaecd",
+        "filename": "tools/releasetools/add_img_to_target_files.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 606,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2024-08-09T00:42:12Z",
+      "side": 1,
+      "message": "$(INSTALLED_MISC_INFO_TARGET) is a target which has build rules defined around it. It should be a series of echo statements outputing to $OUT/misc_info.txt . Adding some default values there should be straightforward, WDYT?",
+      "parentUuid": "d497ea05_f979672f",
+      "revId": "59841b46800367ddd43b19d03399588b46488723",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
