@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "148341a9_811c7ad8",
+        "filename": "core/Makefile",
+        "patchSetId": 2
+      },
+      "lineNbr": 7888,
+      "author": {
+        "id": 2028281
+      },
+      "writtenOn": "2024-08-09T09:23:58Z",
+      "side": 1,
+      "message": "If I understand this change correctly, now when the developer issues `m` command, compression of the whole OS image will be skipped. This is good, however, I am not convinced that `pack_image` should be called at all during `m` invocation as it makes the build longer, and usually developers use OTA (via `update-device`) to apply changes to their device. If a developer wants the whole image it can always issue `pack_image` itself.",
+      "revId": "cf8ac9eaa02793aa3c4b6009d51554ef5b67d4cb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
