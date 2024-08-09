@@ -16,6 +16,24 @@
       "message": "If I understand this change correctly, now when the developer issues `m` command, compression of the whole OS image will be skipped. This is good, however, I am not convinced that `pack_image` should be called at all during `m` invocation as it makes the build longer, and usually developers use OTA (via `update-device`) to apply changes to their device. If a developer wants the whole image it can always issue `pack_image` itself.",
       "revId": "cf8ac9eaa02793aa3c4b6009d51554ef5b67d4cb",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "60a239d8_430a549d",
+        "filename": "core/Makefile",
+        "patchSetId": 2
+      },
+      "lineNbr": 7888,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-08-09T11:47:38Z",
+      "side": 1,
+      "message": "On Android, an unadorned `m` is usually the command to build the flashable filesystem images.  I\u0027m still not clear about how to flash these devices yet.  Are there any Chrome OS docs about how to do that workflow?  I think everyone working on this is going to have similar questions, so we should probably write up some dev guide docs for this.  I\u0027d be happy to help.",
+      "parentUuid": "148341a9_811c7ad8",
+      "revId": "cf8ac9eaa02793aa3c4b6009d51554ef5b67d4cb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
