@@ -188,6 +188,24 @@
       "parentUuid": "8d123c45_55603784",
       "revId": "59841b46800367ddd43b19d03399588b46488723",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "016c363d_b6181837",
+        "filename": "tools/releasetools/add_img_to_target_files.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 606,
+      "author": {
+        "id": 1415877
+      },
+      "writtenOn": "2024-08-09T21:35:03Z",
+      "side": 1,
+      "message": "Kelvin, I\u0027m not sure I understand you correctly. Can you please check my other comments?",
+      "parentUuid": "4cc8ad63_e1e842ad",
+      "revId": "59841b46800367ddd43b19d03399588b46488723",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
