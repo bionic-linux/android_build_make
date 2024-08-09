@@ -80,6 +80,24 @@
       "parentUuid": "e1712116_c8f2a040",
       "revId": "59841b46800367ddd43b19d03399588b46488723",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d497ea05_f979672f",
+        "filename": "tools/releasetools/add_img_to_target_files.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 606,
+      "author": {
+        "id": 1415877
+      },
+      "writtenOn": "2024-08-09T00:37:37Z",
+      "side": 1,
+      "message": "I see. Even though we do that in release script for other things, you want it to be in Makefile for new things like this. Fair enough. Let me check if Makefile can do that. It looks like generating misc_info.txt in Makefile relies on the local build config.\n\nhttps://cs.android.com/android/platform/superproject/main/+/main:build/make/core/Makefile;l\u003d6696\n\n```\n\t$(hide) cp $(INSTALLED_MISC_INFO_TARGET) $(zip_root)/META/misc_info.txt\n```\n\nIt\u0027s simply being copied from OUT/misc_info.txt to zip/META. We could override values when copying. But well, I don\u0027t think it\u0027s better. What do you think?",
+      "parentUuid": "a360215d_0fde72ce",
+      "revId": "59841b46800367ddd43b19d03399588b46488723",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
