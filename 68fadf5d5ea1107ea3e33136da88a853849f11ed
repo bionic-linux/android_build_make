@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aa626749_04a6f585",
+        "filename": "core/config.mk",
+        "patchSetId": 6
+      },
+      "lineNbr": 1255,
+      "author": {
+        "id": 1002751
+      },
+      "writtenOn": "2024-08-10T00:39:17Z",
+      "side": 1,
+      "message": "Similar to the Soong change, set a COVERAGE_SUFFIX variable early and use it in the existing lines.",
+      "revId": "68fadf5d5ea1107ea3e33136da88a853849f11ed",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
