@@ -18,6 +18,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3a359dd1_be104f62",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3096390
+      },
+      "writtenOn": "2024-08-11T03:31:26Z",
+      "side": 1,
+      "message": "Thanks!\n(resolving comment)",
+      "parentUuid": "5ba881d3_2f9d89eb",
+      "revId": "d8ca95c464781364dbefbf7bf668583c0a0e75da",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "513d28bb_25600375",
@@ -31,6 +49,30 @@
       "writtenOn": "2024-08-09T04:48:45Z",
       "side": 1,
       "message": "Please list this variable in core/product.mk as well.\n```\n_product_list_vars +\u003d PRODUCT_ENFORCE_APEX_AVAILABILITY_NAMESPACE_LIST\n```",
+      "range": {
+        "startLine": 259,
+        "startChar": 62,
+        "endLine": 259,
+        "endChar": 110
+      },
+      "revId": "d8ca95c464781364dbefbf7bf668583c0a0e75da",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2a99eabd_3607aae3",
+        "filename": "core/soong_config.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 3096390
+      },
+      "writtenOn": "2024-08-11T03:31:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "513d28bb_25600375",
       "range": {
         "startLine": 259,
         "startChar": 62,
