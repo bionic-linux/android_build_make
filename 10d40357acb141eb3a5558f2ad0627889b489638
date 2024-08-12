@@ -33,6 +33,24 @@
       "message": "The oem-defined-uids.xml that we\u0027re submitting is effectively empty.  Do we actually need it, or would it be better to have them supply it in their own product config files?",
       "revId": "10d40357acb141eb3a5558f2ad0627889b489638",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b55b1e64_23ca4ef4",
+        "filename": "target/product/base_system.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 1480715
+      },
+      "writtenOn": "2024-08-12T21:46:32Z",
+      "side": 1,
+      "message": "Hi Joe, thanks for your quick review. The new xml file is defined in aosp/3211631 which is designed for OEMs to customize some UIDs. I guess technically we don\u0027t need it here as that file is currently empty, but I am not sure if we should document it somewhere to indicate that the product config files need to be changed. I am not sure what\u0027s the common practice?",
+      "parentUuid": "7193bb70_9ea171b5",
+      "revId": "10d40357acb141eb3a5558f2ad0627889b489638",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
