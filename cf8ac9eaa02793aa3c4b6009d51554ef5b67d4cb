@@ -88,6 +88,24 @@
       "parentUuid": "4cec858c_591c5d86",
       "revId": "cf8ac9eaa02793aa3c4b6009d51554ef5b67d4cb",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4b76c1aa_1c398743",
+        "filename": "core/Makefile",
+        "patchSetId": 2
+      },
+      "lineNbr": 7888,
+      "author": {
+        "id": 2028281
+      },
+      "writtenOn": "2024-08-12T16:22:51Z",
+      "side": 1,
+      "message": "Its OTA underneath so it uses `target_files.zip` created by `m dist` as input driving the update.\n\nIf you asked about the script invocation itself, it doesn\u0027t require any input, it will use the default `adb` device, and build target from the `lunch` invocation by default, but you can force a different one:\n\n```\n$ update-device --help\nUSAGE: update-device [-s \u003cdevice\u003e -f|--force-full-update -h|--help] [\u003cbuild_target\u003e]\nWhere:\n  \u003cdevice\u003e - use adb device with given serial (directly passed as -s param to adb, e.g. localhost:5555)\n  \u003cbuild_target\u003e - build target, e.g. redrix-next-userdebug\n```",
+      "parentUuid": "7b0f7a2c_da0b69b4",
+      "revId": "cf8ac9eaa02793aa3c4b6009d51554ef5b67d4cb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
