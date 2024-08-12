@@ -566,6 +566,13 @@ define inherit-product-if-exists
 endef
 
 #
+# Do inherit-product only if $(1) exists, otherwise inherit-product $(2)
+#
+define inherit-product-if-exists-or
+  $(if $(wildcard $(1)),$(call inherit-product,$(1)),$(call inherit-product,$(2)))
+endef
+
+#
 # $(1): product makefile list
 #
 #TODO: check to make sure that products have all the necessary vars defined
