@@ -52,6 +52,24 @@
       "parentUuid": "7ec5204d_aab3edec",
       "revId": "04d1bc5dcb9d39b4ac1e2c3493b4b6019678c51c",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b4ad7cd8_81ee84a2",
+        "filename": "tools/releasetools/non_ab_ota.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 569,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2024-08-12T17:19:27Z",
+      "side": 1,
+      "message": "I meant leave a comment in code to explain that -y isn\u0027t yes/no ,it is \"store symlinks instead of follow symlinks\"",
+      "parentUuid": "0cdae8da_1879a6f5",
+      "revId": "04d1bc5dcb9d39b4ac1e2c3493b4b6019678c51c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
