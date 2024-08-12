@@ -51,6 +51,24 @@
       "parentUuid": "7193bb70_9ea171b5",
       "revId": "10d40357acb141eb3a5558f2ad0627889b489638",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ffc68b40_d67a80c7",
+        "filename": "target/product/base_system.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-08-12T21:55:18Z",
+      "side": 1,
+      "message": "Usually the way we do this is to give them instructions and example code for how to do this kind of thing in their own directories in vendor/ or hardware/. Most of them typically try not to actually patch the AOSP code for their own changes.",
+      "parentUuid": "b55b1e64_23ca4ef4",
+      "revId": "10d40357acb141eb3a5558f2ad0627889b489638",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
