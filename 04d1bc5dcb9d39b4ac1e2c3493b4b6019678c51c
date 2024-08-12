@@ -1,0 +1,39 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7ec5204d_aab3edec",
+        "filename": "tools/releasetools/non_ab_ota.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 569,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2024-08-12T17:05:20Z",
+      "side": 1,
+      "message": "Leave a comment to explain why -y is prefered/added",
+      "fixSuggestions": [
+        {
+          "fixId": "cf9b5560_9680ad17",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "tools/releasetools/non_ab_ota.py",
+              "range": {
+                "startLine": 568,
+                "startChar": 0,
+                "endLine": 568,
+                "endChar": 0
+              },
+              "replacement": "      # -y is preferred to avoid the prompt for overwriting existing files.\n"
+            }
+          ]
+        }
+      ],
+      "revId": "04d1bc5dcb9d39b4ac1e2c3493b4b6019678c51c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
