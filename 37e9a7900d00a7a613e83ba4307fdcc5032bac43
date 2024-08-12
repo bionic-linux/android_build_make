@@ -22,6 +22,30 @@
       },
       "revId": "37e9a7900d00a7a613e83ba4307fdcc5032bac43",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8021aee3_1bc56df2",
+        "filename": "target/product/selinux_policy_system.mk",
+        "patchSetId": 19
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1308036
+      },
+      "writtenOn": "2024-08-12T09:49:07Z",
+      "side": 1,
+      "message": "@inseob@google.com,\n\nAbout sepolicy_test and sepolicy_dev_type_test here, our thought is to remove the ```call intermediates-dir-for``` here, and package files into python_test_host to run cmd like the genrule do. Default presubmit will run the python_test_host.\n\nHow do you comment this?",
+      "parentUuid": "f6b42705_e88d190f",
+      "range": {
+        "startLine": 63,
+        "startChar": 0,
+        "endLine": 64,
+        "endChar": 113
+      },
+      "revId": "37e9a7900d00a7a613e83ba4307fdcc5032bac43",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
