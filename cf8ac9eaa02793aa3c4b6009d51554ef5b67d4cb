@@ -52,6 +52,24 @@
       "parentUuid": "60a239d8_430a549d",
       "revId": "cf8ac9eaa02793aa3c4b6009d51554ef5b67d4cb",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4cec858c_591c5d86",
+        "filename": "core/Makefile",
+        "patchSetId": 2
+      },
+      "lineNbr": 7888,
+      "author": {
+        "id": 2028281
+      },
+      "writtenOn": "2024-08-12T10:05:08Z",
+      "side": 1,
+      "message": "\u003e On Android, an unadorned m is usually the command to build the flashable filesystem images\n\nI believe this will be true in our case once we implement fastboot without any changes to how Android does `m` right now. Because we don\u0027t have that yet, we implemented `pack_image` script so that all partitions are bundled into a single image that can be flashed onto an USB stick. However, `pack_image` even without compression takes time and usually developers have to flash the whole image only once. Then, they can use OTA (via `update-device`) to get their changes applied onto the device, so `pack_image` is not invoked most of the time. I am just wondering if we really need to invoke `pack_image` during `m` at all. I\u0027m going to +1 this (especially as your CL reduces `m` time by excluding compression), I just think that we could go further and remove `pack_image` from `m` entirely. I\u0027ll let @mwojtas@google.com decide.",
+      "parentUuid": "f46697f6_07b42d88",
+      "revId": "cf8ac9eaa02793aa3c4b6009d51554ef5b67d4cb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
