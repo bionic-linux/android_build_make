@@ -16,6 +16,23 @@
       "message": "This should be submitted with aosp/3211631 but I am still trying to find the \"Topic\" button...",
       "revId": "10d40357acb141eb3a5558f2ad0627889b489638",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7193bb70_9ea171b5",
+        "filename": "target/product/base_system.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-08-12T21:36:34Z",
+      "side": 1,
+      "message": "The oem-defined-uids.xml that we\u0027re submitting is effectively empty.  Do we actually need it, or would it be better to have them supply it in their own product config files?",
+      "revId": "10d40357acb141eb3a5558f2ad0627889b489638",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
