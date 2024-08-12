@@ -5842,8 +5842,12 @@ ifneq (,$(strip $(BOARD_CUSTOMIMAGES_PARTITION_LIST)))
 endif
 	$(hide) echo "reboot fastboot" >> $@
 	$(hide) echo "update-super" >> $@
+ifeq ($(BOARD_SUPER_IMAGE_IN_UPDATE_PACKAGE),true)
+	$(hide) echo "flash super" >> $@
+else
 	$(hide) $(foreach partition,$(BOARD_SUPER_PARTITION_PARTITION_LIST), \
 	  echo "flash $(partition)" >> $@;)
+endif
 ifdef BUILDING_SYSTEM_OTHER_IMAGE
 	$(hide) echo "flash --slot-other system system_other.img" >> $@
 endif
