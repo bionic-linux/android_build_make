@@ -585,6 +585,7 @@ bool com_android_aconfig_test_enabled_rw();
     const PROD_SOURCE_FILE_EXPECTED: &str = r#"
 #include "com_android_aconfig_test.h"
 #include <server_configurable_flags/get_flags.h>
+#include <atomic>
 #include <vector>
 
 namespace com::android::aconfig::test {
@@ -592,38 +593,51 @@ namespace com::android::aconfig::test {
     class flag_provider : public flag_provider_interface {
         public:
 
+        flag_provider()
+            : cache_(4) {
+            for (size_t i = 0 ; i < 4; i++) {
+                cache_[i] = -1;
+            }
+        }
+
             virtual bool disabled_ro() override {
                 return false;
             }
 
             virtual bool disabled_rw() override {
-                if (cache_[0] == -1) {
-                    cache_[0] = server_configurable_flags::GetServerConfigurableFlag(
+                int8_t cached = cache_[0].load(std::memory_order_relaxed);
+                if (cached == -1) {
+                    cached = server_configurable_flags::GetServerConfigurableFlag(
                         "aconfig_flags.aconfig_test",
                         "com.android.aconfig.test.disabled_rw",
                         "false") == "true";
+                    cache_[0].store(cached, std::memory_order_relaxed);
                 }
-                return cache_[0];
+                return cached;
             }
 
             virtual bool disabled_rw_exported() override {
-                if (cache_[1] == -1) {
-                    cache_[1] = server_configurable_flags::GetServerConfigurableFlag(
+                int8_t cached = cache_[1].load(std::memory_order_relaxed);
+                if (cached == -1) {
+                    cached = server_configurable_flags::GetServerConfigurableFlag(
                         "aconfig_flags.aconfig_test",
                         "com.android.aconfig.test.disabled_rw_exported",
                         "false") == "true";
+                    cache_[1].store(cached, std::memory_order_relaxed);
                 }
-                return cache_[1];
+                return cached;
             }
 
             virtual bool disabled_rw_in_other_namespace() override {
-                if (cache_[2] == -1) {
-                    cache_[2] = server_configurable_flags::GetServerConfigurableFlag(
+                int8_t cached = cache_[2].load(std::memory_order_relaxed);
+                if (cached == -1) {
+                    cached = server_configurable_flags::GetServerConfigurableFlag(
                         "aconfig_flags.other_namespace",
                         "com.android.aconfig.test.disabled_rw_in_other_namespace",
                         "false") == "true";
+                    cache_[2].store(cached, std::memory_order_relaxed);
                 }
-                return cache_[2];
+                return cached;
             }
 
             virtual bool enabled_fixed_ro() override {
@@ -643,17 +657,19 @@ namespace com::android::aconfig::test {
             }
 
             virtual bool enabled_rw() override {
-                if (cache_[3] == -1) {
-                    cache_[3] = server_configurable_flags::GetServerConfigurableFlag(
+                int8_t cached = cache_[3].load(std::memory_order_relaxed);
+                if (cached == -1) {
+                    cached = server_configurable_flags::GetServerConfigurableFlag(
                         "aconfig_flags.aconfig_test",
                         "com.android.aconfig.test.enabled_rw",
                         "true") == "true";
+                    cache_[3].store(cached, std::memory_order_relaxed);
                 }
-                return cache_[3];
+                return cached;
             }
 
     private:
-        std::vector<int8_t> cache_ = std::vector<int8_t>(4, -1);
+        std::vector<std::atomic_int8_t> cache_;
     };
 
     std::unique_ptr<flag_provider_interface> provider_ =
@@ -944,44 +960,57 @@ void com_android_aconfig_test_reset_flags() {
     const EXPORTED_SOURCE_FILE_EXPECTED: &str = r#"
 #include "com_android_aconfig_test.h"
 #include <server_configurable_flags/get_flags.h>
+#include <atomic>
 #include <vector>
 
 namespace com::android::aconfig::test {
 
     class flag_provider : public flag_provider_interface {
         public:
+            flag_provider()
+                : cache_(3) {
+                for (size_t i = 0 ; i < 3; i++) {
+                    cache_[i] = -1;
+                }
+            }
             virtual bool disabled_rw_exported() override {
-                if (cache_[0] == -1) {
-                    cache_[0] = server_configurable_flags::GetServerConfigurableFlag(
+                int8_t cached = cache_[0].load(std::memory_order_relaxed);
+                if (cached == -1) {
+                    cached = server_configurable_flags::GetServerConfigurableFlag(
                         "aconfig_flags.aconfig_test",
                         "com.android.aconfig.test.disabled_rw_exported",
                         "false") == "true";
+                    cache_[0].store(cached, std::memory_order_relaxed);
                 }
-                return cache_[0];
+                return cached;
             }
 
             virtual bool enabled_fixed_ro_exported() override {
-                if (cache_[1] == -1) {
-                    cache_[1] = server_configurable_flags::GetServerConfigurableFlag(
+                int8_t cached = cache_[1].load(std::memory_order_relaxed);
+                if (cached == -1) {
+                    cached = server_configurable_flags::GetServerConfigurableFlag(
                         "aconfig_flags.aconfig_test",
                         "com.android.aconfig.test.enabled_fixed_ro_exported",
                         "false") == "true";
+                    cache_[1].store(cached, std::memory_order_relaxed);
                 }
-                return cache_[1];
+                return cached;
             }
 
             virtual bool enabled_ro_exported() override {
-                if (cache_[2] == -1) {
-                    cache_[2] = server_configurable_flags::GetServerConfigurableFlag(
+                int8_t cached = cache_[2].load(std::memory_order_relaxed);
+                if (cached == -1) {
+                    cached = server_configurable_flags::GetServerConfigurableFlag(
                         "aconfig_flags.aconfig_test",
                         "com.android.aconfig.test.enabled_ro_exported",
                         "false") == "true";
+                    cache_[2].store(cached, std::memory_order_relaxed);
                 }
-                return cache_[2];
+                return cached;
             }
 
     private:
-        std::vector<int8_t> cache_ = std::vector<int8_t>(3, -1);
+        std::vector<std::atomic_int8_t> cache_;
     };
 
     std::unique_ptr<flag_provider_interface> provider_ =
