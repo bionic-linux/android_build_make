@@ -34,6 +34,24 @@
       ],
       "revId": "04d1bc5dcb9d39b4ac1e2c3493b4b6019678c51c",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0cdae8da_1879a6f5",
+        "filename": "tools/releasetools/non_ab_ota.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 569,
+      "author": {
+        "id": 1090594
+      },
+      "writtenOn": "2024-08-12T17:15:56Z",
+      "side": 1,
+      "message": "-y isn\u0027t yes/no, it\u0027s:\n\n```\n-y\n--symlinks\n       For UNIX and VMS (V8.3 and later), store symbolic links as such in the zip archive, instead of  com‐\n       pressing  and storing the file referred to by the link.  This can avoid multiple copies of files be‐\n       ing included in the archive as zip recurses the directory trees and accesses files directly  and  by\n       links.\n```",
+      "parentUuid": "7ec5204d_aab3edec",
+      "revId": "04d1bc5dcb9d39b4ac1e2c3493b4b6019678c51c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
