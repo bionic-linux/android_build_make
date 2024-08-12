@@ -235,6 +235,7 @@ PRODUCT_PACKAGES += \
     netd \
     NetworkStack \
     odsign \
+    oem-defined-uids.xml \
     org.apache.http.legacy \
     otacerts \
     PackageInstaller \
