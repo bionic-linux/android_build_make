@@ -28,31 +28,31 @@ class AconfigTest : public ::testing::Test {
 
 TEST_F(AconfigTest, TestDisabledReadOnlyFlag) {
   ASSERT_FALSE(com_android_aconfig_test_disabled_ro());
-  ASSERT_FALSE(provider_->disabled_ro());
+  ASSERT_FALSE(provider_->get()->disabled_ro());
   ASSERT_FALSE(disabled_ro());
 }
 
 TEST_F(AconfigTest, TestEnabledReadOnlyFlag) {
   ASSERT_TRUE(com_android_aconfig_test_enabled_ro());
-  ASSERT_TRUE(provider_->enabled_ro());
+  ASSERT_TRUE(provider_->get()->enabled_ro());
   ASSERT_TRUE(enabled_ro());
 }
 
 TEST_F(AconfigTest, TestDisabledReadWriteFlag) {
   ASSERT_FALSE(com_android_aconfig_test_disabled_rw());
-  ASSERT_FALSE(provider_->disabled_rw());
+  ASSERT_FALSE(provider_->get()->disabled_rw());
   ASSERT_FALSE(disabled_rw());
 }
 
 TEST_F(AconfigTest, TestEnabledReadWriteFlag) {
   ASSERT_TRUE(com_android_aconfig_test_enabled_rw());
-  ASSERT_TRUE(provider_->enabled_rw());
+  ASSERT_TRUE(provider_->get()->enabled_rw());
   ASSERT_TRUE(enabled_rw());
 }
 
 TEST_F(AconfigTest, TestEnabledFixedReadOnlyFlag) {
   ASSERT_TRUE(com_android_aconfig_test_enabled_fixed_ro());
-  ASSERT_TRUE(provider_->enabled_fixed_ro());
+  ASSERT_TRUE(provider_->get()->enabled_fixed_ro());
   ASSERT_TRUE(enabled_fixed_ro());
 }
 
