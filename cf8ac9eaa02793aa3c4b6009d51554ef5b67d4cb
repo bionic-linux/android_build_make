@@ -70,6 +70,24 @@
       "parentUuid": "f46697f6_07b42d88",
       "revId": "cf8ac9eaa02793aa3c4b6009d51554ef5b67d4cb",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7b0f7a2c_da0b69b4",
+        "filename": "core/Makefile",
+        "patchSetId": 2
+      },
+      "lineNbr": 7888,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-08-12T15:30:42Z",
+      "side": 1,
+      "message": "What does `update-device` take as an input?",
+      "parentUuid": "4cec858c_591c5d86",
+      "revId": "cf8ac9eaa02793aa3c4b6009d51554ef5b67d4cb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
