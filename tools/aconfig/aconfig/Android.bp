@@ -159,7 +159,8 @@ cc_test {
         "libgmock",
     ],
     shared_libs: [
-        "server_configurable_flags",
+        "libbase",
+        "server_configurable_flags", 
     ],
     defaults: [
         "aconfig_lib_cc_static_link.defaults",
@@ -177,6 +178,7 @@ cc_test {
         "libgmock",
     ],
     shared_libs: [
+        "libbase",
         "server_configurable_flags",
     ],
     defaults: [
@@ -222,6 +224,7 @@ cc_test {
         "libgmock",
     ],
     shared_libs: [
+        "libbase",
         "server_configurable_flags",
     ],
     defaults: [

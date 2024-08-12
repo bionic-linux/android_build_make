@@ -17,6 +17,8 @@
 
 #ifdef __cplusplus
 
+#include <android-base/no_destructor.h>
+
 #include <memory>
 
 namespace {cpp_namespace} \{
@@ -37,15 +39,15 @@ public:
     {{ -endif }}
 };
 
-extern std::unique_ptr<flag_provider_interface> provider_;
+extern ::android::base::NoDestructor<std::unique_ptr<flag_provider_interface>> provider_;
 
 {{ for item in class_elements}}
 inline bool {item.flag_name}() \{
     {{ -if is_test_mode }}
-    return provider_->{item.flag_name}();
+    return provider_->get()->{item.flag_name}();
     {{ -else }}
     {{ -if item.readwrite }}
-    return provider_->{item.flag_name}();
+    return provider_->get()->{item.flag_name}();
     {{ -else }}
     {{ -if item.is_fixed_read_only }}
     return {package_macro}_{item.flag_macro};
@@ -58,14 +60,14 @@ inline bool {item.flag_name}() \{
 
 {{ -if is_test_mode }}
 inline void {item.flag_name}(bool val) \{
-    provider_->{item.flag_name}(val);
+    provider_->get()->{item.flag_name}(val);
 }
 {{ -endif }}
 {{ -endfor }}
 
 {{ -if is_test_mode }}
 inline void reset_flags() \{
-    return provider_->reset_flags();
+    return provider_->get()->reset_flags();
 }
 {{ -endif }}
 

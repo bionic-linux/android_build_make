@@ -21,21 +21,21 @@ using namespace com::android::aconfig::test;
 
 TEST(AconfigTest, TestDisabledRwExportedFlag) {
   ASSERT_FALSE(com_android_aconfig_test_disabled_rw_exported());
-  ASSERT_FALSE(provider_->disabled_rw_exported());
+  ASSERT_FALSE(provider_->get()->disabled_rw_exported());
   ASSERT_FALSE(disabled_rw_exported());
 }
 
 TEST(AconfigTest, TestEnabledFixedRoExportedFlag) {
   // TODO: change to assertTrue(enabledFixedRoExported()) when the build supports reading tests/*.values
   ASSERT_FALSE(com_android_aconfig_test_enabled_fixed_ro_exported());
-  ASSERT_FALSE(provider_->enabled_fixed_ro_exported());
+  ASSERT_FALSE(provider_->get()->enabled_fixed_ro_exported());
   ASSERT_FALSE(enabled_fixed_ro_exported());
 }
 
 TEST(AconfigTest, TestEnabledRoExportedFlag) {
   // TODO: change to assertTrue(enabledRoExported()) when the build supports reading tests/*.values
   ASSERT_FALSE(com_android_aconfig_test_enabled_ro_exported());
-  ASSERT_FALSE(provider_->enabled_ro_exported());
+  ASSERT_FALSE(provider_->get()->enabled_ro_exported());
   ASSERT_FALSE(enabled_ro_exported());
 }
 
