@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c2e45a57_10a4463c",
+        "filename": "core/main.mk",
+        "patchSetId": 12
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1002751
+      },
+      "writtenOn": "2024-08-13T22:18:49Z",
+      "side": 1,
+      "message": "I don\u0027t think this is necessary, `build/make/core/config.mk` was just included above.",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 0
+      },
+      "revId": "f7dc09b00980980149df673c4d1dc4e95b81ee87",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0c5a011b_0252446c",
+        "filename": "core/soong_config.mk",
+        "patchSetId": 12
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1002751
+      },
+      "writtenOn": "2024-08-13T22:18:49Z",
+      "side": 1,
+      "message": "I don\u0027t think this is necessary, this is included from `core/config.mk` after setting `COVERAGE_SUFFIX`.",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 0
+      },
+      "revId": "f7dc09b00980980149df673c4d1dc4e95b81ee87",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
