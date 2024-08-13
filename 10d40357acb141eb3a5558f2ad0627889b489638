@@ -69,6 +69,24 @@
       "parentUuid": "b55b1e64_23ca4ef4",
       "revId": "10d40357acb141eb3a5558f2ad0627889b489638",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "00bc39f3_7f7c7d88",
+        "filename": "target/product/base_system.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 1480715
+      },
+      "writtenOn": "2024-08-13T00:46:48Z",
+      "side": 1,
+      "message": "Ah, makes sense. Thanks for the explanations! Abandoning this change now.",
+      "parentUuid": "ffc68b40_d67a80c7",
+      "revId": "10d40357acb141eb3a5558f2ad0627889b489638",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
