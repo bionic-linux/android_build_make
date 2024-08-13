@@ -16,6 +16,24 @@
       "message": "What\u0027s the use case for this?\n\nWe\u0027re trying to have fewer conditionals in the config files. Conditionals based on the presence of a file are particularly problemabtic because they make it impossible to reproduce builds from an external source tree (aosp, partners, etc) in main.",
       "revId": "b8b2bb48c5198c38cb1fca48b061a87055bdd6f5",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a693a167_f97e19ca",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3487518
+      },
+      "writtenOn": "2024-08-13T21:31:29Z",
+      "side": 1,
+      "message": "I\u0027m setting up a PDK for a partner who doesn\u0027t have access to the NDK translation source, so I wanted them to fall back to using the prebuilts. Though it turns out we can\u0027t share the prebuilts with all our partners (yet), so I can\u0027t actually use this change. Instead I went with the following: https://googleplex-android-review.git.corp.google.com/c/device/google/desktop/common/+/28784804\n\n\u003e they make it impossible to reproduce builds from an external source tree (aosp, partners, etc) in main.\n\n\nI\u0027ve learned this the hard way :/ Creating a PDK has been challenging. Maybe the best thing to do is to split my target? i.e., brya -\u003e aosp_brya, partner_brya, brya (internal version). Though, I\u0027m not sure how to enforce that `aosp_` only uses AOSP sources. What target do partners typically build?",
+      "parentUuid": "129bf50d_66d1112c",
+      "revId": "b8b2bb48c5198c38cb1fca48b061a87055bdd6f5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
