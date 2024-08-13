@@ -26,3 +26,5 @@ PRODUCT_PACKAGES += \
     product_manifest.xml \
     selinux_policy_product \
     product-build.prop \
+    VmTerminalApp \
+
