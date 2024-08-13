@@ -48,6 +48,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7f1d5ce7_06be336b",
+        "filename": "core/Makefile",
+        "patchSetId": 2
+      },
+      "lineNbr": 6696,
+      "author": {
+        "id": 1415877
+      },
+      "writtenOn": "2024-08-13T01:20:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "111a91d9_1792e9a8",
+      "range": {
+        "startLine": 6696,
+        "startChar": 0,
+        "endLine": 6696,
+        "endChar": 72
+      },
+      "revId": "67911682c2eed89bf5d14a3017b89427fb3b3e06",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2e4e8d3d_cf138439",
@@ -61,6 +85,30 @@
       "writtenOn": "2024-08-09T21:32:52Z",
       "side": 1,
       "message": "Hey Kelvin, I think this explains how we interpret values in META/misc_info.txt.",
+      "range": {
+        "startLine": 855,
+        "startChar": 0,
+        "endLine": 859,
+        "endChar": 21
+      },
+      "revId": "67911682c2eed89bf5d14a3017b89427fb3b3e06",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bb21d6a8_e2691948",
+        "filename": "tools/releasetools/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 859,
+      "author": {
+        "id": 1415877
+      },
+      "writtenOn": "2024-08-13T01:20:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2e4e8d3d_cf138439",
       "range": {
         "startLine": 855,
         "startChar": 0,
