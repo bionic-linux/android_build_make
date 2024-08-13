@@ -70,6 +70,30 @@
       },
       "revId": "fc168286e0c700e56041ea3498875af93e089b4f",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a9481d0f_bc0552b7",
+        "filename": "tools/aconfig/aconfig/src/codegen/java.rs",
+        "patchSetId": 3
+      },
+      "lineNbr": 720,
+      "author": {
+        "id": 1981530
+      },
+      "writtenOn": "2024-08-13T18:50:52Z",
+      "side": 1,
+      "message": "Resolving.",
+      "parentUuid": "6a73ddff_ecbc9b3e",
+      "range": {
+        "startLine": 720,
+        "startChar": 0,
+        "endLine": 720,
+        "endChar": 46
+      },
+      "revId": "fc168286e0c700e56041ea3498875af93e089b4f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
