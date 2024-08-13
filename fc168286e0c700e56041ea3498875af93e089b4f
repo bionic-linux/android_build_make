@@ -46,6 +46,30 @@
       },
       "revId": "fc168286e0c700e56041ea3498875af93e089b4f",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6a73ddff_ecbc9b3e",
+        "filename": "tools/aconfig/aconfig/src/codegen/java.rs",
+        "patchSetId": 3
+      },
+      "lineNbr": 720,
+      "author": {
+        "id": 1981530
+      },
+      "writtenOn": "2024-08-13T17:18:14Z",
+      "side": 1,
+      "message": "You\u0027re right, I don\u0027t think we need it. It should run once. I wonder if there is a race condition though, say two processes call init at the same time, and it hasn\u0027t run yet, it could run twice. Potentially worth addressing in a follow-up CL.",
+      "parentUuid": "3413b660_b390eb55",
+      "range": {
+        "startLine": 720,
+        "startChar": 0,
+        "endLine": 720,
+        "endChar": 46
+      },
+      "revId": "fc168286e0c700e56041ea3498875af93e089b4f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
