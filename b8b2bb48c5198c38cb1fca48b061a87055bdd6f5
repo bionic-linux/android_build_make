@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "129bf50d_66d1112c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-08-13T21:21:09Z",
+      "side": 1,
+      "message": "What\u0027s the use case for this?\n\nWe\u0027re trying to have fewer conditionals in the config files. Conditionals based on the presence of a file are particularly problemabtic because they make it impossible to reproduce builds from an external source tree (aosp, partners, etc) in main.",
+      "revId": "b8b2bb48c5198c38cb1fca48b061a87055bdd6f5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
