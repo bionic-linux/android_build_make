@@ -550,7 +550,7 @@ def GetApexInfoFromTargetFiles(input_file):
   if not isinstance(input_file, str):
     raise RuntimeError("must pass filepath to target-files zip or directory")
   apex_infos = []
-  for partition in ['system', 'system_ext', 'product', 'vendor']:
+  for partition in ['system', 'system_ext', 'product', 'vendor', 'odm']:
     apex_infos.extend(GetApexInfoForPartition(input_file, partition))
   return apex_infos
 
