@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "54107f1c_ba0ee03c",
+        "filename": "tools/aconfig/aconfig/src/codegen/java.rs",
+        "patchSetId": 3
+      },
+      "lineNbr": 720,
+      "author": {
+        "id": 1890055
+      },
+      "writtenOn": "2024-08-13T14:49:50Z",
+      "side": 1,
+      "message": "For my information: how many times do we init?",
+      "range": {
+        "startLine": 720,
+        "startChar": 0,
+        "endLine": 720,
+        "endChar": 46
+      },
+      "revId": "fc168286e0c700e56041ea3498875af93e089b4f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
