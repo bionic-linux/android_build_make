@@ -1,0 +1,45 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4c6451ba_4c1481d2",
+        "filename": "tools/releasetools/apex_utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 553,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2024-08-13T05:57:54Z",
+      "side": 1,
+      "message": "(might worth extracting this list into a variable",
+      "range": {
+        "startLine": 553,
+        "startChar": 19,
+        "endLine": 553,
+        "endChar": 71
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "b0bf5370_1d455673",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "tools/releasetools/apex_utils.py",
+              "range": {
+                "startLine": 553,
+                "startChar": 0,
+                "endLine": 554,
+                "endChar": 0
+              },
+              "replacement": "  partitions \u003d [\u0027system\u0027, \u0027system_ext\u0027, \u0027product\u0027, \u0027vendor\u0027, \u0027odm\u0027]\n  for partition in partitions:\n"
+            }
+          ]
+        }
+      ],
+      "revId": "389cc6aa980fc1281307f5557c7e2538462ccfa9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
