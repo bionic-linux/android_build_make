@@ -1,5 +1,14 @@
-SOONG_MAKEVARS_MK := $(SOONG_OUT_DIR)/make_vars-$(TARGET_PRODUCT).mk
-SOONG_ANDROID_MK := $(SOONG_OUT_DIR)/Android-$(TARGET_PRODUCT).mk
+# EMMA_INSTRUMENT is set to true when coverage is enabled. Creates a suffix to
+# differeciate the coverage version of ninja files. This will save 5 minutes of
+# build time used to regenrate ninja.
+ifeq (true,$(EMMA_INSTRUMENT))
+COVERAGE_SUFFIX := '.coverage'
+else
+COVERAGE_SUFFIX := ''
+endif
+
+SOONG_MAKEVARS_MK := $(SOONG_OUT_DIR)/make_vars-$(TARGET_PRODUCT)$(COVERAGE_SUFFIX).mk
+SOONG_ANDROID_MK := $(SOONG_OUT_DIR)/Android-$(TARGET_PRODUCT)$(COVERAGE_SUFFIX).mk
 
 include $(BUILD_SYSTEM)/art_config.mk
 include $(BUILD_SYSTEM)/dex_preopt_config.mk
@@ -26,7 +35,7 @@ ifeq ($(WRITE_SOONG_VARIABLES),true)
 $(shell mkdir -p $(dir $(SOONG_VARIABLES)))
 $(call json_start)
 
-$(call add_json_str,  Make_suffix, -$(TARGET_PRODUCT))
+$(call add_json_str,  Make_suffix, -$(TARGET_PRODUCT)$(COVERAGE_SUFFIX))
 
 $(call add_json_str,  BuildId,                           $(BUILD_ID))
 $(call add_json_str,  BuildFingerprintFile,              build_fingerprint.txt)
