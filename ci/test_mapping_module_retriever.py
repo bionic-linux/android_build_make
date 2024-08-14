@@ -17,6 +17,8 @@ Simple parsing code to scan test_mapping files and determine which
 modules are needed to build for the given list of changed files.
 TODO(lucafarsi): Deduplicate from artifact_helper.py
 """
+# TODO(lucafarsi): Share this logic with the original logic in
+# test_mapping_test_retriever.py
 
 from typing import Any, Dict, Set, Text
 import json
@@ -123,3 +125,54 @@ def GetTestMappings(paths: Set[Text],
       pass
 
   return test_mappings
+
+
+def find_affected_modules(
+    test_mappings: dict[str, any],
+    changed_files: set[str],
+    test_mapping_test_groups: set[str],
+) -> set[str]:
+  modules = set()
+
+  # The test_mappings object returned by GetTestMappings is organized as
+  # follows:
+  # {
+  #   'test_mapping_file_path': {
+  #     'group_name' : [
+  #       'name': 'module_name',
+  #     ],
+  #   }
+  # }
+  for test_mapping in test_mappings.values():
+    for group_name, group in test_mapping.items():
+      # If a module is not in any of the test mapping groups being tested skip
+      # it.
+      if group_name not in test_mapping_test_groups:
+        continue
+
+      for entry in group:
+        module_name = entry.get('name', None)
+
+        if not module_name:
+          continue
+
+        file_patterns = entry.get('file_patterns', '')
+        if not file_patterns:
+          modules.add(module_name)
+          continue
+
+        if matches_file_patterns(file_patterns, changed_files):
+          modules.add(module_name)
+          continue
+
+  return modules
+
+def matches_file_patterns(
+    file_patterns: list[set], changed_files: set[str]
+) -> bool:
+  for changed_file in changed_files:
+    for pattern in file_patterns:
+      if re.search(pattern, changed_file):
+        return True
+
+  return False

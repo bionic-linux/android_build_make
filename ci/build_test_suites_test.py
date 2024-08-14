@@ -36,6 +36,7 @@ from build_context import BuildContext
 import build_test_suites
 import ci_test_lib
 import optimized_targets
+from build_context import BuildContext
 from pyfakefs import fake_filesystem_unittest
 
 
