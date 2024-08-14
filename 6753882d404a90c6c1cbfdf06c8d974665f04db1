@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c0c4481f_cb5fe88b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1064003
+      },
+      "writtenOn": "2024-08-14T16:55:34Z",
+      "side": 1,
+      "message": "@ccross@android.com I just noticed this has dropped off my radar, any thoughts? I guess there\u0027s a version that would use build flags (the `manual` type?), let me know how you\u0027d like to proceed.",
+      "revId": "6753882d404a90c6c1cbfdf06c8d974665f04db1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
