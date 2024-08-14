@@ -24,6 +24,7 @@ import re
 import subprocess
 import sys
 from typing import Callable
+from build_test_suites_utils import *
 import optimized_targets
 
 
@@ -53,15 +54,6 @@ class BuildPlanner:
   any output zip files needed by the build.
   """
 
-  _DOWNLOAD_OPTS = {
-      'test-config-only-zip',
-      'test-zip-file-filter',
-      'extra-host-shared-lib-zip',
-      'sandbox-tests-zips',
-      'additional-files-filter',
-      'cts-package-name',
-  }
-
   def __init__(
       self,
       build_context: dict[str, any],
@@ -81,11 +73,13 @@ class BuildPlanner:
 
     build_targets = set()
     packaging_functions = set()
-    self.file_download_options = self._aggregate_file_download_options()
+    self.file_download_options = aggregate_file_download_options(
+        self.build_context
+    )
     for target in self.args.extra_targets:
       if self._unused_target_exclusion_enabled(
           target
-      ) and not self._build_target_used(target):
+      ) and not build_target_used(target, self.file_download_options):
         continue
 
       target_optimizer_getter = self.target_optimizations.get(target, None)
@@ -105,30 +99,6 @@ class BuildPlanner:
     return f'{target}_unused_exclusion' in self.build_context.get(
         'enabledBuildFeatures', []
     )
-
-  def _build_target_used(self, target: str) -> bool:
-    """Determines whether this target's outputs are used by the test configurations listed in the build context."""
-    # For all of a targets' outputs, check if any of the regexes used by tests
-    # to download artifacts would match it. If any of them do then this target
-    # is necessary.
-    regex = r'\b(%s)\b' % re.escape(target)
-    return any(re.search(regex, opt) for opt in self.file_download_options)
-
-  def _aggregate_file_download_options(self) -> set[str]:
-    """Lists out all test config options to specify targets to download.
-
-    These come in the form of regexes.
-    """
-    all_options = set()
-    for test_info in self._get_test_infos():
-      for opt in test_info.get('extraOptions', []):
-        # check the known list of options for downloading files.
-        if opt.get('key') in self._DOWNLOAD_OPTS:
-          all_options.update(opt.get('values', []))
-    return all_options
-
-  def _get_test_infos(self):
-    return self.build_context.get('testContext', dict()).get('testInfos', [])
 
 
 @dataclass(frozen=True)
