@@ -34,6 +34,24 @@
       "parentUuid": "c0c4481f_cb5fe88b",
       "revId": "6753882d404a90c6c1cbfdf06c8d974665f04db1",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a487cd94_fe714682",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1064003
+      },
+      "writtenOn": "2024-08-14T23:53:00Z",
+      "side": 1,
+      "message": "We were going to share this customization w/ Samsung, as they\u0027ve started turning on optimizations for more targets (e.g., system_server b/349245577).",
+      "parentUuid": "0aecdf85_cfd558b8",
+      "revId": "6753882d404a90c6c1cbfdf06c8d974665f04db1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
