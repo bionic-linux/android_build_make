@@ -35,6 +35,7 @@ from unittest import mock
 import build_test_suites
 import ci_test_lib
 import optimized_targets
+from build_context import BuildContext
 from pyfakefs import fake_filesystem_unittest
 
 
@@ -402,7 +403,7 @@ class BuildPlannerTest(unittest.TestCase):
   def create_build_planner(
       self,
       build_targets: set[str],
-      build_context: dict[str, any] = None,
+      build_context: BuildContext = None,
       args: argparse.Namespace = None,
       target_optimizations: dict[
           str, optimized_targets.OptimizedBuildTarget
@@ -428,13 +429,13 @@ class BuildPlannerTest(unittest.TestCase):
       optimized_build_enabled: bool = True,
       enabled_build_features: set[str] = set(),
       test_context: dict[str, any] = {},
-  ) -> dict[str, any]:
-    build_context = {}
-    build_context['enabledBuildFeatures'] = enabled_build_features
+  ) -> BuildContext:
+    build_context_dict = {}
+    build_context_dict['enabledBuildFeatures'] = enabled_build_features
     if optimized_build_enabled:
-      build_context['enabledBuildFeatures'].add('optimized_build')
-    build_context['testContext'] = test_context
-    return build_context
+      build_context_dict['enabledBuildFeatures'].add('optimized_build')
+    build_context_dict['testContext'] = test_context
+    return BuildContext(build_context_dict)
 
   def create_args(
       self, extra_build_targets: set[str] = set()
@@ -445,7 +446,7 @@ class BuildPlannerTest(unittest.TestCase):
 
   def create_target_optimizations(
       self,
-      build_context: dict[str, any],
+      build_context: BuildContext,
       build_targets: set[str],
       packaging_outputs: set[str] = set(),
   ):
