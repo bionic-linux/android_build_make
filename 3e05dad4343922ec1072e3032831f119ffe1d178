@@ -16,6 +16,24 @@
       "message": "I don\u0027t think this is right. It is intentional to pass signing args as a single argument, otherwise the argument parser would not know when `--signing_args` ended. Looking at deapexer code here\n\nhttps://cs.android.com/android/platform/superproject/main/+/main:system/apex/apexer/apexer.py;l\u003d675?q\u003dsigning_args%20l:py\n\nWe already shlex the signing args, which should break the single string argument into multiple ones if needed.",
       "revId": "3e05dad4343922ec1072e3032831f119ffe1d178",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "48392a15_de1df775",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1806965
+      },
+      "writtenOn": "2024-08-15T20:04:39Z",
+      "side": 1,
+      "message": "With this change, we also modified common.py (https://cs.android.com/android/platform/superproject/main/+/main:build/make/tools/releasetools/common.py;l\u003d297?q\u003dtools%2Freleasetools%2Fcommon.py) with addition of this log line:\n```\nlogger.info(\"  Individual args list: %s\" % args)\n```\nin order to print all the arguments individually as members of the array before subprocess call is made.\nHere\u0027s a sample log line that we got:\n```\n2024-07-30 12:42:03 - common.py - INFO    :   Individual args list: [\u0027/home/hieu/aosp/out/host/linux-x86/bin/apexer\u0027, \u0027--force\u0027, \u0027--payload_only\u0027, \u0027--do_not_check_keyname\u0027, \u0027--apexer_tool_path\u0027, \u0027/home/hieu/aosp/out/host/linux-x86/bin:/home/hieu/aosp/out/host/linux-x86/bin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/snap/bin\u0027, \u0027--manifest\u0027, \u0027/tmp/tmpjk8as91m/apex_manifest.pb\u0027, \u0027--build_info\u0027, \u0027/tmp/tmpjk8as91m/apex_build_info.pb\u0027, \u0027--key\u0027, \u0027key_dir/avb.pem\u0027, \u0027--signing_args\u0027, \u0027--signing_helper_with_files signing_helper/avb_signing_helper.py\u0027, \u0027/tmp/tmpji2gvei4\u0027, \u0027/tmp/tmpjk8as91m/apex_payload.img\u0027, \u0027-v\u0027]\n```\n\nSpecifically these arguments passed individually with no additional quotes:\n```\n\u0027--signing_args\u0027, \u0027--signing_helper_with_files signing_helper/avb_signing_helper.py\u0027\n```\nThe second argument is a compound of two strings concatenated by a space character:\n* `--signing_helper_with_files`\n* ` ` (space)\n* `signing_helper/avb_signing_helper.py`\n\nAnd the shlex can split them on the receiving side successfully.\n\nWith the original code, the arguments are like this:\n```\nIndividual args list: [\u0027/home/hieu/aosp/out/host/linux-x86/bin/apexer\u0027, \u0027--force\u0027, \u0027--payload_only\u0027, \u0027--do_not_check_keyname\u0027, \u0027--apexer_tool_path\u0027, \u0027/home/hieu/aosp/out/host/linux-x86/bin:/home/hieu/aosp/out/host/linux-x86/bin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/snap/bin\u0027, \u0027--manifest\u0027, \u0027/tmp/tmpjk8as91m/apex_manifest.pb\u0027, \u0027--build_info\u0027, \u0027/tmp/tmpjk8as91m/apex_build_info.pb\u0027, \u0027--key\u0027, \u0027key_dir/avb.pem\u0027, \u0027--signing_args\u0027, \u0027\"--signing_helper_with_files signing_helper/avb_signing_helper.py\"\u0027, \u0027/tmp/tmpji2gvei4\u0027, \u0027/tmp/tmpjk8as91m/apex_payload.img\u0027, \u0027-v\u0027]\n```\nand extracted from the log:\n```\n\u0027--signing_args\u0027, \u0027\"--signing_helper_with_files signing_helper/avb_signing_helper.py\"\u0027\n```\nand then when the common.py calls to `subprocess.Popen(args, **kwargs)`, then the double quotes get escaped and delivered as-is to the receiving side.\n\nHere\u0027s the sample python script on the receiving side:\n```\nimport shlex\n\nquoted_args_from_cmd \u003d \u0027\"--signing_helper_with_files signing_helper/avb_signing_helper.py\"\u0027\nunquoted_args_from_cmd \u003d \u0027--signing_helper_with_files signing_helper/avb_signing_helper.py\u0027\n\nprint(\u0027Shlex split quoted arguments: %s.\u0027 % shlex.split(quoted_args_from_cmd))\nprint(\u0027Shlex split unquoted arguments: %s.\u0027 % shlex.split(unquoted_args_from_cmd))\n```\n\nAnd here\u0027s the script output (from https://www.online-python.com/):\n```\nShlex split quoted arguments: [\u0027--signing_helper_with_files signing_helper/avb_signing_helper.py\u0027].\nShlex split unquoted arguments: [\u0027--signing_helper_with_files\u0027, \u0027signing_helper/avb_signing_helper.py\u0027].\n```\n\nAs you can see, the shlex fails to split arguments when they are wrapped in double quotes.",
+      "parentUuid": "9f7ec5a9_bf21058b",
+      "revId": "3e05dad4343922ec1072e3032831f119ffe1d178",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
