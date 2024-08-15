@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9f7ec5a9_bf21058b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2024-08-15T19:25:07Z",
+      "side": 1,
+      "message": "I don\u0027t think this is right. It is intentional to pass signing args as a single argument, otherwise the argument parser would not know when `--signing_args` ended. Looking at deapexer code here\n\nhttps://cs.android.com/android/platform/superproject/main/+/main:system/apex/apexer/apexer.py;l\u003d675?q\u003dsigning_args%20l:py\n\nWe already shlex the signing args, which should break the single string argument into multiple ones if needed.",
+      "revId": "3e05dad4343922ec1072e3032831f119ffe1d178",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
