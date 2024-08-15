@@ -34,6 +34,24 @@
       "parentUuid": "9f7ec5a9_bf21058b",
       "revId": "3e05dad4343922ec1072e3032831f119ffe1d178",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "637fd20f_7c778cd9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2024-08-15T21:41:16Z",
+      "side": 1,
+      "message": "I would rephrase the comment then. The apex_util -\u003e deapexer transition still signing args in as 1 huge string, just without the double qoutes. Once deapexer receives the arugment, deapexer would attempt to shlex it, but double quotes prevents proper shlexing, hence remove the double quotes.",
+      "parentUuid": "48392a15_de1df775",
+      "revId": "3e05dad4343922ec1072e3032831f119ffe1d178",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
