@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3fda66c6_e2f9e6e5",
+        "filename": "teams/Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 4419,
+      "author": {
+        "id": 1643016
+      },
+      "writtenOn": "2024-08-15T14:28:28Z",
+      "side": 1,
+      "message": "I think the only Trendy team we are all part of is https://android-trendy.corp.google.com/manage/engineers/Android%20Media%20Solutions. The same applies to the \"Editing\" list above. I wasn\u0027t aware the team linked here even exists and it also has no members :) \n\n@abualkali@google.com in case you are working on any changes here.",
+      "revId": "7b854c7783604c94139386c2991bcd51fb2efdbd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
