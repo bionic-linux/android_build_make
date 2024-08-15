@@ -16,6 +16,24 @@
       "message": "I think the only Trendy team we are all part of is https://android-trendy.corp.google.com/manage/engineers/Android%20Media%20Solutions. The same applies to the \"Editing\" list above. I wasn\u0027t aware the team linked here even exists and it also has no members :) \n\n@abualkali@google.com in case you are working on any changes here.",
       "revId": "7b854c7783604c94139386c2991bcd51fb2efdbd",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b5855f0e_ce5788a4",
+        "filename": "teams/Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 4419,
+      "author": {
+        "id": 1937424
+      },
+      "writtenOn": "2024-08-15T15:02:33Z",
+      "side": 1,
+      "message": "Yes you are correct. I created the trendy team for the playback team solely so test issues can be assigned to the playback team\u0027s component. Also did similar to for the Editing team. This cl completes the process. I had initially created aosp/3190036 to add the playback team to the Android.bp file, but I will abandon that cl since this already covers it.",
+      "parentUuid": "3fda66c6_e2f9e6e5",
+      "revId": "7b854c7783604c94139386c2991bcd51fb2efdbd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
