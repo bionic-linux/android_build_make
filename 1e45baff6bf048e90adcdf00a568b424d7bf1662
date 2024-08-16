@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e162f949_a96e7051",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1415877
+      },
+      "writtenOn": "2024-08-16T02:28:23Z",
+      "side": 1,
+      "message": "Hey Kelvin and Joe, this lost +2s. Can you give it again? (A new patchset is for fixing an build error of missing deps)",
+      "revId": "1e45baff6bf048e90adcdf00a568b424d7bf1662",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
