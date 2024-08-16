@@ -52,6 +52,24 @@
       "parentUuid": "48392a15_de1df775",
       "revId": "3e05dad4343922ec1072e3032831f119ffe1d178",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2381ea1c_91d94845",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 3584299
+      },
+      "writtenOn": "2024-08-16T16:09:48Z",
+      "side": 1,
+      "message": "Hello, I updated the comment as you suggested",
+      "parentUuid": "637fd20f_7c778cd9",
+      "revId": "3e05dad4343922ec1072e3032831f119ffe1d178",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
