@@ -4428,8 +4428,15 @@ team {
 }
 
 team {
+<<<<<<< PATCH SET (2d6888 Add trendy team for Pixel Troubleshooting App)
+    name: "trendy_team_pixel_troubleshooting_app",
+
+    // go/trendy/manage/engineers/5097003746426880
+    trendy_team_id: "5097003746426880",
+=======
     name: "trendy_team_pte_sysui",
 
     // go/trendy/manage/engineers/5185897463382016
     trendy_team_id: "5185897463382016",
+>>>>>>> BASE      (1afb74 Merge "Add trendy team for android media solutions playback")
 }
