@@ -24,6 +24,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a63d7a14_f69c3233",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-08-16T23:56:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1440ad86_6f444ef5",
+      "range": {
+        "startLine": 12,
+        "startChar": 14,
+        "endLine": 12,
+        "endChar": 20
+      },
+      "revId": "e02a6e727ab63a5c4e3870a17f6d434bbbfa1bca",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b080b9e9_0edce8e7",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-08-14T02:12:46Z",
       "side": 1,
       "message": "s/groups/group/g\n\ns/if/If/",
+      "range": {
+        "startLine": 15,
+        "startChar": 19,
+        "endLine": 15,
+        "endChar": 25
+      },
+      "revId": "e02a6e727ab63a5c4e3870a17f6d434bbbfa1bca",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f51653e4_40443ee5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-08-16T23:56:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b080b9e9_0edce8e7",
       "range": {
         "startLine": 15,
         "startChar": 19,
@@ -64,6 +112,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e683cf8a_af106100",
+        "filename": "ci/build_test_suites.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-08-16T23:56:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c6bc96bc_aa52623f",
+      "revId": "e02a6e727ab63a5c4e3870a17f6d434bbbfa1bca",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ef6f452e_de230205",
@@ -81,6 +147,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f12d4dd9_258bd575",
+        "filename": "ci/build_test_suites_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-08-16T23:56:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ef6f452e_de230205",
+      "revId": "e02a6e727ab63a5c4e3870a17f6d434bbbfa1bca",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cf5e38e6_2466a21a",
@@ -94,6 +178,30 @@
       "writtenOn": "2024-08-14T02:12:46Z",
       "side": 1,
       "message": "BuildContext object should have an enabled_build_features attribute.",
+      "range": {
+        "startLine": 47,
+        "startChar": 39,
+        "endLine": 47,
+        "endChar": 59
+      },
+      "revId": "e02a6e727ab63a5c4e3870a17f6d434bbbfa1bca",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2742315d_3954a187",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-08-16T23:56:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cf5e38e6_2466a21a",
       "range": {
         "startLine": 47,
         "startChar": 39,
@@ -127,6 +235,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c83b3659_5eca28e6",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-08-16T23:56:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8b75c268_1189d9d5",
+      "range": {
+        "startLine": 120,
+        "startChar": 0,
+        "endLine": 130,
+        "endChar": 75
+      },
+      "revId": "e02a6e727ab63a5c4e3870a17f6d434bbbfa1bca",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2fd47c59_9cf9f01f",
@@ -146,6 +278,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "bed89738_428c32b2",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-08-16T23:56:33Z",
+      "side": 1,
+      "message": "Don\u0027t we just disable optimization if we find any test that isn\u0027t test mapping that uses `general-tests`? I believe that\u0027s what my logic is going here.",
+      "parentUuid": "2fd47c59_9cf9f01f",
+      "revId": "e02a6e727ab63a5c4e3870a17f6d434bbbfa1bca",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2a741367_91e3e99b",
         "filename": "ci/optimized_targets.py",
         "patchSetId": 1
@@ -157,6 +307,24 @@
       "writtenOn": "2024-08-14T02:12:46Z",
       "side": 1,
       "message": "Logic involving CHANGE_INFO should be in a separate class. This sounds generally useful and can simplify the general test optimization code if we split it out.",
+      "revId": "e02a6e727ab63a5c4e3870a17f6d434bbbfa1bca",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1e84ef86_53afb217",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-08-16T23:56:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2a741367_91e3e99b",
       "revId": "e02a6e727ab63a5c4e3870a17f6d434bbbfa1bca",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
