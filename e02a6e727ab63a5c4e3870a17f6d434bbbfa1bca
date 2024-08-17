@@ -294,6 +294,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6baea52f_a91ae5c2",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1076194
+      },
+      "writtenOn": "2024-08-17T00:40:17Z",
+      "side": 1,
+      "message": "Your new logic in patchset 3 is correct, but the version in patchset 1 was wrong and was skipping optimizations if any test uses general-tests (without checking whether the tests that use general-tests use test mapping).",
+      "parentUuid": "bed89738_428c32b2",
+      "revId": "e02a6e727ab63a5c4e3870a17f6d434bbbfa1bca",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2a741367_91e3e99b",
@@ -360,6 +378,24 @@
       "side": 1,
       "message": "This is only useful to `general-tests` and `device-tests` optimizers right (assuming no other suites involved in test_mapping pop up)? If so just a base TestMappingOptimizer class with this functionality would work that we could build both optimizers off of?",
       "parentUuid": "e8e5fd81_d3ec9ab9",
+      "revId": "e02a6e727ab63a5c4e3870a17f6d434bbbfa1bca",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "263f806f_77431a48",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 1076194
+      },
+      "writtenOn": "2024-08-17T00:40:17Z",
+      "side": 1,
+      "message": "This logic should ideally be shared with test provider itself.\n\nWe won\u0027t do that in this CL, but if it\u0027s at least in its own file and not coupled with GeneralTestsOptimizer, it should be possible to share the logic in the future.",
+      "parentUuid": "87029a9e_333a164d",
       "revId": "e02a6e727ab63a5c4e3870a17f6d434bbbfa1bca",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
