@@ -16,6 +16,24 @@
       "message": "Please sync your local workspace and send a new patch. The merge conflict should be already fixed with aosp/3225902.",
       "revId": "b754cf18b6c0bb60bcf7eecca263164c04240ecf",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "769ab024_d8204eb6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1876464
+      },
+      "writtenOn": "2024-08-17T14:43:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8435d405_96764b94",
+      "revId": "b754cf18b6c0bb60bcf7eecca263164c04240ecf",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
