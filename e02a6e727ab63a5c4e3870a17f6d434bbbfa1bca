@@ -348,6 +348,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "87029a9e_333a164d",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-08-17T00:00:03Z",
+      "side": 1,
+      "message": "This is only useful to `general-tests` and `device-tests` optimizers right (assuming no other suites involved in test_mapping pop up)? If so just a base TestMappingOptimizer class with this functionality would work that we could build both optimizers off of?",
+      "parentUuid": "e8e5fd81_d3ec9ab9",
+      "revId": "e02a6e727ab63a5c4e3870a17f6d434bbbfa1bca",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "960ca79c_2369fb21",
         "filename": "ci/optimized_targets.py",
         "patchSetId": 1
