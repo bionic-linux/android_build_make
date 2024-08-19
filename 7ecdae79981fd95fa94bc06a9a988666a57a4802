@@ -34,6 +34,24 @@
       "parentUuid": "a41f356f_8465914c",
       "revId": "7ecdae79981fd95fa94bc06a9a988666a57a4802",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b48fdb81_348df0ab",
+        "filename": "ci/build_context.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1076194
+      },
+      "writtenOn": "2024-08-19T18:18:30Z",
+      "side": 1,
+      "message": "It\u0027s an anti-pattern to:\n - expose a public constructor but depend on a factory method in order for the created objects to actually work\n - initialize instance variables outside the constructor\n\nIt\u0027s OK to have some logic inside the constructor as long as you can effectively test it.\n\nHere\u0027s more color on the same question with a bit more nuance: https://www.reddit.com/r/Python/comments/f89w3z/how_much_logic_should_i_put_in_my_constructor/",
+      "parentUuid": "9dbf27b9_15445d79",
+      "revId": "7ecdae79981fd95fa94bc06a9a988666a57a4802",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
