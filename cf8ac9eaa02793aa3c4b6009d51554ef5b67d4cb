@@ -106,6 +106,24 @@
       "parentUuid": "7b0f7a2c_da0b69b4",
       "revId": "cf8ac9eaa02793aa3c4b6009d51554ef5b67d4cb",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c66336ce_8ce60f83",
+        "filename": "core/Makefile",
+        "patchSetId": 2
+      },
+      "lineNbr": 7888,
+      "author": {
+        "id": 3508348
+      },
+      "writtenOn": "2024-08-19T17:49:53Z",
+      "side": 1,
+      "message": "The new patch set makes it so that the image isn\u0027t built locally unless you do `m pack[-recovery]-image`, but we should get both regular and recovery image archives from builders.",
+      "parentUuid": "4b76c1aa_1c398743",
+      "revId": "cf8ac9eaa02793aa3c4b6009d51554ef5b67d4cb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
