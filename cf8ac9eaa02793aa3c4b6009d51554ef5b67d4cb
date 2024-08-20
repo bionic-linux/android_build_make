@@ -142,6 +142,24 @@
       "parentUuid": "c66336ce_8ce60f83",
       "revId": "cf8ac9eaa02793aa3c4b6009d51554ef5b67d4cb",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d23ea3a5_042efbd6",
+        "filename": "core/Makefile",
+        "patchSetId": 2
+      },
+      "lineNbr": 7888,
+      "author": {
+        "id": 3508348
+      },
+      "writtenOn": "2024-08-20T16:48:08Z",
+      "side": 1,
+      "message": "Yes, the archives are built for `m dist`. From my very limited testing, the target-files and ota files (which I have building automatically with `m dist` locally) take longer than pack_image, so the only slowdown is just resource contention introduced by building and archiving the images. This could be (significantly) improved later by making pzstd available in the build to use instead of gzip. I would definitely be interested in what devs see in practice in more typical cases, though.\n\nIn any case, I\u0027m happy with the improvement on `m`\u0027s tighter loop workflow this gives us, and am happy to discuss follow ups to improve `m dist` over email or whatever.",
+      "parentUuid": "c38ce8e3_afc15fb9",
+      "revId": "cf8ac9eaa02793aa3c4b6009d51554ef5b67d4cb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
