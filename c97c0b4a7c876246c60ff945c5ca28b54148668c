@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5b6dd3bf_014a1b18",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002751
+      },
+      "writtenOn": "2024-08-20T17:18:53Z",
+      "side": 1,
+      "message": "This rule seems like it could be rewritten as a few genrules.  You would probably need one in each directory that you\u0027re pulling sources from, and then use merge_zips to combine the outputs of the per-directory genrules.",
+      "revId": "c97c0b4a7c876246c60ff945c5ca28b54148668c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
