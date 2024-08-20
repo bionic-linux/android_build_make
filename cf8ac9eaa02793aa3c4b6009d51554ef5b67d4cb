@@ -124,6 +124,24 @@
       "parentUuid": "4b76c1aa_1c398743",
       "revId": "cf8ac9eaa02793aa3c4b6009d51554ef5b67d4cb",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c38ce8e3_afc15fb9",
+        "filename": "core/Makefile",
+        "patchSetId": 2
+      },
+      "lineNbr": 7888,
+      "author": {
+        "id": 2028281
+      },
+      "writtenOn": "2024-08-20T09:36:10Z",
+      "side": 1,
+      "message": "Great! One more question. If the developer issues `m dist` the `pack_image` is executed or not? I am asking as `m dist` is required for OTA so it is in the everyday developer flow and if it builds (and compresses) the whole image it will impact the speed of development experiments made by engineers daily.",
+      "parentUuid": "c66336ce_8ce60f83",
+      "revId": "cf8ac9eaa02793aa3c4b6009d51554ef5b67d4cb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
