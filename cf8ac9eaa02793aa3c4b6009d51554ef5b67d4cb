@@ -160,6 +160,24 @@
       "parentUuid": "c38ce8e3_afc15fb9",
       "revId": "cf8ac9eaa02793aa3c4b6009d51554ef5b67d4cb",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3ead67cd_196f3462",
+        "filename": "core/Makefile",
+        "patchSetId": 2
+      },
+      "lineNbr": 7888,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-08-20T17:05:40Z",
+      "side": 1,
+      "message": "`m dist` actually does builds a ton of other stuff that you almost certainly don\u0027t want for the developer flow.  Do you know which file specifically you need?\n\nAlso, are we using gzip or zip here?  soong_zip is a rewrite of zip that among other things is parallel.  Isn\u0027t pzstd a completely different compression format, and changing to that would also mean updating everything that reads the files?",
+      "parentUuid": "d23ea3a5_042efbd6",
+      "revId": "cf8ac9eaa02793aa3c4b6009d51554ef5b67d4cb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
