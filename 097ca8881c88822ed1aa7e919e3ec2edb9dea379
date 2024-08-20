@@ -16,6 +16,24 @@
       "message": "nit: Cleanup the soong config bool variable from here as well in a followup CL\n\nhttps://source.corp.google.com/h/googleplex-android/platform/superproject/main/+/main:build/make/target/product/base_system.mk;l\u003d537?q\u003dread_from_new_storage%20f:build%2Fmake\u0026sq\u003drepo:googleplex-android%2Fplatform%2Fsuperproject%2Fmain%20b:main",
       "revId": "097ca8881c88822ed1aa7e919e3ec2edb9dea379",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2a6b4298_0a8bb8c9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1535516
+      },
+      "writtenOn": "2024-08-20T21:31:47Z",
+      "side": 1,
+      "message": "Will do.",
+      "parentUuid": "d5736b9e_8b84fb59",
+      "revId": "097ca8881c88822ed1aa7e919e3ec2edb9dea379",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
