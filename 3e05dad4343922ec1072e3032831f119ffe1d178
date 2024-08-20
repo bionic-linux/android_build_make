@@ -70,6 +70,24 @@
       "parentUuid": "637fd20f_7c778cd9",
       "revId": "3e05dad4343922ec1072e3032831f119ffe1d178",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "def53c60_ffd29eca",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 3584299
+      },
+      "writtenOn": "2024-08-20T16:30:37Z",
+      "side": 1,
+      "message": "@zhangkelvin@google.com what else do we need to make this CR merged",
+      "parentUuid": "2381ea1c_91d94845",
+      "revId": "3e05dad4343922ec1072e3032831f119ffe1d178",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
