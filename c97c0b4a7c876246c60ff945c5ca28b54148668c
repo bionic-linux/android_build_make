@@ -16,6 +16,24 @@
       "message": "This rule seems like it could be rewritten as a few genrules.  You would probably need one in each directory that you\u0027re pulling sources from, and then use merge_zips to combine the outputs of the per-directory genrules.",
       "revId": "c97c0b4a7c876246c60ff945c5ca28b54148668c",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "14185578_c608d5f3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1064724
+      },
+      "writtenOn": "2024-08-21T08:56:03Z",
+      "side": 1,
+      "message": "Thanks for the suggestion, I\u0027ll do that in a future change",
+      "parentUuid": "5b6dd3bf_014a1b18",
+      "revId": "c97c0b4a7c876246c60ff945c5ca28b54148668c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
