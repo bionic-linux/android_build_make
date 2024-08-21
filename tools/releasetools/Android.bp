@@ -546,13 +546,14 @@ python_binary_host {
     defaults: ["releasetools_binary_defaults"],
     srcs: [
         "sign_target_files_apks.py",
-        "payload_signer.py",
-        "ota_signing_utils.py",
+        "ota_from_raw_img.py",
     ],
     libs: [
         "releasetools_add_img_to_target_files",
         "releasetools_apex_utils",
         "releasetools_common",
+        "ota_metadata_proto",
+        "ota_utils_lib",
     ],
 }
 
