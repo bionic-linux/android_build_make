@@ -400,6 +400,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cb304fb6_c1ed40c3",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-08-21T23:01:40Z",
+      "side": 1,
+      "message": "Moved into test_mapping_module_retriever.py",
+      "parentUuid": "263f806f_77431a48",
+      "revId": "e02a6e727ab63a5c4e3870a17f6d434bbbfa1bca",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "960ca79c_2369fb21",
@@ -413,6 +431,24 @@
       "writtenOn": "2024-08-14T02:12:46Z",
       "side": 1,
       "message": "This needs to be in a reusable class if you\u0027re going to share logic. Can we make it possible to copybara from Android -\u003e Google3?\n\ncopybara itself will be out of scope but it should be in position such that copybara would not require a major refactor.",
+      "revId": "e02a6e727ab63a5c4e3870a17f6d434bbbfa1bca",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ebba3596_88ce9945",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-08-21T23:01:40Z",
+      "side": 1,
+      "message": "Moved into test_mapping_module_retriever.py. Copybara from Android-\u003eg3 is possible, so we can do this in the future.",
+      "parentUuid": "960ca79c_2369fb21",
       "revId": "e02a6e727ab63a5c4e3870a17f6d434bbbfa1bca",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
