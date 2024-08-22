@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9d1af684_a145b9cd",
+        "filename": "core/Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 6783,
+      "author": {
+        "id": 1002751
+      },
+      "writtenOn": "2024-08-22T16:57:00Z",
+      "side": 1,
+      "message": "There is logic here that copies non-prebuilt boot images to `/IMAGES/` instead of `/PREBUILT_IMAGES/`, is that necessary  for the 16k boot image?",
+      "revId": "11baefd70f92175ad2103844046ee168ed2a3d21",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cd555235_8052795e",
+        "filename": "core/Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 6823,
+      "author": {
+        "id": 1002751
+      },
+      "writtenOn": "2024-08-22T16:57:00Z",
+      "side": 1,
+      "message": "Should this be `BOARD_PREBUILT_DTBOIMAGE_16KB` for consistency with the other checks?",
+      "range": {
+        "startLine": 6823,
+        "startChar": 6,
+        "endLine": 6823,
+        "endChar": 37
+      },
+      "revId": "11baefd70f92175ad2103844046ee168ed2a3d21",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
