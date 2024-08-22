@@ -56,6 +56,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ea7c6f6d_6c1c0c04",
+        "filename": "core/Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 6783,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2024-08-22T17:21:59Z",
+      "side": 1,
+      "message": "Good point, though other 16K artifacts(ramdisk_16k.img) are sitting in PREBUILT_IMAGES , so I thought it make sense to put 16K related artifacts in 1 dir",
+      "parentUuid": "aaf31a53_a9df1632",
+      "revId": "11baefd70f92175ad2103844046ee168ed2a3d21",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "cd555235_8052795e",
         "filename": "core/Makefile",
         "patchSetId": 1
