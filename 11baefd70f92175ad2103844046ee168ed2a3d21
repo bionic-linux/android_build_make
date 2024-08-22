@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f25ec57e_55502d0d",
+        "filename": "core/Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 6783,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2024-08-22T17:10:47Z",
+      "side": 1,
+      "message": "I didn\u0027t copy 16KB image to IMAGES because 16K image isn\u0027t flashed to device(but IMAGES/boot.img is) Though either directory is fine.",
+      "parentUuid": "9d1af684_a145b9cd",
+      "revId": "11baefd70f92175ad2103844046ee168ed2a3d21",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "cd555235_8052795e",
         "filename": "core/Makefile",
         "patchSetId": 1
@@ -31,6 +49,30 @@
       "writtenOn": "2024-08-22T16:57:00Z",
       "side": 1,
       "message": "Should this be `BOARD_PREBUILT_DTBOIMAGE_16KB` for consistency with the other checks?",
+      "range": {
+        "startLine": 6823,
+        "startChar": 6,
+        "endLine": 6823,
+        "endChar": 37
+      },
+      "revId": "11baefd70f92175ad2103844046ee168ed2a3d21",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "db3dedbb_65e475fc",
+        "filename": "core/Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 6823,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2024-08-22T17:10:47Z",
+      "side": 1,
+      "message": "We do want to use `INSTALLED_DTBOIMAGE_16KB_TARGET` because that one has avb footer added",
+      "parentUuid": "cd555235_8052795e",
       "range": {
         "startLine": 6823,
         "startChar": 6,
