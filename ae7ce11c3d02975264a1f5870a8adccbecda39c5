@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e8f0a7b2_f4b287e1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1583551
+      },
+      "writtenOn": "2024-08-22T21:14:34Z",
+      "side": 1,
+      "message": "This change is not actually necessary.  See go/soong-selects, with special attention to `release_flag(\"RELEASE_BPF_ENABLE_LIBBPF\")`.\n\nsee also system/apex/apexd/Android.bp for an example.",
+      "revId": "ae7ce11c3d02975264a1f5870a8adccbecda39c5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
