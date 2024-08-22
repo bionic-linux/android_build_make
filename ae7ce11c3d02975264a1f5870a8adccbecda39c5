@@ -16,6 +16,24 @@
       "message": "This change is not actually necessary.  See go/soong-selects, with special attention to `release_flag(\"RELEASE_BPF_ENABLE_LIBBPF\")`.\n\nsee also system/apex/apexd/Android.bp for an example.",
       "revId": "ae7ce11c3d02975264a1f5870a8adccbecda39c5",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9ca434eb_a3ce07fe",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1981633
+      },
+      "writtenOn": "2024-08-22T21:38:48Z",
+      "side": 1,
+      "message": "I see, was just following step 4 of the documentation at http://go/android-build-flags#examples",
+      "parentUuid": "e8f0a7b2_f4b287e1",
+      "revId": "ae7ce11c3d02975264a1f5870a8adccbecda39c5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
