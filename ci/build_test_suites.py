@@ -74,9 +74,12 @@ class BuildPlanner:
 
   def create_build_plan(self):
 
-    if 'optimized_build' not in self.build_context.get(
-        'enabledBuildFeatures', []
-    ):
+    optimized_build = False
+    for opt in self.build_context.get('enabledBuildFeatures'):
+      if opt.get('name') == 'optimized_build':
+        optimized_build = True
+    if not optimized_build:
+      logging.info('optimized_build not found in enabledBuildFeatures')
       return BuildPlan(set(self.args.extra_targets), set())
 
     build_targets = set()
@@ -102,9 +105,16 @@ class BuildPlanner:
     return BuildPlan(build_targets, packaging_functions)
 
   def _unused_target_exclusion_enabled(self, target: str) -> bool:
-    return f'{target}_unused_exclusion' in self.build_context.get(
-        'enabledBuildFeatures', []
-    )
+    logging.info(f'testing if exclusion enabled for {target}')
+    if target == 'dist':
+      return False
+    return True
+    #if target == 'catbox' or target == 'gcatbox':
+    #  logging.info('returning true for catbox')
+    #  return True
+    #return f'{target}_unused_exclusion' in self.build_context.get(
+    #    'enabledBuildFeatures', []
+    #)
 
   def _build_target_used(self, target: str) -> bool:
     """Determines whether this target's outputs are used by the test configurations listed in the build context."""
@@ -112,6 +122,9 @@ class BuildPlanner:
     # to download artifacts would match it. If any of them do then this target
     # is necessary.
     regex = r'\b(%s)\b' % re.escape(target)
+    logging.info(f'regex: {regex}')
+    for opt in self.file_download_options:
+      logging.info(f'opt: {opt}, matches: {re.search(regex, opt)}')
     return any(re.search(regex, opt) for opt in self.file_download_options)
 
   def _aggregate_file_download_options(self) -> set[str]:
@@ -149,6 +162,7 @@ def build_test_suites(argv: list[str]) -> int:
   args = parse_args(argv)
   check_required_env()
   build_context = load_build_context()
+  #logging.info(build_context)
   build_planner = BuildPlanner(
       build_context, args, optimized_targets.OPTIMIZED_BUILD_TARGETS
   )
