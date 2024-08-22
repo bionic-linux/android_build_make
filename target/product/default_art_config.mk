@@ -57,6 +57,15 @@ PRODUCT_UPDATABLE_BOOT_JARS := \
     com.android.media:updatable-media \
     com.android.mediaprovider:framework-mediaprovider \
     com.android.mediaprovider:framework-pdf \
+<<<<<<< HEAD   (90bf30 Merge "Added new framework-pdf jar inside MediaProvider modu)
+||||||| BASE
+    com.android.mediaprovider:framework-pdf-v \
+    com.android.ondevicepersonalization:framework-ondevicepersonalization \
+=======
+    com.android.mediaprovider:framework-pdf-v \
+    com.android.mediaprovider:framework-photopicker \
+    com.android.ondevicepersonalization:framework-ondevicepersonalization \
+>>>>>>> CHANGE (d51b2e Add new framework-photopicker inside MediaProvider module)
     com.android.os.statsd:framework-statsd \
     com.android.permission:framework-permission \
     com.android.permission:framework-permission-s \
