@@ -72,6 +72,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "becbc861_d6075e79",
+        "filename": "core/Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 6783,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2024-08-22T20:41:33Z",
+      "side": 1,
+      "message": "Done, moved to IMAGES/",
+      "parentUuid": "ea7c6f6d_6c1c0c04",
+      "revId": "11baefd70f92175ad2103844046ee168ed2a3d21",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cd555235_8052795e",
@@ -133,6 +151,30 @@
       "side": 1,
       "message": "The other checks seem to generally use `ifdef BOARD_PREBUILT_*` and then `cp $(INSTALLED_*)`.",
       "parentUuid": "db3dedbb_65e475fc",
+      "range": {
+        "startLine": 6823,
+        "startChar": 6,
+        "endLine": 6823,
+        "endChar": 37
+      },
+      "revId": "11baefd70f92175ad2103844046ee168ed2a3d21",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a2673780_889fc78d",
+        "filename": "core/Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 6823,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2024-08-22T20:41:33Z",
+      "side": 1,
+      "message": "I wonder what\u0027s the reason behind this? It seems to me that it\u0027s safer to check and use the same variable.",
+      "parentUuid": "c87ffebc_fb6c900e",
       "range": {
         "startLine": 6823,
         "startChar": 6,
