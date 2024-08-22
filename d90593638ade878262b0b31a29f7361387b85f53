@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b00fa764_8c878d22",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1081223
+      },
+      "writtenOn": "2024-08-22T11:45:16Z",
+      "side": 1,
+      "message": "Should be harmless, was added in https://android-review.googlesource.com/q/topic:%22hosttar_cf%22",
+      "revId": "d90593638ade878262b0b31a29f7361387b85f53",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
