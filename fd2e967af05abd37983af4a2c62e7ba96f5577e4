@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "78fa0e6a_13261419",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1041444
+      },
+      "writtenOn": "2024-08-22T07:04:45Z",
+      "side": 1,
+      "message": "I propose fixes to speed up and optimize the build time of vendor target(aosp_cf_x86_64_phone_vendor). Would you please review my changelist?",
+      "revId": "fd2e967af05abd37983af4a2c62e7ba96f5577e4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
