@@ -17,6 +17,7 @@ from abc import ABC
 from typing import Self
 import argparse
 import functools
+from build_context import BuildContext
 
 
 class OptimizedBuildTarget(ABC):
@@ -30,7 +31,7 @@ class OptimizedBuildTarget(ABC):
   def __init__(
       self,
       target: str,
-      build_context: dict[str, any],
+      build_context: BuildContext,
       args: argparse.Namespace,
   ):
     self.target = target
@@ -38,13 +39,13 @@ class OptimizedBuildTarget(ABC):
     self.args = args
 
   def get_build_targets(self) -> set[str]:
-    features = self.build_context.get('enabledBuildFeatures', [])
+    features = self.build_context.enabled_build_features
     if self.get_enabled_flag() in features:
       return self.get_build_targets_impl()
     return {self.target}
 
   def package_outputs(self):
-    features = self.build_context.get('enabledBuildFeatures', [])
+    features = self.build_context.enabled_build_features
     if self.get_enabled_flag() in features:
       return self.package_outputs_impl()
 
