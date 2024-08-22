@@ -38,6 +38,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "aaf31a53_a9df1632",
+        "filename": "core/Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 6783,
+      "author": {
+        "id": 1002751
+      },
+      "writtenOn": "2024-08-22T17:19:31Z",
+      "side": 1,
+      "message": "If the directory doesn\u0027t matter for you it seems worth following the existing logic where `/IMAGES/` is for images built during the build and `/PREBUILT_IMAGES/` is for ones that came from a prebuilt.  I don\u0027t know why they are separated, but someone may be relying on it.",
+      "parentUuid": "f25ec57e_55502d0d",
+      "revId": "11baefd70f92175ad2103844046ee168ed2a3d21",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "cd555235_8052795e",
         "filename": "core/Makefile",
         "patchSetId": 1
@@ -73,6 +91,30 @@
       "side": 1,
       "message": "We do want to use `INSTALLED_DTBOIMAGE_16KB_TARGET` because that one has avb footer added",
       "parentUuid": "cd555235_8052795e",
+      "range": {
+        "startLine": 6823,
+        "startChar": 6,
+        "endLine": 6823,
+        "endChar": 37
+      },
+      "revId": "11baefd70f92175ad2103844046ee168ed2a3d21",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c87ffebc_fb6c900e",
+        "filename": "core/Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 6823,
+      "author": {
+        "id": 1002751
+      },
+      "writtenOn": "2024-08-22T17:19:31Z",
+      "side": 1,
+      "message": "The other checks seem to generally use `ifdef BOARD_PREBUILT_*` and then `cp $(INSTALLED_*)`.",
+      "parentUuid": "db3dedbb_65e475fc",
       "range": {
         "startLine": 6823,
         "startChar": 6,
