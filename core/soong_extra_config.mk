@@ -11,7 +11,6 @@ $(call add_json_str, Dex2oatTargetInstructionSetFeatures,    $(DEX2OAT_TARGET_IN
 $(call add_json_str, SecondaryDex2oatCpuVariantRuntime,      $($(TARGET_2ND_ARCH_VAR_PREFIX)DEX2OAT_TARGET_CPU_VARIANT_RUNTIME))
 $(call add_json_str, SecondaryDex2oatInstructionSetFeatures, $($(TARGET_2ND_ARCH_VAR_PREFIX)DEX2OAT_TARGET_INSTRUCTION_SET_FEATURES))
 
-$(call add_json_str, BoardPlatform,          $(TARGET_BOARD_PLATFORM))
 $(call add_json_str, BoardShippingApiLevel,  $(BOARD_SHIPPING_API_LEVEL))
 $(call add_json_str, ShippingApiLevel,       $(PRODUCT_SHIPPING_API_LEVEL))
 $(call add_json_str, ShippingVendorApiLevel, $(PRODUCT_SHIPPING_VENDOR_API_LEVEL))
