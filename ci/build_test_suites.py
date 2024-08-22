@@ -102,6 +102,8 @@ class BuildPlanner:
     return BuildPlan(build_targets, packaging_functions)
 
   def _unused_target_exclusion_enabled(self, target: str) -> bool:
+    if target == 'catbox':
+      return True
     return f'{target}_unused_exclusion' in self.build_context.get(
         'enabledBuildFeatures', []
     )
@@ -149,6 +151,7 @@ def build_test_suites(argv: list[str]) -> int:
   args = parse_args(argv)
   check_required_env()
   build_context = load_build_context()
+  logging.info(build_context)
   build_planner = BuildPlanner(
       build_context, args, optimized_targets.OPTIMIZED_BUILD_TARGETS
   )
