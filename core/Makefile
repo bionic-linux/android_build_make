@@ -6816,6 +6816,14 @@ ifdef BUILT_RAMDISK_16K_TARGET
 	$(hide) mkdir -p $(zip_root)/PREBUILT_IMAGES
 	$(hide) cp $(BUILT_RAMDISK_16K_TARGET) $(zip_root)/PREBUILT_IMAGES/
 endif # BUILT_RAMDISK_16K_TARGET
+ifdef BUILT_BOOTIMAGE_16K_TARGET
+	$(hide) mkdir -p $(zip_root)/IMAGES
+	$(hide) cp $(BUILT_BOOTIMAGE_16K_TARGET) $(zip_root)/IMAGES/
+endif # BUILT_BOOTIMAGE_16K_TARGET
+ifdef INSTALLED_DTBOIMAGE_16KB_TARGET
+	$(hide) mkdir -p $(zip_root)/IMAGES
+	$(hide) cp $(INSTALLED_DTBOIMAGE_16KB_TARGET) $(zip_root)/IMAGES/
+endif # INSTALLED_DTBOIMAGE_16KB_TARGET
 ifeq ($(BOARD_USES_PVMFWIMAGE),true)
 	$(hide) mkdir -p $(zip_root)/PREBUILT_IMAGES
 	$(hide) cp $(INSTALLED_PVMFWIMAGE_TARGET) $(zip_root)/PREBUILT_IMAGES/
