@@ -22,6 +22,30 @@
       },
       "revId": "488bf2d4166621154fc71b692aba0a057597c1c1",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8c875af5_5031ccc0",
+        "filename": "core/config.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 798,
+      "author": {
+        "id": 1120458
+      },
+      "writtenOn": "2024-08-23T18:08:32Z",
+      "side": 1,
+      "message": "math.mk uses \u0027\u0027 for false and \u0027true\u0027 for true. However, if there is an error, and it gets set to some other value other than false, then it will force this to happen. So in the case of an error, it goes for the stricter requirement, and that\u0027s why I did it this way.",
+      "parentUuid": "9e0784fc_06660bbd",
+      "range": {
+        "startLine": 798,
+        "startChar": 5,
+        "endLine": 798,
+        "endChar": 68
+      },
+      "revId": "488bf2d4166621154fc71b692aba0a057597c1c1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
