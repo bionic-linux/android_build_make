@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e6092063_f609944d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1583551
+      },
+      "writtenOn": "2024-08-23T16:46:51Z",
+      "side": 1,
+      "message": "As I understand things, we would still like to limit new plugins, since they cause additional work for some other optimizations that are planned.  What issue are you trying to solve with this revert?",
+      "revId": "be91e50cb023f1bc37a0ecd60cbaf570358b098a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
