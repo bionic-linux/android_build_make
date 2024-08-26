@@ -52,6 +52,24 @@
       "parentUuid": "41f2adf8_abdb0da3",
       "revId": "58992a6052555872e0bfceb9e27022c5432ef761",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5206275e_4b89585b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1895570
+      },
+      "writtenOn": "2024-08-26T16:04:20Z",
+      "side": 1,
+      "message": "Yes, it is possible to specify the command both with the equal sign and without since argparse will handle both, but the problem with the change is that apexer command line is changed from [\u0027--signing_args\u0027, \u0027\"--some-arg\"], to [\u0027--signing_args\u0027, \u0027--some-arg\u0027]. --some-arg is thus no longer a value to \"--signing_args\".",
+      "parentUuid": "7433ec2d_cefcb538",
+      "revId": "58992a6052555872e0bfceb9e27022c5432ef761",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
