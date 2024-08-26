@@ -150,7 +150,9 @@ impl FlagTableNode {
     /// Calculate node bucket index
     pub fn find_bucket_index(package_id: u32, flag_name: &str, num_buckets: u32) -> u32 {
         let full_flag_name = package_id.to_string() + "/" + flag_name;
-        get_bucket_index(&full_flag_name, num_buckets)
+        println!("full_flag_name: {}", full_flag_name);
+        println!("num_buckets: {}", num_buckets);
+        get_bucket_index(full_flag_name.as_bytes(), num_buckets)
     }
 }
 
