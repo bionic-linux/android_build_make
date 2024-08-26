@@ -88,6 +88,24 @@
       "parentUuid": "5206275e_4b89585b",
       "revId": "58992a6052555872e0bfceb9e27022c5432ef761",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3efcd83e_b53f371c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1895570
+      },
+      "writtenOn": "2024-08-26T16:52:05Z",
+      "side": 1,
+      "message": "Steps to reproduce the issue:\n\n```\n# arg.py\nimport sys\nfrom argparse import ArgumentParser\n\nparser \u003d ArgumentParser()\nparser.add_argument(\u0027--signing_args\u0027)\nprint(f\"sys.argv: {sys.argv}\")\nargs \u003d parser.parse_args()\nprint(f\"parsed: {args}\")\n```\n\n```\n# FAIL:\n$ python arg.py --signing_args --signing_helper_with_files\u003d/path/to/helper\nsys.argv: [\u0027arg.py\u0027, \u0027--signing_args\u0027, \u0027--signing_helper_with_files\u003d/path/to/helper\u0027]\nusage: arg.py [-h] [--signing_args SIGNING_ARGS]\narg.py: error: argument --signing_args: expected one argument\n```\n\n```\n# FAIL:\n$ python arg.py --signing_args --signing_helper_with_files /path/to/helper\nsys.argv: [\u0027arg.py\u0027, \u0027--signing_args\u0027, \u0027--signing_helper_with_files\u0027, \u0027/path/to/helper\u0027]\nusage: arg.py [-h] [--signing_args SIGNING_ARGS]\narg.py: error: argument --signing_args: expected one argument\n```\n\n```\n# SUCCESS:\n$ python arg.py --signing_args \\\"--signing_helper_with_files\u003d/path/to/helper\\\"\nsys.argv: [\u0027arg.py\u0027, \u0027--signing_args\u0027, \u0027\"--signing_helper_with_files\u003d/path/to/helper\"\u0027]\nparsed: Namespace(signing_args\u003d\u0027\"--signing_helper_with_files\u003d/path/to/helper\"\u0027)\n```\n\nSo if we don\u0027t quote the value supplied to --signing_args, it is split into its own arguments and argparse fails the script execution.",
+      "parentUuid": "851257b7_3953ee6f",
+      "revId": "58992a6052555872e0bfceb9e27022c5432ef761",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ],
   "submitRequirementResults": [
