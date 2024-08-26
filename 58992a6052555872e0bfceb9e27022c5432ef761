@@ -160,6 +160,24 @@
       "parentUuid": "05c4401f_f5bceccc",
       "revId": "58992a6052555872e0bfceb9e27022c5432ef761",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3ac846b1_91db2e28",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1895570
+      },
+      "writtenOn": "2024-08-26T18:08:59Z",
+      "side": 1,
+      "message": "The internal signing process uses `--signing_helper_with_files\u003d/path/to/helper` format to specify the helper and that\u0027s what the comment referred to. This difference in documented argument style and the actual implementation will need to be fixed by the corresponding teams, especially since one cannot specify more than one argument in this case.\n\nI913b6b3f2ff03d8ce2333b1c2c38178967766778 change relied on https://github.com/python/cpython/blob/main/Lib/argparse.py#L2287 - if an argument contains a space, then it is treated as a value.\n\nI would suggest passing `--signing_helper_with_files\u003dexternal/fnv/production-sign-tools/production-signing-scripts/IVIMB/signing_helper/avb_signing_helper.py` which shlex.parse would keep as is and which will be parsed correctly by apexer until the fix to the wrapping and unwrapping the arguments is in.",
+      "parentUuid": "05c4401f_f5bceccc",
+      "revId": "58992a6052555872e0bfceb9e27022c5432ef761",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ],
   "submitRequirementResults": [
