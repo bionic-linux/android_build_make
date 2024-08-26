@@ -124,6 +124,24 @@
       "parentUuid": "3efcd83e_b53f371c",
       "revId": "58992a6052555872e0bfceb9e27022c5432ef761",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "05c4401f_f5bceccc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1895570
+      },
+      "writtenOn": "2024-08-26T17:16:44Z",
+      "side": 1,
+      "message": "I believe the original issue that the patch was attempting to fix was passing --signing_args \"--signing_helper_with_files\u003cspace\u003e/path/to/helper\", which is what our document @ https://android.googlesource.com/platform/external/avb/+/master/README.md#using-avbtool specifies. Using \u003d happens to work because it is interpreted as a single argument, but shlex.split used in `apexer` does not splut `\"--signing_helper_with_files /path/to/external/signer_with_files\"`. Now, the revert is correct since it allows the script to run, but the way we are wrapping and then un-wrapping the argument for --signing_args is incorrect.",
+      "parentUuid": "3efcd83e_b53f371c",
+      "revId": "58992a6052555872e0bfceb9e27022c5432ef761",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ],
   "submitRequirementResults": [
