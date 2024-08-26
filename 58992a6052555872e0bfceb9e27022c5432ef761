@@ -70,6 +70,24 @@
       "parentUuid": "7433ec2d_cefcb538",
       "revId": "58992a6052555872e0bfceb9e27022c5432ef761",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "851257b7_3953ee6f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3584299
+      },
+      "writtenOn": "2024-08-26T16:16:02Z",
+      "side": 1,
+      "message": "but if you choose to revert my commit, the command with no \"\u003d\" sign is not work anymore. Shlex cannot parsed it properly in this case. So we can only choose either using \"\u003d\" or repace \"\u003d\" with a blank space",
+      "parentUuid": "5206275e_4b89585b",
+      "revId": "58992a6052555872e0bfceb9e27022c5432ef761",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
