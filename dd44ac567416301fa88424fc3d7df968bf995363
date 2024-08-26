@@ -24,6 +24,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c89faf16_8734c97c",
+        "filename": "ci/test_mapping_module_retriever.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-08-26T23:54:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b2f2ff04_7956140d",
+      "range": {
+        "startLine": 23,
+        "startChar": 24,
+        "endLine": 23,
+        "endChar": 39
+      },
+      "revId": "dd44ac567416301fa88424fc3d7df968bf995363",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "59139fda_7b2d9874",
@@ -47,6 +71,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "49d64a3e_18fb9f29",
+        "filename": "ci/test_mapping_module_retriever.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-08-26T23:54:58Z",
+      "side": 1,
+      "message": "This is a bit of a tricky one since the rest of the code in this directory uses snake case, but this logic was originally pulled from g3 where things are in PascalCase. I\u0027ll change stuff to be consistent inside this file as PascalCase since we\u0027re planning on copybaraing it over eventually.",
+      "parentUuid": "59139fda_7b2d9874",
+      "range": {
+        "startLine": 130,
+        "startChar": 4,
+        "endLine": 130,
+        "endChar": 25
+      },
+      "revId": "dd44ac567416301fa88424fc3d7df968bf995363",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "291764ff_2e79224e",
@@ -60,6 +108,30 @@
       "writtenOn": "2024-08-26T22:51:13Z",
       "side": 1,
       "message": "Consider moving this comment as part of a docstring (as it is directly related to the test_mappings argument)",
+      "range": {
+        "startLine": 137,
+        "startChar": 2,
+        "endLine": 145,
+        "endChar": 5
+      },
+      "revId": "dd44ac567416301fa88424fc3d7df968bf995363",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "06993007_4a1bad82",
+        "filename": "ci/test_mapping_module_retriever.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-08-26T23:54:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "291764ff_2e79224e",
       "range": {
         "startLine": 137,
         "startChar": 2,
@@ -111,6 +183,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "64522c24_8f1d7cce",
+        "filename": "ci/test_mapping_module_retriever.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-08-26T23:54:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6665ec10_44e01bd5",
+      "range": {
+        "startLine": 154,
+        "startChar": 40,
+        "endLine": 154,
+        "endChar": 44
+      },
+      "revId": "dd44ac567416301fa88424fc3d7df968bf995363",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4c3e911f_a7b113e7",
@@ -124,6 +220,30 @@
       "writtenOn": "2024-08-26T22:51:13Z",
       "side": 1,
       "message": "entry.get(\u0027file_patterns\u0027) would result in the same behaviour",
+      "range": {
+        "startLine": 159,
+        "startChar": 49,
+        "endLine": 159,
+        "endChar": 53
+      },
+      "revId": "dd44ac567416301fa88424fc3d7df968bf995363",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4392d600_24be7feb",
+        "filename": "ci/test_mapping_module_retriever.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-08-26T23:54:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4c3e911f_a7b113e7",
       "range": {
         "startLine": 159,
         "startChar": 49,
@@ -175,6 +295,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2e4988c6_06b008f8",
+        "filename": "ci/test_mapping_module_retriever.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-08-26T23:54:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b2b4b5a7_d66231a3",
+      "range": {
+        "startLine": 166,
+        "startChar": 10,
+        "endLine": 166,
+        "endChar": 18
+      },
+      "revId": "dd44ac567416301fa88424fc3d7df968bf995363",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "35d0c5d5_1aae6432",
@@ -188,6 +332,30 @@
       "writtenOn": "2024-08-26T22:51:13Z",
       "side": 1,
       "message": "Ditto, other functions in the file are using PascalCase",
+      "range": {
+        "startLine": 170,
+        "startChar": 4,
+        "endLine": 170,
+        "endChar": 25
+      },
+      "revId": "dd44ac567416301fa88424fc3d7df968bf995363",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "96d4d179_891f36a8",
+        "filename": "ci/test_mapping_module_retriever.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-08-26T23:54:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "35d0c5d5_1aae6432",
       "range": {
         "startLine": 170,
         "startChar": 4,
@@ -239,6 +407,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ca42d5c0_d55560aa",
+        "filename": "ci/test_mapping_module_retriever.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-08-26T23:54:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a43c7ef_ab52afe3",
+      "range": {
+        "startLine": 172,
+        "startChar": 0,
+        "endLine": 172,
+        "endChar": 10
+      },
+      "revId": "dd44ac567416301fa88424fc3d7df968bf995363",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "921d9b36_9c478244",
@@ -252,6 +444,30 @@
       "writtenOn": "2024-08-26T22:51:13Z",
       "side": 1,
       "message": "```suggestion\n  # Append all files into a buffer to avoid the overhead of calling regex in many small strings\n  changed_files_buffer \u003d \"|\".join(changed_files)\n  \n  return any(re.search(pattern, changed_files_buffer) for patter in file_patterns)\n\n```",
+      "range": {
+        "startLine": 173,
+        "startChar": 0,
+        "endLine": 179,
+        "endChar": 0
+      },
+      "revId": "dd44ac567416301fa88424fc3d7df968bf995363",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "df722004_cc76d598",
+        "filename": "ci/test_mapping_module_retriever.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-08-26T23:54:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "921d9b36_9c478244",
       "range": {
         "startLine": 173,
         "startChar": 0,
