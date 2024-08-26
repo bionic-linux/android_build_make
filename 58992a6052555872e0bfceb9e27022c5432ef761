@@ -16,6 +16,24 @@
       "message": "Hi @ahomer@google.com , why do you think we should revert this change? As we tested from apexer, it works fine, \"signing_args\" is parsed properly",
       "revId": "58992a6052555872e0bfceb9e27022c5432ef761",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "41f2adf8_abdb0da3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1895570
+      },
+      "writtenOn": "2024-08-26T15:46:58Z",
+      "side": 1,
+      "message": "Before I913b6b3f2ff03d8ce2333b1c2c38178967766778 the value of --signing_args was quoted (see also the comment - \"Add quote to the signing_args as we will pass --signing_args \"--signing_helper_with_files\u003d%path\" to apexer\").\n\nApexer used to get [\u0027--signing_args\u0027, \u0027\"--signing_helper_with_files\u003d/path/to/helper\"\u0027] from sign_apex. After the change, apexer gets [\u0027--signing_args\u0027, \u0027--signing_helper_with_files\u003d/path/to/helper\u0027], thus treating --signing_helper_with_files as its own argument:\n\n```\nout/host/linux-x86/bin/sign_apex ... --payload_extra_args \"--signing_helper_with_files\u003d/path/to/helper\"\n...\nRunning: .../host/linux-x86/bin/apexer ... --signing_args --signing_helper_with_files\u003d/path/to/helper\n...\napexer: error: argument --signing_args: expected one argument\n```",
+      "parentUuid": "ccb974c8_5de95755",
+      "revId": "58992a6052555872e0bfceb9e27022c5432ef761",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
