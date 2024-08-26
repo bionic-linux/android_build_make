@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ccb974c8_5de95755",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3584299
+      },
+      "writtenOn": "2024-08-26T15:28:25Z",
+      "side": 1,
+      "message": "Hi @ahomer@google.com , why do you think we should revert this change? As we tested from apexer, it works fine, \"signing_args\" is parsed properly",
+      "revId": "58992a6052555872e0bfceb9e27022c5432ef761",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
