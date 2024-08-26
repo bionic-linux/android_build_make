@@ -34,6 +34,24 @@
       "parentUuid": "ccb974c8_5de95755",
       "revId": "58992a6052555872e0bfceb9e27022c5432ef761",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7433ec2d_cefcb538",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3584299
+      },
+      "writtenOn": "2024-08-26T15:51:41Z",
+      "side": 1,
+      "message": "Hello @ryepishev@google.com\nI believe the correct way to use the command is \"--signing_helper_with_files /path/to/helper\" not \"--signing_helper_with_files\u003d/path/to/helper\" as you mentioned. You should refer from https://android.googlesource.com/platform/external/avb/+/master/README.md",
+      "parentUuid": "41f2adf8_abdb0da3",
+      "revId": "58992a6052555872e0bfceb9e27022c5432ef761",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
