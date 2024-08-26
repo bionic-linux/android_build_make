@@ -1,0 +1,265 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b2f2ff04_7956140d",
+        "filename": "ci/test_mapping_module_retriever.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1550539
+      },
+      "writtenOn": "2024-08-26T22:51:13Z",
+      "side": 1,
+      "message": "These are no longer needed to be imported from typing library, since you\u0027re already editing this file, can you also update those?",
+      "range": {
+        "startLine": 23,
+        "startChar": 24,
+        "endLine": 23,
+        "endChar": 39
+      },
+      "revId": "dd44ac567416301fa88424fc3d7df968bf995363",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "59139fda_7b2d9874",
+        "filename": "ci/test_mapping_module_retriever.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1550539
+      },
+      "writtenOn": "2024-08-26T22:51:13Z",
+      "side": 1,
+      "message": "The other functions are using PascalCase, any particular reason to use snake_case here?",
+      "range": {
+        "startLine": 130,
+        "startChar": 4,
+        "endLine": 130,
+        "endChar": 25
+      },
+      "revId": "dd44ac567416301fa88424fc3d7df968bf995363",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "291764ff_2e79224e",
+        "filename": "ci/test_mapping_module_retriever.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1550539
+      },
+      "writtenOn": "2024-08-26T22:51:13Z",
+      "side": 1,
+      "message": "Consider moving this comment as part of a docstring (as it is directly related to the test_mappings argument)",
+      "range": {
+        "startLine": 137,
+        "startChar": 2,
+        "endLine": 145,
+        "endChar": 5
+      },
+      "revId": "dd44ac567416301fa88424fc3d7df968bf995363",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6665ec10_44e01bd5",
+        "filename": "ci/test_mapping_module_retriever.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1550539
+      },
+      "writtenOn": "2024-08-26T22:51:13Z",
+      "side": 1,
+      "message": "None is already de default value of using a safe getter.",
+      "range": {
+        "startLine": 154,
+        "startChar": 40,
+        "endLine": 154,
+        "endChar": 44
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "97683ed9_8665ef3d",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ci/test_mapping_module_retriever.py",
+              "range": {
+                "startLine": 154,
+                "startChar": 0,
+                "endLine": 155,
+                "endChar": 0
+              },
+              "replacement": "        module_name \u003d entry.get(\u0027name\u0027)\n"
+            }
+          ]
+        }
+      ],
+      "revId": "dd44ac567416301fa88424fc3d7df968bf995363",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4c3e911f_a7b113e7",
+        "filename": "ci/test_mapping_module_retriever.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1550539
+      },
+      "writtenOn": "2024-08-26T22:51:13Z",
+      "side": 1,
+      "message": "entry.get(\u0027file_patterns\u0027) would result in the same behaviour",
+      "range": {
+        "startLine": 159,
+        "startChar": 49,
+        "endLine": 159,
+        "endChar": 53
+      },
+      "revId": "dd44ac567416301fa88424fc3d7df968bf995363",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b2b4b5a7_d66231a3",
+        "filename": "ci/test_mapping_module_retriever.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 1550539
+      },
+      "writtenOn": "2024-08-26T22:51:13Z",
+      "side": 1,
+      "message": "This continue statement is no-op, is already the final statement in the loop.",
+      "range": {
+        "startLine": 166,
+        "startChar": 10,
+        "endLine": 166,
+        "endChar": 18
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "f7681ccc_fb4402c4",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ci/test_mapping_module_retriever.py",
+              "range": {
+                "startLine": 166,
+                "startChar": 0,
+                "endLine": 167,
+                "endChar": 0
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "revId": "dd44ac567416301fa88424fc3d7df968bf995363",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "35d0c5d5_1aae6432",
+        "filename": "ci/test_mapping_module_retriever.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 1550539
+      },
+      "writtenOn": "2024-08-26T22:51:13Z",
+      "side": 1,
+      "message": "Ditto, other functions in the file are using PascalCase",
+      "range": {
+        "startLine": 170,
+        "startChar": 4,
+        "endLine": 170,
+        "endChar": 25
+      },
+      "revId": "dd44ac567416301fa88424fc3d7df968bf995363",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9a43c7ef_ab52afe3",
+        "filename": "ci/test_mapping_module_retriever.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1550539
+      },
+      "writtenOn": "2024-08-26T22:51:13Z",
+      "side": 1,
+      "message": "Public functions should have docstring defined, can you add one?",
+      "range": {
+        "startLine": 172,
+        "startChar": 0,
+        "endLine": 172,
+        "endChar": 10
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "aed3ba2b_32071384",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ci/test_mapping_module_retriever.py",
+              "range": {
+                "startLine": 173,
+                "startChar": 0,
+                "endLine": 173,
+                "endChar": 0
+              },
+              "replacement": "  \"\"\"Checks if any of the changed files match any of the file patterns.\n\n  Args:\n    file_patterns: A list of file patterns to match against.\n    changed_files: A set of files to check against the file patterns.\n\n  Returns:\n    True if any of the changed files match any of the file patterns.\n  \"\"\"\n"
+            }
+          ]
+        }
+      ],
+      "revId": "dd44ac567416301fa88424fc3d7df968bf995363",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "921d9b36_9c478244",
+        "filename": "ci/test_mapping_module_retriever.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 1550539
+      },
+      "writtenOn": "2024-08-26T22:51:13Z",
+      "side": 1,
+      "message": "```suggestion\n  # Append all files into a buffer to avoid the overhead of calling regex in many small strings\n  changed_files_buffer \u003d \"|\".join(changed_files)\n  \n  return any(re.search(pattern, changed_files_buffer) for patter in file_patterns)\n\n```",
+      "range": {
+        "startLine": 173,
+        "startChar": 0,
+        "endLine": 179,
+        "endChar": 0
+      },
+      "revId": "dd44ac567416301fa88424fc3d7df968bf995363",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
