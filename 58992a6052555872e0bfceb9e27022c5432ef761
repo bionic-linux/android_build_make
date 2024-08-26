@@ -106,6 +106,24 @@
       "parentUuid": "851257b7_3953ee6f",
       "revId": "58992a6052555872e0bfceb9e27022c5432ef761",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "542ff0e1_9eb517e6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3584299
+      },
+      "writtenOn": "2024-08-26T17:12:44Z",
+      "side": 1,
+      "message": "The issue you are describing is only happened with an unreal arg.py\nIn this concrete case, apexer.py doesn\u0027t process the args like this\nhttps://android.googlesource.com/platform/system/apex/+/refs/heads/main/apexer/apexer.py#675\nSo, we will not face any issue as you mentioned in this case",
+      "parentUuid": "3efcd83e_b53f371c",
+      "revId": "58992a6052555872e0bfceb9e27022c5432ef761",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ],
   "submitRequirementResults": [
