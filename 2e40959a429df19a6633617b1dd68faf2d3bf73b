@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7467856f_0fbc08bc",
+        "filename": "target/product/selinux_policy_system.mk",
+        "patchSetId": 22
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1291338
+      },
+      "writtenOn": "2024-08-26T00:36:31Z",
+      "side": 1,
+      "message": "I\u0027d like to add to PRODUCT_PACKAGES directly here, rather than using intermediate variables. WDYT?",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 23
+      },
+      "revId": "2e40959a429df19a6633617b1dd68faf2d3bf73b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
