@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "326d4ea5_a26c8276",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-08-27T18:16:23Z",
+      "side": 1,
+      "message": "Nobody right now, but it will be necessary in the next part of the implementation where the packaging code needs to know what modules were built in order to package them. This is also likely to be useful in any other suite optimizations which is why I put them at the base class level (and also to make it more guaranteed that the value will be available at package time).",
+      "parentUuid": "77762283_7b4e5d4c",
+      "range": {
+        "startLine": 49,
+        "startChar": 11,
+        "endLine": 49,
+        "endChar": 27
+      },
+      "revId": "e23b023622303b8b9e7ef3be46023f97d9845aca",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "7c924438_9980fb39",
         "filename": "ci/optimized_targets.py",
         "patchSetId": 9
@@ -61,6 +85,30 @@
           ]
         }
       ],
+      "revId": "e23b023622303b8b9e7ef3be46023f97d9845aca",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0ef71ede_aaee7360",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-08-27T18:16:23Z",
+      "side": 1,
+      "message": "Actually you know what soong_zip is in prebuilts so we don\u0027t have to build it at all.",
+      "parentUuid": "7c924438_9980fb39",
+      "range": {
+        "startLine": 129,
+        "startChar": 20,
+        "endLine": 129,
+        "endChar": 44
+      },
       "revId": "e23b023622303b8b9e7ef3be46023f97d9845aca",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
@@ -102,6 +150,30 @@
           ]
         }
       ],
+      "revId": "e23b023622303b8b9e7ef3be46023f97d9845aca",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b061141a_9cbf63b2",
+        "filename": "ci/test_mapping_module_retriever.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-08-27T18:16:23Z",
+      "side": 1,
+      "message": "There is somewhat similar logic in the original file but it\u0027s very different from what we have here as it uses a lot of different parameters etc. that we don\u0027t have access to here. Because of this I don\u0027t think it makes sense to try to bring that logic in and heavily edit it to work with what we have. Eventually we want to merge this logic though.",
+      "parentUuid": "0399861c_df951f7b",
+      "range": {
+        "startLine": 130,
+        "startChar": 4,
+        "endLine": 130,
+        "endChar": 23
+      },
       "revId": "e23b023622303b8b9e7ef3be46023f97d9845aca",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
