@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e6f61793_726ab15c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3508348
+      },
+      "writtenOn": "2024-08-27T20:15:07Z",
+      "side": 1,
+      "message": "LGTM after the one fix",
+      "revId": "d0ad6ecb34ddd04603d8f0ffa64451186c0f6bf7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "23ba4f71_ae6a5c69",
+        "filename": "core/Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 7962,
+      "author": {
+        "id": 3508348
+      },
+      "writtenOn": "2024-08-27T20:15:07Z",
+      "side": 1,
+      "message": "```suggestion\npack-update-image: $(PACK_UPDATE_IMAGE_TARGET)\n```",
+      "range": {
+        "startLine": 7962,
+        "startChar": 0,
+        "endLine": 7962,
+        "endChar": 19
+      },
+      "revId": "d0ad6ecb34ddd04603d8f0ffa64451186c0f6bf7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
