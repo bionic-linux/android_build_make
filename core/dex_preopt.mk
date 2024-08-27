@@ -14,26 +14,14 @@ install-on-system-other = $(filter-out $(PRODUCT_DEXPREOPT_SPEED_APPS) $(PRODUCT
 endif
 
 # Install boot images for testing on host. We exclude framework image as it is not part of art manifest.
-my_boot_image_arch := HOST_ARCH
-my_boot_image_out := $(HOST_OUT)
-my_boot_image_syms := $(HOST_OUT)/symbols
-HOST_BOOT_IMAGE_MODULE := \
-  $(foreach my_boot_image_name,art_host,$(strip \
-    $(eval include $(BUILD_SYSTEM)/dex_preopt_libart.mk) \
-    $(my_boot_image_module)))
-HOST_BOOT_IMAGE := $(call module-installed-files,$(HOST_BOOT_IMAGE_MODULE))
+# TODO: symbols dir?
+HOST_BOOT_IMAGE := $(foreach built-installed,$(DEXPREOPT_IMAGE_BUILT_INSTALLED_art_host_$(HOST_ARCH)),$(call word-colon,1,$(built-installed)))
+HOST_BOOT_IMAGE += $(foreach built-installed,$(DEXPREOPT_IMAGE_VDEX_BUILT_INSTALLED_art_host_$(HOST_ARCH)),$(call word-colon,1,$(built-installed)))
+
 ifdef HOST_2ND_ARCH
-  my_boot_image_arch := HOST_2ND_ARCH
-  2ND_HOST_BOOT_IMAGE_MODULE := \
-    $(foreach my_boot_image_name,art_host,$(strip \
-      $(eval include $(BUILD_SYSTEM)/dex_preopt_libart.mk) \
-      $(my_boot_image_module)))
-  2ND_HOST_BOOT_IMAGE := $(call module-installed-files,$(2ND_HOST_BOOT_IMAGE_MODULE))
+  2ND_HOST_BOOT_IMAGE := $(foreach built-installed,$(DEXPREOPT_IMAGE_BUILT_INSTALLED_art_host_$(HOST_2ND_ARCH)),$(call word-colon,1,$(built-installed)))
+  2ND_HOST_BOOT_IMAGE += $(foreach built-installed,$(DEXPREOPT_IMAGE_VDEX_BUILT_INSTALLED_art_host_$(HOST_2ND_ARCH)),$(call word-colon,1,$(built-installed)))
 endif
-my_boot_image_arch :=
-my_boot_image_out :=
-my_boot_image_syms :=
-my_boot_image_module :=
 
 # Build the boot.zip which contains the boot jars and their compilation output
 # We can do this only if preopt is enabled and if the product uses libart config (which sets the
