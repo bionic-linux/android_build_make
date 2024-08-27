@@ -22,6 +22,30 @@
       },
       "revId": "2e40959a429df19a6633617b1dd68faf2d3bf73b",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "645a07d2_2209391e",
+        "filename": "target/product/selinux_policy_system.mk",
+        "patchSetId": 22
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1308036
+      },
+      "writtenOn": "2024-08-27T09:39:37Z",
+      "side": 1,
+      "message": "Currently I didn\u0027t convert all from system/sepolicy/Android.mk, so I think it needs template variables for use in system/sepolicy/Android.mk.\n\nI can add a TODO to use PRODUCT_PACKAGES directly when all phony packages\u0027s required modules are replaced with PRODUCK_PACKAGES. Is it OK?",
+      "parentUuid": "7467856f_0fbc08bc",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 23
+      },
+      "revId": "2e40959a429df19a6633617b1dd68faf2d3bf73b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
