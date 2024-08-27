@@ -178,6 +178,23 @@
       "parentUuid": "05c4401f_f5bceccc",
       "revId": "58992a6052555872e0bfceb9e27022c5432ef761",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "59da5c07_81ed47c3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3584299
+      },
+      "writtenOn": "2024-08-27T01:59:43Z",
+      "side": 1,
+      "message": "Hello @ryepishev@google.com\nWith the solution you suggest \u0027--signing_helper_with_files\u003d/path/to/helpert, it fails when run apexer.py\nHere is the log\nFailed to run command \u0027[\u0027apexer\u0027, \u0027--force\u0027, \u0027--payload_only\u0027, \u0027--do_not_check_keyname\u0027, \u0027--apexer_tool_path\u0027, \u0027/proj/jenkins/workspace/aosp_job/out/host/linux-x86/bin:/proj/jenkins/workspace/aosp_job/out/host/linux-x86/bin:/proj/jenkins/workspace/aosp_job/out/host/linux-x86/bin:/proj/jenkins/workspace/aosp_job/prebuilts/clang/host/linux-x86/llvm-binutils-stable:/proj/jenkins/workspace/aosp_job/prebuilts/asuite/acloud/linux-x86:/proj/jenkins/workspace/aosp_job/prebuilts/asuite/aidegen/linux-x86:/proj/jenkins/workspace/aosp_job/prebuilts/asuite/atest/linux-x86:/proj/jenkins/workspace/aosp_job/prebuilts/jdk/jdk17/linux-x86/bin:/proj/jenkins/workspace/aosp_job/build/bazel/bin:/proj/jenkins/workspace/aosp_job/development/scripts:/proj/jenkins/workspace/aosp_job/prebuilts/devtools/tools:/proj/jenkins/workspace/aosp_job/prebuilts/misc/linux-x86/dtc:/proj/jenkins/workspace/aosp_job/prebuilts/misc/linux-x86/libufdt:/proj/jenkins/workspace/aosp_job/prebuilts/android-emulator/linux-x86_64:/home/ivicid/.nvm/versions/node/v21.7.3/bin:/proj/jenkins/tools/com.cloudbees.jenkins.plugins.customtools.CustomTool/lz4-1.9.2:/proj/jenkins/tools/com.cloudbees.jenkins.plugins.customtools.CustomTool/ccache-3.7/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin\u0027, \u0027--manifest\u0027, \u0027/proj/jenkins/workspace/aosp_job/tmp/tmpkrloiim6/apex_manifest.pb\u0027, \u0027--build_info\u0027, \u0027/proj/jenkins/workspace/aosp_job/tmp/tmpkrloiim6/apex_build_info.pb\u0027, \u0027--key\u0027, \u0027/proj/jenkins/workspace/aosp_job/tmp/tmp.M8Vz9Jjvgv/avb.pem\u0027, \u0027--signing_args\u0027, \u0027\"--signing_helper_with_files\u003dexternal/fnv/production-sign-tools/production-signing-scripts/signing_helper/avb_signing_helper.py --rollback_index 0\"\u0027, \u0027/proj/jenkins/workspace/aosp_job/tmp/tmpw4k8z9tp\u0027, \u0027/proj/jenkins/workspace/aosp_job/tmp/tmpkrloiim6/apex_payload.img\u0027, \u0027-v\u0027]\u0027 (exit code 1):\n19:14:51  Traceback (most recent call last):\n19:14:51    File \"internal/stdlib/runpy.py\", line 196, in _run_module_as_main\n19:14:51    File \"internal/stdlib/runpy.py\", line 86, in _run_code\n19:14:51    File \"/proj/jenkins/workspace/aosp_job/out/host/linux-x86/bin/apexer/__main__.py\", line 12, in \u003cmodule\u003e\n19:14:51    File \"internal/stdlib/runpy.py\", line 196, in _run_module_as_main\n19:14:51    File \"internal/stdlib/runpy.py\", line 86, in _run_code\n19:14:51    File \"apexer.py\", line 934, in \u003cmodule\u003e\n19:14:51    File \"apexer.py\", line 927, in main\n19:14:51    File \"apexer.py\", line 817, in CreateApex\n19:14:51    File \"apexer.py\", line 725, in CreateApexPayload\n19:14:51    File \"apexer.py\", line 687, in SignImage\n19:14:51    File \"apexer.py\", line 229, in RunCommand\n19:14:51  AssertionError: Failed to execute: /proj/jenkins/workspace/aosp_job/out/host/linux-x86/bin/avbtool add_hashtree_footer --do_not_generate_fec --algorithm SHA256_RSA4096 --hash_algorithm sha256 --key /proj/jenkins/workspace/aosp_job/tmp/tmp.M8Vz9Jjvgv/avb.pem --prop apex.key:com.android.adservices --salt 533007e6a2bf4ca84ac9f7079c9109ea27d52ddf3e2278907eef59153768b9fa --image /proj/jenkins/workspace/aosp_job/tmp/tmp165cjkvc/content/apex_payload.img --signing_helper_with_files\u003dexternal/fnv/production-sign-tools/production-signing-scripts/signing_helper/avb_signing_helper.py --rollback_index 0",
+      "revId": "58992a6052555872e0bfceb9e27022c5432ef761",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ],
   "submitRequirementResults": [
