@@ -74,6 +74,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d95b64a5_d1eb5429",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-08-27T18:51:10Z",
+      "side": 1,
+      "message": "it\u0027s not really a getter per se, I could rename it to reflect that, but i\u0027m met with the issue that these functions do way too much work to be called in the constructor, but package_outputs depends on what is found in get_build_targets. package_outputs should never be called before get_build_targets. I could initialize `self._modules_to_build` to something at init then change it later in get_build_targets and maybe check that in package_outputs and call get_build_targets if it hasn\u0027t been initialized yet but I\u0027m not sure how else I would handle it.",
+      "parentUuid": "87f3bb64_1a6afb9d",
+      "range": {
+        "startLine": 49,
+        "startChar": 11,
+        "endLine": 49,
+        "endChar": 27
+      },
+      "revId": "e23b023622303b8b9e7ef3be46023f97d9845aca",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "7c924438_9980fb39",
         "filename": "ci/optimized_targets.py",
         "patchSetId": 9
