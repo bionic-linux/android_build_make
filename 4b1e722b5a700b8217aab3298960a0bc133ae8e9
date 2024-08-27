@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a600faf2_6c0f450f",
+        "filename": "core/soong_config.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 1535516
+      },
+      "writtenOn": "2024-08-27T19:08:27Z",
+      "side": 1,
+      "message": "Please document that if `USE_SOONG_DEFINED_SYSTEM_IMAGE` is not set, `PRODUCT_SOONG_DEFINED_SYSTEM_IMAGE` will still be used for a diff test.",
+      "revId": "4b1e722b5a700b8217aab3298960a0bc133ae8e9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
