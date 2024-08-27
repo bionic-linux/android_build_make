@@ -50,6 +50,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "87f3bb64_1a6afb9d",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1990655
+      },
+      "writtenOn": "2024-08-27T18:36:43Z",
+      "side": 1,
+      "message": "It\u0027s confusing to have a \"get\" function change an object\u0027s state. Consider i reference obj.modules_to_build without calling get_build_targets first.\n\nMay consider adding a function if you must cache it.",
+      "parentUuid": "326d4ea5_a26c8276",
+      "range": {
+        "startLine": 49,
+        "startChar": 11,
+        "endLine": 49,
+        "endChar": 27
+      },
+      "revId": "e23b023622303b8b9e7ef3be46023f97d9845aca",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "7c924438_9980fb39",
         "filename": "ci/optimized_targets.py",
         "patchSetId": 9
