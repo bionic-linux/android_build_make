@@ -1,0 +1,109 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "77762283_7b4e5d4c",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1990655
+      },
+      "writtenOn": "2024-08-27T17:51:04Z",
+      "side": 1,
+      "message": "who reads self.modules_to_build?",
+      "range": {
+        "startLine": 49,
+        "startChar": 11,
+        "endLine": 49,
+        "endChar": 27
+      },
+      "revId": "e23b023622303b8b9e7ef3be46023f97d9845aca",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7c924438_9980fb39",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1990655
+      },
+      "writtenOn": "2024-08-27T17:51:04Z",
+      "side": 1,
+      "message": "nit: revise comment. not all modules are required in general-tests.zip.",
+      "range": {
+        "startLine": 129,
+        "startChar": 20,
+        "endLine": 129,
+        "endChar": 44
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "f236faa3_5c7bc61a",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ci/optimized_targets.py",
+              "range": {
+                "startLine": 129,
+                "startChar": 0,
+                "endLine": 132,
+                "endChar": 0
+              },
+              "replacement": "  # List of modules that are always required to be in general-tests.zip. This\n  # list does not include soong_zip, which is required to zip up the modules at\n  # the end.\n"
+            }
+          ]
+        }
+      ],
+      "revId": "e23b023622303b8b9e7ef3be46023f97d9845aca",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0399861c_df951f7b",
+        "filename": "ci/test_mapping_module_retriever.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1990655
+      },
+      "writtenOn": "2024-08-27T17:51:04Z",
+      "side": 1,
+      "message": "don\u0027t we already have such logic somewhere?",
+      "range": {
+        "startLine": 130,
+        "startChar": 4,
+        "endLine": 130,
+        "endChar": 23
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "b200adbb_caabd66b",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ci/test_mapping_module_retriever.py",
+              "range": {
+                "startLine": 130,
+                "startChar": 0,
+                "endLine": 180,
+                "endChar": 0
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "revId": "e23b023622303b8b9e7ef3be46023f97d9845aca",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
