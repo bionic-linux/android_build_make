@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "73a179bf_9d3d2a97",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2024-08-28T07:17:59Z",
+      "side": 1,
+      "message": "FYI, the ABTD run failure is known bug and fixed with ag/28993903. This change did not add any more diffs with the run.",
+      "revId": "0fa47f4a546734babf56bf54d6ea91ce117c9fd9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
