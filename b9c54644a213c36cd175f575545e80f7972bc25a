@@ -34,6 +34,24 @@
       ],
       "revId": "b9c54644a213c36cd175f575545e80f7972bc25a",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3d18f948_afe1cca3",
+        "filename": "ci/test_mapping_module_retriever.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-08-28T20:04:50Z",
+      "side": 1,
+      "message": "meant to resolve this",
+      "parentUuid": "b8eb9e80_35ac07a0",
+      "revId": "b9c54644a213c36cd175f575545e80f7972bc25a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
