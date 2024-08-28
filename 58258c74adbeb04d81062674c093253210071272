@@ -66,6 +66,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8b7f193d_34626c35",
+        "filename": "tools/releasetools/sign_target_files_apks.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 625,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2024-08-28T22:48:29Z",
+      "side": 1,
+      "message": "different platforms can have different path seprators, the recommended way for using `os.path.join` is to specify each path component, and let python add the correct path separator(/ on unix and \\ on windows)",
+      "parentUuid": "ccb9232c_824ccaaa",
+      "revId": "58258c74adbeb04d81062674c093253210071272",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cdcc74fd_d45f1162",
@@ -123,6 +141,30 @@
           ]
         }
       ],
+      "revId": "58258c74adbeb04d81062674c093253210071272",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3e318483_fa4d75ab",
+        "filename": "tools/releasetools/sign_target_files_apks.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 684,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2024-08-28T22:48:29Z",
+      "side": 1,
+      "message": "boot and dtbo partitions are always re-signed when executing this script(even without this CL), just in a later stage. By doing the re-signing work early, we have the chance of using the signed boot.img for boot OTA re-generation down below.",
+      "parentUuid": "cdcc74fd_d45f1162",
+      "range": {
+        "startLine": 684,
+        "startChar": 2,
+        "endLine": 684,
+        "endChar": 28
+      },
       "revId": "58258c74adbeb04d81062674c093253210071272",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
