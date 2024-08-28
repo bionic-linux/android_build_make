@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "33e6aa68_51d00f96",
+        "filename": "tools/aconfig/aconfig/src/codegen/rust.rs",
+        "patchSetId": 3
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1076123
+      },
+      "writtenOn": "2024-08-28T22:51:03Z",
+      "side": 1,
+      "message": "remove one?\n```suggestion\n\n}\n```",
+      "range": {
+        "startLine": 155,
+        "startChar": 0,
+        "endLine": 157,
+        "endChar": 1
+      },
+      "revId": "11b19dbe1ab91456ab27359f61588aa1e5a70c4d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
