@@ -128,24 +128,31 @@ lazy_static::lazy_static! {
         "aconfig_flags.aconfig_test",
         "com.android.aconfig.test.disabled_rw",
         "false") == "true";
+}
 
+lazy_static::lazy_static! {
     /// flag value cache for disabled_rw_exported
     static ref CACHED_disabled_rw_exported: bool = flags_rust::GetServerConfigurableFlag(
         "aconfig_flags.aconfig_test",
         "com.android.aconfig.test.disabled_rw_exported",
         "false") == "true";
+}
 
+lazy_static::lazy_static! {
     /// flag value cache for disabled_rw_in_other_namespace
     static ref CACHED_disabled_rw_in_other_namespace: bool = flags_rust::GetServerConfigurableFlag(
         "aconfig_flags.other_namespace",
         "com.android.aconfig.test.disabled_rw_in_other_namespace",
         "false") == "true";
+}
 
+lazy_static::lazy_static! {
     /// flag value cache for enabled_rw
     static ref CACHED_enabled_rw: bool = flags_rust::GetServerConfigurableFlag(
         "aconfig_flags.aconfig_test",
         "com.android.aconfig.test.enabled_rw",
         "true") == "true";
+}
 
 }
 

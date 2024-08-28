@@ -24,8 +24,10 @@ lazy_static::lazy_static! \{
         get_mapped_storage_file("{container}", StorageFileType::FlagVal)
     };
     {{ -endif }}
+}
 
 {{ -for flag in template_flags }}
+lazy_static::lazy_static! \{
     {{ -if flag.readwrite }}
     /// flag value cache for {flag.name}
     {{ if allow_instrumentation }}
@@ -99,8 +101,8 @@ lazy_static::lazy_static! \{
         "{flag.default_value}") == "true";
     {{ endif }}
     {{ -endif }}
-{{ -endfor }}
 }
+{{ -endfor }}
 {{ -endif }}
 
 impl FlagProvider \{
