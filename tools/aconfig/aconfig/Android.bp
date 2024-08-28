@@ -18,6 +18,7 @@ rust_defaults {
         "libserde",
         "libserde_json",
         "libtinytemplate",
+        "libsiphasher",
     ],
 }
 
