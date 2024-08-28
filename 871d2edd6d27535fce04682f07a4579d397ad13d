@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "361bef94_2f3e477e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1944425
+      },
+      "writtenOn": "2024-08-28T21:30:45Z",
+      "side": 1,
+      "message": "also need to update tests here https://source.corp.google.com/h/googleplex-android/platform/superproject/main/+/main:build/make/tools/aconfig/aconfig/src/codegen/rust.rs;l\u003d107",
+      "revId": "871d2edd6d27535fce04682f07a4579d397ad13d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
