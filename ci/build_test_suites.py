@@ -81,7 +81,7 @@ class BuildPlanner:
         continue
 
       target_optimizer = target_optimizer_getter(
-          target, self.build_context, self.args
+          target, self.build_context, self.args,
       )
       build_targets.update(target_optimizer.get_build_targets())
       packaging_commands.extend(target_optimizer.get_package_outputs_commands())
