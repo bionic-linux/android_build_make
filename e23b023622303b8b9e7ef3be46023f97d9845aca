@@ -96,6 +96,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "90345754_26fbf1f1",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-08-28T19:54:51Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "d95b64a5_d1eb5429",
+      "range": {
+        "startLine": 49,
+        "startChar": 11,
+        "endLine": 49,
+        "endChar": 27
+      },
+      "revId": "e23b023622303b8b9e7ef3be46023f97d9845aca",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7c924438_9980fb39",
@@ -216,6 +240,30 @@
       "side": 1,
       "message": "There is somewhat similar logic in the original file but it\u0027s very different from what we have here as it uses a lot of different parameters etc. that we don\u0027t have access to here. Because of this I don\u0027t think it makes sense to try to bring that logic in and heavily edit it to work with what we have. Eventually we want to merge this logic though.",
       "parentUuid": "0399861c_df951f7b",
+      "range": {
+        "startLine": 130,
+        "startChar": 4,
+        "endLine": 130,
+        "endChar": 23
+      },
+      "revId": "e23b023622303b8b9e7ef3be46023f97d9845aca",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5bc13299_32b7d7b8",
+        "filename": "ci/test_mapping_module_retriever.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-08-28T19:54:51Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "b061141a_9cbf63b2",
       "range": {
         "startLine": 130,
         "startChar": 4,
