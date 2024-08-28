@@ -16,6 +16,23 @@
       "message": "FYI, the ABTD run failure is known bug and fixed with ag/28993903. This change did not add any more diffs with the run.",
       "revId": "0fa47f4a546734babf56bf54d6ea91ce117c9fd9",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5e454bd6_328497ea",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1535516
+      },
+      "writtenOn": "2024-08-28T17:15:56Z",
+      "side": 1,
+      "message": "Could we update the diff test to also complain when there are too many things in the allowlist?",
+      "revId": "0fa47f4a546734babf56bf54d6ea91ce117c9fd9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
