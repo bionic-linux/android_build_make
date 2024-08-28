@@ -1,0 +1,130 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ccb9232c_824ccaaa",
+        "filename": "tools/releasetools/sign_target_files_apks.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 625,
+      "author": {
+        "id": 1964171
+      },
+      "writtenOn": "2024-08-28T19:13:41Z",
+      "side": 1,
+      "message": "any reason we changed `signed_boot_image \u003d os.path.join(unzip_dir, \"IMAGES/boot.img\")` to this?",
+      "fixSuggestions": [
+        {
+          "fixId": "c0e6366c_a3a8fff8",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "tools/releasetools/sign_target_files_apks.py",
+              "range": {
+                "startLine": 625,
+                "startChar": 0,
+                "endLine": 626,
+                "endChar": 0
+              },
+              "replacement": "   signed_boot_image \u003d os.path.join(unzip_dir, \"IMAGES/boot.img\")\n"
+            },
+            {
+              "path": "tools/releasetools/sign_target_files_apks.py",
+              "range": {
+                "startLine": 629,
+                "startChar": 0,
+                "endLine": 630,
+                "endChar": 0
+              },
+              "replacement": "  signed_dtbo_image \u003d os.path.join(unzip_dir, \"IMAGES/dtbo.img\")\n"
+            },
+            {
+              "path": "tools/releasetools/sign_target_files_apks.py",
+              "range": {
+                "startLine": 635,
+                "startChar": 0,
+                "endLine": 636,
+                "endChar": 0
+              },
+              "replacement": "        unzip_dir, \"IMAGES/boot_16k.img\")\n"
+            },
+            {
+              "path": "tools/releasetools/sign_target_files_apks.py",
+              "range": {
+                "startLine": 637,
+                "startChar": 0,
+                "endLine": 638,
+                "endChar": 0
+              },
+              "replacement": "        unzip_dir, \"IMAGES/dtbo_16k.img\")\n"
+            }
+          ]
+        }
+      ],
+      "revId": "58258c74adbeb04d81062674c093253210071272",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cdcc74fd_d45f1162",
+        "filename": "tools/releasetools/sign_target_files_apks.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 684,
+      "author": {
+        "id": 1964171
+      },
+      "writtenOn": "2024-08-28T19:13:41Z",
+      "side": 1,
+      "message": "I feel like this function shouldn\u0027t be called unconditionally. Maybe add some if-statement to make it more obvious when we should be regenerating these partitions?",
+      "range": {
+        "startLine": 684,
+        "startChar": 2,
+        "endLine": 684,
+        "endChar": 28
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "0dc410fe_ca1ea7d0",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "tools/releasetools/sign_target_files_apks.py",
+              "range": {
+                "startLine": 622,
+                "startChar": 0,
+                "endLine": 622,
+                "endChar": 0
+              },
+              "replacement": "  if not is_4k_boot_ota and is_incremental:\n    return\n\n"
+            },
+            {
+              "path": "tools/releasetools/sign_target_files_apks.py",
+              "range": {
+                "startLine": 633,
+                "startChar": 0,
+                "endLine": 648,
+                "endChar": 0
+              },
+              "replacement": "  signed_16k_boot_image \u003d os.path.join(\n      unzip_dir, \"IMAGES\", \"boot_16k.img\")\n  signed_16k_dtbo_image \u003d os.path.join(\n      unzip_dir, \"IMAGES\", \"dtbo_16k.img\")\n  if is_4k_boot_ota:\n    if os.path.exists(signed_16k_boot_image):\n      signed_boot_image \u003d signed_16k_boot_image + \":\" + signed_boot_image\n    if os.path.exists(signed_16k_dtbo_image):\n      signed_dtbo_image \u003d signed_16k_dtbo_image + \":\" + signed_dtbo_image\n  else:\n    if os.path.exists(signed_16k_boot_image):\n      signed_boot_image +\u003d \":\" + signed_16k_boot_image\n    if os.path.exists(signed_16k_dtbo_image):\n      signed_dtbo_image +\u003d \":\" + signed_16k_dtbo_image\n"
+            },
+            {
+              "path": "tools/releasetools/sign_target_files_apks.py",
+              "range": {
+                "startLine": 684,
+                "startChar": 0,
+                "endLine": 685,
+                "endChar": 0
+              },
+              "replacement": "  if not is_boot_ota:\n    RegenerateKernelPartitions(input_tf_zip, output_tf_zip, misc_info)\n"
+            }
+          ]
+        }
+      ],
+      "revId": "58258c74adbeb04d81062674c093253210071272",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
