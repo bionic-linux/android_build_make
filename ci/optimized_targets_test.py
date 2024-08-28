@@ -22,6 +22,7 @@ import re
 import unittest
 from unittest import mock
 import optimized_targets
+import subprocess
 from build_context import BuildContext
 from pyfakefs import fake_filesystem_unittest
 
@@ -43,10 +44,61 @@ class GeneralTestsOptimizerTest(fake_filesystem_unittest.TestCase):
 
   def _setup_working_build_env(self):
     self.change_info_file = pathlib.Path('/tmp/change_info')
+    self._write_soong_ui_file()
+    pathlib.Path('/tmp/top/host_out_testcases').mkdir(parents=True)
+    pathlib.Path('/tmp/top/target_out_testcases').mkdir(parents=True)
+    pathlib.Path('/tmp/top/product_out').mkdir(parents=True)
+    pathlib.Path('/tmp/top/soong_host_out').mkdir(parents=True)
+    pathlib.Path('/tmp/top/host_out').mkdir(parents=True)
+
+    pathlib.Path('/tmp/top/out/dist').mkdir(parents=True)
 
     self.mock_os_environ.update({
         'CHANGE_INFO': str(self.change_info_file),
+        'TOP': '/tmp/top',
+        'DIST_DIR': '/tmp/top/out/dist',
     })
+
+  def _write_soong_ui_file(self):
+    soong_path = pathlib.Path('/tmp/top/build/soong')
+    soong_path.mkdir(parents=True)
+    with open(os.path.join(soong_path, 'soong_ui.bash'), 'w') as f:
+      f.write("""
+              #/bin/bash
+              echo HOST_OUT_TESTCASES='/tmp/top/host_out_testcases'
+              echo TARGET_OUT_TESTCASES='/tmp/top/target_out_testcases'
+              echo PRODUCT_OUT='/tmp/top/product_out'
+              echo SOONG_HOST_OUT='/tmp/top/soong_host_out'
+              echo HOST_OUT='/tmp/top/host_out'
+              """)
+    os.chmod(os.path.join(soong_path, 'soong_ui.bash'), 0o666)
+
+  def _write_change_info_file(self):
+    change_info_contents = {
+        'changes': [{
+            'projectPath': '/project/path',
+            'revisions': [{
+                'fileInfos': [{
+                    'path': 'file/path/file_name',
+                }],
+            }],
+        }]
+    }
+
+    with open(self.change_info_file, 'w') as f:
+      json.dump(change_info_contents, f)
+
+  def _write_test_mapping_file(self):
+    test_mapping_contents = {
+        'test-mapping-group': [
+            {
+                'name': 'test_mapping_module',
+            },
+        ],
+    }
+
+    with open('/project/path/file/path/TEST_MAPPING', 'w') as f:
+      json.dump(test_mapping_contents, f)
 
   def test_general_tests_optimized(self):
     optimizer = self._create_general_tests_optimizer()
@@ -124,32 +176,21 @@ class GeneralTestsOptimizerTest(fake_filesystem_unittest.TestCase):
     with self.assertRaises(json.decoder.JSONDecodeError):
       build_targets = optimizer.get_build_targets()
 
-  def _write_change_info_file(self):
-    change_info_contents = {
-        'changes': [{
-            'projectPath': '/project/path',
-            'revisions': [{
-                'fileInfos': [{
-                    'path': 'file/path/file_name',
-                }],
-            }],
-        }]
-    }
+  @mock.patch('subprocess.run')
+  def test_packaging_outputs(self, subprocess_run):
+    return_value = subprocess.CompletedProcess(args=[], returncode=0)
+    return_value.stdout = """HOST_OUT_TESTCASES='/tmp/top/host_out_testcases'
+TARGET_OUT_TESTCASES='/tmp/top/target_out_testcases'
+PRODUCT_OUT='/tmp/top/product_out'
+SOONG_HOST_OUT='/tmp/top/soong_host_out'
+HOST_OUT='/tmp/top/host_out'"""
+    subprocess_run.return_value = return_value
+    optimizer = self._create_general_tests_optimizer()
 
-    with open(self.change_info_file, 'w') as f:
-      json.dump(change_info_contents, f)
+    optimizer.get_build_targets()
+    package_commands = optimizer.get_package_outputs_commands()
 
-  def _write_test_mapping_file(self):
-    test_mapping_contents = {
-        'test-mapping-group': [
-            {
-                'name': 'test_mapping_module',
-            },
-        ],
-    }
-
-    with open('/project/path/file/path/TEST_MAPPING', 'w') as f:
-      json.dump(test_mapping_contents, f)
+    #self.assertListEqual(package_commands, [])
 
   def _create_general_tests_optimizer(
       self, build_context: BuildContext = None
