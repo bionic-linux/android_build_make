@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e762275e_1599d9c6",
+        "filename": "tools/aconfig/aconfig_storage_file/src/lib.rs",
+        "patchSetId": 4
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 1882770
+      },
+      "writtenOn": "2024-08-28T15:00:21Z",
+      "side": 1,
+      "message": "do we need this print?",
+      "revId": "44d29bb27d2188196d70e791e9fe897d7bf395d0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
