@@ -70,7 +70,7 @@ class BuildPlanner:
       return BuildPlan(set(self.args.extra_targets), set())
 
     build_targets = set()
-    packaging_functions = set()
+    packaging_commands = set()
     for target in self.args.extra_targets:
       if self._unused_target_exclusion_enabled(
           target
@@ -83,12 +83,12 @@ class BuildPlanner:
         continue
 
       target_optimizer = target_optimizer_getter(
-          target, self.build_context, self.args
+          target, self.build_context, self.args,
       )
       build_targets.update(target_optimizer.get_build_targets())
-      packaging_functions.add(target_optimizer.package_outputs)
+      packaging_commands.update(target_optimizer.get_package_outputs_commands())
 
-    return BuildPlan(build_targets, packaging_functions)
+    return BuildPlan(build_targets, packaging_commands)
 
   def _unused_target_exclusion_enabled(self, target: str) -> bool:
     return (
@@ -100,7 +100,7 @@ class BuildPlanner:
 @dataclass(frozen=True)
 class BuildPlan:
   build_targets: set[str]
-  packaging_functions: set[Callable[..., None]]
+  packaging_commands: set[list[str]]
 
 
 def build_test_suites(argv: list[str]) -> int:
@@ -182,8 +182,11 @@ def execute_build_plan(build_plan: BuildPlan):
   except subprocess.CalledProcessError as e:
     raise BuildFailureError(e.returncode) from e
 
-  for packaging_function in build_plan.packaging_functions:
-    packaging_function()
+  for packaging_command in build_plan.packaging_commands:
+    try:
+      run_command(packaging_command)
+    except subprocess.CalledProcessError as e:
+      raise BuildFailureError(e.returncode) from e
 
 
 def get_top() -> pathlib.Path:
