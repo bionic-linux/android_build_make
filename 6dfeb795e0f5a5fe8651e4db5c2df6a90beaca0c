@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3ebc9888_6b41a6e7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-08-28T20:24:43Z",
+      "side": 1,
+      "message": "So you don\u0027t have to hunt for it, dump-phase-start is here:\n\nhttps://cs.android.com/android/platform/superproject/main/+/main:build/make/core/dumpconfig.mk;l\u003d87",
+      "revId": "6dfeb795e0f5a5fe8651e4db5c2df6a90beaca0c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
