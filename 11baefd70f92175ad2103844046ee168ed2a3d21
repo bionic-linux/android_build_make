@@ -183,6 +183,30 @@
       },
       "revId": "11baefd70f92175ad2103844046ee168ed2a3d21",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eb7b541e_bc00f722",
+        "filename": "core/Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 6823,
+      "author": {
+        "id": 1120458
+      },
+      "writtenOn": "2024-08-29T17:43:55Z",
+      "side": 1,
+      "message": "Hey - if possible, can you change it for consistency or if you think this way is better, add another CL to make all the other ones consistent? If it is better, please change it everywhere so others aren\u0027t confused at the difference 😄",
+      "parentUuid": "a2673780_889fc78d",
+      "range": {
+        "startLine": 6823,
+        "startChar": 6,
+        "endLine": 6823,
+        "endChar": 37
+      },
+      "revId": "11baefd70f92175ad2103844046ee168ed2a3d21",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
