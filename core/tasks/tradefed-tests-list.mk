@@ -15,6 +15,12 @@
 # List all TradeFed tests from COMPATIBILITY.tradefed_tests_dir
 .PHONY: tradefed-tests-list
 
+COMPATIBILITY.tradefed_tests_dir := \
+  $(COMPATIBILITY.tradefed_tests_dir) \
+  tools/tradefederation/core/res/config \
+  tools/tradefederation/core/javatests/res/config
+
+$(warning "COMPATIBILITY", $(COMPATIBILITY.tradefed_tests_dir))
 tradefed_tests :=
 $(foreach dir, $(COMPATIBILITY.tradefed_tests_dir), \
   $(eval tradefed_tests += $(shell find $(dir) -type f -name "*.xml")))
