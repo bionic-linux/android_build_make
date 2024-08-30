@@ -41,6 +41,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d7371770_4029a64d",
+        "filename": "tools/aconfig/aconfig/src/commands.rs",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 3599662
+      },
+      "writtenOn": "2024-08-30T15:45:02Z",
+      "side": 1,
+      "message": "I shared my doc to your comments on the bug, which hopefully provides more context!\n\nThis is not a concern because we are only trying to guard against a cross-container READ_WRITE read, and in the worst case we are still able to do a string lookup (so only a small latency penalty is incurred).\n\nIn other words, if everything is done correctly (reading from flags within the container), then the fingerprints will always match, as both the storage file fingerprint and the codegen fingerprint are generated at the same time (container build time). If in two years we want to update the hasher, the only case it will \"break\" is if there is an older host container and a newer client container (which does a read into the host container). In this case, the fingerprints won\u0027t match, and we\u0027ll just fall back to string lookup for only the cross-container reads- so it\u0027s not even really breaking, it just a possibly unnecessary string lookup if the hasher has updated but the set of flags has not changed.\n\nPlease let me know if you have more concerns with this, happy to talk more!",
+      "parentUuid": "22f1f40f_aa4d3043",
+      "range": {
+        "startLine": 35,
+        "startChar": 40,
+        "endLine": 35,
+        "endChar": 51
+      },
+      "revId": "82ef5b2e52bf948d21c775351c96316fa82428c3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1070d397_428c5e1a",
@@ -87,6 +111,54 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "81550bbf_8e2e3338",
+        "filename": "tools/aconfig/aconfig/src/commands.rs",
+        "patchSetId": 2
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 3599662
+      },
+      "writtenOn": "2024-08-30T15:45:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1070d397_428c5e1a",
+      "range": {
+        "startLine": 67,
+        "startChar": 22,
+        "endLine": 67,
+        "endChar": 26
+      },
+      "revId": "82ef5b2e52bf948d21c775351c96316fa82428c3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "92117a0e_bb307ea5",
+        "filename": "tools/aconfig/aconfig/src/commands.rs",
+        "patchSetId": 2
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 3599662
+      },
+      "writtenOn": "2024-08-30T15:45:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cbaa9759_364709bf",
+      "range": {
+        "startLine": 67,
+        "startChar": 56,
+        "endLine": 67,
+        "endChar": 65
+      },
+      "revId": "82ef5b2e52bf948d21c775351c96316fa82428c3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "30f1bfe8_f09b1edd",
@@ -110,6 +182,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d00394a0_5bf7296b",
+        "filename": "tools/aconfig/aconfig/src/commands.rs",
+        "patchSetId": 2
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 3599662
+      },
+      "writtenOn": "2024-08-30T15:45:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "30f1bfe8_f09b1edd",
+      "range": {
+        "startLine": 433,
+        "startChar": 12,
+        "endLine": 433,
+        "endChar": 72
+      },
+      "revId": "82ef5b2e52bf948d21c775351c96316fa82428c3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "48de7b34_d525e419",
@@ -123,6 +219,30 @@
       "writtenOn": "2024-08-30T06:17:33Z",
       "side": 1,
       "message": "don\u0027t prefix with underscore if you use the value",
+      "range": {
+        "startLine": 455,
+        "startChar": 12,
+        "endLine": 455,
+        "endChar": 33
+      },
+      "revId": "82ef5b2e52bf948d21c775351c96316fa82428c3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "41cb874f_37829e53",
+        "filename": "tools/aconfig/aconfig/src/commands.rs",
+        "patchSetId": 2
+      },
+      "lineNbr": 455,
+      "author": {
+        "id": 3599662
+      },
+      "writtenOn": "2024-08-30T15:45:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "48de7b34_d525e419",
       "range": {
         "startLine": 455,
         "startChar": 12,
