@@ -1,0 +1,136 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0908bba8_0ab3bbcd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1937565
+      },
+      "writtenOn": "2024-08-30T06:17:33Z",
+      "side": 1,
+      "message": "(sorry for the drive by comments, I monitor aconfig CLs and this CL was caught in my net)",
+      "revId": "82ef5b2e52bf948d21c775351c96316fa82428c3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "22f1f40f_aa4d3043",
+        "filename": "tools/aconfig/aconfig/src/commands.rs",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1937565
+      },
+      "writtenOn": "2024-08-30T06:17:33Z",
+      "side": 1,
+      "message": "what happens if we want to change the hasher / guardrail impl in two years time? we\u0027ll have a fleet of devices running the old scheme but OTAs will include the new scheme (maybe we\u0027re OK with partitions but not so with mainline updates)\n\ndoes the new storage system encode some version code to help alleviate this?",
+      "range": {
+        "startLine": 35,
+        "startChar": 40,
+        "endLine": 35,
+        "endChar": 51
+      },
+      "revId": "82ef5b2e52bf948d21c775351c96316fa82428c3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1070d397_428c5e1a",
+        "filename": "tools/aconfig/aconfig/src/commands.rs",
+        "patchSetId": 2
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1937565
+      },
+      "writtenOn": "2024-08-30T06:17:33Z",
+      "side": 1,
+      "message": "nit: typo",
+      "range": {
+        "startLine": 67,
+        "startChar": 22,
+        "endLine": 67,
+        "endChar": 26
+      },
+      "revId": "82ef5b2e52bf948d21c775351c96316fa82428c3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cbaa9759_364709bf",
+        "filename": "tools/aconfig/aconfig/src/commands.rs",
+        "patchSetId": 2
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1937565
+      },
+      "writtenOn": "2024-08-30T06:17:33Z",
+      "side": 1,
+      "message": "nit: typo",
+      "range": {
+        "startLine": 67,
+        "startChar": 56,
+        "endLine": 67,
+        "endChar": 65
+      },
+      "revId": "82ef5b2e52bf948d21c775351c96316fa82428c3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "30f1bfe8_f09b1edd",
+        "filename": "tools/aconfig/aconfig/src/commands.rs",
+        "patchSetId": 2
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 1937565
+      },
+      "writtenOn": "2024-08-30T06:17:33Z",
+      "side": 1,
+      "message": "use `bail!(...)` instead, see go/android-rust-style/common_tasks",
+      "range": {
+        "startLine": 433,
+        "startChar": 12,
+        "endLine": 433,
+        "endChar": 72
+      },
+      "revId": "82ef5b2e52bf948d21c775351c96316fa82428c3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "48de7b34_d525e419",
+        "filename": "tools/aconfig/aconfig/src/commands.rs",
+        "patchSetId": 2
+      },
+      "lineNbr": 455,
+      "author": {
+        "id": 1937565
+      },
+      "writtenOn": "2024-08-30T06:17:33Z",
+      "side": 1,
+      "message": "don\u0027t prefix with underscore if you use the value",
+      "range": {
+        "startLine": 455,
+        "startChar": 12,
+        "endLine": 455,
+        "endChar": 33
+      },
+      "revId": "82ef5b2e52bf948d21c775351c96316fa82428c3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
