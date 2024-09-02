@@ -52,6 +52,29 @@
       "parentUuid": "d3688fc4_6775d6db",
       "revId": "9c85770aa4198133b9024a389d444d282db690b0",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a2d63149_ec58dd22",
+        "filename": "tools/aconfig/aconfig_storage_read_api/srcs/lib.rs",
+        "patchSetId": 1
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 1380243
+      },
+      "writtenOn": "2024-09-02T15:05:19Z",
+      "side": 1,
+      "message": "Do you mean the `package_name`? How is that guaranteed? What happens if the caller passes a `package_name` which isn\u0027t a valid Java string?",
+      "range": {
+        "startLine": 183,
+        "startChar": 41,
+        "endLine": 183,
+        "endChar": 51
+      },
+      "revId": "9c85770aa4198133b9024a389d444d282db690b0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ],
   "submitRequirementResults": [
