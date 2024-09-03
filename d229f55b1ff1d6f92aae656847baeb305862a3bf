@@ -69,6 +69,24 @@
       "parentUuid": "57908a50_e308c2fd",
       "revId": "d229f55b1ff1d6f92aae656847baeb305862a3bf",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a846acfa_160d6ff6",
+        "filename": "core/config.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 683,
+      "author": {
+        "id": 3524514
+      },
+      "writtenOn": "2024-09-03T15:05:26Z",
+      "side": 1,
+      "message": "Hi @ccross@android.com Can I please get a follow up on this? Thanks",
+      "parentUuid": "d7c6eeb4_1bc0a982",
+      "revId": "d229f55b1ff1d6f92aae656847baeb305862a3bf",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
