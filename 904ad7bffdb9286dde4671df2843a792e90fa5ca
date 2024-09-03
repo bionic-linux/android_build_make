@@ -16,6 +16,24 @@
       "message": "Bikeshedding, but you could instead create a `BTreeMap::from(flags_map)`, which has ordered keys, then iterate through it with\n\n```\nfor (name, offset) in flags_map_ordered.iter() {\n   ...\n}\n```\n\nThen you wouldn\u0027t need to do the `flags_map.get(\u0026flag)` option handling.",
       "revId": "904ad7bffdb9286dde4671df2843a792e90fa5ca",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a88e0d5b_5e111623",
+        "filename": "tools/aconfig/aconfig/src/commands.rs",
+        "patchSetId": 8
+      },
+      "lineNbr": 428,
+      "author": {
+        "id": 3599662
+      },
+      "writtenOn": "2024-09-03T19:53:00Z",
+      "side": 1,
+      "message": "thank you!! discussed offline a bit, but in discussions realized the function was taking ownership of the HashMap in a way i didn\u0027t intend - PTAL at the updates, thank you!!",
+      "parentUuid": "02efb6fc_e4a0f237",
+      "revId": "904ad7bffdb9286dde4671df2843a792e90fa5ca",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
