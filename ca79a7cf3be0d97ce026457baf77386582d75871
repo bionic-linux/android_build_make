@@ -18,6 +18,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f5ddb41d_a804124d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1380243
+      },
+      "writtenOn": "2024-09-03T16:02:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2c78b363_e149ac00",
+      "revId": "ca79a7cf3be0d97ce026457baf77386582d75871",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f714c5df_c21899da",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-09-03T15:54:47Z",
       "side": 1,
       "message": "Nit: I would prefer if you explained *why* this change is made in the commit message.",
+      "revId": "ca79a7cf3be0d97ce026457baf77386582d75871",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cf5c11c5_98cfdc88",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1380243
+      },
+      "writtenOn": "2024-09-03T16:02:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f714c5df_c21899da",
       "revId": "ca79a7cf3be0d97ce026457baf77386582d75871",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
