@@ -18,6 +18,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1c4c58df_cab522da",
+        "filename": "tools/aconfig/aconfig/src/commands.rs",
+        "patchSetId": 7
+      },
+      "lineNbr": 423,
+      "author": {
+        "id": 3599662
+      },
+      "writtenOn": "2024-09-03T16:31:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0899f4c4_2f42d6c4",
+      "revId": "e4fb02a9de7a079c8843c52f95a6d208110c0cc2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "834d8f01_bde0fdc2",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-09-03T14:26:51Z",
       "side": 1,
       "message": "why not just use SipHasher13::new() which use 0 as both keys?",
+      "revId": "e4fb02a9de7a079c8843c52f95a6d208110c0cc2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4d58f915_3f2d67cb",
+        "filename": "tools/aconfig/aconfig/src/commands.rs",
+        "patchSetId": 7
+      },
+      "lineNbr": 424,
+      "author": {
+        "id": 3599662
+      },
+      "writtenOn": "2024-09-03T16:31:00Z",
+      "side": 1,
+      "message": "good catch, thank you - done!",
+      "parentUuid": "834d8f01_bde0fdc2",
       "revId": "e4fb02a9de7a079c8843c52f95a6d208110c0cc2",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
