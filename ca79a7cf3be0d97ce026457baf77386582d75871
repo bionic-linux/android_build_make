@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2c78b363_e149ac00",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1937565
+      },
+      "writtenOn": "2024-09-03T15:54:47Z",
+      "side": 1,
+      "message": "nit: aconfig CLs should start with\n\n`aconfig: \u003ccommit subject\u003e`\n\nand not end in a dot.",
+      "revId": "ca79a7cf3be0d97ce026457baf77386582d75871",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f714c5df_c21899da",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1937565
+      },
+      "writtenOn": "2024-09-03T15:54:47Z",
+      "side": 1,
+      "message": "Nit: I would prefer if you explained *why* this change is made in the commit message.",
+      "revId": "ca79a7cf3be0d97ce026457baf77386582d75871",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
