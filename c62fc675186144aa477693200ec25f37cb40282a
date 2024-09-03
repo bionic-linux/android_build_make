@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "43824750_ea5a0e38",
+        "filename": "tools/aconfig/aconfig/src/commands.rs",
+        "patchSetId": 13
+      },
+      "lineNbr": 423,
+      "author": {
+        "id": 1981530
+      },
+      "writtenOn": "2024-09-03T20:14:34Z",
+      "side": 1,
+      "message": "I think we can avoid a clone here if we make the type `BTreeMap\u003c\u0026String, \u0026u16\u003e`.",
+      "revId": "c62fc675186144aa477693200ec25f37cb40282a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
