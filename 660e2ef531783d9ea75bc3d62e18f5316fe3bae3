@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3fc63998_eadf670e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1900900
+      },
+      "writtenOn": "2024-09-04T08:31:17Z",
+      "side": 1,
+      "message": "Related repos have been created on downstream branches. Hi @ccross@android.com, could you help review this change to enable mcts on U? Thanks a lot!",
+      "revId": "660e2ef531783d9ea75bc3d62e18f5316fe3bae3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
