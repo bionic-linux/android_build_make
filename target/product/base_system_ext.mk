@@ -13,8 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+include build/make/target/product/sepolicy/selinux_policy_system_ext.mk
 
 # Base modules and settings for the system_ext partition.
+PRODUCT_PACKAGES += $(SEPOLICY_SYSTEM_EXT_MODULES)
 PRODUCT_PACKAGES += \
     build_flag_system_ext \
     fs_config_dirs_system_ext \
@@ -22,7 +24,6 @@ PRODUCT_PACKAGES += \
     group_system_ext \
     passwd_system_ext \
     SatelliteClient \
-    selinux_policy_system_ext \
     system_ext_manifest.xml \
     system_ext-build.prop \
 
