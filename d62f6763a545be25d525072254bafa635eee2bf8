@@ -90,6 +90,23 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "e7b05dbf_8c914082",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1246512
+      },
+      "writtenOn": "2024-09-04T11:00:01Z",
+      "side": 1,
+      "message": "We will start work to see if this be made in soong instead as highlighted by Jiyong.",
+      "revId": "d62f6763a545be25d525072254bafa635eee2bf8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "0b453e54_f28da4d4",
         "filename": "core/artifact_path_requirements.mk",
         "patchSetId": 6
