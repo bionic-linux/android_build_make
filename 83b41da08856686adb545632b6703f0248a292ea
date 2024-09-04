@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7a79dcd8_02d65c57",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1246512
+      },
+      "writtenOn": "2024-09-04T10:59:33Z",
+      "side": 1,
+      "message": "We will start work to see if this be made in soong instead as highlighted by Jiyong.",
+      "revId": "83b41da08856686adb545632b6703f0248a292ea",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
