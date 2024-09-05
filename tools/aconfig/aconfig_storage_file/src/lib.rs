@@ -253,6 +253,16 @@ pub fn read_u32_from_bytes(buf: &[u8], head: &mut usize) -> Result<u32, AconfigS
     Ok(val)
 }
 
+// Read and parse bytes as u64
+pub fn read_u64_from_bytes(buf: &[u8], head: &mut usize) -> Result<u64, AconfigStorageError> {
+    let val =
+        u64::from_le_bytes(buf[*head..*head + 8].try_into().map_err(|errmsg| {
+            BytesParseFail(anyhow!("fail to parse u64 from bytes: {}", errmsg))
+        })?);
+    *head += 8;
+    Ok(val)
+}
+
 /// Read and parse bytes as string
 pub(crate) fn read_str_from_bytes(
     buf: &[u8],
