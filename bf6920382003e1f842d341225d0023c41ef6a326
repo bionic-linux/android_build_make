@@ -16,6 +16,23 @@
       "message": "Could you implement this in soong? Jiyong added required deps tracking to soong in aosp/3000612 but I guess it still ignores missing variations.",
       "revId": "bf6920382003e1f842d341225d0023c41ef6a326",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "07c41bfc_468f333e",
+        "filename": "core/main.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 558,
+      "author": {
+        "id": 1535516
+      },
+      "writtenOn": "2024-09-05T17:35:57Z",
+      "side": 1,
+      "message": "We can\u0027t really just spew warnings every time analysis is run, we need to fix these issues for real and make it an error. Or put the warnings behind a flag.",
+      "revId": "bf6920382003e1f842d341225d0023c41ef6a326",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
