@@ -530,10 +530,15 @@ endef
 define add-all-host-to-host-required-modules-deps
 $(foreach m,$(ALL_MODULES), \
   $(eval r := $(ALL_MODULES.$(m).REQUIRED_FROM_HOST)) \
-  $(if $(r), \
-    $(eval r := $(call module-installed-files,$(r))) \
+  $(foreach r_i, $(r), \
+    $(eval r_j := $(call module-installed-files,$(r_i))) \
+        $(if $(filter $(ALL_MODULES.$(m).CLASS),FAKE),,\
+            $(if $(r_j),,\
+                $(warning Missing required host module $(r_i) from module $(m) defined in $(ALL_MODULES.$(m).MAKEFILE)) \
+            ) \
+        ) \
     $(eval h_m := $(filter $(HOST_OUT)/%, $(ALL_MODULES.$(m).INSTALLED))) \
-    $(eval h_r := $(filter $(HOST_OUT)/%, $(r))) \
+    $(eval h_r := $(filter $(HOST_OUT)/%, $(r_j))) \
     $(eval h_r := $(filter-out $(h_m), $(h_r))) \
     $(if $(h_m), $(eval $(call add-required-deps, $(h_m),$(h_r)))) \
   ) \
@@ -546,10 +551,15 @@ $(call add-all-host-to-host-required-modules-deps)
 define add-all-host-cross-to-host-cross-required-modules-deps
 $(foreach m,$(ALL_MODULES), \
   $(eval r := $(ALL_MODULES.$(m).REQUIRED_FROM_HOST_CROSS)) \
-  $(if $(r), \
-    $(eval r := $(call module-installed-files,$(r))) \
+  $(foreach r_i, $(r), \
+    $(eval r_j := $(call module-installed-files,$(r_i))) \
+        $(if $(filter $(ALL_MODULES.$(m).CLASS),FAKE),,\
+            $(if $(r_j),,\
+                $(warning Missing required cross host module $(r_i) from module $(m) defined in $(ALL_MODULES.$(m).MAKEFILE)) \
+            ) \
+        ) \
     $(eval hc_m := $(filter $(HOST_CROSS_OUT)/%, $(ALL_MODULES.$(m).INSTALLED))) \
-    $(eval hc_r := $(filter $(HOST_CROSS_OUT)/%, $(r))) \
+    $(eval hc_r := $(filter $(HOST_CROSS_OUT)/%, $(r_j))) \
     $(eval hc_r := $(filter-out $(hc_m), $(hc_r))) \
     $(if $(hc_m), $(eval $(call add-required-deps, $(hc_m),$(hc_r)))) \
   ) \
@@ -563,11 +573,16 @@ $(call add-all-host-cross-to-host-cross-required-modules-deps)
 define add-all-target-to-target-required-modules-deps
 $(foreach m,$(ALL_MODULES), \
   $(eval r := $(ALL_MODULES.$(m).REQUIRED_FROM_TARGET)) \
-  $(if $(r), \
-    $(eval r := $(call module-installed-files,$(r))) \
+  $(foreach r_i, $(r), \
+    $(eval r_j := $(call module-installed-files,$(r_i))) \
+        $(if $(filter $(ALL_MODULES.$(m).CLASS),FAKE),,\
+            $(if $(r_j),,\
+                $(warning Missing required dependency $(r_i) from module $(m) defined in $(ALL_MODULES.$(m).MAKEFILE)) \
+            ) \
+        ) \
     $(eval t_m := $(filter $(TARGET_OUT_ROOT)/%, $(ALL_MODULES.$(m).INSTALLED))) \
     $(eval t_m := $(filter-out $(ALL_MODULES.$(m).ORDERONLY_INSTALLED), $(ALL_MODULES.$(m).INSTALLED))) \
-    $(eval t_r := $(filter $(TARGET_OUT_ROOT)/%, $(r))) \
+    $(eval t_r := $(filter $(TARGET_OUT_ROOT)/%, $(r_j))) \
     $(eval t_r := $(filter-out $(t_m), $(t_r))) \
     $(if $(t_m), $(eval $(call add-required-deps, $(t_m),$(t_r)))) \
   ) \
