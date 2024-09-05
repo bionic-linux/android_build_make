@@ -23,7 +23,6 @@ import android.aconfig.storage.FileType;
 import android.aconfig.storage.FlagTable;
 import android.aconfig.storage.FlagValueList;
 import android.aconfig.storage.PackageTable;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -35,8 +34,8 @@ public class FlagValueListTest {
     public void testFlagValueList_rightHeader() throws Exception {
         FlagValueList flagValueList =
                 FlagValueList.fromBytes(TestDataUtils.getTestFlagValByteBuffer());
-        FlagValueList.Header header = flagValueList.getHeader();
-        assertEquals(1, header.getVersion());
+    FlagValueList.Header header = flagValueList.getHeader();
+        assertEquals(2, header.getVersion());
         assertEquals("mockup", header.getContainer());
         assertEquals(FileType.FLAG_VAL, header.getFileType());
         assertEquals(35, header.getFileSize());

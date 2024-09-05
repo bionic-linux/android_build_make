@@ -21,7 +21,6 @@ import static org.junit.Assert.assertEquals;
 import android.aconfig.storage.FileType;
 import android.aconfig.storage.FlagTable;
 import android.aconfig.storage.FlagType;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -32,8 +31,8 @@ public class FlagTableTest {
     @Test
     public void testFlagTable_rightHeader() throws Exception {
         FlagTable flagTable = FlagTable.fromBytes(TestDataUtils.getTestFlagMapByteBuffer());
-        FlagTable.Header header = flagTable.getHeader();
-        assertEquals(1, header.getVersion());
+    FlagTable.Header header = flagTable.getHeader();
+        assertEquals(2, header.getVersion());
         assertEquals("mockup", header.getContainer());
         assertEquals(FileType.FLAG_MAP, header.getFileType());
         assertEquals(321, header.getFileSize());
