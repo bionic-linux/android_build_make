@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "9e7cdbd5_f44ae569",
+        "filename": "core/main.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1120458
+      },
+      "writtenOn": "2024-09-05T17:38:11Z",
+      "side": 1,
+      "message": "If it\u0027s implemented in Soong, it would only work for all modules, but Soong exports these dependencies here, and this will work for all modules, including modules that are still in make. So, I\u0027d like to keep it here.\n\n(also I originally implemented this in 2018, and this is rebasing/slightly improving http://r.android.com/615759. I am not going to be able to do it another way at this time. I also am not sure how to fix the APEX vendor dependencies, which should be done before this is merged.)",
+      "parentUuid": "1705711a_8a0f87ec",
+      "revId": "bf6920382003e1f842d341225d0023c41ef6a326",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "07c41bfc_468f333e",
         "filename": "core/main.mk",
         "patchSetId": 1
