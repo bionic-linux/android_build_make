@@ -124,6 +124,7 @@ public class PackageTable {
 
         private String mPackageName;
         private int mPackageId;
+        private long mFingerprint;
         private int mBooleanStartIndex;
         private int mNextOffset;
 
@@ -153,6 +154,7 @@ public class PackageTable {
             Node node = new Node();
             node.mPackageName = reader.readString();
             node.mPackageId = reader.readInt();
+            node.mFingerprint = reader.readLong();
             node.mBooleanStartIndex = reader.readInt();
             node.mNextOffset = reader.readInt();
             node.mNextOffset = node.mNextOffset == 0 ? -1 : node.mNextOffset;
@@ -178,6 +180,7 @@ public class PackageTable {
             return Objects.equals(mPackageName, other.mPackageName)
                     && mPackageId == other.mPackageId
                     && mBooleanStartIndex == other.mBooleanStartIndex
+                    && mFingerprint == other.mFingerprint
                     && mNextOffset == other.mNextOffset;
         }
 
@@ -191,6 +194,10 @@ public class PackageTable {
 
         public int getBooleanStartIndex() {
             return mBooleanStartIndex;
+        }
+
+        public long getFingerprint() {
+            return mFingerprint;
         }
 
         public int getNextOffset() {

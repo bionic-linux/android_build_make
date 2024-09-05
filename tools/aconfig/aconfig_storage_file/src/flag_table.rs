@@ -221,11 +221,14 @@ impl FlagTable {
 mod tests {
     use super::*;
     use crate::test_utils::create_test_flag_table;
+    use rstest::rstest;
 
-    #[test]
+    #[rstest]
+    #[case(1)]
+    #[case(2)]
     // this test point locks down the table serialization
-    fn test_serialization() {
-        let flag_table = create_test_flag_table();
+    fn test_serialization(#[case] version: u32) {
+        let flag_table = create_test_flag_table(version);
 
         let header: &FlagTableHeader = &flag_table.header;
         let reinterpreted_header = FlagTableHeader::from_bytes(&header.into_bytes());
@@ -245,21 +248,25 @@ mod tests {
         assert_eq!(flag_table_bytes.len() as u32, header.file_size);
     }
 
-    #[test]
+    #[rstest]
+    #[case(1)]
+    #[case(2)]
     // this test point locks down that version number should be at the top of serialized
     // bytes
-    fn test_version_number() {
-        let flag_table = create_test_flag_table();
+    fn test_version_number(#[case] version: u32) {
+        let flag_table = create_test_flag_table(version);
         let bytes = &flag_table.into_bytes();
         let mut head = 0;
-        let version = read_u32_from_bytes(bytes, &mut head).unwrap();
-        assert_eq!(version, 1);
+        let version_from_file = read_u32_from_bytes(bytes, &mut head).unwrap();
+        assert_eq!(version_from_file, version);
     }
 
-    #[test]
+    #[rstest]
+    #[case(1)]
+    #[case(2)]
     // this test point locks down file type check
-    fn test_file_type_check() {
-        let mut flag_table = create_test_flag_table();
+    fn test_file_type_check(#[case] version: u32) {
+        let mut flag_table = create_test_flag_table(version);
         flag_table.header.file_type = 123u8;
         let error = FlagTable::from_bytes(&flag_table.into_bytes()).unwrap_err();
         assert_eq!(

@@ -133,11 +133,14 @@ impl FlagValueList {
 mod tests {
     use super::*;
     use crate::test_utils::create_test_flag_value_list;
+    use rstest::rstest;
 
-    #[test]
+    #[rstest]
+    #[case(1)]
+    #[case(2)]
     // this test point locks down the value list serialization
-    fn test_serialization() {
-        let flag_value_list = create_test_flag_value_list();
+    fn test_serialization(#[case] version: u32) {
+        let flag_value_list = create_test_flag_value_list(version);
 
         let header: &FlagValueHeader = &flag_value_list.header;
         let reinterpreted_header = FlagValueHeader::from_bytes(&header.into_bytes());
@@ -151,21 +154,25 @@ mod tests {
         assert_eq!(flag_value_bytes.len() as u32, header.file_size);
     }
 
-    #[test]
+    #[rstest]
+    #[case(1)]
+    #[case(2)]
     // this test point locks down that version number should be at the top of serialized
     // bytes
-    fn test_version_number() {
-        let flag_value_list = create_test_flag_value_list();
+    fn test_version_number(#[case] version: u32) {
+        let flag_value_list = create_test_flag_value_list(version);
         let bytes = &flag_value_list.into_bytes();
         let mut head = 0;
-        let version = read_u32_from_bytes(bytes, &mut head).unwrap();
-        assert_eq!(version, 1);
+        let version_from_file = read_u32_from_bytes(bytes, &mut head).unwrap();
+        assert_eq!(version_from_file, version);
     }
 
-    #[test]
+    #[rstest]
+    #[case(1)]
+    #[case(2)]
     // this test point locks down file type check
-    fn test_file_type_check() {
-        let mut flag_value_list = create_test_flag_value_list();
+    fn test_file_type_check(#[case] version: u32) {
+        let mut flag_value_list = create_test_flag_value_list(version);
         flag_value_list.header.file_type = 123u8;
         let error = FlagValueList::from_bytes(&flag_value_list.into_bytes()).unwrap_err();
         assert_eq!(
