@@ -521,6 +521,8 @@ ifneq (,$(or $(LOCAL_SOONG_INSTALLED_MODULE),$(call boolean-not,$(LOCAL_UNINSTAL
   $(my_all_targets) : | $(LOCAL_SOONG_INSTALL_SYMLINKS)
 endif
 
+$(my_all_targets) : | $(LOCAL_SOONG_INSTALL_DIR)
+
 ###########################################################
 ## VINTF manifest fragment and init.rc goals
 ###########################################################
@@ -997,6 +999,7 @@ ifneq (,$(LOCAL_SOONG_INSTALLED_MODULE))
       $(my_vintf_installed))
 
   ALL_MODULES.$(my_register_name).INSTALLED_SYMLINKS := $(LOCAL_SOONG_INSTALL_SYMLINKS)
+  ALL_MODULES.$(my_register_name).INSTALLED += $(LOCAL_SOONG_INSTALL_DIR)
 
   # Store the list of colon-separated pairs of the built and installed locations
   # of files provided by this module.  Used by custom packaging rules like
