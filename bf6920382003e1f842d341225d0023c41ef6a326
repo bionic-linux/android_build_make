@@ -87,6 +87,24 @@
       "parentUuid": "2fa0d09d_1cd9093f",
       "revId": "bf6920382003e1f842d341225d0023c41ef6a326",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4ba8389d_1e31e765",
+        "filename": "core/main.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 558,
+      "author": {
+        "id": 1120458
+      },
+      "writtenOn": "2024-09-05T18:33:22Z",
+      "side": 1,
+      "message": "Well, if you really think this, solve b/242589449. 😊\n\nOf course the goal is to get rid of these logs, but if we fix most cases, I think exposing the warning log is good. It can\u0027t be made an error due to so many different lunch targets. It has to be scoped down.\n\nAnyway, the reason I\u0027m adding this is because someone told me they made a typo that\u0027s hard to debug here. It happens, and it can be frustrating. So, I think you\u0027re wrong, it\u0027s not 99% of people - it\u0027s anyone that makes a typo here. Making these cases easier to debug is helpful. Though, I generally agree this needs to be scoped down or some cases made an error before it can be submitted.",
+      "parentUuid": "b6367b27_8d459c0f",
+      "revId": "bf6920382003e1f842d341225d0023c41ef6a326",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
