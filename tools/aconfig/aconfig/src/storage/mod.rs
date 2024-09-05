@@ -21,16 +21,20 @@ pub mod package_table;
 use anyhow::{anyhow, Result};
 use std::collections::{HashMap, HashSet};
 
-use crate::storage::{
-    flag_table::create_flag_table, flag_value::create_flag_value,
-    package_table::create_package_table,
+use crate::{
+    commands::FingerprintedParsedFlags,
+    storage::{
+        flag_table::create_flag_table, flag_value::create_flag_value,
+        package_table::create_package_table,
+    },
 };
-use aconfig_protos::{ProtoParsedFlag, ProtoParsedFlags};
+use aconfig_protos::ProtoParsedFlag;
 use aconfig_storage_file::StorageFileType;
 
 pub struct FlagPackage<'a> {
     pub package_name: &'a str,
     pub package_id: u32,
+    pub fingerprint: u64,
     pub flag_names: HashSet<&'a str>,
     pub boolean_flags: Vec<&'a ProtoParsedFlag>,
     // The index of the first boolean flag in this aconfig package among all boolean
@@ -39,10 +43,11 @@ pub struct FlagPackage<'a> {
 }
 
 impl<'a> FlagPackage<'a> {
-    fn new(package_name: &'a str, package_id: u32) -> Self {
+    fn new(package_name: &'a str, package_id: u32, fingerprint: u64) -> Self {
         FlagPackage {
             package_name,
             package_id,
+            fingerprint,
             flag_names: HashSet::new(),
             boolean_flags: vec![],
             boolean_start_index: 0,
@@ -58,16 +63,20 @@ impl<'a> FlagPackage<'a> {
 
 pub fn group_flags_by_package<'a, I>(parsed_flags_vec_iter: I) -> Vec<FlagPackage<'a>>
 where
-    I: Iterator<Item = &'a ProtoParsedFlags>,
+    I: Iterator<Item = &'a FingerprintedParsedFlags>,
 {
     // group flags by package
     let mut packages: Vec<FlagPackage<'a>> = Vec::new();
     let mut package_index: HashMap<&str, usize> = HashMap::new();
     for parsed_flags in parsed_flags_vec_iter {
-        for parsed_flag in parsed_flags.parsed_flag.iter() {
+        for parsed_flag in parsed_flags.parsed_flags.parsed_flag.iter() {
             let index = *(package_index.entry(parsed_flag.package()).or_insert(packages.len()));
             if index == packages.len() {
-                packages.push(FlagPackage::new(parsed_flag.package(), index as u32));
+                packages.push(FlagPackage::new(
+                    parsed_flag.package(),
+                    index as u32,
+                    parsed_flags.fingerprint,
+                ));
             }
             packages[index].insert(parsed_flag);
         }
@@ -89,7 +98,7 @@ pub fn generate_storage_file<'a, I>(
     file: &StorageFileType,
 ) -> Result<Vec<u8>>
 where
-    I: Iterator<Item = &'a ProtoParsedFlags>,
+    I: Iterator<Item = &'a FingerprintedParsedFlags>,
 {
     let packages = group_flags_by_package(parsed_flags_vec_iter);
 
@@ -113,7 +122,10 @@ where
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::commands::create_fingerprinted_parsed_flags;
     use crate::Input;
+
+    use aconfig_protos::ProtoParsedFlags;
 
     pub fn parse_all_test_flags() -> Vec<ProtoParsedFlags> {
         let aconfig_files = [
@@ -164,7 +176,11 @@ mod tests {
     #[test]
     fn test_flag_package() {
         let caches = parse_all_test_flags();
-        let packages = group_flags_by_package(caches.iter());
+        let packages_vec: Vec<FingerprintedParsedFlags> = caches
+            .into_iter()
+            .map(|flag| create_fingerprinted_parsed_flags(flag).unwrap())
+            .collect::<Vec<_>>();
+        let packages = group_flags_by_package(packages_vec.iter());
 
         for pkg in packages.iter() {
             let pkg_name = pkg.package_name;

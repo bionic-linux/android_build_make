@@ -17,7 +17,7 @@
 //! package table module defines the package table file format and methods for serialization
 //! and deserialization
 
-use crate::{get_bucket_index, read_str_from_bytes, read_u32_from_bytes, read_u8_from_bytes};
+use crate::{get_bucket_index, read_str_from_bytes, read_u32_from_bytes, read_u64_from_bytes, read_u8_from_bytes};
 use crate::{AconfigStorageError, StorageFileType};
 use anyhow::anyhow;
 use std::fmt;
@@ -96,6 +96,7 @@ impl PackageTableHeader {
 pub struct PackageTableNode {
     pub package_name: String,
     pub package_id: u32,
+    pub fingerprint: u64,
     // The index of the first boolean flag in this aconfig package among all boolean
     // flags in this container.
     pub boolean_start_index: u32,
@@ -107,8 +108,8 @@ impl fmt::Debug for PackageTableNode {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         writeln!(
             f,
-            "Package: {}, Id: {}, Boolean flag start index: {}, Next: {:?}",
-            self.package_name, self.package_id, self.boolean_start_index, self.next_offset
+            "Package: {}, Id: {}, Fingerprint: {}, Boolean flag start index: {}, Next: {:?}",
+            self.package_name, self.package_id, self.fingerprint, self.boolean_start_index, self.next_offset
         )?;
         Ok(())
     }
@@ -122,6 +123,7 @@ impl PackageTableNode {
         result.extend_from_slice(&(name_bytes.len() as u32).to_le_bytes());
         result.extend_from_slice(name_bytes);
         result.extend_from_slice(&self.package_id.to_le_bytes());
+        result.extend_from_slice(&self.fingerprint.to_le_bytes());
         result.extend_from_slice(&self.boolean_start_index.to_le_bytes());
         result.extend_from_slice(&self.next_offset.unwrap_or(0).to_le_bytes());
         result
@@ -133,6 +135,7 @@ impl PackageTableNode {
         let node = Self {
             package_name: read_str_from_bytes(bytes, &mut head)?,
             package_id: read_u32_from_bytes(bytes, &mut head)?,
+            fingerprint: read_u64_from_bytes(bytes, &mut head)?,
             boolean_start_index: read_u32_from_bytes(bytes, &mut head)?,
             next_offset: match read_u32_from_bytes(bytes, &mut head)? {
                 0 => None,
