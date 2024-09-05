@@ -17,7 +17,7 @@
 use anyhow::{bail, ensure, Context, Result};
 use itertools::Itertools;
 use protobuf::Message;
-use std::collections::{BTreeMap, HashMap};
+use std::collections::HashMap;
 use std::hash::Hasher;
 use std::io::Read;
 use std::path::PathBuf;
@@ -199,6 +199,7 @@ pub fn create_java_lib(
     allow_instrumentation: bool,
 ) -> Result<Vec<OutputFile>> {
     let parsed_flags = input.try_parse_flags()?;
+    let _fingerprint = compute_fingerprint_from_parsed_flags(parsed_flags.clone())?;
     let modified_parsed_flags = modify_parsed_flags_based_on_mode(parsed_flags, codegen_mode)?;
     let Some(package) = find_unique_package(&modified_parsed_flags) else {
         bail!("no parsed flags, or the parsed flags use different packages");
@@ -225,6 +226,7 @@ pub fn create_cpp_lib(
         "Exported mode for generated c/c++ flag library is disabled"
     );
     let parsed_flags = input.try_parse_flags()?;
+    let _fingerprint = compute_fingerprint_from_parsed_flags(parsed_flags.clone())?;
     let modified_parsed_flags = modify_parsed_flags_based_on_mode(parsed_flags, codegen_mode)?;
     let Some(package) = find_unique_package(&modified_parsed_flags) else {
         bail!("no parsed flags, or the parsed flags use different packages");
@@ -251,6 +253,7 @@ pub fn create_rust_lib(
         "Exported mode for generated rust flag library is disabled"
     );
     let parsed_flags = input.try_parse_flags()?;
+    let _fingerprint = compute_fingerprint_from_parsed_flags(parsed_flags.clone())?;
     let modified_parsed_flags = modify_parsed_flags_based_on_mode(parsed_flags, codegen_mode)?;
     let Some(package) = find_unique_package(&modified_parsed_flags) else {
         bail!("no parsed flags, or the parsed flags use different packages");
@@ -266,13 +269,29 @@ pub fn create_rust_lib(
     )
 }
 
+// pub fn create_fingerprinted_parsed_flags(
+//     flags: ProtoParsedFlags,
+// ) -> Result<FingerprintedParsedFlags> {
+//     let flags_fingerprint = compute_fingerprint_from_parsed_flags(flags.clone())?;
+
+//     Ok(FingerprintedParsedFlags { parsed_flags: flags, fingerprint: flags_fingerprint })
+// }
+
 pub fn create_storage(
     caches: Vec<Input>,
     container: &str,
     file: &StorageFileType,
 ) -> Result<Vec<u8>> {
+    // let parsed_flags_vec: Vec<FingerprintedParsedFlags> = caches
+    //     .into_iter()
+    //     .map(|mut input| input.try_parse_flags())
+    //     .map(|flags| match flags {
+    //         Ok(f) => create_fingerprinted_parsed_flags(f),
+    //         Err(e) => Err(e),
+    //     })
+    //     .collect::<Result<Vec<_>>>()?;
     let parsed_flags_vec: Vec<ProtoParsedFlags> =
-        caches.into_iter().map(|mut input| input.try_parse_flags()).collect::<Result<Vec<_>>>()?;
+      caches.into_iter().map(|mut input| input.try_parse_flags()).collect::<Result<Vec<_>>>()?;
     generate_storage_file(container, parsed_flags_vec.iter(), file)
 }
 
@@ -412,23 +431,50 @@ where
     Ok(flag_ids)
 }
 
-#[allow(dead_code)] // TODO: b/316357686 - Use fingerprint in codegen to
-                    // protect hardcoded offset reads.
-pub fn compute_flag_offsets_fingerprint(flags_map: &HashMap<String, u16>) -> Result<u64> {
+pub fn compute_flag_offsets_fingerprint<'a, I>(package: &str, parsed_flags_iter: I) -> Result<u64>
+where
+    I: Iterator<Item = &'a ProtoParsedFlag> + Clone,
+{
+    // Assert the flags are sorted.
+    assert!(parsed_flags_iter.clone().tuple_windows().all(|(a, b)| a.name() <= b.name()));
+
     let mut hasher = SipHasher13::new();
+    for flag in parsed_flags_iter {
+        if package != flag.package() {
+            bail!("Encountered a flag not in current package.");
+        }
 
-    // Need to sort to ensure the data is added to the hasher in the same order
-    // each run.
-    let sorted_map: BTreeMap<&String, &u16> = flags_map.iter().collect();
-
-    for (flag, offset) in sorted_map {
-        // See https://docs.rs/siphasher/latest/siphasher/#note for use of write
-        // over write_i16. Similarly, use to_be_bytes rather than to_ne_bytes to
-        // ensure consistency.
-        hasher.write(flag.as_bytes());
-        hasher.write(&offset.to_be_bytes());
+        hasher.write(flag.name().to_string().as_bytes());
     }
     Ok(hasher.finish())
+}
+
+pub fn compute_flag_offsets_fingerprint2(flag_names: &mut Vec<String>) -> Result<u64> {
+    // Assert the flags are sorted.
+    flag_names.sort();
+
+    let mut hasher = SipHasher13::new();
+    for flag in flag_names {
+        hasher.write(flag.as_bytes());
+    }
+    Ok(hasher.finish())
+}
+
+fn compute_fingerprint_from_parsed_flags(flags: ProtoParsedFlags) -> Result<u64> {
+    let separated_flags: Vec<ProtoParsedFlag> = flags.parsed_flag.into_iter().collect::<Vec<_>>();
+    let Some(package) = find_unique_package(&separated_flags) else {
+        bail!("No parsed flags, or the parsed flags use different packages.");
+    };
+
+    let package = package.to_string();
+    compute_flag_offsets_fingerprint(&package, separated_flags.iter())
+}
+
+#[allow(dead_code)] // TODO: b/316357686 - Use fingerprint in codegen to
+                    // protect hardcoded offset reads.
+pub fn compute_fingerprint_from_flags_input(mut input: Input) -> Result<u64> {
+    let parsed_flags: ProtoParsedFlags = input.try_parse_flags()?;
+    compute_fingerprint_from_parsed_flags(parsed_flags)
 }
 
 #[cfg(test)]
@@ -438,12 +484,10 @@ mod tests {
 
     #[test]
     fn test_offset_fingerprint() {
-        let parsed_flags = crate::test::parse_test_flags();
-        let package = find_unique_package(&parsed_flags.parsed_flag).unwrap().to_string();
-        let flag_ids = assign_flag_ids(&package, parsed_flags.parsed_flag.iter()).unwrap();
-        let expected_fingerprint = 10709892481002252132u64;
+        let input = parse_test_flags_as_input();
+        let expected_fingerprint = 5801144784618221668u64;
 
-        let hash_result = compute_flag_offsets_fingerprint(&flag_ids);
+        let hash_result = compute_fingerprint_from_flags_input(input);
 
         assert_eq!(hash_result.unwrap(), expected_fingerprint);
     }

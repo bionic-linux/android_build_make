@@ -139,7 +139,9 @@ pub fn create_flag_table(container: &str, packages: &[FlagPackage]) -> Result<Fl
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::storage::{group_flags_by_package, tests::parse_all_test_flags};
+    use crate::{
+        storage::{group_flags_by_package, tests::parse_all_test_flags},
+    };
 
     fn create_test_flag_table_from_source() -> Result<FlagTable> {
         let caches = parse_all_test_flags();
