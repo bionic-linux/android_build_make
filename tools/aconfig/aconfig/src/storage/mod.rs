@@ -21,16 +21,21 @@ pub mod package_table;
 use anyhow::{anyhow, Result};
 use std::collections::{HashMap, HashSet};
 
-use crate::storage::{
-    flag_table::create_flag_table, flag_value::create_flag_value,
-    package_table::create_package_table,
+use crate::{
+    commands::compute_flags_fingerprint,
+    storage::{
+        flag_table::create_flag_table, flag_value::create_flag_value,
+        package_table::create_package_table,
+    },
 };
-use aconfig_protos::{ProtoParsedFlag, ProtoParsedFlags};
+use aconfig_protos::ProtoParsedFlag;
+use aconfig_protos::ProtoParsedFlags;
 use aconfig_storage_file::StorageFileType;
 
 pub struct FlagPackage<'a> {
     pub package_name: &'a str,
     pub package_id: u32,
+    pub fingerprint: u64,
     pub flag_names: HashSet<&'a str>,
     pub boolean_flags: Vec<&'a ProtoParsedFlag>,
     // The index of the first boolean flag in this aconfig package among all boolean
@@ -43,6 +48,7 @@ impl<'a> FlagPackage<'a> {
         FlagPackage {
             package_name,
             package_id,
+            fingerprint: 0,
             flag_names: HashSet::new(),
             boolean_flags: vec![],
             boolean_start_index: 0,
@@ -78,6 +84,14 @@ where
     for p in packages.iter_mut() {
         p.boolean_start_index = boolean_start_index;
         boolean_start_index += p.boolean_flags.len() as u32;
+
+        // Calculate fingerprint.
+        let mut flag_names_vec =
+            p.flag_names.clone().into_iter().map(String::from).collect::<Vec<_>>();
+        let fingerprint = compute_flags_fingerprint(&mut flag_names_vec);
+        if fingerprint.is_ok() {
+            p.fingerprint = fingerprint.unwrap();
+        }
     }
 
     packages
@@ -114,6 +128,8 @@ where
 mod tests {
     use super::*;
     use crate::Input;
+
+    use aconfig_protos::ProtoParsedFlags;
 
     pub fn parse_all_test_flags() -> Vec<ProtoParsedFlags> {
         let aconfig_files = [

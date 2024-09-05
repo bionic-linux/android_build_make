@@ -17,7 +17,7 @@
 use anyhow::{bail, ensure, Context, Result};
 use itertools::Itertools;
 use protobuf::Message;
-use std::collections::{BTreeMap, HashMap};
+use std::collections::HashMap;
 use std::hash::Hasher;
 use std::io::Read;
 use std::path::PathBuf;
@@ -412,40 +412,92 @@ where
     Ok(flag_ids)
 }
 
-#[allow(dead_code)] // TODO: b/316357686 - Use fingerprint in codegen to
-                    // protect hardcoded offset reads.
-pub fn compute_flag_offsets_fingerprint(flags_map: &HashMap<String, u16>) -> Result<u64> {
+// Creates a fingerprint of the flag names. Sorts the vector.
+pub fn compute_flags_fingerprint(flag_names: &mut Vec<String>) -> Result<u64> {
+    flag_names.sort();
+
     let mut hasher = SipHasher13::new();
-
-    // Need to sort to ensure the data is added to the hasher in the same order
-    // each run.
-    let sorted_map: BTreeMap<&String, &u16> = flags_map.iter().collect();
-
-    for (flag, offset) in sorted_map {
-        // See https://docs.rs/siphasher/latest/siphasher/#note for use of write
-        // over write_i16. Similarly, use to_be_bytes rather than to_ne_bytes to
-        // ensure consistency.
+    for flag in flag_names {
         hasher.write(flag.as_bytes());
-        hasher.write(&offset.to_be_bytes());
     }
     Ok(hasher.finish())
+}
+
+#[allow(dead_code)] // TODO: b/316357686 - Use fingerprint in codegen to
+                    // protect hardcoded offset reads.
+fn compute_fingerprint_from_parsed_flags(flags: ProtoParsedFlags) -> Result<u64> {
+    let separated_flags: Vec<ProtoParsedFlag> = flags.parsed_flag.into_iter().collect::<Vec<_>>();
+
+    // All flags must belong to the same package as the fingerprint is per-package.
+    let Some(_package) = find_unique_package(&separated_flags) else {
+        bail!("No parsed flags, or the parsed flags use different packages.");
+    };
+
+    let mut flag_names =
+        separated_flags.into_iter().map(|flag| flag.name.unwrap()).collect::<Vec<_>>();
+    compute_flags_fingerprint(&mut flag_names)
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::storage::group_flags_by_package;
     use aconfig_protos::ProtoFlagPurpose;
 
     #[test]
     fn test_offset_fingerprint() {
         let parsed_flags = crate::test::parse_test_flags();
-        let package = find_unique_package(&parsed_flags.parsed_flag).unwrap().to_string();
-        let flag_ids = assign_flag_ids(&package, parsed_flags.parsed_flag.iter()).unwrap();
-        let expected_fingerprint = 10709892481002252132u64;
+        let expected_fingerprint: u64 = 5801144784618221668;
 
-        let hash_result = compute_flag_offsets_fingerprint(&flag_ids);
+        let hash_result = compute_fingerprint_from_parsed_flags(parsed_flags);
 
         assert_eq!(hash_result.unwrap(), expected_fingerprint);
+    }
+
+    #[test]
+    fn test_offset_fingerprint_matches_from_package() {
+        let parsed_flags: ProtoParsedFlags = crate::test::parse_test_flags();
+
+        // All test flags are in the same package, so fingerprint from all of them.
+        let result_from_parsed_flags = compute_fingerprint_from_parsed_flags(parsed_flags.clone());
+
+        // Create the package header (with fingerprint) for the flags.
+        let vec: Vec<ProtoParsedFlags> = vec![parsed_flags];
+        let flags_by_package = group_flags_by_package(vec.iter());
+        let result_from_package_header = flags_by_package[0].fingerprint;
+
+        // Assert the same hash is generated for each case.
+        assert_eq!(result_from_parsed_flags.unwrap(), result_from_package_header);
+    }
+
+    #[test]
+    fn test_offset_fingerprint_matches_two_packages() {
+        // Parse flags from two packages.
+        let parsed_flags: ProtoParsedFlags = crate::test::parse_test_flags();
+        let second_parsed_flags = crate::test::parse_second_package_flags();
+
+        // Contains just flags in one package.
+        let result_from_parsed_flags =
+            compute_fingerprint_from_parsed_flags(parsed_flags.clone()).unwrap();
+
+        // Create the package header (with fingerprint) for each package.
+        let vec: Vec<ProtoParsedFlags> = vec![parsed_flags, second_parsed_flags];
+        let flags_by_package = group_flags_by_package(vec.iter());
+        let first_package = &flags_by_package[0];
+        let second_package = &flags_by_package[1];
+
+        // Assert that the package headers correctly have the same fingerprint
+        // as the fingerprint created directly from the parsed flags, and that
+        // a different fingerprint is created for the other package.
+        if first_package.package_name == crate::test::TEST_PACKAGE {
+            assert_eq!(result_from_parsed_flags, first_package.fingerprint);
+            assert_ne!(result_from_parsed_flags, second_package.fingerprint);
+        } else if second_package.package_name == create::test::TEST_PACKAGE {
+            assert_eq!(result_from_parsed_flags, second_package.fingerprint);
+            assert_ne!(result_from_parsed_flags, first_package.fingerprint);
+        } else {
+            panic!("Missing a package!");
+        }
     }
 
     #[test]
