@@ -69,6 +69,24 @@
       "parentUuid": "07c41bfc_468f333e",
       "revId": "bf6920382003e1f842d341225d0023c41ef6a326",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b6367b27_8d459c0f",
+        "filename": "core/main.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 558,
+      "author": {
+        "id": 1535516
+      },
+      "writtenOn": "2024-09-05T18:26:21Z",
+      "side": 1,
+      "message": "You can write these messages to a file you can check, but outputting messages that are irrelevant to 99% of people is a no-go. We don\u0027t want people to learn to ignore warnings from the build any more than they already do.",
+      "parentUuid": "2fa0d09d_1cd9093f",
+      "revId": "bf6920382003e1f842d341225d0023c41ef6a326",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
