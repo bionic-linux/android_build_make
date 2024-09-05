@@ -48,6 +48,7 @@ impl PackageTableNodeWrapper {
         let node = PackageTableNode {
             package_name: String::from(package.package_name),
             package_id: package.package_id,
+            fingerprint: package.fingerprint,
             boolean_start_index: package.boolean_start_index,
             next_offset: None,
         };
@@ -108,10 +109,13 @@ pub fn create_package_table(container: &str, packages: &[FlagPackage]) -> Result
 mod tests {
     use super::*;
     use crate::storage::{group_flags_by_package, tests::parse_all_test_flags};
+    use crate::storage::FingerprintedParsedFlags;
+    use crate::commands::create_fingerprinted_parsed_flags;
 
     pub fn create_test_package_table_from_source() -> Result<PackageTable> {
         let caches = parse_all_test_flags();
-        let packages = group_flags_by_package(caches.iter());
+        let packages_vec: Vec<FingerprintedParsedFlags> = caches.into_iter().map(|flag| create_fingerprinted_parsed_flags(flag).unwrap()).collect::<Vec<_>>();
+        let packages = group_flags_by_package(packages_vec.iter());
         create_package_table("mockup", &packages)
     }
 

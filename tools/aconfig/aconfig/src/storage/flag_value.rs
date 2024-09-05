@@ -63,10 +63,13 @@ pub fn create_flag_value(container: &str, packages: &[FlagPackage]) -> Result<Fl
 mod tests {
     use super::*;
     use crate::storage::{group_flags_by_package, tests::parse_all_test_flags};
+    use crate::commands::create_fingerprinted_parsed_flags;
+    use crate::storage::FingerprintedParsedFlags;
 
     pub fn create_test_flag_value_list_from_source() -> Result<FlagValueList> {
         let caches = parse_all_test_flags();
-        let packages = group_flags_by_package(caches.iter());
+        let packages_vec: Vec<FingerprintedParsedFlags> = caches.into_iter().map(|flag| create_fingerprinted_parsed_flags(flag).unwrap()).collect::<Vec<_>>();
+        let packages = group_flags_by_package(packages_vec.iter());
         create_flag_value("mockup", &packages)
     }
 
