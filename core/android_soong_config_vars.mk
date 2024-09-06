@@ -182,3 +182,6 @@ endif
 
 # Add target_use_pan_display flag for hardware/libhardware:gralloc.default
 $(call soong_config_set_bool,gralloc,target_use_pan_display,$(if $(filter true,$(TARGET_USE_PAN_DISPLAY)),true,false))
+
+# Add target_device flag for hardware/libhardware:sensors.$(TARGET_DEVICE)
+$(call soong_config_set,ANDROID,target_device,$(TARGET_DEVICE))
