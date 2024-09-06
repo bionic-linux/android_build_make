@@ -18,7 +18,7 @@
 #
 
 # TODO: Should we do all of the images in $(IMAGES_TO_BUILD)?
-_FLAG_PARTITIONS := product system system_ext vendor
+_FLAG_PARTITIONS := product system vendor
 
 
 # -----------------------------------------------------------------
@@ -31,16 +31,19 @@ _FLAG_PARTITIONS := product system system_ext vendor
 # $(4): input aconfig files for the partition (in)
 define generate-partition-aconfig-flag-file
 $(eval $(strip $(1)): PRIVATE_OUT := $(strip $(1)))
+$(eval $(strip $(1)): CONTAINERS := $(strip $(3)))
 $(eval $(strip $(1)): PRIVATE_IN := $(strip $(4)))
 $(strip $(1)): $(ACONFIG) $(strip $(4))
 	mkdir -p $$(dir $$(PRIVATE_OUT))
 	$$(if $$(PRIVATE_IN), \
 		$$(ACONFIG) dump --dedup --format protobuf --out $$(PRIVATE_OUT) \
-			--filter container:$$(strip $(3)) $$(addprefix --cache ,$$(PRIVATE_IN)), \
+			$$(addprefix --filter container:,$$(CONTAINERS)) \
+			$$(addprefix --cache ,$$(PRIVATE_IN)), \
 		echo -n > $$(PRIVATE_OUT) \
 	)
 $(call copy-one-file, $(1), $(2))
 endef
+
 
 # Create a summary file of build flags for each partition
 # $(1): built aconfig flags file (out)
@@ -62,14 +65,27 @@ endef
 
 $(foreach partition, $(_FLAG_PARTITIONS), \
 	$(eval aconfig_flag_summaries_protobuf.$(partition) := $(PRODUCT_OUT)/$(partition)/etc/aconfig_flags.pb) \
-	$(eval $(call generate-partition-aconfig-flag-file, \
+	$(if $(filter system, $(partition)), \
+		$(eval $(call generate-partition-aconfig-flag-file, \
+				$(TARGET_OUT_FLAGS)/$(partition)/aconfig_flags.pb, \
+				$(aconfig_flag_summaries_protobuf.$(partition)), \
+				system system_ext, \
+				$(sort $(foreach m,$(call register-names-for-partition, system), \
+					$(ALL_MODULES.$(m).ACONFIG_FILES) \
+				)) \
+				$(sort $(foreach m,$(call register-names-for-partition, system_ext), \
+					$(ALL_MODULES.$(m).ACONFIG_FILES) \
+				)), \
+		)), \
+		$(eval $(call generate-partition-aconfig-flag-file, \
 				$(TARGET_OUT_FLAGS)/$(partition)/aconfig_flags.pb, \
 				$(aconfig_flag_summaries_protobuf.$(partition)), \
 				$(partition), \
 				$(sort $(foreach m,$(call register-names-for-partition, $(partition)), \
 					$(ALL_MODULES.$(m).ACONFIG_FILES) \
 				)), \
-	)) \
+		)) \
+	)\
 )
 
 # Collect the on-device flags into a single file, similar to all_aconfig_declarations.
