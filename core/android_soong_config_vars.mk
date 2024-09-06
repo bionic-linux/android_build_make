@@ -182,3 +182,12 @@ endif
 
 # Add target_use_pan_display flag for hardware/libhardware:gralloc.default
 $(call soong_config_set_bool,gralloc,target_use_pan_display,$(if $(filter true,$(TARGET_USE_PAN_DISPLAY)),true,false))
+
+# Add target_device flag for hardware/libhardware:sensors.$(TARGET_DEVICE)
+$(call soong_config_set,ANDROID,target_device,$(TARGET_DEVICE))
+
+# Add use_sensor_multi_hal flag for hardware/libhardware/modules/sensors:sensors.$(TARGET_DEVICE)
+$(call soong_config_set_bool,sensor,use_sensor_multi_hal,$(if $(filter true,$(USE_SENSOR_MULTI_HAL)),true,false))
+
+# Add use_camera_v4l2_hal flag for hardware/libhardware/modules/camera/3_4:camera.v4l2
+$(call soong_config_set_bool,camera,use_camera_v4l2_hal,$(if $(filter true,$(USE_CAMERA_V4L2_HAL)),true,false))
