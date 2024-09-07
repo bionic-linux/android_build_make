@@ -56,6 +56,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5de5333a_f6ae7aa4",
+        "filename": "core/main.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1120458
+      },
+      "writtenOn": "2024-09-07T01:42:06Z",
+      "side": 1,
+      "message": "😊",
+      "parentUuid": "57b77368_3663334b",
+      "revId": "bf6920382003e1f842d341225d0023c41ef6a326",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "07c41bfc_468f333e",
         "filename": "core/main.mk",
         "patchSetId": 1
@@ -139,6 +157,24 @@
       "side": 1,
       "message": "Yeah, let\u0027s not emit warning which nobody cares. Instead, let\u0027s work on making this a hard error.\n\nA typical approach here has been that we enforce something but we an escape hatch (ex: BUILD_BROKEN_XXX) so that downstreams can buy some time, until we eventually kill the escape path.",
       "parentUuid": "4ba8389d_1e31e765",
+      "revId": "bf6920382003e1f842d341225d0023c41ef6a326",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "806fb8a0_363350c2",
+        "filename": "core/main.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 558,
+      "author": {
+        "id": 1120458
+      },
+      "writtenOn": "2024-09-07T01:42:06Z",
+      "side": 1,
+      "message": "I never had the intention of merging this patch as-is.",
+      "parentUuid": "0e43e7f5_e88d99ba",
       "revId": "bf6920382003e1f842d341225d0023c41ef6a326",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
