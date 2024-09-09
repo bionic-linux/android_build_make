@@ -21,10 +21,26 @@ package {
 }
 
 python_library_host {
+    name: "edit_event_proto",
+    srcs: [
+        "proto/edit_event.proto",
+    ],
+    proto: {
+        canonical_path_from_root: false,
+    },
+}
+
+python_library_host {
     name: "edit_monitor_lib",
     pkg_path: "edit_monitor",
     srcs: [
         "daemon_manager.py",
+        "edit_monitor.py"
+    ],
+    libs: [
+        "asuite_cc_client",
+        "edit_event_proto",
+	    "watchdog",
     ],
 }
 
@@ -41,4 +57,16 @@ python_test_host {
     test_options: {
         unit_test: true,
     },
+}
+
+python_binary_host {
+    name: "edit_monitor",
+    pkg_path: "edit_monitor",
+    srcs: [
+        "main.py",
+    ],
+    libs: [
+        "edit_monitor_lib",
+    ],
+    main: "main.py",
 }
