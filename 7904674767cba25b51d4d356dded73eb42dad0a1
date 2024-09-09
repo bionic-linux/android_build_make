@@ -1,0 +1,225 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0ce8f620_6a7d5570",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 1550539
+      },
+      "writtenOn": "2024-09-09T23:57:54Z",
+      "side": 1,
+      "message": "Are these flags gzip flags?\n\nPerhaps we can add a docstring about where to find docs on the commands we are generating:\n\nhttps://linuxcommand.org/lc3_man_pages/gzip1.html (?)",
+      "range": {
+        "startLine": 400,
+        "startChar": 6,
+        "endLine": 400,
+        "endChar": 23
+      },
+      "revId": "7904674767cba25b51d4d356dded73eb42dad0a1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a3fa0f79_ad491442",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 1550539
+      },
+      "writtenOn": "2024-09-09T23:57:54Z",
+      "side": 1,
+      "message": "Nit, this method is not adding anything to the zip, is generating the zip flags, consider renaming it.",
+      "range": {
+        "startLine": 400,
+        "startChar": 7,
+        "endLine": 400,
+        "endChar": 16
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "4bb18600_fc5de59d",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ci/optimized_targets.py",
+              "range": {
+                "startLine": 233,
+                "startChar": 0,
+                "endLine": 234,
+                "endChar": 0
+              },
+              "replacement": "        self._generate_zip_flags(\n"
+            },
+            {
+              "path": "ci/optimized_targets.py",
+              "range": {
+                "startLine": 242,
+                "startChar": 0,
+                "endLine": 243,
+                "endChar": 0
+              },
+              "replacement": "        self._generate_zip_flags(\n"
+            },
+            {
+              "path": "ci/optimized_targets.py",
+              "range": {
+                "startLine": 254,
+                "startChar": 0,
+                "endLine": 255,
+                "endChar": 0
+              },
+              "replacement": "        self._generate_zip_flags(\n"
+            },
+            {
+              "path": "ci/optimized_targets.py",
+              "range": {
+                "startLine": 368,
+                "startChar": 0,
+                "endLine": 369,
+                "endChar": 0
+              },
+              "replacement": "        self._generate_zip_flags(\n"
+            },
+            {
+              "path": "ci/optimized_targets.py",
+              "range": {
+                "startLine": 376,
+                "startChar": 0,
+                "endLine": 377,
+                "endChar": 0
+              },
+              "replacement": "        self._generate_zip_flags(\n"
+            },
+            {
+              "path": "ci/optimized_targets.py",
+              "range": {
+                "startLine": 391,
+                "startChar": 0,
+                "endLine": 392,
+                "endChar": 0
+              },
+              "replacement": "        self._generate_zip_flags(\n"
+            },
+            {
+              "path": "ci/optimized_targets.py",
+              "range": {
+                "startLine": 400,
+                "startChar": 0,
+                "endLine": 401,
+                "endChar": 0
+              },
+              "replacement": "  def _generate_zip_flags(\n"
+            }
+          ]
+        }
+      ],
+      "revId": "7904674767cba25b51d4d356dded73eb42dad0a1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "28e7be8d_542a0576",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 404,
+      "author": {
+        "id": 1550539
+      },
+      "writtenOn": "2024-09-09T23:57:54Z",
+      "side": 1,
+      "message": "Do not use mutable defaults, these are shared among all function calls.\n\nHere is an example:\n\n```\ndef method_with_mutable_default(default_list: list[int] \u003d []):\n    default_list.append(len(default_list) + 1)\n    print(default_list)\n\nmethod_with_mutable_default() # \u003e [\u00271\u0027]\nmethod_with_mutable_default() # \u003e [\u00271\u0027, \u00272\u0027]\nmethod_with_mutable_default([20]) # \u003e [\u0027meep\u0027, \u00272\u0027]\nmethod_with_mutable_default() # \u003e [\u00271\u0027, \u00272\u0027, \u00273\u0027]\n```\n\nEven if you\u0027re not writing to the list, they can be error prone, better to avoid.\n\nUse a None as a sentinel instead\n\n```\ndef _add_items_to_zip(self, \n  ..., \n  list_files: list[str] | None \u003d None,\n  files: list[str] | None \u003d None,\n  directories: list[str] | None \u003d None,\n\nif list_files:\n  for list_file in list_files:\n    command_segment.append(\u0027-l\u0027)\n    command_segment.append(list_file)\n# ... Do same for other lists\n```",
+      "range": {
+        "startLine": 404,
+        "startChar": 18,
+        "endLine": 404,
+        "endChar": 32
+      },
+      "revId": "7904674767cba25b51d4d356dded73eb42dad0a1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "71f44212_e85548ed",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 468,
+      "author": {
+        "id": 1550539
+      },
+      "writtenOn": "2024-09-09T23:57:54Z",
+      "side": 1,
+      "message": "Optional feedback: This code can be more concise by using a dict comprehension.\n\nAt the cost of splitting the line twice, up for personal preference.\n\n```suggestion\n    try:\n      return {\n          line.split(\u0027\u003d\u0027)[0]: line.split(\u0027\u003d\u0027)[1].strip(\"\u0027\")\n          for line in process_result.stdout.split(\u0027\\n\u0027)\n      }\n    except IndexError as e:\n      raise RuntimeError(\n          \u0027Error parsing soong dumpvars output! See output here:\u0027\n          f\u0027 {process_result.stdout}\u0027,\n          e,\n      )\n```",
+      "range": {
+        "startLine": 456,
+        "startChar": 4,
+        "endLine": 468,
+        "endChar": 17
+      },
+      "revId": "7904674767cba25b51d4d356dded73eb42dad0a1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5d3404a5_fce56590",
+        "filename": "ci/optimized_targets_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 1550539
+      },
+      "writtenOn": "2024-09-09T23:57:54Z",
+      "side": 1,
+      "message": "You can use textwrap.dedent to avoid exiting the python indentation formatting.",
+      "range": {
+        "startLine": 288,
+        "startChar": 18,
+        "endLine": 292,
+        "endChar": 27
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "6776cac5_edc05d78",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ci/optimized_targets_test.py",
+              "range": {
+                "startLine": 17,
+                "startChar": 0,
+                "endLine": 17,
+                "endChar": 0
+              },
+              "replacement": "import textwrap\n"
+            },
+            {
+              "path": "ci/optimized_targets_test.py",
+              "range": {
+                "startLine": 288,
+                "startChar": 0,
+                "endLine": 293,
+                "endChar": 0
+              },
+              "replacement": "      stdout \u003d textwrap.dedent(f\"\"\"\n          HOST_OUT_TESTCASES\u003d\u0027{self._host_out_testcases}\u0027\n          TARGET_OUT_TESTCASES\u003d\u0027{self._target_out_testcases}\u0027\n          PRODUCT_OUT\u003d\u0027{self._product_out}\u0027\n          SOONG_HOST_OUT\u003d\u0027{self._soong_host_out}\u0027\n          HOST_OUT\u003d\u0027{self._host_out}\u0027\n          \"\"\")\n"
+            }
+          ]
+        }
+      ],
+      "revId": "7904674767cba25b51d4d356dded73eb42dad0a1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
