@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e3de910f_ef9870d0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1299063
+      },
+      "writtenOn": "2024-09-09T22:50:23Z",
+      "side": 1,
+      "message": "update to aosp/3206023",
+      "revId": "daca2e7783203a0b68f8f4f6f2ba9e23e12ba174",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
