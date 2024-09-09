@@ -1042,6 +1042,56 @@ $(INSTALLED_FILES_FILE_ROOT) : $(INTERNAL_ROOT_FILES) $(FILESLIST) $(FILESLIST_U
 $(call declare-0p-target,$(INSTALLED_FILES_FILE_ROOT))
 $(call declare-0p-target,$(INSTALLED_FILES_JSON_ROOT))
 
+
+# -----------------------------------------------------------------
+# The subdirectories in the root dir
+
+# Create some directories (some are mount points). The symlink are in system/core/rootdir/Android.bp
+MK_ROOT_DIR_CMDS := mkdir -p $(addprefix $(TARGET_ROOT_OUT)/, \
+    dev proc sys system data data_mirror odm oem acct config storage mnt apex bootstrap-apex debug_ramdisk \
+    linkerconfig second_stage_resources postinstall tmp $(BOARD_ROOT_EXTRA_FOLDERS));
+
+ifdef BOARD_USES_VENDORIMAGE
+  MK_ROOT_DIR_CMDS += ; mkdir -p $(TARGET_ROOT_OUT)/vendor
+endif
+ifdef BOARD_USES_PRODUCTIMAGE
+  MK_ROOT_DIR_CMDS += ; mkdir -p $(TARGET_ROOT_OUT)/product
+endif
+ifdef BOARD_USES_SYSTEM_EXTIMAGE
+  MK_ROOT_DIR_CMDS += ; mkdir -p $(TARGET_ROOT_OUT)/system_ext
+endif
+ifdef BOARD_USES_METADATA_PARTITION
+  MK_ROOT_DIR_CMDS += ; mkdir -p $(TARGET_ROOT_OUT)/metadata
+endif
+
+# For /odm partition.
+MK_ROOT_DIR_CMDS += ; mkdir -p $(TARGET_ROOT_OUT)/odm
+
+# For /vendor_dlkm partition.
+MK_ROOT_DIR_CMDS += ; mkdir -p $(TARGET_ROOT_OUT)/vendor_dlkm
+
+# For /odm_dlkm partition.
+MK_ROOT_DIR_CMDS += ; mkdir -p $(TARGET_ROOT_OUT)/odm_dlkm
+
+# For /system_dlkm partition
+MK_ROOT_DIR_CMDS += ; mkdir -p $(TARGET_ROOT_OUT)/system_dlkm
+
+ifdef BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE
+  MK_ROOT_DIR_CMDS += ; mkdir -p $(TARGET_ROOT_OUT)/cache
+endif
+ifdef BOARD_ROOT_EXTRA_SYMLINKS
+# BOARD_ROOT_EXTRA_SYMLINKS is a list of <target>:<link_name>.
+  MK_ROOT_DIR_CMDS += $(foreach s, $(BOARD_ROOT_EXTRA_SYMLINKS),\
+    $(eval p := $(subst :,$(space),$(s)))\
+    ; mkdir -p $(dir $(TARGET_ROOT_OUT)/$(word 2,$(p))))
+endif
+
+INSTALLED_ROOT_DIR_SYMLINKS := $(PRODUCT_OUT)/mk_subdirs_in_root.txt
+INIT.ENVRION.RC := $(call intermediates-dir-for,ETC,init.environ.rc-soong)/init.environ.rc-soong
+$(INSTALLED_ROOT_DIR_SYMLINKS): $(INIT.ENVRION.RC)
+	$(MK_ROOT_DIR_CMDS)
+	echo "$(MK_ROOT_DIR_CMDS)" > $@
+
 #------------------------------------------------------------------
 # dtb
 ifdef BOARD_INCLUDE_DTB_IN_BOOTIMG
