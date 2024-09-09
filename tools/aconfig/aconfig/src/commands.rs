@@ -42,6 +42,9 @@ pub struct Input {
 
 impl Input {
     fn try_parse_flags(&mut self) -> Result<ProtoParsedFlags> {
+    
+    
+    
         let mut buffer = Vec::new();
         self.reader
             .read_to_end(&mut buffer)
