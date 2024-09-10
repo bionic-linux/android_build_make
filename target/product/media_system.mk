@@ -48,6 +48,7 @@ endif
 # The order here is the same order they end up on the classpath, so it matters.
 PRODUCT_SYSTEM_SERVER_JARS := \
     com.android.location.provider \
+    service-vcn \
     services
 
 PRODUCT_COPY_FILES += \

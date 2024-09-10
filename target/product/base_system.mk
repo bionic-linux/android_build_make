@@ -101,6 +101,7 @@ PRODUCT_PACKAGES += \
     framework-minus-apex \
     framework-minus-apex-install-dependencies \
     framework-sysconfig.xml \
+    framework-vcn \
     fsck.erofs \
     fsck_msdos \
     fsverity-release-cert-der \
@@ -267,6 +268,7 @@ PRODUCT_PACKAGES += \
     service \
     servicemanager \
     services \
+    service-vcn \
     settings \
     SettingsProvider \
     sfdo \
