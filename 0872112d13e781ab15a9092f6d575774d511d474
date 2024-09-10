@@ -24,6 +24,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4b6cef28_e4d0fb65",
+        "filename": "ci/build_test_suites.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-09-10T18:22:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4fd70cb4_de8a4ebd",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 9
+      },
+      "revId": "0872112d13e781ab15a9092f6d575774d511d474",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "94823450_155b69f9",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-09-09T23:57:54Z",
       "side": 1,
       "message": "This is no longer used now.",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 27
+      },
+      "revId": "0872112d13e781ab15a9092f6d575774d511d474",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "960a4bb9_0fdc93f8",
+        "filename": "ci/build_test_suites.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-09-10T18:22:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "94823450_155b69f9",
       "range": {
         "startLine": 26,
         "startChar": 0,

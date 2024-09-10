@@ -127,6 +127,54 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "326f4829_0151848e",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-09-10T18:22:22Z",
+      "side": 1,
+      "message": "It\u0027s running `soong_zip` so in theory anyone who\u0027s lunched can just do `soong_zip --help`. I can add a comment for that too.",
+      "parentUuid": "0ce8f620_6a7d5570",
+      "range": {
+        "startLine": 400,
+        "startChar": 6,
+        "endLine": 400,
+        "endChar": 23
+      },
+      "revId": "7904674767cba25b51d4d356dded73eb42dad0a1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6f0dd025_9ffdd34d",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-09-10T18:22:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a3fa0f79_ad491442",
+      "range": {
+        "startLine": 400,
+        "startChar": 7,
+        "endLine": 400,
+        "endChar": 16
+      },
+      "revId": "7904674767cba25b51d4d356dded73eb42dad0a1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "28e7be8d_542a0576",
         "filename": "ci/optimized_targets.py",
         "patchSetId": 2
@@ -172,6 +220,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "12e92676_487e9478",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 404,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-09-10T18:22:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "28e7be8d_542a0576",
+      "range": {
+        "startLine": 404,
+        "startChar": 18,
+        "endLine": 404,
+        "endChar": 32
+      },
+      "revId": "7904674767cba25b51d4d356dded73eb42dad0a1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "71f44212_e85548ed",
@@ -185,6 +257,30 @@
       "writtenOn": "2024-09-09T23:57:54Z",
       "side": 1,
       "message": "Optional feedback: This code can be more concise by using a dict comprehension.\n\nAt the cost of splitting the line twice, up for personal preference.\n\n```suggestion\n    try:\n      return {\n          line.split(\u0027\u003d\u0027)[0]: line.split(\u0027\u003d\u0027)[1].strip(\"\u0027\")\n          for line in process_result.stdout.split(\u0027\\n\u0027)\n      }\n    except IndexError as e:\n      raise RuntimeError(\n          \u0027Error parsing soong dumpvars output! See output here:\u0027\n          f\u0027 {process_result.stdout}\u0027,\n          e,\n      )\n```",
+      "range": {
+        "startLine": 456,
+        "startChar": 4,
+        "endLine": 468,
+        "endChar": 17
+      },
+      "revId": "7904674767cba25b51d4d356dded73eb42dad0a1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ce90c31e_0ce241a2",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 468,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-09-10T18:22:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "71f44212_e85548ed",
       "range": {
         "startLine": 456,
         "startChar": 4,
@@ -242,6 +338,30 @@
           ]
         }
       ],
+      "revId": "7904674767cba25b51d4d356dded73eb42dad0a1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d18032ef_59116c57",
+        "filename": "ci/optimized_targets_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-09-10T18:22:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5d3404a5_fce56590",
+      "range": {
+        "startLine": 288,
+        "startChar": 18,
+        "endLine": 292,
+        "endChar": 27
+      },
       "revId": "7904674767cba25b51d4d356dded73eb42dad0a1",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
