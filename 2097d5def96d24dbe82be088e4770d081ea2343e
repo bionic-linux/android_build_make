@@ -18,6 +18,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "12b8d343_b47d8474",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-09-10T20:16:28Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "7a528126_7a3e6475",
+      "revId": "2097d5def96d24dbe82be088e4770d081ea2343e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "05025a17_551b25d8",
@@ -31,6 +49,30 @@
       "writtenOn": "2024-09-09T23:13:56Z",
       "side": 1,
       "message": "Why do you need to include our names explicitly if including asuite/OWNERS?",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 17
+      },
+      "revId": "2097d5def96d24dbe82be088e4770d081ea2343e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2ecc04d7_b4086a00",
+        "filename": "tools/edit_monitor/OWNERS",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-09-10T20:16:28Z",
+      "side": 1,
+      "message": "Removed.",
+      "parentUuid": "05025a17_551b25d8",
       "range": {
         "startLine": 3,
         "startChar": 0,
