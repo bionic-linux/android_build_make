@@ -173,6 +173,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e32d6285_c66804fa",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 1550539
+      },
+      "writtenOn": "2024-09-10T20:35:51Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "326f4829_0151848e",
+      "range": {
+        "startLine": 400,
+        "startChar": 6,
+        "endLine": 400,
+        "endChar": 23
+      },
+      "revId": "7904674767cba25b51d4d356dded73eb42dad0a1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "28e7be8d_542a0576",
