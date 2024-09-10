@@ -150,6 +150,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "df489c68_ca9ade99",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 404,
+      "author": {
+        "id": 1550539
+      },
+      "writtenOn": "2024-09-10T00:06:13Z",
+      "side": 1,
+      "message": "ahh, made a mistake on the example, anyhow you get the point 😄\n\nmethod_with_mutable_default([20]) # \u003e [\u002720\u0027, \u00272\u0027]",
+      "parentUuid": "28e7be8d_542a0576",
+      "range": {
+        "startLine": 404,
+        "startChar": 18,
+        "endLine": 404,
+        "endChar": 32
+      },
+      "revId": "7904674767cba25b51d4d356dded73eb42dad0a1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "71f44212_e85548ed",
         "filename": "ci/optimized_targets.py",
         "patchSetId": 2
