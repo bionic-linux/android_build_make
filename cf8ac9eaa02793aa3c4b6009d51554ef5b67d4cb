@@ -178,6 +178,24 @@
       "parentUuid": "d23ea3a5_042efbd6",
       "revId": "cf8ac9eaa02793aa3c4b6009d51554ef5b67d4cb",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "255c6c13_b70affa9",
+        "filename": "core/Makefile",
+        "patchSetId": 2
+      },
+      "lineNbr": 7888,
+      "author": {
+        "id": 3508348
+      },
+      "writtenOn": "2024-09-11T21:25:23Z",
+      "side": 1,
+      "message": "Sorry, didn\u0027t notice your comment, and sorry, yes, without context the compression comment makes no sense. The pack_image script itself originally used pigz, which wasn\u0027t available in the build, so I had just the makefile use gzip so it matched. There\u0027s interest in switching it to zstd, so pzstd to parallelize it, the pack_image script itself was switched over to pzstd after the original gzip call was implemented in the makefile. Yes, it will require updating everything that reads the file if we do that. TBH at this point I wish we\u0027d just gone with soong_zip, but if we do actually have enough momentum behind zstd to get pzstd usable in the build and everything switched over, it would be nice.\n\nThe phony targets added here produce the files devs might want, and they were intended to allow skipping `m dist`, they\u0027re definitely much faster. Right now there\u0027s just a transitive dependency issue that can make it a little unfriendly to devs, b/361789228.",
+      "parentUuid": "3ead67cd_196f3462",
+      "revId": "cf8ac9eaa02793aa3c4b6009d51554ef5b67d4cb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
