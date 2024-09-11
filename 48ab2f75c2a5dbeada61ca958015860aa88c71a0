@@ -39,6 +39,30 @@
       },
       "revId": "48ab2f75c2a5dbeada61ca958015860aa88c71a0",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "90093410_67d346df",
+        "filename": "core/main.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 1317851
+      },
+      "writtenOn": "2024-09-11T07:44:30Z",
+      "side": 1,
+      "message": "In build/core/Makefile, it will trigger all tasks mk files `$(BUILD_SYSTEM)/tasks/*.mk`. But it won\u0027t trigger mk uder $(BUILD_SYSTEM)/tasks/tools/.\nI just found `build_custom_image.mk` in this folder. I think it is similar to use tool to generate images. So put it here.\nAnother thing is this folder gathered all mk files that we did not convert to bp yet.",
+      "parentUuid": "d1b4835f_8e090985",
+      "range": {
+        "startLine": 293,
+        "startChar": 24,
+        "endLine": 293,
+        "endChar": 35
+      },
+      "revId": "48ab2f75c2a5dbeada61ca958015860aa88c71a0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
