@@ -1,0 +1,8 @@
+package "com.android.aconfig.flags"
+container "system"
+
+flag {
+  name: "enable_only_new_storage"
+  namespace: "core_experiments_team_internal"
+  bug: ""
+}
