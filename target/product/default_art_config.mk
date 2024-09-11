@@ -85,6 +85,7 @@ PRODUCT_APEX_BOOT_JARS := \
     com.android.tethering:framework-connectivity \
     com.android.tethering:framework-connectivity-t \
     com.android.tethering:framework-tethering \
+    com.android.uwb:framework-ranging \
     com.android.uwb:framework-uwb \
     com.android.virt:framework-virtualization \
     com.android.wifi:framework-wifi \
@@ -158,6 +159,7 @@ PRODUCT_APEX_STANDALONE_SYSTEM_SERVER_JARS := \
     com.android.os.statsd:service-statsd \
     com.android.scheduling:service-scheduling \
     com.android.tethering:service-connectivity \
+    com.android.uwb:service-ranging \
     com.android.uwb:service-uwb \
     com.android.wifi:service-wifi \
 

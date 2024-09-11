@@ -70,6 +70,7 @@ PRODUCT_PACKAGES += \
     com.android.resolv \
     com.android.rkpd \
     com.android.neuralnetworks \
+    com.android.ranging \
     com.android.scheduling \
     com.android.sdkext \
     com.android.tethering \
