@@ -16,6 +16,29 @@
       "message": "The next CL is ag/28799093",
       "revId": "48ab2f75c2a5dbeada61ca958015860aa88c71a0",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d1b4835f_8e090985",
+        "filename": "core/main.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 1318142
+      },
+      "writtenOn": "2024-09-11T07:34:13Z",
+      "side": 1,
+      "message": "just curious, what is the difference between tasks and tasks/tools? why tasks/tools is used here?",
+      "range": {
+        "startLine": 293,
+        "startChar": 24,
+        "endLine": 293,
+        "endChar": 35
+      },
+      "revId": "48ab2f75c2a5dbeada61ca958015860aa88c71a0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
