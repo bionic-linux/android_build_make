@@ -113,6 +113,11 @@ ifeq ($(RELEASE_PACKAGE_PROFILING_MODULE),true)
 
 endif
 
+ifneq (,$(RELEASE_RANGING_STACK))
+    PRODUCT_PACKAGES += \
+        com.android.uwb:framework-ranging
+endif
+
 # List of system_server classpath jars delivered via apex.
 # Keep the list sorted by module names and then library names.
 # Note: For modules available in Q, DO NOT add new entries here.
