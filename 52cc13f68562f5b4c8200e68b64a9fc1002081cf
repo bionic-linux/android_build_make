@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4855a4ed_603c7112",
+        "filename": "tools/aconfig/aconfig_flags/src/lib.rs",
+        "patchSetId": 5
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 3599662
+      },
+      "writtenOn": "2024-09-11T18:51:59Z",
+      "side": 1,
+      "message": "for my understanding, what is this for?",
+      "range": {
+        "startLine": 32,
+        "startChar": 8,
+        "endLine": 32,
+        "endChar": 22
+      },
+      "revId": "52cc13f68562f5b4c8200e68b64a9fc1002081cf",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
