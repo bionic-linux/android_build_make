@@ -25,6 +25,9 @@ rust_defaults {
 rust_binary {
     name: "aflags",
     defaults: ["aflags.defaults"],
+    rustlibs: [
+        "libaconfig_flags",
+    ]
 }
 
 rust_test_host {
