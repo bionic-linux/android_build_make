@@ -1,0 +1,211 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a01fdd29_b40b101d",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1550539
+      },
+      "writtenOn": "2024-09-11T00:09:32Z",
+      "side": 1,
+      "message": "Ditto: pathlib.Path doesn\u0027t need to be called with os.path.join because it overwrites the / operator with path concatenation.\n\nAlso build/song/soong_ui.bash does not change, send it to a private module level constant.\n\n_SOONG_UI_BASH_PATH \u003d \u0027build/soong/soong_ui.bash\u0027\n\n\n```suggestion\n            f\u0027{src_top / _SOONG_UI_BASH_PATH}\u0027,\n```",
+      "range": {
+        "startLine": 121,
+        "startChar": 12,
+        "endLine": 121,
+        "endChar": 62
+      },
+      "revId": "e769db555dbf48e3a2e0c2ac2ff3e47ce9f9c6fb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6833fb0d_a0b6faad",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1550539
+      },
+      "writtenOn": "2024-09-11T00:09:32Z",
+      "side": 1,
+      "message": "remove",
+      "range": {
+        "startLine": 140,
+        "startChar": 4,
+        "endLine": 140,
+        "endChar": 19
+      },
+      "revId": "e769db555dbf48e3a2e0c2ac2ff3e47ce9f9c6fb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e01086a1_c827226c",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1550539
+      },
+      "writtenOn": "2024-09-11T00:09:32Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 153,
+        "startChar": 4,
+        "endLine": 153,
+        "endChar": 17
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "13cccbaf_02da9852",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ci/optimized_targets.py",
+              "range": {
+                "startLine": 140,
+                "startChar": 0,
+                "endLine": 141,
+                "endChar": 0
+              },
+              "replacement": ""
+            },
+            {
+              "path": "ci/optimized_targets.py",
+              "range": {
+                "startLine": 153,
+                "startChar": 0,
+                "endLine": 155,
+                "endChar": 0
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "revId": "e769db555dbf48e3a2e0c2ac2ff3e47ce9f9c6fb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8aa32ae3_4e2a74e1",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 1550539
+      },
+      "writtenOn": "2024-09-11T00:09:32Z",
+      "side": 1,
+      "message": "pathlib.Path overwrites the / operator to be a path concatenation, Also the soong_zip path doesn\u0027t change, this could be a local constant instead for better readability.\n\n\n```suggestion\n  # Top level constants\n  _PREBUILT_SOONG_ZIP_PATH \u003d \u0027prebuilts/build-tools/linux-x86/bin/soong_zip\u0027\n  ...\n\n  def _base_zip_command(\n      self, src_top: pathlib.Path, dist_dir: pathlib.Path, name: str\n  ) -\u003e list[str]:\n    return [\n        f\u0027{src_top / _PREBUILT_SOONG_ZIP_PATH}\u0027,\n        \u0027-d\u0027,\n        \u0027-o\u0027,\n        f\u0027{dist_dir / name}\u0027,\n    ]\n\n```",
+      "range": {
+        "startLine": 155,
+        "startChar": 0,
+        "endLine": 173,
+        "endChar": 0
+      },
+      "revId": "e769db555dbf48e3a2e0c2ac2ff3e47ce9f9c6fb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "17874aa0_3e71ad46",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 1550539
+      },
+      "writtenOn": "2024-09-11T00:09:32Z",
+      "side": 1,
+      "message": "both this can be made pathlib.Path objects",
+      "range": {
+        "startLine": 275,
+        "startChar": 4,
+        "endLine": 276,
+        "endChar": 41
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "76cb68da_895b85b9",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ci/optimized_targets.py",
+              "range": {
+                "startLine": 275,
+                "startChar": 0,
+                "endLine": 277,
+                "endChar": 0
+              },
+              "replacement": "    src_top \u003d pathlib.Path(os.environ.get(\u0027TOP\u0027, os.getcwd()))\n    dist_dir \u003d pathlib.Path(os.environ.get(\u0027DIST_DIR\u0027))\n"
+            }
+          ]
+        }
+      ],
+      "revId": "e769db555dbf48e3a2e0c2ac2ff3e47ce9f9c6fb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "19f12a40_4576dc26",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 1550539
+      },
+      "writtenOn": "2024-09-11T00:09:32Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 299,
+        "startChar": 18,
+        "endLine": 299,
+        "endChar": 58
+      },
+      "revId": "e769db555dbf48e3a2e0c2ac2ff3e47ce9f9c6fb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2b9fc5c6_2ede4b74",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 1550539
+      },
+      "writtenOn": "2024-09-11T00:09:32Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 304,
+        "startChar": 20,
+        "endLine": 304,
+        "endChar": 62
+      },
+      "revId": "e769db555dbf48e3a2e0c2ac2ff3e47ce9f9c6fb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
