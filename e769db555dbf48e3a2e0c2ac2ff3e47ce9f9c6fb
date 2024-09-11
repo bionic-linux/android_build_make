@@ -24,6 +24,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1b0d8fd4_774a9e62",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-09-11T18:01:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a01fdd29_b40b101d",
+      "range": {
+        "startLine": 121,
+        "startChar": 12,
+        "endLine": 121,
+        "endChar": 62
+      },
+      "revId": "e769db555dbf48e3a2e0c2ac2ff3e47ce9f9c6fb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6833fb0d_a0b6faad",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-09-11T00:09:32Z",
       "side": 1,
       "message": "remove",
+      "range": {
+        "startLine": 140,
+        "startChar": 4,
+        "endLine": 140,
+        "endChar": 19
+      },
+      "revId": "e769db555dbf48e3a2e0c2ac2ff3e47ce9f9c6fb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "67dce0fd_7ca2770c",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-09-11T18:01:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6833fb0d_a0b6faad",
       "range": {
         "startLine": 140,
         "startChar": 4,
@@ -98,6 +146,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8a531fb2_093c24ca",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-09-11T18:01:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e01086a1_c827226c",
+      "range": {
+        "startLine": 153,
+        "startChar": 4,
+        "endLine": 153,
+        "endChar": 17
+      },
+      "revId": "e769db555dbf48e3a2e0c2ac2ff3e47ce9f9c6fb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8aa32ae3_4e2a74e1",
@@ -111,6 +183,30 @@
       "writtenOn": "2024-09-11T00:09:32Z",
       "side": 1,
       "message": "pathlib.Path overwrites the / operator to be a path concatenation, Also the soong_zip path doesn\u0027t change, this could be a local constant instead for better readability.\n\n\n```suggestion\n  # Top level constants\n  _PREBUILT_SOONG_ZIP_PATH \u003d \u0027prebuilts/build-tools/linux-x86/bin/soong_zip\u0027\n  ...\n\n  def _base_zip_command(\n      self, src_top: pathlib.Path, dist_dir: pathlib.Path, name: str\n  ) -\u003e list[str]:\n    return [\n        f\u0027{src_top / _PREBUILT_SOONG_ZIP_PATH}\u0027,\n        \u0027-d\u0027,\n        \u0027-o\u0027,\n        f\u0027{dist_dir / name}\u0027,\n    ]\n\n```",
+      "range": {
+        "startLine": 155,
+        "startChar": 0,
+        "endLine": 173,
+        "endChar": 0
+      },
+      "revId": "e769db555dbf48e3a2e0c2ac2ff3e47ce9f9c6fb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ba3f3fcc_4176b6a1",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-09-11T18:01:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8aa32ae3_4e2a74e1",
       "range": {
         "startLine": 155,
         "startChar": 0,
@@ -162,6 +258,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b887f228_c8381537",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-09-11T18:01:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "17874aa0_3e71ad46",
+      "range": {
+        "startLine": 275,
+        "startChar": 4,
+        "endLine": 276,
+        "endChar": 41
+      },
+      "revId": "e769db555dbf48e3a2e0c2ac2ff3e47ce9f9c6fb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "19f12a40_4576dc26",
@@ -185,6 +305,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "42e82792_dd09555c",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-09-11T18:01:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "19f12a40_4576dc26",
+      "range": {
+        "startLine": 299,
+        "startChar": 18,
+        "endLine": 299,
+        "endChar": 58
+      },
+      "revId": "e769db555dbf48e3a2e0c2ac2ff3e47ce9f9c6fb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2b9fc5c6_2ede4b74",
@@ -198,6 +342,30 @@
       "writtenOn": "2024-09-11T00:09:32Z",
       "side": 1,
       "message": "ditto",
+      "range": {
+        "startLine": 304,
+        "startChar": 20,
+        "endLine": 304,
+        "endChar": 62
+      },
+      "revId": "e769db555dbf48e3a2e0c2ac2ff3e47ce9f9c6fb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d09d18f9_ce2965af",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-09-11T18:01:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2b9fc5c6_2ede4b74",
       "range": {
         "startLine": 304,
         "startChar": 20,
