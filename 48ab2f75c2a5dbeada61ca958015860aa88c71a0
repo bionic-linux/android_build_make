@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "863ae006_616126ab",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1317851
+      },
+      "writtenOn": "2024-09-11T05:38:48Z",
+      "side": 1,
+      "message": "The next CL is ag/28799093",
+      "revId": "48ab2f75c2a5dbeada61ca958015860aa88c71a0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
