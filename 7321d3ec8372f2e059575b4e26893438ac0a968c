@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "470bd48d_61b85796",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1064003
+      },
+      "writtenOn": "2024-09-11T21:59:44Z",
+      "side": 1,
+      "message": "Had to add the `Log.w` stub.",
+      "revId": "7321d3ec8372f2e059575b4e26893438ac0a968c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
