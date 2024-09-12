@@ -64,8 +64,10 @@ class BuildPlanner:
 
   def create_build_plan(self):
 
-    if 'optimized_build' not in self.build_context.enabled_build_features:
-      return BuildPlan(set(self.args.extra_targets), set())
+    #if 'optimized_build' not in self.build_context.enabled_build_features:
+    #  return BuildPlan(set(self.args.extra_targets), set())
+
+    self.build_context.enabled_build_features.add('general_tests_optimized')
 
     build_targets = set()
     packaging_commands = []
@@ -84,7 +86,7 @@ class BuildPlanner:
           target, self.build_context, self.args
       )
       build_targets.update(target_optimizer.get_build_targets())
-      packaging_commands.extend(target_optimizer.get_package_outputs_commands())
+      packaging_commands.append(target_optimizer.get_package_outputs_commands)
 
     return BuildPlan(build_targets, packaging_commands)
 
@@ -175,14 +177,15 @@ def execute_build_plan(build_plan: BuildPlan):
   build_command.append('--make-mode')
   build_command.extend(build_plan.build_targets)
 
+  logging.info(build_command)
   try:
     run_command(build_command)
   except subprocess.CalledProcessError as e:
     raise BuildFailureError(e.returncode) from e
 
-  for packaging_command in build_plan.packaging_commands:
+  for packaging_command_getters in build_plan.packaging_commands:
     try:
-      run_command(packaging_command)
+      run_command(packaging_command) for packaging_command in packaging_command_getters()
     except subprocess.CalledProcessError as e:
       raise BuildFailureError(e.returncode) from e
 
