@@ -67,6 +67,8 @@ class BuildPlanner:
     if 'optimized_build' not in self.build_context.enabled_build_features:
       return BuildPlan(set(self.args.extra_targets), set())
 
+    self.build_context.enabled_build_features.add('general_tests_optimized')
+
     build_targets = set()
     packaging_commands = []
     for target in self.args.extra_targets:

@@ -216,7 +216,7 @@ class GeneralTestsOptimizer(OptimizedBuildTarget):
 
   # List of modules that are always required to be in general-tests.zip.
   _REQUIRED_MODULES = frozenset(
-      ['cts-tradefed', 'vts-tradefed', 'compatibility-host-util']
+      ['cts-tradefed', 'vts-tradefed', 'compatibility-host-util, general-tests-shared-libs']
   )
 
   def get_build_targets_impl(self) -> set[str]:
