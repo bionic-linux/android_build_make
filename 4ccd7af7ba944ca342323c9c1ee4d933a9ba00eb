@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2dfe693d_7c38728a",
+        "filename": "target/product/base_system.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 1583551
+      },
+      "writtenOn": "2024-09-12T23:36:47Z",
+      "side": 1,
+      "message": "[Here and below] The more normal form for this is `ifneq (,$(RELEASE_RANGING_STACK))` since the possible values are \"\" (False) and \"true\" (True).",
+      "revId": "4ccd7af7ba944ca342323c9c1ee4d933a9ba00eb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
