@@ -118,16 +118,17 @@ class OptimizedBuildTarget(ABC):
   def _query_soong_vars(
       self, src_top: pathlib.Path, soong_vars: list[str]
   ) -> dict[str, str]:
-    process_result = subprocess.run(
-        args=[
+    cmd_args = [
             f'{src_top / self._SOONG_UI_BASH_PATH}',
-            '--dumpvar-mode',
-            '--abs',
-            soong_vars,
-        ],
+            '--dumpvars-mode',
+            f'--abs-vars={" ".join(soong_vars)}',
+        ]
+    process_result = subprocess.run(
+        args=cmd_args,
         env=os.environ,
         check=False,
         capture_output=True,
+        text=True,
     )
     if not process_result.returncode == 0:
       logging.error('soong dumpvars command failed! stderr:')
@@ -142,7 +143,7 @@ class OptimizedBuildTarget(ABC):
     try:
       return {
           line.split('=')[0]: line.split('=')[1].strip("'")
-          for line in process_result.stdout.split('\n')
+          for line in process_result.stdout.strip().split('\n')
       }
     except IndexError as e:
       raise RuntimeError(
@@ -154,6 +155,8 @@ class OptimizedBuildTarget(ABC):
   def _base_zip_command(
       self, src_top: pathlib.Path, dist_dir: pathlib.Path, name: str
   ) -> list[str]:
+    src_top = es.environ.get('TOP', os.getcwd())
+    logging.info(f'src_top: {src_top} {self._PREBUILT_SOONG_ZIP_PATH}')
     return [
         f'{src_top / self._PREBUILT_SOONG_ZIP_PATH }',
         '-d',
@@ -216,7 +219,7 @@ class GeneralTestsOptimizer(OptimizedBuildTarget):
 
   # List of modules that are always required to be in general-tests.zip.
   _REQUIRED_MODULES = frozenset(
-      ['cts-tradefed', 'vts-tradefed', 'compatibility-host-util']
+      ['cts-tradefed', 'vts-tradefed', 'compatibility-host-util', 'general-tests-shared-libs']
   )
 
   def get_build_targets_impl(self) -> set[str]:
@@ -263,6 +266,7 @@ class GeneralTestsOptimizer(OptimizedBuildTarget):
 
   def get_package_outputs_commands_impl(self):
     src_top = pathlib.Path(os.environ.get('TOP', os.getcwd()))
+    print(src_top)
     dist_dir = pathlib.Path(os.environ.get('DIST_DIR'))
 
     soong_vars = self._query_soong_vars(
@@ -285,13 +289,17 @@ class GeneralTestsOptimizer(OptimizedBuildTarget):
     target_paths = []
     host_config_files = []
     target_config_files = []
+    logging.info('Modules to be packaged:')
+    logging.info(self.modules_to_build)
     for module in self.modules_to_build:
       host_path = host_out_testcases / module
+      logging.info(f'{module} host path: {host_path}')
       if os.path.exists(host_path):
         host_paths.append(host_path)
         self._collect_config_files(src_top, host_path, host_config_files)
 
       target_path = target_out_testcases / module
+      logging.info(f'{module} target path: {target_path}')
       if os.path.exists(target_path):
         target_paths.append(target_path)
         self._collect_config_files(src_top, target_path, target_config_files)
@@ -299,6 +307,10 @@ class GeneralTestsOptimizer(OptimizedBuildTarget):
       if not os.path.exists(host_path) and not os.path.exists(target_path):
         logging.info(f'No host or target build outputs found for {module}.')
 
+    logging.info(f'host_paths: {host_paths}')
+    logging.info(f'target_paths: {target_paths}')
+    logging.info(f'host_config_files: {host_config_files}')
+    logging.info(f'target_config_files: {target_config_files}')
     zip_commands = []
 
     zip_commands.extend(
@@ -316,22 +328,24 @@ class GeneralTestsOptimizer(OptimizedBuildTarget):
     )
 
     # Add host testcases.
-    zip_command.extend(
-        self._generate_zip_options_for_items(
-            prefix='host',
-            relative_root=f'{src_top / soong_host_out}',
-            directories=host_paths,
-        )
-    )
+    if host_paths:
+      zip_command.extend(
+          self._generate_zip_options_for_items(
+              prefix='host',
+              relative_root=f'{src_top / soong_host_out}',
+              directories=host_paths,
+          )
+      )
 
     # Add target testcases.
-    zip_command.extend(
-        self._generate_zip_options_for_items(
-            prefix='target',
-            relative_root=f'{src_top / product_out}',
-            directories=target_paths,
-        )
-    )
+    if target_paths:
+      zip_command.extend(
+          self._generate_zip_options_for_items(
+              prefix='target',
+              relative_root=f'{src_top / product_out}',
+              directories=target_paths,
+          )
+      )
 
     # TODO(lucafarsi): Push this logic into a general-tests-minimal build command
     # Add necessary tools. These are also hardcoded in general-tests.mk.
