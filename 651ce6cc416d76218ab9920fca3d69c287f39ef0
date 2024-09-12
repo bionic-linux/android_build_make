@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4b81bf76_f6d3240d",
+        "filename": "core/packaging/flags.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1583551
+      },
+      "writtenOn": "2024-09-12T22:14:35Z",
+      "side": 1,
+      "message": "With the soong change, and the change in commands.rs, do we expect to ever find anything in \"system_ext\" here?\n\nOTOH, this removes any remaining dount, so all good.",
+      "range": {
+        "startLine": 73,
+        "startChar": 4,
+        "endLine": 77,
+        "endChar": 7
+      },
+      "revId": "651ce6cc416d76218ab9920fca3d69c287f39ef0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
