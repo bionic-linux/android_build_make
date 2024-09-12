@@ -118,16 +118,17 @@ class OptimizedBuildTarget(ABC):
   def _query_soong_vars(
       self, src_top: pathlib.Path, soong_vars: list[str]
   ) -> dict[str, str]:
-    process_result = subprocess.run(
-        args=[
+    cmd_args = [
             f'{src_top / self._SOONG_UI_BASH_PATH}',
-            '--dumpvar-mode',
-            '--abs',
-            soong_vars,
-        ],
+            '--dumpvars-mode',
+            f'--abs-vars={" ".join(soong_vars)}',
+        ]
+    process_result = subprocess.run(
+        args=cmd_args,
         env=os.environ,
         check=False,
         capture_output=True,
+        text=True,
     )
     if not process_result.returncode == 0:
       logging.error('soong dumpvars command failed! stderr:')
@@ -142,7 +143,7 @@ class OptimizedBuildTarget(ABC):
     try:
       return {
           line.split('=')[0]: line.split('=')[1].strip("'")
-          for line in process_result.stdout.split('\n')
+          for line in process_result.stdout.strip().split('\n')
       }
     except IndexError as e:
       raise RuntimeError(
@@ -216,7 +217,7 @@ class GeneralTestsOptimizer(OptimizedBuildTarget):
 
   # List of modules that are always required to be in general-tests.zip.
   _REQUIRED_MODULES = frozenset(
-      ['cts-tradefed', 'vts-tradefed', 'compatibility-host-util']
+      ['cts-tradefed', 'vts-tradefed', 'compatibility-host-util, general-tests-shared-libs']
   )
 
   def get_build_targets_impl(self) -> set[str]:
