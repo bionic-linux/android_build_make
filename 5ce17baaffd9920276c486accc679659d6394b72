@@ -18,6 +18,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a984f964_70693f41",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-09-12T20:36:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f3770f18_330b7ba1",
+      "revId": "5ce17baaffd9920276c486accc679659d6394b72",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b416e3b3_a52d9615",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-09-12T18:41:45Z",
       "side": 1,
       "message": "it feels bit odd that `list_files` is a list of string, given that `-l` argument takes \"a file containing list of files to zip\", and I don\u0027t recall seeing use cases within Soong where multiple `-l` arguments are passed to the invocation. What are the use cases of passing multiple `-l` arguments?",
+      "revId": "5ce17baaffd9920276c486accc679659d6394b72",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5d0bceb3_89ba7d83",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-09-12T20:36:08Z",
+      "side": 1,
+      "message": "Yeah there might not be use cases, I think it might still be possible to pass in multiple -l options to soong zip no? I don\u0027t foresee this being used multiple times but I wanted to keep that option open and keep it consistent with the other options. I can turn it into a single option if you want.",
+      "parentUuid": "b416e3b3_a52d9615",
       "revId": "5ce17baaffd9920276c486accc679659d6394b72",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
@@ -54,6 +90,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "17c119ef_ec495c55",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-09-12T20:36:08Z",
+      "side": 1,
+      "message": "We are skipping it, but you\u0027re right, I\u0027ve added logging for those cases. I don\u0027t think most modules will have both host and target test cases so them not being found is expected I think.",
+      "parentUuid": "1e7c5fea_be225989",
+      "revId": "5ce17baaffd9920276c486accc679659d6394b72",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "28a135f6_a81e5665",
         "filename": "ci/optimized_targets.py",
         "patchSetId": 7
@@ -65,6 +119,24 @@
       "writtenOn": "2024-09-12T18:41:45Z",
       "side": 1,
       "message": "nit: consider switching to `Tuple[list[str], list[str]]` given that `zip_commands` is a fixed length of 2",
+      "revId": "5ce17baaffd9920276c486accc679659d6394b72",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2713bc72_45e231f0",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-09-12T20:36:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "28a135f6_a81e5665",
       "revId": "5ce17baaffd9920276c486accc679659d6394b72",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
@@ -86,6 +158,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6807a50b_4a9769f8",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-09-12T20:36:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "087e3e87_92b37db7",
+      "revId": "5ce17baaffd9920276c486accc679659d6394b72",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d2c571e9_8bb0fc5c",
@@ -103,6 +193,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d7f0b1e2_762a3cf0",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-09-12T20:36:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d2c571e9_8bb0fc5c",
+      "revId": "5ce17baaffd9920276c486accc679659d6394b72",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8fbd7c8f_d7bd9733",
@@ -116,6 +224,30 @@
       "writtenOn": "2024-09-12T18:41:45Z",
       "side": 1,
       "message": "```suggestion\n      The commands to generate general-tests_configs.zip and\n      general-tests_list.zip\n```",
+      "range": {
+        "startLine": 405,
+        "startChar": 0,
+        "endLine": 406,
+        "endChar": 31
+      },
+      "revId": "5ce17baaffd9920276c486accc679659d6394b72",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7b7de6cd_0801f795",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 406,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-09-12T20:36:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8fbd7c8f_d7bd9733",
       "range": {
         "startLine": 405,
         "startChar": 0,
