@@ -22,6 +22,30 @@
       },
       "revId": "651ce6cc416d76218ab9920fca3d69c287f39ef0",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "18096fc3_bbd2397c",
+        "filename": "core/packaging/flags.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1882770
+      },
+      "writtenOn": "2024-09-12T22:17:23Z",
+      "side": 1,
+      "message": "We still need the system_ext dependencies. Just that when these dependencies are pulled in, the containers are actually specified as system because we updated the provider logic. Without it, the old system_ext flags will be missing.",
+      "parentUuid": "4b81bf76_f6d3240d",
+      "range": {
+        "startLine": 73,
+        "startChar": 4,
+        "endLine": 77,
+        "endChar": 7
+      },
+      "revId": "651ce6cc416d76218ab9920fca3d69c287f39ef0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
