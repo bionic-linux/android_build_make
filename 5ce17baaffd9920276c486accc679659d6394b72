@@ -71,6 +71,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c4036819_13b70ae7",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1962375
+      },
+      "writtenOn": "2024-09-12T20:58:40Z",
+      "side": 1,
+      "message": "Yeah I don\u0027t think `soong_zip` raises an error when multiple `-l` options are passed. I don\u0027t have any objections with leaving it as is.",
+      "parentUuid": "5d0bceb3_89ba7d83",
+      "revId": "5ce17baaffd9920276c486accc679659d6394b72",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1e7c5fea_be225989",
@@ -102,6 +120,24 @@
       "side": 1,
       "message": "We are skipping it, but you\u0027re right, I\u0027ve added logging for those cases. I don\u0027t think most modules will have both host and target test cases so them not being found is expected I think.",
       "parentUuid": "1e7c5fea_be225989",
+      "revId": "5ce17baaffd9920276c486accc679659d6394b72",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2fe5a526_5cee67e5",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 1962375
+      },
+      "writtenOn": "2024-09-12T20:58:40Z",
+      "side": 1,
+      "message": "In that case, maybe log when the module path is not found in any of the host and target test cases?",
+      "parentUuid": "17c119ef_ec495c55",
       "revId": "5ce17baaffd9920276c486accc679659d6394b72",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
