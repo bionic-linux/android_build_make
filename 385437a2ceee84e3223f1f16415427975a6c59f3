@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "00ad9115_e9d465a1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1877562
+      },
+      "writtenOn": "2024-09-12T11:10:14Z",
+      "side": 1,
+      "message": "Can we abandon the revert cls if the build is passing now?",
+      "revId": "385437a2ceee84e3223f1f16415427975a6c59f3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
