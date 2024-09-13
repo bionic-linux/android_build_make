@@ -34,6 +34,24 @@
       "parentUuid": "309abaad_6fabaa79",
       "revId": "edb3ba3ae4a0fe5d4b0c058c2a5c975d9190cc16",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3c51568e_8833d479",
+        "filename": "core/tasks/device-tests.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1535516
+      },
+      "writtenOn": "2024-09-13T21:24:42Z",
+      "side": 0,
+      "message": "just `$@-host.list`. You brought it back, but you didn\u0027t bring back `PRIVATE_HOST_SHARED_LIBS`. Since that eventually depends on the `copy-many-files` rule, and the ordering of tasks makefile isn\u0027t well defined, you may have to bring the tule to build `device-tests-host-shared-libs` into this file.",
+      "parentUuid": "648ab894_516163ac",
+      "revId": "edb3ba3ae4a0fe5d4b0c058c2a5c975d9190cc16",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }

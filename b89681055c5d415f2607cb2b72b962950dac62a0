@@ -104,6 +104,24 @@
       "parentUuid": "40d04445_f63102f0",
       "revId": "b89681055c5d415f2607cb2b72b962950dac62a0",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7a1809e4_73e54767",
+        "filename": "core/tasks/device-tests.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1535516
+      },
+      "writtenOn": "2024-09-13T21:24:42Z",
+      "side": 1,
+      "message": "By calling `$(call dist-for-goals, device-tests, $(device-tests-host-shared-libs-zip))`. You called it with `device-tests-host-shared-libs` before. But if you\u0027re going to merge these files like I suggested in the other comment, it can just be 1 dist-for-goals target like before.",
+      "parentUuid": "d9276271_ec39f7e5",
+      "revId": "b89681055c5d415f2607cb2b72b962950dac62a0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
