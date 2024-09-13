@@ -52,6 +52,24 @@
       "parentUuid": "648ab894_516163ac",
       "revId": "edb3ba3ae4a0fe5d4b0c058c2a5c975d9190cc16",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d770ddea_2f628ba1",
+        "filename": "core/tasks/device-tests.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-09-13T22:55:52Z",
+      "side": 0,
+      "message": "How do I do this in a way that allows me to build `device-tests-host-shared-libs` independently of `device-tests` but keeping the `device-tests` build the same? I\u0027m still very unfamiliar with makefiles.",
+      "parentUuid": "3c51568e_8833d479",
+      "revId": "edb3ba3ae4a0fe5d4b0c058c2a5c975d9190cc16",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
