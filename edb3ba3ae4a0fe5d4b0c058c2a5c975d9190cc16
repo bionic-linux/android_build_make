@@ -16,6 +16,24 @@
       "message": "You\u0027re removing the host shared libs from the `device-tests.zip` file, is that intentional?",
       "revId": "edb3ba3ae4a0fe5d4b0c058c2a5c975d9190cc16",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "648ab894_516163ac",
+        "filename": "core/tasks/device-tests.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-09-13T21:12:11Z",
+      "side": 0,
+      "message": "Do i need to keep just `$@-host.list` in here or both, I\u0027m not trying to remove the host shared libs inside device-tests.zip",
+      "parentUuid": "309abaad_6fabaa79",
+      "revId": "edb3ba3ae4a0fe5d4b0c058c2a5c975d9190cc16",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
