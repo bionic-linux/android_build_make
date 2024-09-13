@@ -15,6 +15,17 @@ endif
 # PRODUCT_AFDO_PROFILES takes precedence over product-agnostic profiles in AFDO_PROFILES
 ALL_AFDO_PROFILES := $(PRODUCT_AFDO_PROFILES) $(AFDO_PROFILES)
 
+
+ifndef BOLT_PROFILES
+# Set BOLT_PROFILES
+include toolchain/pgo-profiles/bolt/bolt_profiles.mk
+else
+$(error BOLT_PROFILES can only be set from soong_config.mk. For product-specific bolt_profiles, please use PRODUCT_BOLT_PROFILES)
+endif
+
+# PRODUCT_BOLT_PROFILES takes precedence over product-agnostic profiles in BOLT_PROFILES
+ALL_BOLT_PROFILES := $(PRODUCT_BOLT_PROFILES) $(BOLT_PROFILES)
+
 ifneq (,$(filter-out environment undefined,$(origin GENRULE_SANDBOXING)))
   $(error GENRULE_SANDBOXING can only be provided via an environment variable, use BUILD_BROKEN_GENRULE_SANDBOXING to disable genrule sandboxing in board config)
 endif
@@ -316,6 +327,7 @@ $(call add_json_bool, IgnorePrefer32OnDevice, $(filter true,$(IGNORE_PREFER32_ON
 $(call add_json_list, SourceRootDirs,             $(PRODUCT_SOURCE_ROOT_DIRS))
 
 $(call add_json_list, AfdoProfiles,                $(ALL_AFDO_PROFILES))
+$(call add_json_list, BoltProfiles,                $(ALL_BOLT_PROFILES))
 
 $(call add_json_str,  ProductManufacturer, $(PRODUCT_MANUFACTURER))
 $(call add_json_str,  ProductBrand,        $(PRODUCT_BRAND))
