@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "309abaad_6fabaa79",
+        "filename": "core/tasks/device-tests.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1535516
+      },
+      "writtenOn": "2024-09-13T20:24:35Z",
+      "side": 0,
+      "message": "You\u0027re removing the host shared libs from the `device-tests.zip` file, is that intentional?",
+      "revId": "edb3ba3ae4a0fe5d4b0c058c2a5c975d9190cc16",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}

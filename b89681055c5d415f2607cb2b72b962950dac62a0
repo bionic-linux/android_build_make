@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "91014320_093e0051",
+        "filename": "core/tasks/device-tests-shared-libs.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1535516
+      },
+      "writtenOn": "2024-09-13T20:24:35Z",
+      "side": 1,
+      "message": "I would call this file `device-tests-host-shared-libs.mk`",
+      "revId": "b89681055c5d415f2607cb2b72b962950dac62a0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "82c37d73_2eb29f6d",
+        "filename": "core/tasks/device-tests-shared-libs.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1535516
+      },
+      "writtenOn": "2024-09-13T20:24:35Z",
+      "side": 1,
+      "message": "`$@-host.list` is unused here.",
+      "revId": "b89681055c5d415f2607cb2b72b962950dac62a0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "40d04445_f63102f0",
+        "filename": "core/tasks/device-tests.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1535516
+      },
+      "writtenOn": "2024-09-13T20:24:35Z",
+      "side": 1,
+      "message": "Move the disting to `device-test-shared-libs.mk`. Two separate `dist-for-goals` for the same dist target will be merged together.",
+      "revId": "b89681055c5d415f2607cb2b72b962950dac62a0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
