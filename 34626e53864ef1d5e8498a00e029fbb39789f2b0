@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b3c2bd18_a11e163c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3618594
+      },
+      "writtenOn": "2024-09-14T19:09:46Z",
+      "side": 1,
+      "message": "$ sudo sysctl -w net.ipv4.tcp_window_scaling\u003d0\n$ repo sync -j1",
+      "revId": "34626e53864ef1d5e8498a00e029fbb39789f2b0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
