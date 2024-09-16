@@ -184,3 +184,6 @@ endif
 
 # Add target_use_pan_display flag for hardware/libhardware:gralloc.default
 $(call soong_config_set_bool,gralloc,target_use_pan_display,$(if $(filter true,$(TARGET_USE_PAN_DISPLAY)),true,false))
+
+# Add strict_linage flag for selecting GoogleServiceFramework lineage type.
+$(call soong_config_set_bool,gsf,strict_linage,$(if $(filter true,$(RELEASE_PACKAGE_GSF_STRICT_LINEAGE)),true,false))
