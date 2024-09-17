@@ -47,6 +47,54 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e3ca4e96_706e217b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-09-17T19:17:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7684aff2_24e6c261",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 54
+      },
+      "revId": "541075648ab15ba6cb511382f0629031539d1808",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3d51fc48_f01507a9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-09-17T19:17:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "19dc1889_02d95beb",
+      "range": {
+        "startLine": 7,
+        "startChar": 21,
+        "endLine": 7,
+        "endChar": 26
+      },
+      "revId": "541075648ab15ba6cb511382f0629031539d1808",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ef8e0b2c_4ed2a40c",
@@ -60,6 +108,30 @@
       "writtenOn": "2024-09-17T17:49:56Z",
       "side": 1,
       "message": "typo.",
+      "range": {
+        "startLine": 9,
+        "startChar": 26,
+        "endLine": 9,
+        "endChar": 31
+      },
+      "revId": "541075648ab15ba6cb511382f0629031539d1808",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7cd9f558_58d69956",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-09-17T19:17:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ef8e0b2c_4ed2a40c",
       "range": {
         "startLine": 9,
         "startChar": 26,
@@ -106,6 +178,54 @@
       "writtenOn": "2024-09-17T17:49:56Z",
       "side": 1,
       "message": "I would avoid adding links to internal docs here. Just put them in the bug.",
+      "range": {
+        "startLine": 10,
+        "startChar": 17,
+        "endLine": 10,
+        "endChar": 58
+      },
+      "revId": "541075648ab15ba6cb511382f0629031539d1808",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e0ae729b_4262e425",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-09-17T19:17:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d4984308_a9e7aae7",
+      "range": {
+        "startLine": 10,
+        "startChar": 13,
+        "endLine": 10,
+        "endChar": 16
+      },
+      "revId": "541075648ab15ba6cb511382f0629031539d1808",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9bfa20d3_d3620dc2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-09-17T19:17:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "46c0bf11_42863e26",
       "range": {
         "startLine": 10,
         "startChar": 17,
