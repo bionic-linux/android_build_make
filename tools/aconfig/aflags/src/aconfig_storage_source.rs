@@ -1,4 +1,3 @@
-use crate::load_protos;
 use crate::{Flag, FlagSource};
 use crate::{FlagPermission, FlagValue, ValuePickedFrom};
 use aconfigd_protos::{
@@ -10,18 +9,13 @@ use anyhow::anyhow;
 use anyhow::Result;
 use protobuf::Message;
 use protobuf::SpecialFields;
-use std::collections::HashMap;
 use std::io::{Read, Write};
 use std::net::Shutdown;
 use std::os::unix::net::UnixStream;
 
 pub struct AconfigStorageSource {}
 
-fn load_flag_to_container() -> Result<HashMap<String, String>> {
-    Ok(load_protos::load()?.into_iter().map(|p| (p.qualified_name(), p.container)).collect())
-}
-
-fn convert(msg: ProtoFlagQueryReturnMessage, containers: &HashMap<String, String>) -> Result<Flag> {
+fn convert(msg: ProtoFlagQueryReturnMessage) -> Result<Flag> {
     let (value, value_picked_from) = match (
         &msg.boot_flag_value,
         msg.default_flag_value,
@@ -61,21 +55,15 @@ fn convert(msg: ProtoFlagQueryReturnMessage, containers: &HashMap<String, String
         None => return Err(anyhow!("missing permission")),
     };
 
-    let name = msg.flag_name.ok_or(anyhow!("missing flag name"))?;
-    let package = msg.package_name.ok_or(anyhow!("missing package name"))?;
-    let qualified_name = format!("{package}.{name}");
     Ok(Flag {
-        name,
-        package,
+        name: msg.flag_name.ok_or(anyhow!("missing flag name"))?,
+        package: msg.package_name.ok_or(anyhow!("missing package name"))?,
         value,
         permission,
         value_picked_from,
         staged_value,
-        container: containers
-            .get(&qualified_name)
-            .cloned()
-            .unwrap_or_else(|| "<no container>".to_string())
-            .to_string(),
+        container: "-".to_string(),
+
         // TODO: remove once DeviceConfig is not in the CLI.
         namespace: "-".to_string(),
     })
@@ -126,13 +114,9 @@ fn read_from_socket() -> Result<Vec<ProtoFlagQueryReturnMessage>> {
 
 impl FlagSource for AconfigStorageSource {
     fn list_flags() -> Result<Vec<Flag>> {
-        let containers = load_flag_to_container()?;
         read_from_socket()
             .map(|query_messages| {
-                query_messages
-                    .iter()
-                    .map(|message| convert(message.clone(), &containers))
-                    .collect::<Vec<_>>()
+                query_messages.iter().map(|message| convert(message.clone())).collect::<Vec<_>>()
             })?
             .into_iter()
             .collect()
