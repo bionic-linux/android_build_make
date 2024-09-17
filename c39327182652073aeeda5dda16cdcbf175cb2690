@@ -38,6 +38,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a2eb1173_320f25ef",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1005967
+      },
+      "writtenOn": "2024-09-17T20:02:58Z",
+      "side": 1,
+      "message": "Yeah, I think -eng on an MTE-capable device in presubmit is the answer.\n\nAlso, this is ultimately a per-device configuration - a new device will not declare PRODUCT_ENG_VARIANT_WITH_MEMTAG before it is confirmed to boot with MTE.",
+      "parentUuid": "5bcb76ed_5f1d9693",
+      "revId": "c39327182652073aeeda5dda16cdcbf175cb2690",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "38c6d76f_781f595a",
         "filename": "target/product/eng-has-mte.mk",
         "patchSetId": 3
