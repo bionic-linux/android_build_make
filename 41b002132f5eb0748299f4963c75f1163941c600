@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1d6ecf27_16d541b1",
+        "filename": "tools/edit_monitor/daemon_manager.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1550539
+      },
+      "writtenOn": "2024-09-17T21:42:59Z",
+      "side": 1,
+      "message": "That time unit is this? seconds? minutes?",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 39
+      },
+      "revId": "41b002132f5eb0748299f4963c75f1163941c600",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
