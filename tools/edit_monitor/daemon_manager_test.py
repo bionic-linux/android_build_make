@@ -93,6 +93,75 @@ class DaemonManagerTest(unittest.TestCase):
       contents = f.read()
       self.assertEqual(contents, 'running daemon target')
 
+  def test_start_success_with_existing_instance(self):
+    p = multiprocessing.Process(target=long_running_daemon)
+    p.start()
+
+    # Create a pidfile with the subprocess pid
+    pid_file_path_dir = pathlib.Path(self.working_dir.name).joinpath(
+        'edit_monitor'
+    )
+    pid_file_path_dir.mkdir(parents=True, exist_ok=True)
+    with open(pid_file_path_dir.joinpath(TEST_PID_FILE_PATH), 'w') as f:
+      f.write(str(p.pid))
+
+    damone_output_file = tempfile.NamedTemporaryFile(
+        dir=self.working_dir.name, delete=False
+    )
+    dm = daemon_manager.DaemonManager(
+        TEST_BINARY_FILE,
+        daemon_target=example_daemon,
+        daemon_args=(damone_output_file.name,),
+    )
+    dm.start()
+    dm.daemon_process.join()
+
+    # Verify the daemon process is executed successfully.
+    with open(damone_output_file.name, 'r') as f:
+      contents = f.read()
+      self.assertEqual(contents, 'running daemon target')
+
+  def test_start_success_with_existing_instance_already_dead(self):
+    # Create a pidfile with pid that does not exist.
+    pid_file_path_dir = pathlib.Path(self.working_dir.name).joinpath(
+        'edit_monitor'
+    )
+    pid_file_path_dir.mkdir(parents=True, exist_ok=True)
+    with open(pid_file_path_dir.joinpath(TEST_PID_FILE_PATH), 'w') as f:
+      f.write('123456')
+
+    damone_output_file = tempfile.NamedTemporaryFile(
+        dir=self.working_dir.name, delete=False
+    )
+    dm = daemon_manager.DaemonManager(
+        TEST_BINARY_FILE,
+        daemon_target=example_daemon,
+        daemon_args=(damone_output_file.name,),
+    )
+    dm.start()
+    dm.daemon_process.join()
+
+    # Verify the daemon process is executed successfully.
+    with open(damone_output_file.name, 'r') as f:
+      contents = f.read()
+      self.assertEqual(contents, 'running daemon target')
+
+  @mock.patch('os.kill')
+  def test_start_failed_to_kill_existing_instance(self, mock_kill):
+    mock_kill.side_effect = OSError('Unknown OSError')
+    pid_file_path_dir = pathlib.Path(self.working_dir.name).joinpath(
+        'edit_monitor'
+    )
+    pid_file_path_dir.mkdir(parents=True, exist_ok=True)
+    with open(pid_file_path_dir.joinpath(TEST_PID_FILE_PATH), 'w') as f:
+      f.write('123456')
+
+    dm = daemon_manager.DaemonManager(TEST_BINARY_FILE)
+    dm.start()
+
+    # Verify no daemon process is started.
+    self.assertIsNone(dm.daemon_process)
+
   def test_start_failed_to_write_pidfile(self):
     pid_file_path_dir = pathlib.Path(self.working_dir.name).joinpath(
         'edit_monitor'
@@ -102,15 +171,6 @@ class DaemonManagerTest(unittest.TestCase):
     os.chmod(pid_file_path_dir, 0o555)
 
     dm = daemon_manager.DaemonManager(TEST_BINARY_FILE)
-    dm.start()
-
-    # Verify no daemon process is started.
-    self.assertIsNone(dm.daemon_process)
-
-  def test_start_failed_to_start_daemon_process(self):
-    dm = daemon_manager.DaemonManager(
-        TEST_BINARY_FILE, daemon_target='wrong_target', daemon_args=(1)
-    )
     dm.start()
 
     # Verify no daemon process is started.
