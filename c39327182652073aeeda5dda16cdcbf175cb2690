@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d8fa9458_0c818fa6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002751
+      },
+      "writtenOn": "2024-09-17T16:11:46Z",
+      "side": 1,
+      "message": "How many MTE bugs had to be fixed before the device would boot?  I\u0027m worried that this will make these eng builds unusable, as there is no presubmit boot testing, and it could easily be broken by anyone developing on a different device or using userdebug for local development.",
+      "revId": "c39327182652073aeeda5dda16cdcbf175cb2690",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
