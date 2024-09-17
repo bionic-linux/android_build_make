@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5bcb76ed_5f1d9693",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003966
+      },
+      "writtenOn": "2024-09-17T19:54:20Z",
+      "side": 1,
+      "message": "\u003e How many MTE bugs had to be fixed before the device would boot?\n\nThere were no bugs that I needed to fix prior to me uploading these patches. The existing code worked as-is. I\u0027m not sure how many MTE detected boot bugs have occurred in the past. @eugenis might have that information.\n\nThere are a handful of people who receive `_fullmte` builds via droidfood OTA, as well as a handful of people who enable MTE via developer options. If there was a pattern of recurring boot errors these folks would have been the first to detect it.\n\nWith the existing coverage, I haven\u0027t observed a pattern of frequent boottime failures on MTE builds, although my data is limited. Again, @eugenis might have more information.\n\n\u003e I\u0027m worried that this will make these eng builds unusable, as there is no presubmit boot testing, and it could easily be broken by anyone developing on a different device or using userdebug for local development.\n\nThis is a good point. \n\nThere has been historic, pre-existing problems with `-eng` vs `-userdebug` builds behaving differently, causing developer friction. This is independent of MTE. See b/325656452.\n\nWe\u0027re working on getting MTE capable devices with `-eng` builds into the presubmit and postsubmit queue. See b/367713330.\n\nAdditionally, the plan is to roll this out to all devices which have MTE support, not just the devices at https://android-review.googlesource.com/c/device/google/zuma/+/3269887 . This will increase the probability that problems will be fixed prior to submission, although there\u0027s no guarantee.",
+      "parentUuid": "d8fa9458_0c818fa6",
+      "revId": "c39327182652073aeeda5dda16cdcbf175cb2690",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "38c6d76f_781f595a",
         "filename": "target/product/eng-has-mte.mk",
         "patchSetId": 3
