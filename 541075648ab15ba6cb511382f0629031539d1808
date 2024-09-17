@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7684aff2_24e6c261",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1480888
+      },
+      "writtenOn": "2024-09-17T17:49:56Z",
+      "side": 1,
+      "message": "You could change this to:\n\n```\nBootstrap the edit monitor project\n\nAdd basic files required for the edit monitor project.\n```\n\nYou could optionally add what the project is about for those that don\u0027t have context.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 54
+      },
+      "revId": "541075648ab15ba6cb511382f0629031539d1808",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "19dc1889_02d95beb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1480888
+      },
+      "writtenOn": "2024-09-17T17:49:56Z",
+      "side": 1,
+      "message": "typo.",
+      "range": {
+        "startLine": 7,
+        "startChar": 21,
+        "endLine": 7,
+        "endChar": 26
+      },
+      "revId": "541075648ab15ba6cb511382f0629031539d1808",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ef8e0b2c_4ed2a40c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1480888
+      },
+      "writtenOn": "2024-09-17T17:49:56Z",
+      "side": 1,
+      "message": "typo.",
+      "range": {
+        "startLine": 9,
+        "startChar": 26,
+        "endLine": 9,
+        "endChar": 31
+      },
+      "revId": "541075648ab15ba6cb511382f0629031539d1808",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d4984308_a9e7aae7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1480888
+      },
+      "writtenOn": "2024-09-17T17:49:56Z",
+      "side": 1,
+      "message": "in the",
+      "range": {
+        "startLine": 10,
+        "startChar": 13,
+        "endLine": 10,
+        "endChar": 16
+      },
+      "revId": "541075648ab15ba6cb511382f0629031539d1808",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "46c0bf11_42863e26",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1480888
+      },
+      "writtenOn": "2024-09-17T17:49:56Z",
+      "side": 1,
+      "message": "I would avoid adding links to internal docs here. Just put them in the bug.",
+      "range": {
+        "startLine": 10,
+        "startChar": 17,
+        "endLine": 10,
+        "endChar": 58
+      },
+      "revId": "541075648ab15ba6cb511382f0629031539d1808",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
