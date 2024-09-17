@@ -35,7 +35,6 @@ DEFAULT_RESTART_INTERVAL_SECONDS = 60 * 60 * 24
 def default_daemon_target():
   """Place holder for the default daemon target."""
   print("default daemon target")
-  time.sleep(10)
 
 
 class DaemonManager:
