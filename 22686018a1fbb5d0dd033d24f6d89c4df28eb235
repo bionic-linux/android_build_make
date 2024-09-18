@@ -22,6 +22,30 @@
       },
       "revId": "22686018a1fbb5d0dd033d24f6d89c4df28eb235",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "baab9ce0_f821d8af",
+        "filename": "ci/build_test_suites_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-09-18T00:20:52Z",
+      "side": 1,
+      "message": "testing that the commands are all empty, since `[]` evaluates to `None`. I could assert length equal, that would be a little more obvious I guess.",
+      "parentUuid": "732e922c_838d1fc0",
+      "range": {
+        "startLine": 279,
+        "startChar": 4,
+        "endLine": 281,
+        "endChar": 0
+      },
+      "revId": "22686018a1fbb5d0dd033d24f6d89c4df28eb235",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
