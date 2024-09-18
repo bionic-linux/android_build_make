@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7f8a86c0_1c031f8b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2024-09-18T13:50:23Z",
+      "side": 1,
+      "message": "Cole for owners review.",
+      "revId": "59a4089ae79010b675c32ee7f3c9cf68eafca116",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b1bebc0f_df9dd20c",
+        "filename": "core/product.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 506,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2024-09-18T13:50:23Z",
+      "side": 1,
+      "message": "please  delete this duplicated line",
+      "range": {
+        "startLine": 505,
+        "startChar": 0,
+        "endLine": 506,
+        "endChar": 63
+      },
+      "revId": "59a4089ae79010b675c32ee7f3c9cf68eafca116",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
