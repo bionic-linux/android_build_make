@@ -19,6 +19,7 @@ import android.util.Log;
 
 {{ -endif }}
 /** @hide */
+@com.android.aconfig.annotations.AconfigGeneratedClass
 public final class FeatureFlagsImpl implements FeatureFlags \{
 {{ -if runtime_lookup_required }}
 {{ -for namespace_with_flags in namespace_flags }}
@@ -60,6 +61,7 @@ public final class FeatureFlagsImpl implements FeatureFlags \{
 {{ -endif }}
 {{ -endif }}
 {{ for namespace_with_flags in namespace_flags }}
+    @com.android.aconfig.annotations.AconfigFlagLoader
     private void load_overrides_{namespace_with_flags.namespace}() \{
         try \{
             Properties properties = DeviceConfig.getProperties("{namespace_with_flags.namespace}");
