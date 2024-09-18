@@ -201,6 +201,7 @@ mod tests {
     // TODO(b/303773055): Remove the annotation after access issue is resolved.
     import android.compat.annotation.UnsupportedAppUsage;
     /** @hide */
+    @com.android.aconfig.annotations.AconfigGeneratedClass
     public interface FeatureFlags {
         @com.android.aconfig.annotations.AssumeFalseForR8
         @com.android.aconfig.annotations.AconfigFlagAccessor
@@ -242,6 +243,7 @@ mod tests {
     // TODO(b/303773055): Remove the annotation after access issue is resolved.
     import android.compat.annotation.UnsupportedAppUsage;
     /** @hide */
+    @com.android.aconfig.annotations.AconfigGeneratedClass
     public final class Flags {
         /** @hide */
         public static final String FLAG_DISABLED_RO = "com.android.aconfig.test.disabled_ro";
@@ -327,6 +329,7 @@ mod tests {
     import java.util.function.Predicate;
 
     /** @hide */
+    @com.android.aconfig.annotations.AconfigGeneratedClass
     public class CustomFeatureFlags implements FeatureFlags {
 
         private BiPredicate<String, Predicate<FeatureFlags>> mGetValueImpl;
@@ -442,6 +445,7 @@ mod tests {
     import java.util.function.Predicate;
 
     /** @hide */
+    @com.android.aconfig.annotations.AconfigGeneratedClass
     public class FakeFeatureFlagsImpl extends CustomFeatureFlags {
         private final Map<String, Boolean> mFlagMap = new HashMap<>();
         private final FeatureFlags mDefaults;
@@ -517,6 +521,7 @@ mod tests {
 
         let expected_featureflagsmpl_content_1 = r#"
         /** @hide */
+        @com.android.aconfig.annotations.AconfigGeneratedClass
         public final class FeatureFlagsImpl implements FeatureFlags {
             private static volatile boolean aconfig_test_is_cached = false;
             private static volatile boolean other_namespace_is_cached = false;
@@ -598,6 +603,7 @@ mod tests {
         let expect_featureflagsimpl_content_old = expected_featureflagsmpl_content_0.to_owned()
             + expected_featureflagsmpl_content_1
             + r#"
+            @com.android.aconfig.annotations.AconfigFlagLoader
             private void load_overrides_aconfig_test() {
                 try {
                     Properties properties = DeviceConfig.getProperties("aconfig_test");
@@ -620,6 +626,7 @@ mod tests {
                 aconfig_test_is_cached = true;
             }
 
+            @com.android.aconfig.annotations.AconfigFlagLoader
             private void load_overrides_other_namespace() {
                 try {
                     Properties properties = DeviceConfig.getProperties("other_namespace");
@@ -720,6 +727,7 @@ mod tests {
                 DeviceConfig.getBoolean("core_experiments_team_internal", "com.android.providers.settings.use_new_storage_value", false);
         }
 
+        @com.android.aconfig.annotations.AconfigFlagLoader
         private void load_overrides_aconfig_test() {
             try {
                 Properties properties = DeviceConfig.getProperties("aconfig_test");
@@ -777,6 +785,7 @@ mod tests {
             }
         }
 
+        @com.android.aconfig.annotations.AconfigFlagLoader
         private void load_overrides_other_namespace() {
             try {
                 Properties properties = DeviceConfig.getProperties("other_namespace");
@@ -867,6 +876,7 @@ mod tests {
         let expect_flags_content = r#"
         package com.android.aconfig.test;
         /** @hide */
+        @com.android.aconfig.annotations.AconfigGeneratedClass
         public final class Flags {
             /** @hide */
             public static final String FLAG_DISABLED_RW_EXPORTED = "com.android.aconfig.test.disabled_rw_exported";
@@ -890,6 +900,7 @@ mod tests {
         let expect_feature_flags_content = r#"
         package com.android.aconfig.test;
         /** @hide */
+        @com.android.aconfig.annotations.AconfigGeneratedClass
         public interface FeatureFlags {
             boolean disabledRwExported();
             boolean enabledFixedRoExported();
@@ -902,6 +913,7 @@ mod tests {
         import android.provider.DeviceConfig;
         import android.provider.DeviceConfig.Properties;
         /** @hide */
+        @com.android.aconfig.annotations.AconfigGeneratedClass
         public final class FeatureFlagsImpl implements FeatureFlags {
             private static volatile boolean aconfig_test_is_cached = false;
             private static boolean disabledRwExported = false;
@@ -909,6 +921,7 @@ mod tests {
             private static boolean enabledRoExported = false;
 
 
+            @com.android.aconfig.annotations.AconfigFlagLoader
             private void load_overrides_aconfig_test() {
                 try {
                     Properties properties = DeviceConfig.getProperties("aconfig_test");
@@ -964,6 +977,7 @@ mod tests {
         import java.util.function.Predicate;
 
         /** @hide */
+        @com.android.aconfig.annotations.AconfigGeneratedClass
         public class CustomFeatureFlags implements FeatureFlags {
 
             private BiPredicate<String, Predicate<FeatureFlags>> mGetValueImpl;
@@ -1071,6 +1085,7 @@ mod tests {
         let expect_featureflagsimpl_content = r#"
         package com.android.aconfig.test;
         /** @hide */
+        @com.android.aconfig.annotations.AconfigGeneratedClass
         public final class FeatureFlagsImpl implements FeatureFlags {
             @Override
             @com.android.aconfig.annotations.AconfigFlagAccessor
@@ -1182,6 +1197,7 @@ mod tests {
         // TODO(b/303773055): Remove the annotation after access issue is resolved.
         import android.compat.annotation.UnsupportedAppUsage;
         /** @hide */
+        @com.android.aconfig.annotations.AconfigGeneratedClass
         public interface FeatureFlags {
             @com.android.aconfig.annotations.AssumeFalseForR8
             @com.android.aconfig.annotations.AconfigFlagAccessor
@@ -1214,6 +1230,7 @@ mod tests {
         // TODO(b/303773055): Remove the annotation after access issue is resolved.
         import android.compat.annotation.UnsupportedAppUsage;
         /** @hide */
+        @com.android.aconfig.annotations.AconfigGeneratedClass
         public final class FeatureFlagsImpl implements FeatureFlags {
             @Override
             @com.android.aconfig.annotations.AconfigFlagAccessor
@@ -1259,6 +1276,7 @@ mod tests {
         // TODO(b/303773055): Remove the annotation after access issue is resolved.
         import android.compat.annotation.UnsupportedAppUsage;
         /** @hide */
+        @com.android.aconfig.annotations.AconfigGeneratedClass
         public final class Flags {
             /** @hide */
             public static final String FLAG_DISABLED_RO = "com.android.aconfig.test.disabled_ro";
@@ -1324,6 +1342,7 @@ mod tests {
         import java.util.function.Predicate;
 
         /** @hide */
+        @com.android.aconfig.annotations.AconfigGeneratedClass
         public class CustomFeatureFlags implements FeatureFlags {
 
             private BiPredicate<String, Predicate<FeatureFlags>> mGetValueImpl;
