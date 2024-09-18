@@ -70,6 +70,30 @@
       },
       "revId": "5b6b40e037de0264cff1f8122af0bb521f5efca7",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9cb3f512_1044fa31",
+        "filename": "target/product/default_art_config.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 1884045
+      },
+      "writtenOn": "2024-09-18T16:19:49Z",
+      "side": 0,
+      "message": "Hmm... This is weird. If the variable was assigned an empty string as you said, and we assume Make treats an empty string as defined (which I\u0027m not sure), then `?\u003d` would take no effect and you would get `PRODUCT_ENABLE_UFFD_GC\u003d\u0027\u0027` rather than `PRODUCT_ENABLE_UFFD_GC\u003d\u0027default\u0027`.",
+      "parentUuid": "9604fb60_068ddaab",
+      "range": {
+        "startLine": 188,
+        "startChar": 0,
+        "endLine": 188,
+        "endChar": 33
+      },
+      "revId": "5b6b40e037de0264cff1f8122af0bb521f5efca7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
