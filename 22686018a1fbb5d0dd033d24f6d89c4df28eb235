@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "732e922c_838d1fc0",
+        "filename": "ci/build_test_suites_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 1550539
+      },
+      "writtenOn": "2024-09-18T00:19:31Z",
+      "side": 1,
+      "message": "what are you testing here?",
+      "range": {
+        "startLine": 279,
+        "startChar": 4,
+        "endLine": 281,
+        "endChar": 0
+      },
+      "revId": "22686018a1fbb5d0dd033d24f6d89c4df28eb235",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
