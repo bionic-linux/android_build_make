@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "70f4b325_72cb7ee2",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 1962375
+      },
+      "writtenOn": "2024-09-18T22:55:57Z",
+      "side": 1,
+      "message": "Is it guaranteed that `general-tests-shared-libs` is always required to be in `general-tests.zip`? Looking at the query result below, this does not seem to be true.\n```\n$ lunch aosp_arm-trunk_staging-eng\n$ m nothing\n$ aninja -t query out/target/product/generic/general-tests.zip | grep \"out\\/host\\/linux-x86\\/framework\"\n    out/host/linux-x86/framework/cts-tradefed.jar\n    out/host/linux-x86/framework/compatibility-host-util.jar\n    out/host/linux-x86/framework/vts-tradefed.jar\n    \n$ aninja -t query out/target/product/generic/general-tests.zip | grep \"general-tests-shared-libs\"\n// shows nothing\n```",
+      "revId": "14733eb53a453fe025d3ddb0ee5c8799b63b6394",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b4d356e1_110387f0",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 1962375
+      },
+      "writtenOn": "2024-09-18T22:55:57Z",
+      "side": 1,
+      "message": "```suggestion\n      # The required modules are handled separately, no need to package.\n```",
+      "revId": "14733eb53a453fe025d3ddb0ee5c8799b63b6394",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
