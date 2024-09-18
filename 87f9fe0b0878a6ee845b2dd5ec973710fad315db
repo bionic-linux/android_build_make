@@ -16,6 +16,23 @@
       "message": "@Zhi, WDYT?",
       "revId": "87f9fe0b0878a6ee845b2dd5ec973710fad315db",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "84ec5217_4d05f07d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003801
+      },
+      "writtenOn": "2024-09-18T17:42:10Z",
+      "side": 1,
+      "message": "This will allow us to make necessary processing on the generated classes on ravenwood: http://ag/29480643",
+      "revId": "87f9fe0b0878a6ee845b2dd5ec973710fad315db",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
