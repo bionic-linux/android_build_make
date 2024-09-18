@@ -4,6 +4,7 @@ package {package_name};
 import android.compat.annotation.UnsupportedAppUsage;
 {{ -endif }}
 /** @hide */
+@AconfigGeneratedClass
 public interface FeatureFlags \{
 {{ for item in flag_elements }}
 {{ -if not item.is_read_write }}

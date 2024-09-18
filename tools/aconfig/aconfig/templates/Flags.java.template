@@ -4,6 +4,15 @@ package {package_name};
 import android.compat.annotation.UnsupportedAppUsage;
 {{ -endif }}
 /** @hide */
+@java.lang.annotation.Retention(java.lang.annotation.RetentionPolicy.CLASS)
+@java.lang.annotation.Target(\{java.lang.annotation.ElementType.TYPE})
+@interface AconfigGeneratedClass \{ }
+/** @hide */
+@java.lang.annotation.Retention(java.lang.annotation.RetentionPolicy.CLASS)
+@java.lang.annotation.Target(\{java.lang.annotation.ElementType.METHOD})
+@interface AconfigFlagLoader \{ }
+/** @hide */
+@AconfigGeneratedClass
 public final class Flags \{
 {{ -for item in flag_elements}}
     /** @hide */
