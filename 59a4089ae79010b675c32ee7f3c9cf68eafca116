@@ -18,6 +18,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "22ae9bae_85f8d5c1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1882532
+      },
+      "writtenOn": "2024-09-18T13:51:55Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "7f8a86c0_1c031f8b",
+      "revId": "59a4089ae79010b675c32ee7f3c9cf68eafca116",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b1bebc0f_df9dd20c",
@@ -31,6 +49,30 @@
       "writtenOn": "2024-09-18T13:50:23Z",
       "side": 1,
       "message": "please  delete this duplicated line",
+      "range": {
+        "startLine": 505,
+        "startChar": 0,
+        "endLine": 506,
+        "endChar": 63
+      },
+      "revId": "59a4089ae79010b675c32ee7f3c9cf68eafca116",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9c1cbfd0_50ff56f9",
+        "filename": "core/product.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 506,
+      "author": {
+        "id": 1882532
+      },
+      "writtenOn": "2024-09-18T13:51:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b1bebc0f_df9dd20c",
       "range": {
         "startLine": 505,
         "startChar": 0,
