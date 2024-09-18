@@ -1,0 +1,45 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "29940022_4afd21ab",
+        "filename": "tools/edit_monitor/daemon_manager.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1550539
+      },
+      "writtenOn": "2024-09-18T22:22:44Z",
+      "side": 1,
+      "message": "Nit: are these user visible logs?\n\nif so, maybe this is a logging.debug log.",
+      "range": {
+        "startLine": 76,
+        "startChar": 5,
+        "endLine": 76,
+        "endChar": 44
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "969b9e63_02dc7d33",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "tools/edit_monitor/daemon_manager.py",
+              "range": {
+                "startLine": 76,
+                "startChar": 0,
+                "endLine": 77,
+                "endChar": 0
+              },
+              "replacement": "      logging.debug(\"No existing instances.\")\n"
+            }
+          ]
+        }
+      ],
+      "revId": "bc2fdb1798ec965aa3f9ccc705963a360515f7b8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
