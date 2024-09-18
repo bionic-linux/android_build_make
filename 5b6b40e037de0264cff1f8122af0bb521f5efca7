@@ -46,6 +46,30 @@
       },
       "revId": "5b6b40e037de0264cff1f8122af0bb521f5efca7",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9604fb60_068ddaab",
+        "filename": "target/product/default_art_config.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 1052644
+      },
+      "writtenOn": "2024-09-18T16:14:39Z",
+      "side": 0,
+      "message": "I tried multiple things here, like replacing this line with:\n\n```\nPRODUCT_ENABLE_UFFD_GC ?\u003d default\n```\n\nor with:\n\n```\nifndef PRODUCT_ENABLE_UFFD_GC\n  PRODUCT_ENABLE_UFFD_GC :\u003d default\nendif\n```\n\nbut neither worked: some products defining `PRODUCT_ENABLE_UFFD_GC :\u003d false` in their configuration where still showing `PRODUCT_ENABLE_UFFD_GC\u003d\u0027default\u0027` as a result of `build/soong/soong_ui.bash --dumpvars-mode --vars\u003dPRODUCT_ENABLE_UFFD_GC`. Somehow this variable had already been defined somewhere else. (I wonder if the [`_product_single_value_vars +\u003d PRODUCT_ENABLE_UFFD_GC` assignment in `core/product.mk`](https://cs.android.com/android/platform/superproject/main/+/main:build/make/core/product.mk;l\u003d453;drc\u003d8d2c3f399be6e09e9f925a77961b6e26f613d672) defines an empty `PRODUCT_ENABLE_UFFD_GC` as a side effect.)",
+      "parentUuid": "cb9f1e4c_be4350b1",
+      "range": {
+        "startLine": 188,
+        "startChar": 0,
+        "endLine": 188,
+        "endChar": 33
+      },
+      "revId": "5b6b40e037de0264cff1f8122af0bb521f5efca7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
