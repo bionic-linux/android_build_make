@@ -142,6 +142,30 @@
       },
       "revId": "5b6b40e037de0264cff1f8122af0bb521f5efca7",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1844fc00_2a02e186",
+        "filename": "target/product/default_art_config.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 1052644
+      },
+      "writtenOn": "2024-09-18T17:42:56Z",
+      "side": 0,
+      "message": "Thanks for these explanations, Colin. In that case, I don\u0027t think having `PRODUCT_ENABLE_UFFD_GC ?\u003d default` in `target/product/default_art_config.mk` provides much value.",
+      "parentUuid": "98112514_103005d4",
+      "range": {
+        "startLine": 188,
+        "startChar": 0,
+        "endLine": 188,
+        "endChar": 33
+      },
+      "revId": "5b6b40e037de0264cff1f8122af0bb521f5efca7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
