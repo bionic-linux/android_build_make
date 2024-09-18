@@ -22,6 +22,30 @@
       },
       "revId": "5b6b40e037de0264cff1f8122af0bb521f5efca7",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "64c2fbf0_fe80b69f",
+        "filename": "target/product/default_art_config.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 1064003
+      },
+      "writtenOn": "2024-09-18T16:05:23Z",
+      "side": 0,
+      "message": "+1 to `?\u003d`",
+      "parentUuid": "cb9f1e4c_be4350b1",
+      "range": {
+        "startLine": 188,
+        "startChar": 0,
+        "endLine": 188,
+        "endChar": 33
+      },
+      "revId": "5b6b40e037de0264cff1f8122af0bb521f5efca7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
