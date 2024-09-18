@@ -46,6 +46,30 @@
       },
       "revId": "22686018a1fbb5d0dd033d24f6d89c4df28eb235",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6fcab607_fbed04c3",
+        "filename": "ci/build_test_suites_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 1550539
+      },
+      "writtenOn": "2024-09-18T17:37:51Z",
+      "side": 1,
+      "message": "use self.assertLen instead.\n\nWe should avoid using implicit falsy in assertions because the don\u0027t differentiate between zero, None, false or empty iterables, this is especially when expecting iterables.\n\nIf a method returns None when expecting an iterable and you attempt to iterate over it you\u0027ll get a TypeError, is easier to detect early in unit tests.\n\nTypeError: \u0027NoneType\u0027 object is not iterable",
+      "parentUuid": "baab9ce0_f821d8af",
+      "range": {
+        "startLine": 279,
+        "startChar": 4,
+        "endLine": 281,
+        "endChar": 0
+      },
+      "revId": "22686018a1fbb5d0dd033d24f6d89c4df28eb235",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
