@@ -432,6 +432,10 @@ _product_single_value_vars += PRODUCT_VIRTUAL_AB_COW_VERSION
 
 _product_list_vars += PRODUCT_AFDO_PROFILES
 
+# List of stub libraries specific to the product that are already present in the system image and
+# should be included in the system_linker_config.
+_product_list_vars += PRODUCT_EXTRA_STUB_LIBRARIES
+
 .KATI_READONLY := _product_single_value_vars _product_list_vars
 _product_var_list :=$= $(_product_single_value_vars) $(_product_list_vars)
 
