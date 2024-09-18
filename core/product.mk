@@ -467,6 +467,11 @@ _product_single_value_vars += PRODUCT_CHECK_DEV_TYPE_VIOLATIONS
 
 _product_list_vars += PRODUCT_AFDO_PROFILES
 
+<<<<<<< PATCH SET (85f087 Update core/Makefile to add variable PRODUCT_EXTRA_STUB_LIBR)
+# List of stub libraries specific to the product that are already present in the system image and
+# should be included in the system_linker_config.
+_product_list_vars += PRODUCT_EXTRA_STUB_LIBRARIES
+=======
 _product_single_value_vars += PRODUCT_SCUDO_ALLOCATION_RING_BUFFER_SIZE
 
 _product_list_vars += PRODUCT_RELEASE_CONFIG_MAPS
@@ -498,6 +503,7 @@ _product_single_value_vars += PRODUCT_BUILD_APPS_WITH_BUILD_NUMBER
 
 # If set, build would generate system image from Soong-defined module.
 _product_single_value_vars += PRODUCT_SOONG_DEFINED_SYSTEM_IMAGE
+>>>>>>> BASE      (5b6b40 Merge "aconfig: update cpp_codegen to just read from new sto)
 
 .KATI_READONLY := _product_single_value_vars _product_list_vars
 _product_var_list :=$= $(_product_single_value_vars) $(_product_list_vars)
