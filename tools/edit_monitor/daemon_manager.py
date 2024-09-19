@@ -25,6 +25,10 @@ import time
 
 
 DEFAULT_PROCESS_TERMINATION_TIMEOUT_SECONDS = 1
+DEFAULT_PROCESS_TERMINATION_TIMEOUT_SECONDS = 1
+DEFAULT_MONITOR_INTERVAL_SECONDS = 5
+DEFAULT_MEMORY_USAGE_THRESHOLD = 2000
+DEFAULT_CPU_USAGE_THRESHOLD = 10
 
 
 def default_daemon_target():
@@ -48,6 +52,9 @@ class DaemonManager:
     self.pid = os.getpid()
     self.daemon_process = None
 
+    self.max_memory_usage = 0
+    self.max_cpu_usage = 0
+
     pid_file_dir = pathlib.Path(tempfile.gettempdir()).joinpath("edit_monitor")
     pid_file_dir.mkdir(parents=True, exist_ok=True)
     self.pid_file_path = self._get_pid_file_path(pid_file_dir)
@@ -60,6 +67,43 @@ class DaemonManager:
       self._start_daemon_process()
     except Exception as e:
       logging.exception("Failed to start daemon manager with error %s", e)
+
+  def monitor_daemon(
+      self,
+      interval: int = DEFAULT_MONITOR_INTERVAL_SECONDS,
+      memory_threshold: float = DEFAULT_MEMORY_USAGE_THRESHOLD,
+      cpu_threshold: float = DEFAULT_CPU_USAGE_THRESHOLD,
+  ):
+    logging.info("start monitoring daemon process %d.", self.daemon_process.pid)
+
+    while self.daemon_process.is_alive():
+      try:
+        memory_usage = self._get_process_memory_percent(self.daemon_process.pid)
+        self.max_memory_usage = max(self.max_memory_usage, memory_usage)
+
+        cpu_usage = self._get_process_cpu_percent(self.daemon_process.pid)
+        self.max_cpu_usage = max(self.max_cpu_usage, cpu_usage)
+
+        time.sleep(interval)
+      except Exception as e:
+        logging.warning("Failed to monitor daemon process with error: %s", e)
+
+      if (
+          self.max_memory_usage > memory_threshold
+          or self.max_cpu_usage > cpu_threshold
+      ):
+        logging.error(
+            "Daemon process is consuming too much resource, killing..."
+        ),
+        self._terminate_process(self.daemon_process.pid)
+
+    logging.info(
+        "Daemon process %d terminated. Max memory usage: %f, Max cpu"
+        " usage: %f.",
+        self.daemon_process.pid,
+        self.max_memory_usage,
+        self.max_cpu_usage,
+    )
 
   def stop(self):
     """Stops the daemon process and removes the pidfile."""
@@ -180,3 +224,40 @@ class DaemonManager:
     logging.info("pid_file_path: %s", pid_file_path)
 
     return pid_file_path
+
+  def _get_process_memory_percent(self, pid) -> float:
+    try:
+      memory_usage = self._get_resource_usage_info_from_pidstat("memory", pid)
+      return int(memory_usage) / 1024  # Covert to MB
+    except (subprocess.CalledProcessError, IndexError, ValueError) as e:
+      logging.exception("Failed to get memory usage with error: %d", e)
+      raise e
+
+  def _get_process_cpu_percent(self, pid) -> float:
+    try:
+      cpu_usage = self._get_resource_usage_info_from_pidstat("cpu", pid)
+      return float(cpu_usage)
+    except (subprocess.CalledProcessError, IndexError, ValueError) as e:
+      logging.exception("Failed to get CPU usage with error: %s", e)
+      raise e
+
+  def _get_resource_usage_info_from_pidstat(
+      self, resource_type: str, pid
+  ) -> str:
+    cmd = []
+    keyword = ""
+    if resource_type == "memory":
+      cmd = ["pidstat", "-r", "-p", str(pid), "1", "1"]
+      keyword = "RSS"
+    elif resource_type == "cpu":
+      cmd = ["pidstat", "-u", "-p", str(pid), "1", "1"]
+      keyword = "%CPU"
+
+    output = subprocess.check_output(cmd, text=True)
+    index = None
+    for line in output.splitlines():
+      parts = line.split()
+      if keyword in parts:
+        index = parts.index(keyword)
+      if index and str(pid) in parts:
+        return parts[index]
