@@ -140,6 +140,24 @@
       "parentUuid": "7a1809e4_73e54767",
       "revId": "b89681055c5d415f2607cb2b72b962950dac62a0",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "94c8e7ff_1968bb6e",
+        "filename": "core/tasks/device-tests.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1535516
+      },
+      "writtenOn": "2024-09-19T17:54:59Z",
+      "side": 1,
+      "message": "ah nevermind then.",
+      "parentUuid": "6a8ef904_1e860307",
+      "revId": "b89681055c5d415f2607cb2b72b962950dac62a0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }

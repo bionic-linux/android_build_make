@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9aff7ee8_bd68860b",
+        "filename": "core/tasks/device-tests.mk",
+        "patchSetId": 5
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1535516
+      },
+      "writtenOn": "2024-09-19T17:54:59Z",
+      "side": 0,
+      "message": "You should keep `my_host_shared_lib_for_device_tests` as a dependency, because you\u0027re still packaging them into this zip.",
+      "range": {
+        "startLine": 30,
+        "startChar": 134,
+        "endLine": 30,
+        "endChar": 169
+      },
+      "revId": "f09a84419ca003cf5ea0dfa56cb2dddb544986b8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}

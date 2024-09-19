@@ -88,6 +88,24 @@
       "parentUuid": "d770ddea_2f628ba1",
       "revId": "edb3ba3ae4a0fe5d4b0c058c2a5c975d9190cc16",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4e9abfad_afc4112d",
+        "filename": "core/tasks/device-tests.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1535516
+      },
+      "writtenOn": "2024-09-19T17:54:59Z",
+      "side": 0,
+      "message": "Acknowledged",
+      "parentUuid": "67a338f8_3100ed0b",
+      "revId": "edb3ba3ae4a0fe5d4b0c058c2a5c975d9190cc16",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
