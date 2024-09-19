@@ -4442,6 +4442,13 @@ team {
 }
 
 team {
+<<<<<<< PATCH SET (eecdd3 Create trendy team for ravenwood)
+    name: "trendy_team_ravenwood",
+
+    // go/trendy/manage/engineers/6027181500497920
+    trendy_team_id: "6027181500497920",
+||||||| BASE
+=======
     name: "trendy_team_desktop_firmware",
 
     // go/trendy/manage/engineers/5787938454863872
@@ -4453,4 +4460,5 @@ team {
 
     // go/trendy/manage/engineers/5121440647577600
     trendy_team_id: "5121440647577600",
+>>>>>>> BASE      (20ed20 Merge "add the test config lib to a target that is used in p)
 }
