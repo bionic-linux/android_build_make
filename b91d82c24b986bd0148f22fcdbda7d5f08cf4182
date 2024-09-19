@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "65a90ed6_2dba0e5b",
+        "filename": "teams/Android.bp",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1962375
+      },
+      "writtenOn": "2024-09-19T17:15:15Z",
+      "side": 1,
+      "message": "Please fix this WARNING reported by Team Rule Lint: A trendy team (id: 5787938454863872) has not been onboarded to Gantry. Instructions on how to onboard are here: go/android-flags-howto-onboarding\n\nAnalyzer Description: Validates Trendy TeamID.\nOwner: crumpet-eng@google.com\n\nA trendy team (id: 5787938454863872) has not been onboarded to Gantry. Instructions on how to onboard are here: go/android-flags-howto-onboarding",
+      "range": {
+        "startLine": 0,
+        "startChar": 0,
+        "endLine": 0,
+        "endChar": 0
+      },
+      "revId": "b91d82c24b986bd0148f22fcdbda7d5f08cf4182",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
