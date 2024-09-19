@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d1c58b02_1b345a92",
+        "filename": "core/board_config.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 1307893
+      },
+      "writtenOn": "2024-09-19T09:10:54Z",
+      "side": 1,
+      "message": "Move to `build/core/android_soong_config_vars.mk`?",
+      "range": {
+        "startLine": 293,
+        "startChar": 0,
+        "endLine": 293,
+        "endChar": 70
+      },
+      "revId": "f633022f4d31c40675fb2bf81c2937ce6da74e85",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
