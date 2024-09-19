@@ -122,6 +122,24 @@
       "parentUuid": "d9276271_ec39f7e5",
       "revId": "b89681055c5d415f2607cb2b72b962950dac62a0",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6a8ef904_1e860307",
+        "filename": "core/tasks/device-tests.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-09-19T00:37:35Z",
+      "side": 1,
+      "message": "I still have 2 different dist statements, if I can just add `$(device_tests_host_shared_libs)` to the first `dist-for-goals` call and still have it get saved to `dist` when i call `device-tests-host-shared-libs` then i\u0027ll remove it.",
+      "parentUuid": "7a1809e4_73e54767",
+      "revId": "b89681055c5d415f2607cb2b72b962950dac62a0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
