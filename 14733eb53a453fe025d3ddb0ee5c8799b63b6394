@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "aed9a719_d1c9a70b",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-09-19T00:02:00Z",
+      "side": 1,
+      "message": "`general-tests-shared-libs` builds a separate zip (`general-tests_host-shared-libs.zip`) which is also built when you build `general-tests` but we can\u0027t build within bwyn like the config and list zips, so we\u0027re just building it that way. There\u0027s nothing that actually makes its way into `general-tests.zip` itself.",
+      "parentUuid": "70f4b325_72cb7ee2",
+      "revId": "14733eb53a453fe025d3ddb0ee5c8799b63b6394",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "b4d356e1_110387f0",
         "filename": "ci/optimized_targets.py",
         "patchSetId": 4
