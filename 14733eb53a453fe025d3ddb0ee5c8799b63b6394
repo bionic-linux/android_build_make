@@ -38,6 +38,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ac730358_3ef6d779",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 1962375
+      },
+      "writtenOn": "2024-09-19T00:17:42Z",
+      "side": 1,
+      "message": "I think the comment here is bit misleading. These are the list of modules that are **built** alongside when building `general-tests` (i.e. dependencies of `general-tests`), but are not necessarily \"required to be in general-tests.zip\"",
+      "parentUuid": "aed9a719_d1c9a70b",
+      "revId": "14733eb53a453fe025d3ddb0ee5c8799b63b6394",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "b4d356e1_110387f0",
         "filename": "ci/optimized_targets.py",
         "patchSetId": 4
