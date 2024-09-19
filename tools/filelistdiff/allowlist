@@ -43,6 +43,7 @@ etc/aconfig/flag.val
 etc/aconfig/package.map
 etc/bpf/uprobestats/BitmapAllocation.o
 etc/bpf/uprobestats/GenericInstrumentation.o
+etc/bpf/uprobestats/ProcessManagement.o
 etc/init/UprobeStats.rc
 lib/libuprobestats_client.so
 lib64/libuprobestats_client.so
