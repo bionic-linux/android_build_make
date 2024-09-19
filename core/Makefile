@@ -46,6 +46,9 @@ endif
 ifneq ($(BUILDING_RAMDISK_IMAGE),)
   IMAGES_TO_BUILD += ramdisk
 endif
+ifneq ($(PACK_DESKTOP_MIGRATION_IMAGE),)
+  IMAGES_TO_BUILD += super_migration
+endif
 ifneq ($(BUILDING_RECOVERY_IMAGE),)
   IMAGES_TO_BUILD += recovery
 endif
@@ -7447,10 +7450,13 @@ ifneq (true,$(PRODUCT_RETROFIT_DYNAMIC_PARTITIONS))
 # Build super.img by using $(INSTALLED_*IMAGE_TARGET) to $(1)
 # $(1): built image path
 # $(2): misc_info.txt path; its contents should match expectation of build_super_image.py
+# $(3): super image size (for super_migration.img)
 define build-superimage-target
   mkdir -p $(dir $(2))
   rm -rf $(2)
   $(call dump-super-image-info,$(2))
+  $(if $(3), \
+    echo "super_super_device_size=$(3)" >> $(2))
   $(foreach p,$(BOARD_SUPER_PARTITION_PARTITION_LIST), \
     echo "$(p)_image=$(INSTALLED_$(call to-upper,$(p))IMAGE_TARGET)" >> $(2);)
   $(if $(BUILDING_SYSTEM_OTHER_IMAGE), $(if $(filter system,$(BOARD_SUPER_PARTITION_PARTITION_LIST)), \
@@ -7500,6 +7506,38 @@ superimage-nodeps supernod: | $(INSTALLED_SUPERIMAGE_DEPENDENCIES)
 endif # PRODUCT_RETROFIT_DYNAMIC_PARTITIONS != "true"
 endif # BOARD_SUPER_PARTITION_SIZE != ""
 endif # PRODUCT_BUILD_SUPER_PARTITION == "true"
+
+# -----------------------------------------------------------------
+# super migration image
+ifdef BUILDING_SUPER_MIGRATION_IMAGE
+ifneq ($(BOARD_MIGRATION_SUPER_SIZE),)
+
+INSTALLED_SUPERIMAGE_MIGRATION_TARGET := $(PRODUCT_OUT)/super_migration.img
+INSTALLED_SUPERIMAGE_DEPENDENCIES := $(LPMAKE) $(BUILD_SUPER_IMAGE) \
+    $(foreach p, $(BOARD_SUPER_PARTITION_PARTITION_LIST), $(INSTALLED_$(call to-upper,$(p))IMAGE_TARGET))
+
+ifdef BUILDING_SYSTEM_OTHER_IMAGE
+ifneq ($(filter system,$(BOARD_SUPER_PARTITION_PARTITION_LIST)),)
+INSTALLED_SUPERIMAGE_DEPENDENCIES += $(INSTALLED_SYSTEMOTHERIMAGE_TARGET)
+endif
+endif
+
+$(INSTALLED_SUPERIMAGE_MIGRATION_TARGET): $(INSTALLED_SUPERIMAGE_DEPENDENCIES)
+	$(call pretty,"Target super migration fs image: $@")
+	$(call build-superimage-target,$(INSTALLED_SUPERIMAGE_MIGRATION_TARGET),\
+          $(call intermediates-dir-for,PACKAGING,superimage_debug)/misc_migration_info.txt, $(BOARD_MIGRATION_SUPER_SIZE))
+
+$(call dist-for-goals,dist_files,$(INSTALLED_SUPERIMAGE_MIGRATION_TARGET))
+
+$(call declare-0p-target,$(INSTALLED_SUPERIMAGE_MIGRATION_TARGET))
+
+endif # BOARD_MIGRATION_SUPER_SIZE != ""
+endif # BUILDING_SUPER_MIGRATION_IMAGE
+
+.PHONY: superimage-migration
+superimage-migration: $(INSTALLED_SUPERIMAGE_MIGRATION_TARGET)
+
+droidcore-unbundled: $(INSTALLED_SUPERIMAGE_MIGRATION_TARGET)
 
 # -----------------------------------------------------------------
 # super empty image
@@ -7983,6 +8021,34 @@ $(call dist-for-goals,dist_files,$(PACKED_UPDATE_IMAGE_ARCHIVE_TARGET))
 pack-update-image: $(PACK_UPDATE_IMAGE_TARGET)
 
 endif # PACK_DESKTOP_UPDATE_IMAGE
+
+PACK_MIGRATION_IMAGE_SCRIPT := $(HOST_OUT_EXECUTABLES)/pack_migration_image
+MIGRATION_IMAGES := $(INSTALLED_BOOTIMAGE_TARGET) \
+	$(INSTALLED_SUPERIMAGE_MIGRATION_TARGET) \
+	$(INSTALLED_INIT_BOOT_IMAGE_TARGET) \
+	$(INSTALLED_VENDOR_BOOTIMAGE_TARGET) \
+	$(INSTALLED_VBMETAIMAGE_TARGET) \
+	$(INSTALLED_USERDATAIMAGE_TARGET)
+
+# -----------------------------------------------------------------
+# Desktop pack migration image hook.
+ifneq (,$(PACK_DESKTOP_MIGRATION_IMAGE))
+PACK_MIGRATION_IMAGE_TARGET := $(PRODUCT_OUT)/android-desktop_migration_image.bin
+
+$(PACK_MIGRATION_IMAGE_TARGET): $(MIGRATION_IMAGES) $(PACK_MIGRATION_IMAGE_SCRIPT)
+	$(PACK_MIGRATION_IMAGE_SCRIPT) --out_dir $(PRODUCT_OUT) --noarchive
+
+PACKED_MIGRATION_IMAGE_ARCHIVE_TARGET := $(PACK_MIGRATION_IMAGE_TARGET).gz
+
+$(PACKED_MIGRATION_IMAGE_ARCHIVE_TARGET): $(PACK_MIGRATION_IMAGE_TARGET) | $(GZIP)
+	$(GZIP) -fk $(PACK_MIGRATION_IMAGE_TARGET)
+
+$(call dist-for-goals,dist_files,$(PACKED_MIGRATION_IMAGE_ARCHIVE_TARGET))
+
+.PHONY: pack-migration-image
+pack-migration-image: $(PACK_MIGRATION_IMAGE_TARGET)
+
+endif # PACK_DESKTOP_MIGRATION_IMAGE
 
 # -----------------------------------------------------------------
 # OS Licensing
