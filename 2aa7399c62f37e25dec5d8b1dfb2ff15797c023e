@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a5361f33_0aa30a6d",
+        "filename": "core/dex_preopt_libart.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1884045
+      },
+      "writtenOn": "2024-09-19T12:17:07Z",
+      "side": 1,
+      "message": "Is this dead code for device rather than for host? If so, please mention it in the CL description and check if the built system image remains unchanged after this change.",
+      "revId": "2aa7399c62f37e25dec5d8b1dfb2ff15797c023e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}

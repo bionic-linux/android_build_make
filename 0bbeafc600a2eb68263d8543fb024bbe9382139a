@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "21cb58de_721047d0",
+        "filename": "core/dex_preopt.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1884045
+      },
+      "writtenOn": "2024-09-19T12:17:07Z",
+      "side": 0,
+      "message": "There are some references to `HOST_BOOT_IMAGE` and `2ND_HOST_BOOT_IMAGE` in the art codebase. If they are obsolete after this change, could you please clean them up and put the cleanup CL and this CL in the same topic for future reference?",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 15
+      },
+      "revId": "0bbeafc600a2eb68263d8543fb024bbe9382139a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
