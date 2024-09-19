@@ -69,6 +69,24 @@
       "message": "```suggestion\n      # The required modules are handled separately, no need to package.\n```",
       "revId": "14733eb53a453fe025d3ddb0ee5c8799b63b6394",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4fa6105a_d72d321b",
+        "filename": "ci/optimized_targets.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-09-19T17:34:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b4d356e1_110387f0",
+      "revId": "14733eb53a453fe025d3ddb0ee5c8799b63b6394",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
