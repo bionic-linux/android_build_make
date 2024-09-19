@@ -22,6 +22,30 @@
       },
       "revId": "f633022f4d31c40675fb2bf81c2937ce6da74e85",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3203a5ba_ffe1a575",
+        "filename": "core/board_config.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 1308044
+      },
+      "writtenOn": "2024-09-19T09:39:32Z",
+      "side": 1,
+      "message": "The reason I just include it directly is due to there are 13 flags for this module and not sure if it\u0027s a good idea just move them there.",
+      "parentUuid": "d1c58b02_1b345a92",
+      "range": {
+        "startLine": 293,
+        "startChar": 0,
+        "endLine": 293,
+        "endChar": 70
+      },
+      "revId": "f633022f4d31c40675fb2bf81c2937ce6da74e85",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
