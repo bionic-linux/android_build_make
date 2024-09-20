@@ -132,4 +132,15 @@ mod tests {
             aconfig_storage_file::test_utils::create_test_package_table(DEFAULT_FILE_VERSION);
         assert_eq!(package_table.unwrap(), expected_package_table);
     }
+
+    #[test]
+    fn test_table_contents_no_fingerprint() {
+        let caches = parse_all_test_flags();
+        let packages = group_flags_by_package(caches.iter(), /* enable_fingerprint */ false);
+        let package_table = create_package_table("mockup", &packages);
+        assert!(package_table.is_ok());
+        for node in package_table.unwrap().nodes {
+            assert_eq!(node.fingerprint, 0);
+        }
+    }
 }
