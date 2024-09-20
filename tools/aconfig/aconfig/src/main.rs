@@ -159,7 +159,9 @@ fn cli() -> Command {
                         .value_parser(|s: &str| StorageFileType::try_from(s)),
                 )
                 .arg(Arg::new("cache").long("cache").action(ArgAction::Append).required(true))
-                .arg(Arg::new("out").long("out").required(true)),
+                .arg(Arg::new("out").long("out").required(true))
+                // Enable-fingerprint guards
+                .arg(Arg::new("enable-fingerprint").long("enable-fingerprint").required(false)),
         )
 }
 
@@ -314,7 +316,9 @@ fn main() -> Result<()> {
             let cache = open_zero_or_more_files(sub_matches, "cache")?;
             let container = get_required_arg::<String>(sub_matches, "container")?;
             let path = get_required_arg::<String>(sub_matches, "out")?;
-            let output = commands::create_storage(cache, container, file)
+            let enable_fingerprint =
+                get_optional_arg::<bool>(sub_matches, "enable-fingerprint").unwrap_or(&false);
+            let output = commands::create_storage(cache, container, file, *enable_fingerprint)
                 .context("failed to create storage files")?;
             write_output_to_file_or_stdout(path, &output)?;
         }
