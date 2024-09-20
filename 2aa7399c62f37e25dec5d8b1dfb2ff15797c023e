@@ -16,6 +16,24 @@
       "message": "Is this dead code for device rather than for host? If so, please mention it in the CL description and check if the built system image remains unchanged after this change.",
       "revId": "2aa7399c62f37e25dec5d8b1dfb2ff15797c023e",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a6669f18_0bc2449d",
+        "filename": "core/dex_preopt_libart.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1878380
+      },
+      "writtenOn": "2024-09-20T21:57:46Z",
+      "side": 1,
+      "message": "Yes, this is dead code for device variants. The installation rules for those are being handled by soong at ToT (https://r.android.com/3199942 did this switch).\n\nI have added this to the CL description.",
+      "parentUuid": "a5361f33_0aa30a6d",
+      "revId": "2aa7399c62f37e25dec5d8b1dfb2ff15797c023e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }

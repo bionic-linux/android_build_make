@@ -22,6 +22,30 @@
       },
       "revId": "0bbeafc600a2eb68263d8543fb024bbe9382139a",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2d84478b_570eb704",
+        "filename": "core/dex_preopt.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1878380
+      },
+      "writtenOn": "2024-09-20T21:57:46Z",
+      "side": 0,
+      "message": "Good point, I have removed this in https://r.android.com/3272901\n\nBtw, I noticed that ahat has [some references to these](https://source.corp.google.com/h/googleplex-android/platform/art/+/1839245cb5469652e9026b705649a8dd380c1730:tools/ahat/Android.mk;l\u003d65;drc\u003d484e4f228da221d6561594ad1698c7a2e9389c32;bpv\u003d1;bpt\u003d0). Is there a postsubmit target I can run to verify that I dont inadvertently break these? I have verified that this is compatible with `git_master-art-host:art-gtest`",
+      "parentUuid": "21cb58de_721047d0",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 15
+      },
+      "revId": "0bbeafc600a2eb68263d8543fb024bbe9382139a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
