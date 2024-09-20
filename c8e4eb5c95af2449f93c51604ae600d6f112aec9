@@ -1,0 +1,114 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b833fffe_dffc377f",
+        "filename": "tools/edit_monitor/daemon_manager.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1550539
+      },
+      "writtenOn": "2024-09-20T00:56:05Z",
+      "side": 1,
+      "message": "duplicated, remove.",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 47
+      },
+      "revId": "c8e4eb5c95af2449f93c51604ae600d6f112aec9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8bb0240c_5cca3df0",
+        "filename": "tools/edit_monitor/daemon_manager.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1550539
+      },
+      "writtenOn": "2024-09-20T00:56:05Z",
+      "side": 1,
+      "message": "You can get the information in a single subprocess: E.g.\n\n```\n\nimport subprocess\nfrom dataclasses import dataclass\n\n@dataclass\nclass ResourceUsage:\n    cpu: float\n    memory: int\n\ndef get_resource_usage(pid: int) -\u003e ResourceUsage:\n    \"\"\"\n    Gets the CPU and memory usage for a given process ID using pidstat.\n\n    Args:\n        pid: The process ID.\n\n    Returns:\n        A ResourceUsage object containing the CPU usage and memory usage.\n    \"\"\"\n    try:\n        # Run pidstat to get both CPU and memory usage in a single command\n        cmd \u003d [\"pidstat\", \"-u\", \"-r\", \"-p\", str(pid), \"1\", \"1\"]\n        output \u003d subprocess.check_output(cmd, text\u003dTrue)\n\n        # Parse the output to extract CPU and memory usage\n        cpu_usage \u003d None\n        memory_usage \u003d None\n        lines \u003d output.splitlines()\n        for i in range(len(lines)-1):\n            headers \u003d lines[i].split()\n            values \u003d lines[i+1].split()\n\n            if \"%CPU\" in headers and str(pid) in values:\n                cpu_usage \u003d float(values[headers.index(\"%CPU\")])\n            if \"RSS\" in headers and str(pid) in values:\n                memory_usage \u003d int(values[headers.index(\"RSS\")])\n\n        if cpu_usage is not None and memory_usage is not None:\n            return ResourceUsage(cpu\u003dcpu_usage, memory\u003dmemory_usage)\n        else:\n            raise ValueError(f\"Failed to parse pidstat output: {cpu_usage}{memory_usage}\")\n\n    except Exception as e:\n        raise RuntimeError(f\"Error running pidstat: {e}\")\n\n```",
+      "range": {
+        "startLine": 81,
+        "startChar": 23,
+        "endLine": 81,
+        "endChar": 80
+      },
+      "revId": "c8e4eb5c95af2449f93c51604ae600d6f112aec9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bce7e610_f6c49990",
+        "filename": "tools/edit_monitor/daemon_manager.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 1550539
+      },
+      "writtenOn": "2024-09-20T00:56:05Z",
+      "side": 1,
+      "message": "Exception logging already include the exception message, you don\u0027t need to add it.\n\nhttps://docs.python.org/3/library/logging.html#module-level-functions",
+      "range": {
+        "startLine": 233,
+        "startChar": 67,
+        "endLine": 233,
+        "endChar": 71
+      },
+      "revId": "c8e4eb5c95af2449f93c51604ae600d6f112aec9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6bbc7959_d38698f2",
+        "filename": "tools/edit_monitor/daemon_manager.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 1550539
+      },
+      "writtenOn": "2024-09-20T00:56:05Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 241,
+        "startChar": 61,
+        "endLine": 241,
+        "endChar": 68
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "3e955ec7_3f8aaf87",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "tools/edit_monitor/daemon_manager.py",
+              "range": {
+                "startLine": 233,
+                "startChar": 0,
+                "endLine": 234,
+                "endChar": 0
+              },
+              "replacement": "      logging.exception(\"Failed to get memory usage with error: %s\", e)\n"
+            }
+          ]
+        }
+      ],
+      "revId": "c8e4eb5c95af2449f93c51604ae600d6f112aec9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
