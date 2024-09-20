@@ -63,6 +63,44 @@ function require_lunch
 }
 fi
 
+# setup_cog_symlink_if_needed creates a symlink for the out/ dir when inside a cog workspace.
+function setup_cog_symlink_if_needed() {
+  local out_dir=$(getoutdir)
+  local top=$(gettop)
+
+  # return early if not in a cog workspace
+  if [[ ! "$top" =~ ^/google/cog ]]; then
+    return
+  fi
+
+  # return early if out dir is already a symlink
+  if [[ -L "$out_dir" ]]; then
+    return
+  fi
+
+  # return early if out dir is not in the workspace
+  if [[ ! "$out_dir" =~ ^$top/ ]]; then
+    return
+  fi
+
+  # remove directory if it exists
+  if [[ -d "$out_dir" ]]; then
+    if ! rm -rf "$out_dir"; then
+      echo "Failed to remove existing out/ directory (it must be a symlink in cog workspaces): $out_dir" >&2
+      exit 1
+    fi
+  fi
+
+  # create symlink
+  local link_destination="${HOME}/.cog/android-build-out"
+  mkdir -p ${local_destination}
+  echo "Detected cog workspace, creating symlink: $out_dir -> $link_destination"
+  if ! ln -s "$link_destination" "$out_dir"; then
+    echo "Failed to create cog symlink: $out_dir" >&2
+    exit 1
+  fi
+}
+
 function getoutdir
 {
     local top=$(gettop)
