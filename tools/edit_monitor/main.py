@@ -21,6 +21,7 @@ import sys
 import tempfile
 
 from edit_monitor import daemon_manager
+from edit_monitor import edit_watchdog
 
 
 def create_arg_parser():
@@ -32,6 +33,13 @@ def create_arg_parser():
       ),
       add_help=True,
       formatter_class=argparse.RawDescriptionHelpFormatter,
+  )
+
+  parser.add_argument(
+      '--path',
+      type=str,
+      required=True,
+      help='Root path to monitor the edit events.',
   )
 
   parser.add_argument(
@@ -62,7 +70,9 @@ def term_signal_handler(signal_number, frame):
 
 def main(argv: list[str]):
   args = create_arg_parser().parse_args(argv[1:])
-  dm = daemon_manager.DaemonManager(binary_path=argv[0])
+  #dm = daemon_manager.DaemonManager(binary_path=argv[0])
+  dm = daemon_manager.DaemonManager(
+      binary_path=argv[0], daemon_target=edit_watchdog.start_daemon, daemon_args=(args.path,['*'], os.getpid()))
   if args.force_cleanup:
     try:
       dm.cleanup()
