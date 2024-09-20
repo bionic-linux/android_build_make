@@ -1,0 +1,39 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "64b6b8b2_f03e2d77",
+        "filename": "tools/aconfig/aconfig_device_paths/src/HostDeviceProtosTemplate.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1981530
+      },
+      "writtenOn": "2024-09-20T15:47:59Z",
+      "side": 1,
+      "message": "nit: s/iterface/interface",
+      "fixSuggestions": [
+        {
+          "fixId": "0f82216d_3910b575",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "tools/aconfig/aconfig_device_paths/src/HostDeviceProtosTemplate.java",
+              "range": {
+                "startLine": 31,
+                "startChar": 0,
+                "endLine": 32,
+                "endChar": 0
+              },
+              "replacement": "     * An interface that executes ADB command and return the result.\n"
+            }
+          ]
+        }
+      ],
+      "revId": "ea7947c59ca644ff7ff06ec59e472b4e13ca8c75",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
