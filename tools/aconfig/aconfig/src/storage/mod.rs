@@ -21,6 +21,7 @@ pub mod package_table;
 use anyhow::{anyhow, Result};
 use std::collections::{HashMap, HashSet};
 
+use crate::commands::compute_flags_fingerprint;
 use crate::storage::{
     flag_table::create_flag_table, flag_value::create_flag_value,
     package_table::create_package_table,
@@ -82,7 +83,13 @@ where
         p.boolean_start_index = boolean_start_index;
         boolean_start_index += p.boolean_flags.len() as u32;
 
-        // TODO: b/316357686 - Calculate fingerprint and add to package.
+        // Calculate fingerprint.
+        let mut flag_names_vec =
+            p.flag_names.clone().into_iter().map(String::from).collect::<Vec<_>>();
+        let fingerprint = compute_flags_fingerprint(&mut flag_names_vec);
+        if fingerprint.is_ok() {
+            p.fingerprint = fingerprint.unwrap();
+        }
     }
 
     packages
