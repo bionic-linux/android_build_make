@@ -112,7 +112,9 @@ mod tests {
 
     pub fn create_test_package_table_from_source() -> Result<PackageTable> {
         let caches = parse_all_test_flags();
-        let packages = group_flags_by_package(caches.iter());
+
+        // TODO(b/316357686): Add build flag and test using value.
+        let packages = group_flags_by_package(caches.iter(), true);
         create_package_table("mockup", &packages)
     }
 
