@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e56b0759_b20e724c",
+        "filename": "shell_utils.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1535516
+      },
+      "writtenOn": "2024-09-20T20:45:20Z",
+      "side": 1,
+      "message": "Keep the old logic of just throwing an error if it already exists. Out directories can be large, and removing them can take a long time, which would lead to surprisingly long source/lunch commands. Also killing the whole out directory will cause a clean build, which users may not want.",
+      "revId": "ce275f85296f5ca60eb4a37405b24204ece7730b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}

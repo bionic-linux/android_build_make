@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b19b5081_f8578e65",
+        "filename": "cogsetup.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1535516
+      },
+      "writtenOn": "2024-09-20T20:45:20Z",
+      "side": 0,
+      "message": "This isn\u0027t needed anymore?",
+      "revId": "f221b102b26871840ab339411c5424bc17349eb7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
