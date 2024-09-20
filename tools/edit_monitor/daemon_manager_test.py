@@ -197,6 +197,19 @@ class DaemonManagerTest(unittest.TestCase):
     mock_output.side_effect = OSError('Unknown OSError')
     self.assert_run_simple_daemon_success()
 
+  @mock.patch('os.execv')
+  def test_monitor_daemon_restart_triggered(self, mock_execv):
+    binary_file = tempfile.NamedTemporaryFile(
+        dir=self.working_dir.name, delete=False
+    )
+
+    dm = daemon_manager.DaemonManager(
+        binary_file.name, daemon_target=long_running_daemon
+    )
+    dm.start()
+    dm.monitor_daemon(restart_interval=0.5)
+    mock_execv.assert_called_once()
+
   def test_stop_success(self):
     dm = daemon_manager.DaemonManager(
         TEST_BINARY_FILE, daemon_target=long_running_daemon
@@ -231,6 +244,105 @@ class DaemonManagerTest(unittest.TestCase):
 
     self.assert_no_subprocess_running()
     self.assertTrue(dm.pid_file_path.exists())
+
+  @mock.patch('os.execv')
+  def test_restart_success(self, mock_execv):
+    binary_file = tempfile.NamedTemporaryFile(
+        dir=self.working_dir.name, delete=False
+    )
+
+    dm = daemon_manager.DaemonManager(
+        binary_file.name, daemon_target=long_running_daemon
+    )
+    dm.start()
+    dm.restart()
+
+    # Verifies the old process is stopped
+    self.assert_no_subprocess_running()
+    self.assertFalse(dm.pid_file_path.exists())
+
+    mock_execv.assert_called_once()
+
+  @mock.patch('os.execv')
+  def test_restart_binary_no_longer_exists(self, mock_execv):
+    dm = daemon_manager.DaemonManager(
+        TEST_BINARY_FILE, daemon_target=long_running_daemon
+    )
+    dm.start()
+
+    with self.assertRaises(SystemExit) as cm:
+      dm.restart()
+      mock_execv.assert_not_called()
+      self.assertEqual(cm.exception.code, 0)
+
+  @mock.patch('os.execv')
+  def test_restart_failed(self, mock_execv):
+    mock_execv.side_effect = OSError('Unknown OSError')
+    binary_file = tempfile.NamedTemporaryFile(
+        dir=self.working_dir.name, delete=False
+    )
+
+    dm = daemon_manager.DaemonManager(
+        binary_file.name, daemon_target=long_running_daemon
+    )
+    dm.start()
+
+    with self.assertRaises(SystemExit) as cm:
+      dm.restart()
+      self.assertEqual(cm.exception.code, 1)
+
+  def test_cleanup_success(self):
+    # Create 2 running daemon subprocess
+    self._create_fake_deamon_process('d1')
+    self._create_fake_deamon_process('d2')
+
+    dm = daemon_manager.DaemonManager(TEST_BINARY_FILE)
+    dm.cleanup()
+
+    self.assertTrue(dm.block_sign.exists())
+    self.assert_no_subprocess_running()
+
+  def test_cleanup_success_with_non_existing_pid(self):
+    # Create a running daemon subprocess
+    self._create_fake_deamon_process()
+    # Create a pid file with non existing pid
+    with open(
+        pathlib.Path(self.working_dir.name).joinpath(
+            'edit_monitor/some_pid.lock'
+        ),
+        'w',
+    ) as f:
+      f.write('non_existing_pid')
+
+    dm = daemon_manager.DaemonManager(TEST_BINARY_FILE)
+    dm.cleanup()
+
+    self.assertTrue(dm.block_sign.exists())
+    self.assert_no_subprocess_running()
+
+  @mock.patch('pathlib.Path.touch')
+  def test_cleanup_failed_to_place_block_sign(self, mock_touch):
+    mock_touch.side_effect = OSError('Unknown error.')
+    # Create a running daemon subprocess
+    self._create_fake_deamon_process()
+
+    dm = daemon_manager.DaemonManager(TEST_BINARY_FILE)
+    dm.cleanup()
+
+    self.assertFalse(dm.block_sign.exists())
+    self.assert_no_subprocess_running()
+
+  @mock.patch('os.kill')
+  def test_cleanup_failed_to_stop_daemon(self, mock_kill):
+    mock_kill.side_effect = OSError('Unknown OSError')
+    # Create a running daemon subprocess
+    p = self._create_fake_deamon_process()
+
+    dm = daemon_manager.DaemonManager(TEST_BINARY_FILE)
+    dm.cleanup()
+
+    self.assertTrue(dm.block_sign.exists())
+    self.assertTrue(p.is_alive())
 
   def assert_run_simple_daemon_success(self):
     damone_output_file = tempfile.NamedTemporaryFile(
