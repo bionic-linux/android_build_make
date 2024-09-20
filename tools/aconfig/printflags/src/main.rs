@@ -54,6 +54,10 @@ fn xxd(bytes: &[u8]) -> String {
 }
 
 fn main() -> Result<()> {
+    if aconfig_flags::auto_generated::enable_only_new_storage() {
+        bail!("this dump deprecated; use aflags list");
+    }
+
     // read device_config
     let output = Command::new("/system/bin/device_config").arg("list").output()?;
     if !output.status.success() {

@@ -13,3 +13,4 @@ paste = "1.0.11"
 protobuf = "3.2.0"
 regex = "1.10.3"
 aconfig_protos = { path = "../aconfig_protos" }
+aconfig_flags = { version = "0.1.0", path = "../aconfig_flags" }
