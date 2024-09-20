@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "504bd43b_91a74fb7",
+        "filename": "core/Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1644696
+      },
+      "writtenOn": "2024-09-20T00:17:01Z",
+      "side": 1,
+      "message": "Is there a special reason this is based on `PACK_DESKTOP_MIGRATION_IMAGE`, should it be `BUILDING_SUPER_MIGRATION_IMAGE`?",
+      "range": {
+        "startLine": 49,
+        "startChar": 9,
+        "endLine": 49,
+        "endChar": 37
+      },
+      "revId": "a06ca829d7c9a8d4473b338a39430dce47af2233",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
