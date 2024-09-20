@@ -22,11 +22,16 @@ import android.os.StrictMode;
 import java.io.Closeable;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
+import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 
 /** @hide */
 public class StorageInternalReader {
+
+    @UnsupportedAppUsage
+    public static final boolean isReadFromNew =
+            Files.exists(Paths.get("/metadata/aconfig/boot/enable_only_new_storage"));
 
     private static final String MAP_PATH = "/metadata/aconfig/maps/";
     private static final String BOOT_PATH = "/metadata/aconfig/boot/";
@@ -53,9 +58,6 @@ public class StorageInternalReader {
     @UnsupportedAppUsage
     public boolean getBooleanFlagValue(int index) {
         index += mPackageBooleanStartOffset;
-        if (index >= mFlagValueList.size()) {
-            throw new AconfigStorageException("Fail to get boolean flag value");
-        }
         return mFlagValueList.getBoolean(index);
     }
 

@@ -59,4 +59,8 @@ public class ByteBufferReader {
     public void position(int newPosition) {
         mByteBuffer.position(newPosition);
     }
+
+    public int limit() {
+        return mByteBuffer.limit();
+    }
 }
