@@ -34,6 +34,24 @@
       ],
       "revId": "ea7947c59ca644ff7ff06ec59e472b4e13ca8c75",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7eb50eb1_eedcd01f",
+        "filename": "tools/aconfig/aconfig_device_paths/src/HostDeviceProtosTemplate.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1799018
+      },
+      "writtenOn": "2024-09-20T19:41:17Z",
+      "side": 1,
+      "message": "Fix applied.",
+      "parentUuid": "64b6b8b2_f03e2d77",
+      "revId": "ea7947c59ca644ff7ff06ec59e472b4e13ca8c75",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
