@@ -22,6 +22,7 @@ import time
 import tempfile
 
 from edit_monitor import daemon_manager
+from edit_monitor import edit_watchdog
 
 
 def create_arg_parser():
