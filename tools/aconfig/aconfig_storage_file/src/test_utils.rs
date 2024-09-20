@@ -38,21 +38,21 @@ pub fn create_test_package_table() -> PackageTable {
     let first_node = PackageTableNode {
         package_name: String::from("com.android.aconfig.storage.test_2"),
         package_id: 1,
-        fingerprint: 0,
+        fingerprint: 4431940502274857964u64,
         boolean_start_index: 3,
         next_offset: None,
     };
     let second_node = PackageTableNode {
         package_name: String::from("com.android.aconfig.storage.test_1"),
         package_id: 0,
-        fingerprint: 0,
+        fingerprint: 15248948510590158086u64,
         boolean_start_index: 0,
         next_offset: Some(175),
     };
     let third_node = PackageTableNode {
         package_name: String::from("com.android.aconfig.storage.test_4"),
         package_id: 2,
-        fingerprint: 0,
+        fingerprint: 16233229917711622375u64,
         boolean_start_index: 6,
         next_offset: None,
     };

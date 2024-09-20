@@ -112,7 +112,9 @@ mod tests {
 
     pub fn create_test_package_table_from_source() -> Result<PackageTable> {
         let caches = parse_all_test_flags();
-        let packages = group_flags_by_package(caches.iter());
+
+        // TODO(b/316357686): Add build flag and test using value.
+        let packages = group_flags_by_package(caches.iter(), /* enable_fingerprint */ true);
         create_package_table("mockup", &packages)
     }
 
@@ -123,5 +125,16 @@ mod tests {
         assert!(package_table.is_ok());
         let expected_package_table = aconfig_storage_file::test_utils::create_test_package_table();
         assert_eq!(package_table.unwrap(), expected_package_table);
+    }
+
+    #[test]
+    fn test_table_contents_no_fingerprint() {
+       let caches = parse_all_test_flags();
+        let packages = group_flags_by_package(caches.iter(), /* enable_fingerprint */ false);
+        let package_table = create_package_table("mockup", &packages);
+        assert!(package_table.is_ok());
+        for node in package_table.unwrap().nodes {
+          assert_eq!(node.fingerprint, 0);
+        }
     }
 }
