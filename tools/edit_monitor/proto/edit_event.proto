@@ -8,6 +8,7 @@ message EditEvent {
     CREATE = 1;
     MODIFY = 2;
     DELETE = 3;
+    MOVE = 4;
   }
 
   enum ErrorType {
