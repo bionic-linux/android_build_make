@@ -187,3 +187,7 @@ $(call soong_config_set_bool,gralloc,target_use_pan_display,$(if $(filter true,$
 
 # Add use_camera_v4l2_hal flag for hardware/libhardware/modules/camera/3_4:camera.v4l2
 $(call soong_config_set_bool,camera,use_camera_v4l2_hal,$(if $(filter true,$(USE_CAMERA_V4L2_HAL)),true,false))
+
+# Add sim_count and disable_rild_oem_hook flag for ril related modules
+$(call soong_config_set,ril,sim_count,$(SIM_COUNT))
+$(call soong_config_set,ril,disable_rild_oem_hook,$(DISABLE_RILD_OEM_HOOK))
