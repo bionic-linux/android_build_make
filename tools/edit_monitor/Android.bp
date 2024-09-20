@@ -35,6 +35,11 @@ python_library_host {
     pkg_path: "edit_monitor",
     srcs: [
         "daemon_manager.py",
+        "edit_watchdog.py"
+    ],
+    libs: [
+        "asuite_cc_client",
+        "edit_event_proto",
     ],
 }
 
