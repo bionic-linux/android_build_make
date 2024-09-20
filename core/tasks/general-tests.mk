@@ -27,16 +27,6 @@ general_tests_list_zip := $(PRODUCT_OUT)/general-tests_list.zip
 # Create an artifact to include all test config files in general-tests.
 general_tests_configs_zip := $(PRODUCT_OUT)/general-tests_configs.zip
 
-# Copy kernel test modules to testcases directories
-include $(BUILD_SYSTEM)/tasks/tools/vts-kernel-tests.mk
-ltp_copy_pairs := \
-  $(call target-native-copy-pairs,$(kernel_ltp_modules),$(kernel_ltp_host_out))
-copy_ltp_tests := $(call copy-many-files,$(ltp_copy_pairs))
-
-# PHONY target to be used to build and test `vts_ltp_tests` without building full vts
-.PHONY: vts_kernel_ltp_tests
-vts_kernel_ltp_tests: $(copy_ltp_tests)
-
 # Filter shared entries between general-tests and device-tests's HOST_SHARED_LIBRARY.FILES,
 # to avoid warning about overriding commands.
 my_host_shared_lib_for_general_tests := \
@@ -73,8 +63,6 @@ my_symlinks_for_general_tests += $(foreach f,$(my_host_shared_lib_symlinks),\
         $(eval _cmf_dest := $(word 3,$(_cmf_tuple))) \
         $(_cmf_dest)))
 
-$(general_tests_zip) : $(copy_ltp_tests)
-$(general_tests_zip) : PRIVATE_KERNEL_LTP_HOST_OUT := $(kernel_ltp_host_out)
 $(general_tests_zip) : PRIVATE_general_tests_list_zip := $(general_tests_list_zip)
 $(general_tests_zip) : .KATI_IMPLICIT_OUTPUTS := $(general_tests_list_zip) $(general_tests_configs_zip)
 $(general_tests_zip) : PRIVATE_TOOLS := $(general_tests_tools)
@@ -87,7 +75,6 @@ $(general_tests_zip) : $(COMPATIBILITY.general-tests.FILES) $(my_host_shared_lib
 	rm -f $@ $(PRIVATE_general_tests_list_zip)
 	mkdir -p $(PRIVATE_INTERMEDIATES_DIR) $(PRIVATE_INTERMEDIATES_DIR)/tools
 	echo $(sort $(COMPATIBILITY.general-tests.FILES) $(COMPATIBILITY.general-tests.SOONG_INSTALLED_COMPATIBILITY_SUPPORT_FILES)) | tr " " "\n" > $(PRIVATE_INTERMEDIATES_DIR)/list
-	find $(PRIVATE_KERNEL_LTP_HOST_OUT) >> $(PRIVATE_INTERMEDIATES_DIR)/list
 	for symlink in $(PRIVATE_SYMLINKS); do \
 	  echo $$symlink >> $(PRIVATE_INTERMEDIATES_DIR)/list; \
 	done
