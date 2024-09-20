@@ -13,6 +13,7 @@
 # limitations under the License.
 
 .PHONY: general-tests
+.PHONY: general-tests-lists
 
 general_tests_tools := \
     $(HOST_OUT_JAVA_LIBRARIES)/cts-tradefed.jar \
@@ -23,6 +24,8 @@ intermediates_dir := $(call intermediates-dir-for,PACKAGING,general-tests)
 general_tests_zip := $(PRODUCT_OUT)/general-tests.zip
 # Create an artifact to include a list of test config files in general-tests.
 general_tests_list_zip := $(PRODUCT_OUT)/general-tests_list.zip
+general_tests_host_list := $(PRODUCT_OUT)/general-tests_host_list
+general_tests_target_list := $(PRODUCT_OUT)/general-tests_target_list
 
 # Create an artifact to include all test config files in general-tests.
 general_tests_configs_zip := $(PRODUCT_OUT)/general-tests_configs.zip
@@ -70,7 +73,21 @@ $(general_tests_zip) : $(COMPATIBILITY.general-tests.FILES) $(COMPATIBILITY.gene
 	grep -e .*\\.config$$ $(PRIVATE_INTERMEDIATES_DIR)/target.list | sed s%$(PRODUCT_OUT)%target%g >> $(PRIVATE_INTERMEDIATES_DIR)/general-tests_list
 	$(SOONG_ZIP) -d -o $(PRIVATE_general_tests_list_zip) -C $(PRIVATE_INTERMEDIATES_DIR) -f $(PRIVATE_INTERMEDIATES_DIR)/general-tests_list
 
+$(general_tests_host_list) : PRIVATE_general_tests_host_list := $(general_tests_host_list)
+$(general_tests_host_list) : PRIVATE_general_tests_target_list := $(general_tests_target_list)
+$(general_tests_host_list) : PRIVATE_INTERMEDIATES_DIR := $(intermediates_dir)
+$(general_tests_host_list) :
+	rm -rf $(PRIVATE_INTERMEDIATES_DIR)
+	rm -f $@ $(PRIVATE_general_tests_host_list)
+	mkdir -p $(PRIVATE_INTERMEDIATES_DIR)
+	echo $(sort $(COMPATIBILITY.general-tests.FILES) $(COMPATIBILITY.general-tests.SOONG_INSTALLED_COMPATIBILITY_SUPPORT_FILES)) | tr " " "\n" > $(PRIVATE_INTERMEDIATES_DIR)/list
+	find $(PRIVATE_KERNEL_LTP_HOST_OUT) >> $(PRIVATE_INTERMEDIATES_DIR)/list
+	grep $(HOST_OUT_TESTCASES) $(PRIVATE_INTERMEDIATES_DIR)/list > $(PRIVATE_general_tests_host_list) || true
+	grep $(TARGET_OUT_TESTCASES) $(PRIVATE_INTERMEDIATES_DIR)/list > $(PRIVATE_general_tests_target_list) || true
+
+
 general-tests: $(general_tests_zip)
+general-tests-lists: $(general_tests_host_list)
 $(call dist-for-goals, general-tests, $(general_tests_zip) $(general_tests_list_zip) $(general_tests_configs_zip) $(general_tests_shared_libs_zip))
 
 $(call declare-1p-container,$(general_tests_zip),)
