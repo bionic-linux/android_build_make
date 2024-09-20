@@ -116,5 +116,9 @@ public class PackageTableTest {
         assertTrue(node1.hasPackageFingerprint());
         assertTrue(node2.hasPackageFingerprint());
         assertTrue(node4.hasPackageFingerprint());
+
+        assertEquals(15248948510590158086L, node1.getPackageFingerprint());
+        assertEquals(4431940502274857964L, node2.getPackageFingerprint());
+        assertEquals(16233229917711622375L, node4.getPackageFingerprint());
     }
 }
