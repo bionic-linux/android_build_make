@@ -16,6 +16,23 @@
       "message": "@jdduke@google.com, can you take a look at the (expected) performance regressions raised by pre-submit testing and confirm we are OK with them?",
       "revId": "64001e6628203c7ed96f41676d4f6b60209efa74",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "94c7667f_09860ebe",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1052644
+      },
+      "writtenOn": "2024-09-23T10:54:53Z",
+      "side": 1,
+      "message": "Adding Dan for owner\u0027s review, as Colin is currently OOO.",
+      "revId": "64001e6628203c7ed96f41676d4f6b60209efa74",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
