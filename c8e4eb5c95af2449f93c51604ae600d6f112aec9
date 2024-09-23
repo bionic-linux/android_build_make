@@ -24,6 +24,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cfb32a7f_f4d56471",
+        "filename": "tools/edit_monitor/daemon_manager.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-09-23T21:37:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b833fffe_dffc377f",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 47
+      },
+      "revId": "c8e4eb5c95af2449f93c51604ae600d6f112aec9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8bb0240c_5cca3df0",
@@ -49,6 +73,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "78312a32_3d8a3a72",
+        "filename": "tools/edit_monitor/daemon_manager.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-09-23T21:37:19Z",
+      "side": 1,
+      "message": "Unfortunately, presubmit fails as we dont have pidstat installed in CI.. I changed to collect the resource usage by directly checking /proc/pid/stat, PTAL thanks!",
+      "parentUuid": "8bb0240c_5cca3df0",
+      "range": {
+        "startLine": 81,
+        "startChar": 23,
+        "endLine": 81,
+        "endChar": 80
+      },
+      "revId": "c8e4eb5c95af2449f93c51604ae600d6f112aec9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "bce7e610_f6c49990",
         "filename": "tools/edit_monitor/daemon_manager.py",
         "patchSetId": 3
@@ -60,6 +108,30 @@
       "writtenOn": "2024-09-20T00:56:05Z",
       "side": 1,
       "message": "Exception logging already include the exception message, you don\u0027t need to add it.\n\nhttps://docs.python.org/3/library/logging.html#module-level-functions",
+      "range": {
+        "startLine": 233,
+        "startChar": 67,
+        "endLine": 233,
+        "endChar": 71
+      },
+      "revId": "c8e4eb5c95af2449f93c51604ae600d6f112aec9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f7577ab6_b5b19ed4",
+        "filename": "tools/edit_monitor/daemon_manager.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-09-23T21:37:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bce7e610_f6c49990",
       "range": {
         "startLine": 233,
         "startChar": 67,
@@ -107,6 +179,30 @@
           ]
         }
       ],
+      "revId": "c8e4eb5c95af2449f93c51604ae600d6f112aec9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "061a77f4_eff2ae39",
+        "filename": "tools/edit_monitor/daemon_manager.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-09-23T21:37:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6bbc7959_d38698f2",
+      "range": {
+        "startLine": 241,
+        "startChar": 61,
+        "endLine": 241,
+        "endChar": 68
+      },
       "revId": "c8e4eb5c95af2449f93c51604ae600d6f112aec9",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
