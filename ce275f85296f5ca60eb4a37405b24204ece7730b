@@ -34,6 +34,24 @@
       "parentUuid": "e56b0759_b20e724c",
       "revId": "ce275f85296f5ca60eb4a37405b24204ece7730b",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3933633c_43626128",
+        "filename": "shell_utils.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1535516
+      },
+      "writtenOn": "2024-09-23T17:51:37Z",
+      "side": 1,
+      "message": "I guess it\u0027s fine, but could we print a message telling the user it\u0027s doing the deleting and why so they know it\u0027s happening at least?",
+      "parentUuid": "61ff03fd_9498861a",
+      "revId": "ce275f85296f5ca60eb4a37405b24204ece7730b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
