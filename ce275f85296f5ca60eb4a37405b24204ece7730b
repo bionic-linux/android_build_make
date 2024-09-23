@@ -16,6 +16,24 @@
       "message": "Keep the old logic of just throwing an error if it already exists. Out directories can be large, and removing them can take a long time, which would lead to surprisingly long source/lunch commands. Also killing the whole out directory will cause a clean build, which users may not want.",
       "revId": "ce275f85296f5ca60eb4a37405b24204ece7730b",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "61ff03fd_9498861a",
+        "filename": "shell_utils.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 2002135
+      },
+      "writtenOn": "2024-09-23T15:23:23Z",
+      "side": 1,
+      "message": "In this case, IMO it makes more sense to just fix it for the user.\n\n\u003e Out directories can be large, and removing them can take a long time, which would lead to surprisingly long source/lunch commands \n\nIf they have an `out` directory inside a cog workspace, it won\u0027t have much in it because attempting a build this way will fail quickly (as soon as the path_interposer gets involved if not earlier).\n\n\n\u003e killing the whole out directory will cause a clean build, which users may not want\n\nThe symlink destination `~/.cog/android-build-out` is shared between all cog workspaces. So they won\u0027t have a clean build unless it\u0027s their first ever Cog workspace – in which case they\u0027d have to do a clean build anyway\n\n\nIf we just throw, we\u0027d need to give them instructions of what to do. Which is basically deleting `out` and creating the symlink. If they had something in their local `out` that they wanted to be preserved for the build, they\u0027d have to copy it to `~/.cog/android-build-out`. I\u0027d argue there\u0027s few-if-any users that care about this setup and would prefer it just be done for them.\n\nLMK if you still disagree, I am open to throwing but will want to add a descriptive error message.",
+      "parentUuid": "e56b0759_b20e724c",
+      "revId": "ce275f85296f5ca60eb4a37405b24204ece7730b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
