@@ -46,6 +46,30 @@
       },
       "revId": "0bbeafc600a2eb68263d8543fb024bbe9382139a",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fd5551b6_f85c9868",
+        "filename": "core/dex_preopt.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1878380
+      },
+      "writtenOn": "2024-09-23T22:49:05Z",
+      "side": 0,
+      "message": "I have also verified that this is compatible with art run-tests using\n```\n$ m test-art-host-run-test-dependencies\n$ art/test.py --host\n```",
+      "parentUuid": "2d84478b_570eb704",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 15
+      },
+      "revId": "0bbeafc600a2eb68263d8543fb024bbe9382139a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
