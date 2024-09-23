@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "65a0c1de_8ccfe284",
+        "filename": "tools/edit_monitor/daemon_manager.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 1550539
+      },
+      "writtenOn": "2024-09-23T22:24:21Z",
+      "side": 1,
+      "message": "Isn\u0027t this returning a ratio instead?\n\nshould it be (uptime_delta / total_time) * 100 to be a percentage?",
+      "range": {
+        "startLine": 257,
+        "startChar": 6,
+        "endLine": 257,
+        "endChar": 78
+      },
+      "revId": "5508c529749c2f4f9b2a72b9671cb20559040e16",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
