@@ -16,6 +16,24 @@
       "message": "There seems to be [remaining references](https://cs.android.com/search?q\u003d%22dex_preopt_libart.mk%22\u0026ss\u003dandroid%2Fplatform%2Fsuperproject%2Fmain) of `dex_preopt_libart.mk`. Do you mind cleaning these up?",
       "revId": "03b7abee1abfaefc91a17502b35c30a44fd1b808",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "94a1b840_becfca15",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1878380
+      },
+      "writtenOn": "2024-09-23T23:40:10Z",
+      "side": 1,
+      "message": "Thanks for pointing these out, I will update these alongwith the cleanup of the defunct `DEXPREOPT_IMAGE_*` variables. I have a WIP CL (aosp/3271956), and I will update the docs as part of that.",
+      "parentUuid": "b587d910_61e720af",
+      "revId": "03b7abee1abfaefc91a17502b35c30a44fd1b808",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
