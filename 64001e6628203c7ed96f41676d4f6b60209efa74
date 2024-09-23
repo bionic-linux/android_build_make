@@ -50,6 +50,24 @@
       "message": "What is the set of impacted builds/targets/kernel versions?\n\nIf it\u0027s changing the behavior of all Pixel 5.x (or 6.x?) devices, can we find a way to put this change behind a build flag? That is, can we decouple build-system changes/fixes/refactoring from device-specific behavioral changes?",
       "revId": "64001e6628203c7ed96f41676d4f6b60209efa74",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e623bfa4_2da67fc3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1052644
+      },
+      "writtenOn": "2024-09-23T15:51:21Z",
+      "side": 1,
+      "message": "In practice, this change is making ag/27338218 effective, i.e. moving back all Pixel devices with Linux 5.x kernels (Pixel 2021 – 2023 range) to the CC collector. This change is a refactoring, but rather a missing part of ag/27338218.",
+      "parentUuid": "ca439597_6986bb5d",
+      "revId": "64001e6628203c7ed96f41676d4f6b60209efa74",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
