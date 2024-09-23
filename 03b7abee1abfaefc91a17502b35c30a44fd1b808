@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b587d910_61e720af",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1962375
+      },
+      "writtenOn": "2024-09-23T22:59:10Z",
+      "side": 1,
+      "message": "There seems to be [remaining references](https://cs.android.com/search?q\u003d%22dex_preopt_libart.mk%22\u0026ss\u003dandroid%2Fplatform%2Fsuperproject%2Fmain) of `dex_preopt_libart.mk`. Do you mind cleaning these up?",
+      "revId": "03b7abee1abfaefc91a17502b35c30a44fd1b808",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
