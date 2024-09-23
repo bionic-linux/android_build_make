@@ -3,6 +3,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "015f29ef_7bc46078",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1937565
+      },
+      "writtenOn": "2024-09-23T06:24:36Z",
+      "side": 1,
+      "message": "Remove \"enable\": the text after Flag is just the (full) name of the flag",
+      "range": {
+        "startLine": 14,
+        "startChar": 6,
+        "endLine": 14,
+        "endChar": 12
+      },
+      "revId": "6fbf42c4ac8bbc660f32fe8d4b9edbfe0450c941",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2352d91f_1bc1c331",
         "filename": "tools/aconfig/printflags/src/main.rs",
         "patchSetId": 1
