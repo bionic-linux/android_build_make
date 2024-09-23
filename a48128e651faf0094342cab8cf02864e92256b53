@@ -16,6 +16,24 @@
       "message": "Don\u0027t print a message on every build if everything\u0027s fine.",
       "revId": "a48128e651faf0094342cab8cf02864e92256b53",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "360deda9_39bbcccd",
+        "filename": "shell_utils.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 2002135
+      },
+      "writtenOn": "2024-09-23T20:07:56Z",
+      "side": 1,
+      "message": "It doesn\u0027t - there\u0027s a couple above checks that will return early when everything is set up. Though admittedly this message is kinda useless now that I split it out from the \"creating symlink\" message below. So I\u0027ll remove it.",
+      "parentUuid": "95d955a2_d2faa07f",
+      "revId": "a48128e651faf0094342cab8cf02864e92256b53",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
