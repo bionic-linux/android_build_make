@@ -33,6 +33,23 @@
       "message": "Adding Dan for owner\u0027s review, as Colin is currently OOO.",
       "revId": "64001e6628203c7ed96f41676d4f6b60209efa74",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ca439597_6986bb5d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1064003
+      },
+      "writtenOn": "2024-09-23T14:51:44Z",
+      "side": 1,
+      "message": "What is the set of impacted builds/targets/kernel versions?\n\nIf it\u0027s changing the behavior of all Pixel 5.x (or 6.x?) devices, can we find a way to put this change behind a build flag? That is, can we decouple build-system changes/fixes/refactoring from device-specific behavioral changes?",
+      "revId": "64001e6628203c7ed96f41676d4f6b60209efa74",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
