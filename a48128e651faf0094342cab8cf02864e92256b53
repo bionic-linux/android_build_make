@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "95d955a2_d2faa07f",
+        "filename": "shell_utils.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1535516
+      },
+      "writtenOn": "2024-09-23T19:21:43Z",
+      "side": 1,
+      "message": "Don\u0027t print a message on every build if everything\u0027s fine.",
+      "revId": "a48128e651faf0094342cab8cf02864e92256b53",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
