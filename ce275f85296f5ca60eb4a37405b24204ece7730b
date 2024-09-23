@@ -52,6 +52,24 @@
       "parentUuid": "61ff03fd_9498861a",
       "revId": "ce275f85296f5ca60eb4a37405b24204ece7730b",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "96ede642_fd29b190",
+        "filename": "shell_utils.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 2002135
+      },
+      "writtenOn": "2024-09-23T19:18:43Z",
+      "side": 1,
+      "message": "added a prompt that offers to repair the workspace for the user",
+      "parentUuid": "3933633c_43626128",
+      "revId": "ce275f85296f5ca60eb4a37405b24204ece7730b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
