@@ -14,16 +14,17 @@
  * limitations under the License.
  */
 
+pub mod flag_info;
 pub mod flag_table;
 pub mod flag_value;
 pub mod package_table;
 
-use anyhow::{anyhow, Result};
+use anyhow::Result;
 use std::collections::{HashMap, HashSet};
 
 use crate::storage::{
     flag_table::create_flag_table, flag_value::create_flag_value,
-    package_table::create_package_table,
+    package_table::create_package_table, flag_info::create_flag_info
 };
 use aconfig_protos::ProtoParsedFlag;
 use aconfig_protos::ProtoParsedFlags;
@@ -111,7 +112,10 @@ where
             let flag_value = create_flag_value(container, &packages)?;
             Ok(flag_value.into_bytes())
         }
-        _ => Err(anyhow!("aconfig does not support the creation of this storage file type")),
+        StorageFileType::FlagInfo => {
+            let flag_info = create_flag_info(container, &packages)?;
+            Ok(flag_info.into_bytes())
+        }
     }
 }
 
