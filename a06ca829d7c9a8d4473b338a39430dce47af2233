@@ -22,6 +22,23 @@
       },
       "revId": "a06ca829d7c9a8d4473b338a39430dce47af2233",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dafdd43e_c5148664",
+        "filename": "core/Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 7511,
+      "author": {
+        "id": 2028281
+      },
+      "writtenOn": "2024-09-23T16:29:05Z",
+      "side": 1,
+      "message": "I am wondering if we really need to introduce a separate `super_migration.img` image target. We can already build such an image with the `ANDROID_DESKTOP_MIGRATION_IMAGE\u003dtrue` option and have smaller `super.img` as a result, which could be used as input parameter to `pack_migration_image` I guess. That way we would not need these changes to Makefile. WDYT?",
+      "revId": "a06ca829d7c9a8d4473b338a39430dce47af2233",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
