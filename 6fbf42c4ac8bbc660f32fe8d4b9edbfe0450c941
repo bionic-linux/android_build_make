@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2352d91f_1bc1c331",
+        "filename": "tools/aconfig/printflags/src/main.rs",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1937565
+      },
+      "writtenOn": "2024-09-23T06:23:27Z",
+      "side": 1,
+      "message": "As per our Rust guidelines, use `ensure!()` instead of `if ... bail!()`",
+      "range": {
+        "startLine": 57,
+        "startChar": 3,
+        "endLine": 59,
+        "endChar": 5
+      },
+      "revId": "6fbf42c4ac8bbc660f32fe8d4b9edbfe0450c941",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
