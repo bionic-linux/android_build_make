@@ -55,7 +55,8 @@ pub fn find_package_read_context(
     }
 
     loop {
-        let interpreted_node = PackageTableNode::from_bytes(&buf[package_node_offset..])?;
+        let (interpreted_node, _) =
+            PackageTableNode::from_bytes(&buf[package_node_offset..], interpreted_header.version)?;
         if interpreted_node.package_name == package {
             return Ok(Some(PackageReadContext {
                 package_id: interpreted_node.package_id,

@@ -39,6 +39,7 @@ pub mod package_table;
 pub mod protos;
 pub mod sip_hasher13;
 pub mod test_utils;
+pub mod version_test_utils;
 
 use anyhow::anyhow;
 use serde::{Deserialize, Serialize};
@@ -244,6 +245,14 @@ pub(crate) fn read_u16_from_bytes(
     Ok(val)
 }
 
+/// Read and parse the first 4 bytes of buf as u32.
+pub fn read_u32_from_start_of_bytes(buf: &[u8]) -> Result<u32, AconfigStorageError> {
+    let mut version_bytes = [0; 4];
+    version_bytes.copy_from_slice(&buf[0..4]);
+    let val = u32::from_le_bytes(version_bytes);
+    Ok(val)
+}
+
 /// Read and parse bytes as u32
 pub fn read_u32_from_bytes(buf: &[u8], head: &mut usize) -> Result<u32, AconfigStorageError> {
     let val =
@@ -270,6 +279,7 @@ pub(crate) fn read_str_from_bytes(
     head: &mut usize,
 ) -> Result<String, AconfigStorageError> {
     let num_bytes = read_u32_from_bytes(buf, head)? as usize;
+    println!("marybeth n bytes in string: {}", num_bytes);
     let val = String::from_utf8(buf[*head..*head + num_bytes].to_vec())
         .map_err(|errmsg| BytesParseFail(anyhow!("fail to parse string from bytes: {}", errmsg)))?;
     *head += num_bytes;

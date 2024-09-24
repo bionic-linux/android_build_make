@@ -18,8 +18,8 @@
 //! and deserialization
 
 use crate::{
-    get_bucket_index, read_str_from_bytes, read_u32_from_bytes, read_u64_from_bytes,
-    read_u8_from_bytes,
+    get_bucket_index, read_str_from_bytes, read_u32_from_bytes, read_u32_from_start_of_bytes,
+    read_u64_from_bytes, read_u8_from_bytes,
 };
 use crate::{AconfigStorageError, StorageFileType};
 use anyhow::anyhow;
@@ -137,8 +137,40 @@ impl PackageTableNode {
         result
     }
 
-    /// Deserialize from bytes
-    pub fn from_bytes(bytes: &[u8]) -> Result<Self, AconfigStorageError> {
+    /// Deserialize from bytes based on file version.
+    pub fn from_bytes(bytes: &[u8], version: u32) -> Result<(Self, usize), AconfigStorageError> {
+        println!("marybeth, node.from_bytes version: {}", version);
+        match version {
+            1 => Self::from_bytes_v1(bytes),
+            2 => Self::from_bytes_v2(bytes),
+            _ => {
+                return Err(AconfigStorageError::BytesParseFail(anyhow!(
+                    "Binary file is an unsupported version: {}",
+                    version
+                )))
+            }
+        }
+    }
+
+    fn from_bytes_v1(bytes: &[u8]) -> Result<(Self, usize), AconfigStorageError> {
+        let mut head = 0;
+        let package_name1 = read_str_from_bytes(bytes, &mut head)?;
+        println!("marybeth package name: {}", package_name1);
+        let node = Self {
+            package_name: package_name1,
+            package_id: read_u32_from_bytes(bytes, &mut head)?,
+            fingerprint: 0, // v1 does not support fingerprint.
+            boolean_start_index: read_u32_from_bytes(bytes, &mut head)?,
+            next_offset: match read_u32_from_bytes(bytes, &mut head)? {
+                0 => None,
+                val => Some(val),
+            },
+        };
+        print!("marybeth, node: {:?}", node);
+        Ok((node, head))
+      }
+
+    fn from_bytes_v2(bytes: &[u8]) -> Result<(Self, usize), AconfigStorageError> {
         let mut head = 0;
         let node = Self {
             package_name: read_str_from_bytes(bytes, &mut head)?,
@@ -150,7 +182,7 @@ impl PackageTableNode {
                 val => Some(val),
             },
         };
-        Ok(node)
+        Ok((node, head))
     }
 
     /// Get the bucket index for a package table node, defined it here so the
@@ -197,7 +229,10 @@ impl PackageTable {
 
     /// Deserialize from bytes
     pub fn from_bytes(bytes: &[u8]) -> Result<Self, AconfigStorageError> {
+        let version = read_u32_from_start_of_bytes(bytes)?;
+        println!("marybeth, version {}", version);
         let header = PackageTableHeader::from_bytes(bytes)?;
+        print!("marybeth, read header: {:?}", header);
         let num_packages = header.num_packages;
         let num_buckets = crate::get_table_size(num_packages)?;
         let mut head = header.into_bytes().len();
@@ -207,10 +242,13 @@ impl PackageTable {
                 val => Some(val),
             })
             .collect();
+        println!("marybeth buckets: {:?}", buckets);
         let nodes = (0..num_packages)
             .map(|_| {
-                let node = PackageTableNode::from_bytes(&bytes[head..])?;
-                head += node.into_bytes().len();
+                println!("marybeth, before ind: {}", head);
+                let (node, node_size) = PackageTableNode::from_bytes(&bytes[head..], version)?;
+                head += node_size;
+                println!("marybeth head {}", head);
                 Ok(node)
             })
             .collect::<Result<Vec<_>, AconfigStorageError>>()
@@ -230,6 +268,7 @@ impl PackageTable {
 mod tests {
     use super::*;
     use crate::test_utils::create_test_package_table;
+    use crate::version_test_utils::create_test_v1_package_table_bytes;
 
     #[test]
     // this test point locks down the table serialization
@@ -242,7 +281,8 @@ mod tests {
 
         let nodes: &Vec<PackageTableNode> = &package_table.nodes;
         for node in nodes.iter() {
-            let reinterpreted_node = PackageTableNode::from_bytes(&node.into_bytes()).unwrap();
+            let (reinterpreted_node, _) =
+                PackageTableNode::from_bytes(&node.into_bytes(), header.version).unwrap();
             assert_eq!(node, &reinterpreted_node);
         }
 
@@ -259,9 +299,24 @@ mod tests {
     fn test_version_number() {
         let package_table = create_test_package_table();
         let bytes = &package_table.into_bytes();
-        let mut head = 0;
-        let version = read_u32_from_bytes(bytes, &mut head).unwrap();
+        let version = read_u32_from_start_of_bytes(bytes).unwrap();
         assert_eq!(version, 2);
+    }
+
+    #[test]
+    fn test_read_info_bt_versions() {
+        let v1_bytes = create_test_v1_package_table_bytes();
+        println!("marybeth, make v1 bytes OK");
+        let reinterpreted_table = PackageTable::from_bytes(&v1_bytes).unwrap();
+        println!("marybeth, from bytes OK");
+        assert_eq!(reinterpreted_table.header.version, 1);
+        // for node in reinterpreted_table.nodes {
+        //   // v1 doesn't have fingerprint, so this field will be cleared
+        //   assert_eq!(node.fingerprint, 0);
+        // }
+        // Other metadata should not have changed.
+        //assert_eq!(package_table.header.container, reinterpreted_table.header.container);
+        //assert_eq!(package_table.header.num_packages, reinterpreted_table.header.num_packages);
     }
 
     #[test]
