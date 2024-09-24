@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ade85233_97f13175",
+        "filename": "target/product/go_defaults_common.mk",
+        "patchSetId": 7
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1373864
+      },
+      "writtenOn": "2024-09-24T14:39:05Z",
+      "side": 1,
+      "message": "`frameworks/base/boot/boot-image-profile.txt` gets added on [here](https://cs.android.com/android/platform/superproject/main/+/main:build/make/target/product/runtime_libart.mk;l\u003d83;drc\u003dfcf124988d890cd46d8edfc0ce57766a7a95801f), and `art/build/boot/boot-image-profile.txt` [here](https://cs.android.com/android/platform/superproject/main/+/main:build/make/target/product/default_art_config.mk;l\u003d152;drc\u003ddad619fb93151c4dc7040ed45de8b0e57c07ddb4), so this just duplicates them.\n\nGiven the comment above (and the [source CL](http://ag/3007293)) it doesn\u0027t look like it was the intention that `.../config/boot-image-profile.txt` would override them with a Go specific profile, so I think the `PRODUCT_DEX_PREOPT_BOOT_IMAGE_PROFILE_LOCATION` assignment is better deleted.\n\nFurthermore, `PRODUCT_USE_PROFILE_FOR_BOOT_IMAGE` stopped having a function [here](https://r.android.com/1000269), so please delete all these lines.",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 87
+      },
+      "revId": "a8794c35ec771e439a99193b3e7936961382a3bc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
