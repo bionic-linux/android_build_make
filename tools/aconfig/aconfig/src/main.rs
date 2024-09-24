@@ -16,6 +16,7 @@
 
 //! `aconfig` is a build time tool to manage build time configurations, such as feature flags.
 
+use aconfig_storage_file::DEFAULT_FILE_VERSION;
 use anyhow::{anyhow, bail, Context, Result};
 use clap::{builder::ArgAction, builder::EnumValueParser, Arg, ArgMatches, Command};
 use core::any::Any;
@@ -42,6 +43,8 @@ const HELP_DUMP_FILTER: &str = r#"
 Limit which flags to output. If multiple --filter arguments are provided, the output will be
 limited to flags that match any of the filters.
 "#;
+
+const FINGERPRINT_VERSION: u32 = 2;
 
 fn cli() -> Command {
     Command::new("aconfig")
@@ -159,7 +162,9 @@ fn cli() -> Command {
                         .value_parser(|s: &str| StorageFileType::try_from(s)),
                 )
                 .arg(Arg::new("cache").long("cache").action(ArgAction::Append).required(true))
-                .arg(Arg::new("out").long("out").required(true)),
+                .arg(Arg::new("out").long("out").required(true))
+                // Enable-fingerprint guards
+                .arg(Arg::new("enable-fingerprint").long("enable-fingerprint").required(false)),
         )
 }
 
@@ -314,7 +319,12 @@ fn main() -> Result<()> {
             let cache = open_zero_or_more_files(sub_matches, "cache")?;
             let container = get_required_arg::<String>(sub_matches, "container")?;
             let path = get_required_arg::<String>(sub_matches, "out")?;
-            let output = commands::create_storage(cache, container, file)
+
+            let enable_fingerprint =
+                get_optional_arg::<bool>(sub_matches, "enable-fingerprint").unwrap_or(&false);
+            let version =
+                if *enable_fingerprint { FINGERPRINT_VERSION } else { DEFAULT_FILE_VERSION };
+            let output = commands::create_storage(cache, container, file, version)
                 .context("failed to create storage files")?;
             write_output_to_file_or_stdout(path, &output)?;
         }
