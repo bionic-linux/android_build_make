@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0f4aba45_42001f88",
+        "filename": "tools/aconfig/aconfig_storage_file/src/package_table.rs",
+        "patchSetId": 2
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 1882770
+      },
+      "writtenOn": "2024-09-24T20:19:44Z",
+      "side": 1,
+      "message": "The same logic may needed for header as well.",
+      "revId": "f3ef61a3f055cc72fa132963c44af390a28ba984",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
