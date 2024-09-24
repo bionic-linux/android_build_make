@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "50ef2039_6a83ef8b",
+        "filename": "core/android_soong_config_vars.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1317851
+      },
+      "writtenOn": "2024-09-24T07:02:59Z",
+      "side": 1,
+      "message": "Do we need to keep the same logic in mk?\n\n```\nifneq ($(strip $(AUDIOSERVER_MULTILIB)),)\n  $(call soong_config_set,soundtrigger,audioserver_multilib,$(AUDIOSERVER_MULTILIB))\nendif\n```",
+      "range": {
+        "startLine": 192,
+        "startChar": 0,
+        "endLine": 192,
+        "endChar": 26
+      },
+      "revId": "fd6f6824a58bd31aabf1f7890ebb92a3f896bad0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
