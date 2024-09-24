@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8f0af972_92acf913",
+        "filename": "target/product/generic/Android.bp",
+        "patchSetId": 2
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2024-09-24T04:35:14Z",
+      "side": 1,
+      "message": "Can we use this as avb key?",
+      "range": {
+        "startLine": 79,
+        "startChar": 4,
+        "endLine": 79,
+        "endChar": 35
+      },
+      "revId": "599b2ca584b82a1bada94914a1020b9f9ffbf544",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
