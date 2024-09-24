@@ -9,7 +9,7 @@ cargo = []
 
 [dependencies]
 anyhow = "1.0.69"
-clap = { version = "4.1.8", features = ["derive"] }
+clap = { version = "4.1.8", features = ["derive", "string"] }
 itertools = "0.10.5"
 protobuf = "3.2.0"
 serde = { version = "1.0.152", features = ["derive"] }
