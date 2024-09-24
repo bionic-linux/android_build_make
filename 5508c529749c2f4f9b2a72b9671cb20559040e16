@@ -22,6 +22,30 @@
       },
       "revId": "5508c529749c2f4f9b2a72b9671cb20559040e16",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fad731bd_c5b508f6",
+        "filename": "tools/edit_monitor/daemon_manager.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-09-24T23:00:08Z",
+      "side": 1,
+      "message": "You are right, the delta active time is measured in clock ticks while the delta uptime is measured in seconds so the calculation here is wrong, It passes the unit tests as it happens that the clock ticks per second in most linux system is just 100 which actually leads to the right number :), I have updated the code.",
+      "parentUuid": "65a0c1de_8ccfe284",
+      "range": {
+        "startLine": 257,
+        "startChar": 6,
+        "endLine": 257,
+        "endChar": 78
+      },
+      "revId": "5508c529749c2f4f9b2a72b9671cb20559040e16",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
