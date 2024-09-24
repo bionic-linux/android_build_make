@@ -24,6 +24,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5ca66a46_d3080fd9",
+        "filename": "core/Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 3632815
+      },
+      "writtenOn": "2024-09-24T23:29:00Z",
+      "side": 1,
+      "message": "I considered both options, but thought that technically they are 2 different things, PACK indicating that we want to pack the migration image and BUILDING_SUPER indicating that we want to build the separate super_migration.img. That said, we probably aren\u0027t going to be doing one without the other, and now we are going to use ANDROID_DESKTOP_MIGRATION_IMAGE anyway.",
+      "parentUuid": "504bd43b_91a74fb7",
+      "range": {
+        "startLine": 49,
+        "startChar": 9,
+        "endLine": 49,
+        "endChar": 37
+      },
+      "revId": "a06ca829d7c9a8d4473b338a39430dce47af2233",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "dafdd43e_c5148664",
@@ -37,6 +61,24 @@
       "writtenOn": "2024-09-23T16:29:05Z",
       "side": 1,
       "message": "I am wondering if we really need to introduce a separate `super_migration.img` image target. We can already build such an image with the `ANDROID_DESKTOP_MIGRATION_IMAGE\u003dtrue` option and have smaller `super.img` as a result, which could be used as input parameter to `pack_migration_image` I guess. That way we would not need these changes to Makefile. WDYT?",
+      "revId": "a06ca829d7c9a8d4473b338a39430dce47af2233",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a87f520b_2b2100ad",
+        "filename": "core/Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 7511,
+      "author": {
+        "id": 3632815
+      },
+      "writtenOn": "2024-09-24T23:29:00Z",
+      "side": 1,
+      "message": "I did it this way to have the migration image created as part of the normal build flow without impacting the non-migration images generated. We could build a smaller super.img by using ANDROID_DESKTOP_MIGRATION_IMAGE\u003dtrue, as you mention, but then the other images would also have a smaller super.img. If we are fine with that, then I agree we don\u0027t need this part.",
+      "parentUuid": "dafdd43e_c5148664",
       "revId": "a06ca829d7c9a8d4473b338a39430dce47af2233",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
