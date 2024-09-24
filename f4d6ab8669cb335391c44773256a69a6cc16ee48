@@ -22,6 +22,30 @@
       },
       "revId": "f4d6ab8669cb335391c44773256a69a6cc16ee48",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a903c65e_fcbbad38",
+        "filename": "tools/edit_monitor/main.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-09-24T23:42:43Z",
+      "side": 1,
+      "message": "I don\u0027t think that is necessary, the log file will only be used for debugging purpose (user will not check it).",
+      "parentUuid": "e63e55a1_6f81ca57",
+      "range": {
+        "startLine": 45,
+        "startChar": 31,
+        "endLine": 45,
+        "endChar": 44
+      },
+      "revId": "f4d6ab8669cb335391c44773256a69a6cc16ee48",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
