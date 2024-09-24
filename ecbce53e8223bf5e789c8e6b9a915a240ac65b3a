@@ -24,6 +24,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e6d22db5_e6498157",
+        "filename": "tools/edit_monitor/daemon_manager.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-09-24T23:02:25Z",
+      "side": 1,
+      "message": "The restart will only be triggered once and when a restart is triggered, it reloads the entire process based on the given binary which will execute this code again (i.e. set the next restart time again).\n\nI changed it to restart_time here to make it clearer.",
+      "parentUuid": "664b770c_dd212109",
+      "range": {
+        "startLine": 88,
+        "startChar": 23,
+        "endLine": 88,
+        "endChar": 40
+      },
+      "revId": "ecbce53e8223bf5e789c8e6b9a915a240ac65b3a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2a283275_7ed033b3",
@@ -61,6 +85,30 @@
           ]
         }
       ],
+      "revId": "ecbce53e8223bf5e789c8e6b9a915a240ac65b3a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "63863429_6aeac44d",
+        "filename": "tools/edit_monitor/daemon_manager.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-09-24T23:02:25Z",
+      "side": 1,
+      "message": "No, the log is printed when the daemon process is terminated (which could be killed due to high resource usage or a normal completion of the daemon process).",
+      "parentUuid": "2a283275_7ed033b3",
+      "range": {
+        "startLine": 111,
+        "startChar": 4,
+        "endLine": 117,
+        "endChar": 5
+      },
       "revId": "ecbce53e8223bf5e789c8e6b9a915a240ac65b3a",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
