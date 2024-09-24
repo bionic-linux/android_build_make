@@ -16,6 +16,7 @@
 
 //! `aconfig` is a build time tool to manage build time configurations, such as feature flags.
 
+use aconfig_storage_file::DEFAULT_FILE_VERSION;
 use anyhow::{anyhow, bail, Context, Result};
 use clap::{builder::ArgAction, builder::EnumValueParser, Arg, ArgMatches, Command};
 use core::any::Any;
@@ -314,7 +315,12 @@ fn main() -> Result<()> {
             let cache = open_zero_or_more_files(sub_matches, "cache")?;
             let container = get_required_arg::<String>(sub_matches, "container")?;
             let path = get_required_arg::<String>(sub_matches, "out")?;
-            let output = commands::create_storage(cache, container, file)
+
+            // TODO(b/316357686): Add flag to create-storage for storage-version
+            // with default value of DEFAULT_FILE_VERSION. Then, add build flag
+            // to send in the incremented value from Soong when the flag is
+            // enabled.
+            let output = commands::create_storage(cache, container, file, DEFAULT_FILE_VERSION)
                 .context("failed to create storage files")?;
             write_output_to_file_or_stdout(path, &output)?;
         }

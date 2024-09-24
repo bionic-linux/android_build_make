@@ -26,7 +26,7 @@ mod test_utils;
 
 use aconfig_storage_file::{
     AconfigStorageError, FlagInfoHeader, FlagInfoList, FlagInfoNode, FlagTable, FlagValueType,
-    PackageTable, StorageFileType, StoredFlagType, FILE_VERSION,
+    PackageTable, StorageFileType, StoredFlagType, DEFAULT_FILE_VERSION,
 };
 
 use anyhow::anyhow;
@@ -128,6 +128,7 @@ pub fn create_flag_info(
     package_map: &str,
     flag_map: &str,
     flag_info_out: &str,
+    version: u32
 ) -> Result<(), AconfigStorageError> {
     let package_table = PackageTable::from_bytes(&read_file_to_bytes(package_map)?)?;
     let flag_table = FlagTable::from_bytes(&read_file_to_bytes(flag_map)?)?;
@@ -153,7 +154,7 @@ pub fn create_flag_info(
 
     let mut list = FlagInfoList {
         header: FlagInfoHeader {
-            version: FILE_VERSION,
+            version,
             container: flag_table.header.container,
             file_type: StorageFileType::FlagInfo as u8,
             file_size: 0,
@@ -335,7 +336,8 @@ pub(crate) fn create_flag_info_cxx(
     flag_map: &str,
     flag_info_out: &str,
 ) -> ffi::FlagInfoCreationCXX {
-    match create_flag_info(package_map, flag_map, flag_info_out) {
+    // TODO(b/316357686): Figure out what to do in this case.
+    match create_flag_info(package_map, flag_map, flag_info_out, DEFAULT_FILE_VERSION) {
         Ok(()) => ffi::FlagInfoCreationCXX { success: true, error_message: String::from("") },
         Err(errmsg) => {
             ffi::FlagInfoCreationCXX { success: false, error_message: format!("{:?}", errmsg) }
@@ -459,7 +461,7 @@ mod tests {
         let flag_table_path = flag_table.path().display().to_string();
         let flag_info_path = flag_info.path().display().to_string();
 
-        assert!(create_flag_info(&package_table_path, &flag_table_path, &flag_info_path).is_ok());
+        assert!(create_flag_info(&package_table_path, &flag_table_path, &flag_info_path, DEFAULT_FILE_VERSION).is_ok());
 
         let flag_info =
             FlagInfoList::from_bytes(&read_file_to_bytes(&flag_info_path).unwrap()).unwrap();
