@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e63e55a1_6f81ca57",
+        "filename": "tools/edit_monitor/main.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1550539
+      },
+      "writtenOn": "2024-09-24T16:59:28Z",
+      "side": 1,
+      "message": "Should this be a flag?",
+      "range": {
+        "startLine": 45,
+        "startChar": 31,
+        "endLine": 45,
+        "endChar": 44
+      },
+      "revId": "f4d6ab8669cb335391c44773256a69a6cc16ee48",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
