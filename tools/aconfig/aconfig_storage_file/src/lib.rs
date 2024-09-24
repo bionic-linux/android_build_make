@@ -244,6 +244,14 @@ pub(crate) fn read_u16_from_bytes(
     Ok(val)
 }
 
+/// Read and parse the first 4 bytes of buf as u32.
+pub fn read_u32_from_start_of_bytes(buf: &[u8]) -> Result<u32, AconfigStorageError> {
+    let mut version_bytes = [0; 4];
+    version_bytes.copy_from_slice(&buf[0..4]);
+    let val = u32::from_le_bytes(version_bytes);
+    Ok(val)
+}
+
 /// Read and parse bytes as u32
 pub fn read_u32_from_bytes(buf: &[u8], head: &mut usize) -> Result<u32, AconfigStorageError> {
     let val =

@@ -18,8 +18,8 @@
 //! and deserialization
 
 use crate::{
-    get_bucket_index, read_str_from_bytes, read_u32_from_bytes, read_u64_from_bytes,
-    read_u8_from_bytes,
+    get_bucket_index, read_str_from_bytes, read_u32_from_bytes, read_u32_from_start_of_bytes,
+    read_u64_from_bytes, read_u8_from_bytes, FILE_VERSION,
 };
 use crate::{AconfigStorageError, StorageFileType};
 use anyhow::anyhow;
@@ -126,6 +126,29 @@ impl fmt::Debug for PackageTableNode {
 impl PackageTableNode {
     /// Serialize to bytes
     pub fn into_bytes(&self) -> Vec<u8> {
+        self.into_bytes_versioned(FILE_VERSION)
+    }
+
+    pub fn into_bytes_versioned(&self, version: u32) -> Vec<u8> {
+        match version {
+            1 => self.into_bytes_v1(),
+            2 => self.into_bytes_v2(),
+            _ => self.into_bytes_v2(), // Default to current version for write.
+        }
+    }
+
+    fn into_bytes_v1(&self) -> Vec<u8> {
+        let mut result = Vec::new();
+        let name_bytes = self.package_name.as_bytes();
+        result.extend_from_slice(&(name_bytes.len() as u32).to_le_bytes());
+        result.extend_from_slice(name_bytes);
+        result.extend_from_slice(&self.package_id.to_le_bytes());
+        result.extend_from_slice(&self.boolean_start_index.to_le_bytes());
+        result.extend_from_slice(&self.next_offset.unwrap_or(0).to_le_bytes());
+        result
+    }
+
+    fn into_bytes_v2(&self) -> Vec<u8> {
         let mut result = Vec::new();
         let name_bytes = self.package_name.as_bytes();
         result.extend_from_slice(&(name_bytes.len() as u32).to_le_bytes());
@@ -137,8 +160,36 @@ impl PackageTableNode {
         result
     }
 
-    /// Deserialize from bytes
-    pub fn from_bytes(bytes: &[u8]) -> Result<Self, AconfigStorageError> {
+    /// Deserialize from bytes based on file version.
+    pub fn from_bytes(bytes: &[u8], version: u32) -> Result<Self, AconfigStorageError> {
+        match version {
+            1 => Self::from_bytes_v1(bytes),
+            2 => Self::from_bytes_v2(bytes),
+            _ => {
+                return Err(AconfigStorageError::BytesParseFail(anyhow!(
+                    "Binary file is an unsupported version: {}",
+                    version
+                )))
+            }
+        }
+    }
+
+    fn from_bytes_v1(bytes: &[u8]) -> Result<Self, AconfigStorageError> {
+        let mut head = 0;
+        let node = Self {
+            package_name: read_str_from_bytes(bytes, &mut head)?,
+            package_id: read_u32_from_bytes(bytes, &mut head)?,
+            fingerprint: 0, // v1 does not support fingerprint.
+            boolean_start_index: read_u32_from_bytes(bytes, &mut head)?,
+            next_offset: match read_u32_from_bytes(bytes, &mut head)? {
+                0 => None,
+                val => Some(val),
+            },
+        };
+        Ok(node)
+    }
+
+    fn from_bytes_v2(bytes: &[u8]) -> Result<Self, AconfigStorageError> {
         let mut head = 0;
         let node = Self {
             package_name: read_str_from_bytes(bytes, &mut head)?,
@@ -197,6 +248,7 @@ impl PackageTable {
 
     /// Deserialize from bytes
     pub fn from_bytes(bytes: &[u8]) -> Result<Self, AconfigStorageError> {
+        let version = read_u32_from_start_of_bytes(bytes)?;
         let header = PackageTableHeader::from_bytes(bytes)?;
         let num_packages = header.num_packages;
         let num_buckets = crate::get_table_size(num_packages)?;
@@ -209,7 +261,7 @@ impl PackageTable {
             .collect();
         let nodes = (0..num_packages)
             .map(|_| {
-                let node = PackageTableNode::from_bytes(&bytes[head..])?;
+                let node = PackageTableNode::from_bytes(&bytes[head..], version)?;
                 head += node.into_bytes().len();
                 Ok(node)
             })
@@ -242,7 +294,7 @@ mod tests {
 
         let nodes: &Vec<PackageTableNode> = &package_table.nodes;
         for node in nodes.iter() {
-            let reinterpreted_node = PackageTableNode::from_bytes(&node.into_bytes()).unwrap();
+            let reinterpreted_node = PackageTableNode::from_bytes(&node.into_bytes(), header.version).unwrap();
             assert_eq!(node, &reinterpreted_node);
         }
 
