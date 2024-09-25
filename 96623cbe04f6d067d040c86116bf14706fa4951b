@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f361c1dd_11f72a49",
+        "filename": "tools/edit_monitor/daemon_manager_test.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1550539
+      },
+      "writtenOn": "2024-09-25T21:36:44Z",
+      "side": 1,
+      "message": "Perhaps dm.start should return a boolean to indicate if it was successful or not, writing assertions based on inner properties can be finicky.",
+      "range": {
+        "startLine": 130,
+        "startChar": 4,
+        "endLine": 130,
+        "endChar": 14
+      },
+      "revId": "96623cbe04f6d067d040c86116bf14706fa4951b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
