@@ -16,6 +16,24 @@
       "message": "The output tables in the BloatBuster results are weirdly broken.",
       "revId": "ef87f004af288fb5ef85fbc733fe3863464dfcd9",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4536fc49_7309449f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1064003
+      },
+      "writtenOn": "2024-09-25T17:55:40Z",
+      "side": 1,
+      "message": "@chenzhu@google.com @kevinjeon@google.com is this a known issue? https://screenshot.googleplex.com/3ahgsrGCJqb8swP\n\nI\u0027m seeing it on other changes, filed b/369627598.",
+      "parentUuid": "b9474d24_1c1f8e4d",
+      "revId": "ef87f004af288fb5ef85fbc733fe3863464dfcd9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
