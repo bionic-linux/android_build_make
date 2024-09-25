@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ac024d46_b2910284",
+        "filename": "tools/edit_monitor/daemon_manager.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1550539
+      },
+      "writtenOn": "2024-09-25T21:40:26Z",
+      "side": 1,
+      "message": "once it runs once it will run everytime the while loop executes because time.time() will always be greater than restart_time.\n\nyou need to reset restart_time when you call self.restart() to prevent this.",
+      "range": {
+        "startLine": 88,
+        "startChar": 6,
+        "endLine": 89,
+        "endChar": 22
+      },
+      "revId": "41f54b25613619644d96e24f72d413c9a36330f2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
