@@ -81,6 +81,24 @@
       "parentUuid": "dafdd43e_c5148664",
       "revId": "a06ca829d7c9a8d4473b338a39430dce47af2233",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "478c4e98_8b7436ef",
+        "filename": "core/Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 7511,
+      "author": {
+        "id": 2028281
+      },
+      "writtenOn": "2024-09-25T08:28:14Z",
+      "side": 1,
+      "message": "Just to clarify, we don\u0027t have to set that variable directly in makefile so that the regular images are of original, 8GB size. The intent of that variable was to be used as a make invocation parameter, when the smaller, migration image is built.",
+      "parentUuid": "a87f520b_2b2100ad",
+      "revId": "a06ca829d7c9a8d4473b338a39430dce47af2233",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
