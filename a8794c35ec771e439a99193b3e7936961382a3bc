@@ -22,6 +22,30 @@
       },
       "revId": "a8794c35ec771e439a99193b3e7936961382a3bc",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "63713aa1_956591cb",
+        "filename": "target/product/go_defaults_common.mk",
+        "patchSetId": 7
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1965996
+      },
+      "writtenOn": "2024-09-25T10:35:09Z",
+      "side": 1,
+      "message": "Makes sense. Done.",
+      "parentUuid": "ade85233_97f13175",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 87
+      },
+      "revId": "a8794c35ec771e439a99193b3e7936961382a3bc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
