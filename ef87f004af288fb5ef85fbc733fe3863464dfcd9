@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b9474d24_1c1f8e4d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1059977
+      },
+      "writtenOn": "2024-09-25T00:01:58Z",
+      "side": 1,
+      "message": "The output tables in the BloatBuster results are weirdly broken.",
+      "revId": "ef87f004af288fb5ef85fbc733fe3863464dfcd9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
