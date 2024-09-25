@@ -1,0 +1,109 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a91277fc_c7191aba",
+        "filename": "tools/edit_monitor/proto/edit_event.proto",
+        "patchSetId": 29
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1550539
+      },
+      "writtenOn": "2024-09-25T21:12:57Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 17,
+        "startChar": 4,
+        "endLine": 17,
+        "endChar": 10
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "77d1dccb_460e172e",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "tools/edit_monitor/proto/edit_event.proto",
+              "range": {
+                "startLine": 17,
+                "startChar": 0,
+                "endLine": 18,
+                "endChar": 0
+              },
+              "replacement": "    FAILED_TO_RESTART_EDIT_MONITOR \u003d 3;\n"
+            }
+          ]
+        }
+      ],
+      "revId": "fc615c684c285a4d89cb37c64d5ce4b6d9edac34",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5cda6e66_c1fb783b",
+        "filename": "tools/edit_monitor/proto/edit_event.proto",
+        "patchSetId": 29
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1550539
+      },
+      "writtenOn": "2024-09-25T21:12:57Z",
+      "side": 1,
+      "message": "EXCEEDED (we aren\u0027t killing jobs if is abnormally low)",
+      "range": {
+        "startLine": 18,
+        "startChar": 18,
+        "endLine": 18,
+        "endChar": 26
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "36251314_b5e0d6ca",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "tools/edit_monitor/proto/edit_event.proto",
+              "range": {
+                "startLine": 18,
+                "startChar": 0,
+                "endLine": 19,
+                "endChar": 0
+              },
+              "replacement": "    KILLED_DUE_TO_EXCEEDED_RESOURCE_USAGE \u003d 4;\n"
+            }
+          ]
+        }
+      ],
+      "revId": "fc615c684c285a4d89cb37c64d5ce4b6d9edac34",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "863e92df_588b20fe",
+        "filename": "tools/edit_monitor/proto/edit_event.proto",
+        "patchSetId": 29
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1550539
+      },
+      "writtenOn": "2024-09-25T21:12:57Z",
+      "side": 1,
+      "message": "This 3 can be used as PII, can we store a session hash instead?\n\nMy understanding is that we are storing these 3 because we want to track individual sessions",
+      "range": {
+        "startLine": 45,
+        "startChar": 2,
+        "endLine": 50,
+        "endChar": 23
+      },
+      "revId": "fc615c684c285a4d89cb37c64d5ce4b6d9edac34",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
