@@ -22,6 +22,29 @@
       },
       "revId": "41f54b25613619644d96e24f72d413c9a36330f2",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "28ccb21c_8db9e96f",
+        "filename": "tools/edit_monitor/daemon_manager.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1550539
+      },
+      "writtenOn": "2024-09-25T21:43:32Z",
+      "side": 1,
+      "message": "why not leverage self.start()?\n\nfrom an API perspective, restart() should do nothing more than self.stop() -\u003e self.start()",
+      "range": {
+        "startLine": 147,
+        "startChar": 4,
+        "endLine": 148,
+        "endChar": 42
+      },
+      "revId": "41f54b25613619644d96e24f72d413c9a36330f2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
