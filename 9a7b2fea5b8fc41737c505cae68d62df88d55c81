@@ -1,0 +1,39 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c7adcefa_5fd2bbcc",
+        "filename": "tools/releasetools/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2152,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2024-09-26T17:19:00Z",
+      "side": 1,
+      "message": "is_dir() uses filename checks\n\n```\n    def is_dir(self):\n        \"\"\"Return True if this archive member is a directory.\"\"\"\n        return self.filename[-1] \u003d\u003d \u0027/\u0027\n```\n\nThis seems even more fragile than the unix attr method. Maybe consider fixing the repack tool you are using to correctly report unix file type?",
+      "fixSuggestions": [
+        {
+          "fixId": "b05d7f8a_06e9da5a",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "tools/releasetools/common.py",
+              "range": {
+                "startLine": 2152,
+                "startChar": 0,
+                "endLine": 2156,
+                "endChar": 0
+              },
+              "replacement": "    os.chmod(target, file_perm | 0o644)\n"
+            }
+          ]
+        }
+      ],
+      "revId": "9a7b2fea5b8fc41737c505cae68d62df88d55c81",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
