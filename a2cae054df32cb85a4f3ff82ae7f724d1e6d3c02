@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "786c9272_349069b6",
+        "filename": "core/android_soong_config_vars.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 1311067
+      },
+      "writtenOn": "2024-09-26T15:04:55Z",
+      "side": 1,
+      "message": "You probably don\u0027t need this.\n\nhttps://source.corp.google.com/search?q\u003dDISABLE_RILD_OEM_HOOK%20-f:Android.mk\u0026sq\u003dgit:android%2Fplatform%2Fsuperproject%2Fmain@main\n\ndisable_rild_oem_hook has been set true along with DISABLE_RILD_OEM_HOOK is true.",
+      "range": {
+        "startLine": 193,
+        "startChar": 0,
+        "endLine": 195,
+        "endChar": 5
+      },
+      "revId": "a2cae054df32cb85a4f3ff82ae7f724d1e6d3c02",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
