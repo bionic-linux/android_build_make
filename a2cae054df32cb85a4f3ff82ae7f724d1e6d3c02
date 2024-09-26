@@ -22,6 +22,30 @@
       },
       "revId": "a2cae054df32cb85a4f3ff82ae7f724d1e6d3c02",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4a3ee877_1283ab3a",
+        "filename": "core/android_soong_config_vars.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 1308044
+      },
+      "writtenOn": "2024-09-26T15:33:16Z",
+      "side": 1,
+      "message": "Yes, I have set that before, but I think moving it here maybe more easy to control to let it stay with other ril flag",
+      "parentUuid": "786c9272_349069b6",
+      "range": {
+        "startLine": 193,
+        "startChar": 0,
+        "endLine": 195,
+        "endChar": 5
+      },
+      "revId": "a2cae054df32cb85a4f3ff82ae7f724d1e6d3c02",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
