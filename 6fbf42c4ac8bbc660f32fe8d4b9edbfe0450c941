@@ -24,6 +24,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3d906d9d_1397a14e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1981530
+      },
+      "writtenOn": "2024-09-26T14:31:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "015f29ef_7bc46078",
+      "range": {
+        "startLine": 14,
+        "startChar": 6,
+        "endLine": 14,
+        "endChar": 12
+      },
+      "revId": "6fbf42c4ac8bbc660f32fe8d4b9edbfe0450c941",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2352d91f_1bc1c331",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-09-23T06:23:27Z",
       "side": 1,
       "message": "As per our Rust guidelines, use `ensure!()` instead of `if ... bail!()`",
+      "range": {
+        "startLine": 57,
+        "startChar": 3,
+        "endLine": 59,
+        "endChar": 5
+      },
+      "revId": "6fbf42c4ac8bbc660f32fe8d4b9edbfe0450c941",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bb864187_cf423aee",
+        "filename": "tools/aconfig/printflags/src/main.rs",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1981530
+      },
+      "writtenOn": "2024-09-26T14:31:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2352d91f_1bc1c331",
       "range": {
         "startLine": 57,
         "startChar": 3,
