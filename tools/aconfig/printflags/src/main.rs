@@ -18,7 +18,7 @@
 
 use aconfig_protos::ProtoFlagState as State;
 use aconfig_protos::ProtoParsedFlags;
-use anyhow::{bail, Context, Result};
+use anyhow::{bail, ensure, Context, Result};
 use regex::Regex;
 use std::collections::BTreeMap;
 use std::collections::HashMap;
@@ -54,6 +54,11 @@ fn xxd(bytes: &[u8]) -> String {
 }
 
 fn main() -> Result<()> {
+    ensure!(
+        aconfig_flags::auto_generated::enable_only_new_storage(),
+        Err("this dump deprecated; use aflags list")
+    );
+
     // read device_config
     let output = Command::new("/system/bin/device_config").arg("list").output()?;
     if !output.status.success() {
