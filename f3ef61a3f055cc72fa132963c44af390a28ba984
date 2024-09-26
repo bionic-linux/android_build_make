@@ -16,6 +16,24 @@
       "message": "The same logic may needed for header as well.",
       "revId": "f3ef61a3f055cc72fa132963c44af390a28ba984",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b36b00c0_bfe372be",
+        "filename": "tools/aconfig/aconfig_storage_file/src/package_table.rs",
+        "patchSetId": 2
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 3599662
+      },
+      "writtenOn": "2024-09-26T21:53:51Z",
+      "side": 1,
+      "message": "can you explain why? i\u0027ve reconsidered a lot of the approach here and think with the changes we don\u0027t need to update PackageTableHeader#from_bytes(), but please let me know if i\u0027ve missed something!",
+      "parentUuid": "0f4aba45_42001f88",
+      "revId": "f3ef61a3f055cc72fa132963c44af390a28ba984",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
