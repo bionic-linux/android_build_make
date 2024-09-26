@@ -2145,13 +2145,11 @@ def UnzipSingleFile(input_zip: zipfile.ZipFile, info: zipfile.ZipInfo, dirname: 
   def IsSymlink(a):
     return CheckMask(a, stat.S_IFLNK)
 
-  def IsDir(a):
-    return CheckMask(a, stat.S_IFDIR)
   # python3.11 zipfile implementation doesn't handle symlink correctly
   if not IsSymlink(unix_filetype):
     target = input_zip.extract(info, dirname)
     # We want to ensure that the file is at least read/writable by owner and readable by all users
-    if IsDir(unix_filetype):
+    if info.is_dir():
       os.chmod(target, file_perm | 0o755)
     else:
       os.chmod(target, file_perm | 0o644)
