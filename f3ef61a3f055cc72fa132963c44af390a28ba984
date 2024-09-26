@@ -34,6 +34,24 @@
       "parentUuid": "0f4aba45_42001f88",
       "revId": "f3ef61a3f055cc72fa132963c44af390a28ba984",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2d236bfe_e1045304",
+        "filename": "tools/aconfig/aconfig_storage_file/src/package_table.rs",
+        "patchSetId": 2
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 1882770
+      },
+      "writtenOn": "2024-09-26T23:48:57Z",
+      "side": 1,
+      "message": "this is really minor. given 1 and 2 are the same for the header, so not doing switch case for header is fine. Say in the future we have version 3, then we need to do 1, 2 \u003d\u003e. I just thought it is easier to track, and also for each from_bytes, we know which versions we have supported in the past.\n\nyour call.",
+      "parentUuid": "b36b00c0_bfe372be",
+      "revId": "f3ef61a3f055cc72fa132963c44af390a28ba984",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
