@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e21b752e_e2e08f58",
+        "filename": "tools/aconfig/aconfig/src/main.rs",
+        "patchSetId": 10
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 1882770
+      },
+      "writtenOn": "2024-09-27T14:14:39Z",
+      "side": 1,
+      "message": "we can set the default value to be DEFAULT_FILE_VERSION here if this arg is not specified. see the out arg in the dump-cache command above.",
+      "revId": "e3bf8761225f1467c7aa84c06a667e53e88fb3d1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "99237075_23c693f0",
+        "filename": "tools/aconfig/aconfig_storage_file/src/lib.rs",
+        "patchSetId": 10
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 1882770
+      },
+      "writtenOn": "2024-09-27T14:14:39Z",
+      "side": 1,
+      "message": "nit: can read_u32_from_start_of_bytes just calling into read_u32_from_bytes implemented below?",
+      "revId": "e3bf8761225f1467c7aa84c06a667e53e88fb3d1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5a8459bd_40eea866",
+        "filename": "tools/aconfig/aconfig_storage_file/src/package_table.rs",
+        "patchSetId": 10
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1882770
+      },
+      "writtenOn": "2024-09-27T14:14:39Z",
+      "side": 1,
+      "message": "can we explicit do \n\n1 \u003d\u003e ...\n_ \u003d\u003e {\n    return Err\n}\n\ninstead of relying on comments to know what is the default. \n\nWe can have the version number set to default value 1, before calling into this function.",
+      "revId": "e3bf8761225f1467c7aa84c06a667e53e88fb3d1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0a5e3359_637bf49f",
+        "filename": "tools/aconfig/aconfig_storage_file/src/package_table.rs",
+        "patchSetId": 10
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1882770
+      },
+      "writtenOn": "2024-09-27T14:14:39Z",
+      "side": 1,
+      "message": "This is really nice!",
+      "revId": "e3bf8761225f1467c7aa84c06a667e53e88fb3d1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "56217b88_9131e07c",
+        "filename": "tools/aconfig/aconfig_storage_file/src/package_table.rs",
+        "patchSetId": 10
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 1882770
+      },
+      "writtenOn": "2024-09-27T14:14:39Z",
+      "side": 1,
+      "message": "Can we have PackageTableHeader::from_bytes(bytes) handle the version logic internally. and we can just obtain version by setting it to header.version.",
+      "revId": "e3bf8761225f1467c7aa84c06a667e53e88fb3d1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "71102a93_aec81bd9",
+        "filename": "tools/aconfig/aconfig_storage_file/src/package_table.rs",
+        "patchSetId": 10
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 1882770
+      },
+      "writtenOn": "2024-09-27T14:14:39Z",
+      "side": 1,
+      "message": "Can we split this test point into two, one per version. We make sure that for each version we can (1) serialize and (2) deserialize.\n\nIf we can get it close enough to a boiler plate, then in the future we might be able to codegen these.",
+      "revId": "e3bf8761225f1467c7aa84c06a667e53e88fb3d1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
