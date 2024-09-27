@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e5783c1e_59ee5290",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1878380
+      },
+      "writtenOn": "2024-09-27T16:23:00Z",
+      "side": 1,
+      "message": "I think this revert https://r.android.com/3284806 might be sufficient. I have created a go/abtd run to verify, and I will post an update once that run is complete.",
+      "revId": "ccf0771c8cfb12e72760cd1b8fc54ffbf97ffe7d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
