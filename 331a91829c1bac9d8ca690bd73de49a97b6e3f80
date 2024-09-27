@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6f4bf187_99047dd6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1959970
+      },
+      "writtenOn": "2024-09-27T15:49:14Z",
+      "side": 1,
+      "message": "Hi Cole, Colin,\n\nPlease help review this change to allow Alderlake arch variant\nwhen using Makefile.\n\nI tested using `m`, if there is other test I can do, please let me know.\n\nThanks you",
+      "revId": "331a91829c1bac9d8ca690bd73de49a97b6e3f80",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
