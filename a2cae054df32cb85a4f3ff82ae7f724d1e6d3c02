@@ -70,6 +70,30 @@
       },
       "revId": "a2cae054df32cb85a4f3ff82ae7f724d1e6d3c02",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8c36a121_25b2a94f",
+        "filename": "core/android_soong_config_vars.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 1308044
+      },
+      "writtenOn": "2024-09-27T09:23:39Z",
+      "side": 1,
+      "message": "But why we need it always have a value? If we are using select statement we just want to make sure it is true, other is default. I don\u0027t think we need to make the logic so complicated.",
+      "parentUuid": "9d1fb27b_fc701f23",
+      "range": {
+        "startLine": 193,
+        "startChar": 0,
+        "endLine": 195,
+        "endChar": 5
+      },
+      "revId": "a2cae054df32cb85a4f3ff82ae7f724d1e6d3c02",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
