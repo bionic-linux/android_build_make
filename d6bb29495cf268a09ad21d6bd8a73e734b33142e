@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b3de527e_064ebd4b",
+        "filename": "tools/aconfig/aconfig_device_paths/src/HostDeviceProtosTemplate.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1933916
+      },
+      "writtenOn": "2024-09-27T05:49:55Z",
+      "side": 1,
+      "message": "Please fix this WARNING reported by Check Contents: Please remove the trailing whitespace.\n\nAnalyzer Description: Validates that changes do not have prohibited expressions in them.\nOwner: ayeaye-team@google.com\n\nPlease remove the trailing whitespace.",
+      "range": {
+        "startLine": 44,
+        "startChar": 67,
+        "endLine": 44,
+        "endChar": 68
+      },
+      "revId": "d6bb29495cf268a09ad21d6bd8a73e734b33142e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
