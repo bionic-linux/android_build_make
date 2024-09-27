@@ -192,3 +192,6 @@ $(call soong_config_set_bool,camera,use_camera_v4l2_hal,$(if $(filter true,$(USE
 ifneq ($(strip $(AUDIOSERVER_MULTILIB)),)
   $(call soong_config_set,soundtrigger,audioserver_multilib,$(AUDIOSERVER_MULTILIB))
 endif
+
+# Export target_board_platform to soong for hardware/google/graphics/common/libmemtrack:memtrack.$(TARGET_BOARD_PLATFORM)
+$(call soong_config_set,ANDROID,target_board_platform,$(TARGET_BOARD_PLATFORM))
