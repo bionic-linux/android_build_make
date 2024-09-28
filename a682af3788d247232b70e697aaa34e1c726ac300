@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9d2faf6c_436b665d",
+        "filename": "core/android_soong_config_vars.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1318142
+      },
+      "writtenOn": "2024-09-28T00:55:57Z",
+      "side": 1,
+      "message": "it should be \"ifdef\", but better to check if it is true.",
+      "range": {
+        "startLine": 196,
+        "startChar": 7,
+        "endLine": 196,
+        "endChar": 32
+      },
+      "revId": "a682af3788d247232b70e697aaa34e1c726ac300",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
