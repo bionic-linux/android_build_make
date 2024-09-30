@@ -190,3 +190,8 @@ $(call soong_config_set_bool,camera,use_camera_v4l2_hal,$(if $(filter true,$(USE
 
 # Export target_board_platform to soong for hardware/google/graphics/common/libmemtrack:memtrack.$(TARGET_BOARD_PLATFORM)
 $(call soong_config_set,ANDROID,target_board_platform,$(TARGET_BOARD_PLATFORM))
+
+# Export board_uses_vendorimage to soong for hardware/google/graphics/common/libscaler:libexynosscaler
+$(call soong_config_set_bool,ANDROID,board_uses_vendorimage,$(if $(filter true,$(BOARD_USES_VENDORIMAGE)),true,false))
+$(call soong_config_set_bool,google_graphocs,board_uses_scaler_m2m1shot,$(if $(filter true,$(BOARD_USES_SCALER_M2M1SHOT)),true,false))
+$(call soong_config_set_bool,google_graphocs,board_uses_align_restriction,$(if $(filter true,$(BOARD_USES_ALIGN_RESTRICTION)),true,false))
