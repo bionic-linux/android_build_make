@@ -22,6 +22,30 @@
       },
       "revId": "96623cbe04f6d067d040c86116bf14706fa4951b",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f612ff36_8f6acce6",
+        "filename": "tools/edit_monitor/daemon_manager_test.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-09-30T21:57:37Z",
+      "side": 1,
+      "message": "True, instead of return a boolean, I just leave the method to raise exceptions that may happen and in the test I can assert the expected exception raised. \n\nWhen we actually run the process, the main.py will catch any exception raised when start the daemon manager and log it before exit.",
+      "parentUuid": "f361c1dd_11f72a49",
+      "range": {
+        "startLine": 130,
+        "startChar": 4,
+        "endLine": 130,
+        "endChar": 14
+      },
+      "revId": "96623cbe04f6d067d040c86116bf14706fa4951b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
