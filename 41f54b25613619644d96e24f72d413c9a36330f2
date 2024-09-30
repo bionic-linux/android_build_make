@@ -24,6 +24,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b0f7b1d2_6a891bcb",
+        "filename": "tools/edit_monitor/daemon_manager.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-09-30T21:01:37Z",
+      "side": 1,
+      "message": "When we restart,we reload the entire binary which means all the code will be re-executed (not just the code inside the daemon manager). Specifically, it will re-create the daemon manger and reset the restart_time.  We do this because we assume the user may update the binary file regularly (e.g. through repo sync) and we want to ensure the latest binary version will be picked up when we restart the process.\n\nI changed the method name to reboot and use reboot_timeout instead of restart_interval to make it clearer.",
+      "parentUuid": "ac024d46_b2910284",
+      "range": {
+        "startLine": 88,
+        "startChar": 6,
+        "endLine": 89,
+        "endChar": 22
+      },
+      "revId": "41f54b25613619644d96e24f72d413c9a36330f2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "28ccb21c_8db9e96f",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-09-25T21:43:32Z",
       "side": 1,
       "message": "why not leverage self.start()?\n\nfrom an API perspective, restart() should do nothing more than self.stop() -\u003e self.start()",
+      "range": {
+        "startLine": 147,
+        "startChar": 4,
+        "endLine": 148,
+        "endChar": 42
+      },
+      "revId": "41f54b25613619644d96e24f72d413c9a36330f2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "37c8fc2c_e7f56508",
+        "filename": "tools/edit_monitor/daemon_manager.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-09-30T21:01:37Z",
+      "side": 1,
+      "message": "As I explained in the previous comments, we want to reload the entire binary here not just restart the daemon manager.",
+      "parentUuid": "28ccb21c_8db9e96f",
       "range": {
         "startLine": 147,
         "startChar": 4,
