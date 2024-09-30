@@ -42,6 +42,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "be359af4_a45cf4e9",
+        "filename": "tools/edit_monitor/proto/edit_event.proto",
+        "patchSetId": 29
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-09-30T22:10:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a91277fc_c7191aba",
+      "range": {
+        "startLine": 17,
+        "startChar": 4,
+        "endLine": 17,
+        "endChar": 10
+      },
+      "revId": "fc615c684c285a4d89cb37c64d5ce4b6d9edac34",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5cda6e66_c1fb783b",
@@ -83,6 +107,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "65ddbfca_2ad8308c",
+        "filename": "tools/edit_monitor/proto/edit_event.proto",
+        "patchSetId": 29
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-09-30T22:10:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5cda6e66_c1fb783b",
+      "range": {
+        "startLine": 18,
+        "startChar": 18,
+        "endLine": 18,
+        "endChar": 26
+      },
+      "revId": "fc615c684c285a4d89cb37c64d5ce4b6d9edac34",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "863e92df_588b20fe",
@@ -96,6 +144,30 @@
       "writtenOn": "2024-09-25T21:12:57Z",
       "side": 1,
       "message": "This 3 can be used as PII, can we store a session hash instead?\n\nMy understanding is that we are storing these 3 because we want to track individual sessions",
+      "range": {
+        "startLine": 45,
+        "startChar": 2,
+        "endLine": 50,
+        "endChar": 23
+      },
+      "revId": "fc615c684c285a4d89cb37c64d5ce4b6d9edac34",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a2baa68a_f9ed5b27",
+        "filename": "tools/edit_monitor/proto/edit_event.proto",
+        "patchSetId": 29
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-09-30T22:10:30Z",
+      "side": 1,
+      "message": "You are right, they are PII and we have the corresponding LPP to claim that we will store PII data in Sawmill. The reason that we dont store a hashed value instead is because we want to join the data with logs collected from other tools (e.g. build, atest etc.) to have a profile of what a user is doing in a dev session. Since the logs form those tools already stores those PII info, it is easier to have the same info stored in this log as well.",
+      "parentUuid": "863e92df_588b20fe",
       "range": {
         "startLine": 45,
         "startChar": 2,
