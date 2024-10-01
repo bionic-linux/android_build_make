@@ -58,6 +58,8 @@ class EditMonitorTest(unittest.TestCase):
         log_output_file=self.log_event_dir.joinpath('logs.output')
     )
     p = self._start_test_edit_monitor_process(fake_cclient)
+    # Create the .git file under the monitoring dir.
+    self.root_monitoring_path.joinpath('.git').touch()
 
     # Create and modify a file.
     test_file = self.root_monitoring_path.joinpath('test.txt')
@@ -124,6 +126,65 @@ class EditMonitorTest(unittest.TestCase):
             logged_events[3].source_extension
         ).single_edit_event,
     )
+
+  def test_do_not_log_edit_event_for_directory_change(self):
+    fake_cclient = FakeClearcutClient(
+        log_output_file=self.log_event_dir.joinpath('logs.output')
+    )
+    p = self._start_test_edit_monitor_process(fake_cclient)
+    # Create the .git file under the monitoring dir.
+    self.root_monitoring_path.joinpath('.git').touch()
+
+    # Create a sub directory
+    self.root_monitoring_path.joinpath('test_dir').mkdir()
+    # Give some time for the edit monitor to receive the edit event.
+    time.sleep(1)
+    # Stop the edit monitor and flush all events.
+    os.kill(p.pid, signal.SIGINT)
+    p.join()
+
+    logged_events = self._get_logged_events()
+    self.assertEqual(len(logged_events), 0)
+
+  def test_do_not_log_edit_event_for_hidden_file(self):
+    fake_cclient = FakeClearcutClient(
+        log_output_file=self.log_event_dir.joinpath('logs.output')
+    )
+    p = self._start_test_edit_monitor_process(fake_cclient)
+    # Create the .git file under the monitoring dir.
+    self.root_monitoring_path.joinpath('.git').touch()
+
+    # Create a hidden file.
+    self.root_monitoring_path.joinpath('.test.txt').touch()
+    # Create a hidden dir.
+    hidden_dir = self.root_monitoring_path.joinpath('.test')
+    hidden_dir.mkdir()
+    hidden_dir.joinpath('test.txt').touch()
+    # Give some time for the edit monitor to receive the edit event.
+    time.sleep(1)
+    # Stop the edit monitor and flush all events.
+    os.kill(p.pid, signal.SIGINT)
+    p.join()
+
+    logged_events = self._get_logged_events()
+    self.assertEqual(len(logged_events), 0)
+
+  def test_do_not_log_edit_event_for_non_git_project_file(self):
+    fake_cclient = FakeClearcutClient(
+        log_output_file=self.log_event_dir.joinpath('logs.output')
+    )
+    p = self._start_test_edit_monitor_process(fake_cclient)
+
+    # Create a file.
+    self.root_monitoring_path.joinpath('test.txt').touch()
+    # Give some time for the edit monitor to receive the edit event.
+    time.sleep(1)
+    # Stop the edit monitor and flush all events.
+    os.kill(p.pid, signal.SIGINT)
+    p.join()
+
+    logged_events = self._get_logged_events()
+    self.assertEqual(len(logged_events), 0)
 
   def test_log_edit_event_fail(self):
     fake_cclient = FakeClearcutClient(
