@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "db1f379c_007415d6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-10-01T22:52:58Z",
+      "side": 1,
+      "message": "build/make is AOSP, which can\u0027t include vendor/google.\n\nWhat\u0027s in this file?",
+      "revId": "12bcf9f51a2e928fe09257374c6c7675432cbc29",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d2d52223_211188f4",
