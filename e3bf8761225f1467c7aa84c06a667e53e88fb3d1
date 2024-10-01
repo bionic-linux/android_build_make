@@ -18,6 +18,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fce3051d_39a1e060",
+        "filename": "tools/aconfig/aconfig/src/main.rs",
+        "patchSetId": 10
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 3599662
+      },
+      "writtenOn": "2024-10-01T15:51:58Z",
+      "side": 1,
+      "message": "done!",
+      "parentUuid": "e21b752e_e2e08f58",
+      "revId": "e3bf8761225f1467c7aa84c06a667e53e88fb3d1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "99237075_23c693f0",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-09-27T14:14:39Z",
       "side": 1,
       "message": "nit: can read_u32_from_start_of_bytes just calling into read_u32_from_bytes implemented below?",
+      "revId": "e3bf8761225f1467c7aa84c06a667e53e88fb3d1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6d9fb887_b77877b6",
+        "filename": "tools/aconfig/aconfig_storage_file/src/lib.rs",
+        "patchSetId": 10
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 3599662
+      },
+      "writtenOn": "2024-10-01T15:51:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "99237075_23c693f0",
       "revId": "e3bf8761225f1467c7aa84c06a667e53e88fb3d1",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
@@ -52,6 +88,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "44674b48_0fd8f351",
+        "filename": "tools/aconfig/aconfig_storage_file/src/package_table.rs",
+        "patchSetId": 10
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 3599662
+      },
+      "writtenOn": "2024-10-01T15:51:58Z",
+      "side": 1,
+      "message": "yeah, good call. i was trying to cover the case where we increment the version code due to a change in another file. but i think we can\u0027t go to version 3 without including the changes in version 2 (if we want that, we should instead have separate version codes per-file like you were saying)\n\nso we can do\n1 \u003d\u003e ...\n2..\u003dMAX_SUPPORTED_VERSION \u003d\u003e ...\n_ \u003d\u003e Err\n\nthen if we increment the version code, we don\u0027t have to update all of the into_bytes fns. thanks!\n\noh, i remember why i did it this way. i didn\u0027t want this change to get out of control refactoring all of into_bytes to return a Result instead of Vec. let me leave a comment to make that change. but this is a good point for now, if version is greater than the most recent change to this file, we should write our newest version (in other words, change default from 1 to 2)",
+      "parentUuid": "5a8459bd_40eea866",
+      "revId": "e3bf8761225f1467c7aa84c06a667e53e88fb3d1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0a5e3359_637bf49f",
@@ -65,6 +119,24 @@
       "writtenOn": "2024-09-27T14:14:39Z",
       "side": 1,
       "message": "This is really nice!",
+      "revId": "e3bf8761225f1467c7aa84c06a667e53e88fb3d1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "18ff6e10_cd01c60d",
+        "filename": "tools/aconfig/aconfig_storage_file/src/package_table.rs",
+        "patchSetId": 10
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 3599662
+      },
+      "writtenOn": "2024-10-01T15:51:58Z",
+      "side": 1,
+      "message": ":)",
+      "parentUuid": "0a5e3359_637bf49f",
       "revId": "e3bf8761225f1467c7aa84c06a667e53e88fb3d1",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
@@ -86,6 +158,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "eb03acaa_c900a5dc",
+        "filename": "tools/aconfig/aconfig_storage_file/src/package_table.rs",
+        "patchSetId": 10
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 3599662
+      },
+      "writtenOn": "2024-10-01T15:51:58Z",
+      "side": 1,
+      "message": "much nicer, done!",
+      "parentUuid": "56217b88_9131e07c",
+      "revId": "e3bf8761225f1467c7aa84c06a667e53e88fb3d1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "71102a93_aec81bd9",
@@ -99,6 +189,24 @@
       "writtenOn": "2024-09-27T14:14:39Z",
       "side": 1,
       "message": "Can we split this test point into two, one per version. We make sure that for each version we can (1) serialize and (2) deserialize.\n\nIf we can get it close enough to a boiler plate, then in the future we might be able to codegen these.",
+      "revId": "e3bf8761225f1467c7aa84c06a667e53e88fb3d1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ca30de13_6f5b32d7",
+        "filename": "tools/aconfig/aconfig_storage_file/src/package_table.rs",
+        "patchSetId": 10
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 3599662
+      },
+      "writtenOn": "2024-10-01T15:51:58Z",
+      "side": 1,
+      "message": "done - can formally this and do parametrized tests or something as part of th changelog work!",
+      "parentUuid": "71102a93_aec81bd9",
       "revId": "e3bf8761225f1467c7aa84c06a667e53e88fb3d1",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
