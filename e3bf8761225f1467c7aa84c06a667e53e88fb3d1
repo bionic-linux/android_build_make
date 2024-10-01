@@ -36,6 +36,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8ced9bff_ce0c2022",
+        "filename": "tools/aconfig/aconfig/src/main.rs",
+        "patchSetId": 10
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 3599662
+      },
+      "writtenOn": "2024-10-01T20:02:07Z",
+      "side": 1,
+      "message": "ah. i spent a long time looking at this, then ted and looked at it, and there is a way to do this but it involves me including a new feature in external/rust/crates/clap. im happy to do that but don\u0027t want to make this change wait on that, so i can do as a follow up",
+      "parentUuid": "fce3051d_39a1e060",
+      "revId": "e3bf8761225f1467c7aa84c06a667e53e88fb3d1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "99237075_23c693f0",
