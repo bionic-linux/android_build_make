@@ -96,6 +96,9 @@ clean-dex-files:
 # Include the google-specific config
 -include vendor/google/build/config.mk
 
+# Include the desktop-specific config
+-include vendor/google/desktop/build/config.mk
+
 # These are the modifier targets that don't do anything themselves, but
 # change the behavior of the build.
 # (must be defined before including definitions.make)
