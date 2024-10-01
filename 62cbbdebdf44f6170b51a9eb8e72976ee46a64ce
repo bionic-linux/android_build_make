@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0373bc56_1fc6189d",
+        "filename": "tools/edit_monitor/edit_monitor.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1074628
+      },
+      "writtenOn": "2024-10-01T17:33:59Z",
+      "side": 1,
+      "message": "This really isn\u0027t safe, all dependencies should be built into the python binary.",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 52
+      },
+      "revId": "62cbbdebdf44f6170b51a9eb8e72976ee46a64ce",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
