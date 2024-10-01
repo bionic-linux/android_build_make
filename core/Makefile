@@ -3328,6 +3328,7 @@ fsverity-metadata-targets-patterns := \
   $(TARGET_OUT)/etc/boot-image.prof \
   $(TARGET_OUT)/etc/dirty-image-objects \
   $(TARGET_OUT)/etc/preloaded-classes \
+  $(TARGET_OUT)/etc/preloaded-classes-art \
   $(TARGET_OUT)/etc/classpaths/%.pb \
 
 ifdef BUILDING_SYSTEM_EXT_IMAGE

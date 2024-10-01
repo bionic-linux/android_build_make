@@ -308,6 +308,7 @@ android_system_image {
             "etc/classpaths/*.pb",
             "etc/dirty-image-objects",
             "etc/preloaded-classes",
+            "etc/preloaded-classes-art",
             "framework/*",
             "framework/*/*", // framework/{arch}
             "framework/oat/*/*", // framework/oat/{arch}
