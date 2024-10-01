@@ -16,6 +16,23 @@
       "message": "Need to land this as the initial change in the chain of internal changes",
       "revId": "9a1158dd8209e9d479766f71e25eb6729f3bc8f9",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "59af5651_4ff9e0e2",
+        "filename": "core/Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 7931,
+      "author": {
+        "id": 2031040
+      },
+      "writtenOn": "2024-10-01T13:51:17Z",
+      "side": 1,
+      "message": "nit: Shall this be applied only to `DESKTOP`?\n\nConsider changing it to `PACK_RECOVERY_IMAGE_EXPERIMENTAL` to make it more generic.",
+      "revId": "9a1158dd8209e9d479766f71e25eb6729f3bc8f9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
