@@ -69,6 +69,24 @@ class ClearcutEventHandler(PatternMatchingEventHandler):
 
     logging.info("%s: %s", event.event_type, event.src_path)
     try:
+<<<<<<< HEAD
+=======
+      event_time = time.time()
+
+      if self._is_hidden_file(pathlib.Path(event.src_path)):
+        logging.debug("ignore hidden file: %s.", event.src_path)
+        return
+
+      if not self._is_under_git_project(pathlib.Path(event.src_path)):
+        logging.debug(
+            "ignore file %s which does not belong to a git project",
+            event.src_path,
+        )
+        return
+
+      logging.info("%s: %s", event.event_type, event.src_path)
+
+>>>>>>> b1d46916d0 (Ignore the edits unrelated to Android dev in the edit monitor)
       event_proto = edit_event_pb2.EditEvent(
           user_name=self.user_name,
           host_name=self.host_name,
@@ -88,10 +106,36 @@ class ClearcutEventHandler(PatternMatchingEventHandler):
     except Exception:
       logging.exception("Failed to log edit event.")
 
+  def _is_hidden_file(self, file_path: pathlib.Path) -> bool:
+    # Check if the file itself is hidden
+    if file_path.name.startswith("."):
+      return True
+
+    current_dir = file_path.parent
+    while True:
+      if current_dir.name.startswith("."):
+        return True
+      if str(current_dir.resolve()) == self.root_monitoring_path:
+        break
+      current_dir = current_dir.parent
+
+    return False
+
+  def _is_under_git_project(self, file_path: pathlib.Path) -> bool:
+    current_dir = file_path.parent
+    while True:
+      if current_dir.joinpath(".git").exists():
+        return True
+      # All files should be under the root monitoring path
+      if str(current_dir.resolve()) == self.root_monitoring_path:
+        break
+      current_dir = current_dir.parent
+
+    return False
 
 def start(
     path: str,
-    cclient: clearcut_client.Clearcut = None,
+    cclient: clearcut_client.Clearcut | None = None,
     pipe_sender: multiprocessing.Pipe = None,
 ):
   """Method to start the edit monitor.
