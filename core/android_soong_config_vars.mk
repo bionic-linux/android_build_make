@@ -187,3 +187,8 @@ $(call soong_config_set_bool,gralloc,target_use_pan_display,$(if $(filter true,$
 
 # Add use_camera_v4l2_hal flag for hardware/libhardware/modules/camera/3_4:camera.v4l2
 $(call soong_config_set_bool,camera,use_camera_v4l2_hal,$(if $(filter true,$(USE_CAMERA_V4L2_HAL)),true,false))
+
+# Add config_android_log flag
+ifdef CONFIG_ANDROID_LOG
+  $(call soong_config_set,ANDROID,config_android_log,-DCONFIG_ANDROID_LOG)
+endif
