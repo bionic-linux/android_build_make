@@ -68,6 +68,23 @@
       "parentUuid": "ca439597_6986bb5d",
       "revId": "64001e6628203c7ed96f41676d4f6b60209efa74",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6074a0e5_cd425f2c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1052644
+      },
+      "writtenOn": "2024-10-01T10:43:25Z",
+      "side": 1,
+      "message": "After offline discussions, putting this change on hold for now.",
+      "revId": "64001e6628203c7ed96f41676d4f6b60209efa74",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
