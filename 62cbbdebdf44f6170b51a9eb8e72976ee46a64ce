@@ -22,6 +22,30 @@
       },
       "revId": "62cbbdebdf44f6170b51a9eb8e72976ee46a64ce",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "51bab890_aa1ac27f",
+        "filename": "tools/edit_monitor/edit_monitor.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-10-01T17:45:08Z",
+      "side": 1,
+      "message": "Yes, this cl is not ready for review, we are waiting for the import of the third party lib that the cl depends on.",
+      "parentUuid": "0373bc56_1fc6189d",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 52
+      },
+      "revId": "62cbbdebdf44f6170b51a9eb8e72976ee46a64ce",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
