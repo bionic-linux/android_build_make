@@ -195,3 +195,25 @@ $(call soong_config_set,ANDROID,target_board_platform,$(TARGET_BOARD_PLATFORM))
 $(call soong_config_set_bool,ANDROID,board_uses_vendorimage,$(if $(filter true,$(BOARD_USES_VENDORIMAGE)),true,false))
 $(call soong_config_set_bool,google_graphocs,board_uses_scaler_m2m1shot,$(if $(filter true,$(BOARD_USES_SCALER_M2M1SHOT)),true,false))
 $(call soong_config_set_bool,google_graphocs,board_uses_align_restriction,$(if $(filter true,$(BOARD_USES_ALIGN_RESTRICTION)),true,false))
+
+
+# Export related variables to soong for hardware/google/graphics/common/libacryl:libacryl
+ifdef BOARD_LIBACRYL_DEFAULT_COMPOSITOR
+  $(call soong_config_set,acryl,libacryl_default_compositor,$(BOARD_LIBACRYL_DEFAULT_COMPOSITOR))
+else
+  $(call soong_config_set,acryl,libacryl_default_compositor,no_default_compositor)
+endif
+ifdef BOARD_LIBACRYL_DEFAULT_SCALER
+  $(call soong_config_set,acryl,libacryl_default_scaler,$(BOARD_LIBACRYL_DEFAULT_SCALER))
+else
+  $(call soong_config_set,acryl,libacryl_default_scaler,no_default_scaler)
+endif
+ifdef BOARD_LIBACRYL_DEFAULT_BLTER
+  $(call soong_config_set,acryl,libacryl_default_blter,$(BOARD_LIBACRYL_DEFAULT_BLTER))
+else
+  $(call soong_config_set,acryl,libacryl_default_blter,no_default_blter)
+endif
+ifdef BOARD_LIBACRYL_G2D_HDR_PLUGIN
+  #$(call soong_config_set,acryl,libacryl_g2d_hdr_plugin,$(BOARD_LIBACRYL_G2D_HDR_PLUGIN))
+  $(call soong_config_set_bool,acryl,libacryl_use_g2d_hdr_plugin,true)
+endif
