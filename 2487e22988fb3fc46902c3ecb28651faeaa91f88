@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b9afb8df_e89d67e0",
+        "filename": "core/Makefile",
+        "patchSetId": 3
+      },
+      "lineNbr": 7931,
+      "author": {
+        "id": 1583551
+      },
+      "writtenOn": "2024-10-01T19:43:04Z",
+      "side": 1,
+      "message": "Could this be used to just add the flag, rather than duplicating the code?\nSomething like:\n```\nPACK_RECOVERY_IMAGE_ARGS :\u003d --noarchive --recovery\nifneq (,$(strip $(PACK_RECOVERY_IMAGE_EXPERIMENTAL)))\n  PACK_RECOVERY_IMAGE_ARGS +\u003d --experimental\nendif\n$(PACK_RECOVERY_IMAGE_TARGET): $(IMAGES) $(PACK_IMAGE_SCRIPT)\n\t$(PACK_IMAGE_SCRIPT) --out_dir $(PRODUCT_OUT)  $(PACK_RECOVERY_IMAGE_ARGS)\n```\n\nThough it\u0027s probably just a question of whether or not you expect to need more conditional arguments in the future.",
+      "revId": "2487e22988fb3fc46902c3ecb28651faeaa91f88",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
