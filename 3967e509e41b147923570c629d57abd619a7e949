@@ -22,6 +22,30 @@
       },
       "revId": "3967e509e41b147923570c629d57abd619a7e949",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8e861c45_db70e7bd",
+        "filename": "tools/filelistdiff/file_list_diff.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1535516
+      },
+      "writtenOn": "2024-10-02T23:05:08Z",
+      "side": 1,
+      "message": "I mean it compares the difference against the passed-in filepath, which is supposed to be from the allowlist. I think `is_unnecessary_allowlist` makes more sense than `symmetric_install_diffs` at least.",
+      "parentUuid": "6f4c18be_3db13ca9",
+      "range": {
+        "startLine": 33,
+        "startChar": 8,
+        "endLine": 33,
+        "endChar": 32
+      },
+      "revId": "3967e509e41b147923570c629d57abd619a7e949",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
