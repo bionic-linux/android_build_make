@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cb3982d1_2f05f55e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-10-02T20:06:58Z",
+      "side": 1,
+      "message": "My first comment is that I think this should probably be either an aconfig flag or a build flag.  Or why does it even need to be configurable at all?  Is this something that can actually change at runtime?  In that case you would also be able to skip all of the other sepolicy changes in the other CL in this topic.\n\nThen also a couple comments on the system property itself if you do need to go that route.",
+      "revId": "177c910e69906a7fa2f93c788d4ac26d23ca1f67",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "74fba349_039ac293",
+        "filename": "target/product/base_system.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 507,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-10-02T20:06:58Z",
+      "side": 1,
+      "message": "Can you please expand the acronym. I don\u0027t know what RKP stands for and I doubt other people do either.",
+      "range": {
+        "startLine": 507,
+        "startChar": 6,
+        "endLine": 507,
+        "endChar": 9
+      },
+      "revId": "177c910e69906a7fa2f93c788d4ac26d23ca1f67",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e16e7717_30a217b5",
+        "filename": "target/product/base_system.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 509,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-10-02T20:06:58Z",
+      "side": 1,
+      "message": "Do you actually need this to be set to false, or could you let a missing value be equivalent?",
+      "range": {
+        "startLine": 509,
+        "startChar": 39,
+        "endLine": 509,
+        "endChar": 44
+      },
+      "revId": "177c910e69906a7fa2f93c788d4ac26d23ca1f67",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "50d78dff_309dcd9e",
+        "filename": "target/product/base_system.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 509,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-10-02T20:06:58Z",
+      "side": 1,
+      "message": "This makes it sound like the property is setting the cert processor. Can I suggest use_cert_processor.",
+      "range": {
+        "startLine": 509,
+        "startChar": 4,
+        "endLine": 509,
+        "endChar": 38
+      },
+      "revId": "177c910e69906a7fa2f93c788d4ac26d23ca1f67",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
