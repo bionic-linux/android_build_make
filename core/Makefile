@@ -3326,7 +3326,7 @@ ifeq ($(PRODUCT_FSVERITY_GENERATE_METADATA),true)
 fsverity-metadata-targets-patterns := \
   $(TARGET_OUT)/framework/% \
   $(TARGET_OUT)/etc/boot-image.prof \
-  $(TARGET_OUT)/etc/dirty-image-objects \
+  $(TARGET_OUT)/etc/dirty-image-objects.txt \
   $(TARGET_OUT)/etc/preloaded-classes \
   $(TARGET_OUT)/etc/classpaths/%.pb \
 

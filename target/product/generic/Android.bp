@@ -306,7 +306,7 @@ android_system_image {
         inputs: [
             "etc/boot-image.prof",
             "etc/classpaths/*.pb",
-            "etc/dirty-image-objects",
+            "etc/dirty-image-objects.txt",
             "etc/preloaded-classes",
             "framework/*",
             "framework/*/*", // framework/{arch}
