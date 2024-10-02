@@ -46,6 +46,30 @@
       },
       "revId": "3967e509e41b147923570c629d57abd619a7e949",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "87026e05_4552848c",
+        "filename": "tools/filelistdiff/file_list_diff.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1878380
+      },
+      "writtenOn": "2024-10-02T23:07:15Z",
+      "side": 1,
+      "message": "Ah you are right. `is_unnecessary_allowlist` SGTM.",
+      "parentUuid": "8e861c45_db70e7bd",
+      "range": {
+        "startLine": 33,
+        "startChar": 8,
+        "endLine": 33,
+        "endChar": 32
+      },
+      "revId": "3967e509e41b147923570c629d57abd619a7e949",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
