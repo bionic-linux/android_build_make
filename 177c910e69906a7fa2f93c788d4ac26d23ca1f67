@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f98e5692_4feadef6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1937166
+      },
+      "writtenOn": "2024-10-02T21:30:12Z",
+      "side": 1,
+      "message": "This should not be changeable at runtime. Though I\u0027m not sure about build flag per se. We need to verify that some certificate processor is present in keystore at runtime. I am not sure if that can be done via a build flag.\n\nI need a property that cannot be modified after build that can tell keystore that there is some package present which implements the cert processor service and that keystore should look for it.\n\nHere\u0027s the usage: aosp/3255128. If we can avoid compiling code based on build flags I\u0027m all for it.",
+      "parentUuid": "cb3982d1_2f05f55e",
+      "revId": "177c910e69906a7fa2f93c788d4ac26d23ca1f67",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "74fba349_039ac293",
         "filename": "target/product/base_system.mk",
         "patchSetId": 2
@@ -31,6 +49,30 @@
       "writtenOn": "2024-10-02T20:06:58Z",
       "side": 1,
       "message": "Can you please expand the acronym. I don\u0027t know what RKP stands for and I doubt other people do either.",
+      "range": {
+        "startLine": 507,
+        "startChar": 6,
+        "endLine": 507,
+        "endChar": 9
+      },
+      "revId": "177c910e69906a7fa2f93c788d4ac26d23ca1f67",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ac50b536_6c5c63cb",
+        "filename": "target/product/base_system.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 507,
+      "author": {
+        "id": 1937166
+      },
+      "writtenOn": "2024-10-02T21:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "74fba349_039ac293",
       "range": {
         "startLine": 507,
         "startChar": 6,
@@ -82,6 +124,54 @@
         "startChar": 4,
         "endLine": 509,
         "endChar": 38
+      },
+      "revId": "177c910e69906a7fa2f93c788d4ac26d23ca1f67",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "953b4a70_6ac71816",
+        "filename": "target/product/base_system.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 509,
+      "author": {
+        "id": 1937166
+      },
+      "writtenOn": "2024-10-02T21:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "50d78dff_309dcd9e",
+      "range": {
+        "startLine": 509,
+        "startChar": 4,
+        "endLine": 509,
+        "endChar": 38
+      },
+      "revId": "177c910e69906a7fa2f93c788d4ac26d23ca1f67",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6dccc24b_9e4a1fa5",
+        "filename": "target/product/base_system.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 509,
+      "author": {
+        "id": 1937166
+      },
+      "writtenOn": "2024-10-02T21:30:12Z",
+      "side": 1,
+      "message": "I could but I don\u0027t want OEMs to mistakenly set this property to true unless they have the associated service. Hence kept this as false.",
+      "parentUuid": "e16e7717_30a217b5",
+      "range": {
+        "startLine": 509,
+        "startChar": 39,
+        "endLine": 509,
+        "endChar": 44
       },
       "revId": "177c910e69906a7fa2f93c788d4ac26d23ca1f67",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
