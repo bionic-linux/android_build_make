@@ -1,0 +1,9 @@
+filegroup {
+    name: "aconfig_test_storage_files_v1",
+    srcs: [
+        "package.map",
+        "flag.map",
+        "flag.val",
+        "flag.info"
+    ],
+}
