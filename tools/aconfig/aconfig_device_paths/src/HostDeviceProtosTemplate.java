@@ -40,6 +40,10 @@ public class HostDeviceProtos {
         TEMPLATE
     };
 
+    static final String[] MAINLINE_PATHS = {
+        MAINLINE_T
+    };
+
     private static final String APEX_DIR = "/apex";
     private static final String RECURSIVELY_LIST_APEX_DIR_COMMAND =
         "shell su 0 find /apex | grep aconfig_flags";
@@ -56,6 +60,7 @@ public class HostDeviceProtos {
             RECURSIVELY_LIST_APEX_DIR_COMMAND);
 
         if (adbCommandOutput == null) {
+            paths.addAll(Arrays.asList(MAINLINE_PATHS));
             return paths;
         }
 
