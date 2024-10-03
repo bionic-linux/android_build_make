@@ -18,6 +18,23 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5de6bda5_29c76b52",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1246512
+      },
+      "writtenOn": "2024-10-03T06:58:19Z",
+      "side": 1,
+      "message": "Sorry for the delay in replying",
+      "revId": "d98a51e2bb3725075215eb955c0fb903a143c1a6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6f334d52_707d41ff",
@@ -79,6 +96,30 @@
       "side": 1,
       "message": "Still, metadata size is proportional to number of entries? I don\u0027t like hard coding a value here.",
       "parentUuid": "6296fa94_415682ca",
+      "range": {
+        "startLine": 77,
+        "startChar": 12,
+        "endLine": 77,
+        "endChar": 57
+      },
+      "revId": "d98a51e2bb3725075215eb955c0fb903a143c1a6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "53476654_c17ba0d9",
+        "filename": "tools/releasetools/build_image.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1246512
+      },
+      "writtenOn": "2024-10-03T06:58:19Z",
+      "side": 1,
+      "message": "I did experiment with reserving data depending on the number of entries and looking into parts of the structure of the ext2fs filesystem metadata.\n\nWhen comparing with the value that du reports back when running on an ext4 filesystem, it will differ.\n\nWould it be better to allocate more or less than du, or it likely doesn\u0027t matter?\n\nThe approximation in the current patchset has been working fine for us from what I know.",
+      "parentUuid": "84b40daf_8deaee0e",
       "range": {
         "startLine": 77,
         "startChar": 12,
