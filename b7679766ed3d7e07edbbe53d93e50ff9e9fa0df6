@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "924dd7b8_82b89074",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1583551
+      },
+      "writtenOn": "2024-10-03T18:23:23Z",
+      "side": 1,
+      "message": "Waiting for all the dust to settle before turning this on in the build, so that the build never has bad artifacts.",
+      "revId": "b7679766ed3d7e07edbbe53d93e50ff9e9fa0df6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
