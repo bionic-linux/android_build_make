@@ -53,8 +53,7 @@ void verify_value_info(const FlagValueAndInfoSummary& flag,
 }
 
 TEST(AconfigStorageFileTest, test_list_flag) {
-  auto const test_base_dir = android::base::GetExecutableDirectory();
-  auto const test_dir = test_base_dir + "/data/v1";
+  auto const test_dir = GetExecutableDirectory();
   auto const package_map = test_dir + "/package.map";
   auto const flag_map = test_dir + "/flag.map";
   auto const flag_val = test_dir + "/flag.val";
@@ -83,8 +82,7 @@ TEST(AconfigStorageFileTest, test_list_flag) {
 }
 
 TEST(AconfigStorageFileTest, test_list_flag_with_info) {
-  auto const base_test_dir = GetExecutableDirectory();
-  auto const test_dir = base_test_dir + "/data/v1";
+  auto const test_dir = GetExecutableDirectory();
   auto const package_map = test_dir + "/package.map";
   auto const flag_map = test_dir + "/flag.map";
   auto const flag_val = test_dir + "/flag.val";
