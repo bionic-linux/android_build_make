@@ -364,6 +364,8 @@ $(call add_json_list, DeviceProductCompatibilityMatrixFile, $(DEVICE_PRODUCT_COM
 $(call add_json_list, BoardAvbSystemAddHashtreeFooterArgs, $(BOARD_AVB_SYSTEM_ADD_HASHTREE_FOOTER_ARGS))
 $(call add_json_bool, BoardAvbEnable, $(filter true,$(BOARD_AVB_ENABLE)))
 
+$(call add_json_str, AdbKeys, $(PRODUCT_ADB_KEYS))
+
 $(call json_end)
 
 $(file >$(SOONG_VARIABLES).tmp,$(json_contents))
