@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c037ab39_bed84e1b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1930620
+      },
+      "writtenOn": "2024-10-03T18:34:08Z",
+      "side": 1,
+      "message": "This was previously approved at aosp/3212418 before being moved from device/google/cuttlefish to build/",
+      "revId": "a34d80ee0c5ae8d16ac350aa22a8ee7838b28005",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
