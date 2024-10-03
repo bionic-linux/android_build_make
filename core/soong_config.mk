@@ -364,6 +364,10 @@ $(call add_json_list, DeviceProductCompatibilityMatrixFile, $(DEVICE_PRODUCT_COM
 $(call add_json_list, BoardAvbSystemAddHashtreeFooterArgs, $(BOARD_AVB_SYSTEM_ADD_HASHTREE_FOOTER_ARGS))
 $(call add_json_bool, BoardAvbEnable, $(filter true,$(BOARD_AVB_ENABLE)))
 
+<<<<<<< PATCH SET (78cdf9 Convert build/make/target/product/security/Android.mk to And)
+$(call add_json_str, AdbKeys, $(PRODUCT_ADB_KEYS))
+||||||| BASE
+=======
 $(call add_json_map, PartitionVarsForSoongMigrationOnlyDoNotUse)
   $(call add_json_str,  ProductDirectory,    $(dir $(INTERNAL_PRODUCT)))
 
@@ -419,6 +423,7 @@ $(call add_json_map, PartitionVarsForSoongMigrationOnlyDoNotUse)
   $(call add_json_list, ProductPackagesDebug, $(PRODUCT_PACKAGES_DEBUG))
 
 $(call end_json_map)
+>>>>>>> BASE      (5e9bc7 Merge "core/Makefile: Add desktop migration image target hoo)
 
 $(call json_end)
 
