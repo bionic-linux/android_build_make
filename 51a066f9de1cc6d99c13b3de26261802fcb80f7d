@@ -22,6 +22,30 @@
       },
       "revId": "51a066f9de1cc6d99c13b3de26261802fcb80f7d",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a9fec5ae_29bab2e3",
+        "filename": "target/product/security/Android.bp",
+        "patchSetId": 9
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1318142
+      },
+      "writtenOn": "2024-10-04T05:38:21Z",
+      "side": 1,
+      "message": "Yes, that\u0027s why I put it in go code.",
+      "parentUuid": "d62a499e_ea9924fe",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 43,
+        "endChar": 1
+      },
+      "revId": "51a066f9de1cc6d99c13b3de26261802fcb80f7d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
