@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d62a499e_ea9924fe",
+        "filename": "target/product/security/Android.bp",
+        "patchSetId": 9
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1317851
+      },
+      "writtenOn": "2024-10-04T04:23:02Z",
+      "side": 1,
+      "message": "Could we use `prebuilt_etc` to convert it without change soong?\n\nBut it seems has problem about getting the source file.\n```\nPRODUCT_ADB_KEYS :\u003d $(LOCAL_PATH)/$(PLATFORM_VERSION).adb_key.pub\n```",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 43,
+        "endChar": 1
+      },
+      "revId": "51a066f9de1cc6d99c13b3de26261802fcb80f7d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
