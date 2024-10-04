@@ -23,6 +23,14 @@ from edit_monitor import daemon_manager
 from edit_monitor import edit_monitor
 
 
+
+class LoggerFileFilter(logging.Filter):
+    def __init__(self, filename):
+        self.filename = filename
+
+    def filter(self, record):
+        return record.filename != self.filename
+
 def create_arg_parser():
   """Creates an instance of the default arg parser."""
 
@@ -63,6 +71,9 @@ def configure_logging():
   logging.basicConfig(
       filename=log_path, level=logging.DEBUG, format=log_fmt, datefmt=date_fmt
   )
+  # Filter out logs from inotify_buff to prevent log pollution.
+  filter = LoggerFileFilter('inotify_buffer.py')
+  logging.getLogger('watchdog.observers.inotify_buffer').addFilter(filter)
   print(f'logging to file {log_path}')
 
 
