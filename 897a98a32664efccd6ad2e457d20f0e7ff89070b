@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f38d5d64_2dd736b8",
+        "filename": "core/android_soong_config_vars.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 1308044
+      },
+      "writtenOn": "2024-10-04T03:02:43Z",
+      "side": 1,
+      "message": "Thanks for the information, I just remove that flag, PTAL.",
+      "parentUuid": "755a259b_8cea64d2",
+      "range": {
+        "startLine": 208,
+        "startChar": 0,
+        "endLine": 209,
+        "endChar": 118
+      },
+      "revId": "897a98a32664efccd6ad2e457d20f0e7ff89070b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "97206d8b_1ab65569",
         "filename": "core/android_soong_config_vars.mk",
         "patchSetId": 3
@@ -37,6 +61,30 @@
       "writtenOn": "2024-10-03T22:44:18Z",
       "side": 1,
       "message": "```suggestion\n$(call soong_config_set_bool,google_graphics,board_uses_scaler_m2m1shot,$(if $(filter true,$(BOARD_USES_SCALER_M2M1SHOT)),true,false))\n```",
+      "range": {
+        "startLine": 210,
+        "startChar": 29,
+        "endLine": 210,
+        "endChar": 44
+      },
+      "revId": "897a98a32664efccd6ad2e457d20f0e7ff89070b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "058ce8f2_f8c9e5c8",
+        "filename": "core/android_soong_config_vars.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 1308044
+      },
+      "writtenOn": "2024-10-04T03:02:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "97206d8b_1ab65569",
       "range": {
         "startLine": 210,
         "startChar": 29,
@@ -60,6 +108,30 @@
       "writtenOn": "2024-10-03T22:44:18Z",
       "side": 1,
       "message": "```suggestion\n$(call soong_config_set_bool,google_graphics,board_uses_align_restriction,$(if $(filter true,$(BOARD_USES_ALIGN_RESTRICTION)),true,false))\n```",
+      "range": {
+        "startLine": 211,
+        "startChar": 29,
+        "endLine": 211,
+        "endChar": 44
+      },
+      "revId": "897a98a32664efccd6ad2e457d20f0e7ff89070b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6870bdb1_8e9198ad",
+        "filename": "core/android_soong_config_vars.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 1308044
+      },
+      "writtenOn": "2024-10-04T03:02:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "085aaff5_bdf92786",
       "range": {
         "startLine": 211,
         "startChar": 29,
