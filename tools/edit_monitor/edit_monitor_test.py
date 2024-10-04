@@ -53,7 +53,7 @@ class EditMonitorTest(unittest.TestCase):
     self.working_dir.cleanup()
     super().tearDown()
 
-  def test_log_edit_event_success(self):
+  def test_log_single_edit_event_success(self):
     fake_cclient = FakeClearcutClient(
         log_output_file=self.log_event_dir.joinpath('logs.output')
     )
@@ -77,7 +77,7 @@ class EditMonitorTest(unittest.TestCase):
     test_file_moved.unlink()
 
     # Give some time for the edit monitor to receive the edit event.
-    time.sleep(1)
+    time.sleep(2)
     # Stop the edit monitor and flush all events.
     os.kill(p.pid, signal.SIGINT)
     p.join()
@@ -132,7 +132,8 @@ class EditMonitorTest(unittest.TestCase):
         ).single_edit_event,
     )
 
-  def test_do_not_log_edit_event_for_directory_change(self):
+
+  def test_log_aggregated_edit_event_success(self):
     fake_cclient = FakeClearcutClient(
         log_output_file=self.log_event_dir.joinpath('logs.output')
     )
@@ -140,6 +141,40 @@ class EditMonitorTest(unittest.TestCase):
     # Create the .git file under the monitoring dir.
     self.root_monitoring_path.joinpath('.git').touch()
 
+    # Create 6 test files
+    for i in range(6):
+      test_file = self.root_monitoring_path.joinpath('test_' + str(i))
+      test_file.touch()
+
+    # Give some time for the edit monitor to receive the edit event.
+    time.sleep(2)
+    # Stop the edit monitor and flush all events.
+    os.kill(p.pid, signal.SIGINT)
+    p.join()
+
+    logged_events = self._get_logged_events()
+    self.assertEqual(len(logged_events), 1)
+
+    expected_aggregated_edit_event = (
+        edit_event_pb2.EditEvent.AggregatedEditEvent(
+            num_edits=6,
+        )
+    )
+
+    self.assertEqual(
+        expected_aggregated_edit_event,
+        edit_event_pb2.EditEvent.FromString(
+            logged_events[0].source_extension
+        ).aggregated_edit_event,
+    )
+
+  def test_do_not_log_edit_event_for_directory_change(self):
+    fake_cclient = FakeClearcutClient(
+        log_output_file=self.log_event_dir.joinpath('logs.output')
+    )
+    p = self._start_test_edit_monitor_process(fake_cclient)
+    # Create the .git file under the monitoring dir.
+    self.root_monitoring_path.joinpath('.git').touch()
     # Create a sub directory
     self.root_monitoring_path.joinpath('test_dir').mkdir()
 
@@ -151,7 +186,6 @@ class EditMonitorTest(unittest.TestCase):
 
     logged_events = self._get_logged_events()
     self.assertEqual(len(logged_events), 0)
-
 
   def test_do_not_log_edit_event_for_hidden_file(self):
     fake_cclient = FakeClearcutClient(
@@ -221,7 +255,7 @@ class EditMonitorTest(unittest.TestCase):
     # Start edit monitor in a subprocess.
     p = multiprocessing.Process(
         target=edit_monitor.start,
-        args=(str(self.root_monitoring_path.resolve()), cclient),
+        args=(str(self.root_monitoring_path.resolve()), 1, 5, cclient),
     )
     p.start()
 
