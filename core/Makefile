@@ -3571,10 +3571,13 @@ $(system_file_diff_timestamp): \
 	    $(systemimage_intermediates)/file_list.txt \
 	    $(ALL_MODULES.$(PRODUCT_SOONG_DEFINED_SYSTEM_IMAGE).FILESYSTEM_FILELIST) \
 	    $(ALL_MODULES.system_image_diff_allowlist.INSTALLED) \
-	    $(file_list_diff)
+	    $(file_list_diff) \
+	    $(if $(filter REL,$(PLATFORM_VERSION_CODENAME)), $(ALL_MODULES.system_image_diff_allowlist_next.INSTALLED))
 	$(file_list_diff) $(systemimage_intermediates)/file_list.txt \
 	  $(ALL_MODULES.$(PRODUCT_SOONG_DEFINED_SYSTEM_IMAGE).FILESYSTEM_FILELIST) \
-	  $(ALL_MODULES.system_image_diff_allowlist.INSTALLED) $(PRODUCT_SOONG_DEFINED_SYSTEM_IMAGE)
+	  $(PRODUCT_SOONG_DEFINED_SYSTEM_IMAGE) \
+	  --allowlists $(ALL_MODULES.system_image_diff_allowlist.INSTALLED) \
+	  $(if $(filter REL,$(PLATFORM_VERSION_CODENAME)), $(ALL_MODULES.system_image_diff_allowlist_next.INSTALLED))
 	touch $@
 
 $(BUILT_SYSTEMIMAGE): $(system_file_diff_timestamp)
