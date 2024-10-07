@@ -24,6 +24,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "99c18b95_eab42c99",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2024-10-07T02:41:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "138b1e9d_bec7a0dd",
+      "range": {
+        "startLine": 9,
+        "startChar": 34,
+        "endLine": 9,
+        "endChar": 39
+      },
+      "revId": "a21bf708fb3122fbf4dcfe306c6c67503bfd3503",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3d1f155d_0448634b",
@@ -47,6 +71,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0bf990a7_03ef9074",
+        "filename": "core/Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 3575,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2024-10-07T02:41:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3d1f155d_0448634b",
+      "range": {
+        "startLine": 3575,
+        "startChar": 5,
+        "endLine": 3575,
+        "endChar": 112
+      },
+      "revId": "a21bf708fb3122fbf4dcfe306c6c67503bfd3503",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "902a974e_7e0c9d35",
@@ -60,6 +108,24 @@
       "writtenOn": "2024-10-07T01:41:30Z",
       "side": 1,
       "message": "Can you add a TODO with b/369678122 for the cleanup?",
+      "revId": "a21bf708fb3122fbf4dcfe306c6c67503bfd3503",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "995f481b_9f062eac",
+        "filename": "tools/filelistdiff/allowlist_next",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2024-10-07T02:41:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "902a974e_7e0c9d35",
       "revId": "a21bf708fb3122fbf4dcfe306c6c67503bfd3503",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
