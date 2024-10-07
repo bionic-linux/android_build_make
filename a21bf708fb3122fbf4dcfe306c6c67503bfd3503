@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "138b1e9d_bec7a0dd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2024-10-07T00:50:52Z",
+      "side": 1,
+      "message": "nit: typo",
+      "range": {
+        "startLine": 9,
+        "startChar": 34,
+        "endLine": 9,
+        "endChar": 39
+      },
+      "revId": "a21bf708fb3122fbf4dcfe306c6c67503bfd3503",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3d1f155d_0448634b",
+        "filename": "core/Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 3575,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2024-10-07T00:50:52Z",
+      "side": 1,
+      "message": "This is repeated. I would rather do ...\n\n\n```\n# add some comment here\nifeq (REL,$(PLATFORM_VERSION_CODENAME))\n$(system_file_diff_timestamp): PRIVATE_XXX :\u003d $(ALL_MODULES...)\nendif\n\n$(system_file_diff_timestamp): \\\n     ...\n     \n     --allowlists ... \\\n     $(PRIVATE_XXX)\n```",
+      "range": {
+        "startLine": 3575,
+        "startChar": 5,
+        "endLine": 3575,
+        "endChar": 112
+      },
+      "revId": "a21bf708fb3122fbf4dcfe306c6c67503bfd3503",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
