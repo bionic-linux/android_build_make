@@ -24,6 +24,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "dd7755f2_ae1337f8",
+        "filename": "core/android_soong_config_vars.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1308036
+      },
+      "writtenOn": "2024-10-07T06:59:46Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "663fc4c1_d8ce2b16",
+      "range": {
+        "startLine": 33,
+        "startChar": 10,
+        "endLine": 33,
+        "endChar": 39
+      },
+      "revId": "f6f2a75433b8324bc5fee621e112466434aff676",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c8f12a4c_00621bf1",
@@ -41,6 +65,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "557a09d2_4813a78e",
+        "filename": "core/android_soong_config_vars.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1308036
+      },
+      "writtenOn": "2024-10-07T06:59:46Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "c8f12a4c_00621bf1",
+      "revId": "f6f2a75433b8324bc5fee621e112466434aff676",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "efde9fc2_a5a5eb9b",
@@ -54,6 +96,30 @@
       "writtenOn": "2024-10-04T21:39:41Z",
       "side": 1,
       "message": "It looks this is a release flag and it should be used with release_flag() in select().",
+      "range": {
+        "startLine": 46,
+        "startChar": 70,
+        "endLine": 46,
+        "endChar": 100
+      },
+      "revId": "f6f2a75433b8324bc5fee621e112466434aff676",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3f630fdd_33aa4dc6",
+        "filename": "core/android_soong_config_vars.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1308036
+      },
+      "writtenOn": "2024-10-07T06:59:46Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "efde9fc2_a5a5eb9b",
       "range": {
         "startLine": 46,
         "startChar": 70,
