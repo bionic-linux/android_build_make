@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "02246f86_93552ad6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1317851
+      },
+      "writtenOn": "2024-10-07T07:05:34Z",
+      "side": 1,
+      "message": "The presubmit result of internal git can reference ag/29287516.",
+      "revId": "981b13f8ac424ae84d418f67d7bb4e70a5897630",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
