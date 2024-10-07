@@ -36,6 +36,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "91da363e_4edc4285",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1937166
+      },
+      "writtenOn": "2024-10-07T19:52:31Z",
+      "side": 1,
+      "message": "Resolving for merge.",
+      "parentUuid": "f98e5692_4feadef6",
+      "revId": "177c910e69906a7fa2f93c788d4ac26d23ca1f67",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "74fba349_039ac293",
