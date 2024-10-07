@@ -3598,7 +3598,18 @@ ifeq ($(BOARD_AVB_ENABLE),true)
 $(BUILT_SYSTEMIMAGE): $(BOARD_AVB_SYSTEM_KEY_PATH)
 endif
 
+ifeq ($(USE_SOONG_GENERATED_SYSTEM_IMAGE),true)
 ifeq ($(USE_SOONG_DEFINED_SYSTEM_IMAGE),true)
+$(error USE_SOONG_GENERATED_SYSTEM_IMAGE and USE_SOONG_DEFINED_SYSTEM_IMAGE cannot both be set to true)
+endif
+soong_generated_system_image_name := soong_generated_system_image
+ifneq ($(TARGET_PRODUCT),)
+soong_generated_system_image_name := $(TARGET_PRODUCT)_generated_system_image
+endif
+SOONG_GENERATED_SYSTEM_IMAGE_PATH := $(call intermediates-dir-for,ETC,$(soong_generated_system_image_name))/$(soong_generated_system_image_name)
+$(BUILT_SYSTEMIMAGE): $(SOONG_GENERATED_SYSTEM_IMAGE_PATH)
+$(eval $(call copy-one-file, $(SOONG_GENERATED_SYSTEM_IMAGE_PATH), $(BUILT_SYSTEMIMAGE)))
+else ifeq ($(USE_SOONG_DEFINED_SYSTEM_IMAGE),true)
 ifeq ($(PRODUCT_SOONG_DEFINED_SYSTEM_IMAGE),)
 $(error PRODUCT_SOONG_DEFINED_SYSTEM_IMAGE must be set if USE_SOONG_DEFINED_SYSTEM_IMAGE is true)
 endif
