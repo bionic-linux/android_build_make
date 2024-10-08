@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "24f6c467_930b4fdb",
+        "filename": "core/soong_config.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 1535516
+      },
+      "writtenOn": "2024-10-08T21:27:31Z",
+      "side": 1,
+      "message": "Is there a reason for adding this now? We\u0027re pretty far off from having functional generated system images. And if we were going to do something like this, I think a more wholistic switch like using soong-generated partitions for all partitions or even just a no-kati switch would be better.",
+      "revId": "8a727be284fd348ae671a763e717e3567dc366c7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
