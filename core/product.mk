@@ -416,6 +416,11 @@ _product_single_value_vars += PRODUCT_AVF_REMOTE_ATTESTATION_DISABLED
 # If true, kernel with modules will be used for Microdroid VMs.
 _product_single_value_vars += PRODUCT_AVF_KERNEL_MODULES_ENABLED
 
+<<<<<<< PATCH SET (3cca2e Add capability to let devices specify linker config fragment)
+# List of .json files to be merged/compiled into vendor/etc/linker.config.pb and product/etc/linker.config.pb
+||||||| BASE
+# List of .json files to be merged/compiled into vendor/etc/linker.config.pb
+=======
 # If true, the memory controller will be force-enabled in the cgroup v2 hierarchy
 _product_single_value_vars += PRODUCT_MEMCG_V2_FORCE_ENABLED
 
@@ -423,7 +428,9 @@ _product_single_value_vars += PRODUCT_MEMCG_V2_FORCE_ENABLED
 _product_single_value_vars += PRODUCT_CGROUP_V2_SYS_APP_ISOLATION_ENABLED
 
 # List of .json files to be merged/compiled into vendor/etc/linker.config.pb
+>>>>>>> BASE      (1b9d45 Merge "Add adb_keys symlink to system image" into main)
 _product_list_vars += PRODUCT_VENDOR_LINKER_CONFIG_FRAGMENTS
+_product_list_vars += PRODUCT_PRODUCT_LINKER_CONFIG_FRAGMENTS
 
 # Whether to use userfaultfd GC.
 # Possible values are:
