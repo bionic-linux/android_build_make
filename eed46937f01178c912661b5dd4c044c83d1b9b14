@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ece88117_197b7d26",
+        "filename": "core/robolectric_test_config_template.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1318142
+      },
+      "writtenOn": "2024-10-09T17:32:17Z",
+      "side": 1,
+      "message": "Please fix this WARNING reported by Check Contents: Please remove the trailing whitespace.\n\nAnalyzer Description: Validates that changes do not have prohibited expressions in them.\nOwner: ayeaye-team@google.com\n\nPlease remove the trailing whitespace.",
+      "range": {
+        "startLine": 45,
+        "startChar": 105,
+        "endLine": 45,
+        "endChar": 113
+      },
+      "revId": "eed46937f01178c912661b5dd4c044c83d1b9b14",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
