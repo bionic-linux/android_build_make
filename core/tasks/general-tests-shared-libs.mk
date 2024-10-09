@@ -41,6 +41,10 @@ $(general_tests_shared_libs_zip) : $(my_host_shared_lib_for_general_tests) $(SOO
 	grep $(HOST_OUT_TESTCASES) $(PRIVATE_INTERMEDIATES_DIR)/shared-libs.list > $(PRIVATE_INTERMEDIATES_DIR)/host-shared-libs.list || true
 	$(SOONG_ZIP) -d -o $(PRIVATE_general_host_shared_libs_zip) \
 	  -P host -C $(HOST_OUT) -l $(PRIVATE_INTERMEDIATES_DIR)/host-shared-libs.list
+	echo $(sort $(COMPATIBILITY.general-tests.FILES) $(COMPATIBILITY.device-tests.SOONG_INSTALLED_COMPATIBILITY_SUPPORT_FILES)) | tr " " "\n" > $(PRODUCT_OUT)/the_big_thing
+	grep $(HOST_OUT_TESTCASES) $(PRODUCT_OUT)/the_big_thing > $(PRODUCT_OUT)/the_big_thing_2 || true
+	grep $(TARGET_OUT_TESTCASES) $(PRODUCT_OUT)/the_big_thing >> $(PRODUCT_OUT)/the_big_thing_2 || true
+	#echo $(sort $(COMPATIBILITY.device-tests.FILES) $(COMPATIBILITY.device-tests.SOONG_INSTALLED_COMPATIBILITY_SUPPORT_FILES)) | tr " " "\n" > $(PRODUCT_OUT)/the_big_thing_2
 
 general-tests-shared-libs: $(general_tests_shared_libs_zip)
 $(call dist-for-goals, general-tests-shared-libs, $(general_tests_shared_libs_zip))

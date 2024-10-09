@@ -13,6 +13,7 @@
 # limitations under the License.
 
 .PHONY: general-tests
+.PHONY: general-tests-files-list
 
 general_tests_tools := \
     $(HOST_OUT_JAVA_LIBRARIES)/cts-tradefed.jar \
@@ -26,6 +27,8 @@ general_tests_list_zip := $(PRODUCT_OUT)/general-tests_list.zip
 
 # Create an artifact to include all test config files in general-tests.
 general_tests_configs_zip := $(PRODUCT_OUT)/general-tests_configs.zip
+
+general_tests_files_list := $(PRODUCT_OUT)/general-tests_files
 
 # Copy kernel test modules to testcases directories
 include $(BUILD_SYSTEM)/tasks/tools/vts-kernel-tests.mk
@@ -70,7 +73,15 @@ $(general_tests_zip) : $(COMPATIBILITY.general-tests.FILES) $(COMPATIBILITY.gene
 	grep -e .*\\.config$$ $(PRIVATE_INTERMEDIATES_DIR)/target.list | sed s%$(PRODUCT_OUT)%target%g >> $(PRIVATE_INTERMEDIATES_DIR)/general-tests_list
 	$(SOONG_ZIP) -d -o $(PRIVATE_general_tests_list_zip) -C $(PRIVATE_INTERMEDIATES_DIR) -f $(PRIVATE_INTERMEDIATES_DIR)/general-tests_list
 
+$(general_tests_files_list) : PRIVATE_INTERMEDIATES_DIR := $(intermediates_dir)
+$(general_tests_files_list) :
+	echo $(sort $(COMPATIBILITY.general-tests.FILES) $(COMPATIBILITY.device-tests.SOONG_INSTALLED_COMPATIBILITY_SUPPORT_FILES)) | tr " " "\n" > $(PRIVATE_INTERMEDIATES_DIR)/full_list
+	grep $(HOST_OUT_TESTCASES) $(PRIVATE_INTERMEDIATES_DIR)/full_list > $@ || true
+	grep $(TARGET_OUT_TESTCASES) $(PRIVATE_INTERMEDIATES_DIR)/full_list >> $@ || true
+
 general-tests: $(general_tests_zip)
+general-tests-files-list: $(general_tests_files_list)
+
 $(call dist-for-goals, general-tests, $(general_tests_zip) $(general_tests_list_zip) $(general_tests_configs_zip) $(general_tests_shared_libs_zip))
 
 $(call declare-1p-container,$(general_tests_zip),)
