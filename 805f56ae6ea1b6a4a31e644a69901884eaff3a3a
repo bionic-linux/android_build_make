@@ -1,0 +1,196 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6f262f67_08c03d36",
+        "filename": "tools/edit_monitor/edit_monitor.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1550539
+      },
+      "writtenOn": "2024-10-09T22:00:06Z",
+      "side": 1,
+      "message": "separate these imports with a new line",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 41
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "cf17cfba_09041948",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "tools/edit_monitor/edit_monitor.py",
+              "range": {
+                "startLine": 21,
+                "startChar": 0,
+                "endLine": 21,
+                "endChar": 0
+              },
+              "replacement": "\n"
+            }
+          ]
+        }
+      ],
+      "revId": "805f56ae6ea1b6a4a31e644a69901884eaff3a3a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e1f96298_3b7a412f",
+        "filename": "tools/edit_monitor/edit_monitor.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1550539
+      },
+      "writtenOn": "2024-10-09T22:00:06Z",
+      "side": 1,
+      "message": "Can you add a comment explaining why 2525?",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 17
+      },
+      "revId": "805f56ae6ea1b6a4a31e644a69901884eaff3a3a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dae8b535_ca2708fc",
+        "filename": "tools/edit_monitor/edit_monitor.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1550539
+      },
+      "writtenOn": "2024-10-09T22:00:06Z",
+      "side": 1,
+      "message": "Can you add typings here too?",
+      "range": {
+        "startLine": 34,
+        "startChar": 21,
+        "endLine": 34,
+        "endChar": 39
+      },
+      "revId": "805f56ae6ea1b6a4a31e644a69901884eaff3a3a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e488b38f_75ebe605",
+        "filename": "tools/edit_monitor/edit_monitor.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1550539
+      },
+      "writtenOn": "2024-10-09T22:00:06Z",
+      "side": 1,
+      "message": "You can use a short-circuit or statement to pick between a class instance or create a new one: \n\n\n\n```suggestion\n    self.cclient \u003d cclient or clearcut_client.Clearcut(LOG_SOURCE)\n```",
+      "range": {
+        "startLine": 38,
+        "startChar": 3,
+        "endLine": 40,
+        "endChar": 5
+      },
+      "revId": "805f56ae6ea1b6a4a31e644a69901884eaff3a3a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "15847924_ec817fc9",
+        "filename": "tools/edit_monitor/edit_monitor.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1550539
+      },
+      "writtenOn": "2024-10-09T22:00:06Z",
+      "side": 1,
+      "message": "Seems like this type is optional:\n\nclearcut_client.Clearcut | None \u003d None",
+      "range": {
+        "startLine": 89,
+        "startChar": 25,
+        "endLine": 89,
+        "endChar": 50
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "de786b8a_b00947ab",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "tools/edit_monitor/edit_monitor.py",
+              "range": {
+                "startLine": 89,
+                "startChar": 0,
+                "endLine": 90,
+                "endChar": 0
+              },
+              "replacement": "def start(path, cclient: clearcut_client.Clearcut | None \u003d None):\n"
+            }
+          ]
+        }
+      ],
+      "revId": "805f56ae6ea1b6a4a31e644a69901884eaff3a3a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b87b69e6_1377bf4f",
+        "filename": "tools/edit_monitor/edit_monitor_test.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1550539
+      },
+      "writtenOn": "2024-10-09T22:00:06Z",
+      "side": 1,
+      "message": "This test module has multiple sleeps, which can be a source of flakiness, did you tested it multiple times to rule out a high flake score?",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 49
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "f52006b9_f9b04606",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "tools/edit_monitor/edit_monitor_test.py",
+              "range": {
+                "startLine": 1,
+                "startChar": 0,
+                "endLine": 2,
+                "endChar": 0
+              },
+              "replacement": "# Copyright 2023, The Android Open Source Project\n"
+            }
+          ]
+        }
+      ],
+      "revId": "805f56ae6ea1b6a4a31e644a69901884eaff3a3a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
