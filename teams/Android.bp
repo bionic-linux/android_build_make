@@ -13,9 +13,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// DON'T ADD NEW RULES HERE. For more details refer to
-// go/new-android-ownership-model
-
 package {
     default_applicable_licenses: ["Android-Apache-2.0"],
 }
@@ -4459,32 +4456,31 @@ team {
 }
 
 team {
-    name: "trendy_team_ravenwood",
+    name: "trendy_team_trusted_interactions",
 
-    // go/trendy/manage/engineers/6027181500497920
-    trendy_team_id: "6027181500497920",
+    // go/trendy/manage/engineers/6741076468924416
+    trendy_team_id: "6741076468924416",
 }
 
 team {
-    name: "trendy_team_automotive_cast",
+    name: "trendy_team_android_parental_controls",
 
-    // go/trendy/manage/engineers/5293683026264064
-    trendy_team_id: "5293683026264064",
+    // go/trendy/manage/engineers/4974584391892992
+    trendy_team_id: "4974584391892992",
+}
+
+
+team {
+    name: "trendy_team_trusted_interactions",
+
+    // go/trendy/manage/engineers/6741076468924416
+    trendy_team_id: "6741076468924416",
 }
 
 team {
-    name: "trendy_team_wear_standalone_kids",
+    name: "trendy_team_android_parental_controls",
 
-    // go/trendy/manage/engineers/6303298703949824
-    trendy_team_id: "6303298703949824",
+    // go/trendy/manage/engineers/4974584391892992
+    trendy_team_id: "4974584391892992",
 }
 
-team {
-    name: "trendy_team_desktop_stats",
-
-    // go/trendy/manage/engineers/5440764114206720
-    trendy_team_id: "5440764114206720",
-}
-
-// DON'T ADD NEW RULES HERE. For more details refer to
-// go/new-android-ownership-model
