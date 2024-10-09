@@ -4454,3 +4454,17 @@ team {
     // go/trendy/manage/engineers/5121440647577600
     trendy_team_id: "5121440647577600",
 }
+
+team {
+    name: "trendy_team_trusted_interactions",
+
+    // go/trendy/manage/engineers/6741076468924416
+    trendy_team_id: "6741076468924416",
+}
+
+team {
+    name: "trendy_team_android_parental_controls",
+
+    // go/trendy/manage/engineers/4974584391892992
+    trendy_team_id: "4974584391892992",
+}
