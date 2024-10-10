@@ -16,6 +16,24 @@
       "message": "This is already mentioned above. I don\u0027t think this is required.",
       "revId": "3ba3b59217d1c30e2b03d4f2518df8d0a13ab105",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "adc1b195_00582575",
+        "filename": "target/product/virtual_ab_ota/vabc_features.mk",
+        "patchSetId": 7
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1982475
+      },
+      "writtenOn": "2024-10-10T19:31:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "00b8a58b_27cee944",
+      "revId": "3ba3b59217d1c30e2b03d4f2518df8d0a13ab105",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
