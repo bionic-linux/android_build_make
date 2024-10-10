@@ -54,6 +54,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a6f9a09d_9c29bb1c",
+        "filename": "target/product/virtual_ab_ota/compression.mk",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1982475
+      },
+      "writtenOn": "2024-10-10T18:50:58Z",
+      "side": 1,
+      "message": "@ccross@android.com Done.\n\n@akailash@google.com Adding spaces does not work, it needs to be all attached for it to be parsed correctly by the `build/make/tools/post_process_props.py` script.\n\n@zhengdaniel@google.com I added comments to explain why some props are overwriteable. I see VABC is a GMS requirement for Android11+, but there are a bunch of different configs here for different Android versions (with/without snapuserd ramdisk for example). Maybe a summary in the README would be useful? If that\u0027s fine with you, I\u0027d rather let the code owners document this.",
+      "parentUuid": "bffaffbb_679089a6",
+      "revId": "d8428d3a04e8ba82c34d315ba94d34189d1c8a83",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f1b9e856_e4fc07e2",
@@ -67,6 +85,24 @@
       "writtenOn": "2024-10-10T17:44:33Z",
       "side": 1,
       "message": "Could you please fix these as well ?",
+      "revId": "d8428d3a04e8ba82c34d315ba94d34189d1c8a83",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "41476276_1c42324c",
+        "filename": "target/product/virtual_ab_ota/vabc_features.mk",
+        "patchSetId": 5
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1982475
+      },
+      "writtenOn": "2024-10-10T18:50:58Z",
+      "side": 1,
+      "message": "I think these serve as an example and they are meant to be copied to a specific device\u0027s mk files, where we probably wouldn\u0027t want to use optional assignments.",
+      "parentUuid": "f1b9e856_e4fc07e2",
       "revId": "d8428d3a04e8ba82c34d315ba94d34189d1c8a83",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
