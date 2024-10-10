@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8219d5cd_6f514388",
+        "filename": "ci/test_discovery_agent.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-10-10T22:10:32Z",
+      "side": 1,
+      "message": "build_test_suites is called from the top level src directory, and we are already getting the ${TOP} env var from the build environment, so I\u0027d suggest getting that passed in and making the path relative to that.",
+      "revId": "ec7a985c5859e34c9970aab187697d8f90144de4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
