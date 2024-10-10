@@ -31,8 +31,8 @@ PRODUCT_VENDOR_PROPERTIES += ro.virtual_ab.enabled=true
 
 PRODUCT_VENDOR_PROPERTIES += ro.virtual_ab.compression.enabled=true
 PRODUCT_VENDOR_PROPERTIES += ro.virtual_ab.userspace.snapshots.enabled=true
-PRODUCT_VENDOR_PROPERTIES += ro.virtual_ab.io_uring.enabled=true
-PRODUCT_VENDOR_PROPERTIES += ro.virtual_ab.compression.xor.enabled=true
+PRODUCT_VENDOR_PROPERTIES += ro.virtual_ab.io_uring.enabled?=true
+PRODUCT_VENDOR_PROPERTIES += ro.virtual_ab.compression.xor.enabled?=true
 PRODUCT_VENDOR_PROPERTIES += ro.virtual_ab.batch_writes=true
 # Low memory device configurations. If memory usage and cpu utilization is
 # a bottleneck during OTA, the below configurations can be added to a
