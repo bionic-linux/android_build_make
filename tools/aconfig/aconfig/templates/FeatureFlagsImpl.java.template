@@ -46,7 +46,7 @@ public final class FeatureFlagsImpl implements FeatureFlags \{
 {{ -endfor }}
 {{ -endfor }}
         } catch (Exception e) \{
-            throw new RuntimeException("Cannot read flag in codegen", e);
+            {flag.method_name} = {flag.default_value};
         }
         isCached = true;
     }
