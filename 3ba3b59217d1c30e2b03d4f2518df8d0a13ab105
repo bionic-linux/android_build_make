@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "00b8a58b_27cee944",
+        "filename": "target/product/virtual_ab_ota/vabc_features.mk",
+        "patchSetId": 7
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1724998
+      },
+      "writtenOn": "2024-10-10T19:28:41Z",
+      "side": 1,
+      "message": "This is already mentioned above. I don\u0027t think this is required.",
+      "revId": "3ba3b59217d1c30e2b03d4f2518df8d0a13ab105",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
