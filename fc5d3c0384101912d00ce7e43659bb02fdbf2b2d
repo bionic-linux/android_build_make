@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "94d6446b_e7b9d24b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1535516
+      },
+      "writtenOn": "2024-10-10T22:13:23Z",
+      "side": 1,
+      "message": "Optional: I would take this out of the topic with erofs support",
+      "revId": "fc5d3c0384101912d00ce7e43659bb02fdbf2b2d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
