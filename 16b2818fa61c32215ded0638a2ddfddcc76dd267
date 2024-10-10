@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "18705faa_525b18db",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1878380
+      },
+      "writtenOn": "2024-10-10T22:39:42Z",
+      "side": 1,
+      "message": "I have uploaded a new patchset that drops `sparse: false`. My original implementation had the logic inverted.",
+      "revId": "16b2818fa61c32215ded0638a2ddfddcc76dd267",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
