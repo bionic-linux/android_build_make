@@ -16,6 +16,41 @@
       "message": "The `?\u003d` is pretty hard to spot here, might be worth a comment highlighting that this is an optional assignment and why.",
       "revId": "d8428d3a04e8ba82c34d315ba94d34189d1c8a83",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "61ccd62a_d9ab0553",
+        "filename": "target/product/virtual_ab_ota/compression.mk",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1724998
+      },
+      "writtenOn": "2024-10-10T17:44:33Z",
+      "side": 1,
+      "message": "+1. I don\u0027t know if adding space is ok as it improves readability.",
+      "parentUuid": "0e21308b_03cfef0b",
+      "revId": "d8428d3a04e8ba82c34d315ba94d34189d1c8a83",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f1b9e856_e4fc07e2",
+        "filename": "target/product/virtual_ab_ota/vabc_features.mk",
+        "patchSetId": 5
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1724998
+      },
+      "writtenOn": "2024-10-10T17:44:33Z",
+      "side": 1,
+      "message": "Could you please fix these as well ?",
+      "revId": "d8428d3a04e8ba82c34d315ba94d34189d1c8a83",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
