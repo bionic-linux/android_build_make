@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0e21308b_03cfef0b",
+        "filename": "target/product/virtual_ab_ota/compression.mk",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1002751
+      },
+      "writtenOn": "2024-10-10T17:27:30Z",
+      "side": 1,
+      "message": "The `?\u003d` is pretty hard to spot here, might be worth a comment highlighting that this is an optional assignment and why.",
+      "revId": "d8428d3a04e8ba82c34d315ba94d34189d1c8a83",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
