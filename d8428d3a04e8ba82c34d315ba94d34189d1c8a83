@@ -38,6 +38,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "bffaffbb_679089a6",
+        "filename": "target/product/virtual_ab_ota/compression.mk",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1964171
+      },
+      "writtenOn": "2024-10-10T17:48:54Z",
+      "side": 1,
+      "message": "People looking at this code will probably wonder why only some of the properties are overwriteable. Should probably add a comment mentioning VABC is mandated by android X",
+      "parentUuid": "61ccd62a_d9ab0553",
+      "revId": "d8428d3a04e8ba82c34d315ba94d34189d1c8a83",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f1b9e856_e4fc07e2",
         "filename": "target/product/virtual_ab_ota/vabc_features.mk",
         "patchSetId": 5
