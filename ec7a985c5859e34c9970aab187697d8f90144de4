@@ -33,6 +33,23 @@
       "message": "So this function will give us a list of regexes that TF is going to try to pull files from, the build script will still be in charge of associating the soong targets to their respective artifacts in order to match these regexes to those right?",
       "revId": "ec7a985c5859e34c9970aab187697d8f90144de4",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "45af6d94_ff6934f2",
+        "filename": "ci/test_discovery_agent.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-10-10T22:40:06Z",
+      "side": 1,
+      "message": "Is this just a list of all modules used by all tests? Will we not have an association of modules -\u003e zip or at least module -\u003e zip regex? How will we be able to know which modules belong to which test suite?",
+      "revId": "ec7a985c5859e34c9970aab187697d8f90144de4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
