@@ -1,0 +1,86 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ec6845bf_b323af76",
+        "filename": "tools/edit_monitor/edit_monitor.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1550539
+      },
+      "writtenOn": "2024-10-10T18:26:35Z",
+      "side": 1,
+      "message": "Separate with a new line",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 41
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "895e3de7_0cf7d9e2",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "tools/edit_monitor/edit_monitor.py",
+              "range": {
+                "startLine": 22,
+                "startChar": 0,
+                "endLine": 22,
+                "endChar": 0
+              },
+              "replacement": "\n"
+            }
+          ]
+        }
+      ],
+      "revId": "8a230505d5410c9f386f52f54354c190dda80673",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2eb8a702_27915e64",
+        "filename": "tools/edit_monitor/edit_monitor.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1550539
+      },
+      "writtenOn": "2024-10-10T18:26:35Z",
+      "side": 1,
+      "message": "current_dir is not None.\n\nAs a safe to avoid calling current_dir.resolve() on a NoneType.",
+      "range": {
+        "startLine": 118,
+        "startChar": 10,
+        "endLine": 118,
+        "endChar": 14
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "6013ec31_8e24a059",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "tools/edit_monitor/edit_monitor.py",
+              "range": {
+                "startLine": 118,
+                "startChar": 0,
+                "endLine": 119,
+                "endChar": 0
+              },
+              "replacement": "    while current_dir:\n"
+            }
+          ]
+        }
+      ],
+      "revId": "8a230505d5410c9f386f52f54354c190dda80673",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
