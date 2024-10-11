@@ -50,6 +50,24 @@
       "message": "Is this just a list of all modules used by all tests? Will we not have an association of modules -\u003e zip or at least module -\u003e zip regex? How will we be able to know which modules belong to which test suite?",
       "revId": "ec7a985c5859e34c9970aab187697d8f90144de4",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c376f8a8_6a8a3f22",
+        "filename": "ci/test_discovery_agent.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1121894
+      },
+      "writtenOn": "2024-10-11T00:38:27Z",
+      "side": 1,
+      "message": "We discussed that one. Tradefed doesn\u0027t have an association of module-\u003ezip. The association will need to be built after discovering the list of modules.",
+      "parentUuid": "45af6d94_ff6934f2",
+      "revId": "ec7a985c5859e34c9970aab187697d8f90144de4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
