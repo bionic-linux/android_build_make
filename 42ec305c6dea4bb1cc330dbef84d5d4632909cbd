@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "420fcf78_b2337640",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2024-10-11T00:59:29Z",
+      "side": 1,
+      "message": "The reference build of the presubmit does is behind aosp/3303666. So that is false alarms.",
+      "revId": "42ec305c6dea4bb1cc330dbef84d5d4632909cbd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
