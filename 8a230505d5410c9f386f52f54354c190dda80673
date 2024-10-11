@@ -42,6 +42,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b6c625fc_deba0973",
+        "filename": "tools/edit_monitor/edit_monitor.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-10-11T17:00:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ec6845bf_b323af76",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 41
+      },
+      "revId": "8a230505d5410c9f386f52f54354c190dda80673",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2eb8a702_27915e64",
@@ -79,6 +103,30 @@
           ]
         }
       ],
+      "revId": "8a230505d5410c9f386f52f54354c190dda80673",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e98ee23a_fb146074",
+        "filename": "tools/edit_monitor/edit_monitor.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-10-11T17:00:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2eb8a702_27915e64",
+      "range": {
+        "startLine": 118,
+        "startChar": 10,
+        "endLine": 118,
+        "endChar": 14
+      },
       "revId": "8a230505d5410c9f386f52f54354c190dda80673",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
