@@ -16,6 +16,24 @@
       "message": "Optional: I would take this out of the topic with erofs support",
       "revId": "fc5d3c0384101912d00ce7e43659bb02fdbf2b2d",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b59a8de2_7b9a2e13",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1878380
+      },
+      "writtenOn": "2024-10-11T00:23:49Z",
+      "side": 1,
+      "message": "Acknowledged.",
+      "parentUuid": "94d6446b_e7b9d24b",
+      "revId": "fc5d3c0384101912d00ce7e43659bb02fdbf2b2d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
