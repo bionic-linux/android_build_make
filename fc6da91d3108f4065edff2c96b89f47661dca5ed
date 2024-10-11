@@ -16,6 +16,24 @@
       "message": "i would prefer to have xor enabled; This is a known tradeoff with space - Also, we fixed couple of optimizations recently which should address CPU. \n\nCan we please remove both these lines. Since L36 calls out as optional arguments, there is no need to have these two lines once again.",
       "revId": "fc6da91d3108f4065edff2c96b89f47661dca5ed",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "02b0ff85_2a2ecce3",
+        "filename": "target/product/virtual_ab_ota/vabc_features.mk",
+        "patchSetId": 8
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1982475
+      },
+      "writtenOn": "2024-10-11T08:09:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "945a4886_26bbca4b",
+      "revId": "fc6da91d3108f4065edff2c96b89f47661dca5ed",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
