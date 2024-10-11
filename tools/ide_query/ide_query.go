@@ -74,7 +74,7 @@ func (l *LunchTarget) Set(s string) error {
 	return nil
 }
 
-// String implements flag.Value.
+// String implements flag.Value. test
 func (l *LunchTarget) String() string {
 	return fmt.Sprintf("%s-%s-%s", l.Product, l.Release, l.Variant)
 }
