@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "07a75021_5b49e545",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1317851
+      },
+      "writtenOn": "2024-10-11T06:55:58Z",
+      "side": 1,
+      "message": "These variables are used for libExynosC2OSAL (ag/29744248)",
+      "revId": "0bfdb54a4005203d9d36c930abc858e1392eb53b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
