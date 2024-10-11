@@ -18,6 +18,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7062eb5a_88a593d8",
+        "filename": "ci/test_discovery_agent.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1933910
+      },
+      "writtenOn": "2024-10-11T21:32:39Z",
+      "side": 1,
+      "message": "Thanks for pointing it out! I was not aware of the ${TOP}, will make the corresponding change.",
+      "parentUuid": "8219d5cd_6f514388",
+      "revId": "ec7a985c5859e34c9970aab187697d8f90144de4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6efe6ef7_0fa4914e",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-10-10T22:12:15Z",
       "side": 1,
       "message": "So this function will give us a list of regexes that TF is going to try to pull files from, the build script will still be in charge of associating the soong targets to their respective artifacts in order to match these regexes to those right?",
+      "revId": "ec7a985c5859e34c9970aab187697d8f90144de4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3355922c_99619a37",
+        "filename": "ci/test_discovery_agent.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1933910
+      },
+      "writtenOn": "2024-10-11T21:32:39Z",
+      "side": 1,
+      "message": "Yes",
+      "parentUuid": "6efe6ef7_0fa4914e",
       "revId": "ec7a985c5859e34c9970aab187697d8f90144de4",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
