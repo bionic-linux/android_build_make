@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "57bf4d7d_07669e25",
+        "filename": "ci/test_discovery_agent.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-10-11T23:02:27Z",
+      "side": 1,
+      "message": "should this be `RELATIVE`?",
+      "range": {
+        "startLine": 17,
+        "startChar": 17,
+        "endLine": 17,
+        "endChar": 25
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "51a63e8d_e2172521",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ci/test_discovery_agent.py",
+              "range": {
+                "startLine": 17,
+                "startChar": 0,
+                "endLine": 18,
+                "endChar": 0
+              },
+              "replacement": "  _AOSP_TRADEFED_PREBUILT_JAR_RELATIVE_PATH \u003d (\n"
+            },
+            {
+              "path": "ci/test_discovery_agent.py",
+              "range": {
+                "startLine": 25,
+                "startChar": 0,
+                "endLine": 26,
+                "endChar": 0
+              },
+              "replacement": "      tradefed_jar_revelant_files_path: str \u003d _AOSP_TRADEFED_PREBUILT_JAR_RELATIVE_PATH,\n"
+            }
+          ]
+        }
+      ],
+      "revId": "8c189712459e1261e85f7eaef50f6793476ca12a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3c90ae6b_0ae1d2ee",
+        "filename": "ci/test_discovery_agent.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-10-11T23:02:27Z",
+      "side": 1,
+      "message": "remove since this is a relative path",
+      "range": {
+        "startLine": 18,
+        "startChar": 7,
+        "endLine": 18,
+        "endChar": 8
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "bb5e229e_86c3a1ee",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ci/test_discovery_agent.py",
+              "range": {
+                "startLine": 18,
+                "startChar": 0,
+                "endLine": 19,
+                "endChar": 0
+              },
+              "replacement": "      \"tools/tradefederation/prebuilts/filegroups/tradefed/\"\n"
+            }
+          ]
+        }
+      ],
+      "revId": "8c189712459e1261e85f7eaef50f6793476ca12a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
