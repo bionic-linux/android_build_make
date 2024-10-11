@@ -1,5 +1,23 @@
 {
-  "comments": [],
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "83ce6ddc_84d4eafb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2024-10-11T00:31:11Z",
+      "side": 1,
+      "message": "The manifest CL does not need to be reverted with this CL, even they were submitted in the same topic.",
+      "revId": "9348f5455ebab1f93756974d0b9754041d276ce1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ],
   "submitRequirementResults": [
     {
       "submitRequirement": {
