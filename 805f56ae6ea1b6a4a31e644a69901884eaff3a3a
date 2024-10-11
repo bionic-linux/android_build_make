@@ -42,6 +42,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "180bca20_62a85190",
+        "filename": "tools/edit_monitor/edit_monitor.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-10-11T00:23:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6f262f67_08c03d36",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 41
+      },
+      "revId": "805f56ae6ea1b6a4a31e644a69901884eaff3a3a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e1f96298_3b7a412f",
@@ -55,6 +79,30 @@
       "writtenOn": "2024-10-09T22:00:06Z",
       "side": 1,
       "message": "Can you add a comment explaining why 2525?",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 17
+      },
+      "revId": "805f56ae6ea1b6a4a31e644a69901884eaff3a3a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f2374bb4_878ec754",
+        "filename": "tools/edit_monitor/edit_monitor.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-10-11T00:23:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e1f96298_3b7a412f",
       "range": {
         "startLine": 29,
         "startChar": 0,
@@ -88,6 +136,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "60a6c013_7b388160",
+        "filename": "tools/edit_monitor/edit_monitor.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-10-11T00:23:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae8b535_ca2708fc",
+      "range": {
+        "startLine": 34,
+        "startChar": 21,
+        "endLine": 34,
+        "endChar": 39
+      },
+      "revId": "805f56ae6ea1b6a4a31e644a69901884eaff3a3a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e488b38f_75ebe605",
@@ -101,6 +173,30 @@
       "writtenOn": "2024-10-09T22:00:06Z",
       "side": 1,
       "message": "You can use a short-circuit or statement to pick between a class instance or create a new one: \n\n\n\n```suggestion\n    self.cclient \u003d cclient or clearcut_client.Clearcut(LOG_SOURCE)\n```",
+      "range": {
+        "startLine": 38,
+        "startChar": 3,
+        "endLine": 40,
+        "endChar": 5
+      },
+      "revId": "805f56ae6ea1b6a4a31e644a69901884eaff3a3a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "839b0973_637f4462",
+        "filename": "tools/edit_monitor/edit_monitor.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-10-11T00:23:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e488b38f_75ebe605",
       "range": {
         "startLine": 38,
         "startChar": 3,
@@ -152,6 +248,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ae3e2bd7_a4bb7fa6",
+        "filename": "tools/edit_monitor/edit_monitor.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-10-11T00:23:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "15847924_ec817fc9",
+      "range": {
+        "startLine": 89,
+        "startChar": 25,
+        "endLine": 89,
+        "endChar": 50
+      },
+      "revId": "805f56ae6ea1b6a4a31e644a69901884eaff3a3a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b87b69e6_1377bf4f",
@@ -189,6 +309,30 @@
           ]
         }
       ],
+      "revId": "805f56ae6ea1b6a4a31e644a69901884eaff3a3a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a6d7ec27_a8f95341",
+        "filename": "tools/edit_monitor/edit_monitor_test.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-10-11T00:23:02Z",
+      "side": 1,
+      "message": "Agree this could be flaky, I updated the code so that we can explicitly wait for the observer to start. But I still need to add the wait time for the observer to receive the inotify event, I tested it multiple times and did not see any failure.",
+      "parentUuid": "b87b69e6_1377bf4f",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 49
+      },
       "revId": "805f56ae6ea1b6a4a31e644a69901884eaff3a3a",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
