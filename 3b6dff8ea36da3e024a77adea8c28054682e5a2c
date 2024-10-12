@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4df1bc2a_49730055",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-10-12T00:58:12Z",
+      "side": 1,
+      "message": "I already said on the design doc not to add a new proto.",
+      "revId": "3b6dff8ea36da3e024a77adea8c28054682e5a2c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
