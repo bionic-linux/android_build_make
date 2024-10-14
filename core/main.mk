@@ -162,8 +162,10 @@ endif
 tags_to_install :=
 
 ifeq ($(TARGET_BUILD_VARIANT),userdebug)
+ifndef PRODUCT_NOT_DEBUGGABLE_IN_USERDEBUG
 # Pick up some extra useful tools
 tags_to_install := debug
+endif
 endif
 
 ifeq ($(TARGET_BUILD_VARIANT),eng)
