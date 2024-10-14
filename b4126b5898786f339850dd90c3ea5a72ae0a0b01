@@ -1,5 +1,23 @@
 {
-  "comments": [],
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "181943e3_e07ecd55",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1854515
+      },
+      "writtenOn": "2024-10-14T17:59:27Z",
+      "side": 1,
+      "message": "Hi Zi,\nCould you help to review this change for adding automotive cast team? Thanks.",
+      "revId": "b4126b5898786f339850dd90c3ea5a72ae0a0b01",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ],
   "submitRequirementResults": [
     {
       "submitRequirement": {
