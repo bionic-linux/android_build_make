@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "02eb78dc_3ceee77a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003801
+      },
+      "writtenOn": "2024-10-14T17:50:09Z",
+      "side": 1,
+      "message": "Thanks @Dario -- double checking if it\u0027s ready to merge...",
+      "revId": "db4d71bd85bec4683a181ac70cbcaba99365d183",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "93909535_539b4107",
@@ -38,6 +55,30 @@
       "side": 1,
       "message": "my understanding is that you need gantry registration also to list a bug component associated to your team (I know your case is peculiar)\n\nRonish is OOO, we can ask him next week.",
       "parentUuid": "93909535_539b4107",
+      "range": {
+        "startLine": 0,
+        "startChar": 0,
+        "endLine": 0,
+        "endChar": 0
+      },
+      "revId": "db4d71bd85bec4683a181ac70cbcaba99365d183",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3d3dcb64_a8aacfb4",
+        "filename": "teams/Android.bp",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003801
+      },
+      "writtenOn": "2024-10-14T17:50:09Z",
+      "side": 1,
+      "message": "Ah looks like the onboard bug wasn\u0027t fully resolved when I made this CL: b/368395439\n\nNow that the bug is closed, can I merge this CL?",
+      "parentUuid": "829fed5f_7f2d9c7c",
       "range": {
         "startLine": 0,
         "startChar": 0,
