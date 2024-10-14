@@ -60,6 +60,7 @@ $(call add_json_bool, Always_use_prebuilt_sdks,          $(TARGET_BUILD_USE_PREB
 
 $(call add_json_bool, Debuggable,                        $(filter userdebug eng,$(TARGET_BUILD_VARIANT)))
 $(call add_json_bool, Eng,                               $(filter eng,$(TARGET_BUILD_VARIANT)))
+$(call add_json_str,  BuildVariant,                      $(TARGET_BUILD_VARIANT))
 $(call add_json_str,  BuildType,                         $(TARGET_BUILD_TYPE))
 
 $(call add_json_str,  DeviceName,                        $(TARGET_DEVICE))
