@@ -219,3 +219,6 @@ $(call soong_config_set_bool,video_codec,board_support_mfc_enc_bt2020,$(if $(fil
 $(call soong_config_set_bool,video_codec,board_support_flexible_p010,$(if $(filter true,$(BOARD_SUPPORT_FLEXIBLE_P010)),true,false))
 $(call soong_config_set,video_codec,board_support_mfc_version,$(BOARD_SUPPORT_MFC_VERSION))
 $(call soong_config_set_bool,video_codec,board_use_codec2_aidl,$(if $(BOARD_USE_CODEC2_AIDL),true,false))
+
+# Add profiling build flag to soong
+$(call soong_config_set,ANDROID,release_profiling_module,$(RELEASE_PROFILING_MODULE))
