@@ -4456,8 +4456,16 @@ team {
 }
 
 team {
+<<<<<<< PATCH SET (b4126b Add trendy team for automotive cast)
+    name: "trendy_team_automotive_cast",
+
+    // go/trendy/manage/engineers/5293683026264064
+    trendy_team_id: "5293683026264064",
+||||||| BASE
+=======
     name: "trendy_team_ravenwood",
 
     // go/trendy/manage/engineers/6027181500497920
     trendy_team_id: "6027181500497920",
+>>>>>>> BASE      (4a1b00 Merge "Create trendy team for ravenwood" into main)
 }
