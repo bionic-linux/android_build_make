@@ -19,6 +19,13 @@ ifneq (,$(filter-out environment undefined,$(origin GENRULE_SANDBOXING)))
   $(error GENRULE_SANDBOXING can only be provided via an environment variable, use BUILD_BROKEN_GENRULE_SANDBOXING to disable genrule sandboxing in board config)
 endif
 
+# Set debuggable property based on build variant and PRODUCT_NOT_DEBUGGABLE_IN_USERDEBUG.
+# This follows the logic for setting ro.debuggable from gen_build_prop.py
+enable_target_debugging := $(filter userdebug eng,$(TARGET_BUILD_VARIANT))
+ifdef PRODUCT_NOT_DEBUGGABLE_IN_USERDEBUG
+    enable_target_debugging :=
+endif
+
 ifeq ($(WRITE_SOONG_VARIABLES),true)
 
 # Create soong.variables with copies of makefile settings.  Runs every build,
@@ -58,7 +65,7 @@ $(call add_json_list, Unbundled_build_apps,              $(TARGET_BUILD_APPS))
 $(call add_json_bool, Unbundled_build_image,             $(TARGET_BUILD_UNBUNDLED_IMAGE))
 $(call add_json_bool, Always_use_prebuilt_sdks,          $(TARGET_BUILD_USE_PREBUILT_SDKS))
 
-$(call add_json_bool, Debuggable,                        $(filter userdebug eng,$(TARGET_BUILD_VARIANT)))
+$(call add_json_bool, Debuggable,                        $(enable_target_debugging))
 $(call add_json_bool, Eng,                               $(filter eng,$(TARGET_BUILD_VARIANT)))
 $(call add_json_str,  BuildVariant,                      $(TARGET_BUILD_VARIANT))
 $(call add_json_str,  BuildType,                         $(TARGET_BUILD_TYPE))
