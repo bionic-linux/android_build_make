@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e35e62f6_34695b95",
+        "filename": "core/android_soong_config_vars.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1318142
+      },
+      "writtenOn": "2024-10-15T21:44:19Z",
+      "side": 1,
+      "message": "```suggestion\n$(call add_soong_config_var,ANDROID,ADDITIONAL_M4DEFS,$(if $(BOARD_SEPOLICY_M4DEFS),$(addprefix -D,$(BOARD_SEPOLICY_M4DEFS))))\n```",
+      "range": {
+        "startLine": 43,
+        "startChar": 125,
+        "endLine": 43,
+        "endChar": 126
+      },
+      "revId": "7dc5287839ab0d3459b1e5e115263cb61503c557",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
