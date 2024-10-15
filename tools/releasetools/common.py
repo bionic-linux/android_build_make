@@ -2160,8 +2160,16 @@ def UnzipSingleFile(input_zip: zipfile.ZipFile, info: zipfile.ZipInfo, dirname: 
     dirname = os.getcwd()
   target = os.path.join(dirname, info.filename)
   os.makedirs(os.path.dirname(target), exist_ok=True)
-  if os.path.exists(target):
+  # If target is an existing symbolic link that points to a path on the host that does not exist,
+  # the exists method will return False. Therefore, we need to use the islink method to check
+  # if the existing file is a symbolic link.
+  if os.path.islink(target):
     os.unlink(target)
+  elif os.path.exists(target):
+    if os.path.isdir(target):
+      os.rmdir(target)
+    else:
+      os.unlink(target)
   os.symlink(input_zip.read(info).decode(), target)
   return target
 
