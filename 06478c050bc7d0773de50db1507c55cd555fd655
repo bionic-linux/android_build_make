@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c8b2a797_fcd010e1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1583551
+      },
+      "writtenOn": "2024-10-16T12:17:02Z",
+      "side": 1,
+      "message": "There is no longer a need to add a config variable this way. Please see go/soong-selects and use a `select` statement in your Android.bp file instead.  (Also, please DM me the URL of the doc that we need to update.)",
+      "revId": "06478c050bc7d0773de50db1507c55cd555fd655",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
