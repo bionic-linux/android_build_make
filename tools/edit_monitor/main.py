@@ -49,6 +49,12 @@ def create_arg_parser():
   )
 
   parser.add_argument(
+      '--dry_run',
+      action='store_true',
+      help='Dry run the edit monitor. This starts the edit monitor process without actually send the edit logs to clearcut.',
+  )
+
+  parser.add_argument(
       '--force_cleanup',
       action='store_true',
       help='Force stop all edit monitors running in the system.',
@@ -80,7 +86,7 @@ def term_signal_handler(signal_number, frame):
 def main(argv: list[str]):
   args = create_arg_parser().parse_args(argv[1:])
   dm = daemon_manager.DaemonManager(
-      binary_path=argv[0], daemon_target=edit_monitor.start, daemon_args=(args.path,))
+      binary_path=argv[0], daemon_target=edit_monitor.start, daemon_args=(args.path, args.dry_run))
   if args.force_cleanup:
     try:
       dm.cleanup()
