@@ -2,8 +2,6 @@
 # Set up product-global definitions and include product-specific rules.
 #
 
-LOCAL_PATH := $(call my-dir)
-
 -include $(TARGET_DEVICE_DIR)/AndroidBoard.mk
 
 # Generate a file that contains various information about the
