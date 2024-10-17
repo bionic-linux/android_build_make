@@ -113,6 +113,7 @@ class EditMonitorTest(unittest.TestCase):
         edit_type=edit_event_pb2.EditEvent.DELETE,
     )
 
+
     self.assertEqual(
         expected_create_event,
         edit_event_pb2.EditEvent.FromString(
@@ -263,7 +264,7 @@ class EditMonitorTest(unittest.TestCase):
     # Start edit monitor in a subprocess.
     p = multiprocessing.Process(
         target=edit_monitor.start,
-        args=(str(self.root_monitoring_path.resolve()), 0.5, 5, cclient, sender),
+        args=(str(self.root_monitoring_path.resolve()), False, 0.5, 5, cclient, sender),
     )
     p.start()
 

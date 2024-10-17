@@ -43,6 +43,7 @@ class ClearcutEventHandler(PatternMatchingEventHandler):
       path: str,
       flush_interval_sec: int,
       single_events_size_threshold: int,
+      is_dry_run: bool = False,
       cclient: clearcut_client.Clearcut | None = None,
   ):
 
@@ -50,6 +51,7 @@ class ClearcutEventHandler(PatternMatchingEventHandler):
     self.root_monitoring_path = path
     self.flush_interval_sec = flush_interval_sec
     self.single_events_size_threshold = single_events_size_threshold
+    self.is_dry_run = is_dry_run
     self.cclient = cclient or clearcut_client.Clearcut(LOG_SOURCE)
 
     self.user_name = getpass.getuser()
@@ -178,18 +180,20 @@ class ClearcutEventHandler(PatternMatchingEventHandler):
       )
       edit_events = [(aggregated_event_proto, aggregated_event_time)]
 
-    for event_proto, event_time in edit_events:
-      log_event = clientanalytics_pb2.LogEvent(
-          event_time_ms=int(event_time * 1000),
-          source_extension=event_proto.SerializeToString(),
-      )
-      self.cclient.log(log_event)
+    if not self.is_dry_run:
+      for event_proto, event_time in edit_events:
+        log_event = clientanalytics_pb2.LogEvent(
+            event_time_ms=int(event_time * 1000),
+            source_extension=event_proto.SerializeToString(),
+        )
+        self.cclient.log(log_event)
 
     logging.info("sent %d edit events", len(edit_events))
 
 
 def start(
     path: str,
+    is_dry_run: bool = False,
     flush_interval_sec: int = DEFAULT_FLUSH_INTERVAL_SECONDS,
     single_events_size_threshold: int = DEFAULT_SINGLE_EVENTS_SIZE_THRESHOLD,
     cclient: clearcut_client.Clearcut | None = None,
@@ -205,7 +209,7 @@ def start(
     conn: the sender of the pipe to communicate with the deamon manager.
   """
   event_handler = ClearcutEventHandler(
-      path, flush_interval_sec, single_events_size_threshold, cclient)
+      path, flush_interval_sec, single_events_size_threshold, is_dry_run, cclient)
   observer = Observer()
 
   logging.info("Starting observer on path %s.", path)
