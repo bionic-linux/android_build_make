@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "140a4f13_778b424d",
+        "filename": "core/android_soong_config_vars.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 1318142
+      },
+      "writtenOn": "2024-10-17T22:57:44Z",
+      "side": 1,
+      "message": "typo? should it be \"memory\"?",
+      "range": {
+        "startLine": 225,
+        "startChar": 64,
+        "endLine": 225,
+        "endChar": 72
+      },
+      "revId": "2430c0dac218a900d05bd9600c17ce3658fed934",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
