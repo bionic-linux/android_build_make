@@ -1,0 +1,45 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "acc3f35d_8d74222c",
+        "filename": "tools/edit_monitor/main.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1550539
+      },
+      "writtenOn": "2024-10-18T17:48:14Z",
+      "side": 1,
+      "message": "the parameters are unused, prefix with underscore or delete them at next line",
+      "range": {
+        "startLine": 64,
+        "startChar": 24,
+        "endLine": 64,
+        "endChar": 44
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "74c27aff_8c56d4bc",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "tools/edit_monitor/main.py",
+              "range": {
+                "startLine": 64,
+                "startChar": 0,
+                "endLine": 65,
+                "endChar": 0
+              },
+              "replacement": "def term_signal_handler(_signal_number, _frame):\n"
+            }
+          ]
+        }
+      ],
+      "revId": "79f57222486c0c5448e41962f864cb0c55c2b56e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
