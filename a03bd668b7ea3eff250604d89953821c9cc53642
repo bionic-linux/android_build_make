@@ -16,6 +16,29 @@
       "message": "If you have a better idea on how to fix that let me know",
       "revId": "a03bd668b7ea3eff250604d89953821c9cc53642",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "61341a05_7b3629ae",
+        "filename": "core/Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 3498,
+      "author": {
+        "id": 1002751
+      },
+      "writtenOn": "2024-10-19T21:23:23Z",
+      "side": 1,
+      "message": "I think the `$(eval)` that wraps this function is causing the problem here, as by the time it sees the `$(foreach)` function call the list of files has been expanded including commas.  Make can handle commas as long as they are in a variable, so I think a better solution would be to assign the result of the `$(subst)` call to a rule-local variable, and then use the variable in the foreach (untested):\n\n```suggestion\ndefine write-partition-file-list\n$(1): PRIVATE_FILES :\u003d $(subst $(2)/,,$(filter $(2)/%,$(3)))\n$(1): PRIVATE_EXTRA_INSTALL_ZIPS :\u003d $(call relevant-extra-install-zips,$(filter $(2)/%,$(3)))\n$(1): $$(HOST_OUT_EXECUTABLES)/extra_install_zips_file_list $(foreach p,$(call relevant-extra-install-zips,$(filter $(2)/%,$(3))),$(call word-colon,3,$(p)))\n\t@echo Writing $$@\n\trm -f $$@\n\techo -n \u003e $$@\n\t$$(foreach f,$$(PRIVATE_FILES),echo \"$$(f)\" \u003e\u003e $$@$$(newline))\n\t$$(HOST_OUT_EXECUTABLES)/extra_install_zips_file_list $(2) $$(PRIVATE_EXTRA_INSTALL_ZIPS) \u003e\u003e $$@\nendef\n\n```",
+      "range": {
+        "startLine": 3490,
+        "startChar": 0,
+        "endLine": 3498,
+        "endChar": 0
+      },
+      "revId": "a03bd668b7ea3eff250604d89953821c9cc53642",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
