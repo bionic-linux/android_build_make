@@ -24,6 +24,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a12d87b0_cb0f4b30",
+        "filename": "tools/edit_monitor/edit_monitor.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-10-21T22:18:39Z",
+      "side": 1,
+      "message": "No, missing events is fine, the metrics wont be that accurate. Instead, I\u0027m planning to send a error event to clearcut to indicate the failure of logging and if we see a significant increase of such error, we need to investigate whether it is a real problem in the edit monitor.",
+      "parentUuid": "b54001ba_428e57e0",
+      "range": {
+        "startLine": 88,
+        "startChar": 4,
+        "endLine": 88,
+        "endChar": 21
+      },
+      "revId": "479f3bb094b47bdaa43662223d4131dee5ab1efd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d20cd335_464f50da",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-10-21T18:24:57Z",
       "side": 1,
       "message": "by \u0027should be\u0027 do you mean the implementation of this method should use a subprocess or the watchdog library is already doing so? Consider reword",
+      "range": {
+        "startLine": 99,
+        "startChar": 1,
+        "endLine": 99,
+        "endChar": 12
+      },
+      "revId": "479f3bb094b47bdaa43662223d4131dee5ab1efd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f50b6ec7_3ecc0072",
+        "filename": "tools/edit_monitor/edit_monitor.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-10-21T22:18:39Z",
+      "side": 1,
+      "message": "Reworded.",
+      "parentUuid": "d20cd335_464f50da",
       "range": {
         "startLine": 99,
         "startChar": 1,
@@ -72,6 +120,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ae9da22e_bd30cad8",
+        "filename": "tools/edit_monitor/edit_monitor.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-10-21T22:18:39Z",
+      "side": 1,
+      "message": "I want to keep the process run forever (unless killed explicitly), Doesn\u0027t sleep int max still implies the test will terminate eventually? (though I guess int max should be long enough for us here).",
+      "parentUuid": "847e5a0e_432227f1",
+      "range": {
+        "startLine": 117,
+        "startChar": 4,
+        "endLine": 118,
+        "endChar": 19
+      },
+      "revId": "479f3bb094b47bdaa43662223d4131dee5ab1efd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2c77aa67_69afd566",
         "filename": "tools/edit_monitor/edit_monitor_test.py",
         "patchSetId": 37
@@ -83,6 +155,30 @@
       "writtenOn": "2024-10-21T18:24:57Z",
       "side": 1,
       "message": "consider remove the empty lines in the arrange and assert parts, same elsewhere",
+      "range": {
+        "startLine": 72,
+        "startChar": 28,
+        "endLine": 74,
+        "endChar": 5
+      },
+      "revId": "479f3bb094b47bdaa43662223d4131dee5ab1efd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5b36be0c_dc552155",
+        "filename": "tools/edit_monitor/edit_monitor_test.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-10-21T22:18:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2c77aa67_69afd566",
       "range": {
         "startLine": 72,
         "startChar": 28,
@@ -116,6 +212,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "732d5650_756ad875",
+        "filename": "tools/edit_monitor/edit_monitor_test.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-10-21T22:18:39Z",
+      "side": 1,
+      "message": "This is part of the test action (I need to stop the edit monitor so all the events will be flushed). If the test got exception before this, the test should fail and the process will be terminated (as the parent process terminated).",
+      "parentUuid": "76e2ae06_7f83012b",
+      "range": {
+        "startLine": 77,
+        "startChar": 4,
+        "endLine": 78,
+        "endChar": 12
+      },
+      "revId": "479f3bb094b47bdaa43662223d4131dee5ab1efd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4e89f30b_434bad03",
@@ -129,6 +249,30 @@
       "writtenOn": "2024-10-21T18:24:57Z",
       "side": 1,
       "message": "simplify:\n\nreturn [clientanalytics_pb2.LogEvent.FromString(record) for record in  data.split(b\u0027\\x00\u0027) if record]",
+      "range": {
+        "startLine": 178,
+        "startChar": 2,
+        "endLine": 183,
+        "endChar": 17
+      },
+      "revId": "479f3bb094b47bdaa43662223d4131dee5ab1efd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a193eebe_d9914902",
+        "filename": "tools/edit_monitor/edit_monitor_test.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-10-21T22:18:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e89f30b_434bad03",
       "range": {
         "startLine": 178,
         "startChar": 2,
