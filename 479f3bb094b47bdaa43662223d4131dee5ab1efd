@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b54001ba_428e57e0",
+        "filename": "tools/edit_monitor/edit_monitor.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1132849
+      },
+      "writtenOn": "2024-10-21T18:24:57Z",
+      "side": 1,
+      "message": "should you block the event flushing if there\u0027s an exception to one of the events? because missing events may make the entire edit loop inaccurate or wrong",
+      "range": {
+        "startLine": 88,
+        "startChar": 4,
+        "endLine": 88,
+        "endChar": 21
+      },
+      "revId": "479f3bb094b47bdaa43662223d4131dee5ab1efd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d20cd335_464f50da",
+        "filename": "tools/edit_monitor/edit_monitor.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1132849
+      },
+      "writtenOn": "2024-10-21T18:24:57Z",
+      "side": 1,
+      "message": "by \u0027should be\u0027 do you mean the implementation of this method should use a subprocess or the watchdog library is already doing so? Consider reword",
+      "range": {
+        "startLine": 99,
+        "startChar": 1,
+        "endLine": 99,
+        "endChar": 12
+      },
+      "revId": "479f3bb094b47bdaa43662223d4131dee5ab1efd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "847e5a0e_432227f1",
+        "filename": "tools/edit_monitor/edit_monitor.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1132849
+      },
+      "writtenOn": "2024-10-21T18:24:57Z",
+      "side": 1,
+      "message": "unnecessary while loop. Just sleep int max",
+      "range": {
+        "startLine": 117,
+        "startChar": 4,
+        "endLine": 118,
+        "endChar": 19
+      },
+      "revId": "479f3bb094b47bdaa43662223d4131dee5ab1efd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2c77aa67_69afd566",
+        "filename": "tools/edit_monitor/edit_monitor_test.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1132849
+      },
+      "writtenOn": "2024-10-21T18:24:57Z",
+      "side": 1,
+      "message": "consider remove the empty lines in the arrange and assert parts, same elsewhere",
+      "range": {
+        "startLine": 72,
+        "startChar": 28,
+        "endLine": 74,
+        "endChar": 5
+      },
+      "revId": "479f3bb094b47bdaa43662223d4131dee5ab1efd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "76e2ae06_7f83012b",
+        "filename": "tools/edit_monitor/edit_monitor_test.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1132849
+      },
+      "writtenOn": "2024-10-21T18:24:57Z",
+      "side": 1,
+      "message": "not guaranteed to execute. Consider use a with clause or finally to wrap the process, same elsewhere",
+      "range": {
+        "startLine": 77,
+        "startChar": 4,
+        "endLine": 78,
+        "endChar": 12
+      },
+      "revId": "479f3bb094b47bdaa43662223d4131dee5ab1efd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4e89f30b_434bad03",
+        "filename": "tools/edit_monitor/edit_monitor_test.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 1132849
+      },
+      "writtenOn": "2024-10-21T18:24:57Z",
+      "side": 1,
+      "message": "simplify:\n\nreturn [clientanalytics_pb2.LogEvent.FromString(record) for record in  data.split(b\u0027\\x00\u0027) if record]",
+      "range": {
+        "startLine": 178,
+        "startChar": 2,
+        "endLine": 183,
+        "endChar": 17
+      },
+      "revId": "479f3bb094b47bdaa43662223d4131dee5ab1efd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
