@@ -812,9 +812,6 @@ endif
 
 ifdef PRODUCT_CHECK_PREBUILT_MAX_PAGE_SIZE
   TARGET_CHECK_PREBUILT_MAX_PAGE_SIZE := $(PRODUCT_CHECK_PREBUILT_MAX_PAGE_SIZE)
-else ifeq (true,$(TARGET_BUILD_UNBUNDLED))
-  # unbundled builds may not have updated build sources
-  TARGET_CHECK_PREBUILT_MAX_PAGE_SIZE := false
 else ifneq ($(call math_gt_or_eq,$(PRODUCT_SHIPPING_API_LEVEL),36),)
   TARGET_CHECK_PREBUILT_MAX_PAGE_SIZE := true
 else
