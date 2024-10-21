@@ -16,6 +16,24 @@
       "message": "Could you please expand on this commit message explaining why it\u0027s necessary and how this fix works?",
       "revId": "7ce46108ff013d81551dc30c047315698859244b",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f7658b4a_aa7be819",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1942180
+      },
+      "writtenOn": "2024-10-21T23:15:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "517d304f_cf7e3308",
+      "revId": "7ce46108ff013d81551dc30c047315698859244b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
