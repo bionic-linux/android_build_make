@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "851b427c_34638753",
+        "filename": "tools/edit_monitor/daemon_manager.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1132849
+      },
+      "writtenOn": "2024-10-21T21:21:35Z",
+      "side": 1,
+      "message": "Caution: this is considered deprecated and may stop working. Would be best if use an alternative",
+      "range": {
+        "startLine": 66,
+        "startChar": 23,
+        "endLine": 66,
+        "endChar": 62
+      },
+      "revId": "96f96cf5c6d19d786c2cd345bf32f907feb428a3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d32c7bf5_a00276a9",
+        "filename": "tools/edit_monitor/daemon_manager.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1132849
+      },
+      "writtenOn": "2024-10-21T21:21:35Z",
+      "side": 1,
+      "message": "either log or throw, not both. according to style guide",
+      "range": {
+        "startLine": 95,
+        "startChar": 6,
+        "endLine": 95,
+        "endChar": 13
+      },
+      "revId": "96f96cf5c6d19d786c2cd345bf32f907feb428a3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6a81d48d_64087650",
+        "filename": "tools/edit_monitor/daemon_manager.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1132849
+      },
+      "writtenOn": "2024-10-21T21:21:35Z",
+      "side": 1,
+      "message": "should this be inside _start_daemon_process?\nalso, not seem accurate if exception is thrown in _stop_any_existing_instance and the event is failed to start",
+      "range": {
+        "startLine": 96,
+        "startChar": 6,
+        "endLine": 98,
+        "endChar": 7
+      },
+      "revId": "96f96cf5c6d19d786c2cd345bf32f907feb428a3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ace8d780_98ca4942",
+        "filename": "tools/edit_monitor/daemon_manager.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1132849
+      },
+      "writtenOn": "2024-10-21T21:21:35Z",
+      "side": 1,
+      "message": "if terminate throws, this is never called. Consider adding another try block",
+      "range": {
+        "startLine": 161,
+        "startChar": 6,
+        "endLine": 161,
+        "endChar": 28
+      },
+      "revId": "96f96cf5c6d19d786c2cd345bf32f907feb428a3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b4c9d238_ec981d24",
+        "filename": "tools/edit_monitor/daemon_manager.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1132849
+      },
+      "writtenOn": "2024-10-21T21:21:35Z",
+      "side": 1,
+      "message": "move to finally since it\u0027s in both try and except",
+      "range": {
+        "startLine": 162,
+        "startChar": 6,
+        "endLine": 162,
+        "endChar": 33
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "3eb39286_1bd0e778",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "tools/edit_monitor/daemon_manager.py",
+              "range": {
+                "startLine": 162,
+                "startChar": 0,
+                "endLine": 163,
+                "endChar": 0
+              },
+              "replacement": ""
+            },
+            {
+              "path": "tools/edit_monitor/daemon_manager.py",
+              "range": {
+                "startLine": 169,
+                "startChar": 0,
+                "endLine": 170,
+                "endChar": 0
+              },
+              "replacement": ""
+            },
+            {
+              "path": "tools/edit_monitor/daemon_manager.py",
+              "range": {
+                "startLine": 171,
+                "startChar": 0,
+                "endLine": 171,
+                "endChar": 0
+              },
+              "replacement": "    finally:\n      self.cclient.flush_events()\n"
+            }
+          ]
+        }
+      ],
+      "revId": "96f96cf5c6d19d786c2cd345bf32f907feb428a3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
