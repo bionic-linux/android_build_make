@@ -24,6 +24,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5330cd61_34aad9a0",
+        "filename": "tools/edit_monitor/main.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-10-21T22:21:09Z",
+      "side": 1,
+      "message": "Updated the help message.",
+      "parentUuid": "50c4e621_d865e77a",
+      "range": {
+        "startLine": 46,
+        "startChar": 61,
+        "endLine": 46,
+        "endChar": 63
+      },
+      "revId": "79f57222486c0c5448e41962f864cb0c55c2b56e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "11050087_29b1bef7",
@@ -61,6 +85,30 @@
           ]
         }
       ],
+      "revId": "79f57222486c0c5448e41962f864cb0c55c2b56e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a6826a69_a258a892",
+        "filename": "tools/edit_monitor/main.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-10-21T22:21:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "11050087_29b1bef7",
+      "range": {
+        "startLine": 61,
+        "startChar": 10,
+        "endLine": 61,
+        "endChar": 25
+      },
       "revId": "79f57222486c0c5448e41962f864cb0c55c2b56e",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
@@ -106,6 +154,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d5879dad_27749467",
+        "filename": "tools/edit_monitor/main.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-10-21T22:21:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "acc3f35d_8d74222c",
+      "range": {
+        "startLine": 64,
+        "startChar": 24,
+        "endLine": 64,
+        "endChar": 44
+      },
+      "revId": "79f57222486c0c5448e41962f864cb0c55c2b56e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "03cd8ca3_59dceedb",
@@ -119,6 +191,30 @@
       "writtenOn": "2024-10-21T21:04:11Z",
       "side": 1,
       "message": "for consistency, should stop() throw exception (since cleanup throws)?",
+      "range": {
+        "startLine": 86,
+        "startChar": 7,
+        "endLine": 86,
+        "endChar": 13
+      },
+      "revId": "79f57222486c0c5448e41962f864cb0c55c2b56e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bbb9fe35_b5eb5b45",
+        "filename": "tools/edit_monitor/main.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-10-21T22:21:09Z",
+      "side": 1,
+      "message": "stop() should already caught all the exceptions (never throw anything), I did that as I want to avoid try...catch in the finally block...",
+      "parentUuid": "03cd8ca3_59dceedb",
       "range": {
         "startLine": 86,
         "startChar": 7,
