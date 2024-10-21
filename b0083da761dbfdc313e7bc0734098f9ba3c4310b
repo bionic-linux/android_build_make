@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f86437b8_e36ccd0a",
+        "filename": "tools/edit_monitor/edit_monitor.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1132849
+      },
+      "writtenOn": "2024-10-21T21:11:03Z",
+      "side": 1,
+      "message": "unset _scheduled_log_thread after cancel",
+      "range": {
+        "startLine": 79,
+        "startChar": 33,
+        "endLine": 79,
+        "endChar": 39
+      },
+      "revId": "b0083da761dbfdc313e7bc0734098f9ba3c4310b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "73830e2c_35e34ecf",
+        "filename": "tools/edit_monitor/edit_monitor.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1132849
+      },
+      "writtenOn": "2024-10-21T21:11:03Z",
+      "side": 1,
+      "message": "unrelated to the lock, move outside",
+      "range": {
+        "startLine": 156,
+        "startChar": 35,
+        "endLine": 157,
+        "endChar": 39
+      },
+      "revId": "b0083da761dbfdc313e7bc0734098f9ba3c4310b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c0c01392_987e2d63",
+        "filename": "tools/edit_monitor/edit_monitor.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1132849
+      },
+      "writtenOn": "2024-10-21T21:11:03Z",
+      "side": 1,
+      "message": "why not always send aggregated?",
+      "range": {
+        "startLine": 162,
+        "startChar": 4,
+        "endLine": 162,
+        "endChar": 63
+      },
+      "revId": "b0083da761dbfdc313e7bc0734098f9ba3c4310b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f1714103_9a457de6",
+        "filename": "tools/edit_monitor/edit_monitor.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 1132849
+      },
+      "writtenOn": "2024-10-21T21:11:03Z",
+      "side": 1,
+      "message": "should not log if no events",
+      "range": {
+        "startLine": 188,
+        "startChar": 4,
+        "endLine": 188,
+        "endChar": 16
+      },
+      "revId": "b0083da761dbfdc313e7bc0734098f9ba3c4310b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
