@@ -3,6 +3,70 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "50c4e621_d865e77a",
+        "filename": "tools/edit_monitor/main.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1132849
+      },
+      "writtenOn": "2024-10-21T21:04:11Z",
+      "side": 1,
+      "message": "before start?",
+      "range": {
+        "startLine": 46,
+        "startChar": 61,
+        "endLine": 46,
+        "endChar": 63
+      },
+      "revId": "79f57222486c0c5448e41962f864cb0c55c2b56e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "11050087_29b1bef7",
+        "filename": "tools/edit_monitor/main.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1132849
+      },
+      "writtenOn": "2024-10-21T21:04:11Z",
+      "side": 1,
+      "message": "grammar",
+      "range": {
+        "startLine": 61,
+        "startChar": 10,
+        "endLine": 61,
+        "endChar": 25
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "b0f9fb4e_cfcfb834",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "tools/edit_monitor/main.py",
+              "range": {
+                "startLine": 61,
+                "startChar": 0,
+                "endLine": 62,
+                "endChar": 0
+              },
+              "replacement": "  print(f\u0027logging to file {log_path}\u0027)\n"
+            }
+          ]
+        }
+      ],
+      "revId": "79f57222486c0c5448e41962f864cb0c55c2b56e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "acc3f35d_8d74222c",
         "filename": "tools/edit_monitor/main.py",
         "patchSetId": 14
@@ -38,6 +102,29 @@
           ]
         }
       ],
+      "revId": "79f57222486c0c5448e41962f864cb0c55c2b56e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "03cd8ca3_59dceedb",
+        "filename": "tools/edit_monitor/main.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1132849
+      },
+      "writtenOn": "2024-10-21T21:04:11Z",
+      "side": 1,
+      "message": "for consistency, should stop() throw exception (since cleanup throws)?",
+      "range": {
+        "startLine": 86,
+        "startChar": 7,
+        "endLine": 86,
+        "endChar": 13
+      },
       "revId": "79f57222486c0c5448e41962f864cb0c55c2b56e",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
