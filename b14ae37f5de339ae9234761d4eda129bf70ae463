@@ -24,6 +24,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fcd3a69a_09702ed5",
+        "filename": "tools/edit_monitor/edit_monitor.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-10-21T22:19:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df8ae638_5247542d",
+      "range": {
+        "startLine": 105,
+        "startChar": 1,
+        "endLine": 118,
+        "endChar": 16
+      },
+      "revId": "b14ae37f5de339ae9234761d4eda129bf70ae463",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4572d405_b03642de",
@@ -79,6 +103,30 @@
       "side": 1,
       "message": "return \u0027.git\u0027 in pathlib.Path(\u0027/a/b/\u0027).parents",
       "parentUuid": "4572d405_b03642de",
+      "range": {
+        "startLine": 121,
+        "startChar": 4,
+        "endLine": 130,
+        "endChar": 16
+      },
+      "revId": "b14ae37f5de339ae9234761d4eda129bf70ae463",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "90fdb063_2397c25f",
+        "filename": "tools/edit_monitor/edit_monitor.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-10-21T22:19:11Z",
+      "side": 1,
+      "message": "Simplified the code. We cant iterate all the parent dir, but should stop iteration at the root_monitoring_path. PTAL",
+      "parentUuid": "12a0047c_95904da6",
       "range": {
         "startLine": 121,
         "startChar": 4,
