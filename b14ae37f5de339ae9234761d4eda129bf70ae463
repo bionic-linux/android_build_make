@@ -1,0 +1,68 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "df8ae638_5247542d",
+        "filename": "tools/edit_monitor/edit_monitor.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1132849
+      },
+      "writtenOn": "2024-10-21T19:48:03Z",
+      "side": 1,
+      "message": "entire method can be simplified:\n\nreturn any(part.startswith(\u0027.\u0027) for part in pathlib.Path(\u0027/a/b/\u0027).parts)",
+      "range": {
+        "startLine": 105,
+        "startChar": 1,
+        "endLine": 118,
+        "endChar": 16
+      },
+      "revId": "b14ae37f5de339ae9234761d4eda129bf70ae463",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4572d405_b03642de",
+        "filename": "tools/edit_monitor/edit_monitor.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1132849
+      },
+      "writtenOn": "2024-10-21T19:48:03Z",
+      "side": 1,
+      "message": "entire method can be simplified\n\nreturn any(parent \u003d\u003d \u0027.git\u0027 for parent in pathlib.Path(\u0027/a/b/\u0027).parents)",
+      "range": {
+        "startLine": 121,
+        "startChar": 4,
+        "endLine": 130,
+        "endChar": 16
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "66147e9c_7b3ce431",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "tools/edit_monitor/edit_monitor.py",
+              "range": {
+                "startLine": 121,
+                "startChar": 0,
+                "endLine": 131,
+                "endChar": 0
+              },
+              "replacement": "    return file_path.parent.joinpath(\".git\").exists()\n"
+            }
+          ]
+        }
+      ],
+      "revId": "b14ae37f5de339ae9234761d4eda129bf70ae463",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
