@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d40c7a3a_fbcd7f1e",
+        "filename": "tools/edit_monitor/main.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1132849
+      },
+      "writtenOn": "2024-10-21T21:14:56Z",
+      "side": 1,
+      "message": "unnecesary. just do\n\nlogging.getLogger(\u0027watchdog.observers.inotify_buffer\u0027).addFilter(lambda record: record \u003d\u003d \u0027inotify_buffer.py\u0027)",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 47
+      },
+      "revId": "23d453f5791f0b247b10b9211c3c8fad5aabab46",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
