@@ -16,6 +16,24 @@
       "message": "What\u0027s the reason for the reland? Can you explain why in commit message or link to a bug?",
       "revId": "9b7a60d162d5b235b6a667ea443f6ab8d4ddf68d",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fc942ddb_fd1be7f6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002751
+      },
+      "writtenOn": "2024-10-21T03:18:19Z",
+      "side": 1,
+      "message": "This is just a pure revert of the revert, I\u0027ll upload over it with a fixed CL that describes the differences.",
+      "parentUuid": "fdd3eb7d_63850bc2",
+      "revId": "9b7a60d162d5b235b6a667ea443f6ab8d4ddf68d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
