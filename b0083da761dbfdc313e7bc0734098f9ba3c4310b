@@ -24,6 +24,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "877c1e4d_40bcc5f8",
+        "filename": "tools/edit_monitor/edit_monitor.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-10-22T06:04:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f86437b8_e36ccd0a",
+      "range": {
+        "startLine": 79,
+        "startChar": 33,
+        "endLine": 79,
+        "endChar": 39
+      },
+      "revId": "b0083da761dbfdc313e7bc0734098f9ba3c4310b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "73830e2c_35e34ecf",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-10-21T21:11:03Z",
       "side": 1,
       "message": "unrelated to the lock, move outside",
+      "range": {
+        "startLine": 156,
+        "startChar": 35,
+        "endLine": 157,
+        "endChar": 39
+      },
+      "revId": "b0083da761dbfdc313e7bc0734098f9ba3c4310b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "35f86336_bae66c81",
+        "filename": "tools/edit_monitor/edit_monitor.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-10-22T06:04:20Z",
+      "side": 1,
+      "message": "I think we need to keep it within the lock as when we add a log event, we may also create a the log thread depending on whether the thread is None or not (line 114), the lock ensures the changes do not conflict with each other.",
+      "parentUuid": "73830e2c_35e34ecf",
       "range": {
         "startLine": 156,
         "startChar": 35,
@@ -70,6 +118,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "82224deb_cfd4ab7f",
+        "filename": "tools/edit_monitor/edit_monitor.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-10-22T06:04:20Z",
+      "side": 1,
+      "message": "aggregated events is only when we see a lot of edits happens at the same time (e.g. when repo sync). The aggregated event only contains the # of files changed without any details (e.g. there\u0027s no file path for the edits).",
+      "parentUuid": "c0c01392_987e2d63",
+      "range": {
+        "startLine": 162,
+        "startChar": 4,
+        "endLine": 162,
+        "endChar": 63
+      },
+      "revId": "b0083da761dbfdc313e7bc0734098f9ba3c4310b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f1714103_9a457de6",
@@ -83,6 +155,30 @@
       "writtenOn": "2024-10-21T21:11:03Z",
       "side": 1,
       "message": "should not log if no events",
+      "range": {
+        "startLine": 188,
+        "startChar": 4,
+        "endLine": 188,
+        "endChar": 16
+      },
+      "revId": "b0083da761dbfdc313e7bc0734098f9ba3c4310b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "91268794_d59376c9",
+        "filename": "tools/edit_monitor/edit_monitor.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-10-22T06:04:20Z",
+      "side": 1,
+      "message": "There will always be events, otherwise the log thread wont be scheduled and this method wont be called.",
+      "parentUuid": "f1714103_9a457de6",
       "range": {
         "startLine": 188,
         "startChar": 4,
