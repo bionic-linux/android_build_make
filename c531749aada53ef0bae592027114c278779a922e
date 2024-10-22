@@ -24,6 +24,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f3c35e8d_bed77591",
+        "filename": "tools/edit_monitor/edit_monitor.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-10-22T20:02:56Z",
+      "side": 1,
+      "message": "Yes, let\u0027s keep the method for better readability.",
+      "parentUuid": "815c0f4d_f5f4e9ed",
+      "range": {
+        "startLine": 104,
+        "startChar": 6,
+        "endLine": 104,
+        "endChar": 21
+      },
+      "revId": "c531749aada53ef0bae592027114c278779a922e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ccd4a13e_49940d0c",
@@ -47,6 +71,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "dc6ca531_aebc2673",
+        "filename": "tools/edit_monitor/edit_monitor.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-10-22T20:02:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ccd4a13e_49940d0c",
+      "range": {
+        "startLine": 105,
+        "startChar": 48,
+        "endLine": 105,
+        "endChar": 57
+      },
+      "revId": "c531749aada53ef0bae592027114c278779a922e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8f1b88a5_40182c74",
@@ -60,6 +108,30 @@
       "writtenOn": "2024-10-22T01:24:53Z",
       "side": 1,
       "message": "note: items in .parents are dir names without parent dirs, e.g. for /a/b/c it will be [a, b, c]. So the if checks here doesn\u0027t seem valid",
+      "range": {
+        "startLine": 109,
+        "startChar": 4,
+        "endLine": 112,
+        "endChar": 36
+      },
+      "revId": "c531749aada53ef0bae592027114c278779a922e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "39bd3aa1_90f50d92",
+        "filename": "tools/edit_monitor/edit_monitor.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-10-22T20:02:56Z",
+      "side": 1,
+      "message": "For absolute path it returns the full path, I have checked it.",
+      "parentUuid": "8f1b88a5_40182c74",
       "range": {
         "startLine": 109,
         "startChar": 4,

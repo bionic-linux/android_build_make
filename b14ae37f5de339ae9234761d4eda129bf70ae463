@@ -183,6 +183,30 @@
       },
       "revId": "b14ae37f5de339ae9234761d4eda129bf70ae463",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "748ec10d_aca13000",
+        "filename": "tools/edit_monitor/edit_monitor.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-10-22T20:02:56Z",
+      "side": 1,
+      "message": "I tried that and it did not work well, relative_to returns a relative path and the parents returned from the relative path is not correct (e.g. it returns \".\" to represent the current dir that\u0027s different from where the program is running). I may fix the path by replacing . with the right path, but that just make the logic complicated. So I prefer to keep the current impl.",
+      "parentUuid": "337769b5_c005097d",
+      "range": {
+        "startLine": 121,
+        "startChar": 4,
+        "endLine": 130,
+        "endChar": 16
+      },
+      "revId": "b14ae37f5de339ae9234761d4eda129bf70ae463",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
