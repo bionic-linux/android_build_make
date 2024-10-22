@@ -135,6 +135,30 @@
       },
       "revId": "b14ae37f5de339ae9234761d4eda129bf70ae463",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8b880458_b4067847",
+        "filename": "tools/edit_monitor/edit_monitor.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1132849
+      },
+      "writtenOn": "2024-10-22T01:20:55Z",
+      "side": 1,
+      "message": "then return \u0027.git\u0027 in file_path.relativeTo(root_path).parents",
+      "parentUuid": "90fdb063_2397c25f",
+      "range": {
+        "startLine": 121,
+        "startChar": 4,
+        "endLine": 130,
+        "endChar": 16
+      },
+      "revId": "b14ae37f5de339ae9234761d4eda129bf70ae463",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
