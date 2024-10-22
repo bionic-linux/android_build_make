@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3bd171c5_e6115f16",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1039338
+      },
+      "writtenOn": "2024-10-22T11:07:49Z",
+      "side": 1,
+      "message": "I\u0027ve removed myself as I don\u0027t know this code at all.",
+      "revId": "2b8cccb5cd80be585c7129f05538ec7e53caf95d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
