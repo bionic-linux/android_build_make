@@ -166,6 +166,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d6c56c13_d8308d91",
+        "filename": "tools/edit_monitor/edit_monitor.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-10-22T17:22:10Z",
+      "side": 1,
+      "message": "I\u0027ll keep it for now as this follows the example usage in watchdog docs",
+      "parentUuid": "20e386ed_916b1cf4",
+      "range": {
+        "startLine": 117,
+        "startChar": 4,
+        "endLine": 118,
+        "endChar": 19
+      },
+      "revId": "479f3bb094b47bdaa43662223d4131dee5ab1efd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2c77aa67_69afd566",
