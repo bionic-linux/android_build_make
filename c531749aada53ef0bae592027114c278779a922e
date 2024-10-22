@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8f1b88a5_40182c74",
+        "filename": "tools/edit_monitor/edit_monitor.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1132849
+      },
+      "writtenOn": "2024-10-22T01:24:53Z",
+      "side": 1,
+      "message": "note: items in .parents are dir names without parent dirs, e.g. for /a/b/c it will be [a, b, c]. So the if checks here doesn\u0027t seem valid",
+      "range": {
+        "startLine": 109,
+        "startChar": 4,
+        "endLine": 112,
+        "endChar": 36
+      },
+      "revId": "c531749aada53ef0bae592027114c278779a922e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
