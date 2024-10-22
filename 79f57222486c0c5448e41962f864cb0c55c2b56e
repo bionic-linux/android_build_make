@@ -223,6 +223,30 @@
       },
       "revId": "79f57222486c0c5448e41962f864cb0c55c2b56e",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "40a15c55_c8474cc8",
+        "filename": "tools/edit_monitor/main.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1132849
+      },
+      "writtenOn": "2024-10-22T01:13:57Z",
+      "side": 1,
+      "message": "Yeah i mean for consistency, either both stop and cleanup handles exception or none of them do?",
+      "parentUuid": "bbb9fe35_b5eb5b45",
+      "range": {
+        "startLine": 86,
+        "startChar": 7,
+        "endLine": 86,
+        "endChar": 13
+      },
+      "revId": "79f57222486c0c5448e41962f864cb0c55c2b56e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
