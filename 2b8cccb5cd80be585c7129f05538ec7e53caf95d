@@ -16,6 +16,23 @@
       "message": "I\u0027ve removed myself as I don\u0027t know this code at all.",
       "revId": "2b8cccb5cd80be585c7129f05538ec7e53caf95d",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "54da4147_3626d307",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1039338
+      },
+      "writtenOn": "2024-10-22T11:12:05Z",
+      "side": 1,
+      "message": "I did not notice this is a CP and I already +1\u0027d the original so I\u0027m happy to give +1 here too.",
+      "revId": "2b8cccb5cd80be585c7129f05538ec7e53caf95d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
