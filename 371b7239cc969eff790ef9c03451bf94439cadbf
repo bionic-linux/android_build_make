@@ -46,6 +46,30 @@
       },
       "revId": "371b7239cc969eff790ef9c03451bf94439cadbf",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2517f937_56a05d7a",
+        "filename": "teams/Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1835071
+      },
+      "writtenOn": "2024-10-23T11:20:02Z",
+      "side": 1,
+      "message": "Should be ok to submit with b/374774332 filled. \n\n(Fyi, we have recently updated instructions w/ now recommending teams to add these team rules closer to their code location, and are freezing this file. For this CL ok to put it here though, just mentioning it in case you prefer to move this closer to the code. Putting in the CR+2 though.)",
+      "parentUuid": "f4db38dc_ebba6e07",
+      "range": {
+        "startLine": 0,
+        "startChar": 0,
+        "endLine": 0,
+        "endChar": 0
+      },
+      "revId": "371b7239cc969eff790ef9c03451bf94439cadbf",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
