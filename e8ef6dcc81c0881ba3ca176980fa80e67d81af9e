@@ -1,6 +1,29 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "217fdf82_e8572971",
+        "filename": "tools/edit_monitor/Android.bp",
+        "patchSetId": 9
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1132849
+      },
+      "writtenOn": "2024-10-23T22:04:08Z",
+      "side": 1,
+      "message": "optional: testpackage, since it\u0027s not only for data but also for the test python script",
+      "range": {
+        "startLine": 80,
+        "startChar": 15,
+        "endLine": 80,
+        "endChar": 23
+      },
+      "revId": "e8ef6dcc81c0881ba3ca176980fa80e67d81af9e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c614f99d_68a7644d",
@@ -19,6 +42,98 @@
         "startChar": 4,
         "endLine": 96,
         "endChar": 20
+      },
+      "revId": "e8ef6dcc81c0881ba3ca176980fa80e67d81af9e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e7475faf_83aa9bc8",
+        "filename": "tools/edit_monitor/edit_monitor_integration_test.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1132849
+      },
+      "writtenOn": "2024-10-23T22:04:08Z",
+      "side": 1,
+      "message": "optional: better use a constant shared between modules to prevent future unintentional breakage.",
+      "range": {
+        "startLine": 122,
+        "startChar": 39,
+        "endLine": 122,
+        "endChar": 50
+      },
+      "revId": "e8ef6dcc81c0881ba3ca176980fa80e67d81af9e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2f6f15ef_2edfecc4",
+        "filename": "tools/edit_monitor/edit_monitor_integration_test.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1132849
+      },
+      "writtenOn": "2024-10-23T22:04:08Z",
+      "side": 1,
+      "message": "is it intentional to use relative path here?",
+      "range": {
+        "startLine": 128,
+        "startChar": 46,
+        "endLine": 128,
+        "endChar": 51
+      },
+      "revId": "e8ef6dcc81c0881ba3ca176980fa80e67d81af9e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "239c2214_b80e1d73",
+        "filename": "tools/edit_monitor/edit_monitor_integration_test.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1132849
+      },
+      "writtenOn": "2024-10-23T22:04:08Z",
+      "side": 1,
+      "message": "optional: use more meaningful name",
+      "range": {
+        "startLine": 133,
+        "startChar": 9,
+        "endLine": 133,
+        "endChar": 10
+      },
+      "revId": "e8ef6dcc81c0881ba3ca176980fa80e67d81af9e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "934cb20e_ddc29296",
+        "filename": "tools/edit_monitor/edit_monitor_integration_test.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1132849
+      },
+      "writtenOn": "2024-10-23T22:04:08Z",
+      "side": 1,
+      "message": "executable_path.chmod(...",
+      "range": {
+        "startLine": 135,
+        "startChar": 4,
+        "endLine": 135,
+        "endChar": 46
       },
       "revId": "e8ef6dcc81c0881ba3ca176980fa80e67d81af9e",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
