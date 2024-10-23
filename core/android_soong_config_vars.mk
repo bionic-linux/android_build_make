@@ -42,6 +42,9 @@ $(call add_soong_config_var,ANDROID,TARGET_DYNAMIC_64_32_MEDIASERVER)
 
 $(call add_soong_config_var,ANDROID,ADDITIONAL_M4DEFS,$(if $(BOARD_SEPOLICY_M4DEFS),$(addprefix -D,$(BOARD_SEPOLICY_M4DEFS))))
 
+# For librecovery_ui_ext
+$(call add_soong_config_var,ANDROID,TARGET_RECOVERY_UI_LIB)
+
 # For Sanitizers
 $(call soong_config_set_bool,ANDROID,ASAN_ENABLED,$(if $(filter address,$(SANITIZE_TARGET)),true,false))
 $(call soong_config_set_bool,ANDROID,HWASAN_ENABLED,$(if $(filter hwaddress,$(SANITIZE_TARGET)),true,false))
