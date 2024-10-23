@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "725cf0f9_f93824c9",
+        "filename": "core/Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 5914,
+      "author": {
+        "id": 1318142
+      },
+      "writtenOn": "2024-10-23T04:57:51Z",
+      "side": 1,
+      "message": "I think it might be better to also add a soong config variable, like:\n$(call soong_config_set, recovery, recovery_api_version, 3) \n\nand then use it in Android.bp like:\nRECOVERY_API_VERSION \u003d select(soong_config_variable(recovery, recovery_api_version), {any @ version: version})\n\nthen the hardcoded value in Android.bp will be eliminated.",
+      "range": {
+        "startLine": 5912,
+        "startChar": 0,
+        "endLine": 5914,
+        "endChar": 27
+      },
+      "revId": "bc5614cabfa095f6f6feacd2bd5acde18fa68b62",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
