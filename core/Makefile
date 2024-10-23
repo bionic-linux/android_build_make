@@ -5910,6 +5910,8 @@ define misc_boot_size
 $(subst .img,_size,$(1))=$(BOARD_KERNEL$(call to-upper,$(subst boot,,$(subst .img,,$(1))))_BOOTIMAGE_PARTITION_SIZE)
 endef
 
+RECOVERY_API_VERSION := 3
+RECOVERY_FSTAB_VERSION := 2
 $(INSTALLED_MISC_INFO_TARGET):
 	rm -f $@
 	$(call pretty,"Target misc_info.txt: $@")
