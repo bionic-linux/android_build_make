@@ -22,6 +22,30 @@
       },
       "revId": "bc5614cabfa095f6f6feacd2bd5acde18fa68b62",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "96499dbf_44feb26c",
+        "filename": "core/Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 5914,
+      "author": {
+        "id": 1307893
+      },
+      "writtenOn": "2024-10-23T08:04:43Z",
+      "side": 1,
+      "message": "This is `build/core/Makefile`, not `Android.mk`.\nDoes this part also need to be converted to `Android.bp`?",
+      "parentUuid": "725cf0f9_f93824c9",
+      "range": {
+        "startLine": 5912,
+        "startChar": 0,
+        "endLine": 5914,
+        "endChar": 27
+      },
+      "revId": "bc5614cabfa095f6f6feacd2bd5acde18fa68b62",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
