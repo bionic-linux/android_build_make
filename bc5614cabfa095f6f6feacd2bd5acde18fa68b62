@@ -46,6 +46,30 @@
       },
       "revId": "bc5614cabfa095f6f6feacd2bd5acde18fa68b62",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "92bd86a2_32da6dab",
+        "filename": "core/Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 5914,
+      "author": {
+        "id": 1318142
+      },
+      "writtenOn": "2024-10-23T08:13:41Z",
+      "side": 1,
+      "message": "oh, I didn\u0027t explain clearly. I searched the use of RECOVERY_API_VERSION and noticed this:\n\nhttps://source.corp.google.com/h/googleplex-android/platform/superproject/main/+/main:bootable/recovery/Android.bp;drc\u003db09792c485118434bec218cdf96387ef11016a3d;l\u003d58\n\nso the last comment is about having the value of RECOVERY_API_VERSION defined in Makefile only and replacing the value in the above Android.bp with code like:\n\nRECOVERY_API_VERSION \u003d select(soong_config_variable(recovery, recovery_api_version), {any @ version: version})",
+      "parentUuid": "96499dbf_44feb26c",
+      "range": {
+        "startLine": 5912,
+        "startChar": 0,
+        "endLine": 5914,
+        "endChar": 27
+      },
+      "revId": "bc5614cabfa095f6f6feacd2bd5acde18fa68b62",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
