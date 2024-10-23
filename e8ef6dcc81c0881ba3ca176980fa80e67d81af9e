@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c614f99d_68a7644d",
+        "filename": "tools/edit_monitor/edit_monitor_integration_test.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1132849
+      },
+      "writtenOn": "2024-10-23T21:58:50Z",
+      "side": 1,
+      "message": "unnecessary var. Just return inside while loop and directly self.fail in the end of test.",
+      "range": {
+        "startLine": 96,
+        "startChar": 4,
+        "endLine": 96,
+        "endChar": 20
+      },
+      "revId": "e8ef6dcc81c0881ba3ca176980fa80e67d81af9e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
