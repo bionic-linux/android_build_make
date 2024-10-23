@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "914c8278_ab2cda20",
+        "filename": "tools/edit_monitor/daemon_manager.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-10-23T18:21:30Z",
+      "side": 1,
+      "message": "Thanks for the reminder, what is the alternatives? We use the same approach for atest, might need to update there as well..",
+      "parentUuid": "851b427c_34638753",
+      "range": {
+        "startLine": 66,
+        "startChar": 23,
+        "endLine": 66,
+        "endChar": 62
+      },
+      "revId": "96f96cf5c6d19d786c2cd345bf32f907feb428a3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d32c7bf5_a00276a9",
         "filename": "tools/edit_monitor/daemon_manager.py",
         "patchSetId": 3
@@ -37,6 +61,30 @@
       "writtenOn": "2024-10-21T21:21:35Z",
       "side": 1,
       "message": "either log or throw, not both. according to style guide",
+      "range": {
+        "startLine": 95,
+        "startChar": 6,
+        "endLine": 95,
+        "endChar": 13
+      },
+      "revId": "96f96cf5c6d19d786c2cd345bf32f907feb428a3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a765b67d_e72646d0",
+        "filename": "tools/edit_monitor/daemon_manager.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-10-23T18:21:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d32c7bf5_a00276a9",
       "range": {
         "startLine": 95,
         "startChar": 6,
@@ -70,6 +118,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2ff979cf_85b7b09b",
+        "filename": "tools/edit_monitor/daemon_manager.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-10-23T18:21:30Z",
+      "side": 1,
+      "message": "No, this indicates any cases that we did not start a new edit monitor (It could be caused by failure to stop existing instance or write the pid file or start the daemon process)",
+      "parentUuid": "6a81d48d_64087650",
+      "range": {
+        "startLine": 96,
+        "startChar": 6,
+        "endLine": 98,
+        "endChar": 7
+      },
+      "revId": "96f96cf5c6d19d786c2cd345bf32f907feb428a3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ace8d780_98ca4942",
@@ -83,6 +155,30 @@
       "writtenOn": "2024-10-21T21:21:35Z",
       "side": 1,
       "message": "if terminate throws, this is never called. Consider adding another try block",
+      "range": {
+        "startLine": 161,
+        "startChar": 6,
+        "endLine": 161,
+        "endChar": 28
+      },
+      "revId": "96f96cf5c6d19d786c2cd345bf32f907feb428a3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2adfb553_75dfb570",
+        "filename": "tools/edit_monitor/daemon_manager.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-10-23T18:21:30Z",
+      "side": 1,
+      "message": "This is intended, if we failed to terminate the daemon process, we keep the pidfile so if user starts a new edit monitor, it will try to kill the previous instance again.",
+      "parentUuid": "ace8d780_98ca4942",
       "range": {
         "startLine": 161,
         "startChar": 6,
@@ -150,6 +246,30 @@
           ]
         }
       ],
+      "revId": "96f96cf5c6d19d786c2cd345bf32f907feb428a3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "373d7695_e8516af5",
+        "filename": "tools/edit_monitor/daemon_manager.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-10-23T18:21:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b4c9d238_ec981d24",
+      "range": {
+        "startLine": 162,
+        "startChar": 6,
+        "endLine": 162,
+        "endChar": 33
+      },
       "revId": "96f96cf5c6d19d786c2cd345bf32f907feb428a3",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
