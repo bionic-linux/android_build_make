@@ -376,7 +376,7 @@ genrule {
 }
 
 prebuilt_etc {
-    name: "fs_config_dirs_vendor",
+    name: "fs_config_dirs_nonsystem",
     filename: "fs_config_dirs",
     src: ":fs_config_dirs_vendor_gen",
     vendor: true,
@@ -391,7 +391,7 @@ genrule {
 }
 
 prebuilt_etc {
-    name: "fs_config_files_vendor",
+    name: "fs_config_files_nonsystem",
     filename: "fs_config_files",
     src: ":fs_config_files_vendor_gen",
     vendor: true,

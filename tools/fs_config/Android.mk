@@ -69,32 +69,6 @@ LOCAL_REQUIRED_MODULES := \
   fs_config_files_nonsystem
 include $(BUILD_PHONY_PACKAGE)
 
-##################################
-# Generate the <p>/etc/fs_config_dirs binary files for all enabled partitions
-# excluding /system, /system_ext and /product. Add fs_config_dirs_nonsystem to
-# PRODUCT_PACKAGES in the device make file to enable.
-include $(CLEAR_VARS)
-
-LOCAL_MODULE := fs_config_dirs_nonsystem
-LOCAL_LICENSE_KINDS := SPDX-license-identifier-Apache-2.0
-LOCAL_LICENSE_CONDITIONS := notice
-LOCAL_NOTICE_FILE := build/soong/licenses/LICENSE
-LOCAL_REQUIRED_MODULES := $(foreach t,$(fs_config_generate_extra_partition_list),fs_config_dirs_$(t))
-include $(BUILD_PHONY_PACKAGE)
-
-##################################
-# Generate the <p>/etc/fs_config_files binary files for all enabled partitions
-# excluding /system, /system_ext and /product. Add fs_config_files_nonsystem to
-# PRODUCT_PACKAGES in the device make file to enable.
-include $(CLEAR_VARS)
-
-LOCAL_MODULE := fs_config_files_nonsystem
-LOCAL_LICENSE_KINDS := SPDX-license-identifier-Apache-2.0
-LOCAL_LICENSE_CONDITIONS := notice
-LOCAL_NOTICE_FILE := build/soong/licenses/LICENSE
-LOCAL_REQUIRED_MODULES := $(foreach t,$(fs_config_generate_extra_partition_list),fs_config_files_$(t))
-include $(BUILD_PHONY_PACKAGE)
-
 ifneq ($(filter oem,$(fs_config_generate_extra_partition_list)),)
 ##################################
 # Generate the oem/etc/fs_config_dirs binary file for the target
