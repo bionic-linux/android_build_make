@@ -50,7 +50,9 @@ PRODUCT_PACKAGES += \
     boringssl_self_test_vendor \
     dumpsys_vendor \
     fs_config_files_nonsystem \
+    fs_config_files_vendor \
     fs_config_dirs_nonsystem \
+    fs_config_dirs_vendor \
     gralloc.default \
     group_odm \
     group_vendor \
