@@ -1,5 +1,23 @@
 {
-  "comments": [],
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2b81bdc2_69969f46",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1878380
+      },
+      "writtenOn": "2024-10-23T19:47:21Z",
+      "side": 1,
+      "message": "Replaced with https://r.android.com/3316528 to help with soong partition conversion",
+      "revId": "68f60f8bbce5302cbc5ab9f94ddd3f1c71da94f8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ],
   "submitRequirementResults": [
     {
       "submitRequirement": {
