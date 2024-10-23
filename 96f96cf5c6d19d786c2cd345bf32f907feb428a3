@@ -48,6 +48,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b2bb4dd0_c6f8c015",
+        "filename": "tools/edit_monitor/daemon_manager.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1132849
+      },
+      "writtenOn": "2024-10-23T20:55:38Z",
+      "side": 1,
+      "message": "Not sure about the recommended alternative. We can keep using build top for now and figure out later",
+      "parentUuid": "914c8278_ab2cda20",
+      "range": {
+        "startLine": 66,
+        "startChar": 23,
+        "endLine": 66,
+        "endChar": 62
+      },
+      "revId": "96f96cf5c6d19d786c2cd345bf32f907feb428a3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d32c7bf5_a00276a9",
