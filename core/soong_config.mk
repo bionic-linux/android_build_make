@@ -428,6 +428,11 @@ $(call add_json_map, PartitionVarsForSoongMigrationOnlyDoNotUse)
 
 $(call end_json_map)
 
+$(call add_json_map,  ProductCopyFiles)
+$(foreach pair,$(PRODUCT_COPY_FILES),\
+  $(call add_json_str,$(word 1,$(subst :, ,$(pair))),$(word 2,$(subst :, ,$(pair)))))
+$(call end_json_map)
+
 $(call json_end)
 
 $(file >$(SOONG_VARIABLES).tmp,$(json_contents))
