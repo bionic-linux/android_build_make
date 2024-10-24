@@ -91,8 +91,13 @@ endif
 # Build system set BOARD_API_LEVEL to show the api level of the vendor API surface.
 # This must not be altered outside of build system.
 ifdef BOARD_API_LEVEL
-ADDITIONAL_VENDOR_PROPERTIES += \
-    ro.board.api_level=$(BOARD_API_LEVEL)
+  ifdef BOARD_API_LEVEL_PROP_OVERRIDE
+    ADDITIONAL_VENDOR_PROPERTIES += \
+      ro.board.api_level=$(BOARD_API_LEVEL_PROP_OVERRIDE)
+  else
+    ADDITIONAL_VENDOR_PROPERTIES += \
+      ro.board.api_level=$(BOARD_API_LEVEL)
+  endif
 endif
 # RELEASE_BOARD_API_LEVEL_FROZEN is true when the vendor API surface is frozen.
 ifdef RELEASE_BOARD_API_LEVEL_FROZEN
