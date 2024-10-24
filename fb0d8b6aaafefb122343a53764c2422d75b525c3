@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bab77929_159cda2b",
+        "filename": "core/android_soong_config_vars.mk",
+        "patchSetId": 7
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 1318142
+      },
+      "writtenOn": "2024-10-24T23:13:59Z",
+      "side": 1,
+      "message": "Can you move this to BoardConfig-common.mk of each soc so it will be like what is done for BOARD_LIBACRYL_G2D_HDR_PLUGIN?",
+      "range": {
+        "startLine": 245,
+        "startChar": 0,
+        "endLine": 247,
+        "endChar": 5
+      },
+      "revId": "fb0d8b6aaafefb122343a53764c2422d75b525c3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
