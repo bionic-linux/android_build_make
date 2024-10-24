@@ -47,6 +47,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "36ac52ad_262f1b12",
+        "filename": "tools/edit_monitor/edit_monitor_integration_test.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-10-24T23:49:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c614f99d_68a7644d",
+      "range": {
+        "startLine": 96,
+        "startChar": 4,
+        "endLine": 96,
+        "endChar": 20
+      },
+      "revId": "e8ef6dcc81c0881ba3ca176980fa80e67d81af9e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e7475faf_83aa9bc8",
@@ -60,6 +84,30 @@
       "writtenOn": "2024-10-23T22:04:08Z",
       "side": 1,
       "message": "optional: better use a constant shared between modules to prevent future unintentional breakage.",
+      "range": {
+        "startLine": 122,
+        "startChar": 39,
+        "endLine": 122,
+        "endChar": 50
+      },
+      "revId": "e8ef6dcc81c0881ba3ca176980fa80e67d81af9e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0f32f60d_3c444d28",
+        "filename": "tools/edit_monitor/edit_monitor_integration_test.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-10-24T23:49:23Z",
+      "side": 1,
+      "message": "Agree the test is brittle (we rely on the output format to verify the results), using constant does not help much.. but I think it should be OK for now as I dont see there will be frequent change in edit monitor. We can refactor the test logic here if it starts causing problems.",
+      "parentUuid": "e7475faf_83aa9bc8",
       "range": {
         "startLine": 122,
         "startChar": 39,
@@ -93,6 +141,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6c762654_ecf97978",
+        "filename": "tools/edit_monitor/edit_monitor_integration_test.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-10-24T23:49:23Z",
+      "side": 1,
+      "message": "This is a absolute path. self.working_dir is a TemporaryDirectory",
+      "parentUuid": "2f6f15ef_2edfecc4",
+      "range": {
+        "startLine": 128,
+        "startChar": 46,
+        "endLine": 128,
+        "endChar": 51
+      },
+      "revId": "e8ef6dcc81c0881ba3ca176980fa80e67d81af9e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "239c2214_b80e1d73",
@@ -116,6 +188,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "34772b73_cfac8376",
+        "filename": "tools/edit_monitor/edit_monitor_integration_test.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-10-24T23:49:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "239c2214_b80e1d73",
+      "range": {
+        "startLine": 133,
+        "startChar": 9,
+        "endLine": 133,
+        "endChar": 10
+      },
+      "revId": "e8ef6dcc81c0881ba3ca176980fa80e67d81af9e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "934cb20e_ddc29296",
@@ -129,6 +225,30 @@
       "writtenOn": "2024-10-23T22:04:08Z",
       "side": 1,
       "message": "executable_path.chmod(...",
+      "range": {
+        "startLine": 135,
+        "startChar": 4,
+        "endLine": 135,
+        "endChar": 46
+      },
+      "revId": "e8ef6dcc81c0881ba3ca176980fa80e67d81af9e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "30fff134_bcd0904a",
+        "filename": "tools/edit_monitor/edit_monitor_integration_test.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-10-24T23:49:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "934cb20e_ddc29296",
       "range": {
         "startLine": 135,
         "startChar": 4,
