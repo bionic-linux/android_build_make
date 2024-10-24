@@ -16,6 +16,24 @@
       "message": "Hi. Could you please add a comment saying what this is, how it\u0027s used, etc.",
       "revId": "040a04126587762fb83bed9858fb896f1005381c",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "34c21b22_6362b072",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1299063
+      },
+      "writtenOn": "2024-10-24T20:47:39Z",
+      "side": 1,
+      "message": "We needed to rename the STS SDK project to AutoRepro. I\u0027m cleaning up the public references to the old name.\n\nThis change is in the same line as aosp/3254921 and aosp/3206023.\n\nI added LaMont Jones because they reviewed the previous ones and had some context.\n\nSome public docs that I\u0027ll also be renaming: https://source.android.com/docs/security/test/sts-sdk",
+      "parentUuid": "7b5f0882_323145ae",
+      "revId": "040a04126587762fb83bed9858fb896f1005381c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
