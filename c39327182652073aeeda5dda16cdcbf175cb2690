@@ -87,6 +87,24 @@
       "message": "This is a board config variable, it should only be set from a `BoardConfig.mk` file, but this is included from a product makefile.",
       "revId": "c39327182652073aeeda5dda16cdcbf175cb2690",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "41e37283_fb52cfb9",
+        "filename": "target/product/eng-has-mte.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1003966
+      },
+      "writtenOn": "2024-10-24T22:38:03Z",
+      "side": 1,
+      "message": "Fixed. Please let me know if this is fixed in the right way. It\u0027s unclear to me how these things should be distributed, and I can\u0027t seem to find any good docs describing it.",
+      "parentUuid": "38c6d76f_781f595a",
+      "revId": "c39327182652073aeeda5dda16cdcbf175cb2690",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }

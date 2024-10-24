@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "86a7ce32_b17b6fab",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003966
+      },
+      "writtenOn": "2024-10-24T22:38:03Z",
+      "side": 1,
+      "message": "Sorry for the delay getting back to this change. PTAL patchset 4.",
+      "revId": "5c008769647f42c0e9c64f7aedbd4001e5458ab2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
