@@ -34,6 +34,24 @@
       "parentUuid": "7b5f0882_323145ae",
       "revId": "040a04126587762fb83bed9858fb896f1005381c",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "58477059_e603703e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-10-24T22:04:53Z",
+      "side": 1,
+      "message": "That\u0027s fine. There isn\u0027t a single comment in this file other than the copyright header. Would you mind adding that link to it so someone reading it can tell what it\u0027s for.  Thanks!",
+      "parentUuid": "34c21b22_6362b072",
+      "revId": "040a04126587762fb83bed9858fb896f1005381c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
