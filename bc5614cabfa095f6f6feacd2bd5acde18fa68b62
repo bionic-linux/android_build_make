@@ -118,6 +118,30 @@
       },
       "revId": "bc5614cabfa095f6f6feacd2bd5acde18fa68b62",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b8bc4998_59c0e602",
+        "filename": "core/Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 5914,
+      "author": {
+        "id": 1318142
+      },
+      "writtenOn": "2024-10-24T22:17:09Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "399f2eeb_e8ac3138",
+      "range": {
+        "startLine": 5912,
+        "startChar": 0,
+        "endLine": 5914,
+        "endChar": 27
+      },
+      "revId": "bc5614cabfa095f6f6feacd2bd5acde18fa68b62",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
