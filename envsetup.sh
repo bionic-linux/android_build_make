@@ -1111,6 +1111,13 @@ function showcommands() {
     fi
 }
 
+function start_edit_monitor() {
+    local T=$(gettop)
+    if [[ "${ANDROID_ENABLE_EDIT_MONITOR}" == "true" ]] && [[ -v EDIT_MONITOR_BINARY ]]; then
+        ("${EDIT_MONITOR_BINARY}" --path="${T}" &> /dev/null &)
+    fi
+}
+
 # These functions used to be here but are now standalone scripts
 # in build/soong/bin.  Unset these for the time being so the real
 # script is picked up.
@@ -1174,5 +1181,6 @@ validate_current_shell
 set_global_paths
 source_vendorsetup
 addcompletions
+start_edit_monitor
 
 
