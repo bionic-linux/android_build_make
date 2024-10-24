@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e101acbd_19e18d03",
+        "filename": "core/soong_config.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1890055
+      },
+      "writtenOn": "2024-10-24T17:37:06Z",
+      "side": 1,
+      "message": "nit; spacing\n```suggestion\n# Set debuggable property based on build variant and PRODUCT_NOT_DEBUGGABLE_IN_USERDEBUG.\n# This follows the logic for setting ro.debuggable from gen_build_prop.py\n```",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 72
+      },
+      "revId": "73eed5345f7010e45895830db4fb63d23fc18cba",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
