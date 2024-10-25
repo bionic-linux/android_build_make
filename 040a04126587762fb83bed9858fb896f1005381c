@@ -52,6 +52,24 @@
       "parentUuid": "34c21b22_6362b072",
       "revId": "040a04126587762fb83bed9858fb896f1005381c",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "58ee5454_0797ee83",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1299063
+      },
+      "writtenOn": "2024-10-25T18:48:18Z",
+      "side": 1,
+      "message": "I need to change the url of that link so if I add it now, it will break within a week or two.\n\nAre you ok if we forgo this requirement? If not, can I assign directly to you when I update the URL?\n\nAlso I\u0027d like to note that this makefile does point to the readme. See the `test_suite_readme` var. IMO that should be enough documentation.",
+      "parentUuid": "58477059_e603703e",
+      "revId": "040a04126587762fb83bed9858fb896f1005381c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
