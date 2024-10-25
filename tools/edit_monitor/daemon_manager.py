@@ -154,7 +154,7 @@ class DaemonManager:
   def stop(self):
     """Stops the daemon process and removes the pidfile."""
 
-    logging.debug("in daemon manager cleanup.")
+    logging.info("in daemon manager cleanup.")
     try:
       if self.daemon_process:
         # The daemon process might already in termination process,
@@ -163,7 +163,7 @@ class DaemonManager:
         if self.daemon_process.is_alive():
           self._terminate_process(self.daemon_process.pid)
       self._remove_pidfile()
-      logging.debug("Successfully stopped daemon manager.")
+      logging.info("Successfully stopped daemon manager.")
     except Exception as e:
       logging.exception("Failed to stop daemon manager with error %s", e)
       self._send_error_event_to_clearcut(
