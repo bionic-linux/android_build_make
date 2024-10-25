@@ -253,6 +253,14 @@ fn list(source_type: FlagSourceType, container: Option<String>) -> Result<String
         FlagSourceType::DeviceConfig => DeviceConfigSource::list_flags()?,
         FlagSourceType::AconfigStorage => AconfigStorageSource::list_flags()?,
     };
+
+    if let Some(ref c) = container {
+        ensure!(
+            load_protos::list_containers()?.contains(&c),
+            format!("container '{}' not found", &c)
+        );
+    }
+
     let flags = (Filter { container }).apply(&flags_unfiltered);
     let padding_info = PaddingInfo {
         longest_flag_col: flags.iter().map(|f| f.qualified_name().len()).max().unwrap_or(0),
