@@ -543,3 +543,12 @@ $(call inherit-product,$(SRC_TARGET_DIR)/product/updatable_apex.mk)
 $(call soong_config_set, bionic, large_system_property_node, $(RELEASE_LARGE_SYSTEM_PROPERTY_NODE))
 $(call soong_config_set, Aconfig, read_from_new_storage, $(RELEASE_READ_FROM_NEW_STORAGE))
 $(call soong_config_set, SettingsLib, legacy_avatar_picker_app_enabled, $(if $(RELEASE_AVATAR_PICKER_APP),,true))
+
+# Aggregate all RELEASE_SYSTEM_FEATURE_$(NAME) flags into a single input variable for
+# codegen, of the form `--feature=$(NAME):$(VALUE)` for each declared flag.
+# Note: This input variable is only effective when the top-level
+# RELEASE_USE_SYSTEM_FEATURE_BUILD_FLAGS build flag is set to `true`.
+LOCAL_SYSTEM_FEATURE_ARGS :=
+$(foreach v,$(sort $(filter RELEASE_SYSTEM_FEATURE_%,$(.VARIABLES))), \
+    $(eval LOCAL_SYSTEM_FEATURE_ARGS += --feature=$(subst RELEASE_SYSTEM_FEATURE_,,$(v)):$($(v)) ))
+$(call soong_config_set, systemfeatures, system_feature_codegen_args, $(LOCAL_SYSTEM_FEATURE_ARGS))
