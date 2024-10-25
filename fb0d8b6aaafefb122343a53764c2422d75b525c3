@@ -70,6 +70,30 @@
       },
       "revId": "fb0d8b6aaafefb122343a53764c2422d75b525c3",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "52c33c66_f8d13e35",
+        "filename": "core/android_soong_config_vars.mk",
+        "patchSetId": 7
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 1318142
+      },
+      "writtenOn": "2024-10-25T03:16:48Z",
+      "side": 1,
+      "message": "In this case, we will need to add something as below to BoardConfig-common.mk of gs101, gs201, zuma and zumapro instead of keeping them here. \n\n$(call soong_config_set,acryl,libacryl_c_include,hardware/google/graphics/gs101/libcap)",
+      "parentUuid": "0976bc39_79072179",
+      "range": {
+        "startLine": 245,
+        "startChar": 0,
+        "endLine": 247,
+        "endChar": 5
+      },
+      "revId": "fb0d8b6aaafefb122343a53764c2422d75b525c3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
