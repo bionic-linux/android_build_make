@@ -199,15 +199,22 @@ struct Filter {
 }
 
 impl Filter {
-    fn apply(&self, flags: &[Flag]) -> Vec<Flag> {
-        flags
+    fn apply(&self, flags: &[Flag]) -> Result<Vec<Flag>> {
+        if let Some(c) = &self.container {
+            ensure!(
+                load_protos::list_containers()?.contains(&c),
+                format!("container '{}' not found", &c)
+            )
+        }
+
+        Ok(flags
             .iter()
             .filter(|flag| match &self.container {
                 Some(c) => flag.container == *c,
                 None => true,
             })
             .cloned()
-            .collect()
+            .collect())
     }
 }
 
@@ -253,7 +260,7 @@ fn list(source_type: FlagSourceType, container: Option<String>) -> Result<String
         FlagSourceType::DeviceConfig => DeviceConfigSource::list_flags()?,
         FlagSourceType::AconfigStorage => AconfigStorageSource::list_flags()?,
     };
-    let flags = (Filter { container }).apply(&flags_unfiltered);
+    let flags = (Filter { container }).apply(&flags_unfiltered)?;
     let padding_info = PaddingInfo {
         longest_flag_col: flags.iter().map(|f| f.qualified_name().len()).max().unwrap_or(0),
         longest_val_col: flags.iter().map(|f| f.value.to_string().len()).max().unwrap_or(0),
