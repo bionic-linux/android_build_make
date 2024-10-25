@@ -540,3 +540,20 @@ $(call inherit-product,$(SRC_TARGET_DIR)/product/updatable_apex.mk)
 $(call soong_config_set, bionic, large_system_property_node, $(RELEASE_LARGE_SYSTEM_PROPERTY_NODE))
 $(call soong_config_set, Aconfig, read_from_new_storage, $(RELEASE_READ_FROM_NEW_STORAGE))
 $(call soong_config_set, SettingsLib, legacy_avatar_picker_app_enabled, $(if $(RELEASE_AVATAR_PICKER_APP),,true))
+
+
+# Aggregate all RELEASE_SYSTEM_FEATURE_$(NAME) flags into a single input variable for
+# codegen, of the form `--feature=$(NAME):$(VALUE)` for each declared flag.
+# Note: The aggregated args only take effect when the top-level
+# RELEASE_USE_SYSTEM_FEATURE_BUILD_FLAGS build flag is set to `true`.
+# TODO(b/203143243): Implement this logid directly with a native soong module.
+feature_variables := \
+    RELEASE_SYSTEM_FEATURE_AUTOMOTIVE:AUTOMOTIVE \
+    RELEASE_SYSTEM_FEATURE_EMBEDDED:EMBEDDED \
+    RELEASE_SYSTEM_FEATURE_LEANBACK:LEANBACK \
+    RELEASE_SYSTEM_FEATURE_PC:PC \
+    RELEASE_SYSTEM_FEATURE_TELEVISION:TELEVISION \
+    RELEASE_SYSTEM_FEATURE_WATCH:WATCH \
+
+system_feature_args := $(foreach v,$(feature_variables), --feature=$(word 2,$(subst :, ,$(v))):$($(word 1,$(subst :, ,$(v)))))
+$(call soong_config_set, systemfeatures, codegen_feature_args, $(system_feature_args))
