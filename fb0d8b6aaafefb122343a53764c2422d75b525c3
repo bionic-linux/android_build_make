@@ -46,6 +46,30 @@
       },
       "revId": "fb0d8b6aaafefb122343a53764c2422d75b525c3",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6b7a2d59_670d83c7",
+        "filename": "core/android_soong_config_vars.mk",
+        "patchSetId": 7
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 1308044
+      },
+      "writtenOn": "2024-10-25T03:11:32Z",
+      "side": 1,
+      "message": "I found something nor correct for the `libacryl_use_g2d_hdr_plugin`, let me update the CL for fixing this...",
+      "parentUuid": "0976bc39_79072179",
+      "range": {
+        "startLine": 245,
+        "startChar": 0,
+        "endLine": 247,
+        "endChar": 5
+      },
+      "revId": "fb0d8b6aaafefb122343a53764c2422d75b525c3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
