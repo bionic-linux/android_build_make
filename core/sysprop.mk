@@ -252,16 +252,6 @@ _prop_vars_ :=
 endif
 
 INSTALLED_VENDOR_BUILD_PROP_TARGET := $(TARGET_OUT_VENDOR)/build.prop
-$(eval $(call build-properties,\
-    vendor,\
-    $(INSTALLED_VENDOR_BUILD_PROP_TARGET),\
-    $(_prop_files_),\
-    $(_prop_vars_),\
-    $(PRODUCT_VENDOR_PROPERTY_BLACKLIST),\
-    $(empty),\
-    $(empty)))
-
-$(eval $(call declare-1p-target,$(INSTALLED_VENDOR_BUILD_PROP_TARGET)))
 
 # -----------------------------------------------------------------
 # product/etc/build.prop
