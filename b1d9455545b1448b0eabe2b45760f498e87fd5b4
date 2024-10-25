@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ef037448_4c6c3929",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1064003
+      },
+      "writtenOn": "2024-10-25T23:21:01Z",
+      "side": 1,
+      "message": "This seemed easier and more generic than explicitly joining all build flags in the framework Android.bp file (with a bunch of `select(release_flag` statements).",
+      "revId": "b1d9455545b1448b0eabe2b45760f498e87fd5b4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
