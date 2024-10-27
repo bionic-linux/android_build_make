@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "52c66854_136f7967",
+        "filename": "core/sysprop.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 1291338
+      },
+      "writtenOn": "2024-10-27T04:10:37Z",
+      "side": 1,
+      "message": "How are we going to handle this? FYI I uploaded aosp/3079299 for this but didn\u0027t think how to resolve Cole\u0027s comment.",
+      "range": {
+        "startLine": 233,
+        "startChar": 0,
+        "endLine": 235,
+        "endChar": 87
+      },
+      "revId": "f665db5193b13d1ccd2185bb9035fc1be181d6ff",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "716f47d8_124a41ea",
+        "filename": "core/sysprop.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 1291338
+      },
+      "writtenOn": "2024-10-27T04:10:37Z",
+      "side": 1,
+      "message": "`ADDITIONAL_VENDOR_PROPERTIES` needs to be removed from `sysprop_config.mk`.",
+      "range": {
+        "startLine": 243,
+        "startChar": 4,
+        "endLine": 243,
+        "endChar": 32
+      },
+      "revId": "f665db5193b13d1ccd2185bb9035fc1be181d6ff",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
