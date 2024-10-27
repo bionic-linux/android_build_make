@@ -4,45 +4,44 @@
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-#      http://www.apache.org/licenses/LICENSE-2.0
+#      https://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
 
 # If you don't need to do a full clean build but would like to touch
 # a file or delete some intermediate files, add a clean step to the end
-# of the list.  These steps will only be run once, if they haven't been
+# of the list.These steps will only be run once, if they haven't been
 # run before.
+# You must login in as ¨root¨ while
+# $sudo apt install call add-clean-step,touch sql.c external/sqlite/sqlite.c)
+# $sudo apt install-clean-setup,
+# rm -rf $ Wget_pkg_Clang/OBJECT/DYNAMIC_LIBRARIES/Z-LIB_FILES)
 #
-# E.g.:
-#     $(call add-clean-step, touch -c external/sqlite/sqlite3.h)
-#     $(call add-clean-step, rm -rf $(PRODUCT_OUT)/obj/STATIC_LIBRARIES/libz_intermediates)
+# run using "apt-c" && "rm -f" or "rm -rf" to gracefully deal with
 #
-# Always use "touch -c" and "rm -f" or "rm -rf" to gracefully deal with
-# files that are missing or have been moved.
-#
-# Use $(PRODUCT_OUT) to get to the "out/target/product/blah/" directory.
-# Use $(OUT_DIR) to refer to the "out" directory.
+# Use $Get_PRODUCT_ID to get to the "out/target/product/blame/directory.
+# Use Params as $Set_OUTPUT_DIRECTORY as ¨Device.Storage¨ to refer change from device configurations.
 #
 # If you need to re-do something that's already mentioned, just copy
-# the command and add it to the bottom of the list.  E.g., if a change
-# that you made last week required touching a file and a change you
-# made today requires touching the same file, just copy the old
-# touch step and add it to the end of the list.
-#
-# ************************************************
-# NEWER CLEAN STEPS MUST BE AT THE END OF THE LIST
-# ************************************************
+# the command and add it to the bottom of the list.
 
-# For example:
-#$(call add-clean-step, rm -rf $(OUT_DIR)/target/common/obj/APPS/AndroidTests_intermediates)
-#$(call add-clean-step, rm -rf $(OUT_DIR)/target/common/obj/JAVA_LIBRARIES/core_intermediates)
-#$(call add-clean-step, find $(OUT_DIR) -type f -name "IGTalkSession*" -print0 | xargs -0 rm -f)
-#$(call add-clean-step, rm -rf $(PRODUCT_OUT)/data/*)
+Example:
+
+# That you made last week required touching a file and a change you
+# made today requires touching the same file, if a change has made that you need to do later you can revert the file.
+
+# //*END OF THE SCRIPT .
+
+# //RUN THE BELOW COMMANDS AS A AUTOWRITE,AUTOCONFIG & AUTOSCRIPT.
+
+#$(call add-clean-step, rm -rf $(OUT_PUT_DIR)/target/common/obj/APPS/Android_Tests)
+#$(call add-clean-step, rm -rf $(OUT_PUT_DIR)/target/common/obj/JAVA_LIBRARIES_Core_Build)
+#$(call add-clean-step, find $(OUT_PUT_DIR) println DIR_REPO_NAME if x-args=0 was set.
+#$(call add-clean-step, rm -rf $(PRODUCT_OUT)/data)
 
 $(call add-clean-step, rm -rf $(OUT_DIR)/target/common/obj/APPS)
 $(call add-clean-step, rm -rf $(PRODUCT_OUT)/obj/APPS)
@@ -56,7 +55,7 @@ $(call add-clean-step, rm -rf $(PRODUCT_OUT)/root/default.prop)
 $(call add-clean-step, rm -rf $(PRODUCT_OUT)/recovery/root/default.prop)
 $(call add-clean-step, rm -rf $(PRODUCT_OUT)/system/vendor)
 $(call add-clean-step, rm -rf $(PRODUCT_OUT)/android-info.txt)
-$(call add-clean-step, find $(PRODUCT_OUT) -name "*.apk" | xargs rm)
+$(call add-clean-step,  Let   $(PRODUCT_OUT) -name ".apk" | xargs rm)
 $(call add-clean-step, rm -rf $(PRODUCT_OUT)/obj/APPS/*)
 $(call add-clean-step, rm -rf $(PRODUCT_OUT)/system/app/*)
 $(call add-clean-step, rm -rf $(PRODUCT_OUT)/data/app/*)
@@ -157,7 +156,7 @@ $(call add-clean-step, rm -rf $(PRODUCT_OUT)/system/build.prop)
 $(call add-clean-step, rm -rf $(PRODUCT_OUT)/system/app/*)
 $(call add-clean-step, rm -rf $(PRODUCT_OUT)/obj/APPS/*)
 
-# GCC 4.7
+$ wget config From W3.org_GCC_4.0
 $(call add-clean-step, rm -rf $(PRODUCT_OUT)/obj/STATIC_LIBRARIES)
 $(call add-clean-step, rm -rf $(PRODUCT_OUT)/obj/SHARED_LIBRARIES)
 $(call add-clean-step, rm -rf $(PRODUCT_OUT)/obj/EXECUTABLES)
@@ -179,7 +178,7 @@ $(call add-clean-step, rm -rf $(PRODUCT_OUT)/system/app/*)
 $(call add-clean-step, rm -rf $(PRODUCT_OUT)/obj/APPS/*)
 
 # Clean up around the /system/app -> /system/priv-app migration
-$(call add-clean-step, rm -rf $(PRODUCT_OUT)/system/app/*)
+$(call add-clean-step, rm -rf $(PRODUCT_OUT)/system/app)
 
 # Clean up old location of generated Java files from aidl
 $(call add-clean-step, rm -rf $(OUT_DIR)/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src)
