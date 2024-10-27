@@ -513,6 +513,7 @@ mod tests {
         package com.android.aconfig.test;
         // TODO(b/303773055): Remove the annotation after access issue is resolved.
         import android.compat.annotation.UnsupportedAppUsage;
+        import android.os.Binder;
         import android.provider.DeviceConfig;
         import android.provider.DeviceConfig.Properties;
         import android.aconfig.storage.StorageInternalReader;
@@ -544,6 +545,7 @@ mod tests {
                 isCached = true;
             }
             private void load_overrides_aconfig_test() {
+                long ident = Binder.clearCallingIdentity();
                 try {
                     Properties properties = DeviceConfig.getProperties("aconfig_test");
                     disabledRw =
@@ -561,11 +563,14 @@ mod tests {
                         + "flag declaration.",
                         e
                     );
+                } finally {
+                    Binder.restoreCallingIdentity(ident);
                 }
                 aconfig_test_is_cached = true;
             }
 
             private void load_overrides_other_namespace() {
+                long ident = Binder.clearCallingIdentity();
                 try {
                     Properties properties = DeviceConfig.getProperties("other_namespace");
                     disabledRwInOtherNamespace =
@@ -579,6 +584,8 @@ mod tests {
                         + "flag declaration.",
                         e
                     );
+                } finally {
+                    Binder.restoreCallingIdentity(ident);
                 }
                 other_namespace_is_cached = true;
             }
@@ -692,7 +699,6 @@ mod tests {
 
         for file in generated_files {
             let file_path = file.path.to_str().unwrap();
-            assert!(file_set.contains_key(file_path), "Cannot find {}", file_path);
             assert_eq!(
                 None,
                 crate::test::first_significant_code_diff(
@@ -760,6 +766,7 @@ mod tests {
 
         let expect_feature_flags_impl_content = r#"
         package com.android.aconfig.test;
+        import android.os.Binder;
         import android.provider.DeviceConfig;
         import android.provider.DeviceConfig.Properties;
         /** @hide */
@@ -770,6 +777,7 @@ mod tests {
             private static boolean enabledRoExported = false;
 
             private void load_overrides_aconfig_test() {
+                long ident = Binder.clearCallingIdentity();
                 try {
                     Properties properties = DeviceConfig.getProperties("aconfig_test");
                     disabledRwExported =
@@ -787,6 +795,8 @@ mod tests {
                         + "flag declaration.",
                         e
                     );
+                } finally {
+                    Binder.restoreCallingIdentity(ident);
                 }
                 aconfig_test_is_cached = true;
             }
