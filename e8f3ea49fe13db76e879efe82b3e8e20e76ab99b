@@ -1,0 +1,116 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "26eae20a_e2c9e865",
+        "filename": "ci/test_discovery_agent.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1121894
+      },
+      "writtenOn": "2024-10-28T19:47:23Z",
+      "side": 1,
+      "message": "nit: make it a constant since it\u0027s linked to TF",
+      "range": {
+        "startLine": 47,
+        "startChar": 24,
+        "endLine": 47,
+        "endChar": 45
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "997fd9f6_45e2f830",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ci/test_discovery_agent.py",
+              "range": {
+                "startLine": 47,
+                "startChar": 0,
+                "endLine": 48,
+                "endChar": 0
+              },
+              "replacement": "      temp_file_name \u003d \"DISCOVERY_OUTPUT_FILE\"\n"
+            },
+            {
+              "path": "ci/test_discovery_agent.py",
+              "range": {
+                "startLine": 64,
+                "startChar": 0,
+                "endLine": 65,
+                "endChar": 0
+              },
+              "replacement": "    env.update({\"DISCOVERY_OUTPUT_FILE\": temp_file_name})\n"
+            }
+          ]
+        }
+      ],
+      "revId": "e8f3ea49fe13db76e879efe82b3e8e20e76ab99b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dc37ec84_d245055d",
+        "filename": "ci/test_discovery_agent.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1121894
+      },
+      "writtenOn": "2024-10-28T19:47:23Z",
+      "side": 1,
+      "message": "ditto: make those name constant, since they come from Tradefed.",
+      "range": {
+        "startLine": 79,
+        "startChar": 8,
+        "endLine": 79,
+        "endChar": 31
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "f2c7b5ab_427f9ef2",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ci/test_discovery_agent.py",
+              "range": {
+                "startLine": 79,
+                "startChar": 0,
+                "endLine": 80,
+                "endChar": 0
+              },
+              "replacement": "    if \"no_possible_test_discovery\" in data and data[\"no_possible_test_discovery\"]:\n"
+            },
+            {
+              "path": "ci/test_discovery_agent.py",
+              "range": {
+                "startLine": 81,
+                "startChar": 0,
+                "endLine": 82,
+                "endChar": 0
+              },
+              "replacement": "    if data[\"test_zip_regexes\"] is None or data[\"test_zip_regexes\"] is []:\n"
+            },
+            {
+              "path": "ci/test_discovery_agent.py",
+              "range": {
+                "startLine": 83,
+                "startChar": 0,
+                "endLine": 84,
+                "endChar": 0
+              },
+              "replacement": "    return data[\"test_zip_regexes\"]\n"
+            }
+          ]
+        }
+      ],
+      "revId": "e8f3ea49fe13db76e879efe82b3e8e20e76ab99b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
