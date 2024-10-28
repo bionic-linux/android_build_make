@@ -16,6 +16,24 @@
       "message": "It looks okay generally, i think it\u0027s pending we get allowed to temporarily drop the python libs for the proto right?",
       "revId": "166a34870aaede64225460370b2d787f3cd0a078",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6e22ee27_55c58606",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-10-28T21:45:36Z",
+      "side": 1,
+      "message": "yes, this depends on the final decision of how to handle the proto import, which is why i\u0027m keeping it WIP for now.",
+      "parentUuid": "027e1d1e_0a6ab057",
+      "revId": "166a34870aaede64225460370b2d787f3cd0a078",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
