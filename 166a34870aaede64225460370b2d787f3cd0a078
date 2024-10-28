@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "027e1d1e_0a6ab057",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1121894
+      },
+      "writtenOn": "2024-10-28T21:44:16Z",
+      "side": 1,
+      "message": "It looks okay generally, i think it\u0027s pending we get allowed to temporarily drop the python libs for the proto right?",
+      "revId": "166a34870aaede64225460370b2d787f3cd0a078",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
