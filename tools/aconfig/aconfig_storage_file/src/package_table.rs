@@ -288,16 +288,14 @@ impl PackageTable {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::read_u32_from_start_of_bytes;
+    use crate::{read_u32_from_start_of_bytes, DEFAULT_FILE_VERSION, MAX_SUPPORTED_FILE_VERSION};
     use crate::test_utils::create_test_package_table;
-    use rstest::rstest;
 
-    #[rstest]
-    #[case(1)]
-    #[case(2)]
+    #[test]
     // this test point locks down the table serialization
-    fn test_serialization(#[case] version: u32) {
-        let package_table = create_test_package_table(version);
+    // TODO: b/376108268 - Use parameterized tests.
+    fn test_serialization_default() {
+        let package_table = create_test_package_table(DEFAULT_FILE_VERSION);
         let header: &PackageTableHeader = &package_table.header;
         let reinterpreted_header = PackageTableHeader::from_bytes(&header.into_bytes());
         assert!(reinterpreted_header.is_ok());
@@ -318,38 +316,63 @@ mod tests {
         assert_eq!(package_table_bytes.len() as u32, header.file_size);
     }
 
-    #[rstest]
-    #[case(1)]
-    #[case(2)]
-    // this test point locks down that version number should be at the top of serialized
-    // bytes
-    fn test_version_number(#[case] version: u32) {
-        let package_table = create_test_package_table(version);
-        let bytes = &package_table.into_bytes();
-        let unpacked_version = read_u32_from_start_of_bytes(bytes).unwrap();
-        assert_eq!(unpacked_version, version);
+    #[test]
+    fn test_serialization_max() {
+        let package_table = create_test_package_table(MAX_SUPPORTED_FILE_VERSION);
+        let header: &PackageTableHeader = &package_table.header;
+        let reinterpreted_header = PackageTableHeader::from_bytes(&header.into_bytes());
+        assert!(reinterpreted_header.is_ok());
+        assert_eq!(header, &reinterpreted_header.unwrap());
+
+        let nodes: &Vec<PackageTableNode> = &package_table.nodes;
+        for node in nodes.iter() {
+            let reinterpreted_node =
+                PackageTableNode::from_bytes(&node.into_bytes(header.version), header.version)
+                    .unwrap();
+            assert_eq!(node, &reinterpreted_node);
+        }
+
+        let package_table_bytes = package_table.into_bytes();
+        let reinterpreted_table = PackageTable::from_bytes(&package_table_bytes);
+        assert!(reinterpreted_table.is_ok());
+        assert_eq!(&package_table, &reinterpreted_table.unwrap());
+        assert_eq!(package_table_bytes.len() as u32, header.file_size);
     }
 
-    #[rstest]
-    #[case(1)]
-    #[case(2)]
-    fn test_round_trip(#[case] version: u32) {
-        let table: PackageTable = create_test_package_table(version);
+    #[test]
+    // this test point locks down that version number should be at the top of serialized
+    // bytes
+    fn test_version_number() {
+        let package_table = create_test_package_table(DEFAULT_FILE_VERSION);
+        let bytes = &package_table.into_bytes();
+        let unpacked_version = read_u32_from_start_of_bytes(bytes).unwrap();
+        assert_eq!(unpacked_version, DEFAULT_FILE_VERSION);
+    }
+
+    #[test]
+    fn test_round_trip_default() {
+        let table: PackageTable = create_test_package_table(DEFAULT_FILE_VERSION);
         let table_bytes = table.into_bytes();
 
-        // Will automatically read from version 2 as the version code is encoded
-        // into the bytes.
         let reinterpreted_table = PackageTable::from_bytes(&table_bytes).unwrap();
 
         assert_eq!(table, reinterpreted_table);
     }
 
-    #[rstest]
-    #[case(1)]
-    #[case(2)]
+    #[test]
+    fn test_round_trip_max() {
+        let table: PackageTable = create_test_package_table(MAX_SUPPORTED_FILE_VERSION);
+        let table_bytes = table.into_bytes();
+
+        let reinterpreted_table = PackageTable::from_bytes(&table_bytes).unwrap();
+
+        assert_eq!(table, reinterpreted_table);
+    }
+
+    #[test]
     // this test point locks down file type check
-    fn test_file_type_check(#[case] version: u32) {
-        let mut package_table = create_test_package_table(version);
+    fn test_file_type_check() {
+        let mut package_table = create_test_package_table(DEFAULT_FILE_VERSION);
         package_table.header.file_type = 123u8;
         let error = PackageTable::from_bytes(&package_table.into_bytes()).unwrap_err();
         assert_eq!(

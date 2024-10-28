@@ -38,7 +38,11 @@ pub fn create_test_package_table(version: u32) -> PackageTable {
         bucket_offset: 31,
         node_offset: 59,
     };
-    let buckets: Vec<Option<u32>> = vec![Some(59), None, None, Some(117), None, None, None];
+    let buckets: Vec<Option<u32>> = match version {
+      1 => vec![Some(59), None, None, Some(109), None, None, None],
+      2 => vec![Some(59), None, None, Some(117), None, None, None],
+      _ => panic!("Unsupported version."),
+    };
     let first_node = PackageTableNode {
         package_name: String::from("com.android.aconfig.storage.test_2"),
         package_id: 1,
@@ -51,7 +55,11 @@ pub fn create_test_package_table(version: u32) -> PackageTable {
         package_id: 0,
         fingerprint: 0,
         boolean_start_index: 0,
-        next_offset: Some(175),
+        next_offset: match version {
+            1 => Some(159),
+            2 => Some(175),
+            _ => panic!("Unsupported version."),
+        }
     };
     let third_node = PackageTableNode {
         package_name: String::from("com.android.aconfig.storage.test_4"),
