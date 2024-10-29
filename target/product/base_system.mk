@@ -212,6 +212,7 @@ PRODUCT_PACKAGES += \
     linker \
     llkd \
     lmkd \
+    mm_daemon \
     LocalTransport \
     locksettings \
     logcat \
@@ -349,6 +350,11 @@ endif
 ifneq (,$(RELEASE_RANGING_STACK))
     PRODUCT_PACKAGES += \
         com.android.ranging
+endif
+
+ifeq ($(RELEASE_MEMORY_MANAGEMENT_DAEMON),true)
+  PRODUCT_PACKAGES += \
+        mm_daemon
 endif
 
 # VINTF data for system image
