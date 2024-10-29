@@ -164,6 +164,11 @@ fn create_filter_predicate_single(filter: &str) -> Result<Box<DumpPredicate>> {
                 .context(error_msg)?;
             Ok(Box::new(move |flag: &ProtoParsedFlag| flag.state() == expected))
         }
+        "state" => {
+            let expected = enum_from_str(&[ProtoFlagState::ENABLED, ProtoFlagState::DISABLED], arg)
+                .context(error_msg)?;
+            Ok(Box::new(move |flag: &ProtoParsedFlag| flag.state() != expected))
+        }
         "permission" => {
             let expected = enum_from_str(
                 &[ProtoFlagPermission::READ_ONLY, ProtoFlagPermission::READ_WRITE],
