@@ -64,7 +64,7 @@ public final class FeatureFlagsImpl implements FeatureFlags \{
                 properties.getBoolean(Flags.FLAG_{flag.flag_name_constant_suffix}, {flag.default_value});
 {{ -endif }}
 {{ -endfor }}
-        } catch (NullPointerException e) \{
+        } catch (Exception e) \{
             throw new RuntimeException(
                 "Cannot read value from namespace {namespace_with_flags.namespace} "
                 + "from DeviceConfig. It could be that the code using flag "
