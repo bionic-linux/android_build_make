@@ -16,6 +16,23 @@
       "message": "+Tim\n\nLooks good to me.\n\n@zhidou@google.com - do we also need to consider the native/c++ case?",
       "revId": "c8557d4e22be063b9216f89e3a9aa87bb4e8de52",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "029a7c86_efbfc8ff",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017430
+      },
+      "writtenOn": "2024-10-29T17:57:01Z",
+      "side": 1,
+      "message": "does this mean that any user of a flag that might be read from an isolated process needs to wrap the flag check with try/catch?",
+      "revId": "c8557d4e22be063b9216f89e3a9aa87bb4e8de52",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
