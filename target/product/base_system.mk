@@ -212,6 +212,7 @@ PRODUCT_PACKAGES += \
     linker \
     llkd \
     lmkd \
+    mm_daemon \
     LocalTransport \
     locksettings \
     logcat \
