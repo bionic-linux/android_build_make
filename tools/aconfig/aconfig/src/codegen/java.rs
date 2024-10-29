@@ -552,7 +552,7 @@ mod tests {
                         properties.getBoolean(Flags.FLAG_DISABLED_RW_EXPORTED, false);
                     enabledRw =
                         properties.getBoolean(Flags.FLAG_ENABLED_RW, true);
-                } catch (NullPointerException e) {
+                } catch (Exception e) {
                     throw new RuntimeException(
                         "Cannot read value from namespace aconfig_test "
                         + "from DeviceConfig. It could be that the code using flag "
@@ -570,7 +570,7 @@ mod tests {
                     Properties properties = DeviceConfig.getProperties("other_namespace");
                     disabledRwInOtherNamespace =
                         properties.getBoolean(Flags.FLAG_DISABLED_RW_IN_OTHER_NAMESPACE, false);
-                } catch (NullPointerException e) {
+                } catch (Exception e) {
                     throw new RuntimeException(
                         "Cannot read value from namespace other_namespace "
                         + "from DeviceConfig. It could be that the code using flag "
@@ -778,7 +778,7 @@ mod tests {
                         properties.getBoolean(Flags.FLAG_ENABLED_FIXED_RO_EXPORTED, false);
                     enabledRoExported =
                         properties.getBoolean(Flags.FLAG_ENABLED_RO_EXPORTED, false);
-                } catch (NullPointerException e) {
+                } catch (Exception e) {
                     throw new RuntimeException(
                         "Cannot read value from namespace aconfig_test "
                         + "from DeviceConfig. It could be that the code using flag "
