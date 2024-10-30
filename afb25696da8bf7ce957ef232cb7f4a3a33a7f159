@@ -66,6 +66,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e2a1002a_199f37e6",
+        "filename": "tools/aconfig/aconfig_storage_file/srcs/android/aconfig/storage/ByteBufferReader.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1944425
+      },
+      "writtenOn": "2024-10-30T20:57:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b4e8dd42_9883f136",
+      "range": {
+        "startLine": 48,
+        "startChar": 18,
+        "endLine": 48,
+        "endChar": 28
+      },
+      "revId": "afb25696da8bf7ce957ef232cb7f4a3a33a7f159",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a1cb855e_d59aad06",
@@ -151,6 +175,30 @@
       "side": 1,
       "message": "sure let\u0027s use container. I will change in next cl",
       "parentUuid": "a1cb855e_d59aad06",
+      "range": {
+        "startLine": 42,
+        "startChar": 19,
+        "endLine": 42,
+        "endChar": 35
+      },
+      "revId": "afb25696da8bf7ce957ef232cb7f4a3a33a7f159",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "de010cc1_8f6901a3",
+        "filename": "tools/aconfig/aconfig_storage_read_api/srcs/android/aconfig/storage/AconfigPackageImpl.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1944425
+      },
+      "writtenOn": "2024-10-30T20:57:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ecabd607_1f8e7b1c",
       "range": {
         "startLine": 42,
         "startChar": 19,
