@@ -1,0 +1,116 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f1ca5f88_29c84233",
+        "filename": "tools/aconfig/aconfig_storage_file/srcs/android/aconfig/storage/ByteBufferReader.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1890055
+      },
+      "writtenOn": "2024-10-30T20:44:42Z",
+      "side": 1,
+      "message": "nit: unrelated to this CL, but if we were parsing an invalid file, this could easily result in some form of oom? Maybe add a TODO to abort if length \u003e 256 or some reasonable max length for a string?",
+      "range": {
+        "startLine": 48,
+        "startChar": 18,
+        "endLine": 48,
+        "endChar": 28
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "f47e1e78_c2b3e7be",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "tools/aconfig/aconfig_storage_file/srcs/android/aconfig/storage/ByteBufferReader.java",
+              "range": {
+                "startLine": 50,
+                "startChar": 0,
+                "endLine": 50,
+                "endChar": 0
+              },
+              "replacement": "        // TODO: abort if length \u003e 256 or some reasonable max length for a string\n"
+            }
+          ]
+        }
+      ],
+      "revId": "afb25696da8bf7ce957ef232cb7f4a3a33a7f159",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a1cb855e_d59aad06",
+        "filename": "tools/aconfig/aconfig_storage_read_api/srcs/android/aconfig/storage/AconfigPackageImpl.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1890055
+      },
+      "writtenOn": "2024-10-30T20:44:42Z",
+      "side": 1,
+      "message": "I think we were debating whether this should be called container in another CL. Have we settled on packageGroupName?",
+      "range": {
+        "startLine": 42,
+        "startChar": 19,
+        "endLine": 42,
+        "endChar": 35
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "5af46989_c05db273",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "tools/aconfig/aconfig_storage_read_api/srcs/android/aconfig/storage/AconfigPackageImpl.java",
+              "range": {
+                "startLine": 42,
+                "startChar": 0,
+                "endLine": 44,
+                "endChar": 0
+              },
+              "replacement": "            String container, String packageName, StorageFileProvider fileProvider) {\n        if (container \u003d\u003d null) {\n"
+            },
+            {
+              "path": "tools/aconfig/aconfig_storage_read_api/srcs/android/aconfig/storage/AconfigPackageImpl.java",
+              "range": {
+                "startLine": 47,
+                "startChar": 0,
+                "endLine": 48,
+                "endChar": 0
+              },
+              "replacement": "        if (!aPackage.init(container, packageName, fileProvider)) {\n"
+            },
+            {
+              "path": "tools/aconfig/aconfig_storage_read_api/srcs/android/aconfig/storage/AconfigPackageImpl.java",
+              "range": {
+                "startLine": 78,
+                "startChar": 0,
+                "endLine": 79,
+                "endChar": 0
+              },
+              "replacement": "            String container, String packageName, StorageFileProvider fileProvider) {\n"
+            },
+            {
+              "path": "tools/aconfig/aconfig_storage_read_api/srcs/android/aconfig/storage/AconfigPackageImpl.java",
+              "range": {
+                "startLine": 80,
+                "startChar": 0,
+                "endLine": 81,
+                "endChar": 0
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "revId": "afb25696da8bf7ce957ef232cb7f4a3a33a7f159",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
