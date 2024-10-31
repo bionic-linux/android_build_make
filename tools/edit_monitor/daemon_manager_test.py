@@ -81,6 +81,7 @@ class DaemonManagerTest(unittest.TestCase):
     # Sets the tempdir under the working dir so any temp files created during
     # tests will be cleaned.
     tempfile.tempdir = self.working_dir.name
+    os.environ['ENABLE_EDIT_MONITOR'] = 'true'
 
   def tearDown(self):
     # Cleans up any child processes left by the tests.
@@ -126,6 +127,15 @@ class DaemonManagerTest(unittest.TestCase):
     pathlib.Path(self.working_dir.name).joinpath(
         daemon_manager.BLOCK_SIGN_FILE
     ).touch()
+
+    dm = daemon_manager.DaemonManager(TEST_BINARY_FILE)
+    dm.start()
+    # Verify no daemon process is started.
+    self.assertIsNone(dm.daemon_process)
+
+  def test_start_return_directly_if_disabled(self):
+    # Diable edit monitor with env variable
+    os.environ['ENABLE_EDIT_MONITOR'] = 'false'
 
     dm = daemon_manager.DaemonManager(TEST_BINARY_FILE)
     dm.start()
