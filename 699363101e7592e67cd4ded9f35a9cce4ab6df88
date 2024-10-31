@@ -1,0 +1,258 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8567376b_b501b240",
+        "filename": "tools/edit_monitor/daemon_manager.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1132849
+      },
+      "writtenOn": "2024-10-31T23:20:54Z",
+      "side": 1,
+      "message": "optional: consider use constants?",
+      "range": {
+        "startLine": 84,
+        "startChar": 8,
+        "endLine": 87,
+        "endChar": 42
+      },
+      "revId": "699363101e7592e67cd4ded9f35a9cce4ab6df88",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cdeed14c_a46a5c4e",
+        "filename": "tools/edit_monitor/daemon_manager_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1132849
+      },
+      "writtenOn": "2024-10-31T23:20:54Z",
+      "side": 1,
+      "message": "ditto, use mock, same elsewhere",
+      "range": {
+        "startLine": 84,
+        "startChar": 4,
+        "endLine": 84,
+        "endChar": 7
+      },
+      "revId": "699363101e7592e67cd4ded9f35a9cce4ab6df88",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a7926bba_019376ac",
+        "filename": "tools/edit_monitor/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1132849
+      },
+      "writtenOn": "2024-10-31T23:20:54Z",
+      "side": 1,
+      "message": "mismatched type",
+      "range": {
+        "startLine": 48,
+        "startChar": 52,
+        "endLine": 48,
+        "endChar": 54
+      },
+      "revId": "699363101e7592e67cd4ded9f35a9cce4ab6df88",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5c44530b_71b4c4a0",
+        "filename": "tools/edit_monitor/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1132849
+      },
+      "writtenOn": "2024-10-31T23:20:54Z",
+      "side": 1,
+      "message": "optional: consider use preconditions and logging.exception.",
+      "range": {
+        "startLine": 51,
+        "startChar": 3,
+        "endLine": 51,
+        "endChar": 22
+      },
+      "revId": "699363101e7592e67cd4ded9f35a9cce4ab6df88",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "77a7adbe_66a5247d",
+        "filename": "tools/edit_monitor/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1132849
+      },
+      "writtenOn": "2024-10-31T23:20:54Z",
+      "side": 1,
+      "message": "optional: lost the stack trace. consider use logging.exception",
+      "range": {
+        "startLine": 59,
+        "startChar": 12,
+        "endLine": 59,
+        "endChar": 17
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "4dace078_f7b1ee07",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "tools/edit_monitor/utils.py",
+              "range": {
+                "startLine": 59,
+                "startChar": 0,
+                "endLine": 60,
+                "endChar": 0
+              },
+              "replacement": "    logging.exception(\n"
+            }
+          ]
+        }
+      ],
+      "revId": "699363101e7592e67cd4ded9f35a9cce4ab6df88",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0d231e47_895afb2c",
+        "filename": "tools/edit_monitor/utils_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1132849
+      },
+      "writtenOn": "2024-10-31T23:20:54Z",
+      "side": 1,
+      "message": "this is dangerous. use mock annotation. same elsewhere",
+      "range": {
+        "startLine": 34,
+        "startChar": 4,
+        "endLine": 34,
+        "endChar": 50
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "f053bc57_34837984",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "tools/edit_monitor/utils_test.py",
+              "range": {
+                "startLine": 20,
+                "startChar": 0,
+                "endLine": 20,
+                "endChar": 0
+              },
+              "replacement": "from unittest import mock\n"
+            },
+            {
+              "path": "tools/edit_monitor/utils_test.py",
+              "range": {
+                "startLine": 30,
+                "startChar": 0,
+                "endLine": 31,
+                "endChar": 0
+              },
+              "replacement": "  @mock.patch.dict(os.environ, {}, clear\u003dTrue)\n  def test_feature_enabled_without_flag(self, *unused_mocks):\n"
+            },
+            {
+              "path": "tools/edit_monitor/utils_test.py",
+              "range": {
+                "startLine": 33,
+                "startChar": 0,
+                "endLine": 35,
+                "endChar": 0
+              },
+              "replacement": "  @mock.patch.dict(os.environ, {ENABLE_TEST_FEATURE_FLAG: \u0027false\u0027}, clear\u003dTrue)\n  def test_feature_disabled_with_flag(self, *unused_mocks):\n"
+            },
+            {
+              "path": "tools/edit_monitor/utils_test.py",
+              "range": {
+                "startLine": 41,
+                "startChar": 0,
+                "endLine": 43,
+                "endChar": 0
+              },
+              "replacement": "  @mock.patch.dict(os.environ, {ENABLE_TEST_FEATURE_FLAG: \u0027true\u0027}, clear\u003dTrue)\n  def test_feature_enabled_with_flag(self, *unused_mocks):\n"
+            },
+            {
+              "path": "tools/edit_monitor/utils_test.py",
+              "range": {
+                "startLine": 49,
+                "startChar": 0,
+                "endLine": 51,
+                "endChar": 0
+              },
+              "replacement": "  @mock.patch.dict(\n      os.environ, {ROLLOUT_TEST_FEATURE_FLAG: \u0027invalid value\u0027}, clear\u003dTrue\n  )\n  def test_feature_disabled_with_invalid_rollout_percentage(self, *unused_mocks):\n"
+            },
+            {
+              "path": "tools/edit_monitor/utils_test.py",
+              "range": {
+                "startLine": 60,
+                "startChar": 0,
+                "endLine": 62,
+                "endChar": 0
+              },
+              "replacement": "  @mock.patch.dict(os.environ, {ROLLOUT_TEST_FEATURE_FLAG: \u0027-1\u0027}, clear\u003dTrue)\n  def test_feature_disabled_with_out_range_rollout_percentage(\n      self, *unused_mocks\n  ):\n"
+            },
+            {
+              "path": "tools/edit_monitor/utils_test.py",
+              "range": {
+                "startLine": 71,
+                "startChar": 0,
+                "endLine": 72,
+                "endChar": 0
+              },
+              "replacement": "  @mock.patch.dict(os.environ, {ROLLOUT_TEST_FEATURE_FLAG: \u0027101\u0027}, clear\u003dTrue)\n  def test_feature_disabled_with_out_range_rollout_percentage_2(\n      self, *unused_mocks\n  ):\n"
+            },
+            {
+              "path": "tools/edit_monitor/utils_test.py",
+              "range": {
+                "startLine": 81,
+                "startChar": 0,
+                "endLine": 83,
+                "endChar": 0
+              },
+              "replacement": "  @mock.patch.dict(os.environ, {ROLLOUT_TEST_FEATURE_FLAG: \u002790\u0027}, clear\u003dTrue)\n  def test_feature_enabled_with_rollout_percentage(self, *unused_mocks):\n"
+            },
+            {
+              "path": "tools/edit_monitor/utils_test.py",
+              "range": {
+                "startLine": 92,
+                "startChar": 0,
+                "endLine": 94,
+                "endChar": 0
+              },
+              "replacement": "  @mock.patch.dict(os.environ, {ROLLOUT_TEST_FEATURE_FLAG: \u002710\u0027}, clear\u003dTrue)\n  def test_feature_disabled_with_rollout_percentage(self, *unused_mocks):\n"
+            }
+          ]
+        }
+      ],
+      "revId": "699363101e7592e67cd4ded9f35a9cce4ab6df88",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
