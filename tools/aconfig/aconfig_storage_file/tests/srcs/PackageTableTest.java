@@ -34,7 +34,7 @@ public class PackageTableTest {
         PackageTable packageTable =
                 PackageTable.fromBytes(TestDataUtils.getTestPackageMapByteBuffer());
         PackageTable.Header header = packageTable.getHeader();
-        assertEquals(1, header.getVersion());
+        assertEquals(2, header.getVersion());
         assertEquals("mockup", header.getContainer());
         assertEquals(FileType.PACKAGE_MAP, header.getFileType());
         assertEquals(209, header.getFileSize());

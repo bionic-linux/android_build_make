@@ -21,10 +21,10 @@ import java.io.InputStream;
 import java.nio.ByteBuffer;
 
 public final class TestDataUtils {
-    private static final String TEST_PACKAGE_MAP_PATH = "package.map";
-    private static final String TEST_FLAG_MAP_PATH = "flag.map";
-    private static final String TEST_FLAG_VAL_PATH = "flag.val";
-    private static final String TEST_FLAG_INFO_PATH = "flag.info";
+    private static final String TEST_PACKAGE_MAP_PATH = "package_v1.map";
+    private static final String TEST_FLAG_MAP_PATH = "flag_v1.map";
+    private static final String TEST_FLAG_VAL_PATH = "flag_v1.val";
+    private static final String TEST_FLAG_INFO_PATH = "flag_v1.info";
 
     private static final String TESTDATA_PATH =
             "/data/local/tmp/aconfig_storage_file_test_java/testdata/";
