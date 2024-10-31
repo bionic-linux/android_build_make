@@ -103,6 +103,7 @@ python_library_host {
         "test_mapping_module_retriever.py",
         "build_context.py",
         "test_discovery_agent.py",
+	"metrics_agent.py",
     ],
 }
 
