@@ -85,6 +85,41 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d2662d5b_224e14af",
+        "filename": "ci/test_discovery_agent.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-10-31T19:33:44Z",
+      "side": 1,
+      "message": "java_args.append(\"prebuilts/jdk/jdk21/linux-x86/bin/java\")",
+      "fixSuggestions": [
+        {
+          "fixId": "5587a009_cbdf5de0",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ci/test_discovery_agent.py",
+              "range": {
+                "startLine": 57,
+                "startChar": 0,
+                "endLine": 58,
+                "endChar": 0
+              },
+              "replacement": "        \"prebuilts/jdk/jdk21/linux-x86/bin/java\"\n"
+            }
+          ]
+        }
+      ],
+      "revId": "d37562244830dc88e0bf6348dde9a7f5420b79c1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "af6a2408_a16714d7",
         "filename": "ci/test_discovery_agent.py",
         "patchSetId": 3
