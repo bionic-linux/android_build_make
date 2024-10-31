@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3c2669c6_2723e039",
+        "filename": "tools/aconfig/aconfig/tests/test_second_package.aconfig",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1981530
+      },
+      "writtenOn": "2024-10-31T17:24:34Z",
+      "side": 1,
+      "message": "Nit: I think this tag is not needed.",
+      "revId": "b2d3c227f84541cfab1407d907890a3d1935e535",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
