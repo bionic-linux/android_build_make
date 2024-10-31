@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "526787ae_3a358fa9",
+        "filename": "tools/edit_monitor/daemon_manager_test.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1132849
+      },
+      "writtenOn": "2024-10-31T23:22:34Z",
+      "side": 1,
+      "message": "new line",
+      "range": {
+        "startLine": 142,
+        "startChar": 3,
+        "endLine": 142,
+        "endChar": 5
+      },
+      "revId": "67b949162fe3f5d1b340b960e1c0814c9fb187cc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "329517f5_40eecaa4",
+        "filename": "tools/edit_monitor/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1132849
+      },
+      "writtenOn": "2024-10-31T23:22:34Z",
+      "side": 1,
+      "message": "i guess adding param docstring would be helpful here as there\u0027s some expected format, e.g. rollout_flag is an int between 0 and 100 string",
+      "range": {
+        "startLine": 24,
+        "startChar": 4,
+        "endLine": 24,
+        "endChar": 16
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "53875b83_ccaa481a",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "tools/edit_monitor/utils.py",
+              "range": {
+                "startLine": 26,
+                "startChar": 0,
+                "endLine": 27,
+                "endChar": 0
+              },
+              "replacement": "  \"\"\"Determine whether the given feature is enabled. The feature is enabled if\n  either 1) the enable_flag is set to true or 2) the rollout_flag is set to a\n  number between 0 and 100.\n"
+            },
+            {
+              "path": "tools/edit_monitor/utils.py",
+              "range": {
+                "startLine": 28,
+                "startChar": 0,
+                "endLine": 31,
+                "endChar": 0
+              },
+              "replacement": "  Args:\n    feature_name: the name of the feature.\n    user_name: the name of the user.\n    enable_flag: the name of the flag that explicitly enable/disable the\n      feature.\n    rollout_flag: the name of the flag that controls the rollout percentage.\n\n  Returns:\n    True if the feature is enabled, False otherwise.\n"
+            }
+          ]
+        }
+      ],
+      "revId": "67b949162fe3f5d1b340b960e1c0814c9fb187cc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
