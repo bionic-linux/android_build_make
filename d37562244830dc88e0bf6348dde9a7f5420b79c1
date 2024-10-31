@@ -24,6 +24,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "39a323f8_55108a70",
+        "filename": "ci/test_discovery_agent.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1933910
+      },
+      "writtenOn": "2024-10-31T19:13:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "97828106_6ee82ff8",
+      "range": {
+        "startLine": 52,
+        "startChar": 9,
+        "endLine": 52,
+        "endChar": 36
+      },
+      "revId": "d37562244830dc88e0bf6348dde9a7f5420b79c1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "db78421e_6c7be394",
@@ -37,6 +61,24 @@
       "writtenOn": "2024-10-31T00:18:14Z",
       "side": 1,
       "message": "Can you change this to use [buildbot.py](https://cs.android.com/android/platform/superproject/main/+/main:build/make/ci/buildbot.py) to enforce that this is run from the root of the tree, and just make everything relative to there.  It\u0027s a bunch less code and CI always calls the build scripts from the root of the tree.",
+      "revId": "d37562244830dc88e0bf6348dde9a7f5420b79c1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "99807770_1302ce02",
+        "filename": "ci/test_discovery_agent.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1933910
+      },
+      "writtenOn": "2024-10-31T19:13:15Z",
+      "side": 1,
+      "message": "Got it, done.",
+      "parentUuid": "db78421e_6c7be394",
       "revId": "d37562244830dc88e0bf6348dde9a7f5420b79c1",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
@@ -82,6 +124,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "441d590e_acf499f1",
+        "filename": "ci/test_discovery_agent.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1933910
+      },
+      "writtenOn": "2024-10-31T19:13:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "af6a2408_a16714d7",
+      "range": {
+        "startLine": 74,
+        "startChar": 35,
+        "endLine": 74,
+        "endChar": 54
+      },
+      "revId": "d37562244830dc88e0bf6348dde9a7f5420b79c1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a2be52e2_2a98d26a",
@@ -112,6 +178,24 @@
       "writtenOn": "2024-10-31T18:45:04Z",
       "side": 1,
       "message": "Ah. This is the tradefed classpath, not the classpath for the tests. My misunderstanding.",
+      "parentUuid": "a2be52e2_2a98d26a",
+      "revId": "d37562244830dc88e0bf6348dde9a7f5420b79c1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "56e535c1_e563171c",
+        "filename": "ci/test_discovery_agent.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1933910
+      },
+      "writtenOn": "2024-10-31T19:13:15Z",
+      "side": 1,
+      "message": "Yes its those TradeFed jars that already exist in the tree - the prebuilt TradeFed jars. We use classes that in those jars to do discovery.",
       "parentUuid": "a2be52e2_2a98d26a",
       "revId": "d37562244830dc88e0bf6348dde9a7f5420b79c1",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"

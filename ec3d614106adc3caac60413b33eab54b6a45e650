@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "020b7d20_c07e8796",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1933910
+      },
+      "writtenOn": "2024-10-31T19:13:15Z",
+      "side": 1,
+      "message": "Let\u0027s put my change along with Luca\u0027s change together under a same topic, test together in presubmit and submit together?",
+      "revId": "ec3d614106adc3caac60413b33eab54b6a45e650",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
