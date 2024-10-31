@@ -97,6 +97,24 @@
       "message": "I don\u0027t understand this logic. This is passing the jar files that have already been built to tradefed? But this is before the build.",
       "revId": "d37562244830dc88e0bf6348dde9a7f5420b79c1",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0d13a8b1_9a2e404f",
+        "filename": "ci/test_discovery_agent.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-10-31T18:45:04Z",
+      "side": 1,
+      "message": "Ah. This is the tradefed classpath, not the classpath for the tests. My misunderstanding.",
+      "parentUuid": "a2be52e2_2a98d26a",
+      "revId": "d37562244830dc88e0bf6348dde9a7f5420b79c1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
