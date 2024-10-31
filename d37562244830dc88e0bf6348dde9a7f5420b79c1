@@ -1,0 +1,102 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "97828106_6ee82ff8",
+        "filename": "ci/test_discovery_agent.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-10-31T00:18:14Z",
+      "side": 1,
+      "message": "It might be easier for debugging to put a file in out using buildbot.OutDir(), and leave it there instead of making it temporary\n\n```\ntemp_file_name \u003d os.path.join([buildbot.OutDir(), \"test_discovery_agent.txt\")\nwith open(temp_file_name, mode\u003d\"w+t\") as temp_file:\n```",
+      "range": {
+        "startLine": 52,
+        "startChar": 9,
+        "endLine": 52,
+        "endChar": 36
+      },
+      "revId": "d37562244830dc88e0bf6348dde9a7f5420b79c1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "db78421e_6c7be394",
+        "filename": "ci/test_discovery_agent.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-10-31T00:18:14Z",
+      "side": 1,
+      "message": "Can you change this to use [buildbot.py](https://cs.android.com/android/platform/superproject/main/+/main:build/make/ci/buildbot.py) to enforce that this is run from the root of the tree, and just make everything relative to there.  It\u0027s a bunch less code and CI always calls the build scripts from the root of the tree.",
+      "revId": "d37562244830dc88e0bf6348dde9a7f5420b79c1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "af6a2408_a16714d7",
+        "filename": "ci/test_discovery_agent.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-10-31T00:18:14Z",
+      "side": 1,
+      "message": "It\u0027s not actually using the output for anything other than logging it, so maybe just don\u0027t pass this and let the stdout and error just get printed to the regular stdout.  (The logging methods here don\u0027t do anything interesting, and the build output is already saved by buildbot)",
+      "range": {
+        "startLine": 74,
+        "startChar": 35,
+        "endLine": 74,
+        "endChar": 54
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "eb536802_6c26cc57",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ci/test_discovery_agent.py",
+              "range": {
+                "startLine": 74,
+                "startChar": 0,
+                "endLine": 75,
+                "endChar": 0
+              },
+              "replacement": "          args\u003djava_args, env\u003denv, check\u003dTrue\n"
+            }
+          ]
+        }
+      ],
+      "revId": "d37562244830dc88e0bf6348dde9a7f5420b79c1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a2be52e2_2a98d26a",
+        "filename": "ci/test_discovery_agent.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-10-31T00:18:14Z",
+      "side": 1,
+      "message": "I don\u0027t understand this logic. This is passing the jar files that have already been built to tradefed? But this is before the build.",
+      "revId": "d37562244830dc88e0bf6348dde9a7f5420b79c1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
