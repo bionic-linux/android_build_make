@@ -46,6 +46,7 @@ class EditMonitorIntegrationTest(unittest.TestCase):
     )
     self.root_monitoring_path.mkdir()
     self.edit_monitor_binary_path = self._import_executable("edit_monitor")
+    os.environ['ENABLE_EDIT_MONITOR'] = 'true'
 
   def tearDown(self):
     self.working_dir.cleanup()
