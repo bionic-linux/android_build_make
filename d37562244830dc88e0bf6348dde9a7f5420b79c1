@@ -118,6 +118,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "990eab42_4cd788ce",
+        "filename": "ci/test_discovery_agent.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1933910
+      },
+      "writtenOn": "2024-10-31T19:34:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d2662d5b_224e14af",
+      "revId": "d37562244830dc88e0bf6348dde9a7f5420b79c1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "af6a2408_a16714d7",
