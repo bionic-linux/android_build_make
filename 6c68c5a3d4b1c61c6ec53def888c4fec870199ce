@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "731e558c_73ded68b",
+        "filename": "core/soong_config.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 1535516
+      },
+      "writtenOn": "2024-11-01T18:45:04Z",
+      "side": 1,
+      "message": "`BUILDING_ODM_IMAGE` is a derivative of `BOARD_ODMIMAGE_FILE_SYSTEM_TYPE` and `BOARD_PREBUILT_ODMIMAGE`, should we export those instead? We\u0027ll probably need them eventually.",
+      "range": {
+        "startLine": 188,
+        "startChar": 59,
+        "endLine": 188,
+        "endChar": 77
+      },
+      "revId": "6c68c5a3d4b1c61c6ec53def888c4fec870199ce",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
