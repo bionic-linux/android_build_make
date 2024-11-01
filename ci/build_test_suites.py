@@ -200,6 +200,7 @@ def run_command(args: list[str], stdout=None):
 
 
 def main(argv):
+  return
   dist_dir = os.environ.get('DIST_DIR')
   if dist_dir:
     log_file = pathlib.Path(dist_dir) / LOG_PATH
