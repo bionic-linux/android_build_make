@@ -51,29 +51,6 @@ $(call declare-0p-target,$(INSTALLED_ANDROID_INFO_TXT_TARGET))
 
 # Copy compatibility metadata to the device.
 
-# Device Manifest
-ifdef DEVICE_MANIFEST_FILE
-# $(DEVICE_MANIFEST_FILE) can be a list of files
-include $(CLEAR_VARS)
-LOCAL_MODULE        := vendor_manifest.xml
-LOCAL_LICENSE_KINDS := SPDX-license-identifier-Apache-2.0 legacy_not_a_contribution
-LOCAL_LICENSE_CONDITIONS := by_exception_only not_allowed notice
-LOCAL_MODULE_STEM   := manifest.xml
-LOCAL_MODULE_CLASS  := ETC
-LOCAL_MODULE_PATH   := $(TARGET_OUT_VENDOR)/etc/vintf
-
-GEN := $(local-generated-sources-dir)/manifest.xml
-$(GEN): PRIVATE_DEVICE_MANIFEST_FILE := $(DEVICE_MANIFEST_FILE)
-$(GEN): $(DEVICE_MANIFEST_FILE) $(HOST_OUT_EXECUTABLES)/assemble_vintf
-	BOARD_SEPOLICY_VERS=$(BOARD_SEPOLICY_VERS) \
-	PRODUCT_ENFORCE_VINTF_MANIFEST=$(PRODUCT_ENFORCE_VINTF_MANIFEST) \
-	$(HOST_OUT_EXECUTABLES)/assemble_vintf -o $@ \
-		-i $(call normalize-path-list,$(PRIVATE_DEVICE_MANIFEST_FILE))
-
-LOCAL_PREBUILT_MODULE_FILE := $(GEN)
-include $(BUILD_PREBUILT)
-endif
-
 # DEVICE_MANIFEST_SKUS: a list of SKUS where DEVICE_MANIFEST_<sku>_FILES is defined.
 ifdef DEVICE_MANIFEST_SKUS
 
