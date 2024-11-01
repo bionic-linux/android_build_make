@@ -14,7 +14,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import build_test_suites
+import buildbot
+import os
+import subprocess
 import sys
+
+subprocess.run(args=[os.path.join(os.environ['TOP'], 'external/protobuf/python/setup.py'), 'build'], env=os.environ, check=True, cwd=os.path.join(os.environ['TOP'], 'external/protobuf/python'))
+
+# Add necessary paths to the python path
+sys.path.insert(1, os.path.join(os.environ['TOP'], 'out/build/google'))
+
+subprocess.run(args=[os.path.join(os.environ['TOP'], 'build/soong/soong_ui.bash'), '--make-mode', 'aprotoc'], env=os.environ, check=True)
+
+subprocess.run(args=[os.path.join(buildbot.OutDir(), 'host/linux-x86/bin/aprotoc'), f'--python_out={buildbot.OutDir()}/', 'build/soong/ui/metrics/metrics_proto/metrics.proto'], env=os.environ, check=True)
+
+sys.path.insert(1, os.path.join(buildbot.OutDir(), 'build/soong/ui/metrics/metrics_proto'))
+import build_test_suites
+
 
 build_test_suites.main(sys.argv[1:])
