@@ -24,6 +24,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "af8a90b9_851bc541",
+        "filename": "tools/edit_monitor/daemon_manager.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-11-01T06:02:36Z",
+      "side": 1,
+      "message": "Since this is the only place we use this value, I prefer to keep it as it is.",
+      "parentUuid": "8567376b_b501b240",
+      "range": {
+        "startLine": 84,
+        "startChar": 8,
+        "endLine": 87,
+        "endChar": 42
+      },
+      "revId": "699363101e7592e67cd4ded9f35a9cce4ab6df88",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cdeed14c_a46a5c4e",
@@ -47,6 +71,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4e492b1a_31ba6f1b",
+        "filename": "tools/edit_monitor/daemon_manager_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-11-01T06:02:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cdeed14c_a46a5c4e",
+      "range": {
+        "startLine": 84,
+        "startChar": 4,
+        "endLine": 84,
+        "endChar": 7
+      },
+      "revId": "699363101e7592e67cd4ded9f35a9cce4ab6df88",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a7926bba_019376ac",
@@ -60,6 +108,30 @@
       "writtenOn": "2024-10-31T23:20:54Z",
       "side": 1,
       "message": "mismatched type",
+      "range": {
+        "startLine": 48,
+        "startChar": 52,
+        "endLine": 48,
+        "endChar": 54
+      },
+      "revId": "699363101e7592e67cd4ded9f35a9cce4ab6df88",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7fb6e4ca_df374c6c",
+        "filename": "tools/edit_monitor/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-11-01T06:02:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a7926bba_019376ac",
       "range": {
         "startLine": 48,
         "startChar": 52,
@@ -130,6 +202,30 @@
           ]
         }
       ],
+      "revId": "699363101e7592e67cd4ded9f35a9cce4ab6df88",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "feaee036_2cff5053",
+        "filename": "tools/edit_monitor/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-11-01T06:02:36Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "77a7adbe_66a5247d",
+      "range": {
+        "startLine": 59,
+        "startChar": 12,
+        "endLine": 59,
+        "endChar": 17
+      },
       "revId": "699363101e7592e67cd4ded9f35a9cce4ab6df88",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
@@ -251,6 +347,30 @@
           ]
         }
       ],
+      "revId": "699363101e7592e67cd4ded9f35a9cce4ab6df88",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3f502191_764b074b",
+        "filename": "tools/edit_monitor/utils_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-11-01T06:02:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0d231e47_895afb2c",
+      "range": {
+        "startLine": 34,
+        "startChar": 4,
+        "endLine": 34,
+        "endChar": 50
+      },
       "revId": "699363101e7592e67cd4ded9f35a9cce4ab6df88",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }

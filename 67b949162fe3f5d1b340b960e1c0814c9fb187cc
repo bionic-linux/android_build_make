@@ -24,6 +24,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e3f85e1d_534b7821",
+        "filename": "tools/edit_monitor/daemon_manager_test.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-11-01T06:02:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "526787ae_3a358fa9",
+      "range": {
+        "startLine": 142,
+        "startChar": 3,
+        "endLine": 142,
+        "endChar": 5
+      },
+      "revId": "67b949162fe3f5d1b340b960e1c0814c9fb187cc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "329517f5_40eecaa4",
@@ -71,6 +95,30 @@
           ]
         }
       ],
+      "revId": "67b949162fe3f5d1b340b960e1c0814c9fb187cc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a1d4ab27_276f3e2d",
+        "filename": "tools/edit_monitor/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-11-01T06:02:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "329517f5_40eecaa4",
+      "range": {
+        "startLine": 24,
+        "startChar": 4,
+        "endLine": 24,
+        "endChar": 16
+      },
       "revId": "67b949162fe3f5d1b340b960e1c0814c9fb187cc",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
