@@ -18,6 +18,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "54138034_ce98bc3a",
+        "filename": "tools/aconfig/aconfig_storage_file/src/lib.rs",
+        "patchSetId": 5
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 1890055
+      },
+      "writtenOn": "2024-11-02T19:19:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b5eb92e5_dc0a9475",
+      "revId": "8389b50d2b2660d10e12f56979ab379147f2edb3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "df4fce53_abe938dc",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-10-30T14:28:35Z",
       "side": 1,
       "message": "To be extra safe (in addition to these explicit bound checks), we could replace `buf[*head..*head + num_bytes]` with `buf.get(*head..*head + num_bytes)`, which returns `None` instead of panicking if the range is out of bounds. We could turn that into a result with `ok_or`.",
+      "revId": "8389b50d2b2660d10e12f56979ab379147f2edb3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3baea5aa_6eb58ab9",
+        "filename": "tools/aconfig/aconfig_storage_file/src/lib.rs",
+        "patchSetId": 5
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 1890055
+      },
+      "writtenOn": "2024-11-02T19:19:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df4fce53_abe938dc",
       "revId": "8389b50d2b2660d10e12f56979ab379147f2edb3",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
