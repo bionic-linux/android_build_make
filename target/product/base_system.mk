@@ -307,6 +307,10 @@ ifeq ($(RELEASE_CRASHRECOVERY_MODULE),true)
   PRODUCT_PACKAGES += \
         com.android.crashrecovery \
 
+else
+  PRODUCT_PACKAGES += \
+    framework-platformcrashrecovery \
+
 endif
 
 # These packages are not used on Android TV
