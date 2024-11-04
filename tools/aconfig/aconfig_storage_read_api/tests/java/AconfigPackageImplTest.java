@@ -25,25 +25,46 @@ import android.aconfig.storage.AconfigPackageImpl;
 import android.aconfig.storage.AconfigStorageException;
 import android.aconfig.storage.StorageFileProvider;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
+import java.nio.file.FileSystemNotFoundException;
+
 @RunWith(JUnit4.class)
 public class AconfigPackageImplTest {
 
+    private StorageFileProvider pr;
+
+    @Before
+    public void setup() {
+        pr = new StorageFileProvider(TestDataUtils.TESTDATA_PATH, TestDataUtils.TESTDATA_PATH);
+    }
+
     @Test
     public void testLoad_onlyPackageName() throws Exception {
-        StorageFileProvider pr =
-                new StorageFileProvider(TestDataUtils.TESTDATA_PATH, TestDataUtils.TESTDATA_PATH);
         AconfigPackageImpl p = AconfigPackageImpl.load("com.android.aconfig.storage.test_1", pr);
         assertNotNull(p);
     }
 
     @Test
+    public void testLoad_throwException() throws Exception {
+        assertThrows(
+                AconfigStorageException.class,
+                () -> AconfigPackageImpl.load("mockup", "com.android.aconfig.storage.test_10", pr));
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> AconfigPackageImpl.load(null, "com.android.aconfig.storage.test_10", pr));
+
+        pr = new StorageFileProvider("fake/path/", "fake/path/");
+        assertThrows(
+                FileSystemNotFoundException.class,
+                () -> AconfigPackageImpl.load("fake_package", pr));
+    }
+
+    @Test
     public void testLoad_groupNameFingerprint() throws Exception {
-        StorageFileProvider pr =
-                new StorageFileProvider(TestDataUtils.TESTDATA_PATH, TestDataUtils.TESTDATA_PATH);
         AconfigPackageImpl p =
                 AconfigPackageImpl.load("mockup", "com.android.aconfig.storage.test_1", pr);
         assertNotNull(p);
@@ -55,8 +76,6 @@ public class AconfigPackageImplTest {
 
     @Test
     public void testGetBooleanFlagValue_flagName() throws Exception {
-        StorageFileProvider pr =
-                new StorageFileProvider(TestDataUtils.TESTDATA_PATH, TestDataUtils.TESTDATA_PATH);
         AconfigPackageImpl p =
                 AconfigPackageImpl.load("mockup", "com.android.aconfig.storage.test_1", pr);
         assertFalse(p.getBooleanFlagValue("disabled_rw", true));
@@ -67,8 +86,6 @@ public class AconfigPackageImplTest {
 
     @Test
     public void testGetBooleanFlagValue_index() throws Exception {
-        StorageFileProvider pr =
-                new StorageFileProvider(TestDataUtils.TESTDATA_PATH, TestDataUtils.TESTDATA_PATH);
         AconfigPackageImpl p =
                 AconfigPackageImpl.load("mockup", "com.android.aconfig.storage.test_1", pr);
         assertFalse(p.getBooleanFlagValue(0));
@@ -78,8 +95,6 @@ public class AconfigPackageImplTest {
 
     @Test
     public void testHasPackageFingerprint() throws Exception {
-        StorageFileProvider pr =
-                new StorageFileProvider(TestDataUtils.TESTDATA_PATH, TestDataUtils.TESTDATA_PATH);
         AconfigPackageImpl p =
                 AconfigPackageImpl.load("mockup", "com.android.aconfig.storage.test_1", pr);
         assertFalse(p.hasPackageFingerprint());

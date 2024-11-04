@@ -18,6 +18,7 @@ package android.aconfig.storage;
 
 import android.os.StrictMode;
 
+import java.nio.file.FileSystemNotFoundException;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
@@ -41,11 +42,12 @@ public class AconfigPackageImpl {
     public static AconfigPackageImpl load(
             String container, String packageName, StorageFileProvider fileProvider) {
         if (container == null) {
-            return null;
+            throw new IllegalArgumentException(String.format("container cannot be null"));
         }
         AconfigPackageImpl aPackage = new AconfigPackageImpl();
         if (!aPackage.init(container, packageName, fileProvider)) {
-            return null;
+            throw new AconfigStorageException(
+                    String.format("%s in %s is not found on the devices", packageName, container));
         }
         return aPackage;
     }
@@ -81,7 +83,8 @@ public class AconfigPackageImpl {
         try {
             // for devices don't have new storage directly return
             if (!fileProvider.containerFileExists(null)) {
-                return false;
+                throw new FileSystemNotFoundException(
+                        "Aconfig new storage is not enabled on the devices");
             }
             PackageTable.Node pNode = null;
 
@@ -122,10 +125,7 @@ public class AconfigPackageImpl {
             mFlagValueList = fileProvider.getFlagValueList(container);
             mPNode = pNode;
         } catch (Exception e) {
-            throw new AconfigStorageException(
-                    String.format(
-                            "cannot load package %s, from container %s", packageName, container),
-                    e);
+            throw e;
         } finally {
             StrictMode.setThreadPolicy(oldPolicy);
         }
