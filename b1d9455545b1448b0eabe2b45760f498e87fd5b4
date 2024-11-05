@@ -87,6 +87,30 @@
       },
       "revId": "b1d9455545b1448b0eabe2b45760f498e87fd5b4",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9ffc9556_a2cce5d5",
+        "filename": "target/product/base_system.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 550,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-11-05T05:35:51Z",
+      "side": 1,
+      "message": "I think a new system_features_gen might be the easiest. You\u0027ll still need to plumb throuhg Config, but then it\u0027d be straightforward in the Android.bp, assuming that there will be a decent number of these.\n\n+Colin +Cole for more ideas.",
+      "parentUuid": "8b67911a_083a292f",
+      "range": {
+        "startLine": 550,
+        "startChar": 2,
+        "endLine": 550,
+        "endChar": 40
+      },
+      "revId": "b1d9455545b1448b0eabe2b45760f498e87fd5b4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
