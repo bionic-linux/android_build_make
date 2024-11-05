@@ -39,6 +39,30 @@
       },
       "revId": "b1d9455545b1448b0eabe2b45760f498e87fd5b4",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "631ac27c_2c41f7ea",
+        "filename": "target/product/base_system.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 550,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-11-05T02:21:45Z",
+      "side": 1,
+      "message": "Overall, I think I\u0027d be happier if there were a list of RELEASE_SYSTEM_FEATURE_XXX variables that got aggregated, but the foreach loop doesn\u0027t bother me at all.  \n\nDoing it through .VARIABLES seems like a nice optimization but it feels like magic, and something we\u0027ll have to chase down and thinki about at some point when we want to understand what\u0027s going on, versus code searching for RELEASE_SYSTEM_FEATURE_WHATEVER when debugging RELEASE_SYSTEM_FEATURE_WHATEVER.\n\nSomething like:\n\n```\nfeature_variables :\u003d \\\n\tRELEASE_SYSTEM_FEATURE_AUTOMOTIVE:AUTOMOTIVE \\\n\tRELEASE_SYSTEM_FEATURE_WEAR:WEAR\n\nsystem_feature_args :\u003d $(foreach v,$(feature_variables), --feature\u003d$(word 2,$(subst :, ,$(v))):$($(word 1,$(subst :, ,$(v)))))\n$(call soong_config_set, systemfeatures, codegen_feature_args, $(system_feature_args))\n```\n\n(also there\u0027s no eval, which is slightly easier to reason about)\n\nOne more thing, it shouldn\u0027t be LOCAL_SYSTEM_FEATURE_ARGS. LOCAL_ is reserved for the variables defined in clear_vars.mk and used in Android.mk files.\n\nAnother thought: Would it be better to just implement this in go?  The resource rules could just read the build flags from the Config class [like this](https://source.corp.google.com/h/googleplex-android/platform/superproject/main/+/main:build/soong/android/config.go;l\u003d236).",
+      "parentUuid": "91e069c3_09636d98",
+      "range": {
+        "startLine": 550,
+        "startChar": 2,
+        "endLine": 550,
+        "endChar": 40
+      },
+      "revId": "b1d9455545b1448b0eabe2b45760f498e87fd5b4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
