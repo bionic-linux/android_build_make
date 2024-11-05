@@ -34,6 +34,24 @@
       "parentUuid": "a09eaa5b_9b3fac47",
       "revId": "57e3a216eb32ef331cdda36686cdbc82dd0c0720",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "99ea1473_5e9bda67",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1535516
+      },
+      "writtenOn": "2024-11-05T20:49:21Z",
+      "side": 1,
+      "message": "You should use the bpfmt results so that future cls don\u0027t get bpfmt warnings. I agree the manual one does look better though. You may be able to improve the bpfmt results by adding a `[] +` before the chain of selects.",
+      "parentUuid": "cc035b05_c1fb9fc7",
+      "revId": "57e3a216eb32ef331cdda36686cdbc82dd0c0720",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
