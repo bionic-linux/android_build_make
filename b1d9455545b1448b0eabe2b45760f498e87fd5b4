@@ -135,6 +135,30 @@
       },
       "revId": "b1d9455545b1448b0eabe2b45760f498e87fd5b4",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "89ca8863_d75d4f5d",
+        "filename": "target/product/base_system.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 550,
+      "author": {
+        "id": 1064003
+      },
+      "writtenOn": "2024-11-05T22:42:33Z",
+      "side": 1,
+      "message": "With shorthand for bound variable support, I could just delete this and move the aggregation into the current .bp file, e.g.,\n\n`\"--feature\u003dWATCH:\" + select(release_flag(\"RELEASE_SYSTEM_FEATURE_WATCH\"))`",
+      "parentUuid": "22dae1c1_85775b33",
+      "range": {
+        "startLine": 550,
+        "startChar": 2,
+        "endLine": 550,
+        "endChar": 40
+      },
+      "revId": "b1d9455545b1448b0eabe2b45760f498e87fd5b4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
