@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a5494f9b_56fbffd5",
+        "filename": "tools/aconfig/aconfig_storage_file/src/lib.rs",
+        "patchSetId": 13
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 1981530
+      },
+      "writtenOn": "2024-11-05T20:31:39Z",
+      "side": 1,
+      "message": "nit/optional: can use `and_then` here instead of `?`.",
+      "revId": "aaf27b6057b9ad593875eb035fe3e0da0f1e8dae",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
