@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b0a406e3_741e25ac",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2024-11-05T23:04:29Z",
+      "side": 1,
+      "message": "Can we move the \u0027gsi\u0027 components to `target/product/gsi/`?",
+      "revId": "0d8f6e40257f3bb396e0285027be84291ddf8cd6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
