@@ -33,6 +33,7 @@ PRODUCT_PACKAGES += \
     appwidget \
     atrace \
     audioserver \
+    audio_extension \
     BackupRestoreConfirmation \
     bcc \
     blank_screen \
