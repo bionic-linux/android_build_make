@@ -756,6 +756,30 @@ mod tests {
     }
 
     #[test]
+    fn test_dump_multiple_filters() {
+        let input = parse_test_flags_as_input();
+        let bytes = dump_parsed_flags(
+            vec![input],
+            DumpFormat::Custom("{fully_qualified_name}".to_string()),
+            &["container:system+state:ENABLED", "container:system+permission:READ_WRITE"],
+            false,
+        )
+        .unwrap();
+        let text = std::str::from_utf8(&bytes).unwrap();
+        let expected_flag_list = &[
+            "com.android.aconfig.test.disabled_rw",
+            "com.android.aconfig.test.disabled_rw_exported",
+            "com.android.aconfig.test.disabled_rw_in_other_namespace",
+            "com.android.aconfig.test.enabled_fixed_ro",
+            "com.android.aconfig.test.enabled_fixed_ro_exported",
+            "com.android.aconfig.test.enabled_ro",
+            "com.android.aconfig.test.enabled_ro_exported",
+            "com.android.aconfig.test.enabled_rw",
+        ];
+        assert_eq!( expected_flag_list.map(|s| format!("{}\n", s)).join(""), text);
+    }
+
+    #[test]
     fn test_dump_textproto_format_dedup() {
         let input = parse_test_flags_as_input();
         let input2 = parse_test_flags_as_input();
