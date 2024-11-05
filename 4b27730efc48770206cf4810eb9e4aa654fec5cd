@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d710d2ca_48132309",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1387509
+      },
+      "writtenOn": "2024-11-05T21:30:08Z",
+      "side": 1,
+      "message": "So this means that read-only flags that are also false will no longer appear in FF?\n\nAs long as `true` flags still appear, I think this is probably fine. \n\nYou\u0027ll want to document somewhere clearly that \"RO flags that are disabled may not appear in bug reports or FF, even if they were defined at the time the build was made.\"",
+      "revId": "4b27730efc48770206cf4810eb9e4aa654fec5cd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fdbf39d3_af0b6d18",
