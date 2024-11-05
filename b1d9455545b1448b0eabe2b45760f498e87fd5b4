@@ -63,6 +63,30 @@
       },
       "revId": "b1d9455545b1448b0eabe2b45760f498e87fd5b4",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8b67911a_083a292f",
+        "filename": "target/product/base_system.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 550,
+      "author": {
+        "id": 1064003
+      },
+      "writtenOn": "2024-11-05T03:26:01Z",
+      "side": 1,
+      "message": "\u003e Another thought: Would it be better to just implement this in go? The resource rules could just read the build flags from the Config class like this.\n\nWith this approach, what would be the cleanest way to export the aggregated variable such that it could be referenced from the genrule? I guess I\u0027ve only worked with exporting soong config vars from .mk files before, not clear how to go via soong.\n\nOr would we just introduce a new rule like `system_features_gen(...)` which can access the necessary vars there and pipe it directly to the codegen target (rather than relying on the raw `genrule` definition in the .bp file)?",
+      "parentUuid": "631ac27c_2c41f7ea",
+      "range": {
+        "startLine": 550,
+        "startChar": 2,
+        "endLine": 550,
+        "endChar": 40
+      },
+      "revId": "b1d9455545b1448b0eabe2b45760f498e87fd5b4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
