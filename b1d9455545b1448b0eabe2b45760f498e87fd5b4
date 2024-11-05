@@ -111,6 +111,30 @@
       },
       "revId": "b1d9455545b1448b0eabe2b45760f498e87fd5b4",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "22dae1c1_85775b33",
+        "filename": "target/product/base_system.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 550,
+      "author": {
+        "id": 1064003
+      },
+      "writtenOn": "2024-11-05T20:23:21Z",
+      "side": 1,
+      "message": "Makes sense. To unblock related work that is largely agnostic to this glue layer (updating system server callsites to use codegen, and soaking the build flags on a Wear device), maybe what I\u0027ll do is go with your suggestion on making this version based on an explicit list, and separately work porting this and the codegen genrule into a proper soong module. Any objections?",
+      "parentUuid": "9ffc9556_a2cce5d5",
+      "range": {
+        "startLine": 550,
+        "startChar": 2,
+        "endLine": 550,
+        "endChar": 40
+      },
+      "revId": "b1d9455545b1448b0eabe2b45760f498e87fd5b4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
