@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a09eaa5b_9b3fac47",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1308044
+      },
+      "writtenOn": "2024-11-05T02:27:58Z",
+      "side": 1,
+      "message": "nit:Should we add btfmt as preupload hook check?",
+      "revId": "57e3a216eb32ef331cdda36686cdbc82dd0c0720",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
