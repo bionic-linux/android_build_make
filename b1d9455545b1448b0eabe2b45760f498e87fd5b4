@@ -16,6 +16,29 @@
       "message": "This seemed easier and more generic than explicitly joining all build flags in the framework Android.bp file (with a bunch of `select(release_flag` statements).",
       "revId": "b1d9455545b1448b0eabe2b45760f498e87fd5b4",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "91e069c3_09636d98",
+        "filename": "target/product/base_system.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 550,
+      "author": {
+        "id": 1064003
+      },
+      "writtenOn": "2024-11-05T00:43:08Z",
+      "side": 1,
+      "message": "@joeo@google.com I can also aggregate these manually for now, don\u0027t feel strongly either way.",
+      "range": {
+        "startLine": 550,
+        "startChar": 2,
+        "endLine": 550,
+        "endChar": 40
+      },
+      "revId": "b1d9455545b1448b0eabe2b45760f498e87fd5b4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
