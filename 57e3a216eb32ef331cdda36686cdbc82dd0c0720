@@ -16,6 +16,24 @@
       "message": "nit:Should we add btfmt as preupload hook check?",
       "revId": "57e3a216eb32ef331cdda36686cdbc82dd0c0720",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cc035b05_c1fb9fc7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1318142
+      },
+      "writtenOn": "2024-11-05T20:04:23Z",
+      "side": 1,
+      "message": "I compared the bpfmt output and my manual formating, personal opinion is my manual formating is cleaner in this case :). imo code format doesn\u0027t need to be in preupload hook so we can see the final result in gerrit and pick the better one.",
+      "parentUuid": "a09eaa5b_9b3fac47",
+      "revId": "57e3a216eb32ef331cdda36686cdbc82dd0c0720",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
