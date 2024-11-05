@@ -80,6 +80,7 @@ pub enum StorageFileType {
     FlagMap = 1,
     FlagVal = 2,
     FlagInfo = 3,
+    ParsedFlags = 4,
 }
 
 impl TryFrom<&str> for StorageFileType {
