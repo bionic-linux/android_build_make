@@ -33,6 +33,23 @@
       "message": "@colefaust@google.com friendly ping on this. Thank you",
       "revId": "59a4f9598b60bbfdc16f344f60b47181c9da7aae",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3d719bb3_a6ec80ec",
+        "filename": "core/tasks/general-tests.mk",
+        "patchSetId": 14
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1535516
+      },
+      "writtenOn": "2024-11-05T21:42:30Z",
+      "side": 1,
+      "message": "clear `my_symlinks_for_general_tests` and `my_general_tests_shared_lib_files` as well",
+      "revId": "59a4f9598b60bbfdc16f344f60b47181c9da7aae",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
