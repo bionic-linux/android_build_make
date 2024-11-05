@@ -16,6 +16,23 @@
       "message": "Shall we rebase, resolve conflicts and merge this in?\nPlease.",
       "revId": "86f34104dbcd302107438bf580ec51de7c05c228",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f6465dd2_4901eabc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1806965
+      },
+      "writtenOn": "2024-11-05T15:42:27Z",
+      "side": 1,
+      "message": "Added Kelvin as a reviewer",
+      "revId": "86f34104dbcd302107438bf580ec51de7c05c228",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
