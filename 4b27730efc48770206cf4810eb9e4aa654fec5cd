@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fdbf39d3_af0b6d18",
+        "filename": "tools/aconfig/aconfig/src/commands.rs",
+        "patchSetId": 11
+      },
+      "lineNbr": 779,
+      "author": {
+        "id": 1981530
+      },
+      "writtenOn": "2024-11-05T20:45:58Z",
+      "side": 1,
+      "message": "nit: Could you `join(\"\\n\")` + remove `join(\"\")` instead?",
+      "revId": "4b27730efc48770206cf4810eb9e4aa654fec5cd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
