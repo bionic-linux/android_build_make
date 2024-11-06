@@ -16,6 +16,29 @@
       "message": "Hi Spandan, can you take another look? The major changes from PS6 is the jar name change and an improvement in the jar duplication check",
       "revId": "703a048b5c88763017a12d5e8b39af42a4db0a6f",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4c049c5e_3d0e6809",
+        "filename": "core/product_config.mk",
+        "patchSetId": 9
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 1878380
+      },
+      "writtenOn": "2024-11-06T00:23:21Z",
+      "side": 1,
+      "message": "I think `PRODUCT_BOOT_JARS` is not formatted as `platform:$jar`. Should this just be the words in `PRODUCT_BOOT_JARS`?",
+      "range": {
+        "startLine": 430,
+        "startChar": 26,
+        "endLine": 430,
+        "endChar": 61
+      },
+      "revId": "703a048b5c88763017a12d5e8b39af42a4db0a6f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
