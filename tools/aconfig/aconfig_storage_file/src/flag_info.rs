@@ -19,7 +19,6 @@
 
 use crate::{read_str_from_bytes, read_u32_from_bytes, read_u8_from_bytes};
 use crate::{AconfigStorageError, StorageFileType};
-use anyhow::anyhow;
 use serde::{Deserialize, Serialize};
 use std::fmt;
 
@@ -81,9 +80,7 @@ impl FlagInfoHeader {
             boolean_flag_offset: read_u32_from_bytes(bytes, &mut head)?,
         };
         if list.file_type != StorageFileType::FlagInfo as u8 {
-            return Err(AconfigStorageError::BytesParseFail(anyhow!(
-                "binary file is not a flag info file"
-            )));
+            return Err(AconfigStorageError::NotFlagInfoFile);
         }
         Ok(list)
     }
@@ -179,13 +176,7 @@ impl FlagInfoList {
                 head += node.into_bytes().len();
                 Ok(node)
             })
-            .collect::<Result<Vec<_>, AconfigStorageError>>()
-            .map_err(|errmsg| {
-                AconfigStorageError::BytesParseFail(anyhow!(
-                    "fail to parse flag info list: {}",
-                    errmsg
-                ))
-            })?;
+            .collect::<Result<Vec<_>, AconfigStorageError>>()?;
         let list = Self { header, nodes };
         Ok(list)
     }
@@ -261,9 +252,6 @@ mod tests {
         let mut flag_info_list = create_test_flag_info_list(DEFAULT_FILE_VERSION);
         flag_info_list.header.file_type = 123u8;
         let error = FlagInfoList::from_bytes(&flag_info_list.into_bytes()).unwrap_err();
-        assert_eq!(
-            format!("{:?}", error),
-            format!("BytesParseFail(binary file is not a flag info file)")
-        );
+        assert!(matches!(error, AconfigStorageError::NotFlagInfoFile));
     }
 }

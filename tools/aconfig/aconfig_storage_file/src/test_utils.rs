@@ -20,7 +20,6 @@ use crate::flag_value::{FlagValueHeader, FlagValueList};
 use crate::package_table::{PackageTable, PackageTableHeader, PackageTableNode};
 use crate::{AconfigStorageError, StorageFileType, StoredFlagType};
 
-use anyhow::anyhow;
 use std::io::Write;
 use tempfile::NamedTempFile;
 
@@ -161,9 +160,7 @@ pub fn create_test_flag_info_list(version: u32) -> FlagInfoList {
 }
 
 pub fn write_bytes_to_temp_file(bytes: &[u8]) -> Result<NamedTempFile, AconfigStorageError> {
-    let mut file = NamedTempFile::new().map_err(|_| {
-        AconfigStorageError::FileCreationFail(anyhow!("Failed to create temp file"))
-    })?;
+    let mut file = NamedTempFile::new().map_err(|_| AconfigStorageError::FileCreationFail)?;
     let _ = file.write_all(&bytes);
     Ok(file)
 }

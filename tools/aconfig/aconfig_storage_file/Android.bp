@@ -7,7 +7,6 @@ rust_defaults {
     edition: "2021",
     lints: "none",
     rustlibs: [
-        "libanyhow",
         "libthiserror",
         "libtempfile",
         "libprotobuf",
