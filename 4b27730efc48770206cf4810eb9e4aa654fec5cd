@@ -33,6 +33,24 @@
       "message": "nit: Could you `join(\"\\n\")` + remove `join(\"\")` instead?",
       "revId": "4b27730efc48770206cf4810eb9e4aa654fec5cd",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bd741664_eee8cebb",
+        "filename": "tools/aconfig/aconfig/src/commands.rs",
+        "patchSetId": 11
+      },
+      "lineNbr": 779,
+      "author": {
+        "id": 1890055
+      },
+      "writtenOn": "2024-11-06T11:47:45Z",
+      "side": 1,
+      "message": "That leaves the last string without a trailing \"\\n\"",
+      "parentUuid": "fdbf39d3_af0b6d18",
+      "revId": "4b27730efc48770206cf4810eb9e4aa654fec5cd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
