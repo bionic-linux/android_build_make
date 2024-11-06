@@ -40,22 +40,18 @@ pub mod protos;
 pub mod sip_hasher13;
 pub mod test_utils;
 
-use anyhow::anyhow;
 use serde::{Deserialize, Serialize};
 use std::cmp::Ordering;
 use std::fs::File;
 use std::hash::Hasher;
-use std::io::Read;
+use std::io::{self, Read};
+use std::string::FromUtf8Error;
 
 pub use crate::flag_info::{FlagInfoBit, FlagInfoHeader, FlagInfoList, FlagInfoNode};
 pub use crate::flag_table::{FlagTable, FlagTableHeader, FlagTableNode};
 pub use crate::flag_value::{FlagValueHeader, FlagValueList};
 pub use crate::package_table::{PackageTable, PackageTableHeader, PackageTableNode};
 pub use crate::sip_hasher13::SipHasher13;
-
-use crate::AconfigStorageError::{
-    BytesParseFail, HashTableSizeLimit, InvalidFlagValueType, InvalidStoredFlagType,
-};
 
 /// The max storage file version from which we can safely read/write. May be
 /// experimental.
@@ -81,8 +77,12 @@ pub enum StorageFileType {
     FlagInfo = 3,
 }
 
+#[derive(Copy, Clone, Debug, Eq, PartialEq, thiserror::Error)]
+#[error("Invalid storage file type, valid types are package_map|flag_map|flag_val|flag_info")]
+pub struct InvalidStorageFileType;
+
 impl TryFrom<&str> for StorageFileType {
-    type Error = anyhow::Error;
+    type Error = InvalidStorageFileType;
 
     fn try_from(value: &str) -> std::result::Result<Self, Self::Error> {
         match value {
@@ -90,15 +90,13 @@ impl TryFrom<&str> for StorageFileType {
             "flag_map" => Ok(Self::FlagMap),
             "flag_val" => Ok(Self::FlagVal),
             "flag_info" => Ok(Self::FlagInfo),
-            _ => Err(anyhow!(
-                "Invalid storage file type, valid types are package_map|flag_map|flag_val|flag_info"
-            )),
+            _ => Err(InvalidStorageFileType),
         }
     }
 }
 
 impl TryFrom<u8> for StorageFileType {
-    type Error = anyhow::Error;
+    type Error = InvalidStorageFileType;
 
     fn try_from(value: u8) -> Result<Self, Self::Error> {
         match value {
@@ -106,7 +104,7 @@ impl TryFrom<u8> for StorageFileType {
             x if x == Self::FlagMap as u8 => Ok(Self::FlagMap),
             x if x == Self::FlagVal as u8 => Ok(Self::FlagVal),
             x if x == Self::FlagInfo as u8 => Ok(Self::FlagInfo),
-            _ => Err(anyhow!("Invalid storage file type")),
+            _ => Err(InvalidStorageFileType),
         }
     }
 }
@@ -128,7 +126,7 @@ impl TryFrom<u16> for StoredFlagType {
             x if x == Self::ReadWriteBoolean as u16 => Ok(Self::ReadWriteBoolean),
             x if x == Self::ReadOnlyBoolean as u16 => Ok(Self::ReadOnlyBoolean),
             x if x == Self::FixedReadOnlyBoolean as u16 => Ok(Self::FixedReadOnlyBoolean),
-            _ => Err(InvalidStoredFlagType(anyhow!("Invalid stored flag type"))),
+            _ => Err(AconfigStorageError::InvalidStoredFlagType),
         }
     }
 }
@@ -158,7 +156,7 @@ impl TryFrom<u16> for FlagValueType {
     fn try_from(value: u16) -> Result<Self, Self::Error> {
         match value {
             x if x == Self::Boolean as u16 => Ok(Self::Boolean),
-            _ => Err(InvalidFlagValueType(anyhow!("Invalid flag value type"))),
+            _ => Err(AconfigStorageError::InvalidFlagValueType),
         }
     }
 }
@@ -167,44 +165,47 @@ impl TryFrom<u16> for FlagValueType {
 #[non_exhaustive]
 #[derive(thiserror::Error, Debug)]
 pub enum AconfigStorageError {
-    #[error("failed to read the file")]
-    FileReadFail(#[source] anyhow::Error),
+    #[error("Failed to read bytes from file \"{path}\": {error}")]
+    FileReadFail {
+        path: String,
+        #[source]
+        error: io::Error,
+    },
+    #[error("Failed to open file \"{path}\": {error}")]
+    FileOpenFail {
+        path: String,
+        #[source]
+        error: io::Error,
+    },
 
-    #[error("fail to parse protobuf")]
-    ProtobufParseFail(#[source] anyhow::Error),
+    #[error("Number of items in a hash table exceeds limit")]
+    HashTableSizeLimit,
 
-    #[error("storage files not found for this container")]
-    StorageFileNotFound(#[source] anyhow::Error),
+    #[error("Binary file is not a flag value file")]
+    NotFlagValueFile,
+    #[error("Binary file is not a flag info file")]
+    NotFlagInfoFile,
+    #[error("Binary file is not a flag map file")]
+    NotFlagMapFile,
+    #[error("Binary file is not a package map")]
+    NotPackageMapFile,
+    #[error("Binary file is an unsupported version: {version}")]
+    UnsupportedVersion { version: u32 },
+    #[error("Failed to parse from bytes: access out of bounds")]
+    OutOfBounds,
+    #[error("Failed to parse string from bytes, string is too long (found {0}, max is 1024)")]
+    StringTooLong(usize),
+    #[error("Fail to parse string from bytes: {0}")]
+    InvalidUtf8(#[from] FromUtf8Error),
 
-    #[error("fail to map storage file")]
-    MapFileFail(#[source] anyhow::Error),
+    #[error("Failed to create temp file")]
+    FileCreationFail,
 
-    #[error("fail to get mapped file")]
-    ObtainMappedFileFail(#[source] anyhow::Error),
+    #[error("Invalid stored flag type")]
+    InvalidStoredFlagType,
 
-    #[error("fail to flush mapped storage file")]
-    MapFlushFail(#[source] anyhow::Error),
-
-    #[error("number of items in hash table exceed limit")]
-    HashTableSizeLimit(#[source] anyhow::Error),
-
-    #[error("failed to parse bytes into data")]
-    BytesParseFail(#[source] anyhow::Error),
-
-    #[error("cannot parse storage files with a higher version")]
-    HigherStorageFileVersion(#[source] anyhow::Error),
-
-    #[error("invalid storage file byte offset")]
-    InvalidStorageFileOffset(#[source] anyhow::Error),
-
-    #[error("failed to create file")]
-    FileCreationFail(#[source] anyhow::Error),
-
-    #[error("invalid stored flag type")]
-    InvalidStoredFlagType(#[source] anyhow::Error),
-
-    #[error("invalid flag value type")]
-    InvalidFlagValueType(#[source] anyhow::Error),
+    #[error("Invalid flag value type")]
+    InvalidFlagValueType,
 }
 
 /// Get the right hash table size given number of entries in the table. Use a
@@ -214,7 +215,7 @@ pub fn get_table_size(entries: u32) -> Result<u32, AconfigStorageError> {
         .iter()
         .find(|&&num| num >= 2 * entries)
         .copied()
-        .ok_or(HashTableSizeLimit(anyhow!("Number of items in a hash table exceeds limit")))
+        .ok_or(AconfigStorageError::HashTableSizeLimit)
 }
 
 /// Get the corresponding bucket index given the key and number of buckets
@@ -228,13 +229,9 @@ pub(crate) fn get_bucket_index(val: &[u8], num_buckets: u32) -> u32 {
 
 /// Read and parse bytes as u8
 pub fn read_u8_from_bytes(buf: &[u8], head: &mut usize) -> Result<u8, AconfigStorageError> {
+    // The unwrap can never panic as the slice is always the right length to convert to an array.
     let val = u8::from_le_bytes(
-        buf.get(*head..*head + 1)
-            .ok_or(AconfigStorageError::BytesParseFail(anyhow!(
-                "fail to parse u8 from bytes: access out of bounds"
-            )))?
-            .try_into()
-            .map_err(|errmsg| BytesParseFail(anyhow!("fail to parse u8 from bytes: {}", errmsg)))?,
+        buf.get(*head..*head + 1).ok_or(AconfigStorageError::OutOfBounds)?.try_into().unwrap(),
     );
     *head += 1;
     Ok(val)
@@ -245,15 +242,9 @@ pub(crate) fn read_u16_from_bytes(
     buf: &[u8],
     head: &mut usize,
 ) -> Result<u16, AconfigStorageError> {
+    // The unwrap can never panic as the slice is always the right length to convert to an array.
     let val = u16::from_le_bytes(
-        buf.get(*head..*head + 2)
-            .ok_or(AconfigStorageError::BytesParseFail(anyhow!(
-                "fail to parse u16 from bytes: access out of bounds"
-            )))?
-            .try_into()
-            .map_err(|errmsg| {
-                BytesParseFail(anyhow!("fail to parse u16 from bytes: {}", errmsg))
-            })?,
+        buf.get(*head..*head + 2).ok_or(AconfigStorageError::OutOfBounds)?.try_into().unwrap(),
     );
     *head += 2;
     Ok(val)
@@ -266,15 +257,9 @@ pub fn read_u32_from_start_of_bytes(buf: &[u8]) -> Result<u32, AconfigStorageErr
 
 /// Read and parse bytes as u32
 pub fn read_u32_from_bytes(buf: &[u8], head: &mut usize) -> Result<u32, AconfigStorageError> {
+    // The unwrap can never panic as the slice is always the right length to convert to an array.
     let val = u32::from_le_bytes(
-        buf.get(*head..*head + 4)
-            .ok_or(AconfigStorageError::BytesParseFail(anyhow!(
-                "fail to parse u32 from bytes: access out of bounds"
-            )))?
-            .try_into()
-            .map_err(|errmsg| {
-                BytesParseFail(anyhow!("fail to parse u32 from bytes: {}", errmsg))
-            })?,
+        buf.get(*head..*head + 4).ok_or(AconfigStorageError::OutOfBounds)?.try_into().unwrap(),
     );
     *head += 4;
     Ok(val)
@@ -282,15 +267,9 @@ pub fn read_u32_from_bytes(buf: &[u8], head: &mut usize) -> Result<u32, AconfigS
 
 // Read and parse bytes as u64
 pub fn read_u64_from_bytes(buf: &[u8], head: &mut usize) -> Result<u64, AconfigStorageError> {
+    // The unwrap can never panic as the slice is always the right length to convert to an array.
     let val = u64::from_le_bytes(
-        buf.get(*head..*head + 8)
-            .ok_or(AconfigStorageError::BytesParseFail(anyhow!(
-                "fail to parse u64 from bytes: access out of bounds"
-            )))?
-            .try_into()
-            .map_err(|errmsg| {
-                BytesParseFail(anyhow!("fail to parse u64 from bytes: {}", errmsg))
-            })?,
+        buf.get(*head..*head + 8).ok_or(AconfigStorageError::OutOfBounds)?.try_into().unwrap(),
     );
     *head += 8;
     Ok(val)
@@ -304,36 +283,22 @@ pub(crate) fn read_str_from_bytes(
     let num_bytes = read_u32_from_bytes(buf, head)? as usize;
     // TODO(opg): Document this limitation and check it when creating files.
     if num_bytes > 1024 {
-        return Err(AconfigStorageError::BytesParseFail(anyhow!(
-            "fail to parse string from bytes, string is too long (found {}, max is 1024)",
-            num_bytes
-        )));
+        return Err(AconfigStorageError::StringTooLong(num_bytes));
     }
     let val = String::from_utf8(
-        buf.get(*head..*head + num_bytes)
-            .ok_or(AconfigStorageError::BytesParseFail(anyhow!(
-                "fail to parse string from bytes: access out of bounds"
-            )))?
-            .to_vec(),
-    )
-    .map_err(|errmsg| BytesParseFail(anyhow!("fail to parse string from bytes: {}", errmsg)))?;
+        buf.get(*head..*head + num_bytes).ok_or(AconfigStorageError::OutOfBounds)?.to_vec(),
+    )?;
     *head += num_bytes;
     Ok(val)
 }
 
 /// Read in storage file as bytes
 pub fn read_file_to_bytes(file_path: &str) -> Result<Vec<u8>, AconfigStorageError> {
-    let mut file = File::open(file_path).map_err(|errmsg| {
-        AconfigStorageError::FileReadFail(anyhow!("Failed to open file {}: {}", file_path, errmsg))
-    })?;
+    let mut file = File::open(file_path)
+        .map_err(|error| AconfigStorageError::FileOpenFail { path: file_path.to_owned(), error })?;
     let mut buffer = Vec::new();
-    file.read_to_end(&mut buffer).map_err(|errmsg| {
-        AconfigStorageError::FileReadFail(anyhow!(
-            "Failed to read bytes from file {}: {}",
-            file_path,
-            errmsg
-        ))
-    })?;
+    file.read_to_end(&mut buffer)
+        .map_err(|error| AconfigStorageError::FileReadFail { path: file_path.to_owned(), error })?;
     Ok(buffer)
 }
 
@@ -571,10 +536,8 @@ mod tests {
     fn test_list_flags_with_missing_files_error() {
         let flag_list_error = list_flags("does", "not", "exist").unwrap_err();
         assert_eq!(
-            format!("{:?}", flag_list_error),
-            format!(
-                "FileReadFail(Failed to open file does: No such file or directory (os error 2))"
-            )
+            flag_list_error.to_string(),
+            "Failed to open file \"does\": No such file or directory (os error 2)"
         );
     }
 
@@ -589,10 +552,7 @@ mod tests {
         let flag_value_list_path = flag_value_list.path().display().to_string();
         let flag_list_error =
             list_flags(&package_table_path, &flag_table_path, &flag_value_list_path).unwrap_err();
-        assert_eq!(
-            format!("{:?}", flag_list_error),
-            format!("BytesParseFail(fail to parse u32 from bytes: access out of bounds)")
-        );
+        assert!(matches!(flag_list_error, AconfigStorageError::OutOfBounds));
     }
 
     #[test]

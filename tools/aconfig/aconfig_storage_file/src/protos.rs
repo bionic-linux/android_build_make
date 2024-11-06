@@ -48,50 +48,69 @@ mod auto_generated {
 // ---- Common for both the Android tool-chain and cargo ----
 pub use auto_generated::*;
 
-use anyhow::Result;
 use protobuf::Message;
 use std::io::Write;
 use tempfile::NamedTempFile;
 
 pub mod storage_record_pb {
-    use super::*;
-    use anyhow::ensure;
+    use std::io;
 
-    pub fn try_from_binary_proto(bytes: &[u8]) -> Result<ProtoStorageFiles> {
+    use super::*;
+    use thiserror::Error;
+
+    #[derive(Debug, Error)]
+    pub enum StorageProtoError {
+        #[error("Invalid storage file record: missing package map file for container {container}")]
+        MissingPackageMap { container: String },
+        #[error("Invalid storage file record: missing flag map file for container {container}")]
+        MissingFlagMap { container: String },
+        #[error("Invalid storage file record: missing flag value file for container {container}")]
+        MissingFlagValue { container: String },
+        #[error(transparent)]
+        Proto(#[from] protobuf::Error),
+        #[error(transparent)]
+        ProtoParse(#[from] protobuf::text_format::ParseError),
+        #[error(transparent)]
+        Io(#[from] io::Error),
+    }
+
+    pub fn try_from_binary_proto(bytes: &[u8]) -> Result<ProtoStorageFiles, StorageProtoError> {
         let message: ProtoStorageFiles = protobuf::Message::parse_from_bytes(bytes)?;
         verify_fields(&message)?;
         Ok(message)
     }
 
-    pub fn verify_fields(storage_files: &ProtoStorageFiles) -> Result<()> {
+    pub fn verify_fields(storage_files: &ProtoStorageFiles) -> Result<(), StorageProtoError> {
         for storage_file_info in storage_files.files.iter() {
-            ensure!(
-                !storage_file_info.package_map().is_empty(),
-                "invalid storage file record: missing package map file for container {}",
-                storage_file_info.container()
-            );
-            ensure!(
-                !storage_file_info.flag_map().is_empty(),
-                "invalid storage file record: missing flag map file for container {}",
-                storage_file_info.container()
-            );
-            ensure!(
-                !storage_file_info.flag_val().is_empty(),
-                "invalid storage file record: missing flag val file for container {}",
-                storage_file_info.container()
-            );
+            if storage_file_info.package_map().is_empty() {
+                return Err(StorageProtoError::MissingPackageMap {
+                    container: storage_file_info.container().to_owned(),
+                });
+            }
+            if storage_file_info.flag_map().is_empty() {
+                return Err(StorageProtoError::MissingFlagMap {
+                    container: storage_file_info.container().to_owned(),
+                });
+            }
+            if storage_file_info.flag_val().is_empty() {
+                return Err(StorageProtoError::MissingFlagValue {
+                    container: storage_file_info.container().to_owned(),
+                });
+            }
         }
         Ok(())
     }
 
-    pub fn get_binary_proto_from_text_proto(text_proto: &str) -> Result<Vec<u8>> {
+    pub fn get_binary_proto_from_text_proto(
+        text_proto: &str,
+    ) -> Result<Vec<u8>, StorageProtoError> {
         let storage_files: ProtoStorageFiles = protobuf::text_format::parse_from_str(text_proto)?;
         let mut binary_proto = Vec::new();
         storage_files.write_to_vec(&mut binary_proto)?;
         Ok(binary_proto)
     }
 
-    pub fn write_proto_to_temp_file(text_proto: &str) -> Result<NamedTempFile> {
+    pub fn write_proto_to_temp_file(text_proto: &str) -> Result<NamedTempFile, StorageProtoError> {
         let bytes = get_binary_proto_from_text_proto(text_proto).unwrap();
         let mut file = NamedTempFile::new()?;
         let _ = file.write_all(&bytes);
@@ -101,6 +120,8 @@ pub mod storage_record_pb {
 
 #[cfg(test)]
 mod tests {
+    use storage_record_pb::StorageProtoError;
+
     use super::*;
 
     #[test]
@@ -158,9 +179,8 @@ files {
         let binary_proto_bytes =
             storage_record_pb::get_binary_proto_from_text_proto(text_proto).unwrap();
         let err = storage_record_pb::try_from_binary_proto(&binary_proto_bytes).unwrap_err();
-        assert_eq!(
-            format!("{:?}", err),
-            "invalid storage file record: missing package map file for container system"
+        assert!(
+            matches!(err, StorageProtoError::MissingPackageMap { container } if container == "system")
         );
 
         let text_proto = r#"
@@ -176,9 +196,8 @@ files {
         let binary_proto_bytes =
             storage_record_pb::get_binary_proto_from_text_proto(text_proto).unwrap();
         let err = storage_record_pb::try_from_binary_proto(&binary_proto_bytes).unwrap_err();
-        assert_eq!(
-            format!("{:?}", err),
-            "invalid storage file record: missing flag map file for container system"
+        assert!(
+            matches!(err, StorageProtoError::MissingFlagMap { container } if container == "system")
         );
 
         let text_proto = r#"
@@ -194,9 +213,8 @@ files {
         let binary_proto_bytes =
             storage_record_pb::get_binary_proto_from_text_proto(text_proto).unwrap();
         let err = storage_record_pb::try_from_binary_proto(&binary_proto_bytes).unwrap_err();
-        assert_eq!(
-            format!("{:?}", err),
-            "invalid storage file record: missing flag val file for container system"
+        assert!(
+            matches!(err, StorageProtoError::MissingFlagValue { container } if container == "system")
         );
     }
 }
