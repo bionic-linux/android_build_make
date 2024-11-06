@@ -39,6 +39,30 @@
       },
       "revId": "703a048b5c88763017a12d5e8b39af42a4db0a6f",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8e5c8088_75613e56",
+        "filename": "core/product_config.mk",
+        "patchSetId": 9
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 1297255
+      },
+      "writtenOn": "2024-11-06T00:42:50Z",
+      "side": 1,
+      "message": "I added a print and the format is platform:$jar\n\n```\nbuild/make/core/product_config.mk:427: warning: platform:framework-minus-apex\nbuild/make/core/product_config.mk:427: warning: platform:framework-graphics\nbuild/make/core/product_config.mk:427: warning: platform:framework-location\nbuild/make/core/product_config.mk:427: warning: platform:framework-connectivity-b\nbuild/make/core/product_config.mk:427: warning: platform:ext\nbuild/make/core/product_config.mk:427: warning: platform:telephony-common\nbuild/make/core/product_config.mk:427: warning: platform:voip-common\nbuild/make/core/product_config.mk:427: warning: platform:ims-common\n```",
+      "parentUuid": "4c049c5e_3d0e6809",
+      "range": {
+        "startLine": 430,
+        "startChar": 26,
+        "endLine": 430,
+        "endChar": 61
+      },
+      "revId": "703a048b5c88763017a12d5e8b39af42a4db0a6f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
