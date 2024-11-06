@@ -19,7 +19,6 @@
 
 use crate::{read_str_from_bytes, read_u32_from_bytes, read_u8_from_bytes};
 use crate::{AconfigStorageError, StorageFileType};
-use anyhow::anyhow;
 use serde::{Deserialize, Serialize};
 use std::fmt;
 
@@ -81,9 +80,7 @@ impl FlagValueHeader {
             boolean_value_offset: read_u32_from_bytes(bytes, &mut head)?,
         };
         if list.file_type != StorageFileType::FlagVal as u8 {
-            return Err(AconfigStorageError::BytesParseFail(anyhow!(
-                "binary file is not a flag value file"
-            )));
+            return Err(AconfigStorageError::NotFlagValueFile);
         }
         Ok(list)
     }
@@ -188,9 +185,6 @@ mod tests {
         let mut flag_value_list = create_test_flag_value_list(DEFAULT_FILE_VERSION);
         flag_value_list.header.file_type = 123u8;
         let error = FlagValueList::from_bytes(&flag_value_list.into_bytes()).unwrap_err();
-        assert_eq!(
-            format!("{:?}", error),
-            format!("BytesParseFail(binary file is not a flag value file)")
-        );
+        assert!(matches!(error, AconfigStorageError::NotFlagValueFile));
     }
 }

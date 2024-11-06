@@ -22,7 +22,6 @@ use crate::{
     read_u8_from_bytes,
 };
 use crate::{AconfigStorageError, StorageFileType, StoredFlagType};
-use anyhow::anyhow;
 use serde::{Deserialize, Serialize};
 use std::fmt;
 
@@ -87,9 +86,7 @@ impl FlagTableHeader {
             node_offset: read_u32_from_bytes(bytes, &mut head)?,
         };
         if table.file_type != StorageFileType::FlagMap as u8 {
-            return Err(AconfigStorageError::BytesParseFail(anyhow!(
-                "binary file is not a flag map"
-            )));
+            return Err(AconfigStorageError::NotFlagMapFile);
         }
         Ok(table)
     }
@@ -207,10 +204,7 @@ impl FlagTable {
                 head += node.into_bytes().len();
                 Ok(node)
             })
-            .collect::<Result<Vec<_>, AconfigStorageError>>()
-            .map_err(|errmsg| {
-                AconfigStorageError::BytesParseFail(anyhow!("fail to parse flag table: {}", errmsg))
-            })?;
+            .collect::<Result<Vec<_>, AconfigStorageError>>()?;
 
         let table = Self { header, buckets, nodes };
         Ok(table)
@@ -287,9 +281,6 @@ mod tests {
         let mut flag_table = create_test_flag_table(DEFAULT_FILE_VERSION);
         flag_table.header.file_type = 123u8;
         let error = FlagTable::from_bytes(&flag_table.into_bytes()).unwrap_err();
-        assert_eq!(
-            format!("{:?}", error),
-            format!("BytesParseFail(binary file is not a flag map)")
-        );
+        assert!(matches!(error, AconfigStorageError::NotFlagMapFile));
     }
 }

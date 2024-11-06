@@ -8,7 +8,6 @@ default = ["cargo"]
 cargo = []
 
 [dependencies]
-anyhow = "1.0.69"
 protobuf = "3.2.0"
 tempfile = "3.9.0"
 thiserror = "1.0.56"

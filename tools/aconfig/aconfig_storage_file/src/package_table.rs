@@ -22,7 +22,6 @@ use crate::{
     read_u8_from_bytes,
 };
 use crate::{AconfigStorageError, StorageFileType};
-use anyhow::anyhow;
 use serde::{Deserialize, Serialize};
 use std::fmt;
 
@@ -87,9 +86,7 @@ impl PackageTableHeader {
             node_offset: read_u32_from_bytes(bytes, &mut head)?,
         };
         if table.file_type != StorageFileType::PackageMap as u8 {
-            return Err(AconfigStorageError::BytesParseFail(anyhow!(
-                "binary file is not a package map"
-            )));
+            return Err(AconfigStorageError::NotPackageMapFile);
         }
         Ok(table)
     }
@@ -162,12 +159,7 @@ impl PackageTableNode {
         match version {
             1 => Self::from_bytes_v1(bytes),
             2 => Self::from_bytes_v2(bytes),
-            _ => {
-                return Err(AconfigStorageError::BytesParseFail(anyhow!(
-                    "Binary file is an unsupported version: {}",
-                    version
-                )))
-            }
+            _ => return Err(AconfigStorageError::UnsupportedVersion { version }),
         }
     }
 
@@ -266,13 +258,7 @@ impl PackageTable {
                 head += node.into_bytes(header.version).len();
                 Ok(node)
             })
-            .collect::<Result<Vec<_>, AconfigStorageError>>()
-            .map_err(|errmsg| {
-                AconfigStorageError::BytesParseFail(anyhow!(
-                    "fail to parse package table: {}",
-                    errmsg
-                ))
-            })?;
+            .collect::<Result<Vec<_>, AconfigStorageError>>()?;
 
         let table = Self { header, buckets, nodes };
         Ok(table)
@@ -369,9 +355,6 @@ mod tests {
         let mut package_table = create_test_package_table(DEFAULT_FILE_VERSION);
         package_table.header.file_type = 123u8;
         let error = PackageTable::from_bytes(&package_table.into_bytes()).unwrap_err();
-        assert_eq!(
-            format!("{:?}", error),
-            format!("BytesParseFail(binary file is not a package map)")
-        );
+        assert!(matches!(error, AconfigStorageError::NotPackageMapFile));
     }
 }
