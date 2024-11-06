@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "62774de8_9ece7c48",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-11-06T00:32:49Z",
+      "side": 1,
+      "message": "The one thing here is we shouldn\u0027t be referencing vendor/google from this directory. I\u0027ll +2 it for now, but we\u0027ll need to move this script over to vendor/google/build.  That\u0027s probably better anyway -- this directory really is all google-specific CI, not really for anyone else.",
+      "revId": "d2cc6a6c99ec97e850b783fbfefbfda014dc36af",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
