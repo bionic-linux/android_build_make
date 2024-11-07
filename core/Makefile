@@ -829,15 +829,6 @@ $(call declare-1p-target,$(BUILD_SYSTEM_STATS),build)
 $(call dist-for-goals,droidcore-unbundled,$(BUILD_SYSTEM_STATS))
 
 # -----------------------------------------------------------------
-# build /product/etc/security/avb/system_other.avbpubkey if needed
-ifdef BUILDING_SYSTEM_OTHER_IMAGE
-ifeq ($(BOARD_AVB_ENABLE),true)
-INSTALLED_PRODUCT_SYSTEM_OTHER_AVBKEY_TARGET := $(TARGET_OUT_PRODUCT_ETC)/security/avb/system_other.avbpubkey
-ALL_DEFAULT_INSTALLED_MODULES += $(INSTALLED_PRODUCT_SYSTEM_OTHER_AVBKEY_TARGET)
-endif # BOARD_AVB_ENABLE
-endif # BUILDING_SYSTEM_OTHER_IMAGE
-
-# -----------------------------------------------------------------
 # Modules ready to be converted to Soong, ordered by how many
 # modules depend on them.
 SOONG_CONV := $(sort $(SOONG_CONV))
@@ -4579,14 +4570,6 @@ else
 BOARD_AVB_SYSTEM_OTHER_KEY_PATH := $(BOARD_AVB_KEY_PATH)
 BOARD_AVB_SYSTEM_OTHER_ALGORITHM := $(BOARD_AVB_ALGORITHM)
 endif
-
-$(INSTALLED_PRODUCT_SYSTEM_OTHER_AVBKEY_TARGET): $(AVBTOOL) $(BOARD_AVB_SYSTEM_OTHER_KEY_PATH)
-	@echo Extracting system_other avb key: $@
-	@rm -f $@
-	@mkdir -p $(dir $@)
-	$(AVBTOOL) extract_public_key --key $(BOARD_AVB_SYSTEM_OTHER_KEY_PATH) --output $@
-
-$(eval $(call declare-0p-target,$(INSTALLED_PRODUCT_SYSTEM_OTHER_AVBKEY_TARGET),))
 
 ifndef BOARD_AVB_SYSTEM_OTHER_ROLLBACK_INDEX
 BOARD_AVB_SYSTEM_OTHER_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
