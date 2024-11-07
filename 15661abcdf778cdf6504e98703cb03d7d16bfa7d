@@ -1,0 +1,116 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "21887b7a_b198017b",
+        "filename": "ci/build_test_suites.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1121894
+      },
+      "writtenOn": "2024-11-07T19:21:09Z",
+      "side": 1,
+      "message": "can any of the above throw ?\n\nit would be good to capture issues",
+      "range": {
+        "startLine": 125,
+        "startChar": 19,
+        "endLine": 125,
+        "endChar": 31
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "5af2a5ce_4a3ab56d",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ci/build_test_suites.py",
+              "range": {
+                "startLine": 117,
+                "startChar": 0,
+                "endLine": 127,
+                "endChar": 0
+              },
+              "replacement": ""
+            },
+            {
+              "path": "ci/build_test_suites.py",
+              "range": {
+                "startLine": 128,
+                "startChar": 0,
+                "endLine": 132,
+                "endChar": 0
+              },
+              "replacement": "    get_metrics_agent().analysis_start()\n    args \u003d parse_args(argv)\n    check_required_env()\n    build_context \u003d BuildContext(load_build_context())\n    build_planner \u003d BuildPlanner(\n        build_context, args, optimized_targets.OPTIMIZED_BUILD_TARGETS\n    )\n    build_plan \u003d build_planner.create_build_plan()\n    get_metrics_agent().analysis_end()\n\n    try:\n      execute_build_plan(build_plan)\n    except BuildFailureError as e:\n      logging.error(\u0027Build command failed! Check build_log for details.\u0027)\n      return e.return_code\n  except Exception as e:\n    get_metrics_agent().analysis_end()\n    raise e\n"
+            }
+          ]
+        }
+      ],
+      "revId": "15661abcdf778cdf6504e98703cb03d7d16bfa7d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2d2d43d3_82eb33e8",
+        "filename": "ci/build_test_suites.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 1121894
+      },
+      "writtenOn": "2024-11-07T19:21:09Z",
+      "side": 1,
+      "message": "in case of exception you might never get here ?\n\nor should you move this to Line 131 in a finally as the last step ?",
+      "range": {
+        "startLine": 199,
+        "startChar": 22,
+        "endLine": 199,
+        "endChar": 35
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "08f7fd98_fa7ebc34",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ci/build_test_suites.py",
+              "range": {
+                "startLine": 184,
+                "startChar": 0,
+                "endLine": 184,
+                "endChar": 0
+              },
+              "replacement": "  get_metrics_agent().packaging_start()\n"
+            },
+            {
+              "path": "ci/build_test_suites.py",
+              "range": {
+                "startLine": 189,
+                "startChar": 0,
+                "endLine": 190,
+                "endChar": 0
+              },
+              "replacement": ""
+            },
+            {
+              "path": "ci/build_test_suites.py",
+              "range": {
+                "startLine": 198,
+                "startChar": 0,
+                "endLine": 201,
+                "endChar": 0
+              },
+              "replacement": "    get_metrics_agent().end_reporting()\n"
+            }
+          ]
+        }
+      ],
+      "revId": "15661abcdf778cdf6504e98703cb03d7d16bfa7d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
