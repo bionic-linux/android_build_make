@@ -492,6 +492,12 @@ _product_single_value_vars += PRODUCT_SOONG_DEFINED_SYSTEM_IMAGE
 # should be included in the system_linker_config.
 _product_list_vars += PRODUCT_EXTRA_STUB_LIBRARIES
 
+# If set to true, all Android.mk files will be ignored.
+_product_single_value_vars += PRODUCT_IGNORE_ALL_ANDROIDMK
+# When PRODUCT_IGNORE_ALL_ANDROIDMK is set to true, this variable will be used to allow some Android.mk files.
+_product_list_vars += PRODUCT_ALLOWED_ANDROIDMK_FILES
+
+
 .KATI_READONLY := _product_single_value_vars _product_list_vars
 _product_var_list :=$= $(_product_single_value_vars) $(_product_list_vars)
 
