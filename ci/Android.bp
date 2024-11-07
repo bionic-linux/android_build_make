@@ -126,6 +126,9 @@ python_library_host {
         "test_discovery_agent.py",
         "metrics_agent.py",
     ],
+    libs: [
+        "soong-metrics-proto-py",
+    ],
 }
 
 python_library_host {
