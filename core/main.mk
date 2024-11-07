@@ -281,7 +281,13 @@ subdir_makefiles := $(SOONG_OUT_DIR)/installs-$(TARGET_PRODUCT)$(COVERAGE_SUFFIX
 
 # Android.mk files are only used on Linux builds, Mac only supports Android.bp
 ifeq ($(HOST_OS),linux)
-  subdir_makefiles += $(file <$(OUT_DIR)/.module_paths/Android.mk.list)
+  ifeq ($(PRODUCT_IGNORE_ALL_ANDROIDMK), true)
+    ifdef PRODUCT_ALLOWED_ANDROIDMK_FILES
+      subdir_makefiles += $(filter $(PRODUCT_ALLOWED_ANDROIDMK_FILES),$(file <$(OUT_DIR)/.module_paths/Android.mk.list))
+    endif
+  else
+    subdir_makefiles += $(file <$(OUT_DIR)/.module_paths/Android.mk.list)
+  endif
 endif
 
 subdir_makefiles += $(SOONG_OUT_DIR)/late-$(TARGET_PRODUCT)$(COVERAGE_SUFFIX).mk
