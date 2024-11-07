@@ -1,0 +1,146 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5846e437_67bc147e",
+        "filename": "ci/metrics_agent.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1121894
+      },
+      "writtenOn": "2024-11-07T19:18:36Z",
+      "side": 1,
+      "message": "nit: license",
+      "revId": "5f387fffcb607fb7f28a1b63243754101473a8e5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "41e2a916_3bd991d4",
+        "filename": "ci/metrics_agent.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1121894
+      },
+      "writtenOn": "2024-11-07T19:18:36Z",
+      "side": 1,
+      "message": "nit: add python docstring",
+      "range": {
+        "startLine": 8,
+        "startChar": 6,
+        "endLine": 8,
+        "endChar": 18
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "27d9866c_e402ebcd",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ci/metrics_agent.py",
+              "range": {
+                "startLine": 9,
+                "startChar": 0,
+                "endLine": 9,
+                "endChar": 0
+              },
+              "replacement": "  \"\"\"MetricsAgent is a singleton class that collects metrics for optimized build.\"\"\"\n\n"
+            }
+          ]
+        }
+      ],
+      "revId": "5f387fffcb607fb7f28a1b63243754101473a8e5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e4c6e32d_7ab22287",
+        "filename": "ci/metrics_agent.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1121894
+      },
+      "writtenOn": "2024-11-07T19:18:36Z",
+      "side": 1,
+      "message": "nit: make this a constant",
+      "range": {
+        "startLine": 86,
+        "startChar": 52,
+        "endLine": 86,
+        "endChar": 70
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "daa2fc67_b451f36d",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ci/metrics_agent.py",
+              "range": {
+                "startLine": 7,
+                "startChar": 0,
+                "endLine": 7,
+                "endChar": 0
+              },
+              "replacement": "SOONG_METRICS_FILE \u003d \u0027logs/soong_metrics\u0027\n\n"
+            },
+            {
+              "path": "ci/metrics_agent.py",
+              "range": {
+                "startLine": 86,
+                "startChar": 0,
+                "endLine": 87,
+                "endChar": 0
+              },
+              "replacement": "    with open(os.path.join(os.environ[\u0027DIST_DIR\u0027], SOONG_METRICS_FILE), \u0027rb\u0027) as f:\n"
+            },
+            {
+              "path": "ci/metrics_agent.py",
+              "range": {
+                "startLine": 90,
+                "startChar": 0,
+                "endLine": 91,
+                "endChar": 0
+              },
+              "replacement": "    with open(os.path.join(os.environ[\u0027DIST_DIR\u0027], SOONG_METRICS_FILE), \u0027wb\u0027) as f:\n"
+            }
+          ]
+        }
+      ],
+      "revId": "5f387fffcb607fb7f28a1b63243754101473a8e5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "31c2b116_b337ce68",
+        "filename": "ci/metrics_agent.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1121894
+      },
+      "writtenOn": "2024-11-07T19:18:36Z",
+      "side": 1,
+      "message": "nit: make this a constant",
+      "range": {
+        "startLine": 86,
+        "startChar": 39,
+        "endLine": 86,
+        "endChar": 47
+      },
+      "revId": "5f387fffcb607fb7f28a1b63243754101473a8e5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
