@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "24ee8898_846217be",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1965080
+      },
+      "writtenOn": "2024-11-07T00:31:56Z",
+      "side": 1,
+      "message": "You might need to pull in the changes from this file as well.",
+      "revId": "735f41a9be236a1f136abae5082fe31f524beec6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
