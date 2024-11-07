@@ -34,6 +34,23 @@
       "parentUuid": "24ee8898_846217be",
       "revId": "735f41a9be236a1f136abae5082fe31f524beec6",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e82c3255_cf547da2",
+        "filename": "target/product/build_variables.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1583551
+      },
+      "writtenOn": "2024-11-07T00:57:51Z",
+      "side": 1,
+      "message": "At some point, it would be good to revisit this change and have it use a `select` statement instead of having a config variable.  See go/soong-selects",
+      "revId": "735f41a9be236a1f136abae5082fe31f524beec6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
