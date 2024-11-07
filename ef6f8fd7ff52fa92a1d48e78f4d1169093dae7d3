@@ -16,6 +16,24 @@
       "message": "I was pinged over email about this, sorry for the slow review. Could you re-upload this on the main branch? master doesn\u0027t accept submissions anymore.",
       "revId": "ef6f8fd7ff52fa92a1d48e78f4d1169093dae7d3",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b2453b7a_50d4e7a8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1010080
+      },
+      "writtenOn": "2024-11-07T23:54:28Z",
+      "side": 1,
+      "message": "Done 3342134: Add vendor_kernel_boot files to target-files-package | https://android-review.googlesource.com/c/platform/build/+/3342134",
+      "parentUuid": "99c969bb_1c0f23e9",
+      "revId": "ef6f8fd7ff52fa92a1d48e78f4d1169093dae7d3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
