@@ -159,6 +159,30 @@
       },
       "revId": "b1d9455545b1448b0eabe2b45760f498e87fd5b4",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2b8ea6d2_a116eff6",
+        "filename": "target/product/base_system.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 550,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-11-07T22:43:36Z",
+      "side": 1,
+      "message": "Talked with Jared offline. He\u0027s going to submit this and work on making it into a soong module type instead of a genrule, so lgtm for now.",
+      "parentUuid": "89ca8863_d75d4f5d",
+      "range": {
+        "startLine": 550,
+        "startChar": 2,
+        "endLine": 550,
+        "endChar": 40
+      },
+      "revId": "b1d9455545b1448b0eabe2b45760f498e87fd5b4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
