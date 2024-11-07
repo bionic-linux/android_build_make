@@ -43,6 +43,12 @@ class MetricsAgent:
         time.time_ns() - self._proto.packaging_perf.start_time
     )
 
+  def report_optimized_target(self, name: str):
+    target_result = metrics_pb2.OptimizedBuildMetrics.TargetOptimizationResult()
+    target_result.name = name
+    target_result.optimized = True
+    self._target_results[name] = target_result
+
   def report_unoptimized_target(self, name: str, optimization_rationale: str):
     target_result = metrics_pb2.OptimizedBuildMetrics.TargetOptimizationResult()
     target_result.name = name
@@ -51,9 +57,7 @@ class MetricsAgent:
     self._target_results[name] = target_result
 
   def target_packaging_start(self, name: str):
-    target_result = metrics_pb2.OptimizedBuildMetrics.TargetOptimizationResult()
-    target_result.name = name
-    target_result.optimized = True
+    target_result = self._target_results.get(name)
     target_result.packaging_perf.start_time = time.time_ns()
     self._target_results[name] = target_result
 
@@ -62,7 +66,6 @@ class MetricsAgent:
     target_result.packaging_perf.real_time = (
         time.time_ns() - target_result.packaging_perf.start_time
     )
-    self._proto.target_result.add(target_result)
 
   def add_target_artifact(
       self,
@@ -82,6 +85,8 @@ class MetricsAgent:
     target_result.output_artifacts.add(artifact)
 
   def end_reporting(self):
+    for target_result in self._target_results.values():
+      self._proto.target_result.append(target_result)
     soong_metrics_proto = metrics_pb2.MetricsBase()
     with open(os.path.join(os.environ['DIST_DIR'], 'logs/soong_metrics'), 'rb') as f:
       soong_metrics_proto.ParseFromString(f.read())
