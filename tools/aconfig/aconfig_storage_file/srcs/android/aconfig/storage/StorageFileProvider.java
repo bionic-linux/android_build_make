@@ -21,6 +21,7 @@ import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
@@ -66,8 +67,9 @@ public class StorageFileProvider {
                     Files.newDirectoryStream(Paths.get(mMapPath), "*" + PMAP_FILE_EXT);
             for (Path entry : stream) {
                 result.add(entry);
-                // sb.append(entry. toString());
             }
+        } catch (NoSuchFileException e) {
+            return result;
         } catch (Exception e) {
             throw new AconfigStorageException(
                     String.format("Fail to list map files in path %s", mMapPath), e);

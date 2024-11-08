@@ -21,13 +21,12 @@ import java.io.InputStream;
 import java.nio.ByteBuffer;
 
 public final class TestDataUtils {
-    private static final String TEST_PACKAGE_MAP_PATH = "package.map";
-    private static final String TEST_FLAG_MAP_PATH = "flag.map";
-    private static final String TEST_FLAG_VAL_PATH = "flag.val";
-    private static final String TEST_FLAG_INFO_PATH = "flag.info";
+    public static final String TEST_PACKAGE_MAP_PATH = "mockup.package.map";
+    public static final String TEST_FLAG_MAP_PATH = "mockup.flag.map";
+    public static final String TEST_FLAG_VAL_PATH = "mockup.val";
+    public static final String TEST_FLAG_INFO_PATH = "mockup.info";
 
-    private static final String TESTDATA_PATH =
-            "/data/local/tmp/aconfig_storage_file_test_java/testdata/";
+    public static final String TESTDATA_PATH = "/data/local/tmp/aconfig_storage_package/testdata/";
 
     public static ByteBuffer getTestPackageMapByteBuffer() throws Exception {
         return readFile(TESTDATA_PATH + TEST_PACKAGE_MAP_PATH);

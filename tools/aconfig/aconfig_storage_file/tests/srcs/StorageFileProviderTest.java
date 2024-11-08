@@ -50,7 +50,6 @@ public class StorageFileProviderTest {
     public void testListpackageMapFiles() throws Exception {
         StorageFileProvider p =
                 new StorageFileProvider(TestDataUtils.TESTDATA_PATH, TestDataUtils.TESTDATA_PATH);
-        // throw new Exception(Environment.getExternalStorageDirectory().getAbsolutePath());
         List<Path> file = p.listPackageMapFiles();
         assertEquals(1, file.size());
         assertTrue(
@@ -59,6 +58,10 @@ public class StorageFileProviderTest {
                                 Paths.get(
                                         TestDataUtils.TESTDATA_PATH,
                                         TestDataUtils.TEST_PACKAGE_MAP_PATH)));
+
+        p = new StorageFileProvider("fake/path/", "fake/path/");
+        file = p.listPackageMapFiles();
+        assertTrue(file.isEmpty());
     }
 
     @Test
