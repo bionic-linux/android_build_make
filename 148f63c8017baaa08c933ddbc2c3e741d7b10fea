@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b0d13a3a_6e70503d",
+        "filename": "target/product/generic/Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2024-11-08T02:26:42Z",
+      "side": 1,
+      "message": "Please remove these tabs.",
+      "range": {
+        "startLine": 352,
+        "startChar": 0,
+        "endLine": 352,
+        "endChar": 1
+      },
+      "revId": "148f63c8017baaa08c933ddbc2c3e741d7b10fea",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
