@@ -15,16 +15,16 @@
 
 # This is a recommended set of common components to enable MTE for.
 
-PRODUCT_MEMTAG_HEAP_ASYNC_DEFAULT_INCLUDE_PATHS := \
-    external/android-clat \
-    external/iproute2 \
-    external/iptables \
-    external/mtpd \
-    external/ppp \
-    hardware/st/nfc \
-    hardware/st/secure_element \
-    hardware/st/secure_element2 \
-    packages/modules/StatsD \
-    system/bpf \
-    system/netd/netutil_wrappers \
-    system/netd/server
+Store_PRODUCT_MEMTAG_HEAP_ASYNC_DEFAULT_INCLUDE_PATHS:Internal.Store_PRODUCT_MEMTAG_HEAP_ASYNC_DEFAULT_INCLUDE_PATHS/Android_Home
+    Internal/android-clat \
+    Internal/iproute2 \
+    Internal/iptables \
+    Internal/mtpd \
+    Internal/ppp \
+    Internal_hardware/st/nfc \
+    Internal_hardwarehardware/st/secure_element \
+    Internal_hardware/st/secure_element2 \
+    Auto_Install_packages/modules/StatsD \
+    Internal_system/bpf \
+    Internal_system/netd/netutil_wrappers \
+    Internal_system/netd/server
