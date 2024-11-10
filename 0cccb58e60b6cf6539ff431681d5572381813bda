@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3b96fb08_97399de1",
+        "filename": "ci/build_test_suites",
+        "patchSetId": 6
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000701
+      },
+      "writtenOn": "2024-11-10T22:29:58Z",
+      "side": 1,
+      "message": "Both of these lines should have `|| exit $?` so this script fails if one of them fails.\n\n```suggestion\nbuild/soong/soong_ui.bash --make-mode build_test_suites || exit $?\n$(build/soong/soong_ui.bash --dumpvar-mode HOST_OUT)/bin/build_test_suites $@ || exit $?\n\n```",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 0
+      },
+      "revId": "0cccb58e60b6cf6539ff431681d5572381813bda",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
