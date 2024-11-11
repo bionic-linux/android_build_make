@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fbf79301_05cc3937",
+        "filename": "target/product/generic/Android.bp",
+        "patchSetId": 7
+      },
+      "lineNbr": 884,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2024-11-11T04:52:24Z",
+      "side": 1,
+      "message": "This is the minimum aosp system image. We will rename this to `aosp_shared_system_image`.",
+      "range": {
+        "startLine": 884,
+        "startChar": 11,
+        "endLine": 884,
+        "endChar": 31
+      },
+      "revId": "124777e52ac2d050d268ec914641dbd5145732ec",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "018e0d7f_73adfec6",
+        "filename": "target/product/gsi/Android.bp",
+        "patchSetId": 7
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2024-11-11T04:52:24Z",
+      "side": 1,
+      "message": "\"si\" already means \"system_image\". I prefer \"android_gsi\" to \"gsi_system_image\".",
+      "range": {
+        "startLine": 77,
+        "startChar": 11,
+        "endLine": 77,
+        "endChar": 27
+      },
+      "revId": "124777e52ac2d050d268ec914641dbd5145732ec",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
