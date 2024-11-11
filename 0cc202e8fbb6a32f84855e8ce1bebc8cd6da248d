@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fdc9aefd_f2d1f230",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002751
+      },
+      "writtenOn": "2024-11-11T19:49:07Z",
+      "side": 1,
+      "message": "This follows the same pattern as the existing files, so it\u0027s not making anything worse, but this will probably be incompatible with the Soong system image packaging work.",
+      "revId": "0cc202e8fbb6a32f84855e8ce1bebc8cd6da248d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
