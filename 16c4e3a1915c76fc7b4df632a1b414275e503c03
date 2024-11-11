@@ -16,6 +16,24 @@
       "message": "CC @justinyun@google.com @devinmoore@google.com to check if adding another version variable is fine.",
       "revId": "16c4e3a1915c76fc7b4df632a1b414275e503c03",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c2058d3a_c82bbd84",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1644679
+      },
+      "writtenOn": "2024-11-11T18:23:52Z",
+      "side": 1,
+      "message": "More versions is not great, but it seems nice to allow partners to choose a newer sepolicy here.",
+      "parentUuid": "b22012b9_ecc1e18f",
+      "revId": "16c4e3a1915c76fc7b4df632a1b414275e503c03",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
