@@ -34,6 +34,24 @@
       "parentUuid": "fdc9aefd_f2d1f230",
       "revId": "0cc202e8fbb6a32f84855e8ce1bebc8cd6da248d",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bc5bc947_44c78cda",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1535516
+      },
+      "writtenOn": "2024-11-12T18:00:15Z",
+      "side": 1,
+      "message": "We\u0027ll handle it so I wouldn\u0027t be too worried about it, but `android_filesystem` / `android_system_image` modules will probably have to be made to do this disting. But then since there will be a different filesystem per product some logic will have to be added to choose the right one... But you can see `generic_system_image` for an example of a soong-built partition: https://cs.android.com/android/platform/superproject/main/+/main:build/make/target/product/generic/Android.bp;l\u003d344;drc\u003d6f9ce5a7b3b967d3a9bdd652ae4e49097c6ede28",
+      "parentUuid": "968c0bb3_66ff2bea",
+      "revId": "0cc202e8fbb6a32f84855e8ce1bebc8cd6da248d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
