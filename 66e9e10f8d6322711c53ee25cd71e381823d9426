@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4820bd45_58082482",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1608690
+      },
+      "writtenOn": "2024-11-12T09:50:36Z",
+      "side": 1,
+      "message": "As I commented in the bug, the new failure was due to another problem. It has been fixed the the build has turned to green.",
+      "revId": "66e9e10f8d6322711c53ee25cd71e381823d9426",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
