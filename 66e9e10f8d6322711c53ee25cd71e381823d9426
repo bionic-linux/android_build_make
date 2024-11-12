@@ -34,6 +34,24 @@
       "parentUuid": "4820bd45_58082482",
       "revId": "66e9e10f8d6322711c53ee25cd71e381823d9426",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8452b3ff_0cdb25be",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1318142
+      },
+      "writtenOn": "2024-11-12T18:07:36Z",
+      "side": 1,
+      "message": "I see, the wrong timing for the new failure, that is why I wondered if the revert fixed the problem. Now I have reproduced the build error locally and revised the change a little in this CL. I have tested it with the same command used in the CI and it works well now.",
+      "parentUuid": "bdd6fca6_97274dc8",
+      "revId": "66e9e10f8d6322711c53ee25cd71e381823d9426",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
