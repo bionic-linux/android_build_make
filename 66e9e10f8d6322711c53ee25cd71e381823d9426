@@ -16,6 +16,24 @@
       "message": "As I commented in the bug, the new failure was due to another problem. It has been fixed the the build has turned to green.",
       "revId": "66e9e10f8d6322711c53ee25cd71e381823d9426",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bdd6fca6_97274dc8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1608690
+      },
+      "writtenOn": "2024-11-12T09:53:05Z",
+      "side": 1,
+      "message": "See https://android-build.corp.google.com/build_explorer/branch/git_main-throttled-tv/?gridSize\u003d20\u0026selectionType\u003dMOST_RECENT_N_BUILDS\u0026numBuilds\u003d20\u0026buildType\u003ddefault and b/378585811 for the new failure after merging the revert (it has been fixed).",
+      "parentUuid": "4820bd45_58082482",
+      "revId": "66e9e10f8d6322711c53ee25cd71e381823d9426",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
