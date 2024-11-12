@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "33978ed7_4c06b235",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1535516
+      },
+      "writtenOn": "2024-11-12T22:08:55Z",
+      "side": 1,
+      "message": "https://android-build.corp.google.com/builds/abtd/run/L77300030007732755",
+      "revId": "25361f9fde0f76f0768f2a2e66ecbe17b880e6f7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
