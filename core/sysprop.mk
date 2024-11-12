@@ -301,23 +301,6 @@ ALL_DEFAULT_INSTALLED_MODULES += \
 
 INSTALLED_SYSTEM_EXT_BUILD_PROP_TARGET := $(TARGET_OUT_SYSTEM_EXT)/etc/build.prop
 
-# ----------------------------------------------------------------
-# ramdisk/boot/etc/build.prop
-#
-
-RAMDISK_BUILD_PROP_REL_PATH := system/etc/ramdisk/build.prop
-INSTALLED_RAMDISK_BUILD_PROP_TARGET := $(TARGET_RAMDISK_OUT)/$(RAMDISK_BUILD_PROP_REL_PATH)
-$(eval $(call build-properties,\
-    bootimage,\
-    $(INSTALLED_RAMDISK_BUILD_PROP_TARGET),\
-    $(empty),\
-    $(empty),\
-    $(empty),\
-    $(empty),\
-    $(empty)))
-
-$(eval $(call declare-1p-target,$(INSTALLED_RAMDISK_BUILD_PROP_TARGET)))
-
 ALL_INSTALLED_BUILD_PROP_FILES := \
   $(INSTALLED_BUILD_PROP_TARGET) \
   $(INSTALLED_VENDOR_BUILD_PROP_TARGET) \
@@ -326,8 +309,7 @@ ALL_INSTALLED_BUILD_PROP_FILES := \
   $(INSTALLED_VENDOR_DLKM_BUILD_PROP_TARGET) \
   $(INSTALLED_ODM_DLKM_BUILD_PROP_TARGET) \
   $(INSTALLED_SYSTEM_DLKM_BUILD_PROP_TARGET) \
-  $(INSTALLED_SYSTEM_EXT_BUILD_PROP_TARGET) \
-  $(INSTALLED_RAMDISK_BUILD_PROP_TARGET)
+  $(INSTALLED_SYSTEM_EXT_BUILD_PROP_TARGET)
 
 # $1 installed file path, e.g. out/target/product/vsoc_x86_64/system/build.prop
 define is-build-prop
