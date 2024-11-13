@@ -121,6 +121,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "5fe29784_af484e4b",
+        "filename": "core/config.mk",
+        "patchSetId": 4
+      },
+      "lineNbr": 499,
+      "author": {
+        "id": 3736397
+      },
+      "writtenOn": "2024-11-13T09:42:53Z",
+      "side": 1,
+      "message": "\u003e Right. Deleted this and verified that the logic is still correct.\n\u003e \n\u003e ```\n\u003e $ env TARGET_BUILD_APPS\u003dfoo build/soong/soong_ui.bash --dumpvars-mode --vars \"TARGET_BUILD_APPS TARGET_BUILD_UNBUNDLED_IMAGE TARGET_BUILD_UNBUNDLED TARGET_BUILD_USE_PREBUILT_SDKS DISABLE_PREOPT\"\n\u003e TARGET_BUILD_APPS\u003d\u0027foo\u0027\n\u003e TARGET_BUILD_UNBUNDLED_IMAGE\u003d\u0027\u0027\n\u003e TARGET_BUILD_UNBUNDLED\u003d\u0027true\u0027\n\u003e TARGET_BUILD_USE_PREBUILT_SDKS\u003d\u0027true\u0027\n\u003e DISABLE_PREOPT\u003d\u0027true\u0027\n\u003e \n\u003e $ env TARGET_BUILD_UNBUNDLED_IMAGE\u003dfoo build/soong/soong_ui.bash --dumpvars-mode --vars \"TARGET_BUILD_APPS TARGET_BUILD_UNBUNDLED_IMAGE TARGET_BUILD_UNBUNDLED TARGET_BUILD_USE_PREBUILT_SDKS DISABLE_PREOPT\"\n\u003e TARGET_BUILD_APPS\u003d\u0027\u0027\n\u003e TARGET_BUILD_UNBUNDLED_IMAGE\u003d\u0027foo\u0027\n\u003e TARGET_BUILD_UNBUNDLED\u003d\u0027true\u0027\n\u003e TARGET_BUILD_USE_PREBUILT_SDKS\u003d\u0027true\u0027\n\u003e DISABLE_PREOPT\u003d\u0027true\u0027\n\u003e \n\u003e $ env TARGET_BUILD_UNBUNDLED\u003dtrue build/soong/soong_ui.bash --dumpvars-mode --vars \"TARGET_BUILD_APPS TARGET_BUILD_UNBUNDLED_IMAGE TARGET_BUILD_UNBUNDLED TARGET_BUILD_USE_PREBUILT_SDKS DISABLE_PREOPT\"\n\u003e TARGET_BUILD_APPS\u003d\u0027\u0027\n\u003e TARGET_BUILD_UNBUNDLED_IMAGE\u003d\u0027\u0027\n\u003e TARGET_BUILD_UNBUNDLED\u003d\u0027true\u0027\n\u003e TARGET_BUILD_USE_PREBUILT_SDKS\u003d\u0027true\u0027\n\u003e DISABLE_PREOPT\u003d\u0027\u0027\n\u003e \n\u003e $ env TARGET_BUILD_UNBUNDLED\u003dfalse build/soong/soong_ui.bash --dumpvars-mode --vars \"TARGET_BUILD_APPS TARGET_BUILD_UNBUNDLED_IMAGE TARGET_BUILD_UNBUNDLED TARGET_BUILD_USE_PREBUILT_SDKS DISABLE_PREOPT\"\n\u003e TARGET_BUILD_APPS\u003d\u0027\u0027\n\u003e TARGET_BUILD_UNBUNDLED_IMAGE\u003d\u0027\u0027\n\u003e TARGET_BUILD_UNBUNDLED\u003d\u0027false\u0027\n\u003e TARGET_BUILD_USE_PREBUILT_SDKS\u003d\u0027\u0027\n\u003e DISABLE_PREOPT\u003d\u0027\u0027\n\u003e ```",
+      "parentUuid": "413c29c4_e4df00ae",
+      "range": {
+        "startLine": 497,
+        "startChar": 0,
+        "endLine": 499,
+        "endChar": 7
+      },
+      "revId": "c6dbd48a892c26ae1dff60ca4ec5c5e181ccd5da",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "c009c97a_b186cc56",
         "filename": "core/config.mk",
         "patchSetId": 4
