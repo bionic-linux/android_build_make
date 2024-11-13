@@ -68,10 +68,10 @@ breakpad_output := $(my_breakpad_path)/$(my_installed_module_stem).sym
 $(breakpad_output) : $(breakpad_input) | $(BREAKPAD_DUMP_SYMS) $(PRIVATE_READELF)
 	@echo "target breakpad: $(PRIVATE_MODULE) ($@)"
 	@mkdir -p $(dir $@)
-	$(hide) if $(PRIVATE_READELF) -S $< > /dev/null 2>&1 ; then \
+	$(hide) if $(PRIVATE_READELF) -S $< | grep -q .debug_info > /dev/null 2>&1 ; then \
 	  $(BREAKPAD_DUMP_SYMS) -c $< > $@ ; \
 	else \
-	  echo "skipped for non-elf file."; \
+	  echo "skipped: .debug_info section not found."; \
 	  touch $@; \
 	fi
 $(LOCAL_BUILT_MODULE) : $(breakpad_output)

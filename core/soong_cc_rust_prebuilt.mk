@@ -199,10 +199,10 @@ ifndef LOCAL_IS_HOST_MODULE
         $(breakpad_output) : $(LOCAL_SOONG_UNSTRIPPED_BINARY) | $(BREAKPAD_DUMP_SYMS) $(PRIVATE_READELF)
 	@echo "target breakpad: $(PRIVATE_MODULE) ($@)"
 	@mkdir -p $(dir $@)
-	$(hide) if $(PRIVATE_READELF) -S $< > /dev/null 2>&1 ; then \
+	$(hide) if $(PRIVATE_READELF) -S $< | grep -q .debug_info > /dev/null 2>&1 ; then \
 	  $(BREAKPAD_DUMP_SYMS) -c $< > $@ ; \
 	else \
-	  echo "skipped for non-elf file."; \
+	  echo "skipped: .debug_info section not found."; \
 	  touch $@; \
 	fi
         $(call add-dependency,$(LOCAL_BUILT_MODULE),$(breakpad_output))
