@@ -22,6 +22,30 @@
       },
       "revId": "f617be169a0a3680842b4764917fba0caff855c8",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9a210220_1c21c2b1",
+        "filename": "tools/edit_monitor/daemon_manager.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-11-13T19:08:28Z",
+      "side": 1,
+      "message": "Yes, instead of a fixed value, it is better to set the threshold as a %",
+      "parentUuid": "a64dbea1_2e7e14bd",
+      "range": {
+        "startLine": 36,
+        "startChar": 42,
+        "endLine": 36,
+        "endChar": 48
+      },
+      "revId": "f617be169a0a3680842b4764917fba0caff855c8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
