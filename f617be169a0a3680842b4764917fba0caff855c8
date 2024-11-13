@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a64dbea1_2e7e14bd",
+        "filename": "tools/edit_monitor/daemon_manager.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1132849
+      },
+      "writtenOn": "2024-11-13T18:40:32Z",
+      "side": 1,
+      "message": "(for future change) maybe need to check for available memory before starting and decide whether to skip monitoring if low",
+      "range": {
+        "startLine": 36,
+        "startChar": 42,
+        "endLine": 36,
+        "endChar": 48
+      },
+      "revId": "f617be169a0a3680842b4764917fba0caff855c8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
