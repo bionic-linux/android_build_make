@@ -1,0 +1,39 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cda34ab0_10584567",
+        "filename": "ci/metrics_agent.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1121894
+      },
+      "writtenOn": "2024-11-14T22:33:57Z",
+      "side": 1,
+      "message": "nit : might be worth leaving a comment, that we need to read the proto if it exists to avoid overriding over piece of the make metrics.",
+      "fixSuggestions": [
+        {
+          "fixId": "b2254350_798e7b35",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ci/metrics_agent.py",
+              "range": {
+                "startLine": 109,
+                "startChar": 0,
+                "endLine": 109,
+                "endChar": 0
+              },
+              "replacement": "    # Read the proto if it exists to avoid overriding over piece of the make\n    # metrics.\n"
+            }
+          ]
+        }
+      ],
+      "revId": "d03f1cfb9bf1810430b9d3a6c8739e13a3c01def",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
