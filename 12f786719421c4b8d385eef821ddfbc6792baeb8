@@ -101,6 +101,30 @@
       },
       "revId": "12f786719421c4b8d385eef821ddfbc6792baeb8",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a8b21de2_01a14d2b",
+        "filename": "tools/releasetools/add_img_to_target_files.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1103,
+      "author": {
+        "id": 3524514
+      },
+      "writtenOn": "2024-11-14T18:36:07Z",
+      "side": 1,
+      "message": "@zhangkelvin@google.com Done 😊",
+      "parentUuid": "597e9695_7efc1ad6",
+      "range": {
+        "startLine": 1103,
+        "startChar": 25,
+        "endLine": 1103,
+        "endChar": 76
+      },
+      "revId": "12f786719421c4b8d385eef821ddfbc6792baeb8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
