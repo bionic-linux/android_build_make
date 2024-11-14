@@ -16,6 +16,67 @@
       "message": "Upstream from Meta 😊",
       "revId": "12f786719421c4b8d385eef821ddfbc6792baeb8",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0be1b088_d76ee65e",
+        "filename": "tools/releasetools/add_img_to_target_files.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1103,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2024-11-14T17:56:25Z",
+      "side": 1,
+      "message": "maybe replace this with set intersections?",
+      "range": {
+        "startLine": 1103,
+        "startChar": 25,
+        "endLine": 1103,
+        "endChar": 76
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "f6cf0dc1_d22f73bd",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "tools/releasetools/add_img_to_target_files.py",
+              "range": {
+                "startLine": 1103,
+                "startChar": 0,
+                "endLine": 1104,
+                "endChar": 0
+              },
+              "replacement": "    if vbmeta_system and any(m in partitions for m in vbmeta_system.split()):\n"
+            },
+            {
+              "path": "tools/releasetools/add_img_to_target_files.py",
+              "range": {
+                "startLine": 1113,
+                "startChar": 0,
+                "endLine": 1114,
+                "endChar": 0
+              },
+              "replacement": "    if vbmeta_vendor and any(m in partitions for m in vbmeta_vendor.split()):\n"
+            },
+            {
+              "path": "tools/releasetools/add_img_to_target_files.py",
+              "range": {
+                "startLine": 1140,
+                "startChar": 0,
+                "endLine": 1141,
+                "endChar": 0
+              },
+              "replacement": "    if OPTIONS.info_dict.get(\"avb_building_vbmeta_image\") \u003d\u003d \"true\" and any(m in partitions for m in vbmeta_partitions):\n"
+            }
+          ]
+        }
+      ],
+      "revId": "12f786719421c4b8d385eef821ddfbc6792baeb8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
