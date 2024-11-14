@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "34981f7e_2f129cd5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1115178
+      },
+      "writtenOn": "2024-11-14T14:38:14Z",
+      "side": 1,
+      "message": "LGTM as the follow-on CL submitted together will disable XOM by default.",
+      "revId": "03e677dce4089dba8e409ae3747e4cc4eeb1035d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
