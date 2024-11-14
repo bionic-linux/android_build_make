@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "21df19b1_dc30c710",
+        "filename": "core/tasks/general-tests.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1535516
+      },
+      "writtenOn": "2024-11-14T19:31:41Z",
+      "side": 1,
+      "message": "Clear `my_general_tests_symlinks` and `my_host_shared_lib_symlinks` at the end of the file.",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 55,
+        "endChar": 25
+      },
+      "revId": "cc56c03dab0be9a01223c97c5eb357c1615948af",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
