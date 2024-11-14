@@ -16,6 +16,24 @@
       "message": "`embedded_launcher: true` is the default now, you can remove these.",
       "revId": "86498c87565a04e10aa2116cf07fc96625e3bcc4",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5c0f2a63_d58ff8ca",
+        "filename": "ci/Android.bp",
+        "patchSetId": 7
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-11-14T19:17:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4725440b_6bde265b",
+      "revId": "86498c87565a04e10aa2116cf07fc96625e3bcc4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
