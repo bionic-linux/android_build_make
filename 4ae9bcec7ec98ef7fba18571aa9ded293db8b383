@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6ca299d9_3d7ce4f6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1583551
+      },
+      "writtenOn": "2024-11-14T23:08:41Z",
+      "side": 1,
+      "message": "Does this need to be done this way, or can you use go/soong-selects for this flag?",
+      "revId": "4ae9bcec7ec98ef7fba18571aa9ded293db8b383",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
