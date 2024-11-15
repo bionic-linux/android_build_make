@@ -1,0 +1,68 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e157944d_459ee57a",
+        "filename": "tools/edit_monitor/daemon_manager.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1132849
+      },
+      "writtenOn": "2024-11-15T22:46:51Z",
+      "side": 1,
+      "message": "optional: consider use double limit, e.g. absolute limit and percentage limit, whichever is reached first",
+      "range": {
+        "startLine": 36,
+        "startChar": 33,
+        "endLine": 36,
+        "endChar": 38
+      },
+      "revId": "cecc6d1a3b7af5a4d3e1eae6a16d40fdfc096ae2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "30aeb21c_86dcabf5",
+        "filename": "tools/edit_monitor/daemon_manager.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 1132849
+      },
+      "writtenOn": "2024-11-15T22:46:51Z",
+      "side": 1,
+      "message": "Consider use pure python solution, e.g.:\n\nimport os\nmem_bytes \u003d os.sysconf(\u0027SC_PAGE_SIZE\u0027) * os.sysconf(\u0027SC_PHYS_PAGES\u0027)",
+      "range": {
+        "startLine": 358,
+        "startChar": 4,
+        "endLine": 361,
+        "endChar": 37
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "b7ab9046_f63516bb",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "tools/edit_monitor/daemon_manager.py",
+              "range": {
+                "startLine": 358,
+                "startChar": 0,
+                "endLine": 364,
+                "endChar": 0
+              },
+              "replacement": "    return os.sysconf(\"SC_PAGE_SIZE\") * os.sysconf(\"SC_PHYS_PAGES\")\n"
+            }
+          ]
+        }
+      ],
+      "revId": "cecc6d1a3b7af5a4d3e1eae6a16d40fdfc096ae2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
