@@ -45,13 +45,24 @@ def long_running_daemon():
     time.sleep(1)
 
 
-def memory_consume_daemon_target(size_mb):
+def memory_consume_daemon_target(target_memory_percent):
+  # Get total memory
+  total_memory_bytes = 0
+  with open('/proc/meminfo', 'r') as f:
+    for line in f:
+      if line.startswith('MemTotal:'):
+        total_memory_bytes = int(line.split()[1]) * 1024
+        break
+
+  target_memory_bytes = int(total_memory_bytes * target_memory_percent)
   try:
-    size_bytes = size_mb * 1024 * 1024
-    dummy_data = bytearray(size_bytes)
+    dummy_data = bytearray(target_memory_bytes)
     time.sleep(10)
   except MemoryError:
-    print(f'Process failed to allocate {size_mb} MB of memory.')
+    print(
+        f'Process failed to allocate {target_memory_bytes / 1024 / 1024} MB of'
+        ' memory.'
+    )
 
 
 def cpu_consume_daemon_target(target_usage_percent):
@@ -207,13 +218,13 @@ class DaemonManagerTest(unittest.TestCase):
     dm = daemon_manager.DaemonManager(
         TEST_BINARY_FILE,
         daemon_target=memory_consume_daemon_target,
-        daemon_args=(2,),
+        daemon_args=(0.0001,),
         cclient=fake_cclient,
     )
     dm.start()
-    dm.monitor_daemon(interval=1, memory_threshold=2)
+    dm.monitor_daemon(interval=1, memory_threshold=0.0001)
 
-    self.assertTrue(dm.max_memory_usage >= 2)
+    self.assertTrue(dm.max_memory_usage >= 0.0001)
     self.assert_no_subprocess_running()
     self._assert_error_event_logged(
         fake_cclient,
