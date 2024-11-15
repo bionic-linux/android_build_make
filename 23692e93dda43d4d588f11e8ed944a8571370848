@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1c30a789_6f3a1636",
+        "filename": "tools/aconfig/aconfig/src/storage/mod.rs",
+        "patchSetId": 11
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1944425
+      },
+      "writtenOn": "2024-11-15T17:28:05Z",
+      "side": 1,
+      "message": "probably you want to give some explicit error message when this fail",
+      "range": {
+        "startLine": 91,
+        "startChar": 44,
+        "endLine": 91,
+        "endChar": 50
+      },
+      "revId": "23692e93dda43d4d588f11e8ed944a8571370848",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
