@@ -24,3 +24,6 @@ PRODUCT_SYSTEM_PROPERTIES := ro.apex.updatable=true
 #  Whether an apex is compressed or not is controlled at apex Soong module
 #  via compresible property.
 PRODUCT_COMPRESSED_APEX := true
+
+# The default value fo APEX payload image (apex.payload_fs_type)
+PRODUCT_DEFAULT_APEX_PAYLOAD_TYPE := ext4
