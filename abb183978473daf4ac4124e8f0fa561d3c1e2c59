@@ -1,5 +1,23 @@
 {
-  "comments": [],
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1e777051_77277093",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1937565
+      },
+      "writtenOn": "2024-11-16T15:56:19Z",
+      "side": 1,
+      "message": "Wouldn\u0027t it make more sense sense to change the build time flag RELEASE_ACONFIG_FLAG_DEFAULT_PERMISSION from from a boolean to a enum of \"allow-writes-default-to-writes\", \"allow-writes-defult-to-reads\", \"disallow-writes\", and update aconfig accoringly?\n\nWhat does it even mean if you pass in `--default-permission\u003dREAD_WRITE --alow-read-write\u003dfalse\"?\n\nAdding bool as arguments to functions makes it more difficult to understand what is going on by just looking at the call site and you run the risk of confusing the arguments if a function accepts multiple consecutive bools. Recommend you change to enums instead, even if it\u0027s just two values. Cf the FlagPermission enums.\n\nTo summarize: I would like to see a new CL that extends the FlagPermission enum to three states instead of an additional axis to control if read-write flags are permitted.",
+      "revId": "abb183978473daf4ac4124e8f0fa561d3c1e2c59",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ],
   "submitRequirementResults": [
     {
       "submitRequirement": {
