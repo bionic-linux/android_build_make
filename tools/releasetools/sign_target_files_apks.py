@@ -168,6 +168,9 @@ Usage:  sign_target_files_apks [flags] input_target_files output_target_files
       If the signer uses a RSA key, this should be the number of bytes to
       represent the modulus. If it uses an EC key, this is the size of a
       DER-encoded ECDSA signature.
+  
+  --multiprocessing
+      Use multiprocessing to speed up signing.
 """
 
 from __future__ import print_function
@@ -703,7 +706,11 @@ def ProcessTargetFiles(input_tf_zip: zipfile.ZipFile, output_tf_zip: zipfile.Zip
 
   RegenerateKernelPartitions(input_tf_zip, output_tf_zip, misc_info)
 
+  async_task = common.AsyncTask()
+
   for info in input_tf_zip.infolist():
+    async_task.ProcessFinishedTasks()
+    
     filename = info.filename
     if filename.startswith("IMAGES/"):
       continue
@@ -734,9 +741,15 @@ def ProcessTargetFiles(input_tf_zip: zipfile.ZipFile, output_tf_zip: zipfile.Zip
       key = apk_keys[name]
       if key not in common.SPECIAL_CERT_STRINGS:
         print("    signing: %-*s (%s)" % (maxsize, name, key))
-        signed_data = SignApk(data, key, key_passwords[key], platform_api_level,
-                              codename_to_api_level_map, is_compressed, name)
-        common.ZipWriteStr(output_tf_zip, out_info, signed_data)
+        def sign_apk(data=data, key=key, pw=key_passwords[key], platform_api_level=platform_api_level,
+                                codename_to_api_level_map=codename_to_api_level_map, is_compressed=is_compressed, name=name):
+          return SignApk(data, key, pw, platform_api_level,
+                                codename_to_api_level_map, is_compressed, name)
+
+        def write_apk(signed_data, output_tf_zip=output_tf_zip, out_info=out_info, filename=filename):
+          common.ZipWriteStr(output_tf_zip, out_info, signed_data)
+
+        async_task.Start(sign_apk, write_apk)
       else:
         # an APK we're not supposed to sign.
         print(
@@ -758,18 +771,22 @@ def ProcessTargetFiles(input_tf_zip: zipfile.ZipFile, output_tf_zip: zipfile.Zip
         print("           : %-*s payload   (%s)" % (
             maxsize, name, payload_key))
 
-        signed_apex = apex_utils.SignApex(
-            misc_info['avb_avbtool'],
-            data,
-            payload_key,
-            container_key,
-            key_passwords,
-            apk_keys,
-            codename_to_api_level_map,
-            no_hashtree=None,  # Let apex_util determine if hash tree is needed
-            signing_args=OPTIONS.avb_extra_args.get('apex'),
-            sign_tool=sign_tool)
-        common.ZipWrite(output_tf_zip, signed_apex, filename)
+        def sign_apex(avbtool=misc_info['avb_avbtool'],data=data, payload_key=payload_key, container_key=container_key,key_passwords=key_passwords,apk_keys=apk_keys,codename_to_api_level_map=codename_to_api_level_map,no_hashtree=None, signing_args=OPTIONS.avb_extra_args.get('apex')):
+          return apex_utils.SignApex(
+              avbtool,
+              data,
+              payload_key,
+              container_key,
+              key_passwords,
+              apk_keys,
+              codename_to_api_level_map,
+              no_hashtree,
+              signing_args)
+
+        def write_apex(signed_apex, output_tf_zip=output_tf_zip, out_info=out_info, filename=filename):
+          common.ZipWrite(output_tf_zip, signed_apex, filename)
+
+        async_task.Start(sign_apex, write_apex)
 
       else:
         print(
@@ -929,6 +946,8 @@ def ProcessTargetFiles(input_tf_zip: zipfile.ZipFile, output_tf_zip: zipfile.Zip
       except KeyError:
         common.ZipWriteStr(output_tf_zip, out_info, data)
 
+  async_task.Wait()
+  
   if OPTIONS.replace_ota_keys:
     ReplaceOtaKeys(input_tf_zip, output_tf_zip, misc_info)
 
@@ -1680,6 +1699,8 @@ def main(argv):
       OPTIONS.override_apk_keys = a
     elif o == "--override_apex_keys":
       OPTIONS.override_apex_keys = a
+    elif o == "--multiprocessing":
+      OPTIONS.multiprocessing = True
     elif o in ("--gki_signing_key",  "--gki_signing_algorithm",  "--gki_signing_extra_args"):
       print(f"{o} is deprecated and does nothing")
     else:
@@ -1743,6 +1764,7 @@ def main(argv):
           "allow_gsi_debug_sepolicy",
           "override_apk_keys=",
           "override_apex_keys=",
+          "multiprocessing",
       ],
       extra_option_handler=[option_handler, payload_signer.signer_options])
 
