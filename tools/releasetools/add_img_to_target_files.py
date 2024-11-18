@@ -265,7 +265,7 @@ class OutputFile(object):
                       self._zip_name, compress_type=compress_type)
 
 
-def AddSystem(output_zip, recovery_img=None, boot_img=None):
+def AddSystem(output_zip, recovery_img=None, boot_img=None, async_task=None):
   """Turn the contents of SYSTEM into a system image and store it in
   output_zip. Returns the name of the system image file."""
 
@@ -298,11 +298,11 @@ def AddSystem(output_zip, recovery_img=None, boot_img=None):
   block_list = OutputFile(output_zip, OPTIONS.input_tmp,
                           "IMAGES", "system.map")
   CreateImage(OPTIONS.input_tmp, OPTIONS.info_dict, "system", img,
-              block_list=block_list)
+              block_list=block_list, async_task=async_task)
   return img.name
 
 
-def AddSystemOther(output_zip):
+def AddSystemOther(output_zip, async_task=None):
   """Turn the contents of SYSTEM_OTHER into a system_other image
   and store it in output_zip."""
 
@@ -311,10 +311,10 @@ def AddSystemOther(output_zip):
     logger.info("system_other.img already exists; no need to rebuild...")
     return
 
-  CreateImage(OPTIONS.input_tmp, OPTIONS.info_dict, "system_other", img)
+  CreateImage(OPTIONS.input_tmp, OPTIONS.info_dict, "system_other", img, async_task=async_task)
 
 
-def AddVendor(output_zip, recovery_img=None, boot_img=None):
+def AddVendor(output_zip, recovery_img=None, boot_img=None, async_task=None):
   """Turn the contents of VENDOR into a vendor image and store in it
   output_zip."""
 
@@ -347,11 +347,11 @@ def AddVendor(output_zip, recovery_img=None, boot_img=None):
   block_list = OutputFile(output_zip, OPTIONS.input_tmp,
                           "IMAGES", "vendor.map")
   CreateImage(OPTIONS.input_tmp, OPTIONS.info_dict, "vendor", img,
-              block_list=block_list)
+              block_list=block_list, async_task=async_task)
   return img.name
 
 
-def AddProduct(output_zip):
+def AddProduct(output_zip, async_task=None):
   """Turn the contents of PRODUCT into a product image and store it in
   output_zip."""
 
@@ -364,11 +364,11 @@ def AddProduct(output_zip):
       output_zip, OPTIONS.input_tmp, "IMAGES", "product.map")
   CreateImage(
       OPTIONS.input_tmp, OPTIONS.info_dict, "product", img,
-      block_list=block_list)
+      block_list=block_list, async_task=async_task)
   return img.name
 
 
-def AddSystemExt(output_zip):
+def AddSystemExt(output_zip, async_task=None):
   """Turn the contents of SYSTEM_EXT into a system_ext image and store it in
   output_zip."""
 
@@ -382,11 +382,11 @@ def AddSystemExt(output_zip):
       output_zip, OPTIONS.input_tmp, "IMAGES", "system_ext.map")
   CreateImage(
       OPTIONS.input_tmp, OPTIONS.info_dict, "system_ext", img,
-      block_list=block_list)
+      block_list=block_list, async_task=async_task)
   return img.name
 
 
-def AddOdm(output_zip):
+def AddOdm(output_zip, async_task=None):
   """Turn the contents of ODM into an odm image and store it in output_zip."""
 
   img = OutputFile(output_zip, OPTIONS.input_tmp, "IMAGES", "odm.img")
@@ -398,11 +398,11 @@ def AddOdm(output_zip):
       output_zip, OPTIONS.input_tmp, "IMAGES", "odm.map")
   CreateImage(
       OPTIONS.input_tmp, OPTIONS.info_dict, "odm", img,
-      block_list=block_list)
+      block_list=block_list, async_task=async_task)
   return img.name
 
 
-def AddVendorDlkm(output_zip):
+def AddVendorDlkm(output_zip, async_task=None):
   """Turn the contents of VENDOR_DLKM into an vendor_dlkm image and store it in output_zip."""
 
   img = OutputFile(output_zip, OPTIONS.input_tmp, "IMAGES", "vendor_dlkm.img")
@@ -414,11 +414,11 @@ def AddVendorDlkm(output_zip):
       output_zip, OPTIONS.input_tmp, "IMAGES", "vendor_dlkm.map")
   CreateImage(
       OPTIONS.input_tmp, OPTIONS.info_dict, "vendor_dlkm", img,
-      block_list=block_list)
+      block_list=block_list, async_task=async_task)
   return img.name
 
 
-def AddOdmDlkm(output_zip):
+def AddOdmDlkm(output_zip, async_task=None):
   """Turn the contents of OdmDlkm into an odm_dlkm image and store it in output_zip."""
 
   img = OutputFile(output_zip, OPTIONS.input_tmp, "IMAGES", "odm_dlkm.img")
@@ -430,11 +430,11 @@ def AddOdmDlkm(output_zip):
       output_zip, OPTIONS.input_tmp, "IMAGES", "odm_dlkm.map")
   CreateImage(
       OPTIONS.input_tmp, OPTIONS.info_dict, "odm_dlkm", img,
-      block_list=block_list)
+      block_list=block_list, async_task=async_task)
   return img.name
 
 
-def AddSystemDlkm(output_zip):
+def AddSystemDlkm(output_zip, async_task=None):
   """Turn the contents of SystemDlkm into an system_dlkm image and store it in output_zip."""
 
   img = OutputFile(output_zip, OPTIONS.input_tmp, "IMAGES", "system_dlkm.img")
@@ -446,7 +446,7 @@ def AddSystemDlkm(output_zip):
       output_zip, OPTIONS.input_tmp, "IMAGES", "system_dlkm.map")
   CreateImage(
       OPTIONS.input_tmp, OPTIONS.info_dict, "system_dlkm", img,
-      block_list=block_list)
+      block_list=block_list, async_task=async_task)
   return img.name
 
 
@@ -576,50 +576,68 @@ def AddCustomImages(output_zip, partition_name, image_list):
   return default
 
 
-def CreateImage(input_dir, info_dict, what, output_file, block_list=None):
-  logger.info("creating %s.img...", what)
+def CreateImage(input_dir, info_dict, what, output_file, block_list=None, async_task=None):
+  def build_image_action():
+    logger.info("creating %s.img...", what)
 
-  image_props = build_image.ImagePropFromGlobalDict(info_dict, what)
-  image_props["timestamp"] = FIXED_FILE_TIMESTAMP
+    image_props = build_image.ImagePropFromGlobalDict(info_dict, what)
+    image_props["timestamp"] = FIXED_FILE_TIMESTAMP
 
-  if what == "system":
-    fs_config_prefix = ""
+    if what == "system":
+      fs_config_prefix = ""
+    else:
+      fs_config_prefix = what + "_"
+
+    fs_config = os.path.join(
+        input_dir, "META/" + fs_config_prefix + "filesystem_config.txt")
+    if not os.path.exists(fs_config):
+      fs_config = None
+
+    # Override values loaded from info_dict.
+    if fs_config:
+      image_props["fs_config"] = fs_config
+    if block_list:
+      image_props["block_list"] = block_list.name
+
+    # Use repeatable ext4 FS UUID and hash_seed UUID (based on partition name and
+    # build fingerprint). Also use the legacy build id, because the vbmeta digest
+    # isn't available at this point.
+    build_info = common.BuildInfo(info_dict, use_legacy_id=True)
+    uuid_seed = what + "-" + build_info.GetPartitionFingerprint(what)
+    image_props["uuid"] = str(uuid.uuid5(uuid.NAMESPACE_URL, uuid_seed))
+    hash_seed = "hash_seed-" + uuid_seed
+    image_props["hash_seed"] = str(uuid.uuid5(uuid.NAMESPACE_URL, hash_seed))
+
+    build_image.BuildImage(
+        os.path.join(input_dir, what.upper()), image_props, output_file.name)
+    return image_props
+
+  def write_image_action(image_props):
+    output_file.Write()
+    if block_list:
+      block_list.Write()
+
+    # Set the '_image_size' for given image size.
+    is_verity_partition = "verity_block_device" in image_props
+    verity_supported = (image_props.get("verity") == "true" or
+                        image_props.get("avb_enable") == "true")
+    is_avb_enable = image_props.get("avb_hashtree_enable") == "true"
+    if verity_supported and (is_verity_partition or is_avb_enable):
+      image_size = image_props.get("image_size")
+      if image_size:
+        image_size_key = what + "_image_size"
+        info_dict[image_size_key] = int(image_size)
+
+    use_dynamic_size = (
+        info_dict.get("use_dynamic_partition_size") == "true" and
+        what in shlex.split(info_dict.get("dynamic_partition_list", "").strip()))
+    if use_dynamic_size:
+      info_dict.update(build_image.GlobalDictFromImageProp(image_props, what))
+
+  if async_task:
+    async_task.Start(build_image_action, write_image_action)
   else:
-    fs_config_prefix = what + "_"
-
-  fs_config = os.path.join(
-      input_dir, "META/" + fs_config_prefix + "filesystem_config.txt")
-  if not os.path.exists(fs_config):
-    fs_config = None
-
-  # Override values loaded from info_dict.
-  if fs_config:
-    image_props["fs_config"] = fs_config
-  if block_list:
-    image_props["block_list"] = block_list.name
-
-  build_image.BuildImage(
-      os.path.join(input_dir, what.upper()), image_props, output_file.name)
-
-  output_file.Write()
-  if block_list:
-    block_list.Write()
-
-  # Set the '_image_size' for given image size.
-  is_verity_partition = "verity_block_device" in image_props
-  verity_supported = (image_props.get("avb_enable") == "true")
-  is_avb_enable = image_props.get("avb_hashtree_enable") == "true"
-  if verity_supported and (is_verity_partition or is_avb_enable):
-    image_size = image_props.get("image_size")
-    if image_size:
-      image_size_key = what + "_image_size"
-      info_dict[image_size_key] = int(image_size)
-
-  use_dynamic_size = (
-      info_dict.get("use_dynamic_partition_size") == "true" and
-      what in shlex.split(info_dict.get("dynamic_partition_list", "").strip()))
-  if use_dynamic_size:
-    info_dict.update(build_image.GlobalDictFromImageProp(image_props, what))
+    write_image_action(build_image_action())
 
 
 def AddUserdata(output_zip):
@@ -946,6 +964,8 @@ def AddImagesToTargetFiles(filename):
 
   def banner(s):
     logger.info("\n\n++++ %s  ++++\n\n", s)
+  
+  async_task = common.AsyncTask()
 
   boot_image = None
   if has_boot:
@@ -1040,15 +1060,15 @@ def AddImagesToTargetFiles(filename):
       partitions[partition] = add_func(output_zip, *add_args)
 
   add_partition_calls = (
-      ("system", has_system, AddSystem, [recovery_image, boot_image]),
-      ("vendor", has_vendor, AddVendor, [recovery_image, boot_image]),
-      ("product", has_product, AddProduct, []),
-      ("system_ext", has_system_ext, AddSystemExt, []),
-      ("odm", has_odm, AddOdm, []),
-      ("vendor_dlkm", has_vendor_dlkm, AddVendorDlkm, []),
-      ("odm_dlkm", has_odm_dlkm, AddOdmDlkm, []),
-      ("system_dlkm", has_system_dlkm, AddSystemDlkm, []),
-      ("system_other", has_system_other, AddSystemOther, []),
+      ("system", has_system, AddSystem, [recovery_image, boot_image, async_task]),
+      ("vendor", has_vendor, AddVendor, [recovery_image, boot_image, async_task]),
+      ("product", has_product, AddProduct, [async_task]),
+      ("system_ext", has_system_ext, AddSystemExt, [async_task]),
+      ("odm", has_odm, AddOdm, [async_task]),
+      ("vendor_dlkm", has_vendor_dlkm, AddVendorDlkm, [async_task]),
+      ("odm_dlkm", has_odm_dlkm, AddOdmDlkm, [async_task]),
+      ("system_dlkm", has_system_dlkm, AddSystemDlkm, [async_task]),
+      ("system_other", has_system_other, AddSystemOther, [async_task]),
   )
   # If output_zip exists, each add_partition_calls writes bytes to the same output_zip,
   # which is not thread-safe. So, run them in serial if output_zip exists.
@@ -1060,6 +1080,7 @@ def AddImagesToTargetFiles(filename):
       for future in [executor.submit(add_partition, *call) for call in add_partition_calls]:
         future.result()
 
+  async_task.Wait()
   AddApexInfo(output_zip)
 
   if not OPTIONS.is_signing:
