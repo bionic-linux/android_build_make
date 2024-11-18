@@ -22,6 +22,30 @@
       },
       "revId": "ea3d6809a6b6b1e011b1dfea4358a9121b7a0ccf",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "beeb3ecb_e090e3c0",
+        "filename": "tools/edit_monitor/daemon_manager.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-11-18T23:28:19Z",
+      "side": 1,
+      "message": "I haven\u0027t seen any cpu exhaustion happen so far and if that happens, we might investigate it before just rebooting.",
+      "parentUuid": "de99e598_dc6dbdcb",
+      "range": {
+        "startLine": 155,
+        "startChar": 31,
+        "endLine": 155,
+        "endChar": 44
+      },
+      "revId": "ea3d6809a6b6b1e011b1dfea4358a9121b7a0ccf",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
