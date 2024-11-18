@@ -27,6 +27,7 @@ import imp
 import json
 import logging
 import logging.config
+import multiprocessing
 import os
 import platform
 import re
@@ -100,6 +101,7 @@ class Options(object):
     self.cache_size = None
     self.stash_threshold = 0.8
     self.logfile = None
+    self.multiprocessing = False
 
 
 OPTIONS = Options()
@@ -4237,3 +4239,66 @@ def ParseUpdateEngineConfig(path: str):
       raise ValueError(
           f"{path} is an invalid update_engine config, missing PAYLOAD_MINOR_VERSION {data}")
     return (int(major.group(1)), int(minor.group(1)))
+
+class AsyncTask:
+  """
+  A queue of tasks where work can to be split into two steps, where the first
+  step can be done in a separate process, and then the results of that work are
+  processed in a second step in the main process. For example, signing an APK
+  can be done in a separate process, but because zip file access is single
+  threaded the writing of the signed APK into the zip file is done on the main
+  thread.
+  """
+
+  def __init__(self):
+    """Initializes a TaskQueue."""
+    self.task_id = 0
+    self.result_queue = multiprocessing.Queue()
+    self.postprocessing_by_task_id = {}
+
+  def Start(self, work, postprocessing):
+    """
+    Start the `work` and then pass the results to `postprocessing`. If
+    OPTIONS.multiprocessing is true, then the work is done in a separate
+    process. Otherwise, the work is done in the main process and Start() doesn't
+    return until the work is done.
+
+    Args:
+      work: A function that can run in a separate process.
+
+      postprocessing: A function that takes one argument, and is run in the main
+          process on the output of `work`.
+    """
+    if OPTIONS.multiprocessing:
+      self.postprocessing_by_task_id[self.task_id] = postprocessing
+
+      def work_wrapper():
+        res = work()
+        self.result_queue.put((self.task_id, res))
+
+      multiprocessing.Process(target=work_wrapper).start()
+      self.task_id += 1
+    else:
+      postprocessing(work())
+
+  def _ProcessSingleTask(self):
+    # get() blocks until there is a result in the queue.
+    task_id, res = self.result_queue.get()
+    postprocessing = self.postprocessing_by_task_id[task_id]
+    postprocessing(res)
+    del self.postprocessing_by_task_id[task_id]
+
+  def ProcessFinishedTasks(self):
+    """Process all tasks that have finished, if any."""
+    while not self.result_queue.empty():
+      self._ProcessSingleTask()
+
+  def Wait(self):
+    """
+    Wait for all queued work to complete.
+
+    This function should be called after all QueueTask calls. It does not return
+    until all queued work has been completed.
+    """
+    while self.postprocessing_by_task_id:
+      self._ProcessSingleTask()
