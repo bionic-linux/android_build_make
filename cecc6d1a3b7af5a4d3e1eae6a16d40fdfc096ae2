@@ -24,6 +24,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0fce04ad_bdffcee7",
+        "filename": "tools/edit_monitor/daemon_manager.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-11-18T20:00:11Z",
+      "side": 1,
+      "message": "I think we can just do the percentage based threshold for now, the actually size of memory it takes does not matter much as long as it does not consume too much of the total memory (2% in this case).\n\nI\u0027m also considering to reboot the edit monitor when never it sees the memory issue.",
+      "parentUuid": "e157944d_459ee57a",
+      "range": {
+        "startLine": 36,
+        "startChar": 33,
+        "endLine": 36,
+        "endChar": 38
+      },
+      "revId": "cecc6d1a3b7af5a4d3e1eae6a16d40fdfc096ae2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "30aeb21c_86dcabf5",
@@ -65,6 +89,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "134f930e_e13d7801",
+        "filename": "tools/edit_monitor/daemon_manager.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-11-18T20:00:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "30aeb21c_86dcabf5",
+      "range": {
+        "startLine": 358,
+        "startChar": 4,
+        "endLine": 361,
+        "endChar": 37
+      },
+      "revId": "cecc6d1a3b7af5a4d3e1eae6a16d40fdfc096ae2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5bb51801_ad829977",
@@ -78,6 +126,30 @@
       "writtenOn": "2024-11-15T22:49:24Z",
       "side": 1,
       "message": "Test should not be affected by system environment. use a fixed number?",
+      "range": {
+        "startLine": 50,
+        "startChar": 2,
+        "endLine": 56,
+        "endChar": 0
+      },
+      "revId": "cecc6d1a3b7af5a4d3e1eae6a16d40fdfc096ae2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "731170f9_dc5811d9",
+        "filename": "tools/edit_monitor/daemon_manager_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-11-18T20:00:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5bb51801_ad829977",
       "range": {
         "startLine": 50,
         "startChar": 2,
