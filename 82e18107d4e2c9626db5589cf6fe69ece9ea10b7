@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8c46f2c7_e8053c13",
+        "filename": "core/soong_config.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 439,
+      "author": {
+        "id": 1535516
+      },
+      "writtenOn": "2024-11-19T21:51:24Z",
+      "side": 1,
+      "message": "I think this one was right before, I don\u0027t see `BOARD_BOOT_IMAGE_PARTITION_SIZE` in the make code.",
+      "range": {
+        "startLine": 439,
+        "startChar": 54,
+        "endLine": 439,
+        "endChar": 85
+      },
+      "revId": "82e18107d4e2c9626db5589cf6fe69ece9ea10b7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
