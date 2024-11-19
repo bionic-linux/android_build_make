@@ -291,11 +291,7 @@ fn list(source_type: FlagSourceType, container: Option<String>) -> Result<String
 }
 
 fn display_which_backing() -> String {
-    if aconfig_flags::auto_generated::enable_only_new_storage() {
-        "aconfig_storage".to_string()
-    } else {
-        "device_config".to_string()
-    }
+    "aconfig_storage".to_string()
 }
 
 fn main() -> Result<()> {
@@ -304,13 +300,9 @@ fn main() -> Result<()> {
     let cli = Cli::parse();
     let output = match cli.command {
         Command::List { container } => {
-            if aconfig_flags::auto_generated::enable_only_new_storage() {
-                list(FlagSourceType::AconfigStorage, container)
-                    .map_err(|err| anyhow!("could not list flags: {err}"))
-                    .map(Some)
-            } else {
-                list(FlagSourceType::DeviceConfig, container).map(Some)
-            }
+            list(FlagSourceType::AconfigStorage, container)
+                .map_err(|err| anyhow!("could not list flags: {err}"))
+                .map(Some)
         }
         Command::Enable { qualified_name } => set_flag(&qualified_name, "true").map(|_| None),
         Command::Disable { qualified_name } => set_flag(&qualified_name, "false").map(|_| None),
