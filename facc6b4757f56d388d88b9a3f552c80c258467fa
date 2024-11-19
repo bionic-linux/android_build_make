@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bc4d9c60_c3cbe1de",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1942356
+      },
+      "writtenOn": "2024-11-19T15:19:32Z",
+      "side": 1,
+      "message": "Build breakage should be fixed by aosp/3363396 instead of reverting this.",
+      "revId": "facc6b4757f56d388d88b9a3f552c80c258467fa",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
