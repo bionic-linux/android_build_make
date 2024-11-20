@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "da51bf2e_3e0878ae",
+        "filename": "tools/releasetools/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4243,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2024-11-20T17:53:45Z",
+      "side": 1,
+      "message": "I feel like this whole abstraction layer is unnecessary. We can have each task return a tuple of \u003clocal file path, zip file name, zip archive name\u003e, and the main thread and iterate over the tuple list, add all files to the archive. In this model, you can just use python\u0027s multiprocessing module to batch all tasks, once you get the result tuple list, main thread can run a simple for loop to write all data.",
+      "revId": "6c7d6a0bb57457f22c7a566187ae69ec428c2e95",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
