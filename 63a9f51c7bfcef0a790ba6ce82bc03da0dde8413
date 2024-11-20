@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a1e3dc9e_d6df5785",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1074459
+      },
+      "writtenOn": "2024-11-20T18:42:54Z",
+      "side": 1,
+      "message": "Looks like we have Tag included in a lot of the `device/google` targets also. So, we need to remove it from everywhere.",
+      "revId": "63a9f51c7bfcef0a790ba6ce82bc03da0dde8413",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
