@@ -34,7 +34,6 @@ PRODUCT_PACKAGES += \
     PartnerBookmarksProvider \
     preinstalled-packages-platform-generic-system.xml \
     Stk \
-    Tag \
 
 ifeq ($(RELEASE_AVATAR_PICKER_APP),true)
   PRODUCT_PACKAGES += \
