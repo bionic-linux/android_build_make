@@ -1,0 +1,45 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c6645e49_620e6e37",
+        "filename": "ci/build_test_suites.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1121894
+      },
+      "writtenOn": "2024-11-21T23:33:07Z",
+      "side": 1,
+      "message": "nit: add a comment that we are different experiment control flag for device and test_suite",
+      "range": {
+        "startLine": 77,
+        "startChar": 4,
+        "endLine": 77,
+        "endChar": 6
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "f68d9d61_d149e758",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ci/build_test_suites.py",
+              "range": {
+                "startLine": 77,
+                "startChar": 0,
+                "endLine": 77,
+                "endChar": 0
+              },
+              "replacement": "    # We are using different experiment control flags for device and non-device\n    # builds.\n"
+            }
+          ]
+        }
+      ],
+      "revId": "592e0d6d52e935e249a1ab4866a03dd5de47818a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
