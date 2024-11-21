@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ed6f4eea_06839489",
+        "filename": "tools/aconfig/aconfig/src/commands.rs",
+        "patchSetId": 8
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 3599662
+      },
+      "writtenOn": "2024-11-21T22:22:36Z",
+      "side": 1,
+      "message": "nit: you can use extract_flag_names method for this\n\ndo we need to gate this on v 2+ so we can use a build flag to guard the rollout? i\u0027ve been playing around with this in aosp/3371078, but i\u0027m not sure what the AconfigPackagenternal does if the storage file doesn\u0027t have the fingerprint",
+      "range": {
+        "startLine": 229,
+        "startChar": 8,
+        "endLine": 229,
+        "endChar": 89
+      },
+      "revId": "a7da9cbd938710c4ea14586d7e40156057cbce74",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8ed18cac_da92fb94",
+        "filename": "tools/aconfig/aconfig/src/commands.rs",
+        "patchSetId": 8
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 3599662
+      },
+      "writtenOn": "2024-11-21T22:22:36Z",
+      "side": 1,
+      "message": "nit: can delete allow-unused",
+      "range": {
+        "startLine": 441,
+        "startChar": 0,
+        "endLine": 441,
+        "endChar": 19
+      },
+      "revId": "a7da9cbd938710c4ea14586d7e40156057cbce74",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "160db6aa_55cde4d3",
+        "filename": "tools/aconfig/aconfig/templates/FeatureFlagsImpl.java.template",
+        "patchSetId": 8
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 3599662
+      },
+      "writtenOn": "2024-11-21T22:22:36Z",
+      "side": 1,
+      "message": "is it possible to define a helper method in a regular file and call it here?\n\nclass CodegenHelperMethods {\npublic static boolean getBooleanFlagValueFromReader(reader: AconfigPackageInternal, flagName: string, offset: int, defaultValue: boolean) {\n\nor something like that, basically so then we don\u0027t need both for loops?",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 51,
+        "endChar": 25
+      },
+      "revId": "a7da9cbd938710c4ea14586d7e40156057cbce74",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "206f8581_3bb1f925",
+        "filename": "tools/aconfig/aconfig_storage_read_api/tests/functional/srcs/PlatformAconfigPackageInternalTest.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 3599662
+      },
+      "writtenOn": "2024-11-21T22:22:36Z",
+      "side": 1,
+      "message": "does this need to be AconfigStorageReadException?",
+      "range": {
+        "startLine": 124,
+        "startChar": 16,
+        "endLine": 124,
+        "endChar": 39
+      },
+      "revId": "a7da9cbd938710c4ea14586d7e40156057cbce74",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
