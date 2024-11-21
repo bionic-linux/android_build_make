@@ -120,8 +120,14 @@ class BuildTestSuitesTest(fake_filesystem_unittest.TestCase):
     self.soong_ui_dir = self.fake_top.joinpath('build/soong')
     self.soong_ui_dir.mkdir(parents=True, exist_ok=True)
 
+    self.logs_dir = self.fake_top.joinpath('dist/logs')
+    self.logs_dir.mkdir(parents=True, exist_ok=True)
+
     self.soong_ui = self.soong_ui_dir.joinpath('soong_ui.bash')
     self.soong_ui.touch()
+
+    self.logs_dir = self.fake_top.joinpath('dist/logs')
+    self.logs_dir.mkdir(parents=True, exist_ok=True)
 
     self.mock_os_environ.update({
         'TARGET_RELEASE': 'release',
