@@ -32,6 +32,7 @@ pub fn generate_java_code<I>(
     codegen_mode: CodegenMode,
     flag_ids: HashMap<String, u16>,
     allow_instrumentation: bool,
+    fingerprint: u64
 ) -> Result<Vec<OutputFile>>
 where
     I: Iterator<Item = ProtoParsedFlag>,
@@ -56,6 +57,7 @@ where
         library_exported,
         allow_instrumentation,
         container,
+        fingerprint,
     };
     let mut template = TinyTemplate::new();
     template.add_template("Flags.java", include_str!("../../templates/Flags.java.template"))?;
@@ -123,6 +125,7 @@ struct Context {
     pub library_exported: bool,
     pub allow_instrumentation: bool,
     pub container: String,
+    pub fingerprint: u64,
 }
 
 #[derive(Serialize, Debug)]
@@ -502,6 +505,7 @@ mod tests {
             mode,
             flag_ids,
             true,
+            0,
         )
         .unwrap();
         let expect_flags_content = EXPECTED_FLAG_COMMON_CONTENT.to_string()
@@ -650,6 +654,7 @@ mod tests {
             mode,
             flag_ids,
             true,
+            0,
         )
         .unwrap();
 
@@ -848,6 +853,7 @@ mod tests {
             mode,
             flag_ids,
             true,
+            0,
         )
         .unwrap();
 
@@ -969,6 +975,7 @@ mod tests {
             mode,
             flag_ids,
             true,
+            0,
         )
         .unwrap();
         let expect_featureflags_content = r#"

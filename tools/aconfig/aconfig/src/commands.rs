@@ -63,6 +63,9 @@ pub struct OutputFile {
 pub const DEFAULT_FLAG_STATE: ProtoFlagState = ProtoFlagState::DISABLED;
 pub const DEFAULT_FLAG_PERMISSION: ProtoFlagPermission = ProtoFlagPermission::READ_WRITE;
 
+// Used when the fingerprint is not set (unsupported).
+pub const FINGERPRINT_DEFAULT_VALUE: u64 = 0;
+
 pub fn parse_flags(
     package: &str,
     container: Option<&str>,
@@ -218,8 +221,14 @@ pub fn create_java_lib(
     mut input: Input,
     codegen_mode: CodegenMode,
     allow_instrumentation: bool,
+    version: u32,
 ) -> Result<Vec<OutputFile>> {
     let parsed_flags = input.try_parse_flags()?;
+    let mut fingerprint: u64 = FINGERPRINT_DEFAULT_VALUE;
+    if version >= 2 {
+      let mut flag_names = extract_flag_names(parsed_flags.clone())?;
+      fingerprint = compute_flags_fingerprint(&mut flag_names);
+    }
     let modified_parsed_flags = modify_parsed_flags_based_on_mode(parsed_flags, codegen_mode)?;
     let Some(package) = find_unique_package(&modified_parsed_flags) else {
         bail!("no parsed flags, or the parsed flags use different packages");
@@ -232,6 +241,7 @@ pub fn create_java_lib(
         codegen_mode,
         flag_ids,
         allow_instrumentation,
+        fingerprint,
     )
 }
 

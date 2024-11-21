@@ -267,7 +267,7 @@ fn main() -> Result<()> {
             let mode = get_required_arg::<CodegenMode>(sub_matches, "mode")?;
             let allow_instrumentation =
                 get_required_arg::<bool>(sub_matches, "allow-instrumentation")?;
-            let generated_files = commands::create_java_lib(cache, *mode, *allow_instrumentation)
+            let generated_files = commands::create_java_lib(cache, *mode, *allow_instrumentation, DEFAULT_FILE_VERSION)
                 .context("failed to create java lib")?;
             let dir = PathBuf::from(get_required_arg::<String>(sub_matches, "out")?);
             generated_files
