@@ -24,6 +24,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "db5ca696_4dbf6bd0",
+        "filename": "tools/aconfig/aconfig/src/commands.rs",
+        "patchSetId": 8
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 1944425
+      },
+      "writtenOn": "2024-11-22T00:14:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ed6f4eea_06839489",
+      "range": {
+        "startLine": 229,
+        "startChar": 8,
+        "endLine": 229,
+        "endChar": 89
+      },
+      "revId": "a7da9cbd938710c4ea14586d7e40156057cbce74",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8ed18cac_da92fb94",
@@ -61,6 +85,30 @@
       "side": 1,
       "message": "let me resolve these in the following up cls",
       "parentUuid": "8ed18cac_da92fb94",
+      "range": {
+        "startLine": 441,
+        "startChar": 0,
+        "endLine": 441,
+        "endChar": 19
+      },
+      "revId": "a7da9cbd938710c4ea14586d7e40156057cbce74",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fdd37bdf_c099b7e1",
+        "filename": "tools/aconfig/aconfig/src/commands.rs",
+        "patchSetId": 8
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 1944425
+      },
+      "writtenOn": "2024-11-22T00:14:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e0d02cb_bfc99e88",
       "range": {
         "startLine": 441,
         "startChar": 0,
@@ -118,6 +166,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "692a2b74_3ce93b8c",
+        "filename": "tools/aconfig/aconfig/templates/FeatureFlagsImpl.java.template",
+        "patchSetId": 8
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1944425
+      },
+      "writtenOn": "2024-11-22T00:14:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d2e6503c_dcffc2f8",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 51,
+        "endChar": 25
+      },
+      "revId": "a7da9cbd938710c4ea14586d7e40156057cbce74",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "206f8581_3bb1f925",
@@ -131,6 +203,30 @@
       "writtenOn": "2024-11-21T22:22:36Z",
       "side": 1,
       "message": "does this need to be AconfigStorageReadException?",
+      "range": {
+        "startLine": 124,
+        "startChar": 16,
+        "endLine": 124,
+        "endChar": 39
+      },
+      "revId": "a7da9cbd938710c4ea14586d7e40156057cbce74",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7d86d728_c8ba34e2",
+        "filename": "tools/aconfig/aconfig_storage_read_api/tests/functional/srcs/PlatformAconfigPackageInternalTest.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1944425
+      },
+      "writtenOn": "2024-11-22T00:14:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "206f8581_3bb1f925",
       "range": {
         "startLine": 124,
         "startChar": 16,
