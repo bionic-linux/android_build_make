@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "847b238a_53b882cd",
+        "filename": "ci/build_device_and_tests",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1535516
+      },
+      "writtenOn": "2024-11-22T19:28:06Z",
+      "side": 1,
+      "message": "I\u0027d recommend adding `set -euo pipefail` to the start of the script instead of checking for errors manually.",
+      "range": {
+        "startLine": 17,
+        "startChar": 56,
+        "endLine": 17,
+        "endChar": 66
+      },
+      "revId": "c201fa185a3fd5f1b7c042720b9342a331fbd423",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
