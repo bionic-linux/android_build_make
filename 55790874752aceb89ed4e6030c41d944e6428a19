@@ -44,6 +44,24 @@
       ],
       "revId": "55790874752aceb89ed4e6030c41d944e6428a19",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c82a09f9_87ca5399",
+        "filename": "ci/build_test_suites.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1900272
+      },
+      "writtenOn": "2024-11-22T18:24:14Z",
+      "side": 1,
+      "message": "Yes, the code as it is right now should be still reporting metrics when it\u0027s not enabled, that\u0027s what the stuff under that comment does.",
+      "parentUuid": "dcb501fa_1f4eef39",
+      "revId": "55790874752aceb89ed4e6030c41d944e6428a19",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
