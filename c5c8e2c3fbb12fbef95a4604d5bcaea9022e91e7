@@ -22,6 +22,30 @@
       },
       "revId": "c5c8e2c3fbb12fbef95a4604d5bcaea9022e91e7",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ddb67d0c_7af00037",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1053813
+      },
+      "writtenOn": "2024-11-22T12:40:02Z",
+      "side": 1,
+      "message": ".. and Baklava with * too",
+      "parentUuid": "857e2bab_aed3ce0b",
+      "range": {
+        "startLine": 12,
+        "startChar": 60,
+        "endLine": 12,
+        "endChar": 63
+      },
+      "revId": "c5c8e2c3fbb12fbef95a4604d5bcaea9022e91e7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
