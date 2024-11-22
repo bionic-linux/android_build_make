@@ -62,6 +62,24 @@
       "parentUuid": "dcb501fa_1f4eef39",
       "revId": "55790874752aceb89ed4e6030c41d944e6428a19",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "70661ddf_38e62ef9",
+        "filename": "ci/build_test_suites.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1121894
+      },
+      "writtenOn": "2024-11-22T18:25:42Z",
+      "side": 1,
+      "message": "ah sorry, yes i see it.\n\nI didn\u0027t recheck that you made the changes. thanks for confirming",
+      "parentUuid": "c82a09f9_87ca5399",
+      "revId": "55790874752aceb89ed4e6030c41d944e6428a19",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
