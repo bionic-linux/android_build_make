@@ -249,8 +249,8 @@ A/B OTA specific options
       older SPL.
 
   --vabc_compression_param
-      Compression algorithm to be used for VABC. Available options: gz, lz4, zstd, brotli, none. 
-      Compression level can be specified by appending ",$LEVEL" to option. 
+      Compression algorithm to be used for VABC. Available options: gz, lz4, zstd, brotli, none.
+      Compression level can be specified by appending ",$LEVEL" to option.
       e.g. --vabc_compression_param=gz,9 specifies level 9 compression with gz algorithm
 
   --security_patch_level
@@ -804,7 +804,7 @@ def GeneratePartitionTimestampFlagsDowngrade(
   for part in pre_partition_state:
     if part.partition_name in partition_timestamps:
       partition_timestamps[part.partition_name] = \
-          max(part.version, partition_timestamps[part.partition_name])
+          max(part.version, partition_timestamps.get(part.partition_name,str(0)))
   return [
       "--partition_timestamps",
       ",".join([key + ":" + val for (key, val)
