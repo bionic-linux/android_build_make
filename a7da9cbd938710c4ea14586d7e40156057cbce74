@@ -49,6 +49,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8e0d02cb_bfc99e88",
+        "filename": "tools/aconfig/aconfig/src/commands.rs",
+        "patchSetId": 8
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 1944425
+      },
+      "writtenOn": "2024-11-22T00:10:26Z",
+      "side": 1,
+      "message": "let me resolve these in the following up cls",
+      "parentUuid": "8ed18cac_da92fb94",
+      "range": {
+        "startLine": 441,
+        "startChar": 0,
+        "endLine": 441,
+        "endChar": 19
+      },
+      "revId": "a7da9cbd938710c4ea14586d7e40156057cbce74",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "160db6aa_55cde4d3",
         "filename": "tools/aconfig/aconfig/templates/FeatureFlagsImpl.java.template",
         "patchSetId": 8
@@ -60,6 +84,30 @@
       "writtenOn": "2024-11-21T22:22:36Z",
       "side": 1,
       "message": "is it possible to define a helper method in a regular file and call it here?\n\nclass CodegenHelperMethods {\npublic static boolean getBooleanFlagValueFromReader(reader: AconfigPackageInternal, flagName: string, offset: int, defaultValue: boolean) {\n\nor something like that, basically so then we don\u0027t need both for loops?",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 51,
+        "endChar": 25
+      },
+      "revId": "a7da9cbd938710c4ea14586d7e40156057cbce74",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d2e6503c_dcffc2f8",
+        "filename": "tools/aconfig/aconfig/templates/FeatureFlagsImpl.java.template",
+        "patchSetId": 8
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1944425
+      },
+      "writtenOn": "2024-11-22T00:10:26Z",
+      "side": 1,
+      "message": "yeah then we need to add one more method, which later we need to device whether to make it an api.\n\noriginally the thought here is Oriol wants this to be explicit. so there is a place to log",
+      "parentUuid": "160db6aa_55cde4d3",
       "range": {
         "startLine": 35,
         "startChar": 0,
