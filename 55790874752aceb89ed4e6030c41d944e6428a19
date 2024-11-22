@@ -1,0 +1,49 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dcb501fa_1f4eef39",
+        "filename": "ci/build_test_suites.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1121894
+      },
+      "writtenOn": "2024-11-22T17:02:40Z",
+      "side": 1,
+      "message": "as discussed, we should keep the silent reporting when not enabled, so it\u0027s not mutually exclusive to collect silently for some experiment (device) while rolling out test_suite",
+      "fixSuggestions": [
+        {
+          "fixId": "db69161f_c2cec82a",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ci/build_test_suites.py",
+              "range": {
+                "startLine": 92,
+                "startChar": 0,
+                "endLine": 102,
+                "endChar": 0
+              },
+              "replacement": "    # Keep reporting metrics when test discovery is disabled.\n    # To be removed once test discovery is fully rolled out.\n    optimization_rationale \u003d \u0027\u0027\n    test_discovery_zip_regexes \u003d set()\n    try:\n      test_discovery_zip_regexes \u003d self._get_test_discovery_zip_regexes()\n      logging.info(f\u0027Discovered test discovery regexes: {test_discovery_zip_regexes}\u0027)\n    except test_discovery_agent.TestDiscoveryError as e:\n      optimization_rationale \u003d e.message\n      logging.warning(f\u0027Unable to perform test discovery: {optimization_rationale}\u0027)\n"
+            },
+            {
+              "path": "ci/build_test_suites.py",
+              "range": {
+                "startLine": 103,
+                "startChar": 0,
+                "endLine": 112,
+                "endChar": 0
+              },
+              "replacement": "    for target in self.args.extra_targets:\n      if optimization_rationale:\n        get_metrics_agent().report_unoptimized_target(target, optimization_rationale)\n        continue\n      regex \u003d r\u0027\\b(%s)\\b\u0027 % re.escape(target)\n      if any(re.search(regex, opt) for opt in test_discovery_zip_regexes):\n        get_metrics_agent().report_unoptimized_target(target, \u0027Test artifact used.\u0027)\n        continue\n      get_metrics_agent().report_optimized_target(target)\n"
+            }
+          ]
+        }
+      ],
+      "revId": "55790874752aceb89ed4e6030c41d944e6428a19",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
