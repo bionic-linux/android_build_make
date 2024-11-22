@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cc271955_b2bb0ac4",
+        "filename": "core/product_config.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 474,
+      "author": {
+        "id": 1583551
+      },
+      "writtenOn": "2024-11-22T22:14:18Z",
+      "side": 1,
+      "message": "We tend to (at least in this project) use:\n- True?: `ifneq (,$(RELEASE_BUILD_USE_VARIANT_FLAGS))`\n- False?: `ifeq (,$(RELEASE_BUILD_USE_VARIANT_FLAGS))`.\n\nThat said, examples of both can be found...",
+      "revId": "56d1bdfade58f15c88bf7fc75e711994be7a3078",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
