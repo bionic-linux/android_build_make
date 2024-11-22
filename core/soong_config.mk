@@ -451,6 +451,28 @@ $(call add_json_map, PartitionVarsForSoongMigrationOnlyDoNotUse)
   $(call add_json_list, InternalBootconfig, $(INTERNAL_BOOTCONFIG))
   $(call add_json_str, InternalBootconfigFile, $(INTERNAL_BOOTCONFIG_FILE))
 
+  # super image stuff
+  $(call add_json_bool, ProductUseDynamicPartitions, $(filter true,$(PRODUCT_USE_DYNAMIC_PARTITIONS)))
+  $(call add_json_bool, ProductRetrofitDynamicPartitions, $(filter true,$(PRODUCT_RETROFIT_DYNAMIC_PARTITIONS)))
+  $(call add_json_bool, ProductBuildSuperPartition, $(filter true,$(PRODUCT_BUILD_SUPER_PARTITION)))
+  $(call add_json_str, BoardSuperPartitionSize, $(BOARD_SUPER_PARTITION_SIZE))
+  $(call add_json_str, BoardSuperPartitionMetadataDevice, $(BOARD_SUPER_PARTITION_METADATA_DEVICE))
+  $(call add_json_list, BoardSuperPartitionBlockDevices, $(BOARD_SUPER_PARTITION_BLOCK_DEVICES))
+  $(call add_json_list, BoardSuperPartitionPartitionList, $(BOARD_SUPER_PARTITION_PARTITION_LIST))
+  $(call add_json_map, BoardSuperPartitionGroups)
+    $(foreach group, $(BOARD_SUPER_PARTITION_GROUPS), \
+      $(call add_json_map, $(group)) \
+        $(call add_json_str, GroupSize, $(BOARD_$(call to-upper,$(group))_SIZE)) \
+        $(if $(BOARD_$(call to-upper,$(group))_PARTITION_LIST), \
+          $(call add_json_list, PartitionList, $(BOARD_$(call to-upper,$(group))_PARTITION_LIST))) \
+      $(call end_json_map))
+    $(call end_json_map)
+  $(call add_json_bool, ProductVirtualAbOta, $(filter true,$(PRODUCT_VIRTUAL_AB_OTA)))
+  $(call add_json_bool, ProductVirtualAbOtaRetrofit, $(filter true,$(PRODUCT_VIRTUAL_AB_OTA_RETROFIT)))
+  $(call add_json_bool, AbOtaUpdater, $(filter true,$(AB_OTA_UPDATER)))
+  $(call add_json_bool, BuildingSystemOtherImage, $(BUILDING_SYSTEM_OTHER_IMAGE))
+  $(call add_json_str, LpMakeDir, $(dir $(LPMAKE)))
+
   # Avb (android verified boot) stuff
   $(call add_json_bool, BoardAvbEnable, $(filter true,$(BOARD_AVB_ENABLE)))
   $(call add_json_str, BoardAvbAlgorithm, $(BOARD_AVB_ALGORITHM))
