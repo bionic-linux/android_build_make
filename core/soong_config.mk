@@ -325,8 +325,10 @@ $(call add_json_str,  ProductDevice,       $(PRODUCT_DEVICE))
 $(call add_json_str,  ProductModel,        $(PRODUCT_MODEL))
 
 $(call add_json_str, ReleaseVersion,    $(_RELEASE_VERSION))
-$(call add_json_list, ReleaseAconfigValueSets,    $(RELEASE_ACONFIG_VALUE_SETS))
-$(call add_json_str, ReleaseAconfigFlagDefaultPermission,    $(RELEASE_ACONFIG_FLAG_DEFAULT_PERMISSION))
+
+$(call add_json_bool, ReleaseAconfigAllowReadWrite,        $(RELEASE_ACONFIG_ALLOW_READ_WRITE))
+$(call add_json_list, ReleaseAconfigValueSets,             $(RELEASE_ACONFIG_VALUE_SETS))
+$(call add_json_str,  ReleaseAconfigFlagDefaultPermission, $(RELEASE_ACONFIG_FLAG_DEFAULT_PERMISSION))
 
 $(call add_json_bool, ReleaseDefaultModuleBuildFromSource,   $(RELEASE_DEFAULT_MODULE_BUILD_FROM_SOURCE))
 
