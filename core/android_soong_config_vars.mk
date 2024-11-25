@@ -48,6 +48,8 @@ RECOVERY_API_VERSION := 3
 RECOVERY_FSTAB_VERSION := 2
 $(call soong_config_set, recovery, recovery_api_version, $(RECOVERY_API_VERSION))
 $(call soong_config_set, recovery, recovery_fstab_version, $(RECOVERY_FSTAB_VERSION))
+$(call soong_config_set, recovery, target_userimages_use_f2fs, $(TARGET_USERIMAGES_USE_F2FS))
+$(call soong_config_set, recovery, board_cacheimage_partition_size, $(BOARD_CACHEIMAGE_PARTITION_SIZE))
 
 # For Sanitizers
 $(call soong_config_set_bool,ANDROID,ASAN_ENABLED,$(if $(filter address,$(SANITIZE_TARGET)),true,false))
