@@ -9,6 +9,14 @@ android_app_certificate {
     certificate: "testkey",
 }
 
+filegroup {
+    name: "aosp-testkey-files",
+    srcs: [
+        "testkey.pk8",
+        "testkey.x509.pem",
+    ],
+}
+
 // Certificate for CTS tests that rely on UICC hardware conforming to the
 // updated CTS UICC card specification introduced in 2021. See
 // //cts/tests/tests/carrierapi/Android.bp for more details.
