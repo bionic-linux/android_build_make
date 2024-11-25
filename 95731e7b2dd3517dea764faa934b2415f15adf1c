@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6ee85365_9fc38ea4",
+        "filename": "core/soong_config.mk",
+        "patchSetId": 8
+      },
+      "lineNbr": 329,
+      "author": {
+        "id": 1583551
+      },
+      "writtenOn": "2024-11-25T21:48:33Z",
+      "side": 1,
+      "message": "The value is already available (albeit as a string) from `ctx.Config().GetBuildFlag(\"RELEASE_ACONFIG_ALLOW_READ_WRITE\")`.\n\nDo we need to add another config variable?",
+      "revId": "95731e7b2dd3517dea764faa934b2415f15adf1c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
