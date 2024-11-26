@@ -15,6 +15,7 @@
 
 .PHONY: device-tests
 .PHONY: device-tests-host-shared-libs
+.PHONY: device-tests-files-list
 
 device-tests-zip := $(PRODUCT_OUT)/device-tests.zip
 # Create an artifact to include a list of test config files in device-tests.
@@ -23,6 +24,7 @@ device-tests-list-zip := $(PRODUCT_OUT)/device-tests_list.zip
 device-tests-configs-zip := $(PRODUCT_OUT)/device-tests_configs.zip
 my_host_shared_lib_for_device_tests := $(call copy-many-files,$(COMPATIBILITY.device-tests.HOST_SHARED_LIBRARY.FILES))
 device_tests_host_shared_libs_zip := $(PRODUCT_OUT)/device-tests_host-shared-libs.zip
+device_tests_files_list := $(PRODUCT_OUT)/device-tests_files
 
 $(device-tests-zip) : .KATI_IMPLICIT_OUTPUTS := $(device-tests-list-zip) $(device-tests-configs-zip)
 $(device-tests-zip) : PRIVATE_device_tests_list := $(PRODUCT_OUT)/device-tests_list
@@ -32,6 +34,7 @@ $(device-tests-zip) : $(COMPATIBILITY.device-tests.FILES) $(COMPATIBILITY.device
 	grep $(HOST_OUT_TESTCASES) $@.list > $@-host.list || true
 	grep -e .*\\.config$$ $@-host.list > $@-host-test-configs.list || true
 	$(hide) for shared_lib in $(PRIVATE_HOST_SHARED_LIBS); do \
+	  echo $$shared_lib >> $@-host-shared-libs.list; \
 	  echo $$shared_lib >> $@-host.list; \
 	done
 	grep $(TARGET_OUT_TESTCASES) $@.list > $@-target.list || true
@@ -58,8 +61,18 @@ $(device_tests_host_shared_libs_zip) : $(my_host_shared_lib_for_device_tests) $(
 	$(SOONG_ZIP) -d -o $(PRIVATE_device_host_shared_libs_zip) \
 	  -P host -C $(HOST_OUT) -l $@-host-shared-libs.list
 
+$(device_tests_files_list) : PRIVATE_HOST_SHARED_LIBS := $(my_host_shared_lib_for_device_tests)
+$(device_tests_files_list) :
+	echo $(sort $(COMPATIBILITY.device-tests.FILES) $(COMPATIBILITY.device-tests.SOONG_INSTALLED_COMPATIBILITY_SUPPORT_FILES)) | tr " " "\n" > $@.full_list
+	$(hide) for shared_lib in $(PRIVATE_HOST_SHARED_LIBS); do \
+	  echo $$shared_lib >> $@.full_list; \
+	done
+	grep $(HOST_OUT_TESTCASES) $@.full_list > $@ || true
+	grep $(TARGET_OUT_TESTCASES) $@.full_list >> $@ || true
+
 device-tests: $(device-tests-zip)
 device-tests-host-shared-libs: $(device_tests_host_shared_libs_zip)
+device-tests-files-list: $(device_tests_files_list)
 
 $(call dist-for-goals, device-tests, $(device-tests-zip) $(device-tests-list-zip) $(device-tests-configs-zip) $(device_tests_host_shared_libs_zip))
 $(call dist-for-goals, device-tests-host-shared-libs, $(device_tests_host_shared_libs_zip))
