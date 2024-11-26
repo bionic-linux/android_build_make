@@ -164,7 +164,7 @@ PRODUCT_SYSTEM_PROPERTIES += \
 # For odex and vdex files, we limit madvising to 100MB.
 PRODUCT_SYSTEM_PROPERTIES += \
     dalvik.vm.madvise.vdexfile.size=104857600 \
-    dalvik.vm.madvise.odexfile.size=104857600 \
+    dalvik.vm.madvise.odexfile.size=0 \
     dalvik.vm.madvise.artfile.size=4294967295
 
 # Properties for the Unspecialized App Process Pool
