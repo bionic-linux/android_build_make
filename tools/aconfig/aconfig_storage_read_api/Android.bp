@@ -68,6 +68,10 @@ rust_ffi_static {
     host_supported: true,
     vendor_available: true,
     product_available: true,
+//    native_bridge_supported: true,
+    ramdisk_available: true,
+    vendor_ramdisk_available: true,
+    recovery_available: true,
     defaults: ["aconfig_storage_read_api.defaults"],
     apex_available: [
         "//apex_available:platform",
@@ -93,6 +97,10 @@ cc_library {
     host_supported: true,
     vendor_available: true,
     product_available: true,
+//    native_bridge_supported: true,
+    ramdisk_available: true,
+    vendor_ramdisk_available: true,
+    recovery_available: true,
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",

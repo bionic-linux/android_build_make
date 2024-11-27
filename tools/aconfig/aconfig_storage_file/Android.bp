@@ -31,6 +31,10 @@ rust_library {
     min_sdk_version: "29",
     vendor_available: true,
     product_available: true,
+//    native_bridge_supported: true,
+    ramdisk_available: true,
+    vendor_ramdisk_available: true,
+    recovery_available: true,
 }
 
 rust_binary_host {
@@ -63,6 +67,10 @@ rust_protobuf {
     min_sdk_version: "29",
     vendor_available: true,
     product_available: true,
+    ramdisk_available: true,
+    vendor_ramdisk_available: true,
+    recovery_available: true,
+//    native_bridge_supported: true,
 }
 
 cc_library {
