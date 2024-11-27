@@ -62,9 +62,9 @@ $(general_tests_zip) : $(COMPATIBILITY.general-tests.FILES) $(COMPATIBILITY.gene
 
 $(general_tests_files_list) : PRIVATE_INTERMEDIATES_DIR := $(intermediates_dir)
 $(general_tests_files_list) :
-	echo $(sort $(COMPATIBILITY.general-tests.FILES) $(COMPATIBILITY.device-tests.SOONG_INSTALLED_COMPATIBILITY_SUPPORT_FILES)) | tr " " "\n" > $(PRIVATE_INTERMEDIATES_DIR)/full_list
-	grep $(HOST_OUT_TESTCASES) $(PRIVATE_INTERMEDIATES_DIR)/full_list > $@ || true
-	grep $(TARGET_OUT_TESTCASES) $(PRIVATE_INTERMEDIATES_DIR)/full_list >> $@ || true
+	echo $(sort $(COMPATIBILITY.general-tests.FILES) $(COMPATIBILITY.device-tests.SOONG_INSTALLED_COMPATIBILITY_SUPPORT_FILES)) | tr " " "\n" > $@.full_list
+	grep $(HOST_OUT_TESTCASES) $@.full_list > $@ || true
+	grep $(TARGET_OUT_TESTCASES) $@.full_list >> $@ || true
 
 general-tests: $(general_tests_zip)
 general-tests-files-list: $(general_tests_files_list)
