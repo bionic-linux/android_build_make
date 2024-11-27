@@ -34,6 +34,24 @@
       "parentUuid": "f7bb2133_9f6db861",
       "revId": "67729601a6811764b430e836c0c8cbdeb42713b2",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7bf58ced_3afff804",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002751
+      },
+      "writtenOn": "2024-11-27T17:42:57Z",
+      "side": 1,
+      "message": "If it doesn\u0027t need to match the CTS key it seems simpler to include your own test key in the CTS test.  That seems to be what many other CTS tests do: https://cs.android.com/search?q\u003dfile:%5Ects%2F%20file:%5C.pem$\u0026ss\u003dandroid%2Fplatform%2Fsuperproject%2Fmain",
+      "parentUuid": "9094333b_737778e5",
+      "revId": "67729601a6811764b430e836c0c8cbdeb42713b2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
