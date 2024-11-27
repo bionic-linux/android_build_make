@@ -16,6 +16,24 @@
       "message": "How does having the AOSP testkey help?  Most devices running CTS won\u0027t be signed with the AOSP testkey.",
       "revId": "67729601a6811764b430e836c0c8cbdeb42713b2",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9094333b_737778e5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1884045
+      },
+      "writtenOn": "2024-11-27T13:37:21Z",
+      "side": 1,
+      "message": "We are adding a CTS test to test the signature verification API added by aosp/3342456, so any key would do. We don\u0027t necessarily have to use the AOSP testkey, but I think it will be more natural to use the AOSP testkey because it\u0027s the key that signs all the test apps in CTS. Let me know what you think.",
+      "parentUuid": "f7bb2133_9f6db861",
+      "revId": "67729601a6811764b430e836c0c8cbdeb42713b2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
