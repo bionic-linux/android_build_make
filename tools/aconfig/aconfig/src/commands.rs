@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 use anyhow::{bail, ensure, Context, Result};
 use itertools::Itertools;
 use protobuf::Message;
@@ -21,7 +20,6 @@ use std::collections::HashMap;
 use std::hash::Hasher;
 use std::io::Read;
 use std::path::PathBuf;
-
 use crate::codegen::cpp::generate_cpp_code;
 use crate::codegen::java::generate_java_code;
 use crate::codegen::rust::generate_rust_code;
@@ -34,12 +32,10 @@ use aconfig_protos::{
 };
 use aconfig_storage_file::sip_hasher13::SipHasher13;
 use aconfig_storage_file::StorageFileType;
-
 pub struct Input {
     pub source: String,
     pub reader: Box<dyn Read>,
 }
-
 impl Input {
     fn try_parse_flags(&mut self) -> Result<ProtoParsedFlags> {
         let mut buffer = Vec::new();
@@ -49,41 +45,33 @@ impl Input {
         aconfig_protos::parsed_flags::try_from_binary_proto(&buffer)
             .with_context(|| self.error_context())
     }
-
     fn error_context(&self) -> String {
         format!("failed to parse {}", self.source)
     }
 }
-
 pub struct OutputFile {
     pub path: PathBuf, // relative to some root directory only main knows about
     pub contents: Vec<u8>,
 }
-
 pub const DEFAULT_FLAG_STATE: ProtoFlagState = ProtoFlagState::DISABLED;
 pub const DEFAULT_FLAG_PERMISSION: ProtoFlagPermission = ProtoFlagPermission::READ_WRITE;
-
 pub fn parse_flags(
     package: &str,
     container: Option<&str>,
     declarations: Vec<Input>,
     values: Vec<Input>,
     default_permission: ProtoFlagPermission,
-    allow_read_write: bool,
 ) -> Result<Vec<u8>> {
     let mut parsed_flags = ProtoParsedFlags::new();
-
     for mut input in declarations {
         let mut contents = String::new();
         input
             .reader
             .read_to_string(&mut contents)
             .with_context(|| format!("failed to read {}", input.source))?;
-
         let mut flag_declarations =
             aconfig_protos::flag_declarations::try_from_text_proto(&contents)
                 .with_context(|| input.error_context())?;
-
         // system_ext flags should be treated as system flags as we are combining /system_ext
         // and /system as one container
         // TODO: remove this logic when we start enforcing that system_ext cannot be set as
@@ -91,7 +79,6 @@ pub fn parse_flags(
         if flag_declarations.container() == "system_ext" {
             flag_declarations.set_container(String::from("system"));
         }
-
         ensure!(
             package == flag_declarations.package(),
             "failed to parse {}: expected package {}, got {}",
@@ -111,7 +98,6 @@ pub fn parse_flags(
         for mut flag_declaration in flag_declarations.flag.into_iter() {
             aconfig_protos::flag_declaration::verify_fields(&flag_declaration)
                 .with_context(|| input.error_context())?;
-
             // create ParsedFlag using FlagDeclaration and default values
             let mut parsed_flag = ProtoParsedFlag::new();
             if let Some(c) = container {
@@ -136,15 +122,12 @@ pub fn parse_flags(
             tracepoint.set_state(DEFAULT_FLAG_STATE);
             tracepoint.set_permission(flag_permission);
             parsed_flag.trace.push(tracepoint);
-
             let mut metadata = ProtoFlagMetadata::new();
             let purpose = flag_declaration.metadata.purpose();
             metadata.set_purpose(purpose);
             parsed_flag.metadata = Some(metadata).into();
-
             // verify ParsedFlag looks reasonable
             aconfig_protos::parsed_flag::verify_fields(&parsed_flag)?;
-
             // verify ParsedFlag can be added
             ensure!(
                 parsed_flags.parsed_flag.iter().all(|other| other.name() != parsed_flag.name()),
@@ -152,12 +135,10 @@ pub fn parse_flags(
                 parsed_flag.name(),
                 input.source
             );
-
             // add ParsedFlag to ParsedFlags
             parsed_flags.parsed_flag.push(parsed_flag);
         }
     }
-
     for mut input in values {
         let mut contents = String::new();
         input
@@ -169,7 +150,6 @@ pub fn parse_flags(
         for flag_value in flag_values.flag_value.into_iter() {
             aconfig_protos::flag_value::verify_fields(&flag_value)
                 .with_context(|| input.error_context())?;
-
             let Some(parsed_flag) = parsed_flags
                 .parsed_flag
                 .iter_mut()
@@ -178,14 +158,12 @@ pub fn parse_flags(
                 // (silently) skip unknown flags
                 continue;
             };
-
             ensure!(
                 !parsed_flag.is_fixed_read_only()
                     || flag_value.permission() == ProtoFlagPermission::READ_ONLY,
                 "failed to set permission of flag {}, since this flag is fixed read only flag",
                 flag_value.name()
             );
-
             parsed_flag.set_state(flag_value.state());
             parsed_flag.set_permission(flag_value.permission());
             let mut tracepoint = ProtoTracepoint::new();
@@ -195,17 +173,6 @@ pub fn parse_flags(
             parsed_flag.trace.push(tracepoint);
         }
     }
-
-    if !allow_read_write {
-        if let Some(pf) = parsed_flags
-            .parsed_flag
-            .iter()
-            .find(|pf| pf.permission() == ProtoFlagPermission::READ_WRITE)
-        {
-            bail!("flag {} has permission READ_WRITE, but allow_read_write is false", pf.name());
-        }
-    }
-
     // Create a sorted parsed_flags
     aconfig_protos::parsed_flags::sort_parsed_flags(&mut parsed_flags);
     aconfig_protos::parsed_flags::verify_fields(&parsed_flags)?;
@@ -213,7 +180,6 @@ pub fn parse_flags(
     parsed_flags.write_to_vec(&mut output)?;
     Ok(output)
 }
-
 pub fn create_java_lib(
     mut input: Input,
     codegen_mode: CodegenMode,
@@ -225,9 +191,6 @@ pub fn create_java_lib(
         bail!("no parsed flags, or the parsed flags use different packages");
     };
     let package = package.to_string();
-    let mut flag_names =
-        modified_parsed_flags.iter().map(|pf| pf.name().to_string()).collect::<Vec<_>>();
-    let package_fingerprint = compute_flags_fingerprint(&mut flag_names);
     let flag_ids = assign_flag_ids(&package, modified_parsed_flags.iter())?;
     generate_java_code(
         &package,
@@ -235,10 +198,8 @@ pub fn create_java_lib(
         codegen_mode,
         flag_ids,
         allow_instrumentation,
-        package_fingerprint,
     )
 }
-
 pub fn create_cpp_lib(
     mut input: Input,
     codegen_mode: CodegenMode,
@@ -264,7 +225,6 @@ pub fn create_cpp_lib(
         allow_instrumentation,
     )
 }
-
 pub fn create_rust_lib(
     mut input: Input,
     codegen_mode: CodegenMode,
@@ -290,7 +250,6 @@ pub fn create_rust_lib(
         allow_instrumentation,
     )
 }
-
 pub fn create_storage(
     caches: Vec<Input>,
     container: &str,
@@ -301,7 +260,6 @@ pub fn create_storage(
         caches.into_iter().map(|mut input| input.try_parse_flags()).collect::<Result<Vec<_>>>()?;
     generate_storage_file(container, parsed_flags_vec.iter(), file, version)
 }
-
 pub fn create_device_config_defaults(mut input: Input) -> Result<Vec<u8>> {
     let parsed_flags = input.try_parse_flags()?;
     let mut output = Vec::new();
@@ -323,7 +281,6 @@ pub fn create_device_config_defaults(mut input: Input) -> Result<Vec<u8>> {
     }
     Ok(output)
 }
-
 pub fn create_device_config_sysprops(mut input: Input) -> Result<Vec<u8>> {
     let parsed_flags = input.try_parse_flags()?;
     let mut output = Vec::new();
@@ -344,7 +301,6 @@ pub fn create_device_config_sysprops(mut input: Input) -> Result<Vec<u8>> {
     }
     Ok(output)
 }
-
 pub fn dump_parsed_flags(
     mut input: Vec<Input>,
     format: DumpFormat,
@@ -368,7 +324,6 @@ pub fn dump_parsed_flags(
         format,
     )
 }
-
 fn find_unique_package(parsed_flags: &[ProtoParsedFlag]) -> Option<&str> {
     let package = parsed_flags.first().map(|pf| pf.package())?;
     if parsed_flags.iter().any(|pf| pf.package() != package) {
@@ -376,7 +331,6 @@ fn find_unique_package(parsed_flags: &[ProtoParsedFlag]) -> Option<&str> {
     }
     Some(package)
 }
-
 pub fn modify_parsed_flags_based_on_mode(
     parsed_flags: ProtoParsedFlags,
     codegen_mode: CodegenMode,
@@ -387,12 +341,10 @@ pub fn modify_parsed_flags_based_on_mode(
         parsed_flag.set_is_fixed_read_only(false);
         parsed_flag
     }
-
     fn force_read_only_mode_flag_modifier(mut parsed_flag: ProtoParsedFlag) -> ProtoParsedFlag {
         parsed_flag.set_permission(ProtoFlagPermission::READ_ONLY);
         parsed_flag
     }
-
     let modified_parsed_flags: Vec<_> = match codegen_mode {
         CodegenMode::Exported => parsed_flags
             .parsed_flag
@@ -413,10 +365,8 @@ pub fn modify_parsed_flags_based_on_mode(
     if modified_parsed_flags.is_empty() {
         bail!("{codegen_mode} library contains no {codegen_mode} flags");
     }
-
     Ok(modified_parsed_flags)
 }
-
 pub fn assign_flag_ids<'a, I>(package: &str, parsed_flags_iter: I) -> Result<HashMap<String, u16>>
 where
     I: Iterator<Item = &'a ProtoParsedFlag> + Clone,
@@ -427,31 +377,26 @@ where
         if package != pf.package() {
             return Err(anyhow::anyhow!("encountered a flag not in current package"));
         }
-
         // put a cap on how many flags a package can contain to 65535
         if id_to_assign > u16::MAX as u32 {
             return Err(anyhow::anyhow!("the number of flags in a package cannot exceed 65535"));
         }
-
         flag_ids.insert(pf.name().to_string(), id_to_assign as u16);
     }
     Ok(flag_ids)
 }
-
 #[allow(dead_code)] // TODO: b/316357686 - Use fingerprint in codegen to
                     // protect hardcoded offset reads.
                     // Creates a fingerprint of the flag names (which requires sorting the vector).
                     // Fingerprint is used by both codegen and storage files.
-pub fn compute_flags_fingerprint(flag_names: &mut Vec<String>) -> u64 {
+pub fn compute_flags_fingerprint(flag_names: &mut Vec<String>) -> Result<u64> {
     flag_names.sort();
-
     let mut hasher = SipHasher13::new();
     for flag in flag_names {
         hasher.write(flag.as_bytes());
     }
-    hasher.finish()
+    Ok(hasher.finish())
 }
-
 #[allow(dead_code)] // TODO: b/316357686 - Use fingerprint in codegen to
                     // protect hardcoded offset reads.
                     // Converts ProtoParsedFlags into a vector of strings containing all of the flag
@@ -459,39 +404,30 @@ pub fn compute_flags_fingerprint(flag_names: &mut Vec<String>) -> u64 {
                     // belong to the same package.
 fn extract_flag_names(flags: ProtoParsedFlags) -> Result<Vec<String>> {
     let separated_flags: Vec<ProtoParsedFlag> = flags.parsed_flag.into_iter().collect::<Vec<_>>();
-
     // All flags must belong to the same package as the fingerprint is per-package.
     let Some(_package) = find_unique_package(&separated_flags) else {
         bail!("No parsed flags, or the parsed flags use different packages.");
     };
-
     Ok(separated_flags.into_iter().map(|flag| flag.name.unwrap()).collect::<Vec<_>>())
 }
-
 #[cfg(test)]
 mod tests {
     use super::*;
     use aconfig_protos::ProtoFlagPurpose;
-
     #[test]
     fn test_offset_fingerprint() {
         let parsed_flags = crate::test::parse_test_flags();
         let expected_fingerprint: u64 = 5801144784618221668;
-
         let mut extracted_flags = extract_flag_names(parsed_flags).unwrap();
         let hash_result = compute_flags_fingerprint(&mut extracted_flags);
-
-        assert_eq!(hash_result, expected_fingerprint);
+        assert_eq!(hash_result.unwrap(), expected_fingerprint);
     }
-
     #[test]
     fn test_offset_fingerprint_matches_from_package() {
         let parsed_flags: ProtoParsedFlags = crate::test::parse_test_flags();
-
         // All test flags are in the same package, so fingerprint from all of them.
         let mut extracted_flags = extract_flag_names(parsed_flags.clone()).unwrap();
         let result_from_parsed_flags = compute_flags_fingerprint(&mut extracted_flags);
-
         let mut flag_names_vec = parsed_flags
             .parsed_flag
             .clone()
@@ -500,31 +436,25 @@ mod tests {
             .map(String::from)
             .collect::<Vec<_>>();
         let result_from_names = compute_flags_fingerprint(&mut flag_names_vec);
-
         // Assert the same hash is generated for each case.
-        assert_eq!(result_from_parsed_flags, result_from_names);
+        assert_eq!(result_from_parsed_flags.unwrap(), result_from_names.unwrap());
     }
-
     #[test]
     fn test_offset_fingerprint_different_packages_does_not_match() {
         // Parse flags from two packages.
         let parsed_flags: ProtoParsedFlags = crate::test::parse_test_flags();
         let second_parsed_flags = crate::test::parse_second_package_flags();
-
         let mut extracted_flags = extract_flag_names(parsed_flags).unwrap();
-        let result_from_parsed_flags = compute_flags_fingerprint(&mut extracted_flags);
+        let result_from_parsed_flags = compute_flags_fingerprint(&mut extracted_flags).unwrap();
         let mut second_extracted_flags = extract_flag_names(second_parsed_flags).unwrap();
-        let second_result = compute_flags_fingerprint(&mut second_extracted_flags);
-
+        let second_result = compute_flags_fingerprint(&mut second_extracted_flags).unwrap();
         // Different flags should have a different fingerprint.
         assert_ne!(result_from_parsed_flags, second_result);
     }
-
     #[test]
     fn test_parse_flags() {
         let parsed_flags = crate::test::parse_test_flags(); // calls parse_flags
         aconfig_protos::parsed_flags::verify_fields(&parsed_flags).unwrap();
-
         let enabled_ro =
             parsed_flags.parsed_flag.iter().find(|pf| pf.name() == "enabled_ro").unwrap();
         assert!(aconfig_protos::parsed_flag::verify_fields(enabled_ro).is_ok());
@@ -545,7 +475,6 @@ mod tests {
         assert_eq!("tests/second.values", enabled_ro.trace[2].source());
         assert_eq!(ProtoFlagState::ENABLED, enabled_ro.trace[2].state());
         assert_eq!(ProtoFlagPermission::READ_ONLY, enabled_ro.trace[2].permission());
-
         assert_eq!(9, parsed_flags.parsed_flag.len());
         for pf in parsed_flags.parsed_flag.iter() {
             if pf.name().starts_with("enabled_fixed_ro") {
@@ -554,12 +483,10 @@ mod tests {
             let first = pf.trace.first().unwrap();
             assert_eq!(DEFAULT_FLAG_STATE, first.state());
             assert_eq!(DEFAULT_FLAG_PERMISSION, first.permission());
-
             let last = pf.trace.last().unwrap();
             assert_eq!(pf.state(), last.state());
             assert_eq!(pf.permission(), last.permission());
         }
-
         let enabled_fixed_ro =
             parsed_flags.parsed_flag.iter().find(|pf| pf.name() == "enabled_fixed_ro").unwrap();
         assert!(enabled_fixed_ro.is_fixed_read_only());
@@ -569,7 +496,6 @@ mod tests {
         assert_eq!(ProtoFlagPermission::READ_ONLY, enabled_fixed_ro.trace[0].permission());
         assert_eq!(ProtoFlagPermission::READ_ONLY, enabled_fixed_ro.trace[1].permission());
     }
-
     #[test]
     fn test_parse_flags_setting_default() {
         let first_flag = r#"
@@ -584,14 +510,12 @@ mod tests {
         let declaration =
             vec![Input { source: "momery".to_string(), reader: Box::new(first_flag.as_bytes()) }];
         let value: Vec<Input> = vec![];
-
         let flags_bytes = crate::commands::parse_flags(
             "com.first",
             None,
             declaration,
             value,
             ProtoFlagPermission::READ_ONLY,
-            true,
         )
         .unwrap();
         let parsed_flags =
@@ -601,7 +525,6 @@ mod tests {
         assert_eq!(ProtoFlagState::DISABLED, parsed_flag.state());
         assert_eq!(ProtoFlagPermission::READ_ONLY, parsed_flag.permission());
     }
-
     #[test]
     fn test_parse_flags_package_mismatch_between_declaration_and_command_line() {
         let first_flag = r#"
@@ -616,16 +539,13 @@ mod tests {
         "#;
         let declaration =
             vec![Input { source: "memory".to_string(), reader: Box::new(first_flag.as_bytes()) }];
-
         let value: Vec<Input> = vec![];
-
         let error = crate::commands::parse_flags(
             "com.argument.package",
             Some("first.container"),
             declaration,
             value,
             ProtoFlagPermission::READ_WRITE,
-            true,
         )
         .unwrap_err();
         assert_eq!(
@@ -633,7 +553,6 @@ mod tests {
             "failed to parse memory: expected package com.argument.package, got com.declaration.package"
         );
     }
-
     #[test]
     fn test_parse_flags_container_mismatch_between_declaration_and_command_line() {
         let first_flag = r#"
@@ -648,16 +567,13 @@ mod tests {
         "#;
         let declaration =
             vec![Input { source: "memory".to_string(), reader: Box::new(first_flag.as_bytes()) }];
-
         let value: Vec<Input> = vec![];
-
         let error = crate::commands::parse_flags(
             "com.first",
             Some("argument.container"),
             declaration,
             value,
             ProtoFlagPermission::READ_WRITE,
-            true,
         )
         .unwrap_err();
         assert_eq!(
@@ -665,122 +581,6 @@ mod tests {
             "failed to parse memory: expected container argument.container, got declaration.container"
         );
     }
-    #[test]
-    fn test_parse_flags_no_allow_read_write_default_error() {
-        let first_flag = r#"
-        package: "com.first"
-        container: "com.first.container"
-        flag {
-            name: "first"
-            namespace: "first_ns"
-            description: "This is the description of the first flag."
-            bug: "123"
-        }
-        "#;
-        let declaration =
-            vec![Input { source: "memory".to_string(), reader: Box::new(first_flag.as_bytes()) }];
-
-        let error = crate::commands::parse_flags(
-            "com.first",
-            Some("com.first.container"),
-            declaration,
-            vec![],
-            ProtoFlagPermission::READ_WRITE,
-            false,
-        )
-        .unwrap_err();
-        assert_eq!(
-            format!("{:?}", error),
-            "flag first has permission READ_WRITE, but allow_read_write is false"
-        );
-    }
-
-    #[test]
-    fn test_parse_flags_no_allow_read_write_value_error() {
-        let first_flag = r#"
-        package: "com.first"
-        container: "com.first.container"
-        flag {
-            name: "first"
-            namespace: "first_ns"
-            description: "This is the description of the first flag."
-            bug: "123"
-        }
-        "#;
-        let declaration =
-            vec![Input { source: "memory".to_string(), reader: Box::new(first_flag.as_bytes()) }];
-
-        let first_flag_value = r#"
-        flag_value {
-            package: "com.first"
-            name: "first"
-            state: DISABLED
-            permission: READ_WRITE
-        }
-        "#;
-        let value = vec![Input {
-            source: "memory".to_string(),
-            reader: Box::new(first_flag_value.as_bytes()),
-        }];
-        let error = crate::commands::parse_flags(
-            "com.first",
-            Some("com.first.container"),
-            declaration,
-            value,
-            ProtoFlagPermission::READ_ONLY,
-            false,
-        )
-        .unwrap_err();
-        assert_eq!(
-            format!("{:?}", error),
-            "flag first has permission READ_WRITE, but allow_read_write is false"
-        );
-    }
-
-    #[test]
-    fn test_parse_flags_no_allow_read_write_success() {
-        let first_flag = r#"
-        package: "com.first"
-        container: "com.first.container"
-        flag {
-            name: "first"
-            namespace: "first_ns"
-            description: "This is the description of the first flag."
-            bug: "123"
-        }
-        "#;
-        let declaration =
-            vec![Input { source: "memory".to_string(), reader: Box::new(first_flag.as_bytes()) }];
-
-        let first_flag_value = r#"
-        flag_value {
-            package: "com.first"
-            name: "first"
-            state: DISABLED
-            permission: READ_ONLY
-        }
-        "#;
-        let value = vec![Input {
-            source: "memory".to_string(),
-            reader: Box::new(first_flag_value.as_bytes()),
-        }];
-        let flags_bytes = crate::commands::parse_flags(
-            "com.first",
-            Some("com.first.container"),
-            declaration,
-            value,
-            ProtoFlagPermission::READ_ONLY,
-            false,
-        )
-        .unwrap();
-        let parsed_flags =
-            aconfig_protos::parsed_flags::try_from_binary_proto(&flags_bytes).unwrap();
-        assert_eq!(1, parsed_flags.parsed_flag.len());
-        let parsed_flag = parsed_flags.parsed_flag.first().unwrap();
-        assert_eq!(ProtoFlagState::DISABLED, parsed_flag.state());
-        assert_eq!(ProtoFlagPermission::READ_ONLY, parsed_flag.permission());
-    }
-
     #[test]
     fn test_parse_flags_override_fixed_read_only() {
         let first_flag = r#"
@@ -796,7 +596,6 @@ mod tests {
         "#;
         let declaration =
             vec![Input { source: "memory".to_string(), reader: Box::new(first_flag.as_bytes()) }];
-
         let first_flag_value = r#"
         flag_value {
             package: "com.first"
@@ -815,7 +614,6 @@ mod tests {
             declaration,
             value,
             ProtoFlagPermission::READ_WRITE,
-            true,
         )
         .unwrap_err();
         assert_eq!(
@@ -823,7 +621,6 @@ mod tests {
             "failed to set permission of flag first, since this flag is fixed read only flag"
         );
     }
-
     #[test]
     fn test_parse_flags_metadata() {
         let metadata_flag = r#"
@@ -843,14 +640,12 @@ mod tests {
             reader: Box::new(metadata_flag.as_bytes()),
         }];
         let value: Vec<Input> = vec![];
-
         let flags_bytes = crate::commands::parse_flags(
             "com.first",
             None,
             declaration,
             value,
             ProtoFlagPermission::READ_ONLY,
-            true,
         )
         .unwrap();
         let parsed_flags =
@@ -859,7 +654,6 @@ mod tests {
         let parsed_flag = parsed_flags.parsed_flag.first().unwrap();
         assert_eq!(ProtoFlagPurpose::PURPOSE_FEATURE, parsed_flag.metadata.purpose());
     }
-
     #[test]
     fn test_create_device_config_defaults() {
         let input = parse_test_flags_as_input();
@@ -867,7 +661,6 @@ mod tests {
         let text = std::str::from_utf8(&bytes).unwrap();
         assert_eq!("aconfig_test:com.android.aconfig.test.disabled_rw=disabled\naconfig_test:com.android.aconfig.test.disabled_rw_exported=disabled\nother_namespace:com.android.aconfig.test.disabled_rw_in_other_namespace=disabled\naconfig_test:com.android.aconfig.test.enabled_rw=enabled\n", text);
     }
-
     #[test]
     fn test_create_device_config_sysprops() {
         let input = parse_test_flags_as_input();
@@ -875,7 +668,6 @@ mod tests {
         let text = std::str::from_utf8(&bytes).unwrap();
         assert_eq!("persist.device_config.com.android.aconfig.test.disabled_rw=false\npersist.device_config.com.android.aconfig.test.disabled_rw_exported=false\npersist.device_config.com.android.aconfig.test.disabled_rw_in_other_namespace=false\npersist.device_config.com.android.aconfig.test.enabled_rw=true\n", text);
     }
-
     #[test]
     fn test_dump() {
         let input = parse_test_flags_as_input();
@@ -889,7 +681,29 @@ mod tests {
         let text = std::str::from_utf8(&bytes).unwrap();
         assert!(text.contains("com.android.aconfig.test.disabled_ro"));
     }
-
+    #[test]
+    fn test_dump_multiple_filters() {
+        let input = parse_test_flags_as_input();
+        let bytes = dump_parsed_flags(
+            vec![input],
+            DumpFormat::Custom("{fully_qualified_name}".to_string()),
+            &["container:system+state:ENABLED", "container:system+permission:READ_WRITE"],
+            false,
+        )
+        .unwrap();
+        let text = std::str::from_utf8(&bytes).unwrap();
+        let expected_flag_list = &[
+            "com.android.aconfig.test.disabled_rw",
+            "com.android.aconfig.test.disabled_rw_exported",
+            "com.android.aconfig.test.disabled_rw_in_other_namespace",
+            "com.android.aconfig.test.enabled_fixed_ro",
+            "com.android.aconfig.test.enabled_fixed_ro_exported",
+            "com.android.aconfig.test.enabled_ro",
+            "com.android.aconfig.test.enabled_ro_exported",
+            "com.android.aconfig.test.enabled_rw",
+        ];
+        assert_eq!(expected_flag_list.map(|s| format!("{}\n", s)).join(""), text);
+    }
     #[test]
     fn test_dump_textproto_format_dedup() {
         let input = parse_test_flags_as_input();
@@ -905,7 +719,6 @@ mod tests {
             )
         );
     }
-
     fn parse_test_flags_as_input() -> Input {
         let parsed_flags = crate::test::parse_test_flags();
         let binary_proto = parsed_flags.write_to_bytes().unwrap();
@@ -913,7 +726,6 @@ mod tests {
         let reader = Box::new(cursor);
         Input { source: "test.data".to_string(), reader }
     }
-
     #[test]
     fn test_modify_parsed_flags_based_on_mode_prod() {
         let parsed_flags = crate::test::parse_test_flags();
@@ -925,7 +737,6 @@ mod tests {
             assert!(parsed_flags.parsed_flag[i].eq(item));
         }
     }
-
     #[test]
     fn test_modify_parsed_flags_based_on_mode_exported() {
         let parsed_flags = crate::test::parse_test_flags();
@@ -938,14 +749,12 @@ mod tests {
             assert!(!flag.is_fixed_read_only());
             assert!(flag.is_exported());
         }
-
         let mut parsed_flags = crate::test::parse_test_flags();
         parsed_flags.parsed_flag.retain(|pf| !pf.is_exported());
         let error =
             modify_parsed_flags_based_on_mode(parsed_flags, CodegenMode::Exported).unwrap_err();
         assert_eq!("exported library contains no exported flags", format!("{:?}", error));
     }
-
     #[test]
     fn test_assign_flag_ids() {
         let parsed_flags = crate::test::parse_test_flags();
@@ -964,7 +773,6 @@ mod tests {
         ]);
         assert_eq!(flag_ids, expected_flag_ids);
     }
-
     #[test]
     fn test_modify_parsed_flags_based_on_mode_force_read_only() {
         let parsed_flags = crate::test::parse_test_flags();
@@ -975,7 +783,6 @@ mod tests {
         for pf in p_parsed_flags {
             assert_eq!(ProtoFlagPermission::READ_ONLY, pf.permission());
         }
-
         let mut parsed_flags = crate::test::parse_test_flags();
         parsed_flags.parsed_flag.retain_mut(|pf| pf.is_exported());
         let error = modify_parsed_flags_based_on_mode(parsed_flags, CodegenMode::ForceReadOnly)
@@ -986,3 +793,4 @@ mod tests {
         );
     }
 }
+
