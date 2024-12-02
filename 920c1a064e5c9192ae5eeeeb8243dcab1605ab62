@@ -16,6 +16,29 @@
       "message": "Owner Mr. Kesegan Govender 100%",
       "revId": "920c1a064e5c9192ae5eeeeb8243dcab1605ab62",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "65831fca_9e531631",
+        "filename": "target/product/generic/Android.bp",
+        "patchSetId": 2
+      },
+      "lineNbr": 879,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2024-12-02T04:03:29Z",
+      "side": 1,
+      "message": "`system/lib64/hwasan/libc.so` is a symlink to the runtime apex. As in the comment in bionic/libc, we may not add the direct dependency here. This requires adding the visibility to all images that inherit this `system_image_defaults`.",
+      "range": {
+        "startLine": 879,
+        "startChar": 17,
+        "endLine": 879,
+        "endChar": 28
+      },
+      "revId": "920c1a064e5c9192ae5eeeeb8243dcab1605ab62",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
