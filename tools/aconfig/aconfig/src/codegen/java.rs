@@ -547,26 +547,14 @@ mod tests {
                         enabledRw = reader.getBooleanFlagValue("enabled_rw", true);
                         disabledRwInOtherNamespace = reader.getBooleanFlagValue("disabled_rw_in_other_namespace", false);
                     } else {
-                        if (error.getMessage() != null) {
-                            Log.e(TAG, error.getMessage());
-                        } else {
-                            Log.e(TAG, "Encountered a null AconfigStorageReadException");
-                        }
+                        Log.e(TAG, "encountered an AconfigStorageReadException");
                     }
                 } catch (Exception e) {
-                    if (e.getMessage() != null) {
-                        Log.e(TAG, e.getMessage());
-                    } else {
-                        Log.e(TAG, "Encountered a null Exception");
-                    }
+                    Log.e(TAG, e.getMessage());
                 } catch (NoClassDefFoundError e) {
                     // for mainline module running on older devices.
                     // This should be replaces to version check, after the version bump.
-                    if (e.getMessage() != null) {
-                        Log.e(TAG, e.getMessage());
-                    } else {
-                        Log.e(TAG, "Encountered a null NoClassDefFoundError");
-                    }
+                    Log.e(TAG, e.getMessage());
                 }
                 isCached = true;
             }
