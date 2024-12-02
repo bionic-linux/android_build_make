@@ -1,0 +1,86 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1d46454f_768d95f5",
+        "filename": "tools/releasetools/apex_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2024-12-02T23:09:59Z",
+      "side": 1,
+      "message": "this conflicts with python\u0027s global function `dir`, please rename",
+      "range": {
+        "startLine": 99,
+        "startChar": 8,
+        "endLine": 99,
+        "endChar": 11
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "03452be4_9c052515",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "tools/releasetools/apex_utils.py",
+              "range": {
+                "startLine": 99,
+                "startChar": 0,
+                "endLine": 101,
+                "endChar": 0
+              },
+              "replacement": "    for dirname, _, files in os.walk(payload_dir):\n      apk_entries.extend(os.path.join(dirname, file) for file in files if file.endswith(\u0027.apk\u0027))\n"
+            }
+          ]
+        }
+      ],
+      "revId": "098805870300846f810d409c48654bcb16e03e6c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "13bb2403_2e2351ef",
+        "filename": "tools/releasetools/apex_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2024-12-02T23:09:59Z",
+      "side": 1,
+      "message": "is there a reason `not apk_entries` is replaced with `len(apk_entries) \u003d\u003d 0` ?",
+      "range": {
+        "startLine": 103,
+        "startChar": 7,
+        "endLine": 103,
+        "endChar": 28
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "44cc9f9c_18508c4b",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "tools/releasetools/apex_utils.py",
+              "range": {
+                "startLine": 103,
+                "startChar": 0,
+                "endLine": 104,
+                "endChar": 0
+              },
+              "replacement": "    if not apk_entries and self.sign_tool is None:\n"
+            }
+          ]
+        }
+      ],
+      "revId": "098805870300846f810d409c48654bcb16e03e6c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
