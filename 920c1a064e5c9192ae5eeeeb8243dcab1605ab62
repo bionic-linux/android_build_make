@@ -63,6 +63,30 @@
       },
       "revId": "920c1a064e5c9192ae5eeeeb8243dcab1605ab62",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "460c32f1_ba16adfa",
+        "filename": "target/product/generic/Android.bp",
+        "patchSetId": 2
+      },
+      "lineNbr": 879,
+      "author": {
+        "id": 1146974
+      },
+      "writtenOn": "2024-12-02T04:40:40Z",
+      "side": 1,
+      "message": "\u003e libc_hwasan is NOT symlink to the runtime APEX.\n\nSure. But KATI installs a symlink to runtime apex in `system/lib64/hwasan`. I don\u0027t know how the symlink is generated from KATI though.",
+      "parentUuid": "a595f281_95a901f7",
+      "range": {
+        "startLine": 879,
+        "startChar": 17,
+        "endLine": 879,
+        "endChar": 28
+      },
+      "revId": "920c1a064e5c9192ae5eeeeb8243dcab1605ab62",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
