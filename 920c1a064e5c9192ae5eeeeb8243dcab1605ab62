@@ -39,6 +39,30 @@
       },
       "revId": "920c1a064e5c9192ae5eeeeb8243dcab1605ab62",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a595f281_95a901f7",
+        "filename": "target/product/generic/Android.bp",
+        "patchSetId": 2
+      },
+      "lineNbr": 879,
+      "author": {
+        "id": 1413436
+      },
+      "writtenOn": "2024-12-02T04:13:08Z",
+      "side": 1,
+      "message": "The comment also mentions `and in base_system.mk`, which would be KATI version of `system_image_defaults`. I agree on the visibility issue, but I don\u0027t see any other good solution. Also, libc_hwasan is NOT symlink to the runtime APEX.",
+      "parentUuid": "65831fca_9e531631",
+      "range": {
+        "startLine": 879,
+        "startChar": 17,
+        "endLine": 879,
+        "endChar": 28
+      },
+      "revId": "920c1a064e5c9192ae5eeeeb8243dcab1605ab62",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
