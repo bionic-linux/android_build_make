@@ -85,6 +85,7 @@ class ApexApkSigner(object):
           "Path {} does not exist. ".format(self.debugfs_path) +
           "Make sure bin/debugfs_static can be found in -p <path>")
     list_cmd = ['deapexer', '--debugfs_path', self.debugfs_path,
+                '--fsckerofs_path', self.fsckerofs_path,
                 'list', self.apex_path]
     entries_names = common.RunAndCheckOutput(list_cmd).split()
     apk_entries = [name for name in entries_names if name.endswith('.apk')]
