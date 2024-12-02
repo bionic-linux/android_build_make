@@ -84,10 +84,20 @@ class ApexApkSigner(object):
           "Couldn't find location of debugfs_static: " +
           "Path {} does not exist. ".format(self.debugfs_path) +
           "Make sure bin/debugfs_static can be found in -p <path>")
-    list_cmd = ['deapexer', '--debugfs_path', self.debugfs_path,
-                'list', self.apex_path]
-    entries_names = common.RunAndCheckOutput(list_cmd).split()
-    apk_entries = [name for name in entries_names if name.endswith('.apk')]
+    if not os.path.exists(self.fsckerofs_path):
+      raise ApexSigningError(
+          "Couldn't find location of fsck.erofs: " +
+          "Path {} does not exist. ".format(self.fsckerofs_path) +
+          "Make sure bin/fsck.erofs can be found in -p <path>")
+    payload_dir = common.MakeTempDir()
+    extract_cmd = ['deapexer', '--debugfs_path', self.debugfs_path,
+                   '--fsckerofs_path', self.fsckerofs_path,
+                   'extract',
+                   self.apex_path, payload_dir]
+    common.RunAndCheckOutput(extract_cmd)
+    apk_entries = []
+    for base_dir, _, files in os.walk(payload_dir):
+      apk_entries.extend(os.path.join(base_dir, file) for file in files if file.endswith('.apk'))
 
     # No need to sign and repack, return the original apex path.
     if not apk_entries and self.sign_tool is None:
@@ -105,33 +115,16 @@ class ApexApkSigner(object):
         logger.warning('Apk path does not contain the intended directory name:'
                        ' %s', entry)
 
-    payload_dir, has_signed_content = self.ExtractApexPayloadAndSignContents(
-        apk_entries, apk_keys, payload_key, signing_args)
+    has_signed_content = self.SignContentsInPayload(
+        payload_dir, apk_entries, apk_keys, payload_key, signing_args)
     if not has_signed_content:
       logger.info('No contents has been signed in %s', self.apex_path)
       return self.apex_path
 
     return self.RepackApexPayload(payload_dir, payload_key, signing_args)
 
-  def ExtractApexPayloadAndSignContents(self, apk_entries, apk_keys, payload_key, signing_args):
-    """Extracts the payload image and signs the containing apk files."""
-    if not os.path.exists(self.debugfs_path):
-      raise ApexSigningError(
-          "Couldn't find location of debugfs_static: " +
-          "Path {} does not exist. ".format(self.debugfs_path) +
-          "Make sure bin/debugfs_static can be found in -p <path>")
-    if not os.path.exists(self.fsckerofs_path):
-      raise ApexSigningError(
-          "Couldn't find location of fsck.erofs: " +
-          "Path {} does not exist. ".format(self.fsckerofs_path) +
-          "Make sure bin/fsck.erofs can be found in -p <path>")
-    payload_dir = common.MakeTempDir()
-    extract_cmd = ['deapexer', '--debugfs_path', self.debugfs_path,
-                   '--fsckerofs_path', self.fsckerofs_path,
-                   'extract',
-                   self.apex_path, payload_dir]
-    common.RunAndCheckOutput(extract_cmd)
-
+  def SignContentsInPayload(self, payload_dir, apk_entries, apk_keys, payload_key, signing_args):
+    """Signs the contents in payload."""
     has_signed_content = False
     for entry in apk_entries:
       apk_path = os.path.join(payload_dir, entry)
@@ -163,7 +156,7 @@ class ApexApkSigner(object):
       common.RunAndCheckOutput(cmd)
       has_signed_content = True
 
-    return payload_dir, has_signed_content
+    return has_signed_content
 
   def RepackApexPayload(self, payload_dir, payload_key, signing_args=None):
     """Rebuilds the apex file with the updated payload directory."""
