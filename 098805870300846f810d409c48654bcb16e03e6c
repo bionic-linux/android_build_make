@@ -42,6 +42,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b8c290ea_87c4fdbd",
+        "filename": "tools/releasetools/apex_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1415877
+      },
+      "writtenOn": "2024-12-02T23:36:38Z",
+      "side": 1,
+      "message": "Done. Thanks.",
+      "parentUuid": "1d46454f_768d95f5",
+      "range": {
+        "startLine": 99,
+        "startChar": 8,
+        "endLine": 99,
+        "endChar": 11
+      },
+      "revId": "098805870300846f810d409c48654bcb16e03e6c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "13bb2403_2e2351ef",
@@ -79,6 +103,30 @@
           ]
         }
       ],
+      "revId": "098805870300846f810d409c48654bcb16e03e6c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9b974472_0ea6a1ab",
+        "filename": "tools/releasetools/apex_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1415877
+      },
+      "writtenOn": "2024-12-02T23:36:38Z",
+      "side": 1,
+      "message": "No. reverted.",
+      "parentUuid": "13bb2403_2e2351ef",
+      "range": {
+        "startLine": 103,
+        "startChar": 7,
+        "endLine": 103,
+        "endChar": 28
+      },
       "revId": "098805870300846f810d409c48654bcb16e03e6c",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
