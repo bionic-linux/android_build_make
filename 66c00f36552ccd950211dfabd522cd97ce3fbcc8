@@ -1,0 +1,65 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a25a3dab_6aaa3ea6",
+        "filename": "tools/releasetools/apex_utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2024-12-02T23:39:58Z",
+      "side": 1,
+      "message": "this block of code is fairly self-contained, maybe extract it to a member function which takes in `apex_path` and returns the extracted `payload_dir` ?\n\n```\ndef ExtractApex(self, apex_path) -\u003e pathlib.Path:\n    pass\n```",
+      "range": {
+        "startLine": 87,
+        "startChar": 4,
+        "endLine": 97,
+        "endChar": 41
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "c08304c0_86876bf4",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "tools/releasetools/apex_utils.py",
+              "range": {
+                "startLine": 73,
+                "startChar": 0,
+                "endLine": 82,
+                "endChar": 0
+              },
+              "replacement": "  def ExtractApex(self, apex_path):\n    \"\"\"Extracts the apex file and returns the payload directory.\"\"\"\n"
+            },
+            {
+              "path": "tools/releasetools/apex_utils.py",
+              "range": {
+                "startLine": 96,
+                "startChar": 0,
+                "endLine": 97,
+                "endChar": 0
+              },
+              "replacement": "                   apex_path, payload_dir]\n"
+            },
+            {
+              "path": "tools/releasetools/apex_utils.py",
+              "range": {
+                "startLine": 98,
+                "startChar": 0,
+                "endLine": 98,
+                "endChar": 0
+              },
+              "replacement": "    return payload_dir\n\n  def ProcessApexFile(self, apk_keys, payload_key, signing_args\u003dNone):\n    \"\"\"Scans and signs the payload files and repack the apex\n\n    Args:\n      apk_keys: A dict that holds the signing keys for apk files.\n\n    Returns:\n      The repacked apex file containing the signed apk files.\n    \"\"\"\n    payload_dir \u003d self.ExtractApex(self.apex_path)\n"
+            }
+          ]
+        }
+      ],
+      "revId": "66c00f36552ccd950211dfabd522cd97ce3fbcc8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
