@@ -87,6 +87,30 @@
       },
       "revId": "920c1a064e5c9192ae5eeeeb8243dcab1605ab62",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3fc51b5a_8da077df",
+        "filename": "target/product/generic/Android.bp",
+        "patchSetId": 2
+      },
+      "lineNbr": 879,
+      "author": {
+        "id": 1413436
+      },
+      "writtenOn": "2024-12-03T07:29:23Z",
+      "side": 1,
+      "message": "As discussed offline, I believe this is the only way to copy behavior of `base_system.mk`. Let\u0027s leave as it is, and resolve visibility issue with b/381985636.",
+      "parentUuid": "460c32f1_ba16adfa",
+      "range": {
+        "startLine": 879,
+        "startChar": 17,
+        "endLine": 879,
+        "endChar": 28
+      },
+      "revId": "920c1a064e5c9192ae5eeeeb8243dcab1605ab62",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
