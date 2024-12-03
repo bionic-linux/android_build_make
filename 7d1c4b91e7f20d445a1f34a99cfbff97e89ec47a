@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e7b0b634_b0912e87",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1583551
+      },
+      "writtenOn": "2024-12-03T16:39:46Z",
+      "side": 1,
+      "message": "Please use go/soong-selects instead of adding a new config variable.",
+      "revId": "7d1c4b91e7f20d445a1f34a99cfbff97e89ec47a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
