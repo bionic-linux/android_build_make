@@ -13,6 +13,7 @@
 # limitations under the License.
 
 
+import fcntl
 import getpass
 import hashlib
 import logging
@@ -149,15 +150,15 @@ class DaemonManager:
             edit_event_pb2.EditEvent.KILLED_DUE_TO_EXCEEDED_MEMORY_USAGE
         )
         logging.error(
-            "Daemon process is consuming too much memory, rebooting...")
+            "Daemon process is consuming too much memory, rebooting..."
+        )
         self.reboot()
 
       if self.max_cpu_usage >= cpu_threshold:
         self._send_error_event_to_clearcut(
             edit_event_pb2.EditEvent.KILLED_DUE_TO_EXCEEDED_CPU_USAGE
         )
-        logging.error(
-            "Daemon process is consuming too much cpu, killing...")
+        logging.error("Daemon process is consuming too much cpu, killing...")
         self._terminate_process(self.daemon_process.pid)
 
     logging.info(
@@ -179,7 +180,7 @@ class DaemonManager:
         self._wait_for_process_terminate(self.daemon_process.pid, 1)
         if self.daemon_process.is_alive():
           self._terminate_process(self.daemon_process.pid)
-      self._remove_pidfile()
+      self._remove_pidfile(self.pid)
       logging.info("Successfully stopped daemon manager.")
     except Exception as e:
       logging.exception("Failed to stop daemon manager with error %s", e)
@@ -253,11 +254,15 @@ class DaemonManager:
     if ex_pid:
       logging.info("Found another instance with pid %d.", ex_pid)
       self._terminate_process(ex_pid)
-      self._remove_pidfile()
+      self._remove_pidfile(ex_pid)
 
-  def _read_pid_from_pidfile(self):
-    with open(self.pid_file_path, "r") as f:
-      return int(f.read().strip())
+  def _read_pid_from_pidfile(self) -> int | None:
+    try:
+      with open(self.pid_file_path, "r") as f:
+        return int(f.read().strip())
+    except FileNotFoundError as e:
+      logging.warning("pidfile %s does not exists.", self.pid_file_path)
+      return None
 
   def _write_pid_to_pidfile(self):
     """Creates a pidfile and writes the current pid to the file.
@@ -333,7 +338,21 @@ class DaemonManager:
       )
       return True
 
-  def _remove_pidfile(self):
+  def _remove_pidfile(self, pid: int):
+    if not self.pid_file_path.exists():
+      logging.info("pid file %s already removed.", self.pid_file_path)
+      return
+
+    if self._read_pid_from_pidfile() != pid:
+      logging.warning(
+          "pid file contains pid from a different process, expected pid: %d,"
+          " actual pid: %d.",
+          pid,
+          self._read_pid_from_pidfile(),
+      )
+      return
+
+    logging.debug("removing pidfile written by process %s", pid)
     try:
       os.remove(self.pid_file_path)
     except FileNotFoundError:
@@ -378,9 +397,7 @@ class DaemonManager:
       uptime_end = float(f.readline().split()[0])
 
     return (
-        (total_end_time - total_start_time)
-        / (uptime_end - uptime_start)
-        * 100
+        (total_end_time - total_start_time) / (uptime_end - uptime_start) * 100
     )
 
   def _get_total_cpu_time(self, pid: int) -> float:
