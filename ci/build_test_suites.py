@@ -88,7 +88,7 @@ class BuildPlanner:
         get_metrics_agent().report_unoptimized_target(target, optimization_rationale)
       else:
         regex = r'\b(%s)\b' % re.escape(target)
-        if any(re.search(regex, opt) for opt in test_discovery_zip_regexes):
+        if any(re.search(regex, opt) for opt in test_discovery_zip_regexes if opt):
           get_metrics_agent().report_unoptimized_target(target, 'Test artifact used.')
         else:
           get_metrics_agent().report_optimized_target(target)
