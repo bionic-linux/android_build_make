@@ -287,6 +287,8 @@ PRODUCT_PACKAGES += \
     telecom \
     telephony-common \
     tombstoned \
+    toybox_recovery \
+    toybox_vendor_ramdisk \
     traced \
     traced_probes \
     tradeinmode \
