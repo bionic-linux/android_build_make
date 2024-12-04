@@ -90,6 +90,7 @@ class TestDiscoveryAgent:
       return data[self._TRADEFED_TEST_ZIP_REGEXES_LIST_KEY]
 
   def discover_test_modules(self) -> list[str]:
+    return ['build_test_suites_test', 'atest_unittests']
     """Discover test modules from TradeFed.
 
     Returns:

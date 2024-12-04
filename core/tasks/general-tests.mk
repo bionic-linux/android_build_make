@@ -29,6 +29,8 @@ general_tests_list_zip := $(PRODUCT_OUT)/general-tests_list.zip
 general_tests_configs_zip := $(PRODUCT_OUT)/general-tests_configs.zip
 
 general_tests_files_list := $(PRODUCT_OUT)/general-tests_files
+general_tests_host_files_list := $(PRODUCT_OUT)/general-tests_host_files
+general_tests_target_files_list := $(PRODUCT_OUT)/general-tests_target_files
 
 general_tests_shared_libs_zip := $(PRODUCT_OUT)/general-tests_host-shared-libs.zip
 
@@ -61,10 +63,12 @@ $(general_tests_zip) : $(COMPATIBILITY.general-tests.FILES) $(COMPATIBILITY.gene
 	$(SOONG_ZIP) -d -o $(PRIVATE_general_tests_list_zip) -C $(PRIVATE_INTERMEDIATES_DIR) -f $(PRIVATE_INTERMEDIATES_DIR)/general-tests_list
 
 $(general_tests_files_list) : PRIVATE_INTERMEDIATES_DIR := $(intermediates_dir)
+$(general_tests_files_list) : PRIVATE_general_tests_host_files_list := $(general_tests_host_files_list)
+$(general_tests_files_list) : PRIVATE_general_tests_target_files_list := $(general_tests_target_files_list)
 $(general_tests_files_list) :
-	echo $(sort $(COMPATIBILITY.general-tests.FILES) $(COMPATIBILITY.device-tests.SOONG_INSTALLED_COMPATIBILITY_SUPPORT_FILES)) | tr " " "\n" > $(PRIVATE_INTERMEDIATES_DIR)/full_list
-	grep $(HOST_OUT_TESTCASES) $(PRIVATE_INTERMEDIATES_DIR)/full_list > $@ || true
-	grep $(TARGET_OUT_TESTCASES) $(PRIVATE_INTERMEDIATES_DIR)/full_list >> $@ || true
+	echo $(sort $(COMPATIBILITY.general-tests.FILES) $(COMPATIBILITY.device-tests.SOONG_INSTALLED_COMPATIBILITY_SUPPORT_FILES)) | tr " " "\n" > $@.full_list
+	grep $(HOST_OUT_TESTCASES) $@.full_list > $(PRIVATE_general_tests_host_files_list) || true
+	grep $(TARGET_OUT_TESTCASES) $@.full_list >> $(PRIVATE_general_tests_target_files_list) || true
 
 general-tests: $(general_tests_zip)
 general-tests-files-list: $(general_tests_files_list)

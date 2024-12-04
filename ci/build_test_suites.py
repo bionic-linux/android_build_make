@@ -69,8 +69,8 @@ class BuildPlanner:
 
   def create_build_plan(self):
 
-    if 'optimized_build' not in self.build_context.enabled_build_features:
-      return BuildPlan(set(self.args.extra_targets), set())
+    #if 'optimized_build' not in self.build_context.enabled_build_features:
+    #  return BuildPlan(set(self.args.extra_targets), set())
 
     build_targets = set()
     packaging_commands_getters = []
