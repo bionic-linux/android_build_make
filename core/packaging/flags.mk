@@ -36,8 +36,7 @@ $(strip $(1)): $(ACONFIG) $(strip $(4))
 	mkdir -p $$(dir $$(PRIVATE_OUT))
 	$$(if $$(PRIVATE_IN), \
 		$$(ACONFIG) dump --dedup --format protobuf --out $$(PRIVATE_OUT) \
-			--filter container:$(strip $(3))+state:ENABLED \
-			--filter container:$(strip $(3))+permission:READ_WRITE \
+			--filter container:$(strip $(3)) \
 			$$(addprefix --cache ,$$(PRIVATE_IN)), \
 		echo -n > $$(PRIVATE_OUT) \
 	)
