@@ -1,0 +1,80 @@
+//! codegenerated rust flag lib
+use aconfig_storage_read_api::{Mmap, AconfigStorageError, StorageFileType, PackageReadContext, get_mapped_storage_file, get_boolean_flag_value, get_package_read_context};
+use std::path::Path;
+use std::io::Write;
+use std::sync::LazyLock;
+use log::{log, LevelFilter, Level};
+
+/// flag provider
+pub struct FlagProvider;
+
+impl FlagProvider {
+    /// query flag disabled_ro
+    pub fn disabled_ro(&self) -> bool {
+        false
+    }
+
+    /// query flag disabled_rw
+    pub fn disabled_rw(&self) -> bool {
+        false
+    }
+
+    /// query flag disabled_rw_in_other_namespace
+    pub fn disabled_rw_in_other_namespace(&self) -> bool {
+        false
+    }
+
+    /// query flag enabled_fixed_ro
+    pub fn enabled_fixed_ro(&self) -> bool {
+        true
+    }
+
+    /// query flag enabled_ro
+    pub fn enabled_ro(&self) -> bool {
+        true
+    }
+
+    /// query flag enabled_rw
+    pub fn enabled_rw(&self) -> bool {
+        true
+    }
+}
+
+/// flag provider
+pub static PROVIDER: FlagProvider = FlagProvider;
+
+/// query flag disabled_ro
+#[inline(always)]
+pub fn disabled_ro() -> bool {
+    false
+}
+
+/// query flag disabled_rw
+#[inline(always)]
+pub fn disabled_rw() -> bool {
+    false
+}
+
+/// query flag disabled_rw_in_other_namespace
+#[inline(always)]
+pub fn disabled_rw_in_other_namespace() -> bool {
+    false
+}
+
+/// query flag enabled_fixed_ro
+#[inline(always)]
+pub fn enabled_fixed_ro() -> bool {
+    true
+}
+
+/// query flag enabled_ro
+#[inline(always)]
+pub fn enabled_ro() -> bool {
+    true
+}
+
+/// query flag enabled_rw
+#[inline(always)]
+pub fn enabled_rw() -> bool {
+    true
+}

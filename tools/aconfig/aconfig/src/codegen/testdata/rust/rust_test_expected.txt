@@ -1,0 +1,254 @@
+//! codegenerated rust flag lib
+
+use std::collections::BTreeMap;
+use std::sync::Mutex;
+
+/// flag provider
+pub struct FlagProvider {
+    overrides: BTreeMap<&'static str, bool>,
+}
+
+impl FlagProvider {
+    /// query flag disabled_ro
+    pub fn disabled_ro(&self) -> bool {
+        self.overrides.get("disabled_ro").copied().unwrap_or(
+            false
+        )
+    }
+
+    /// set flag disabled_ro
+    pub fn set_disabled_ro(&mut self, val: bool) {
+        self.overrides.insert("disabled_ro", val);
+    }
+
+    /// query flag disabled_rw
+    pub fn disabled_rw(&self) -> bool {
+        self.overrides.get("disabled_rw").copied().unwrap_or(
+            flags_rust::GetServerConfigurableFlag(
+                "aconfig_flags.aconfig_test",
+                "com.android.aconfig.test.disabled_rw",
+                "false") == "true"
+        )
+    }
+
+    /// set flag disabled_rw
+    pub fn set_disabled_rw(&mut self, val: bool) {
+        self.overrides.insert("disabled_rw", val);
+    }
+
+    /// query flag disabled_rw_exported
+    pub fn disabled_rw_exported(&self) -> bool {
+        self.overrides.get("disabled_rw_exported").copied().unwrap_or(
+            flags_rust::GetServerConfigurableFlag(
+                "aconfig_flags.aconfig_test",
+                "com.android.aconfig.test.disabled_rw_exported",
+                "false") == "true"
+        )
+    }
+
+    /// set flag disabled_rw_exported
+    pub fn set_disabled_rw_exported(&mut self, val: bool) {
+        self.overrides.insert("disabled_rw_exported", val);
+    }
+
+    /// query flag disabled_rw_in_other_namespace
+    pub fn disabled_rw_in_other_namespace(&self) -> bool {
+        self.overrides.get("disabled_rw_in_other_namespace").copied().unwrap_or(
+            flags_rust::GetServerConfigurableFlag(
+                "aconfig_flags.other_namespace",
+                "com.android.aconfig.test.disabled_rw_in_other_namespace",
+                "false") == "true"
+        )
+    }
+
+    /// set flag disabled_rw_in_other_namespace
+    pub fn set_disabled_rw_in_other_namespace(&mut self, val: bool) {
+        self.overrides.insert("disabled_rw_in_other_namespace", val);
+    }
+
+    /// query flag enabled_fixed_ro
+    pub fn enabled_fixed_ro(&self) -> bool {
+        self.overrides.get("enabled_fixed_ro").copied().unwrap_or(
+            true
+        )
+    }
+
+    /// set flag enabled_fixed_ro
+    pub fn set_enabled_fixed_ro(&mut self, val: bool) {
+        self.overrides.insert("enabled_fixed_ro", val);
+    }
+
+    /// query flag enabled_fixed_ro_exported
+    pub fn enabled_fixed_ro_exported(&self) -> bool {
+        self.overrides.get("enabled_fixed_ro_exported").copied().unwrap_or(
+            true
+        )
+    }
+
+    /// set flag enabled_fixed_ro_exported
+    pub fn set_enabled_fixed_ro_exported(&mut self, val: bool) {
+        self.overrides.insert("enabled_fixed_ro_exported", val);
+    }
+
+    /// query flag enabled_ro
+    pub fn enabled_ro(&self) -> bool {
+        self.overrides.get("enabled_ro").copied().unwrap_or(
+            true
+        )
+    }
+
+    /// set flag enabled_ro
+    pub fn set_enabled_ro(&mut self, val: bool) {
+        self.overrides.insert("enabled_ro", val);
+    }
+
+    /// query flag enabled_ro_exported
+    pub fn enabled_ro_exported(&self) -> bool {
+        self.overrides.get("enabled_ro_exported").copied().unwrap_or(
+            true
+        )
+    }
+
+    /// set flag enabled_ro_exported
+    pub fn set_enabled_ro_exported(&mut self, val: bool) {
+        self.overrides.insert("enabled_ro_exported", val);
+    }
+
+    /// query flag enabled_rw
+    pub fn enabled_rw(&self) -> bool {
+        self.overrides.get("enabled_rw").copied().unwrap_or(
+            flags_rust::GetServerConfigurableFlag(
+                "aconfig_flags.aconfig_test",
+                "com.android.aconfig.test.enabled_rw",
+                "true") == "true"
+        )
+    }
+
+    /// set flag enabled_rw
+    pub fn set_enabled_rw(&mut self, val: bool) {
+        self.overrides.insert("enabled_rw", val);
+    }
+
+    /// clear all flag overrides
+    pub fn reset_flags(&mut self) {
+        self.overrides.clear();
+    }
+}
+
+/// flag provider
+pub static PROVIDER: Mutex<FlagProvider> = Mutex::new(
+    FlagProvider {overrides: BTreeMap::new()}
+);
+
+/// query flag disabled_ro
+#[inline(always)]
+pub fn disabled_ro() -> bool {
+    PROVIDER.lock().unwrap().disabled_ro()
+}
+
+/// set flag disabled_ro
+#[inline(always)]
+pub fn set_disabled_ro(val: bool) {
+    PROVIDER.lock().unwrap().set_disabled_ro(val);
+}
+
+/// query flag disabled_rw
+#[inline(always)]
+pub fn disabled_rw() -> bool {
+    PROVIDER.lock().unwrap().disabled_rw()
+}
+
+/// set flag disabled_rw
+#[inline(always)]
+pub fn set_disabled_rw(val: bool) {
+    PROVIDER.lock().unwrap().set_disabled_rw(val);
+}
+
+/// query flag disabled_rw_exported
+#[inline(always)]
+pub fn disabled_rw_exported() -> bool {
+    PROVIDER.lock().unwrap().disabled_rw_exported()
+}
+
+/// set flag disabled_rw_exported
+#[inline(always)]
+pub fn set_disabled_rw_exported(val: bool) {
+    PROVIDER.lock().unwrap().set_disabled_rw_exported(val);
+}
+
+/// query flag disabled_rw_in_other_namespace
+#[inline(always)]
+pub fn disabled_rw_in_other_namespace() -> bool {
+    PROVIDER.lock().unwrap().disabled_rw_in_other_namespace()
+}
+
+/// set flag disabled_rw_in_other_namespace
+#[inline(always)]
+pub fn set_disabled_rw_in_other_namespace(val: bool) {
+    PROVIDER.lock().unwrap().set_disabled_rw_in_other_namespace(val);
+}
+
+/// query flag enabled_fixed_ro
+#[inline(always)]
+pub fn enabled_fixed_ro() -> bool {
+    PROVIDER.lock().unwrap().enabled_fixed_ro()
+}
+
+/// set flag enabled_fixed_ro
+#[inline(always)]
+pub fn set_enabled_fixed_ro(val: bool) {
+    PROVIDER.lock().unwrap().set_enabled_fixed_ro(val);
+}
+
+/// query flag enabled_fixed_ro_exported
+#[inline(always)]
+pub fn enabled_fixed_ro_exported() -> bool {
+    PROVIDER.lock().unwrap().enabled_fixed_ro_exported()
+}
+
+/// set flag enabled_fixed_ro_exported
+#[inline(always)]
+pub fn set_enabled_fixed_ro_exported(val: bool) {
+    PROVIDER.lock().unwrap().set_enabled_fixed_ro_exported(val);
+}
+
+/// query flag enabled_ro
+#[inline(always)]
+pub fn enabled_ro() -> bool {
+    PROVIDER.lock().unwrap().enabled_ro()
+}
+
+/// set flag enabled_ro
+#[inline(always)]
+pub fn set_enabled_ro(val: bool) {
+    PROVIDER.lock().unwrap().set_enabled_ro(val);
+}
+
+/// query flag enabled_ro_exported
+#[inline(always)]
+pub fn enabled_ro_exported() -> bool {
+    PROVIDER.lock().unwrap().enabled_ro_exported()
+}
+
+/// set flag enabled_ro_exported
+#[inline(always)]
+pub fn set_enabled_ro_exported(val: bool) {
+    PROVIDER.lock().unwrap().set_enabled_ro_exported(val);
+}
+
+/// query flag enabled_rw
+#[inline(always)]
+pub fn enabled_rw() -> bool {
+    PROVIDER.lock().unwrap().enabled_rw()
+}
+
+/// set flag enabled_rw
+#[inline(always)]
+pub fn set_enabled_rw(val: bool) {
+    PROVIDER.lock().unwrap().set_enabled_rw(val);
+}
+
+/// clear all flag override
+pub fn reset_flags() {
+    PROVIDER.lock().unwrap().reset_flags()
+}
