@@ -1,0 +1,324 @@
+//! codegenerated rust flag lib
+use aconfig_storage_read_api::{Mmap, AconfigStorageError, StorageFileType, PackageReadContext, get_mapped_storage_file, get_boolean_flag_value, get_package_read_context};
+use std::path::Path;
+use std::io::Write;
+use std::sync::LazyLock;
+use log::{log, LevelFilter, Level};
+
+/// flag provider
+pub struct FlagProvider;
+
+static PACKAGE_CONTEXT: LazyLock<Result<PackageReadContext, AconfigStorageError>> = LazyLock::new(|| unsafe {
+    get_mapped_storage_file("system", StorageFileType::PackageMap)
+    .and_then(|package_map| get_package_read_context(&package_map, "com.android.aconfig.test"))
+});
+
+static FLAG_VAL_MAP: LazyLock<Result<Mmap, AconfigStorageError>> = LazyLock::new(|| unsafe {
+    get_mapped_storage_file("system", StorageFileType::FlagVal)
+});
+
+/// flag value cache for disabled_rw
+static CACHED_disabled_rw: LazyLock<bool> = LazyLock::new(|| {
+    // This will be called multiple times. Subsequent calls after the first are noops.
+    logger::init(
+        logger::Config::default()
+            .with_tag_on_device("aconfig_rust_codegen")
+            .with_max_level(LevelFilter::Info));
+
+    let fingerprint_from_file = PACKAGE_CONTEXT
+        .as_ref().map(|context| context.map(|c| c.fingerprint))
+        .map_err(|err| format!("failed to get package read offset: {err}"));
+    if fingerprint_from_file != 8 {
+      log!(Level::Warn, "Fingerprint mismatch for package com.android.aconfig.test, returning default value.");
+      return false;
+    }
+
+    let flag_value_result = FLAG_VAL_MAP
+        .as_ref()
+        .map_err(|err| format!("failed to get flag val map: {err}"))
+        .and_then(|flag_val_map| {
+            PACKAGE_CONTEXT
+               .as_ref()
+               .map(|context| context.map(|c| c.boolean_start_index))
+               .map_err(|err| format!("failed to get package read offset: {err}"))
+               .and_then(|package_offset| {
+                   match package_offset {
+                       Some(offset) => {
+                           get_boolean_flag_value(&flag_val_map, offset + 1)
+                               .map_err(|err| format!("failed to get flag: {err}"))
+                       },
+                       None => {
+                           log!(Level::Error, "no context found for package com.android.aconfig.test");
+                           Err(format!("failed to flag package com.android.aconfig.test"))
+                       }
+                    }
+                })
+            });
+
+    match flag_value_result {
+        Ok(flag_value) => {
+            return flag_value;
+        },
+        Err(err) => {
+            log!(Level::Error, "aconfig_rust_codegen: error: {err}");
+            return false;
+        }
+    }
+});
+
+/// flag value cache for disabled_rw_exported
+static CACHED_disabled_rw_exported: LazyLock<bool> = LazyLock::new(|| {
+        // This will be called multiple times. Subsequent calls after the first are noops.
+        logger::init(
+            logger::Config::default()
+                .with_tag_on_device("aconfig_rust_codegen")
+                .with_max_level(LevelFilter::Info));
+
+        let fingerprint_from_file = PACKAGE_CONTEXT
+            .as_ref().map(|context| context.map(|c| c.fingerprint))
+            .map_err(|err| format!("failed to get package read offset: {err}"));
+        if fingerprint_from_file != 8 {
+          log!(Level::Warn, "Fingerprint mismatch for package com.android.aconfig.test, returning default value.");
+          return false;
+        }
+
+        let flag_value_result = FLAG_VAL_MAP
+            .as_ref()
+            .map_err(|err| format!("failed to get flag val map: {err}"))
+            .and_then(|flag_val_map| {
+                PACKAGE_CONTEXT
+                    .as_ref()
+                    .map(|context| context.map(|c| c.boolean_start_index))
+                    .map_err(|err| format!("failed to get package read offset: {err}"))
+                    .and_then(|package_offset| {
+                        match package_offset {
+                            Some(offset) => {
+                                get_boolean_flag_value(&flag_val_map, offset + 2)
+                                    .map_err(|err| format!("failed to get flag: {err}"))
+                            },
+                            None => {
+                                log!(Level::Error, "no context found for package com.android.aconfig.test");
+                                Err(format!("failed to flag package com.android.aconfig.test"))
+                            }
+                        }
+                    })
+                });
+
+        match flag_value_result {
+            Ok(flag_value) => {
+                 return flag_value;
+            },
+            Err(err) => {
+                log!(Level::Error, "aconfig_rust_codegen: error: {err}");
+                return false;
+            }
+        }
+});
+
+/// flag value cache for disabled_rw_in_other_namespace
+static CACHED_disabled_rw_in_other_namespace: LazyLock<bool> = LazyLock::new(|| {
+        // This will be called multiple times. Subsequent calls after the first are noops.
+        logger::init(
+            logger::Config::default()
+                .with_tag_on_device("aconfig_rust_codegen")
+                .with_max_level(LevelFilter::Info));
+
+        let fingerprint_from_file = PACKAGE_CONTEXT
+            .as_ref().map(|context| context.map(|c| c.fingerprint))
+            .map_err(|err| format!("failed to get package read offset: {err}"));
+        if fingerprint_from_file != 8 {
+          log!(Level::Warn, "Fingerprint mismatch for package com.android.aconfig.test, returning default value.");
+          return false;
+        }
+
+        let flag_value_result = FLAG_VAL_MAP
+            .as_ref()
+            .map_err(|err| format!("failed to get flag val map: {err}"))
+            .and_then(|flag_val_map| {
+                PACKAGE_CONTEXT
+                    .as_ref()
+                    .map(|context| context.map(|c| c.boolean_start_index))
+                    .map_err(|err| format!("failed to get package read offset: {err}"))
+                    .and_then(|package_offset| {
+                        match package_offset {
+                            Some(offset) => {
+                                get_boolean_flag_value(&flag_val_map, offset + 3)
+                                    .map_err(|err| format!("failed to get flag: {err}"))
+                            },
+                            None => {
+                                log!(Level::Error, "no context found for package com.android.aconfig.test");
+                                Err(format!("failed to flag package com.android.aconfig.test"))
+                            }
+                        }
+                    })
+                });
+
+        match flag_value_result {
+            Ok(flag_value) => {
+                 return flag_value;
+            },
+            Err(err) => {
+                log!(Level::Error, "aconfig_rust_codegen: error: {err}");
+                return false;
+            }
+        }
+});
+
+
+/// flag value cache for enabled_rw
+static CACHED_enabled_rw: LazyLock<bool> = LazyLock::new(|| {
+        // This will be called multiple times. Subsequent calls after the first are noops.
+        logger::init(
+            logger::Config::default()
+                .with_tag_on_device("aconfig_rust_codegen")
+                .with_max_level(LevelFilter::Info));
+
+        let fingerprint_from_file = PACKAGE_CONTEXT
+              .as_ref().map(|context| context.map(|c| c.fingerprint))
+              .map_err(|err| format!("failed to get package read offset: {err}"));
+        if fingerprint_from_file != 8 {
+            log!(Level::Warn, "Fingerprint mismatch for package com.android.aconfig.test, returning default value.");
+            return true;
+        }
+
+        let flag_value_result = FLAG_VAL_MAP
+            .as_ref()
+            .map_err(|err| format!("failed to get flag val map: {err}"))
+            .and_then(|flag_val_map| {
+                PACKAGE_CONTEXT
+                    .as_ref()
+                    .map(|context| context.map(|c| c.boolean_start_index))
+                    .map_err(|err| format!("failed to get package read offset: {err}"))
+                    .and_then(|package_offset| {
+                        match package_offset {
+                            Some(offset) => {
+                                get_boolean_flag_value(&flag_val_map, offset + 8)
+                                    .map_err(|err| format!("failed to get flag: {err}"))
+                            },
+                            None => {
+                                log!(Level::Error, "no context found for package com.android.aconfig.test");
+                                Err(format!("failed to flag package com.android.aconfig.test"))
+                            }
+                        }
+                    })
+                });
+
+        match flag_value_result {
+            Ok(flag_value) => {
+                 return flag_value;
+            },
+            Err(err) => {
+                log!(Level::Error, "aconfig_rust_codegen: error: {err}");
+                return true;
+            }
+        }
+});
+
+impl FlagProvider {
+
+
+    /// query flag disabled_ro
+    pub fn disabled_ro(&self) -> bool {
+        false
+    }
+
+    /// query flag disabled_rw
+    pub fn disabled_rw(&self) -> bool {
+        *CACHED_disabled_rw
+    }
+
+    /// query flag disabled_rw_exported
+    pub fn disabled_rw_exported(&self) -> bool {
+        *CACHED_disabled_rw_exported
+    }
+
+    /// query flag disabled_rw_in_other_namespace
+    pub fn disabled_rw_in_other_namespace(&self) -> bool {
+        *CACHED_disabled_rw_in_other_namespace
+    }
+
+    /// query flag enabled_fixed_ro
+    pub fn enabled_fixed_ro(&self) -> bool {
+        true
+    }
+
+    /// query flag enabled_fixed_ro_exported
+    pub fn enabled_fixed_ro_exported(&self) -> bool {
+        true
+    }
+
+    /// query flag enabled_ro
+    pub fn enabled_ro(&self) -> bool {
+        true
+    }
+
+    /// query flag enabled_ro_exported
+    pub fn enabled_ro_exported(&self) -> bool {
+        true
+    }
+
+    /// query flag enabled_rw
+    pub fn enabled_rw(&self) -> bool {
+        *CACHED_enabled_rw
+    }
+
+
+}
+
+/// flag provider
+pub static PROVIDER: FlagProvider = FlagProvider;
+
+
+/// query flag disabled_ro
+#[inline(always)]
+pub fn disabled_ro() -> bool {
+   false
+}
+
+/// query flag disabled_rw
+#[inline(always)]
+pub fn disabled_rw() -> bool {
+    PROVIDER.disabled_rw()
+}
+
+/// query flag disabled_rw_exported
+#[inline(always)]
+pub fn disabled_rw_exported() -> bool {
+    PROVIDER.disabled_rw_exported()
+}
+
+/// query flag disabled_rw_in_other_namespace
+#[inline(always)]
+pub fn disabled_rw_in_other_namespace() -> bool {
+    PROVIDER.disabled_rw_in_other_namespace()
+}
+
+/// query flag enabled_fixed_ro
+#[inline(always)]
+pub fn enabled_fixed_ro() -> bool {
+    true
+}
+
+/// query flag enabled_fixed_ro_exported
+#[inline(always)]
+pub fn enabled_fixed_ro_exported() -> bool {
+    true
+}
+
+/// query flag enabled_ro
+#[inline(always)]
+pub fn enabled_ro() -> bool {
+    true
+}
+
+/// query flag enabled_ro_exported
+#[inline(always)]
+pub fn enabled_ro_exported() -> bool {
+    true
+}
+
+/// query flag enabled_rw
+#[inline(always)]
+pub fn enabled_rw() -> bool {
+    PROVIDER.enabled_rw()
+}
