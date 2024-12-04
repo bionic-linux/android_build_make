@@ -22,6 +22,30 @@
       },
       "revId": "7ed62ac221f4231906829ca287703d6a987c1245",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9241c4a5_a1f82cf7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1297255
+      },
+      "writtenOn": "2024-12-04T22:38:51Z",
+      "side": 1,
+      "message": "I found that some fields are not supported by soong-select, such as \"jarjar_rules\", \"libs\".",
+      "parentUuid": "e16a091f_f6588885",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 13
+      },
+      "revId": "7ed62ac221f4231906829ca287703d6a987c1245",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
