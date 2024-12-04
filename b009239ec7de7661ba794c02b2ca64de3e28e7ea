@@ -1,0 +1,152 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ef95bf02_bdec968f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1132849
+      },
+      "writtenOn": "2024-12-04T18:15:18Z",
+      "side": 1,
+      "message": "this cl prevents the lock file being removed unexpectly but doesn\u0027t prevent extra instances from being started right?",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 3
+      },
+      "revId": "b009239ec7de7661ba794c02b2ca64de3e28e7ea",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "416fe92e_c35d49a0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1132849
+      },
+      "writtenOn": "2024-12-04T18:15:18Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 12,
+        "startChar": 4,
+        "endLine": 12,
+        "endChar": 8
+      },
+      "revId": "b009239ec7de7661ba794c02b2ca64de3e28e7ea",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f68aeb6e_cabf9571",
+        "filename": "tools/edit_monitor/daemon_manager.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 1132849
+      },
+      "writtenOn": "2024-12-04T18:15:18Z",
+      "side": 1,
+      "message": "optional: handle format error. In rare corner case the file might read empty when the process creating it dies before writing anything to it",
+      "range": {
+        "startLine": 261,
+        "startChar": 15,
+        "endLine": 261,
+        "endChar": 18
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "45ac977f_6c3fb5b6",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "tools/edit_monitor/daemon_manager.py",
+              "range": {
+                "startLine": 262,
+                "startChar": 0,
+                "endLine": 263,
+                "endChar": 0
+              },
+              "replacement": "    except (FileNotFoundError, ValueError) as e:\n"
+            }
+          ]
+        }
+      ],
+      "revId": "b009239ec7de7661ba794c02b2ca64de3e28e7ea",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "410d5d43_4c0154d8",
+        "filename": "tools/edit_monitor/daemon_manager.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 1132849
+      },
+      "writtenOn": "2024-12-04T18:15:18Z",
+      "side": 1,
+      "message": "not process safe: the first check is unnecessary and the existence of the file could change between these lines.\n\npid_read \u003d self._read_pid_from_pidfile()\n\nif pid_reaad is None:\n      logging.info(\"pid file %s already removed.\", self.pid_file_path)\nelse:\n      ...",
+      "range": {
+        "startLine": 341,
+        "startChar": 4,
+        "endLine": 345,
+        "endChar": 44
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "cb44e9fb_da13c078",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "tools/edit_monitor/daemon_manager.py",
+              "range": {
+                "startLine": 341,
+                "startChar": 0,
+                "endLine": 343,
+                "endChar": 0
+              },
+              "replacement": "    pid_read \u003d self._read_pid_from_pidfile()\n    if pid_read is None:\n      logging.info(\"pid file %s does not exist.\", self.pid_file_path)\n"
+            },
+            {
+              "path": "tools/edit_monitor/daemon_manager.py",
+              "range": {
+                "startLine": 345,
+                "startChar": 0,
+                "endLine": 346,
+                "endChar": 0
+              },
+              "replacement": "    if pid_read !\u003d pid:\n"
+            },
+            {
+              "path": "tools/edit_monitor/daemon_manager.py",
+              "range": {
+                "startLine": 350,
+                "startChar": 0,
+                "endLine": 351,
+                "endChar": 0
+              },
+              "replacement": "          pid_read,\n"
+            }
+          ]
+        }
+      ],
+      "revId": "b009239ec7de7661ba794c02b2ca64de3e28e7ea",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
