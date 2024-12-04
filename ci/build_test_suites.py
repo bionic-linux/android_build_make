@@ -84,6 +84,8 @@ class BuildPlanner:
       optimization_rationale = e.message
       logging.warning(f'Unable to perform test discovery: {optimization_rationale}')
     for target in self.args.extra_targets:
+      if target is None:
+          continue
       if optimization_rationale:
         get_metrics_agent().report_unoptimized_target(target, optimization_rationale)
       else:
