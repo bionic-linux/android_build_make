@@ -41,6 +41,9 @@ my_host_shared_lib_for_general_tests += $(call copy-many-files,$(my_general_test
 my_host_shared_lib_symlinks := \
     $(filter $(COMPATIBILITY.host-unit-tests.SYMLINKS),\
 	$(COMPATIBILITY.general-tests.SYMLINKS))
+my_host_shared_lib_symlinks := \
+    $(filter $(COMPATIBILITY.camera-hal-tests.SYMLINKS),\
+	$(COMPATIBILITY.general-tests.SYMLINKS))
 
 my_general_tests_symlinks := \
     $(filter-out $(COMPATIBILITY.camera-hal-tests.SYMLINKS),\
