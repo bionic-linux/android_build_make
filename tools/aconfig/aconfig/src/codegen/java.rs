@@ -522,7 +522,6 @@ mod tests {
         import android.compat.annotation.UnsupportedAppUsage;
         import android.os.Build;
         import android.os.flagging.PlatformAconfigPackageInternal;
-        import android.os.flagging.AconfigStorageReadException;
         import android.util.Log;
         /** @hide */
         public final class FeatureFlagsImpl implements FeatureFlags {
@@ -534,39 +533,24 @@ mod tests {
             private static boolean enabledRw = true;
             private void init() {
                 try {
-                    PlatformAconfigPackageInternal reader = PlatformAconfigPackageInternal.load("system", "com.android.aconfig.test", 0x5081CE7221C77064L);
-                    AconfigStorageReadException error = reader.getException();
-                    if (error == null) {
+                    PlatformAconfigPackageInternal reader = PlatformAconfigPackageInternal.load("system", "com.android.aconfig.test");
+                    Exception error = reader.getException();
+                    if (error == null && 0x5081CE7221C77064L == reader.getPackageFingerprint()) {
                         disabledRw = reader.getBooleanFlagValue(1);
                         disabledRwExported = reader.getBooleanFlagValue(2);
                         enabledRw = reader.getBooleanFlagValue(8);
                         disabledRwInOtherNamespace = reader.getBooleanFlagValue(3);
-                    } else if (Build.VERSION.SDK_INT > 35 && error.getErrorCode() == 5 /* fingerprint doesn't match*/) {
-                        disabledRw = reader.getBooleanFlagValue("disabled_rw", false);
-                        disabledRwExported = reader.getBooleanFlagValue("disabled_rw_exported", false);
-                        enabledRw = reader.getBooleanFlagValue("enabled_rw", true);
-                        disabledRwInOtherNamespace = reader.getBooleanFlagValue("disabled_rw_in_other_namespace", false);
+                    } else if (error != null) {
+                        Log.e(TAG, error.toString());
                     } else {
-                        if (error.getMessage() != null) {
-                            Log.e(TAG, error.getMessage());
-                        } else {
-                            Log.e(TAG, "Encountered a null AconfigStorageReadException");
-                        }
+                        Log.e(TAG, "fingerprint of package com.android.aconfig.test does not match the package on device")
                     }
                 } catch (Exception e) {
-                    if (e.getMessage() != null) {
-                        Log.e(TAG, e.getMessage());
-                    } else {
-                        Log.e(TAG, "Encountered a null Exception");
-                    }
+                    Log.e(TAG, e.toString());
                 } catch (NoClassDefFoundError e) {
                     // for mainline module running on older devices.
                     // This should be replaces to version check, after the version bump.
-                    if (e.getMessage() != null) {
-                        Log.e(TAG, e.getMessage());
-                    } else {
-                        Log.e(TAG, "Encountered a null NoClassDefFoundError");
-                    }
+                    Log.e(TAG, e.toString());
                 }
                 isCached = true;
             }
