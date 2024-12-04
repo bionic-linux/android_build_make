@@ -160,6 +160,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7148fafa_289c97ff",
+        "filename": "tools/edit_monitor/daemon_manager.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 1132849
+      },
+      "writtenOn": "2024-12-04T21:36:56Z",
+      "side": 1,
+      "message": "i mean return None also",
+      "parentUuid": "e68bf23c_4c97d542",
+      "range": {
+        "startLine": 261,
+        "startChar": 15,
+        "endLine": 261,
+        "endChar": 18
+      },
+      "revId": "b009239ec7de7661ba794c02b2ca64de3e28e7ea",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "410d5d43_4c0154d8",
