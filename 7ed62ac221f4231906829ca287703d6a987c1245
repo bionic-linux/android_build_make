@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e16a091f_f6588885",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1878380
+      },
+      "writtenOn": "2024-12-04T17:45:10Z",
+      "side": 1,
+      "message": "nit: This additional variable should not be necessary. go/soong-selects allows us to conditionally include VCN using `RELEASE_MOVE_VCN_TO_MAINLINE`",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 13
+      },
+      "revId": "7ed62ac221f4231906829ca287703d6a987c1245",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
