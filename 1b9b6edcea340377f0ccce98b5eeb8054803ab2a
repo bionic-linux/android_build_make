@@ -1,0 +1,45 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9c4138cc_8a4c7e62",
+        "filename": "ci/build_test_suites.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1121894
+      },
+      "writtenOn": "2024-12-04T15:07:54Z",
+      "side": 1,
+      "message": "nit: you should also report something in the metrics agent",
+      "range": {
+        "startLine": 97,
+        "startChar": 10,
+        "endLine": 97,
+        "endChar": 17
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "eafe98ec_2f04f5f4",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ci/build_test_suites.py",
+              "range": {
+                "startLine": 98,
+                "startChar": 0,
+                "endLine": 98,
+                "endChar": 0
+              },
+              "replacement": "          get_metrics_agent().report_unoptimized_target(target, \u0027Test discovery error.\u0027)\n"
+            }
+          ]
+        }
+      ],
+      "revId": "1b9b6edcea340377f0ccce98b5eeb8054803ab2a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
