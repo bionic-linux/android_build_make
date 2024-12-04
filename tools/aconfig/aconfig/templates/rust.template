@@ -10,10 +10,9 @@ pub struct FlagProvider;
 
 {{ if has_readwrite- }}
 {{ if allow_instrumentation }}
-static PACKAGE_OFFSET: LazyLock<Result<Option<u32>, AconfigStorageError>> = LazyLock::new(|| unsafe \{
-    get_mapped_storage_file("{container}", StorageFileType::PackageMap)
-    .and_then(|package_map| get_package_read_context(&package_map, "{package}"))
-    .map(|context| context.map(|c| c.boolean_start_index))
+static PACKAGE_CONTEXT: LazyLock<Result<PackageReadContext, AconfigStorageError>> = LazyLock::new(|| unsafe \{
+    get_mapped_storage_file("system", StorageFileType::PackageMap)
+    .and_then(|package_map| get_package_read_context(&package_map, "com.android.aconfig.test"))
 });
 
 static FLAG_VAL_MAP: LazyLock<Result<Mmap, AconfigStorageError>> = LazyLock::new(|| unsafe \{
@@ -33,12 +32,23 @@ static CACHED_{flag.name}: LazyLock<bool> = LazyLock::new(|| \{
             .with_tag_on_device("aconfig_rust_codegen")
             .with_max_level(LevelFilter::Info));
 
+    {{ if enable_fingerprint }}
+    let fingerprint_from_file = PACKAGE_CONTEXT
+        .as_ref().map(|context| context.map(|c| c.fingerprint))
+        .map_err(|err| format!("failed to get package read offset: \{err}"));
+    if fingerprint_from_file != {fingerprint_value} \{
+      log!(Level::Warn, "Fingerprint mismatch for package {package}, returning default value.");
+      return {flag.default_value};
+    }
+    {{ endif }}
+
     let flag_value_result = FLAG_VAL_MAP
         .as_ref()
         .map_err(|err| format!("failed to get flag val map: \{err}"))
         .and_then(|flag_val_map| \{
-            PACKAGE_OFFSET
+            PACKAGE_CONTEXT
                 .as_ref()
+                .map(|context| context.map(|c| c.boolean_start_index))
                 .map_err(|err| format!("failed to get package read offset: \{err}"))
                 .and_then(|package_offset| \{
                     match package_offset \{

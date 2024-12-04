@@ -291,7 +291,9 @@ fn main() -> Result<()> {
             let mode = get_required_arg::<CodegenMode>(sub_matches, "mode")?;
             let allow_instrumentation =
                 get_required_arg::<bool>(sub_matches, "allow-instrumentation")?;
-            let generated_file = commands::create_rust_lib(cache, *mode, *allow_instrumentation)
+
+            // TODO - b/316357686: Use build flag for enable fingerprint instead of always passing false.
+            let generated_file = commands::create_rust_lib(cache, *mode, *allow_instrumentation, false)
                 .context("failed to create rust lib")?;
             let dir = PathBuf::from(get_required_arg::<String>(sub_matches, "out")?);
             write_output_file_realtive_to_dir(&dir, &generated_file)?;

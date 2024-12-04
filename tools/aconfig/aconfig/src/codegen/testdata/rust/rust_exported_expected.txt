@@ -1,0 +1,65 @@
+//! codegenerated rust flag lib
+use aconfig_storage_read_api::{Mmap, AconfigStorageError, StorageFileType, PackageReadContext, get_mapped_storage_file, get_boolean_flag_value, get_package_read_context};
+use std::path::Path;
+use std::io::Write;
+use std::sync::LazyLock;
+use log::{log, LevelFilter, Level};
+
+/// flag provider
+pub struct FlagProvider;
+
+    /// flag value cache for disabled_rw_exported
+    static CACHED_disabled_rw_exported: LazyLock<bool> = LazyLock::new(|| flags_rust::GetServerConfigurableFlag(
+        "aconfig_flags.aconfig_test",
+        "com.android.aconfig.test.disabled_rw_exported",
+        "false") == "true");
+
+    /// flag value cache for enabled_fixed_ro_exported
+    static CACHED_enabled_fixed_ro_exported: LazyLock<bool> = LazyLock::new(|| flags_rust::GetServerConfigurableFlag(
+        "aconfig_flags.aconfig_test",
+        "com.android.aconfig.test.enabled_fixed_ro_exported",
+        "false") == "true");
+
+    /// flag value cache for enabled_ro_exported
+    static CACHED_enabled_ro_exported: LazyLock<bool> = LazyLock::new(|| flags_rust::GetServerConfigurableFlag(
+        "aconfig_flags.aconfig_test",
+        "com.android.aconfig.test.enabled_ro_exported",
+        "false") == "true");
+
+impl FlagProvider {
+    /// query flag disabled_rw_exported
+    pub fn disabled_rw_exported(&self) -> bool {
+        *CACHED_disabled_rw_exported
+    }
+
+    /// query flag enabled_fixed_ro_exported
+    pub fn enabled_fixed_ro_exported(&self) -> bool {
+        *CACHED_enabled_fixed_ro_exported
+    }
+
+    /// query flag enabled_ro_exported
+    pub fn enabled_ro_exported(&self) -> bool {
+        *CACHED_enabled_ro_exported
+    }
+}
+
+/// flag provider
+pub static PROVIDER: FlagProvider = FlagProvider;
+
+/// query flag disabled_rw_exported
+#[inline(always)]
+pub fn disabled_rw_exported() -> bool {
+    PROVIDER.disabled_rw_exported()
+}
+
+/// query flag enabled_fixed_ro_exported
+#[inline(always)]
+pub fn enabled_fixed_ro_exported() -> bool {
+    PROVIDER.enabled_fixed_ro_exported()
+}
+
+/// query flag enabled_ro_exported
+#[inline(always)]
+pub fn enabled_ro_exported() -> bool {
+    PROVIDER.enabled_ro_exported()
+}
