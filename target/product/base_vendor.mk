@@ -27,6 +27,7 @@ PRODUCT_PACKAGES += \
     recovery \
     servicemanager.recovery \
     shell_and_utilities_recovery \
+    toybox_recovery \
     watchdogd.recovery \
 
 PRODUCT_VENDOR_PROPERTIES += \
