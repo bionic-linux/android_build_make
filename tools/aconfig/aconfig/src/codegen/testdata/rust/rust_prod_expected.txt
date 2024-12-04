@@ -1,0 +1,137 @@
+//! codegenerated rust flag lib
+use aconfig_storage_read_api::{Mmap, AconfigStorageError, StorageFileType, PackageReadContext, get_mapped_storage_file, get_boolean_flag_value, get_package_read_context};
+use std::path::Path;
+use std::io::Write;
+use std::sync::LazyLock;
+use log::{log, LevelFilter, Level};
+
+/// flag provider
+pub struct FlagProvider;
+
+    /// flag value cache for disabled_rw
+    static CACHED_disabled_rw: LazyLock<bool> = LazyLock::new(|| flags_rust::GetServerConfigurableFlag(
+        "aconfig_flags.aconfig_test",
+        "com.android.aconfig.test.disabled_rw",
+        "false") == "true");
+
+    /// flag value cache for disabled_rw_exported
+    static CACHED_disabled_rw_exported: LazyLock<bool> = LazyLock::new(|| flags_rust::GetServerConfigurableFlag(
+        "aconfig_flags.aconfig_test",
+        "com.android.aconfig.test.disabled_rw_exported",
+        "false") == "true");
+
+    /// flag value cache for disabled_rw_in_other_namespace
+    static CACHED_disabled_rw_in_other_namespace: LazyLock<bool> = LazyLock::new(|| flags_rust::GetServerConfigurableFlag(
+        "aconfig_flags.other_namespace",
+        "com.android.aconfig.test.disabled_rw_in_other_namespace",
+        "false") == "true");
+
+    /// flag value cache for enabled_rw
+    static CACHED_enabled_rw: LazyLock<bool> = LazyLock::new(|| flags_rust::GetServerConfigurableFlag(
+        "aconfig_flags.aconfig_test",
+        "com.android.aconfig.test.enabled_rw",
+        "true") == "true");
+
+impl FlagProvider {
+    /// query flag disabled_ro
+    pub fn disabled_ro(&self) -> bool {
+        false
+    }
+
+    /// query flag disabled_rw
+    pub fn disabled_rw(&self) -> bool {
+        *CACHED_disabled_rw
+    }
+
+    /// query flag disabled_rw_exported
+    pub fn disabled_rw_exported(&self) -> bool {
+        *CACHED_disabled_rw_exported
+    }
+
+    /// query flag disabled_rw_in_other_namespace
+    pub fn disabled_rw_in_other_namespace(&self) -> bool {
+        *CACHED_disabled_rw_in_other_namespace
+    }
+
+    /// query flag enabled_fixed_ro
+    pub fn enabled_fixed_ro(&self) -> bool {
+        true
+    }
+
+    /// query flag enabled_fixed_ro_exported
+    pub fn enabled_fixed_ro_exported(&self) -> bool {
+        true
+    }
+
+    /// query flag enabled_ro
+    pub fn enabled_ro(&self) -> bool {
+        true
+    }
+
+    /// query flag enabled_ro_exported
+    pub fn enabled_ro_exported(&self) -> bool {
+        true
+    }
+
+    /// query flag enabled_rw
+    pub fn enabled_rw(&self) -> bool {
+        *CACHED_enabled_rw
+    }
+}
+
+/// flag provider
+pub static PROVIDER: FlagProvider = FlagProvider;
+
+/// query flag disabled_ro
+#[inline(always)]
+pub fn disabled_ro() -> bool {
+    false
+}
+
+/// query flag disabled_rw
+#[inline(always)]
+pub fn disabled_rw() -> bool {
+    PROVIDER.disabled_rw()
+}
+
+/// query flag disabled_rw_exported
+#[inline(always)]
+pub fn disabled_rw_exported() -> bool {
+    PROVIDER.disabled_rw_exported()
+}
+
+/// query flag disabled_rw_in_other_namespace
+#[inline(always)]
+pub fn disabled_rw_in_other_namespace() -> bool {
+    PROVIDER.disabled_rw_in_other_namespace()
+}
+
+/// query flag enabled_fixed_ro
+#[inline(always)]
+pub fn enabled_fixed_ro() -> bool {
+    true
+}
+
+/// query flag enabled_fixed_ro_exported
+#[inline(always)]
+pub fn enabled_fixed_ro_exported() -> bool {
+    true
+}
+
+/// query flag enabled_ro
+#[inline(always)]
+pub fn enabled_ro() -> bool {
+    true
+}
+
+/// query flag enabled_ro_exported
+#[inline(always)]
+pub fn enabled_ro_exported() -> bool {
+    true
+}
+
+/// query flag enabled_rw
+#[inline(always)]
+pub fn enabled_rw() -> bool {
+    PROVIDER.enabled_rw()
+}

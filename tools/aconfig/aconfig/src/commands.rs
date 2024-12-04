@@ -269,6 +269,7 @@ pub fn create_rust_lib(
     mut input: Input,
     codegen_mode: CodegenMode,
     allow_instrumentation: bool,
+    enable_fingerprint: bool,
 ) -> Result<OutputFile> {
     // // TODO(327420679): Enable export mode for native flag library
     ensure!(
@@ -276,6 +277,15 @@ pub fn create_rust_lib(
         "Exported mode for generated rust flag library is disabled"
     );
     let parsed_flags = input.try_parse_flags()?;
+
+    // Fingerprint the ordered flag names.
+    let fingerprint_value = if enable_fingerprint {
+        let mut flag_names = extract_flag_names(parsed_flags.clone())?;
+        compute_flags_fingerprint(&mut flag_names)
+    } else {
+        0u64
+    };
+
     let modified_parsed_flags = modify_parsed_flags_based_on_mode(parsed_flags, codegen_mode)?;
     let Some(package) = find_unique_package(&modified_parsed_flags) else {
         bail!("no parsed flags, or the parsed flags use different packages");
@@ -288,6 +298,8 @@ pub fn create_rust_lib(
         modified_parsed_flags.into_iter(),
         codegen_mode,
         allow_instrumentation,
+        enable_fingerprint,
+        fingerprint_value,
     )
 }
 
