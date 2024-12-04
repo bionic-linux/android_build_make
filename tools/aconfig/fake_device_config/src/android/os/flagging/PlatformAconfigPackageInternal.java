@@ -25,16 +25,11 @@ public class PlatformAconfigPackageInternal {
         throw new UnsupportedOperationException("Stub!");
     }
 
-    public static PlatformAconfigPackageInternal load(
-            String container, String packageName, long packageFingerprint) {
-        throw new UnsupportedOperationException("Stub!");
-    }
-
     public boolean getBooleanFlagValue(int index) {
         throw new UnsupportedOperationException("Stub!");
     }
 
-    public boolean getBooleanFlagValue(String flagName, boolean defaultValue) {
+    public long getPackageFingerprint() {
         throw new UnsupportedOperationException("Stub!");
     }
 
