@@ -24,6 +24,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ba8af2ba_fb2ae4fb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-12-04T21:22:16Z",
+      "side": 1,
+      "message": "It prevents, as long as the pid lock file exists, no instance will start (when trying to start, we will try to write the pid lock file and if there\u0027s already one exists, the write will fail and the process with exit).",
+      "parentUuid": "ef95bf02_bdec968f",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 3
+      },
+      "revId": "b009239ec7de7661ba794c02b2ca64de3e28e7ea",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "416fe92e_c35d49a0",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-12-04T18:15:18Z",
       "side": 1,
       "message": "typo",
+      "range": {
+        "startLine": 12,
+        "startChar": 4,
+        "endLine": 12,
+        "endChar": 8
+      },
+      "revId": "b009239ec7de7661ba794c02b2ca64de3e28e7ea",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "43c7ebf3_415e4a93",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-12-04T21:22:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "416fe92e_c35d49a0",
       "range": {
         "startLine": 12,
         "startChar": 4,
@@ -84,6 +132,30 @@
           ]
         }
       ],
+      "revId": "b009239ec7de7661ba794c02b2ca64de3e28e7ea",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e68bf23c_4c97d542",
+        "filename": "tools/edit_monitor/daemon_manager.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-12-04T21:22:16Z",
+      "side": 1,
+      "message": "In that case, the function will raise an exception which will cause the main process to terminate.",
+      "parentUuid": "f68aeb6e_cabf9571",
+      "range": {
+        "startLine": 261,
+        "startChar": 15,
+        "endLine": 261,
+        "endChar": 18
+      },
       "revId": "b009239ec7de7661ba794c02b2ca64de3e28e7ea",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
@@ -145,6 +217,30 @@
           ]
         }
       ],
+      "revId": "b009239ec7de7661ba794c02b2ca64de3e28e7ea",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "213ed4fa_01e71a9b",
+        "filename": "tools/edit_monitor/daemon_manager.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 1114063
+      },
+      "writtenOn": "2024-12-04T21:22:16Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "410d5d43_4c0154d8",
+      "range": {
+        "startLine": 341,
+        "startChar": 4,
+        "endLine": 345,
+        "endChar": 44
+      },
       "revId": "b009239ec7de7661ba794c02b2ca64de3e28e7ea",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
