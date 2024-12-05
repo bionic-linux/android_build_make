@@ -13,6 +13,7 @@
 # limitations under the License.
 
 
+import fcntl
 import getpass
 import hashlib
 import logging
@@ -244,10 +245,6 @@ class DaemonManager:
         logging.exception("Failed to terminate process %d", pid)
 
   def _stop_any_existing_instance(self):
-    if not self.pid_file_path.exists():
-      logging.debug("No existing instances.")
-      return
-
     ex_pid = self._read_pid_from_pidfile()
 
     if ex_pid:
@@ -271,7 +268,13 @@ class DaemonManager:
     try:
       # Use the 'x' mode to open the file for exclusive creation
       with open(self.pid_file_path, "x") as f:
-        f.write(f"{self.pid}")
+        try:
+          # Acquire an exclusive lock
+          fcntl.flock(f, fcntl.LOCK_EX | fcntl.LOCK_NB)
+          f.write(f"{self.pid}")
+        finally:
+          # Release the lock
+          fcntl.flock(f, fcntl.LOCK_UN)
     except FileExistsError as e:
       # This could be caused due to race condition that a user is trying
       # to start two edit monitors at the same time. Or because there is
