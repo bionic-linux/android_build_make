@@ -16,6 +16,24 @@
       "message": "this seems like a regression? shouldn\u0027t the previous line be sufficient?",
       "revId": "84059dc16fee74efa3f92824e7ed47d805454df4",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "15427684_5dcb9226",
+        "filename": "target/product/base_vendor.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1962375
+      },
+      "writtenOn": "2024-12-05T18:54:45Z",
+      "side": 1,
+      "message": "You are right, this should not be required given that `shell_and_utilities_recovery` adds this module as a \"required\" dependency. Thanks for catching this!",
+      "parentUuid": "dfb08e21_0c7b44c8",
+      "revId": "84059dc16fee74efa3f92824e7ed47d805454df4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
