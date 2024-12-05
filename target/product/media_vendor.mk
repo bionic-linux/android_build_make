@@ -22,4 +22,5 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/base_vendor.mk)
 
 # /vendor packages
 PRODUCT_PACKAGES += \
+    fsck.f2fs.recovery \
     libaudiopreprocessing \
