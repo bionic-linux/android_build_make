@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dfb08e21_0c7b44c8",
+        "filename": "target/product/base_vendor.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1003224
+      },
+      "writtenOn": "2024-12-05T15:42:44Z",
+      "side": 1,
+      "message": "this seems like a regression? shouldn\u0027t the previous line be sufficient?",
+      "revId": "84059dc16fee74efa3f92824e7ed47d805454df4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
