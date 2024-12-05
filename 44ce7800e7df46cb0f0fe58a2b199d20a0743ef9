@@ -40,6 +40,30 @@
       ],
       "revId": "44ce7800e7df46cb0f0fe58a2b199d20a0743ef9",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "579c5a0a_b64867c9",
+        "filename": "tools/releasetools/ota_from_target_files.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1134,
+      "author": {
+        "id": 1710792
+      },
+      "writtenOn": "2024-12-05T16:49:50Z",
+      "side": 1,
+      "message": "When `LD_PRELOAD` is set, dynamic linkers(ld.so) will read it, and inject the specified library into the current process. \n\nhttps://tldp.org/HOWTO/Program-Library-HOWTO/shared-libraries.html",
+      "parentUuid": "a0179b70_3a7bda6d",
+      "range": {
+        "startLine": 1134,
+        "startChar": 18,
+        "endLine": 1134,
+        "endChar": 28
+      },
+      "revId": "44ce7800e7df46cb0f0fe58a2b199d20a0743ef9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
