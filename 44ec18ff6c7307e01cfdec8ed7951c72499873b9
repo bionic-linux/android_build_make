@@ -1,5 +1,23 @@
 {
-  "comments": [],
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5c3f0882_502f1228",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3776603
+      },
+      "writtenOn": "2024-12-05T22:16:15Z",
+      "side": 1,
+      "message": "3394566: Merge empty history for sparse-12740680-L14500030008183717 | https://android-review.googlesource.com/c/platform/manifest/+/3394566",
+      "revId": "44ec18ff6c7307e01cfdec8ed7951c72499873b9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ],
   "submitRequirementResults": [
     {
       "submitRequirement": {
