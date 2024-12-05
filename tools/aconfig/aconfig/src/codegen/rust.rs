@@ -88,27 +88,6 @@ struct TemplateParsedFlag {
 impl TemplateParsedFlag {
     #[allow(clippy::nonminimal_bool)]
     fn new(package: &str, flag_offsets: HashMap<String, u16>, pf: &ProtoParsedFlag) -> Self {
-        let no_assigned_offset = (pf.container() == "system"
-            || pf.container() == "vendor"
-            || pf.container() == "product")
-            && pf.permission() == ProtoFlagPermission::READ_ONLY
-            && pf.state() == ProtoFlagState::DISABLED;
-
-        let flag_offset = match flag_offsets.get(pf.name()) {
-            Some(offset) => offset,
-            None => {
-                // System/vendor/product RO+disabled flags have no offset in storage files.
-                // Assign placeholder value.
-                if no_assigned_offset {
-                    &0
-                }
-                // All other flags _must_ have an offset.
-                else {
-                    panic!("{}", format!("missing flag offset for {}", pf.name()));
-                }
-            }
-        };
-
         Self {
             readwrite: pf.permission() == ProtoFlagPermission::READ_WRITE,
             default_value: match pf.state() {
@@ -117,7 +96,7 @@ impl TemplateParsedFlag {
             },
             name: pf.name().to_string(),
             container: pf.container().to_string(),
-            flag_offset: *flag_offset,
+            flag_offset: *flag_offsets.get(pf.name()).expect("didnt find package offset :("),
             device_config_namespace: pf.namespace().to_string(),
             device_config_flag: codegen::create_device_config_ident(package, pf.name())
                 .expect("values checked at flag parse time"),
@@ -308,7 +287,7 @@ static CACHED_disabled_rw: LazyLock<bool> = LazyLock::new(|| {
                .and_then(|package_offset| {
                    match package_offset {
                        Some(offset) => {
-                           get_boolean_flag_value(&flag_val_map, offset + 0)
+                           get_boolean_flag_value(&flag_val_map, offset + 1)
                                .map_err(|err| format!("failed to get flag: {err}"))
                        },
                        None => {
@@ -348,7 +327,7 @@ static CACHED_disabled_rw_exported: LazyLock<bool> = LazyLock::new(|| {
                     .and_then(|package_offset| {
                         match package_offset {
                             Some(offset) => {
-                                get_boolean_flag_value(&flag_val_map, offset + 1)
+                                get_boolean_flag_value(&flag_val_map, offset + 2)
                                     .map_err(|err| format!("failed to get flag: {err}"))
                             },
                             None => {
@@ -388,7 +367,7 @@ static CACHED_disabled_rw_in_other_namespace: LazyLock<bool> = LazyLock::new(|| 
                     .and_then(|package_offset| {
                         match package_offset {
                             Some(offset) => {
-                                get_boolean_flag_value(&flag_val_map, offset + 2)
+                                get_boolean_flag_value(&flag_val_map, offset + 3)
                                     .map_err(|err| format!("failed to get flag: {err}"))
                             },
                             None => {
@@ -429,7 +408,7 @@ static CACHED_enabled_rw: LazyLock<bool> = LazyLock::new(|| {
                     .and_then(|package_offset| {
                         match package_offset {
                             Some(offset) => {
-                                get_boolean_flag_value(&flag_val_map, offset + 7)
+                                get_boolean_flag_value(&flag_val_map, offset + 8)
                                     .map_err(|err| format!("failed to get flag: {err}"))
                             },
                             None => {
