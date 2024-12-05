@@ -14,6 +14,9 @@
 # limitations under the License.
 #
 
+# System property default to empty string when not defined by vendors
+PRODUCT_SYSTEM_EXT_PROPERTIES += ro.audio.ihaladaptervendorextension_libname ?= "" \
+
 # Base modules and settings for the system_ext partition.
 PRODUCT_PACKAGES += \
     build_flag_system_ext \
