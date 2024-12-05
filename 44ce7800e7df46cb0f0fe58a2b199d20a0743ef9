@@ -1,0 +1,45 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a0179b70_3a7bda6d",
+        "filename": "tools/releasetools/ota_from_target_files.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1134,
+      "author": {
+        "id": 1964171
+      },
+      "writtenOn": "2024-12-05T05:02:53Z",
+      "side": 1,
+      "message": "how does setting this environment variable allow delta_generator to use lz4 dynamic library? I\u0027m a little confused as what this code does here",
+      "range": {
+        "startLine": 1134,
+        "startChar": 18,
+        "endLine": 1134,
+        "endChar": 28
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "bae1c325_14f5abe8",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "tools/releasetools/ota_from_target_files.py",
+              "range": {
+                "startLine": 1129,
+                "startChar": 0,
+                "endLine": 1130,
+                "endChar": 0
+              },
+              "replacement": "    logger.info(\"Enabling lz4diff with liblz4.so %s\", liblz4_path)\n"
+            }
+          ]
+        }
+      ],
+      "revId": "44ce7800e7df46cb0f0fe58a2b199d20a0743ef9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
