@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "946316c2_323e2a52",
+        "filename": "core/Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 875,
+      "author": {
+        "id": 1311067
+      },
+      "writtenOn": "2024-12-05T06:44:20Z",
+      "side": 1,
+      "message": "If your intension is to create SOONG_CONF_DATA whatever, \"\u003e $@\" is more explicit.\n\n\n\n```suggestion\n\t@\u003e $@ # This file must be present even if SOONG_CONV is empty.\n```",
+      "range": {
+        "startLine": 874,
+        "startChar": 0,
+        "endLine": 875,
+        "endChar": 56
+      },
+      "revId": "96d4408419b537df7b8dd0a1d6db6ed8d72951be",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
