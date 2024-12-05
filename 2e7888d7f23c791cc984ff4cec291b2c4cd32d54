@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e433955c_c619758e",
+        "filename": "target/product/base_system_ext.mk",
+        "patchSetId": 5
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1042638
+      },
+      "writtenOn": "2024-12-05T21:25:03Z",
+      "side": 1,
+      "message": "Moved to the beginning to avoid merge conflict with git_main which has extra contents at the end compared to the AOSP version.",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 0
+      },
+      "revId": "2e7888d7f23c791cc984ff4cec291b2c4cd32d54",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
