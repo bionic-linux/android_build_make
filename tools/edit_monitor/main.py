@@ -87,6 +87,13 @@ def configure_logging(verbose=False):
 
 
 def term_signal_handler(_signal_number, _frame):
+  global sigterm_received
+
+  if sigterm_received:
+    logging.warning("Ignoring subsequent SIGTERM signal.")
+    return  # Ignore the signal
+
+  sigterm_received = True
   logging.info('Process %d received SIGTERM, Terminating...', os.getpid())
   sys.exit(0)
 
@@ -115,5 +122,6 @@ def main(argv: list[str]):
 
 
 if __name__ == '__main__':
+  sigterm_received = False
   signal.signal(signal.SIGTERM, term_signal_handler)
   main(sys.argv)
