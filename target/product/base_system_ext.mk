@@ -30,3 +30,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES_SHIPPING_API_LEVEL_34 += \
     hwservicemanager \
     android.hidl.allocator@1.0-service \
+
+# System property default to empty string when not defined by vendors
+PRODUCT_SYSTEM_EXT_PROPERTIES += ro.audio.ihaladaptervendorextension_libname ?= "" \
