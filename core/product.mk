@@ -372,6 +372,9 @@ _product_single_value_vars += PRODUCT_BUILD_PVMFW_IMAGE
 _product_single_value_vars += PRODUCT_BUILD_DESKTOP_RECOVERY_IMAGE
 _product_single_value_vars += PRODUCT_BUILD_DESKTOP_UPDATE_IMAGE
 
+# Runs a build time comparision betweeen make and soong built .img files
+_product_single_value_vars += PRODUCT_ENFORCE_NO_FILESYSTEM_DIFFS
+
 # List of boot jars delivered via updatable APEXes, following the same format as
 # PRODUCT_BOOT_JARS.
 _product_list_vars += PRODUCT_APEX_BOOT_JARS
