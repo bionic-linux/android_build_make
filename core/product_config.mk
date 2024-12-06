@@ -336,9 +336,9 @@ PRODUCT_BOOT_JARS := $(call qualify-platform-jars,$(PRODUCT_BOOT_JARS))
 # boot image.
 # TODO(b/191686720): remove PRODUCT_APEX_BOOT_JARS to avoid a special handling of core-icu4j
 # in make rules.
-PRODUCT_APEX_BOOT_JARS := $(filter-out com.android.i18n:core-icu4j,$(PRODUCT_APEX_BOOT_JARS))
+# PRODUCT_APEX_BOOT_JARS := $(filter-out com.android.i18n:core-icu4j,$(PRODUCT_APEX_BOOT_JARS))
 # All APEX jars come after /system and /system_ext jars, so adding core-icu4j at the end of the list
-PRODUCT_BOOT_JARS += com.android.i18n:core-icu4j
+# PRODUCT_BOOT_JARS += com.android.i18n:core-icu4j
 
 # The extra system server jars must be appended at the end after common system server jars.
 PRODUCT_SYSTEM_SERVER_JARS += $(PRODUCT_SYSTEM_SERVER_JARS_EXTRA)
