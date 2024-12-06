@@ -20,9 +20,12 @@ PRODUCT_PACKAGES += \
     build_flag_vendor \
     cgroups.recovery.json \
     charger.recovery \
+    dump.erofs.recovery \
+    fsck.erofs.recovery \
     init_second_stage.recovery \
     ld.config.recovery.txt \
     linker.recovery \
+    mkfs.erofs.recovery \
     otacerts.recovery \
     recovery \
     servicemanager.recovery \
