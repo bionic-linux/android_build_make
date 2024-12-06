@@ -24,6 +24,9 @@ $(call inherit-product-if-exists, vendor/google/security/adb/vendor_key.mk)
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
+# Include namespaces for non-AB updater
+PRODUCT_SOONG_NAMESPACES += bootable/deprecated-ota
+
 # Shared java libs
 PRODUCT_PACKAGES += \
     com.android.nfc_extras \
