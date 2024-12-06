@@ -502,6 +502,9 @@ $(call add_json_map, PartitionVarsForSoongMigrationOnlyDoNotUse)
   # Used to generate fsv meta
   $(call add_json_bool, ProductFsverityGenerateMetadata,               $(PRODUCT_FSVERITY_GENERATE_METADATA))
 
+  # Used to run diff test
+  $(call add_json_bool, ProductEnforceNoFilesystemDiffs,               $(PRODUCT_ENFORCE_NO_FILESYSTEM_DIFFS))
+
   # Used to generate recovery partition
   $(call add_json_str, TargetScreenDensity, $(TARGET_SCREEN_DENSITY))
 
