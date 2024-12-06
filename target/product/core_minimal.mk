@@ -29,3 +29,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/media_product.mk)
 PRODUCT_BRAND := generic
 PRODUCT_DEVICE := generic
 PRODUCT_NAME := core
+
+#HACK: this still have some apps
+TARGET_SUPPORTS_32_BIT_APPS := true
+TARGET_SUPPORTS_64_BIT_APPS := true
+PRODUCT_VENDOR_PROPERTIES += ro.zygote=no_zygote

@@ -29,54 +29,10 @@ $(call inherit-product-if-exists, external/noto-fonts/fonts.mk)
 $(call inherit-product-if-exists, external/roboto-fonts/fonts.mk)
 $(call inherit-product-if-exists, external/hyphenation-patterns/patterns.mk)
 $(call inherit-product-if-exists, frameworks/base/data/keyboards/keyboards.mk)
-$(call inherit-product-if-exists, frameworks/webview/chromium/chromium.mk)
+
 
 PRODUCT_PACKAGES += \
-    BasicDreams \
-    BlockedNumberProvider \
-    BluetoothMidiService \
-    BookmarkProvider \
-    BuiltInPrintService \
-    CalendarProvider \
-    cameraserver \
-    CameraExtensionsProxy \
-    CaptivePortalLogin \
-    CertInstaller \
-    DocumentsUI \
-    DownloadProviderUi \
-    EasterEgg \
-    ExternalStorageProvider \
-    FusedLocation \
-    InputDevices \
-    KeyChain \
     librs_jni \
-    ManagedProvisioning \
-    MmsService \
-    MtpService \
-    MusicFX \
-    NfcNci \
-    PacProcessor \
-    PrintRecommendationService \
-    PrintSpooler \
-    ProxyHandler \
-    screenrecord \
-    SecureElement \
-    SharedStorageBackup \
-    SimAppDialog \
-    Telecom \
-    TelephonyProvider \
-    TeleService \
-    Traceur \
-    UserDictionaryProvider \
-    VpnDialogs \
-    vr \
-
-
-PRODUCT_SYSTEM_SERVER_APPS += \
-    FusedLocation \
-    InputDevices \
-    KeyChain \
-    Telecom \
 
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libeffects/data/audio_effects.conf:system/etc/audio_effects.conf

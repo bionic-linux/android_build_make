@@ -16,34 +16,22 @@
 
 # Base modules and settings for the system partition.
 PRODUCT_PACKAGES += \
-    abx \
     adbd_system_api \
-    am \
     android.hidl.allocator@1.0-service \
-    android.hidl.base-V1.0-java \
-    android.hidl.manager-V1.0-java \
     android.hidl.memory@1.0-impl \
     android.hidl.memory@1.0-impl.vendor \
     android.system.suspend@1.0-service \
-    android.test.base \
-    android.test.mock \
-    android.test.runner \
     apexd \
     appops \
-    app_process \
-    appwidget \
     atrace \
     audioserver \
-    BackupRestoreConfirmation \
     bcc \
     blank_screen \
     blkid \
-    bmgr \
     bootanimation \
     bootstat \
     boringssl_self_test \
     bpfloader \
-    bu \
     bugreport \
     bugreportz \
     cgroups.json \
@@ -57,7 +45,6 @@ PRODUCT_PACKAGES += \
     com.android.extservices \
     com.android.i18n \
     com.android.ipsec \
-    com.android.location.provider \
     com.android.media \
     com.android.media.swcodec \
     com.android.mediaprovider \
@@ -65,6 +52,7 @@ PRODUCT_PACKAGES += \
     com.android.os.statsd \
     com.android.permission \
     com.android.resolv \
+    com.android.runtime \
     com.android.neuralnetworks \
     com.android.scheduling \
     com.android.sdkext \
@@ -72,10 +60,6 @@ PRODUCT_PACKAGES += \
     com.android.tzdata \
     com.android.uwb \
     com.android.wifi \
-    ContactsProvider \
-    content \
-    CtsShimPrebuilt \
-    CtsShimPrivPrebuilt \
     debuggerd\
     device_config \
     dmctl \
@@ -90,9 +74,6 @@ PRODUCT_PACKAGES += \
     e2fsck \
     ExtShared \
     flags_health_check \
-    framework-graphics \
-    framework-minus-apex \
-    framework-res \
     framework-sysconfig.xml \
     fsck.erofs \
     fsck_msdos \
@@ -106,16 +87,12 @@ PRODUCT_PACKAGES += \
     heapprofd_client \
     gatekeeperd \
     gpuservice \
-    hid \
     hwservicemanager \
     idmap2 \
     idmap2d \
-    ime \
-    ims-common \
     incident \
     incidentd \
     incident_helper \
-    incident-helper-cmd \
     init.environ.rc \
     init_system \
     input \
@@ -123,7 +100,6 @@ PRODUCT_PACKAGES += \
     ip \
     iptables \
     ip-up-vpn \
-    javax.obex \
     keystore2 \
     credstore \
     ld.mc \
@@ -178,6 +154,7 @@ PRODUCT_PACKAGES += \
     libOpenMAXAL \
     libOpenSLES \
     libpdfium \
+    libpixman \
     libpower \
     libpowermanager \
     libradio_metadata \
@@ -204,8 +181,6 @@ PRODUCT_PACKAGES += \
     linkerconfig \
     llkd \
     lmkd \
-    LocalTransport \
-    locksettings \
     logcat \
     logd \
     lpdump \
@@ -215,19 +190,14 @@ PRODUCT_PACKAGES += \
     mediaextractor \
     mediametrics \
     media_profiles_V1_0.dtd \
-    MediaProviderLegacy \
     mediaserver \
     mke2fs \
     mkfs.erofs \
-    monkey \
     mtpd \
     ndc \
     netd \
-    NetworkStack \
     odsign \
-    org.apache.http.legacy \
     otacerts \
-    PackageInstaller \
     passwd_system \
     perfetto \
     ping \
@@ -237,6 +207,7 @@ PRODUCT_PACKAGES += \
     pppd \
     preinstalled-packages-platform.xml \
     privapp-permissions-platform.xml \
+    prng_seeder \
     racoon \
     recovery-persist \
     resize2fs \
@@ -252,37 +223,27 @@ PRODUCT_PACKAGES += \
     sensorservice \
     service \
     servicemanager \
-    services \
     settings \
-    SettingsProvider \
     sgdisk \
     Shell \
     shell_and_utilities_system \
-    sm \
     snapshotctl \
     snapuserd \
     SoundPicker \
     storaged \
     surfaceflinger \
-    svc \
     task_profiles.json \
     tc \
-    telecom \
-    telephony-common \
     tombstoned \
     traced \
     traced_probes \
     tune2fs \
     tzdatacheck \
-    uiautomator \
-    uinput \
     uncrypt \
     usbd \
     vdc \
     viewcompiler \
-    voip-common \
     vold \
-    WallpaperBackup \
     watchdogd \
     wificond \
     wifi.rc \
@@ -360,8 +321,8 @@ PRODUCT_COPY_FILES += \
     system/core/rootdir/init.usb.configfs.rc:system/etc/init/hw/init.usb.configfs.rc \
     system/core/rootdir/etc/hosts:system/etc/hosts
 
-PRODUCT_COPY_FILES += system/core/rootdir/init.zygote32.rc:system/etc/init/hw/init.zygote32.rc
-PRODUCT_VENDOR_PROPERTIES += ro.zygote?=zygote32
+PRODUCT_COPY_FILES += system/core/rootdir/init.no_zygote.rc:system/etc/init/hw/init.no_zygote.rc
+PRODUCT_VENDOR_PROPERTIES += ro.zygote?=no_zygote
 
 PRODUCT_SYSTEM_PROPERTIES += debug.atrace.tags.enableflags=0
 PRODUCT_SYSTEM_PROPERTIES += persist.traced.enable=1
@@ -386,7 +347,6 @@ PRODUCT_PACKAGES_DEBUG := \
     showmap \
     sqlite3 \
     ss \
-    start_with_lockagent \
     strace \
     su \
     sanitizer-status \
@@ -413,4 +373,3 @@ PRODUCT_COPY_FILES += $(call add-to-product-copy-files-if-exists,\
 PRODUCT_COPY_FILES += $(call add-to-product-copy-files-if-exists,\
     frameworks/base/config/dirty-image-objects:system/etc/dirty-image-objects)
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/runtime_libart.mk)

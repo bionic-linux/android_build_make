@@ -21,36 +21,18 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base_system.mk)
 
 PRODUCT_PACKAGES += \
-    com.android.future.usb.accessory \
-    com.android.mediadrm.signer \
-    com.android.media.remotedisplay \
-    com.android.media.remotedisplay.xml \
-    CompanionDeviceManager \
     drmserver \
     fsck.f2fs \
-    HTMLViewer \
     libfilterpack_imageproc \
-    libwebviewchromium_loader \
-    libwebviewchromium_plat_support \
     make_f2fs \
-    requestsync \
-    StatementService \
 
 PRODUCT_HOST_PACKAGES += \
     fsck.f2fs \
-
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.software.webview.xml:system/etc/permissions/android.software.webview.xml
 
 ifneq (REL,$(PLATFORM_VERSION_CODENAME))
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.preview_sdk.xml:system/etc/permissions/android.software.preview_sdk.xml
 endif
-
-# The order here is the same order they end up on the classpath, so it matters.
-PRODUCT_SYSTEM_SERVER_JARS := \
-    com.android.location.provider \
-    services
 
 PRODUCT_COPY_FILES += \
     system/core/rootdir/etc/public.libraries.android.txt:system/etc/public.libraries.txt
