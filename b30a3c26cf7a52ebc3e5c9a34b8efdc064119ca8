@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9a43aa04_11f9527e",
+        "filename": "tools/edit_monitor/daemon_manager.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 426,
+      "author": {
+        "id": 1132849
+      },
+      "writtenOn": "2024-12-06T03:13:07Z",
+      "side": 1,
+      "message": "as e and add to log?",
+      "range": {
+        "startLine": 426,
+        "startChar": 11,
+        "endLine": 426,
+        "endChar": 20
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "31419b07_e8a4c10e",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "tools/edit_monitor/daemon_manager.py",
+              "range": {
+                "startLine": 426,
+                "startChar": 0,
+                "endLine": 427,
+                "endChar": 0
+              },
+              "replacement": "    except Exception as e:\n"
+            },
+            {
+              "path": "tools/edit_monitor/daemon_manager.py",
+              "range": {
+                "startLine": 428,
+                "startChar": 0,
+                "endLine": 429,
+                "endChar": 0
+              },
+              "replacement": "          \"Failed to get pids of existing edit monitors from ps command with error: %s.\", e)\n"
+            }
+          ]
+        }
+      ],
+      "revId": "b30a3c26cf7a52ebc3e5c9a34b8efdc064119ca8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
