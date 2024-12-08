@@ -20,7 +20,6 @@ ifneq ($(OVERRIDE_TARGET_FLATTEN_APEX),true)
   # com.android.apex.cts.shim.v1_prebuilt overrides CtsShimPrebuilt
   # and CtsShimPrivPrebuilt since they are packaged inside the APEX.
   PRODUCT_PACKAGES += com.android.apex.cts.shim.v1_prebuilt
-  PRODUCT_VENDOR_PROPERTIES := ro.apex.updatable=true
   TARGET_FLATTEN_APEX := false
   # Use compressed apexes in pre-installed partitions.
   # Note: this doesn't mean that all pre-installed apexes will be compressed.
@@ -28,3 +27,4 @@ ifneq ($(OVERRIDE_TARGET_FLATTEN_APEX),true)
   #  via compresible property.
   PRODUCT_COMPRESSED_APEX := true
 endif
+PRODUCT_SYSTEM_PROPERTIES += ro.apex.updatable=true
