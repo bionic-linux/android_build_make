@@ -28,7 +28,6 @@ PRODUCT_PACKAGES += \
     bcc \
     blank_screen \
     blkid \
-    bootanimation \
     bootstat \
     boringssl_self_test \
     bpfloader \
@@ -38,43 +37,24 @@ PRODUCT_PACKAGES += \
     charger \
     cmd \
     com.android.adbd \
-    com.android.adservices \
-    com.android.appsearch \
-    com.android.btservices \
-    com.android.conscrypt \
-    com.android.extservices \
     com.android.i18n \
-    com.android.ipsec \
-    com.android.media \
     com.android.media.swcodec \
-    com.android.mediaprovider \
-    com.android.ondevicepersonalization \
     com.android.os.statsd \
-    com.android.permission \
     com.android.resolv \
     com.android.runtime \
-    com.android.neuralnetworks \
-    com.android.scheduling \
-    com.android.sdkext \
     com.android.tethering \
     com.android.tzdata \
-    com.android.uwb \
-    com.android.wifi \
     debuggerd\
     device_config \
     dmctl \
     dnsmasq \
     dmesgd \
-    DownloadProvider \
     dpm \
     dump.erofs \
     dumpstate \
     dumpsys \
-    DynamicSystemInstallationService \
     e2fsck \
-    ExtShared \
     flags_health_check \
-    framework-sysconfig.xml \
     fsck.erofs \
     fsck_msdos \
     fsverity-release-cert-der \
@@ -86,7 +66,6 @@ PRODUCT_PACKAGES += \
     heapprofd \
     heapprofd_client \
     gatekeeperd \
-    gpuservice \
     hwservicemanager \
     idmap2 \
     idmap2d \
@@ -104,14 +83,11 @@ PRODUCT_PACKAGES += \
     credstore \
     ld.mc \
     libaaudio \
-    libalarm_jni \
     libamidi \
     libandroid \
     libandroidfw \
-    libandroid_runtime \
     libandroid_servers \
     libartpalette-system \
-    libaudioeffect_jni \
     libbinder \
     libbinder_ndk \
     libbinder_rpc_unstable \
@@ -121,7 +97,6 @@ PRODUCT_PACKAGES += \
     libdl.bootstrap \
     libdl_android.bootstrap \
     libdrmframework \
-    libdrmframework_jni \
     libEGL \
     libETC1 \
     libfdtrack \
@@ -138,19 +113,16 @@ PRODUCT_PACKAGES += \
     libinput \
     libinputflinger \
     libiprouteutil \
-    libjnigraphics \
     libjpeg \
     liblog \
     libm.bootstrap \
     libmdnssd \
     libmedia \
-    libmedia_jni \
     libmediandk \
     libmtp \
     libnetd_client \
     libnetlink \
     libnetutils \
-    libneuralnetworks_packageinfo \
     libOpenMAXAL \
     libOpenSLES \
     libpdfium \
@@ -158,10 +130,7 @@ PRODUCT_PACKAGES += \
     libpower \
     libpowermanager \
     libradio_metadata \
-    librtp_jni \
-    libsensorservice \
     libsfplugin_ccodec \
-    libskia \
     libsonic \
     libsonivox \
     libsoundpool \
@@ -187,7 +156,6 @@ PRODUCT_PACKAGES += \
     lshal \
     mdnsd \
     mediacodec.policy \
-    mediaextractor \
     mediametrics \
     media_profiles_V1_0.dtd \
     mediaserver \
@@ -205,8 +173,6 @@ PRODUCT_PACKAGES += \
     platform.xml \
     pm \
     pppd \
-    preinstalled-packages-platform.xml \
-    privapp-permissions-platform.xml \
     prng_seeder \
     racoon \
     recovery-persist \
@@ -218,18 +184,14 @@ PRODUCT_PACKAGES += \
     screencap \
     sdcard \
     secdiscard \
-    SecureElement \
     selinux_policy_system \
-    sensorservice \
     service \
     servicemanager \
     settings \
     sgdisk \
-    Shell \
     shell_and_utilities_system \
     snapshotctl \
     snapuserd \
-    SoundPicker \
     storaged \
     surfaceflinger \
     task_profiles.json \
@@ -259,23 +221,6 @@ ifneq (,$(filter hwaddress,$(SANITIZE_TARGET)))
   PRODUCT_PACKAGES += \
    libclang_rt.hwasan.bootstrap
 endif
-
-# Jacoco agent JARS to be built and installed, if any.
-ifeq ($(EMMA_INSTRUMENT),true)
-  ifneq ($(EMMA_INSTRUMENT_STATIC),true)
-    # For instrumented build, if Jacoco is not being included statically
-    # in instrumented packages then include Jacoco classes in the product
-    # packages.
-    PRODUCT_PACKAGES += jacocoagent
-    ifneq ($(EMMA_INSTRUMENT_FRAMEWORK),true)
-      # For instrumented build, if Jacoco is not being included statically
-      # in instrumented packages and has not already been included in the
-      # bootclasspath via ART_APEX_JARS then include Jacoco classes into the
-      # bootclasspath.
-      PRODUCT_BOOT_JARS += jacocoagent
-    endif # EMMA_INSTRUMENT_FRAMEWORK
-  endif # EMMA_INSTRUMENT_STATIC
-endif # EMMA_INSTRUMENT
 
 # Host tools to install
 PRODUCT_HOST_PACKAGES += \
