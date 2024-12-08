@@ -130,6 +130,7 @@ PRODUCT_PACKAGES += \
     libpower \
     libpowermanager \
     libradio_metadata \
+    libsensorservice \
     libsfplugin_ccodec \
     libsonic \
     libsonivox \
@@ -185,6 +186,7 @@ PRODUCT_PACKAGES += \
     sdcard \
     secdiscard \
     selinux_policy_system \
+    sensorservice \
     service \
     servicemanager \
     settings \
